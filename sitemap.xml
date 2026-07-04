@@ -457,6 +457,10 @@
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
+         <loc>https://agda-algebras.universalalgebra.org/Examples/Setoid/FinitarySignatures/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
          <loc>https://agda-algebras.universalalgebra.org/Examples/Setoid/FiniteQuotient/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
@@ -949,6 +953,10 @@
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
+         <loc>https://agda-algebras.universalalgebra.org/Setoid/Congruences/ChainJoin/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
          <loc>https://agda-algebras.universalalgebra.org/Setoid/Congruences/CompleteLattice/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
@@ -1149,10 +1157,6 @@
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
-         <loc>https://agda-algebras.universalalgebra.org/Setoid/Varieties/MaltsevConditions/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
          <loc>https://agda-algebras.universalalgebra.org/Setoid/Varieties/Preservation/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
@@ -1166,6 +1170,22 @@
     </url>
     <url>
          <loc>https://agda-algebras.universalalgebra.org/Setoid/Varieties/SoundAndComplete/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Setoid/Varieties/Maltsev/Basic/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Setoid/Varieties/Maltsev/Distributivity/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Setoid/Varieties/Maltsev/Modularity/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Setoid/Varieties/Maltsev/Permutability/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>

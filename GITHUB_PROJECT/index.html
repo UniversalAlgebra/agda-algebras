@@ -1886,6 +1886,8 @@
       
         
       
+        
+      
     
     
     
@@ -1951,6 +1953,34 @@
     
   
     Basic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Setoid/Congruences/ChainJoin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ChainJoin
   
 
     
@@ -3705,8 +3735,6 @@
       
         
       
-        
-      
     
     
     
@@ -4015,15 +4043,82 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../Setoid/Varieties/Maltsev/" class="md-nav__link">
+    
+    
+      
         
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_12_10" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../Setoid/Varieties/Maltsev/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
     
   
     Maltsev
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2_12_10" id="__nav_2_2_12_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_12_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_12_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Maltsev
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Setoid/Varieties/Maltsev/Basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic
   
 
     
@@ -4044,14 +4139,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../Setoid/Varieties/MaltsevConditions/" class="md-nav__link">
+      <a href="../Setoid/Varieties/Maltsev/Distributivity/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    MaltsevConditions
+    Distributivity
   
 
     
@@ -4060,6 +4155,70 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Setoid/Varieties/Maltsev/Modularity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modularity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Setoid/Varieties/Maltsev/Permutability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Permutability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -7682,6 +7841,8 @@
       
         
       
+        
+      
     
     
     
@@ -7747,6 +7908,34 @@
     
   
     CongruenceLattice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Examples/Setoid/FinitarySignatures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FinitarySignatures
   
 
     
@@ -16356,24 +16545,9 @@ edits to those regions will be overwritten on the next render.
 </ul>
 <p>Part of the M4-1 umbrella (#267).</p>
 <hr />
-<h3 id="issue-m4-2-docstring-pass-for-all-user-facing-definitions-268">Issue M4-2: Docstring pass for all user-facing definitions (#268)<a class="headerlink" href="#issue-m4-2-docstring-pass-for-all-user-facing-definitions-268" title="Anchor link to this section">&para;</a></h3>
-<p><strong>Labels</strong>: <code>documentation</code>, <code>milestone-4-style</code>, <code>help-wanted</code></p>
-<h2 id="description_41">Description<a class="headerlink" href="#description_41" title="Anchor link to this section">&para;</a></h2>
-<p>Every record, type family, and top-level function in the public API should have a prose comment block explaining what it is, when to use it, and cross-references to related definitions.  Long-tail task; pursue in small per-module PRs.</p>
-<h2 id="tasks_41">Tasks<a class="headerlink" href="#tasks_41" title="Anchor link to this section">&para;</a></h2>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Walk every public module in <code>Setoid/</code> and add missing docstrings.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Walk every public module in <code>Classical/</code> and add missing docstrings.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Enforce via a linter or review checklist.</li>
-</ul>
-<h2 id="acceptance-criteria_42">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_42" title="Anchor link to this section">&para;</a></h2>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>grep</code>-based audit finds zero public definitions without a preceding comment block.</li>
-</ul>
-<hr />
-<h3 id="issue-m4-2a-remove-html-heading-anchors-rely-on-kramdown-auto-slugs-387-closed">Issue M4-2a: Remove HTML <a id> heading anchors (rely on kramdown auto-slugs) (#387, closed)<a class="headerlink" href="#issue-m4-2a-remove-html-heading-anchors-rely-on-kramdown-auto-slugs-387-closed" title="Anchor link to this section">&para;</a></h3>
+<h3 id="issue-m4-2-remove-html-heading-anchors-rely-on-kramdown-auto-slugs-387-closed">Issue M4-2: Remove HTML <a id> heading anchors (rely on kramdown auto-slugs) (#387, closed)<a class="headerlink" href="#issue-m4-2-remove-html-heading-anchors-rely-on-kramdown-auto-slugs-387-closed" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: </p>
-<h2 id="description_42">Description<a class="headerlink" href="#description_42" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_41">Description<a class="headerlink" href="#description_41" title="Anchor link to this section">&para;</a></h2>
 <p>Split out of the M4 style audit (<code>docs/audits/M4-style-audit.md</code>, finding 4) — the docstring pass #268 is a <em>different</em> M4-2 task.  The <code>docs/STYLE_GUIDE.md</code> § Section headings rule says headings should be plain ATX, not wrapped in <code>&lt;a id="…"&gt;…&lt;/a&gt;</code>; the renderer (Jekyll + kramdown) auto-generates a slug id from each heading.  The audit found <strong>~300 such anchors across 111 files</strong>.  Pursue per-subtree, starting with <code>Setoid/</code> (~93 anchors / 43 files).</p>
 <h2 id="algorithm-per-anchor-level-a-idtagtexta">Algorithm (per anchor <code>&lt;level&gt; &lt;a id="TAG"&gt;TEXT&lt;/a&gt;</code>)<a class="headerlink" href="#algorithm-per-anchor-level-a-idtagtexta" title="Anchor link to this section">&para;</a></h2>
 <ul>
@@ -16390,13 +16564,28 @@ edits to those regions will be overwritten on the next render.
 <li><code>src/Legacy/**</code> is frozen and excluded from rewriting (but still scanned for references).</li>
 <li>Anchor changes are pure prose (outside <code>agda</code> fences); <code>make check</code> is unaffected but is run as the gate.</li>
 </ul>
-<h2 id="acceptance-criteria_43">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_43" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_42">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_42" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>rg -n '&lt;a id=' src/Setoid</code> is empty (after the <code>Setoid/</code> PR; further subtrees follow).</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> No cross-reference <code>#TAG</code> is left dangling.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>make check</code> passes.</li>
 </ul>
 <p>Part of Milestone 4 (style and naming uniformity sweep); see also the umbrella #267 and the audit #370.</p>
+<hr />
+<h3 id="issue-m4-2-docstring-pass-for-all-user-facing-definitions-268">Issue M4-2: Docstring pass for all user-facing definitions (#268)<a class="headerlink" href="#issue-m4-2-docstring-pass-for-all-user-facing-definitions-268" title="Anchor link to this section">&para;</a></h3>
+<p><strong>Labels</strong>: <code>documentation</code>, <code>milestone-4-style</code>, <code>help-wanted</code></p>
+<h2 id="description_42">Description<a class="headerlink" href="#description_42" title="Anchor link to this section">&para;</a></h2>
+<p>Every record, type family, and top-level function in the public API should have a prose comment block explaining what it is, when to use it, and cross-references to related definitions.  Long-tail task; pursue in small per-module PRs.</p>
+<h2 id="tasks_41">Tasks<a class="headerlink" href="#tasks_41" title="Anchor link to this section">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Walk every public module in <code>Setoid/</code> and add missing docstrings.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Walk every public module in <code>Classical/</code> and add missing docstrings.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Enforce via a linter or review checklist.</li>
+</ul>
+<h2 id="acceptance-criteria_43">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_43" title="Anchor link to this section">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>grep</code>-based audit finds zero public definitions without a preceding comment block.</li>
+</ul>
 <hr />
 <h3 id="issue-m4-3-design-discussion-scope-of-o-and-v-universe-variables-269-closed">Issue M4-3: Design discussion — scope of 𝓞 and 𝓥 universe variables (#269, closed)<a class="headerlink" href="#issue-m4-3-design-discussion-scope-of-o-and-v-universe-variables-269-closed" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>milestone-4-style</code>, <code>design-discussion</code></p>
@@ -16897,6 +17086,27 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <ul>
 <li><code>nix develop --command make check</code> passes (whole library).</li>
 </ul>
+<hr />
+<h3 id="issue-m4-17-style-improvements-and-general-clean-up-of-setoid-modules-434">Issue M4-17: style improvements and general clean up of Setoid modules (#434)<a class="headerlink" href="#issue-m4-17-style-improvements-and-general-clean-up-of-setoid-modules-434" title="Anchor link to this section">&para;</a></h3>
+<p><strong>Labels</strong>: <code>milestone-4-style</code></p>
+<h1 id="description_45">Description<a class="headerlink" href="#description_45" title="Anchor link to this section">&para;</a></h1>
+<p>Apply new style conventions uniformly across the Setoid tree.</p>
+<ul>
+<li>clean up syntax/code-style, e.g., using dot patterns, fewer parens, etc.;</li>
+<li>change from one- to two- space indentation convention;</li>
+<li>maybe add more prose describing what the theorems say/mean.</li>
+<li>remove unused imports (rerun "remove unused imports" script)</li>
+</ul>
+<h2 id="acceptance-criteria_54">Acceptance Criteria<a class="headerlink" href="#acceptance-criteria_54" title="Anchor link to this section">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> no violations of style conventions laid out in the STYLE_GUIDE doc</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> any style conventions followed uniformly across modules are documented in STYLE_GUIDE</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> any changes in style conventions are reflected in (updates to) the STYLE_GUIDE</li>
+</ul>
+<hr />
+<h3 id="issue-m4-18-move-demos-under-examples-436">Issue M4-18: Move Demos under Examples (#436)<a class="headerlink" href="#issue-m4-18-move-demos-under-examples-436" title="Anchor link to this section">&para;</a></h3>
+<p><strong>Labels</strong>: <code>milestone-4-style</code></p>
+<p><em>(no description on GitHub)</em></p>
 <!-- END GENERATED: milestone-4 -->
 
 <h2 id="-_4">---<a class="headerlink" href="#-_4" title="Anchor link to this section">&para;</a></h2>
@@ -16905,7 +17115,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 
 <h3 id="issue-m5-1-cubical-track-cubicalalgebrasbasic-with-sip-and-monoid-port-270">Issue M5-1: Cubical track — Cubical/Algebras/Basic with SIP and Monoid port (#270)<a class="headerlink" href="#issue-m5-1-cubical-track-cubicalalgebrasbasic-with-sip-and-monoid-port-270" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>milestone-5-cubical</code></p>
-<h2 id="description_45">Description<a class="headerlink" href="#description_45" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_46">Description<a class="headerlink" href="#description_46" title="Anchor link to this section">&para;</a></h2>
 <p>Cubical Agda is the canonical long-term target for this library.  This issue establishes the path: port the core algebra types, prove the structure identity principle (SIP), and demonstrate end-to-end workflow by porting Monoid from the Setoid-based Classical layer to a Cubical counterpart.  The ultimate goal is for Cubical to become the default development track in version 3.0, with <code>Setoid/</code> moving to Legacy.</p>
 <p>Design implication for M3: the Classical layer must be designed so that the Setoid-to-Cubical port is mechanical — equations stated purely in terms of the <code>Algebra</code> record's Domain equivalence, no Setoid-specific gadgets in the definitions of classical structures themselves.</p>
 <h2 id="tasks_45">Tasks<a class="headerlink" href="#tasks_45" title="Anchor link to this section">&para;</a></h2>
@@ -16916,7 +17126,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> End-to-end port: take <code>Classical/Structures/Monoid.agda</code> from the Setoid-based version (post M3-4) and produce the Cubical analog.  Verify that equations transport by substitution alone.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Write <code>docs/adr/003-cubical-canonical-target.md</code> explicitly planning the 3.0 transition and the criteria for promoting Cubical from experimental to canonical.</li>
 </ul>
-<h2 id="acceptance-criteria_54">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_54" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_55">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_55" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>Cubical/Algebras/Basic.agda</code> and <code>SIP.agda</code> compile under <code>--cubical</code>.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The <code>≅</code>-is-path theorem is proved.</li>
@@ -16960,7 +17170,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 
 <h3 id="issue-m6-1-cona-as-a-complete-lattice-271-closed">Issue M6-1: Con(A) as a complete lattice (#271, closed)<a class="headerlink" href="#issue-m6-1-cona-as-a-complete-lattice-271-closed" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>milestone-6-flrp</code></p>
-<h2 id="description_46">Description<a class="headerlink" href="#description_46" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_47">Description<a class="headerlink" href="#description_47" title="Anchor link to this section">&para;</a></h2>
 <p>The current <code>Setoid.Algebras.Congruences</code> defines congruences but does not organize them as a lattice.  For the FLRP, commutator theory, and subdirect product theorems, <code>Con 𝑨</code> as a complete lattice is foundational infrastructure.  Likely requires a congruence-generation theorem as a subsidiary result.</p>
 <h2 id="tasks_47">Tasks<a class="headerlink" href="#tasks_47" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
@@ -16973,7 +17183,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Zero and total congruences as <code>0ᴬ</code> and <code>1ᴬ</code>.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Subsidiary: congruence-generation theorem.</li>
 </ul>
-<h2 id="acceptance-criteria_55">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_55" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_56">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_56" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <code>Con-Lattice 𝑨</code> type-checks and satisfies the Lattice axioms.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Infinite meets and joins are proved.</li>
@@ -16982,7 +17192,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <hr />
 <h3 id="issue-m6-2-subdirect-products-and-subdirectly-irreducible-algebras-272-closed">Issue M6-2: Subdirect products and subdirectly irreducible algebras (#272, closed)<a class="headerlink" href="#issue-m6-2-subdirect-products-and-subdirectly-irreducible-algebras-272-closed" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>milestone-6-flrp</code></p>
-<h2 id="description_47">Description<a class="headerlink" href="#description_47" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_48">Description<a class="headerlink" href="#description_48" title="Anchor link to this section">&para;</a></h2>
 <p>Subdirect products and subdirect irreducibility are foundational for both the FLRP and for general universal-algebraic theorems (e.g. Birkhoff's subdirect representation theorem).</p>
 <h2 id="tasks_48">Tasks<a class="headerlink" href="#tasks_48" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
@@ -16991,7 +17201,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Birkhoff's subdirect representation theorem — the choice-free core is proved (<code>SIRep→Representable</code>: a separating SI-family of congruences yields a subdirect embedding into a product of SI algebras); <code>Birkhoff-subdirect</code> proves the full statement relative to an explicit choice principle (<code>SubdirectSIRep</code> existence), the Zorn step isolated as a module parameter rather than postulated.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> SI characterization via monolithic congruences — <code>monolith⇒cmi</code> (a monolith makes <code>0ᴬ</code> completely meet-irreducible) and the binary instance <code>monolith⇒∧-irreducible</code> (<code>0ᴬ</code> is meet-irreducible); plus <code>monolith-unique</code>.</li>
 </ul>
-<h2 id="acceptance-criteria_56">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_56" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_57">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_57" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Subdirect product construction type-checks — <code>Setoid.Subalgebras.Subdirect</code> type-checks under <code>make check</code>.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Birkhoff's subdirect representation theorem is proved — constructive core in full; the choice-dependent existence is an explicit module parameter (mirrors M6-3's handling of choice-dependent theorems).  See the design note.</li>
@@ -17007,7 +17217,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <hr />
 <h3 id="issue-m6-3-basic-maltsev-conditions-cd-cm-cp-273-closed">Issue M6-3: Basic Maltsev conditions (CD, CM, CP) (#273, closed)<a class="headerlink" href="#issue-m6-3-basic-maltsev-conditions-cd-cm-cp-273-closed" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>milestone-6-flrp</code>, <code>design-discussion</code></p>
-<h2 id="description_48">Description<a class="headerlink" href="#description_48" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_49">Description<a class="headerlink" href="#description_49" title="Anchor link to this section">&para;</a></h2>
 <p>Maltsev conditions characterize varieties by the existence of terms with specific properties.  The three most basic are congruence distributivity (CD), congruence modularity (CM), and congruence permutability (CP).  For the FLRP, congruence modularity is particularly relevant because modular congruence lattices are a natural testing ground for representation questions.</p>
 <p>Design discussion: how to encode Maltsev conditions uniformly?  Options include (a) a record bundling a term and its identities; (b) an inductive type of schemes.  Lift from Taylor 1977 where possible.</p>
 <h2 id="tasks_49">Tasks<a class="headerlink" href="#tasks_49" title="Anchor link to this section">&para;</a></h2>
@@ -17018,7 +17228,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> CP iff a Maltsev term exists — forward direction <code>MaltsevTerm⇒CP</code> / <code>maltsev⇒CP</code> (M6-3, #409); converse <code>CP⇒maltsev</code> (<code>Setoid.Varieties.MaltsevConditions</code>, M6-5, #411) inhabiting <code>CP⇒maltsev-Statement</code>, built on the free-algebra bridge (<code>Setoid.Varieties.FreeBridge</code>, M6-4, #410).</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Day's theorem for CM — stated (<code>Day-Statement</code>); proof tracked in #412 (forward) and #413 (converse).</li>
 </ul>
-<h2 id="acceptance-criteria_57">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_57" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_58">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_58" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> At least CP's Maltsev-term characterization is proved — <code>MaltsevTerm⇒CP</code> / <code>maltsev⇒CP</code> in <code>Setoid.Varieties.MaltsevConditions</code> (the concrete "term ⟹ permutable" direction).</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Jónsson's theorem and Day's theorem are either proved or have a clear stub indicating what remains — both stated as checked, uninhabited <code>Type</code>s, with construction plans in <code>docs/notes/m6-3-maltsev-conditions.md</code>.</li>
@@ -17036,7 +17246,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <hr />
 <h3 id="issue-m6-4-free-algebra-congruencederivability-bridge-infrastructure-for-the-maltsev-condition-converses-410-closed">Issue M6-4: Free-algebra congruence/derivability bridge (infrastructure for the Maltsev-condition converses) (#410, closed)<a class="headerlink" href="#issue-m6-4-free-algebra-congruencederivability-bridge-infrastructure-for-the-maltsev-condition-converses-410-closed" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>milestone-6-flrp</code></p>
-<h2 id="description_49">Description<a class="headerlink" href="#description_49" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_50">Description<a class="headerlink" href="#description_50" title="Anchor link to this section">&para;</a></h2>
 <p>The <em>converse</em> directions of the basic Maltsev conditions (a lattice property of <code>Con 𝑨</code> ⟹ the existence of terms) are all proved the same way: read equational identities off the congruences of the relatively free algebra <code>𝔽[ X ]</code>.  This issue builds the <strong>reusable bridge</strong> that all of them need — between the generated congruence <code>Cg R</code> on <code>𝔽[ X ]</code> and derivability <code>_⊢_▹_≈_</code> — so the converse issues ([M6-5], [M6-7]) can consume it rather than each re-deriving it.</p>
 <p>It is the single biggest lever identified in the M6-3 design note: built once, it unlocks the CP, CD, and CM converses.</p>
 <h2 id="background">Background<a class="headerlink" href="#background" title="Anchor link to this section">&para;</a></h2>
@@ -17055,7 +17265,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <ul>
 <li>None beyond what M6-3 (#273, PR #409) landed.  This is the prerequisite for [M6-5] and [M6-7].</li>
 </ul>
-<h2 id="acceptance-criteria_58">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_58" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_59">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_59" title="Anchor link to this section">&para;</a></h2>
 <ul>
 <li>The bridge lemmas type-check under <code>--cubical-compatible --exact-split --safe</code>.</li>
 <li>At least one smoke-test consumer: recover a single derivable identity from a principal-congruence membership on <code>𝔽[ X ]</code>.</li>
@@ -17072,7 +17282,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <hr />
 <h3 id="issue-m6-4-suba-as-a-complete-lattice-next-setoidalgebraslattices-instance-373-closed">Issue M6-4: Sub(A) as a complete lattice (next Setoid.Algebras.Lattices instance) (#373, closed)<a class="headerlink" href="#issue-m6-4-suba-as-a-complete-lattice-next-setoidalgebraslattices-instance-373-closed" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>milestone-6-flrp</code></p>
-<h2 id="description_50">Description<a class="headerlink" href="#description_50" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_51">Description<a class="headerlink" href="#description_51" title="Anchor link to this section">&para;</a></h2>
 <p>With the congruence lattice now in place (<a href="https://github.com/ualib/agda-algebras/issues/271">#271</a>, modules <code>Setoid.Algebras.Congruences.{Lattice,Generation,CompleteLattice}</code> plus the general <code>Setoid.Algebras.Lattices.CompleteLattice</code> record), the natural companion is the <strong>subalgebra lattice</strong>: the subuniverses of a setoid algebra <code>𝑨</code>, ordered by inclusion, form a complete lattice <code>Sub 𝑨</code>.  This is the second motivating instance of the <code>CompleteLattice</code> record and is foundational for the FLRP (every finite lattice question is, after all, about lattices of the form <code>Con 𝑨</code> / <code>Sub 𝑨</code>).</p>
 <p>Most of the hard work already exists in <code>Setoid.Subalgebras.Subuniverses</code>:</p>
 <ul>
@@ -17090,7 +17300,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Infinitary meet <code>⋂</code> (via <code>⋂s</code>) and join <code>Sg(⋃ …)</code>; <code>Sub-CompleteLattice</code> instantiating the <code>CompleteLattice</code> record.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> A small worked example.</li>
 </ul>
-<h2 id="acceptance-criteria_59">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_59" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_60">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_60" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>Sub-Lattice 𝑨</code> / <code>Sub-CompleteLattice 𝑨</code> type-check and satisfy the (complete-)lattice axioms.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Bounds proved as <code>⊥</code>/<code>⊤</code>.</li>
@@ -17104,7 +17314,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <hr />
 <h3 id="issue-m6-5-converse-of-maltsevs-theorem-congruence-permutable-maltsev-term-411-closed">Issue M6-5: Converse of Maltsev's theorem: congruence-permutable ⟹ Maltsev term (#411, closed)<a class="headerlink" href="#issue-m6-5-converse-of-maltsevs-theorem-congruence-permutable-maltsev-term-411-closed" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>milestone-6-flrp</code></p>
-<h2 id="description_51">Description<a class="headerlink" href="#description_51" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_52">Description<a class="headerlink" href="#description_52" title="Anchor link to this section">&para;</a></h2>
 <p>Complete the <strong>congruence-permutability</strong> characterization by proving the converse of Maltsev's theorem: a congruence-permutable variety has a Maltsev term.  Concretely, inhabit <code>CP⇒maltsev-Statement</code> in <code>Setoid.Varieties.MaltsevConditions</code>.  M6-3 (#273, PR #409) proved the forward direction (<code>MaltsevTerm⇒CP</code>); together they give the iff.</p>
 <h2 id="background_1">Background<a class="headerlink" href="#background_1" title="Anchor link to this section">&para;</a></h2>
 <p>Construction (Burris–Sankappanavar, Thm. 12.2), detailed in <code>docs/notes/m6-3-maltsev-conditions.md</code>:</p>
@@ -17125,7 +17335,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <ul>
 <li>[M6-4] (#410) — the free-algebra congruence/derivability bridge.  This is the smallest client of that bridge and a good first validation of it.</li>
 </ul>
-<h2 id="acceptance-criteria_60">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_60" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_61">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_61" title="Anchor link to this section">&para;</a></h2>
 <ul>
 <li><code>CP⇒maltsev-Statement</code> is inhabited; with <code>maltsev⇒CP</code>, congruence permutability is characterized by the Maltsev term (a complete iff).</li>
 </ul>
@@ -17141,7 +17351,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <hr />
 <h3 id="issue-m6-5-worked-example-the-subgroup-lattice-of-a-concrete-finite-group-374-closed">Issue M6-5: Worked example: the subgroup lattice of a concrete finite group (#374, closed)<a class="headerlink" href="#issue-m6-5-worked-example-the-subgroup-lattice-of-a-concrete-finite-group-374-closed" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>milestone-6-flrp</code></p>
-<h2 id="description_52">Description<a class="headerlink" href="#description_52" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_53">Description<a class="headerlink" href="#description_53" title="Anchor link to this section">&para;</a></h2>
 <p>Follow-up to the subalgebra-lattice infrastructure (#373).  Once <code>Sub 𝑨</code> is available as a complete lattice, a compelling worked example is the <strong>subgroup lattice of a concrete finite group</strong> — e.g. <code>ℤ/4ℤ</code> (the 3-element chain <code>0 &lt; ⟨2⟩ &lt; ℤ/4ℤ</code>), the Klein four-group <code>V₄</code> (the diamond <code>M₃</code>-minus, i.e. <code>2³</code>-style with three order-2 subgroups), or <code>S₃</code> (the well-known six-subgroup lattice).</p>
 <p>This is separated from #373 because it is a sizeable undertaking on its own:</p>
 <ul>
@@ -17149,7 +17359,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li>identify the subuniverses (= subgroups, since the signature includes inverse and identity);</li>
 <li>classify them and exhibit the lattice order, ideally matching a known finite lattice.</li>
 </ul>
-<h2 id="acceptance-criteria_61">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_61" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_62">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_62" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> A concrete finite group built as a <code>Setoid</code> algebra.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Its subgroups exhibited as elements of <code>Sub 𝑨</code>, with the lattice order between them.</li>
@@ -17162,12 +17372,13 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <hr />
 <h3 id="issue-m6-6-forward-jonssonday-jonsson-terms-cd-and-day-terms-cm-412">Issue M6-6: Forward Jónsson/Day: Jónsson terms ⟹ CD and Day terms ⟹ CM (#412)<a class="headerlink" href="#issue-m6-6-forward-jonssonday-jonsson-terms-cd-and-day-terms-cm-412" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>enhancement</code>, <code>milestone-6-flrp</code></p>
-<h2 id="description_53">Description<a class="headerlink" href="#description_53" title="Anchor link to this section">&para;</a></h2>
-<p>Prove the "terms ⟹ lattice property" halves of Jónsson's and Day's theorems: a variety with Jónsson terms is congruence-distributive, and a variety with Day terms is congruence-modular.  These are the <strong>second</strong> projections of <code>Jonsson-Statement</code> and <code>Day-Statement</code> in <code>Setoid.Varieties.MaltsevConditions</code>: with <code>P ⇔ Q = (P → Q) × (Q → P)</code> and <code>Jonsson-Statement = CongruenceDistributiveVariety ⇔ (Σ n, HasJonssonTerms n)</code>, the term ⟹ CD direction is <code>proj₂</code> (<code>Q → P</code>), not the first projection.  (The original text said "first projections"; corrected here.)</p>
+<h2 id="description_54">Description<a class="headerlink" href="#description_54" title="Anchor link to this section">&para;</a></h2>
+<p>Prove the "terms ⟹ lattice property" halves of Jónsson's and Day's theorems: a variety with Jónsson terms is congruence-distributive, and a variety with Day terms is congruence-modular.  These are the <strong>second</strong> projections of <code>Jonsson-Statement</code> and <code>Day-Statement</code> in the <code>Setoid.Varieties.Maltsev</code> subtree (<code>Jonsson-Statement</code> in <code>Maltsev.Distributivity</code>, <code>Day-Statement</code> in <code>Maltsev.Modularity</code>): with <code>P ⇔ Q = (P → Q) × (Q → P)</code> and <code>Jonsson-Statement = CongruenceDistributiveVariety ⇔ (Σ n, HasJonssonTerms n)</code>, the term ⟹ CD direction is <code>proj₂</code> (<code>Q → P</code>), not the first projection.  (The original text said "first projections"; corrected here.)</p>
 <p>These halves are independent of [M6-4] (#410): they use the chain terms available on every algebra via the interpretation, plus <code>term-compatible</code> and an induction over the join.</p>
 <h2 id="status-pr-428">Status (PR #428)<a class="headerlink" href="#status-pr-428" title="Anchor link to this section">&para;</a></h2>
 <p><strong>Forward Jónsson: DONE — including the featured finitary theorem, unconditionally.</strong></p>
 <ul>
+<li>The former monolithic <code>MaltsevConditions</code> module was split into <code>Setoid.Varieties.Maltsev.{Basic,Permutability,Distributivity,Modularity}</code> (re-exported by the <code>Setoid.Varieties.Maltsev</code> umbrella); the Jónsson development lives in <code>Maltsev.Distributivity</code>.</li>
 <li>Generalized the curried-term extraction from one ternary symbol to the <code>Fin (n+1)</code> Jónsson chain (<code>d𝑩</code> / <code>eval-d</code> / <code>d-fst</code> / <code>d-lst</code> / <code>d-mid</code> / <code>d-compat</code>).</li>
 <li>The two-part staircase: the horizontal lemma (induction on the chain) and the vertical induction over the rungs (<code>Data.Fin.Induction.&lt;-weakInduction</code>, whose <code>inject₁ i → suc i</code> step lines up with the parity-split fork <code>d-fork i</code>).</li>
 <li><code>jonsson⇒chainDistributive</code> — the forward inclusion <code>θ ∧ (φ ∨ ψ) ⊆ (θ∧φ) ∨ (θ∧ψ)</code> <strong>along every chain</strong>, fully general (no finiteness).</li>
@@ -17175,7 +17386,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li><strong><code>jonsson-finitary⇒CongruenceDistributiveVariety</code> — the featured theorem</strong>: a variety over a finitary signature with Jónsson terms is congruence-distributive, with <strong>no residual side condition</strong>.  This is the form a working algebraist applies; universal algebra in practice means finitary algebras.</li>
 </ul>
 <p><strong>The Gen-vs-chain obstruction: named once, then discharged for finitary signatures.</strong>  The library's join is <code>Cg(φ ∪ ψ) = Gen(φ ∪ ψ)</code>, the inductively-generated congruence whose <code>comp</code> constructor closes it under the basic operations (necessary and correct for <em>infinitary</em> signatures, whose arities are arbitrary types).  The Jónsson-term "sandwich" relation <code>dᵢ(a,u,b) γ dᵢ(a,v,b)</code> is provably <strong>not</strong> closed under <code>comp</code>, so a direct <code>Gen</code>-induction cannot carry the staircase, and for an infinitary signature the join strictly exceeds the finite-chain closure.  The forward theorem is therefore proved against <code>Chain</code> in full generality, the lone missing step <code>Gen(φ ∪ ψ) ⊆ Chain</code> is isolated as the explicit hypothesis <code>JoinIsChain</code>, and that hypothesis is then <strong>discharged</strong> for finitary signatures in the new module <code>Setoid.Congruences.ChainJoin</code> (<code>finitary⇒JoinIsChain</code>): <code>Chain 𝑩 (φ ∪ᵣ ψ)</code> is shown to be a congruence (operation-closed via the one-coordinate-at-a-time fold <code>chain-op</code> over a finite-arity enumeration <code>Finitary 𝑆</code>), hence contains the generated join by <code>Cg-least</code>.  The <code>Examples.Setoid.FinitarySignatures</code> module shows the <code>Finitary</code> witness is a hoop-free one-liner (<code>λ _ → _ , ↔-id _</code>).</p>
-<p><strong>Forward Day: DEFERRED INDEFINITELY — not a mechanical mirror.</strong>  Day's <code>mᵢ(x,y,y,x) ≈ x</code> pinning requires the two middle arguments <em>equal</em>, so only <code>mᵢ(a,c,c,b)</code> is ψ-pinnable; the even-fork column <code>mᵢ(a,a,b,b)</code> is not, and connecting it would demand a single-slot <code>a ↔ b</code> move that is not a <code>θ∨(φ∧ψ)</code>-step.  Jónsson's clean two-column staircase has no analogue; Day's theorem needs the genuinely 2-dimensional / <code>A²</code> construction of Day 1969.  Beyond the structural asymmetry, the forward Day proof is technical and is carried out in neither <em>Algebras, Lattices, Varieties</em> (McKenzie–McNulty–Taylor) nor Bergman's <em>Universal Algebra</em> (which states the result but explicitly declines to prove it), and no module in the library consumes it.  It is therefore held off indefinitely; the module prose and <code>docs/notes/m6-6-forward-jonsson-day.md</code> record the right construction so a successor picks it up only when a concrete need arises.</p>
+<p><strong>Forward Day: DEFERRED INDEFINITELY — not a mechanical mirror.</strong>  Day's <code>mᵢ(x,y,y,x) ≈ x</code> pinning requires the two middle arguments <em>equal</em>, so only <code>mᵢ(a,c,c,b)</code> is ψ-pinnable; the even-fork column <code>mᵢ(a,a,b,b)</code> is not, and connecting it would demand a single-slot <code>a ↔ b</code> move that is not a <code>θ∨(φ∧ψ)</code>-step.  Jónsson's clean two-column staircase has no analogue; Day's theorem needs the genuinely 2-dimensional / <code>A²</code> construction of Day 1969.  Beyond the structural asymmetry, the forward Day proof is technical and is carried out in neither <em>Algebras, Lattices, Varieties</em> (McKenzie–McNulty–Taylor) nor Bergman's <em>Universal Algebra</em> (which states the result but explicitly declines to prove it), and no module in the library consumes it.  It is therefore held off indefinitely; the module prose (<code>Setoid.Varieties.Maltsev.Modularity</code>) and <code>docs/notes/m6-6-forward-jonsson-day.md</code> record the right construction so a successor picks it up only when a concrete need arises.</p>
 <h2 id="remaining-tasks">Remaining tasks<a class="headerlink" href="#remaining-tasks" title="Anchor link to this section">&para;</a></h2>
 <ul>
 <li><strong>Day terms ⟹ CM</strong> (deferred indefinitely): the 2-dimensional staircase for the modular law <code>θ ≤ ψ → (θ ∨ φ) ∧ ψ ⊆ θ ∨ (φ ∧ ψ)</code> (Day 1969; Burris–Sankappanavar II.12.4).  The curried extraction mirrors Jónsson; the staircase does not.  This is the only open item on this issue and may be split into a dedicated follow-up.</li>
@@ -17184,7 +17395,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <ul>
 <li>None beyond M6-3 (#273, PR #409): reuses <code>term-compatible</code>, the curried-extraction pattern, and the congruence lattice (<code>Setoid.Congruences.{Lattice,Generation,Properties}</code>).  Independent of [M6-4] (#410).</li>
 </ul>
-<h2 id="acceptance-criteria_62">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_62" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_63">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_63" title="Anchor link to this section">&para;</a></h2>
 <ul>
 <li>Forward Jónsson type-checks under <code>--safe</code>; the term ⟹ CD direction of Jónsson's theorem is done, and the <strong>finitary</strong> version is unconditional.  ✅ (PR #428; <code>make check</code> passes.)</li>
 <li>Forward Day remains the only open item, deferred indefinitely — this issue stays open for it (or is split into a follow-up).</li>
@@ -17204,7 +17415,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <hr />
 <h3 id="issue-m6-7-converse-jonssonday-cd-jonsson-terms-and-cm-day-terms-413">Issue M6-7: Converse Jónsson/Day: CD ⟹ Jónsson terms and CM ⟹ Day terms (#413)<a class="headerlink" href="#issue-m6-7-converse-jonssonday-cd-jonsson-terms-and-cm-day-terms-413" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>enhancement</code>, <code>milestone-6-flrp</code>, <code>research-exploratory</code></p>
-<h2 id="description_54">Description<a class="headerlink" href="#description_54" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_55">Description<a class="headerlink" href="#description_55" title="Anchor link to this section">&para;</a></h2>
 <p>Complete Jónsson's and Day's theorems with the hard "lattice property ⟹ terms" directions: a congruence-distributive variety has Jónsson terms, and a congruence-modular variety has Day terms.  These inhabit the <em>second</em> projections of <code>Jonsson-Statement</code> and <code>Day-Statement</code> in <code>Setoid.Varieties.MaltsevConditions</code>, turning both into complete iffs.</p>
 <p>This is the research-grade end of the M6-3 track.  Beyond the [M6-4] (#410) bridge, it requires extracting the <strong>chain length <code>n</code></strong> and the terms <code>dᵢ</code> / <code>mᵢ</code> from the inductive derivation witnessing a join membership — the source of the <code>Σ[ n ∈ ℕ ]</code> in the statements, and the part with no off-the-shelf analogue in the library.</p>
 <h2 id="background_2">Background<a class="headerlink" href="#background_2" title="Anchor link to this section">&para;</a></h2>
@@ -17225,7 +17436,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li>[M6-4] (#410) — the free-algebra congruence/derivability bridge.</li>
 <li>[M6-6] (#412) — the chain-term extraction and the forward halves (reused for the parity bookkeeping and the curried chain operations).</li>
 </ul>
-<h2 id="acceptance-criteria_63">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_63" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_64">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_64" title="Anchor link to this section">&para;</a></h2>
 <ul>
 <li>Both converse implications type-check under <code>--safe</code>; Jónsson's and Day's theorems are complete iffs.</li>
 </ul>
@@ -17243,7 +17454,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <hr />
 <h3 id="issue-m6-8-finite-birkhoff-discharge-subdirectsirep-constructively-for-finite-algebras-with-decidable-equality-419-closed">Issue M6-8: Finite Birkhoff: discharge SubdirectSIRep constructively for finite algebras with decidable equality (#419, closed)<a class="headerlink" href="#issue-m6-8-finite-birkhoff-discharge-subdirectsirep-constructively-for-finite-algebras-with-decidable-equality-419-closed" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>enhancement</code>, <code>milestone-6-flrp</code></p>
-<h2 id="description_55">Description<a class="headerlink" href="#description_55" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_56">Description<a class="headerlink" href="#description_56" title="Anchor link to this section">&para;</a></h2>
 <p>[M6-2] (#272, PR #418) proved the choice-free core of Birkhoff's subdirect representation theorem: the bridge <code>separating→SubdirectEmbedding</code> (a family of congruences whose meet is the diagonal embeds <code>𝑨</code> subdirectly into the product of its quotients) and the reduction <code>SIRep→Representable</code>.  The full theorem <code>Birkhoff-subdirect</code> is stated <em>relative to</em> a module parameter <code>SubdirectSIRep 𝑨</code> — the existence of a separating family of SI-quotient congruences — because producing it in general is a Zorn's-lemma step (a congruence maximal among those excluding a given pair), incompatible with postulate-free <code>--safe</code>.</p>
 <p>For <strong>finite algebras with decidable setoid equality</strong> that parameter can be <em>discharged constructively</em>: the congruence lattice is finite and searchable, so for each pair <code>a ≢ b</code> one finds a congruence maximal among those not relating <code>a , b</code> by search.  Such a congruence is completely meet-irreducible, hence its quotient is subdirectly irreducible (via the monolith characterization in <code>Setoid.Congruences.Monolith</code>), and the family over all distinct pairs separates points.  This turns <code>Birkhoff-subdirect</code> into an <em>unconditional</em> theorem on finite algebras — and finiteness is exactly the FLRP setting, so this is the payoff direction.</p>
 <p>This is option (b) of the M6-2 design note (<code>docs/notes/m6-2-subdirect.md</code>).</p>
@@ -17258,7 +17469,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <ul>
 <li>[M6-2] (#272, PR #418) — <code>Setoid.Subalgebras.Subdirect</code> (the bridge, <code>SubdirectSIRep</code>, <code>Birkhoff-subdirect</code>) and <code>Setoid.Congruences.Monolith</code> (SI via monolith, <code>monolith⇒cmi</code>).</li>
 </ul>
-<h2 id="acceptance-criteria_64">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_64" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_65">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_65" title="Anchor link to this section">&para;</a></h2>
 <ul>
 <li>A constructive <code>SubdirectSIRep 𝑨</code> for finite algebras with decidable equality, and <code>Birkhoff-subdirect</code> instantiated to an unconditional subdirect-representation theorem on that class, type-checking under <code>--cubical-compatible --exact-split --safe</code>.</li>
 </ul>
@@ -17272,7 +17483,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <hr />
 <h3 id="issue-m6-9-the-completely-meet-irreducible-monolith-converse-needs-an-impredicativeresized-congruence-meet-420">Issue M6-9: The completely-meet-irreducible ⟹ monolith converse (needs an impredicative/resized congruence meet) (#420)<a class="headerlink" href="#issue-m6-9-the-completely-meet-irreducible-monolith-converse-needs-an-impredicativeresized-congruence-meet-420" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>enhancement</code>, <code>milestone-6-flrp</code>, <code>design-discussion</code></p>
-<h2 id="description_56">Description<a class="headerlink" href="#description_56" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_57">Description<a class="headerlink" href="#description_57" title="Anchor link to this section">&para;</a></h2>
 <p><code>Setoid.Congruences.Monolith</code> (from [M6-2] (#272, PR #418)) proves the useful direction of the subdirect-irreducibility characterization: a monolith makes <code>0ᴬ</code> completely meet-irreducible (<code>monolith⇒cmi</code>, in the constructive contrapositive form "every member of a family nonzero ⟹ the meet is nonzero").</p>
 <p>The <strong>converse</strong> — <code>0ᴬ</code> completely meet-irreducible ⟹ a monolith exists — is not proved, for a predicativity reason.  The natural construction takes the monolith to be <code>μ = ⋀ { θ : Nonzero θ }</code>, the meet of <em>all</em> nonzero congruences; but that family is indexed by <code>Σ[ θ ∈ Con 𝑨 ℓ ] Nonzero θ</code>, which lives one universe up, so the meet lands at a level <code>ℓ′ &gt; ℓ</code> and is not a monolith <em>at level <code>ℓ</code></em>.  This is the same predicativity wall the complete-lattice construction meets (completeness only for <code>ℓ₀</code>-small families).</p>
 <h2 id="tasks_55">Tasks<a class="headerlink" href="#tasks_55" title="Anchor link to this section">&para;</a></h2>
@@ -17285,7 +17496,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <ul>
 <li>[M6-2] (#272, PR #418) — <code>Setoid.Congruences.Monolith</code> (<code>IsMonolith</code>, <code>Nonzero</code>, <code>⋂</code>, <code>monolith⇒cmi</code>).</li>
 </ul>
-<h2 id="acceptance-criteria_65">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_65" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_66">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_66" title="Anchor link to this section">&para;</a></h2>
 <ul>
 <li><code>cmi ⟹ HasMonolith</code> proved (at the appropriate level / under the stated resizing assumption), completing the SI ⟺ completely-meet-irreducible characterization, type-checking under <code>--safe</code>.</li>
 </ul>
@@ -17298,7 +17509,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <hr />
 <h3 id="issue-m6-10-subdirectly-irreducible-no-nontrivial-subdirect-decomposition-the-structural-characterization-421-closed">Issue M6-10: Subdirectly irreducible ⟺ no nontrivial subdirect decomposition (the structural characterization) (#421, closed)<a class="headerlink" href="#issue-m6-10-subdirectly-irreducible-no-nontrivial-subdirect-decomposition-the-structural-characterization-421-closed" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>enhancement</code>, <code>milestone-6-flrp</code></p>
-<h2 id="description_57">Description<a class="headerlink" href="#description_57" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_58">Description<a class="headerlink" href="#description_58" title="Anchor link to this section">&para;</a></h2>
 <p><code>Setoid.Congruences.Monolith</code> (from [M6-2] (#272, PR #418)) <em>defines</em> subdirect irreducibility order-theoretically: <code>IsSubdirectlyIrreducible 𝑨 = Nontrivial 𝑨 × HasMonolith 𝑨</code>.  What makes the name apt is the <strong>structural</strong> characterization: <code>𝑨</code> is subdirectly irreducible iff it has no nontrivial subdirect decomposition — i.e. in every subdirect embedding <code>𝑨 ↪ ⨅ 𝒜</code>, some coordinate projection <code>projᵢ ∘ h</code> is an isomorphism.  This issue proves that equivalence, tying <code>Setoid.Congruences.Monolith</code> to <code>Setoid.Subalgebras.Subdirect</code>.</p>
 <h2 id="tasks_56">Tasks<a class="headerlink" href="#tasks_56" title="Anchor link to this section">&para;</a></h2>
 <ul>
@@ -17311,7 +17522,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li>[M6-2] (#272, PR #418) — <code>Setoid.Subalgebras.Subdirect</code> and <code>Setoid.Congruences.Monolith</code>.</li>
 <li>Likely interacts with [M6-8] (finite/decidable extraction) and [M6-9] (the converse's predicativity).</li>
 </ul>
-<h2 id="acceptance-criteria_66">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_66" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_67">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_67" title="Anchor link to this section">&para;</a></h2>
 <ul>
 <li>The equivalence (at least the constructive direction, with the converse proved or its cost documented) type-checks under <code>--safe</code>, connecting <code>IsSubdirectlyIrreducible</code> to subdirect decompositions.</li>
 </ul>
@@ -17342,7 +17553,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 
 <h3 id="issue-m7-1-extend-complexity-module-beyond-basic-and-csp-274">Issue M7-1: Extend Complexity module beyond Basic and CSP (#274)<a class="headerlink" href="#issue-m7-1-extend-complexity-module-beyond-basic-and-csp-274" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>milestone-7-csp</code>, <code>design-discussion</code></p>
-<h2 id="description_58">Description<a class="headerlink" href="#description_58" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_59">Description<a class="headerlink" href="#description_59" title="Anchor link to this section">&para;</a></h2>
 <p>The current <code>Base.Complexity</code> module has only two submodules (<code>Basic</code> and <code>CSP</code>).  The CSP module is little more than a bare definition with no theorems.  This is a separate research track from the FLRP (M6): the FLRP is about which lattices arise as congruence lattices of finite algebras, while finite-template algebraic CSP is about the complexity of constraint satisfaction problems as a function of the polymorphism clone of the underlying finite relational structure.  Both use universal algebra, but they are different questions.  Infinite-template extensions (ω-categorical, Bodirsky–Pinsker) are covered separately under M9-2.</p>
 <p>This issue is research-flavored and best decomposed after discussion.</p>
 <h2 id="tasks_57">Tasks<a class="headerlink" href="#tasks_57" title="Anchor link to this section">&para;</a></h2>
@@ -17354,7 +17565,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Specific CSP tractability classes as worked examples (Horn-SAT, 2-SAT, linear systems over finite fields).</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Statement (not necessarily proof) of the Bulatov–Zhuk algebraic dichotomy.</li>
 </ul>
-<h2 id="acceptance-criteria_67">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_67" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_68">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_68" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Polymorphism clones available as a type with basic operations.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Jeavons Galois connection is proved for a fixed finite domain, OR a clear research-plan issue is filed continuing the work.</li>
@@ -17369,7 +17580,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 
 <h3 id="issue-m8-1-publish-theorem-proof-corpus-for-llm-training-275">Issue M8-1: Publish (theorem, proof) corpus for LLM training (#275)<a class="headerlink" href="#issue-m8-1-publish-theorem-proof-corpus-for-llm-training-275" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>documentation</code>, <code>milestone-8-llm</code></p>
-<h2 id="description_59">Description<a class="headerlink" href="#description_59" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_60">Description<a class="headerlink" href="#description_60" title="Anchor link to this section">&para;</a></h2>
 <p>Once <code>Setoid/</code> and <code>Classical/</code> are stable post-M4, publish a training and retrieval corpus for language models.</p>
 <h2 id="tasks_58">Tasks<a class="headerlink" href="#tasks_58" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
@@ -17379,7 +17590,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add a CI job that regenerates the corpus on each release.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Write a short paper or blog post describing the dataset.</li>
 </ul>
-<h2 id="acceptance-criteria_68">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_68" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_69">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_69" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Dataset published with ≥ 500 (theorem, proof) records.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> CI regenerates on release.</li>
@@ -17388,7 +17599,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <hr />
 <h3 id="issue-m8-2-explore-integration-with-agda-native-air-276">Issue M8-2: Explore integration with agda-native-air (#276)<a class="headerlink" href="#issue-m8-2-explore-integration-with-agda-native-air-276" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>milestone-8-llm</code>, <code>design-discussion</code></p>
-<h2 id="description_60">Description<a class="headerlink" href="#description_60" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_61">Description<a class="headerlink" href="#description_61" title="Anchor link to this section">&para;</a></h2>
 <p><code>agda-native-air</code> (a parallel project on AI-assisted formal proof) is a natural consumer of the agda-algebras corpus.  This issue tracks the integration.  Exploratory; low-priority until <code>agda-native-air</code> stabilizes.</p>
 <h2 id="tasks_59">Tasks<a class="headerlink" href="#tasks_59" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
@@ -17396,7 +17607,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Identify any agda-algebras design choices that help or hinder agda-native-air consumption.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Write an integration report.</li>
 </ul>
-<h2 id="acceptance-criteria_69">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_69" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_70">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_70" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Integration report exists in <code>docs/integration-agda-native-air.md</code>.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Any design changes required are filed as separate issues.</li>
@@ -17409,7 +17620,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 
 <h3 id="issue-m9-1-scott-continuous-relations-on-dcpos-using-relationscontinuous-282">Issue M9-1: Scott-continuous relations on DCPOs using <code>Relations.Continuous</code> (#282)<a class="headerlink" href="#issue-m9-1-scott-continuous-relations-on-dcpos-using-relationscontinuous-282" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>design-discussion</code>, <code>milestone-9-apps</code></p>
-<h2 id="description_61">Description<a class="headerlink" href="#description_61" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_62">Description<a class="headerlink" href="#description_62" title="Anchor link to this section">&para;</a></h2>
 <p>The <code>Base.Relations.Continuous</code> formalization generalizes classical relations: the arity is an arbitrary type rather than a natural number, and compatibility with an operation is stated pointwise over that arity.  That shape turns out to be the right one for a notion with a distinguished mathematical pedigree: <strong>Scott-continuous relations on directed-complete partial orders (DCPOs)</strong>.</p>
 <p>A relation <code>R ⊆ X × Y</code> between DCPOs is <em>Scott-continuous</em> when, for every directed family <code>{(xᵢ, yᵢ)}ᵢ∈I</code> in <code>R</code>, the supremum <code>(⊔ xᵢ, ⊔ yᵢ)</code> is again in <code>R</code>.  This is a statement about arbitrary-arity suprema — the index set <code>I</code> is genuinely arbitrary — and factors through the continuous-relation API naturally.</p>
 <p>The broader context is <em>domain theory</em> in the Scott sense, which underlies the denotational semantics of typed lambda calculi, topologically-enriched model theory and partial-function spaces, and constructive analysis via Escardó's work on exhaustively searchable sets.  The Escardó connection is worth flagging: his LICS 2007 result "Infinite sets that admit fast exhaustive search" characterizes searchable sets via a topological continuity condition on their decision procedures, and provides a computability-flavored reason to care about Scott-continuous relations on specific DCPOs such as the Cantor space.</p>
@@ -17421,7 +17632,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> At least one non-trivial example: the graph of a Scott-continuous function is Scott-continuous as a relation; conversely, a single-valued Scott-continuous relation is the graph of a Scott-continuous function.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Optional stretch goal: a path to Escardó's characterization of searchable sets, formalized as far as tractable.  If <code>TypeTopology</code> is the cleanest source, import from there rather than re-derive.</li>
 </ul>
-<h2 id="acceptance-criteria_70">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_70" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_71">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_71" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> DCPO record and ScottContinuous predicate type-check.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The graph-of-continuous-function ↔ single-valued-continuous-relation characterization is proved.</li>
@@ -17439,7 +17650,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <hr />
 <h3 id="issue-m9-2-infinitary-csp-over-categorical-templates-via-continuous-relations-281">Issue M9-2: Infinitary CSP over ω-categorical templates via continuous relations (#281)<a class="headerlink" href="#issue-m9-2-infinitary-csp-over-categorical-templates-via-continuous-relations-281" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>design-discussion</code>, <code>milestone-9-apps</code></p>
-<h2 id="description_62">Description<a class="headerlink" href="#description_62" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_63">Description<a class="headerlink" href="#description_63" title="Anchor link to this section">&para;</a></h2>
 <p>The CSP module under M7 targets finite-template CSPs with finite-arity relations.  A rich body of contemporary work — most visibly the Bodirsky–Pinsker program — studies CSPs whose template is an ω-categorical structure with a countable domain and potentially infinitary relations.  The central tools there include:</p>
 <ul>
 <li><strong>Polymorphism clones of ω-categorical structures</strong>, which control CSP complexity via a topological-dynamical analog of the finite-domain algebraic approach.</li>
@@ -17476,7 +17687,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <hr />
 <h3 id="issue-m9-3-exploratory-coalgebraic-bisimulation-as-a-continuous-relation-283">Issue M9-3: Exploratory: coalgebraic bisimulation as a continuous relation (#283)<a class="headerlink" href="#issue-m9-3-exploratory-coalgebraic-bisimulation-as-a-continuous-relation-283" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>design-discussion</code>, <code>milestone-9-apps</code></p>
-<h2 id="description_63">Description<a class="headerlink" href="#description_63" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_64">Description<a class="headerlink" href="#description_64" title="Anchor link to this section">&para;</a></h2>
 <p>An exploratory issue, not a deliverable.  The goal is to read, think, and write up findings about whether the <code>Continuous</code> relation API has novel applications in coalgebra, particularly for bisimulation of non-finitary coalgebras.</p>
 <p>A bisimulation between F-coalgebras <code>(c : A → F A, d : B → F B)</code> is classically a relation <code>R ⊆ A × B</code> that lifts along <code>F</code>: if <code>(a, b) ∈ R</code> then there is a witness <code>(F R) (c a) (d b)</code>.  When <code>F</code> is a finitary polynomial functor (e.g. finite-branching trees), <code>R</code> is naturally a finite-arity relation.  When <code>F</code> is continuous — for example, the stream functor <code>F X = X × A</code>, or the unbounded-branching tree functor <code>F X = X ^ ℕ</code> — the natural witness type for a bisimilarity step is an arbitrary-arity relation.  This is where the <code>Continuous</code> API might fit.</p>
 <p>The intersection of coalgebra and classical universal algebra has many smart people (Rutten, Jacobs, Kurz, Adámek, Pattinson, et al.), but most of that work targets theoretical-CS applications (automata, regular languages, process calculi).  It is much less developed on the universal-algebra-in-the-Birkhoff-sense side.  It is plausible that low-hanging fruit remains at the intersection, but finding it requires sustained reading, not speculation.</p>
@@ -17489,7 +17700,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Identify at least one concrete formalization candidate, even if small (e.g. a bisimulation characterization of stream equality using the <code>Continuous</code> API).  If no such candidate emerges, document why.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Optional: formalize the candidate, or file a follow-up M9-3a issue.</li>
 </ul>
-<h2 id="acceptance-criteria_71">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_71" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_72">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_72" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>docs/exploration/coalgebra.md</code> exists and is at least 2000 words.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The document contains a concrete verdict: either "there is a formalization project worth pursuing" (in which case a follow-up issue is filed) or "the area is saturated / the fit is not natural" (in which case this issue is closed).</li>
@@ -17586,7 +17797,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Delete <code>_layouts/</code>, <code>_config.yml</code>, and any other Jekyll-only files at the repo root or under <code>docs/</code>.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Remove the <code>make html</code> target and replace it with <code>make site</code>; update <code>Makefile</code>, <code>README.md</code>, and <code>INSTALL.md</code> accordingly.</li>
 </ul>
-<h2 id="acceptance-criteria_72">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_72" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_73">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_73" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>make site</code> builds the full library at <code>site/</code> (or wherever MkDocs writes output) without errors.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Spot-checked rendered pages match the pre-migration archive in content; minor styling differences are acceptable.</li>
@@ -17701,7 +17912,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Coordinate with each subsequent agda-algebras release: tag, update the nixpkgs entry's source hash, bump the package version.</li>
 </ul>
 <hr />
-<h2 id="acceptance-criteria_73">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_73" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_74">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_74" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>nix-shell -p 'agdaPackages.agda-algebras'</code> produces a working environment in which <code>agda --library agda-algebras</code> resolves correctly.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The flake also exposes the library derivation: <code>nix build github:ualib/agda-algebras#lib</code> (or the post-transfer <code>agda/agda-algebras</code> URL).</li>
@@ -17747,7 +17958,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Confirm HTTPS (GitHub-provisioned certificate) is active on the apex and <code>www</code>.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Confirm a sample of legacy <code>….html</code> URLs redirect to their new locations.</li>
 </ul>
-<h2 id="acceptance-criteria_74">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_74" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_75">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_75" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>https://universalalgebra.org/agda-algebras</code> serves the new MkDocs site over HTTPS.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The old site is parked at its original URL (<code>ualib.org</code>) and shows a dated deprecation banner linking to the new site.</li>
