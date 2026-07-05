@@ -3733,8 +3733,6 @@
       
         
       
-        
-      
     
     
     
@@ -3856,34 +3854,6 @@
     
   
     FreeAlgebras
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Setoid/Varieties/FreeBridge/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    FreeBridge
   
 
     
@@ -4065,7 +4035,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_12_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_12_9" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -4087,14 +4057,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2_2_12_10" id="__nav_2_2_12_10_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2_2_12_9" id="__nav_2_2_12_9_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_12_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2_12_10">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_12_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_12_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -17224,8 +17194,8 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <code>HasMaltsevTerm : Variety → Term → Type</code> — landed as the interpretation predicate <code>HasMaltsevTerm ℰ = Th-Maltsev ≼ ℰ</code> (<code>Setoid.Varieties.Maltsev</code>).</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Specific Maltsev terms: Jónsson terms (CD), Day terms (CM), Maltsev operation (CP) — <code>Th-Maltsev</code>, <code>Th-Jonsson n</code>, <code>Th-Day n</code>, with <code>HasMaltsevTerm</code> / <code>HasJonssonTerms n</code> / <code>HasDayTerms n</code> (<code>Setoid.Varieties.{Maltsev,MaltsevConditions}</code>).</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Jónsson's theorem: a variety is CD iff Jónsson terms exist — stated (<code>Jonsson-Statement</code>); proof tracked in #412 (forward) and #413 (converse).</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> CP iff a Maltsev term exists — forward direction <code>MaltsevTerm⇒CP</code> / <code>maltsev⇒CP</code> (M6-3, #409); converse <code>CP⇒maltsev</code> (<code>Setoid.Varieties.MaltsevConditions</code>, M6-5, #411) inhabiting <code>CP⇒maltsev-Statement</code>, built on the free-algebra bridge (<code>Setoid.Varieties.FreeBridge</code>, M6-4, #410).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Jónsson's theorem: a variety is CD iff Jónsson terms exist — complete iff for finitary signatures, <code>jonsson-theorem</code> in <code>Setoid.Varieties.Maltsev.Distributivity</code>: forward <code>jonsson-finitary⇒CongruenceDistributiveVariety</code> (M6-6, #412), converse <code>CD⇒jonsson</code> (M6-7, #413; design note <code>docs/notes/m6-7-reverse-jonsson.md</code>).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> CP iff a Maltsev term exists — forward direction <code>MaltsevTerm⇒CP</code> / <code>maltsev⇒CP</code> (M6-3, #409); converse <code>CP⇒maltsev</code> (<code>Setoid.Varieties.Maltsev.Permutability</code>, M6-5, #411) inhabiting <code>CP⇒maltsev-Statement</code>, built on the free-algebra bridge <code>cg-pair→⊢</code> (M6-4, #410; now in <code>Setoid.Varieties.FreeSubstitution</code>).</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Day's theorem for CM — stated (<code>Day-Statement</code>); proof tracked in #412 (forward) and #413 (converse).</li>
 </ul>
 <h2 id="acceptance-criteria_58">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_58" title="Anchor link to this section">&para;</a></h2>
@@ -17242,7 +17212,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li>Design note: <code>docs/notes/m6-3-maltsev-conditions.md</code>.</li>
 </ul>
 <p>The chosen encoding is the interpretation <code>Th-X ≼ ℰ</code> (preferred over the issue's options (a) record and (b) inductive scheme; see the note).</p>
-<p>Deferred proofs are tracked in successor issues: #410 ([M6-4] free-algebra <code>Cg</code>↔derivability bridge — <strong>landed</strong>, <code>Setoid.Varieties.FreeBridge</code>), #411 ([M6-5] CP converse — <strong>landed</strong>, <code>CP⇒maltsev</code> in <code>Setoid.Varieties.MaltsevConditions</code>), #412 ([M6-6] forward Jónsson/Day), #413 ([M6-7] converse Jónsson/Day).  See the design note <code>docs/notes/m6-4-free-bridge.md</code> for #410 / #411.</p>
+<p>Deferred proofs are tracked in successor issues: #410 ([M6-4] free-algebra <code>Cg</code>↔derivability bridge — <strong>landed</strong>; after the M6-7 cleanup its pieces live in <code>Setoid.Congruences.Generation</code> (<code>module principal</code>), <code>Setoid.Homomorphisms.Properties</code> (<code>Cg⊆ker</code>), <code>Setoid.Varieties.SoundAndComplete</code> (<code>toEq</code>), and <code>Setoid.Varieties.FreeSubstitution</code> (<code>subhom</code> / <code>cg-pair→⊢</code>)), #411 ([M6-5] CP converse — <strong>landed</strong>, <code>CP⇒maltsev</code> in <code>Setoid.Varieties.Maltsev.Permutability</code>), #412 ([M6-6] forward Jónsson — <strong>landed</strong>; forward Day deferred indefinitely), #413 ([M6-7] converse Jónsson — <strong>landed</strong>, <code>CD⇒jonsson</code> / <code>jonsson-theorem</code> in <code>Setoid.Varieties.Maltsev.Distributivity</code>; converse Day remains).  See the design notes <code>docs/notes/m6-4-free-bridge.md</code> (#410 / #411), <code>docs/notes/m6-6-forward-jonsson-day.md</code> (#412), and <code>docs/notes/m6-7-reverse-jonsson.md</code> (#413).</p>
 <hr />
 <h3 id="issue-m6-4-free-algebra-congruencederivability-bridge-infrastructure-for-the-maltsev-condition-converses-410-closed">Issue M6-4: Free-algebra congruence/derivability bridge (infrastructure for the Maltsev-condition converses) (#410, closed)<a class="headerlink" href="#issue-m6-4-free-algebra-congruencederivability-bridge-infrastructure-for-the-maltsev-condition-converses-410-closed" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>milestone-6-flrp</code></p>
@@ -17276,7 +17246,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li>Burris and Sankappanavar, <em>A Course in Universal Algebra</em>, Ch. II.</li>
 </ul>
 <h2 id="status-landed">Status — landed<a class="headerlink" href="#status-landed" title="Anchor link to this section">&para;</a></h2>
-<p><code>Setoid.Varieties.FreeBridge</code> supplies the bridge: <code>subhom</code> / <code>renhom</code> (the substitution-induced hom out of <code>𝔽[ X ]</code>, a homomorphism by <code>refl</code>), the re-exported <code>kercon</code> (kernel as a <code>Con</code>), and <code>Cg⊆ker</code> / <code>cg-pair→⊢</code> (the bridge lemma, one line via <code>Cg-least</code>), plus the <code>toEq</code> shim (the two satisfaction predicates <code>_⊨ₑ_</code> / <code>_⊨_</code> coincide definitionally, so no conversion function is needed).  The term-level companion <code>graft≐[]</code> (identifying <code>_✦_</code>'s <code>graft</code> with <code>_[_]</code>) lives with the other laws of <code>graft</code> in <code>Setoid.Terms.Interpretation</code>.  Smoke test: <code>recover</code> / <code>recover-gen</code> / <code>recover-swap</code>.  Design note: <code>docs/notes/m6-4-free-bridge.md</code>.</p>
+<p><code>Setoid.Varieties.FreeBridge</code> supplied the bridge: <code>subhom</code> / <code>renhom</code> (the substitution-induced hom out of <code>𝔽[ X ]</code>, a homomorphism by <code>refl</code>), the re-exported <code>kercon</code> (kernel as a <code>Con</code>), and <code>Cg⊆ker</code> / <code>cg-pair→⊢</code> (the bridge lemma, one line via <code>Cg-least</code>), plus the <code>toEq</code> shim (the two satisfaction predicates <code>_⊨ₑ_</code> / <code>_⊨_</code> coincide definitionally, so no conversion function is needed).  The term-level companion <code>graft≐[]</code> (identifying <code>_✦_</code>'s <code>graft</code> with <code>_[_]</code>) lives with the other laws of <code>graft</code> in <code>Setoid.Terms.Interpretation</code>.  Smoke test: <code>recover</code> / <code>recover-gen</code> / <code>recover-swap</code>.  Design note: <code>docs/notes/m6-4-free-bridge.md</code>.  <strong>Layout update (M6-7 cleanup):</strong> <code>Setoid.Varieties.FreeBridge</code> has since been dissolved — <code>❴_,_❵</code> now lives in <code>Setoid.Congruences.Generation</code> (<code>module principal</code>), <code>Cg⊆ker</code> in <code>Setoid.Homomorphisms.Properties</code>, <code>toEq</code> in <code>Setoid.Varieties.SoundAndComplete</code>, and <code>subhom</code> / <code>renhom</code> / <code>cg-pair→⊢</code> (with the smoke test) in <code>Setoid.Varieties.FreeSubstitution</code>.</p>
 <p>🤖 Generated with <a href="https://claude.com/claude-code">Claude Code</a></p>
 <p>https://claude.ai/code/session_01MvPrLTCxKjFgsnTMK8j2qZ</p>
 <hr />
@@ -17416,7 +17386,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <h3 id="issue-m6-7-converse-jonssonday-cd-jonsson-terms-and-cm-day-terms-413">Issue M6-7: Converse Jónsson/Day: CD ⟹ Jónsson terms and CM ⟹ Day terms (#413)<a class="headerlink" href="#issue-m6-7-converse-jonssonday-cd-jonsson-terms-and-cm-day-terms-413" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>enhancement</code>, <code>milestone-6-flrp</code>, <code>research-exploratory</code></p>
 <h2 id="description_55">Description<a class="headerlink" href="#description_55" title="Anchor link to this section">&para;</a></h2>
-<p>Complete Jónsson's and Day's theorems with the hard "lattice property ⟹ terms" directions: a congruence-distributive variety has Jónsson terms, and a congruence-modular variety has Day terms.  These inhabit the <em>second</em> projections of <code>Jonsson-Statement</code> and <code>Day-Statement</code> in <code>Setoid.Varieties.MaltsevConditions</code>, turning both into complete iffs.</p>
+<p>Complete Jónsson's and Day's theorems with the hard "lattice property ⟹ terms" directions: a congruence-distributive variety has Jónsson terms, and a congruence-modular variety has Day terms.  These inhabit the converse projections of <code>Jonsson-Statement</code> and <code>Day-Statement</code> (with the orientation fixed in #412, the CD ⟹ terms direction is the <em>first</em> projection; following the #428 split the statements live in <code>Setoid.Varieties.Maltsev.{Distributivity,Modularity}</code>), turning both into complete iffs.  <strong>Status: converse Jónsson landed (PR #438, <code>CD⇒jonsson</code> / <code>jonsson-theorem</code>); converse Day remains open.</strong></p>
 <p>This is the research-grade end of the M6-3 track.  Beyond the [M6-4] (#410) bridge, it requires extracting the <strong>chain length <code>n</code></strong> and the terms <code>dᵢ</code> / <code>mᵢ</code> from the inductive derivation witnessing a join membership — the source of the <code>Σ[ n ∈ ℕ ]</code> in the statements, and the part with no off-the-shelf analogue in the library.</p>
 <h2 id="background_2">Background<a class="headerlink" href="#background_2" title="Anchor link to this section">&para;</a></h2>
 <p>Construction (Burris–Sankappanavar, Thms. 12.6 and 12.4), sketched in <code>docs/notes/m6-3-maltsev-conditions.md</code>:</p>

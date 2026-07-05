@@ -3738,8 +3738,6 @@
       
         
       
-        
-      
     
     
     
@@ -3861,34 +3859,6 @@
     
   
     FreeAlgebras
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Setoid/Varieties/FreeBridge/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    FreeBridge
   
 
     
@@ -4070,7 +4040,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_12_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_12_9" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -4092,14 +4062,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2_2_12_10" id="__nav_2_2_12_10_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2_2_12_9" id="__nav_2_2_12_9_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_12_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2_12_10">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_12_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_12_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -12171,7 +12141,7 @@ once, upstream, inside <code>Semigroup-Op.interp-node</code> (see
 <a id="3193" href="/Classical/Bundles/Semigroup/#3148" class="Function Operator">⟨</a> <a id="3195" href="/Classical/Bundles/Semigroup/#3195" class="Bound">𝑺</a> <a id="3197" href="/Classical/Bundles/Semigroup/#3148" class="Function Operator">⟩ˢᵍ</a> <a id="3201" class="Symbol">=</a> <a id="3203" class="Keyword">record</a>
   <a id="3212" class="Symbol">{</a> <a id="3214" href="/classic/Algebra.Bundles.html#4838" class="Field">Carrier</a>     <a id="3226" class="Symbol">=</a> <a id="3228" href="/Setoid/Algebras/Basic/#3731" class="Function Operator">𝕌[</a> <a id="3231" href="/Classical/Bundles/Semigroup/#3429" class="Function">𝑴</a> <a id="3233" href="/Setoid/Algebras/Basic/#3731" class="Function Operator">]</a>
   <a id="3237" class="Symbol">;</a> <a id="3239" href="/classic/Algebra.Bundles.html#4862" class="Field Operator">_≈_</a>         <a id="3251" class="Symbol">=</a> <a id="3253" href="/classic/Relation.Binary.Bundles.html#1324" class="Function Operator">_≈_</a>
-  <a id="3259" class="Symbol">;</a> <a id="3261" href="/classic/Algebra.Bundles.html#4894" class="Field Operator">_∙_</a>         <a id="3273" class="Symbol">=</a> <a id="3275" href="/Classical/Structures/Magma/#5503" class="Function Operator">_∙_</a>
+  <a id="3259" class="Symbol">;</a> <a id="3261" href="/classic/Algebra.Bundles.html#4894" class="Field Operator">_∙_</a>         <a id="3273" class="Symbol">=</a> <a id="3275" href="/Classical/Structures/Magma/#5455" class="Function Operator">_∙_</a>
   <a id="3281" class="Symbol">;</a> <a id="3283" href="/classic/Algebra.Bundles.html#4924" class="Field">isSemigroup</a> <a id="3295" class="Symbol">=</a> <a id="3297" class="Keyword">record</a>
       <a id="3310" class="Symbol">{</a> <a id="3312" href="/classic/Algebra.Structures.html#3365" class="Field">isMagma</a> <a id="3320" class="Symbol">=</a> <a id="3322" class="Keyword">record</a> <a id="3329" class="Symbol">{</a> <a id="3331" href="/classic/Algebra.Structures.html#1760" class="Field">isEquivalence</a> <a id="3345" class="Symbol">=</a> <a id="3347" href="/classic/Relation.Binary.Bundles.html#1358" class="Function">isEquivalence</a> <a id="3361" class="Symbol">;</a> <a id="3363" href="/classic/Algebra.Structures.html#1798" class="Field">∙-cong</a> <a id="3370" class="Symbol">=</a> <a id="3372" href="/Classical/Structures/Semigroup/#9418" class="Function">∙-cong</a> <a id="3379" class="Symbol">}</a>
       <a id="3387" class="Symbol">;</a> <a id="3389" href="/classic/Algebra.Structures.html#3389" class="Field">assoc</a> <a id="3395" class="Symbol">=</a> <a id="3397" href="/Classical/Structures/Semigroup/#10862" class="Function">assoc-law</a>
@@ -12207,9 +12177,9 @@ sides reduce to <code>(∙-Op ^ 𝑺) (pair a b)</code> definitionally, so <code
 discharges the obligation.</p>
 <pre class="Agda"><a id="4541" class="Keyword">module</a> <a id="4548" href="/Classical/Bundles/Semigroup/#4548" class="Module">_</a> <a id="4550" class="Symbol">{</a><a id="4551" href="/Classical/Bundles/Semigroup/#4551" class="Bound">𝑺</a> <a id="4553" class="Symbol">:</a> <a id="4555" href="/Classical/Structures/Semigroup/#7801" class="Function">Semigroup</a> <a id="4565" href="/Classical/Bundles/Semigroup/#2475" class="Generalizable">α</a> <a id="4567" href="/Classical/Bundles/Semigroup/#2477" class="Generalizable">ρ</a><a id="4568" class="Symbol">}</a> <a id="4570" class="Keyword">where</a>
   <a id="4578" class="Keyword">open</a> <a id="4583" href="/Classical/Structures/Semigroup/#8875" class="Module">Semigroup-Op</a> <a id="4596" href="/Classical/Bundles/Semigroup/#4551" class="Bound">𝑺</a> <a id="4598" class="Symbol">;</a> <a id="4600" class="Keyword">open</a> <a id="4605" href="/classic/Relation.Binary.Bundles.html#1235" class="Module">Setoid</a> <a id="4612" href="/Setoid/Algebras/Basic/#3589" class="Function Operator">𝔻[</a> <a id="4615" href="/Classical/Structures/Semigroup/#8068" class="Function">semigroup→magma</a> <a id="4631" href="/Classical/Bundles/Semigroup/#4551" class="Bound">𝑺</a> <a id="4633" href="/Setoid/Algebras/Basic/#3589" class="Function Operator">]</a>
-  <a id="4637" class="Keyword">open</a> <a id="4642" href="/Classical/Structures/Semigroup/#8875" class="Module">Semigroup-Op</a> <a id="4655" href="/Classical/Bundles/Semigroup/#3837" class="Function Operator">⟪</a> <a id="4657" href="/Classical/Bundles/Semigroup/#3148" class="Function Operator">⟨</a> <a id="4659" href="/Classical/Bundles/Semigroup/#4551" class="Bound">𝑺</a> <a id="4661" href="/Classical/Bundles/Semigroup/#3148" class="Function Operator">⟩ˢᵍ</a> <a id="4665" href="/Classical/Bundles/Semigroup/#3837" class="Function Operator">⟫ˢᵍ</a> <a id="4669" class="Keyword">renaming</a> <a id="4678" class="Symbol">(</a> <a id="4680" href="/Classical/Structures/Magma/#5503" class="Function Operator">_∙_</a> <a id="4684" class="Symbol">to</a> <a id="4687" class="Function Operator">_∙&#39;_</a> <a id="4692" class="Symbol">)</a>
+  <a id="4637" class="Keyword">open</a> <a id="4642" href="/Classical/Structures/Semigroup/#8875" class="Module">Semigroup-Op</a> <a id="4655" href="/Classical/Bundles/Semigroup/#3837" class="Function Operator">⟪</a> <a id="4657" href="/Classical/Bundles/Semigroup/#3148" class="Function Operator">⟨</a> <a id="4659" href="/Classical/Bundles/Semigroup/#4551" class="Bound">𝑺</a> <a id="4661" href="/Classical/Bundles/Semigroup/#3148" class="Function Operator">⟩ˢᵍ</a> <a id="4665" href="/Classical/Bundles/Semigroup/#3837" class="Function Operator">⟫ˢᵍ</a> <a id="4669" class="Keyword">renaming</a> <a id="4678" class="Symbol">(</a> <a id="4680" href="/Classical/Structures/Magma/#5455" class="Function Operator">_∙_</a> <a id="4684" class="Symbol">to</a> <a id="4687" class="Function Operator">_∙&#39;_</a> <a id="4692" class="Symbol">)</a>
 
-  <a id="4697" href="/Classical/Bundles/Semigroup/#4697" class="Function">roundtrip-cbc-sg</a> <a id="4714" class="Symbol">:</a> <a id="4716" class="Symbol">(</a><a id="4717" href="/Classical/Bundles/Semigroup/#4717" class="Bound">a</a> <a id="4719" href="/Classical/Bundles/Semigroup/#4719" class="Bound">b</a> <a id="4721" class="Symbol">:</a> <a id="4723" href="/Setoid/Algebras/Basic/#3731" class="Function Operator">𝕌[</a> <a id="4726" href="/Classical/Structures/Semigroup/#8068" class="Function">semigroup→magma</a> <a id="4742" href="/Classical/Bundles/Semigroup/#4551" class="Bound">𝑺</a> <a id="4744" href="/Setoid/Algebras/Basic/#3731" class="Function Operator">]</a><a id="4745" class="Symbol">)</a> <a id="4747" class="Symbol">→</a> <a id="4749" href="/Classical/Bundles/Semigroup/#4717" class="Bound">a</a> <a id="4751" href="/Classical/Bundles/Semigroup/#4687" class="Function Operator">∙&#39;</a> <a id="4754" href="/Classical/Bundles/Semigroup/#4719" class="Bound">b</a> <a id="4756" href="/classic/Relation.Binary.Bundles.html#1324" class="Function Operator">≈</a> <a id="4758" href="/Classical/Bundles/Semigroup/#4717" class="Bound">a</a> <a id="4760" href="/Classical/Structures/Magma/#5503" class="Function Operator">∙</a> <a id="4762" href="/Classical/Bundles/Semigroup/#4719" class="Bound">b</a>
+  <a id="4697" href="/Classical/Bundles/Semigroup/#4697" class="Function">roundtrip-cbc-sg</a> <a id="4714" class="Symbol">:</a> <a id="4716" class="Symbol">(</a><a id="4717" href="/Classical/Bundles/Semigroup/#4717" class="Bound">a</a> <a id="4719" href="/Classical/Bundles/Semigroup/#4719" class="Bound">b</a> <a id="4721" class="Symbol">:</a> <a id="4723" href="/Setoid/Algebras/Basic/#3731" class="Function Operator">𝕌[</a> <a id="4726" href="/Classical/Structures/Semigroup/#8068" class="Function">semigroup→magma</a> <a id="4742" href="/Classical/Bundles/Semigroup/#4551" class="Bound">𝑺</a> <a id="4744" href="/Setoid/Algebras/Basic/#3731" class="Function Operator">]</a><a id="4745" class="Symbol">)</a> <a id="4747" class="Symbol">→</a> <a id="4749" href="/Classical/Bundles/Semigroup/#4717" class="Bound">a</a> <a id="4751" href="/Classical/Bundles/Semigroup/#4687" class="Function Operator">∙&#39;</a> <a id="4754" href="/Classical/Bundles/Semigroup/#4719" class="Bound">b</a> <a id="4756" href="/classic/Relation.Binary.Bundles.html#1324" class="Function Operator">≈</a> <a id="4758" href="/Classical/Bundles/Semigroup/#4717" class="Bound">a</a> <a id="4760" href="/Classical/Structures/Magma/#5455" class="Function Operator">∙</a> <a id="4762" href="/Classical/Bundles/Semigroup/#4719" class="Bound">b</a>
   <a id="4766" href="/Classical/Bundles/Semigroup/#4697" class="Function">roundtrip-cbc-sg</a> <a id="4783" href="/Classical/Bundles/Semigroup/#4783" class="Bound">a</a> <a id="4785" href="/Classical/Bundles/Semigroup/#4785" class="Bound">b</a> <a id="4787" class="Symbol">=</a> <a id="4789" href="/classic/Relation.Binary.Structures.html#1641" class="Function">refl</a>
 </pre>
 <p>The reverse direction, bundle → core → bundle, holds pointwise on the bundle's

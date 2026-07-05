@@ -3738,8 +3738,6 @@
       
         
       
-        
-      
     
     
     
@@ -3861,34 +3859,6 @@
     
   
     FreeAlgebras
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Setoid/Varieties/FreeBridge/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    FreeBridge
   
 
     
@@ -4070,7 +4040,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_12_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_12_9" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -4092,14 +4062,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2_2_12_10" id="__nav_2_2_12_10_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2_2_12_9" id="__nav_2_2_12_9_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_12_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2_12_10">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_12_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_12_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -12122,20 +12092,20 @@ core structure file.</p>
 <pre class="Agda"><a id="ℕ-magma"></a><a id="1484" href="/Examples/Classical/Magma/#1484" class="Function">ℕ-magma</a> <a id="1492" class="Symbol">:</a> <a id="1494" href="/Classical/Small/Structures/Magma/#1392" class="Function">Magma</a>
 <a id="1500" href="/Examples/Classical/Magma/#1484" class="Function">ℕ-magma</a> <a id="1508" class="Symbol">=</a> <a id="1510" href="/Classical/Small/Structures/Magma/#1678" class="Function">opsToMagma</a> <a id="1521" href="/classic/Agda.Builtin.Nat.html#203" class="Datatype">ℕ</a> <a id="1523" href="/classic/Agda.Builtin.Nat.html#336" class="Primitive Operator">_+_</a>
 
-<a id="1528" class="Keyword">open</a> <a id="1533" href="/Classical/Structures/Magma/#5441" class="Module">Polymorphic.Magma-Op</a> <a id="1554" href="/Examples/Classical/Magma/#1484" class="Function">ℕ-magma</a> <a id="1562" class="Keyword">using</a> <a id="1568" class="Symbol">(</a> <a id="1570" href="/Classical/Structures/Magma/#5503" class="Function Operator">_∙_</a> <a id="1574" class="Symbol">)</a>
+<a id="1528" class="Keyword">open</a> <a id="1533" href="/Classical/Structures/Magma/#5393" class="Module">Polymorphic.Magma-Op</a> <a id="1554" href="/Examples/Classical/Magma/#1484" class="Function">ℕ-magma</a> <a id="1562" class="Keyword">using</a> <a id="1568" class="Symbol">(</a> <a id="1570" href="/Classical/Structures/Magma/#5455" class="Function Operator">_∙_</a> <a id="1574" class="Symbol">)</a>
 </pre>
 <h4 id="acceptance-checks">Acceptance checks<a class="headerlink" href="#acceptance-checks" title="Anchor link to this section">&para;</a></h4>
 <p><code>∙-Op</code> interpreted in <code>ℕ-magma</code> reduces definitionally to <code>_+_</code>: no opacity from
 the <code>opsToMagma</code> construction, no opacity from the <code>Curry₂</code> wrapping in the named
 accessor.  Discharged by <code>refl</code>.</p>
-<pre class="Agda"><a id="∙-is-+-ma"></a><a id="1810" href="/Examples/Classical/Magma/#1810" class="Function">∙-is-+-ma</a> <a id="1820" class="Symbol">:</a> <a id="1822" class="Symbol">∀</a> <a id="1824" class="Symbol">(</a><a id="1825" href="/Examples/Classical/Magma/#1825" class="Bound">a</a> <a id="1827" href="/Examples/Classical/Magma/#1827" class="Bound">b</a> <a id="1829" class="Symbol">:</a> <a id="1831" href="/classic/Agda.Builtin.Nat.html#203" class="Datatype">ℕ</a><a id="1832" class="Symbol">)</a> <a id="1834" class="Symbol">→</a> <a id="1836" href="/Examples/Classical/Magma/#1825" class="Bound">a</a> <a id="1838" href="/Classical/Structures/Magma/#5503" class="Function Operator">∙</a> <a id="1840" href="/Examples/Classical/Magma/#1827" class="Bound">b</a> <a id="1842" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="1844" href="/Examples/Classical/Magma/#1825" class="Bound">a</a> <a id="1846" href="/classic/Agda.Builtin.Nat.html#336" class="Primitive Operator">+</a> <a id="1848" href="/Examples/Classical/Magma/#1827" class="Bound">b</a>
+<pre class="Agda"><a id="∙-is-+-ma"></a><a id="1810" href="/Examples/Classical/Magma/#1810" class="Function">∙-is-+-ma</a> <a id="1820" class="Symbol">:</a> <a id="1822" class="Symbol">∀</a> <a id="1824" class="Symbol">(</a><a id="1825" href="/Examples/Classical/Magma/#1825" class="Bound">a</a> <a id="1827" href="/Examples/Classical/Magma/#1827" class="Bound">b</a> <a id="1829" class="Symbol">:</a> <a id="1831" href="/classic/Agda.Builtin.Nat.html#203" class="Datatype">ℕ</a><a id="1832" class="Symbol">)</a> <a id="1834" class="Symbol">→</a> <a id="1836" href="/Examples/Classical/Magma/#1825" class="Bound">a</a> <a id="1838" href="/Classical/Structures/Magma/#5455" class="Function Operator">∙</a> <a id="1840" href="/Examples/Classical/Magma/#1827" class="Bound">b</a> <a id="1842" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="1844" href="/Examples/Classical/Magma/#1825" class="Bound">a</a> <a id="1846" href="/classic/Agda.Builtin.Nat.html#336" class="Primitive Operator">+</a> <a id="1848" href="/Examples/Classical/Magma/#1827" class="Bound">b</a>
 <a id="1850" href="/Examples/Classical/Magma/#1810" class="Function">∙-is-+-ma</a> <a id="1860" href="/Examples/Classical/Magma/#1860" class="Bound">a</a> <a id="1862" href="/Examples/Classical/Magma/#1862" class="Bound">b</a> <a id="1864" class="Symbol">=</a> <a id="1866" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a>
 </pre>
 <p>The bundle bridge round-trips on <code>ℕ-magma</code> pointwise.  Both directions reduce by
 <code>pair a b 0F ⇉ a</code> and <code>pair a b 1F ⇉ b</code>, so propositional <code>refl</code> discharges the
 obligation at the curried form (per
 <a href="/adr/002-classical-layer-design/">ADR-002 v2 §6</a>).</p>
-<pre class="Agda"><a id="2146" class="Keyword">open</a> <a id="2151" href="/Classical/Structures/Magma/#5441" class="Module">Polymorphic.Magma-Op</a> <a id="2172" href="/Classical/Bundles/Magma/#3313" class="Function Operator">⟪</a> <a id="2174" href="/Classical/Bundles/Magma/#2636" class="Function Operator">⟨</a> <a id="2176" href="/Examples/Classical/Magma/#1484" class="Function">ℕ-magma</a> <a id="2184" href="/Classical/Bundles/Magma/#2636" class="Function Operator">⟩ᵐᵃ</a> <a id="2188" href="/Classical/Bundles/Magma/#3313" class="Function Operator">⟫ᵐᵃ</a> <a id="2192" class="Keyword">using</a> <a id="2198" class="Symbol">()</a> <a id="2201" class="Keyword">renaming</a> <a id="2210" class="Symbol">(</a> <a id="2212" href="/Classical/Structures/Magma/#5503" class="Function Operator">_∙_</a> <a id="2216" class="Symbol">to</a> <a id="2219" class="Function Operator">_·_</a> <a id="2223" class="Symbol">)</a>
+<pre class="Agda"><a id="2146" class="Keyword">open</a> <a id="2151" href="/Classical/Structures/Magma/#5393" class="Module">Polymorphic.Magma-Op</a> <a id="2172" href="/Classical/Bundles/Magma/#3313" class="Function Operator">⟪</a> <a id="2174" href="/Classical/Bundles/Magma/#2636" class="Function Operator">⟨</a> <a id="2176" href="/Examples/Classical/Magma/#1484" class="Function">ℕ-magma</a> <a id="2184" href="/Classical/Bundles/Magma/#2636" class="Function Operator">⟩ᵐᵃ</a> <a id="2188" href="/Classical/Bundles/Magma/#3313" class="Function Operator">⟫ᵐᵃ</a> <a id="2192" class="Keyword">using</a> <a id="2198" class="Symbol">()</a> <a id="2201" class="Keyword">renaming</a> <a id="2210" class="Symbol">(</a> <a id="2212" href="/Classical/Structures/Magma/#5455" class="Function Operator">_∙_</a> <a id="2216" class="Symbol">to</a> <a id="2219" class="Function Operator">_·_</a> <a id="2223" class="Symbol">)</a>
 
 <a id="roundtrip-ℕ-ma"></a><a id="2226" href="/Examples/Classical/Magma/#2226" class="Function">roundtrip-ℕ-ma</a> <a id="2241" class="Symbol">:</a> <a id="2243" class="Symbol">∀</a> <a id="2245" class="Symbol">(</a><a id="2246" href="/Examples/Classical/Magma/#2246" class="Bound">a</a> <a id="2248" href="/Examples/Classical/Magma/#2248" class="Bound">b</a> <a id="2250" class="Symbol">:</a> <a id="2252" href="/classic/Agda.Builtin.Nat.html#203" class="Datatype">ℕ</a><a id="2253" class="Symbol">)</a> <a id="2255" class="Symbol">→</a> <a id="2257" href="/Examples/Classical/Magma/#2246" class="Bound">a</a> <a id="2259" href="/Examples/Classical/Magma/#2219" class="Function Operator">·</a> <a id="2261" href="/Examples/Classical/Magma/#2248" class="Bound">b</a> <a id="2263" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="2265" href="/Examples/Classical/Magma/#2246" class="Bound">a</a> <a id="2267" href="/classic/Agda.Builtin.Nat.html#336" class="Primitive Operator">+</a> <a id="2269" href="/Examples/Classical/Magma/#2248" class="Bound">b</a>
 <a id="2271" href="/Examples/Classical/Magma/#2226" class="Function">roundtrip-ℕ-ma</a> <a id="2286" href="/Examples/Classical/Magma/#2286" class="Bound">a</a> <a id="2288" href="/Examples/Classical/Magma/#2288" class="Bound">b</a> <a id="2290" class="Symbol">=</a> <a id="2292" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a>

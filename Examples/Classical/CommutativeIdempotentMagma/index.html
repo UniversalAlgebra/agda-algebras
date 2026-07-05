@@ -3738,8 +3738,6 @@
       
         
       
-        
-      
     
     
     
@@ -3861,34 +3859,6 @@
     
   
     FreeAlgebras
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Setoid/Varieties/FreeBridge/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    FreeBridge
   
 
     
@@ -4070,7 +4040,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_12_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_12_9" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -4092,14 +4062,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2_2_12_10" id="__nav_2_2_12_10_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2_2_12_9" id="__nav_2_2_12_9_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_12_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2_12_10">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_12_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_12_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -12251,7 +12221,7 @@ the identity (hence the operation is idempotent).</p>
 <pre class="Agda"><a id="cim-magma"></a><a id="2815" href="/Examples/Classical/CommutativeIdempotentMagma/#2815" class="Function">cim-magma</a> <a id="2825" class="Symbol">:</a> <a id="2827" href="/Classical/Small/Structures/Magma/#1392" class="Function">Magma</a>
 <a id="2833" href="/Examples/Classical/CommutativeIdempotentMagma/#2815" class="Function">cim-magma</a> <a id="2843" class="Symbol">=</a> <a id="2845" href="/Classical/Small/Structures/Magma/#1678" class="Function">opsToMagma</a> <a id="2856" class="Symbol">(</a><a id="2857" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="2861" class="Number">4</a><a id="2862" class="Symbol">)</a> <a id="2864" href="/Examples/Classical/CommutativeIdempotentMagma/#2723" class="Function Operator">_·_</a>
 
-<a id="2869" class="Keyword">open</a> <a id="2874" href="/Classical/Structures/Magma/#5441" class="Module">Polymorphic.Magma-Op</a> <a id="2895" href="/Examples/Classical/CommutativeIdempotentMagma/#2815" class="Function">cim-magma</a> <a id="2905" class="Keyword">using</a> <a id="2911" class="Symbol">(</a> <a id="2913" href="/Classical/Structures/Magma/#5503" class="Function Operator">_∙_</a> <a id="2917" class="Symbol">)</a>
+<a id="2869" class="Keyword">open</a> <a id="2874" href="/Classical/Structures/Magma/#5393" class="Module">Polymorphic.Magma-Op</a> <a id="2895" href="/Examples/Classical/CommutativeIdempotentMagma/#2815" class="Function">cim-magma</a> <a id="2905" class="Keyword">using</a> <a id="2911" class="Symbol">(</a> <a id="2913" href="/Classical/Structures/Magma/#5455" class="Function Operator">_∙_</a> <a id="2917" class="Symbol">)</a>
 </pre>
 <h4 id="commutativity-and-idempotence">Commutativity and idempotence<a class="headerlink" href="#commutativity-and-idempotence" title="Anchor link to this section">&para;</a></h4>
 <p>Both laws are decidable over the finite carrier, so each is discharged by
@@ -12283,12 +12253,12 @@ triple to the assumed associativity and deriving a contradiction.</p>
 <p>The <code class="AgdaModule">Magma-Op</code> accessor interprets to the tabulated operation on the
 nose, with no opacity from <code class="AgdaFunction">opsToMagma</code> or the <code class="AgdaFunction">Curry₂</code>
 wrapping; discharged by <code class="AgdaInductiveConstructor">refl</code>.</p>
-<pre class="Agda"><a id="∙-is-·-ma"></a><a id="4515" href="/Examples/Classical/CommutativeIdempotentMagma/#4515" class="Function">∙-is-·-ma</a> <a id="4525" class="Symbol">:</a> <a id="4527" class="Symbol">∀</a> <a id="4529" class="Symbol">(</a><a id="4530" href="/Examples/Classical/CommutativeIdempotentMagma/#4530" class="Bound">a</a> <a id="4532" href="/Examples/Classical/CommutativeIdempotentMagma/#4532" class="Bound">b</a> <a id="4534" class="Symbol">:</a> <a id="4536" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="4540" class="Number">4</a><a id="4541" class="Symbol">)</a> <a id="4543" class="Symbol">→</a> <a id="4545" href="/Examples/Classical/CommutativeIdempotentMagma/#4530" class="Bound">a</a> <a id="4547" href="/Classical/Structures/Magma/#5503" class="Function Operator">∙</a> <a id="4549" href="/Examples/Classical/CommutativeIdempotentMagma/#4532" class="Bound">b</a> <a id="4551" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="4553" href="/Examples/Classical/CommutativeIdempotentMagma/#4530" class="Bound">a</a> <a id="4555" href="/Examples/Classical/CommutativeIdempotentMagma/#2723" class="Function Operator">·</a> <a id="4557" href="/Examples/Classical/CommutativeIdempotentMagma/#4532" class="Bound">b</a>
+<pre class="Agda"><a id="∙-is-·-ma"></a><a id="4515" href="/Examples/Classical/CommutativeIdempotentMagma/#4515" class="Function">∙-is-·-ma</a> <a id="4525" class="Symbol">:</a> <a id="4527" class="Symbol">∀</a> <a id="4529" class="Symbol">(</a><a id="4530" href="/Examples/Classical/CommutativeIdempotentMagma/#4530" class="Bound">a</a> <a id="4532" href="/Examples/Classical/CommutativeIdempotentMagma/#4532" class="Bound">b</a> <a id="4534" class="Symbol">:</a> <a id="4536" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="4540" class="Number">4</a><a id="4541" class="Symbol">)</a> <a id="4543" class="Symbol">→</a> <a id="4545" href="/Examples/Classical/CommutativeIdempotentMagma/#4530" class="Bound">a</a> <a id="4547" href="/Classical/Structures/Magma/#5455" class="Function Operator">∙</a> <a id="4549" href="/Examples/Classical/CommutativeIdempotentMagma/#4532" class="Bound">b</a> <a id="4551" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="4553" href="/Examples/Classical/CommutativeIdempotentMagma/#4530" class="Bound">a</a> <a id="4555" href="/Examples/Classical/CommutativeIdempotentMagma/#2723" class="Function Operator">·</a> <a id="4557" href="/Examples/Classical/CommutativeIdempotentMagma/#4532" class="Bound">b</a>
 <a id="4559" href="/Examples/Classical/CommutativeIdempotentMagma/#4515" class="Function">∙-is-·-ma</a> <a id="4569" href="/Examples/Classical/CommutativeIdempotentMagma/#4569" class="Bound">a</a> <a id="4571" href="/Examples/Classical/CommutativeIdempotentMagma/#4571" class="Bound">b</a> <a id="4573" class="Symbol">=</a> <a id="4575" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a>
 </pre>
 <p>The bundle bridge round-trips on <code class="AgdaFunction">cim-magma</code> pointwise, as for the
 other magma examples (per <a href="/adr/002-classical-layer-design/">ADR-002 v2</a> §6).</p>
-<pre class="Agda"><a id="4766" class="Keyword">open</a> <a id="4771" href="/Classical/Structures/Magma/#5441" class="Module">Polymorphic.Magma-Op</a> <a id="4792" href="/Classical/Bundles/Magma/#3313" class="Function Operator">⟪</a> <a id="4794" href="/Classical/Bundles/Magma/#2636" class="Function Operator">⟨</a> <a id="4796" href="/Examples/Classical/CommutativeIdempotentMagma/#2815" class="Function">cim-magma</a> <a id="4806" href="/Classical/Bundles/Magma/#2636" class="Function Operator">⟩ᵐᵃ</a> <a id="4810" href="/Classical/Bundles/Magma/#3313" class="Function Operator">⟫ᵐᵃ</a> <a id="4814" class="Keyword">using</a> <a id="4820" class="Symbol">()</a> <a id="4823" class="Keyword">renaming</a> <a id="4832" class="Symbol">(</a> <a id="4834" href="/Classical/Structures/Magma/#5503" class="Function Operator">_∙_</a> <a id="4838" class="Symbol">to</a> <a id="4841" class="Function Operator">_·′_</a> <a id="4846" class="Symbol">)</a>
+<pre class="Agda"><a id="4766" class="Keyword">open</a> <a id="4771" href="/Classical/Structures/Magma/#5393" class="Module">Polymorphic.Magma-Op</a> <a id="4792" href="/Classical/Bundles/Magma/#3313" class="Function Operator">⟪</a> <a id="4794" href="/Classical/Bundles/Magma/#2636" class="Function Operator">⟨</a> <a id="4796" href="/Examples/Classical/CommutativeIdempotentMagma/#2815" class="Function">cim-magma</a> <a id="4806" href="/Classical/Bundles/Magma/#2636" class="Function Operator">⟩ᵐᵃ</a> <a id="4810" href="/Classical/Bundles/Magma/#3313" class="Function Operator">⟫ᵐᵃ</a> <a id="4814" class="Keyword">using</a> <a id="4820" class="Symbol">()</a> <a id="4823" class="Keyword">renaming</a> <a id="4832" class="Symbol">(</a> <a id="4834" href="/Classical/Structures/Magma/#5455" class="Function Operator">_∙_</a> <a id="4838" class="Symbol">to</a> <a id="4841" class="Function Operator">_·′_</a> <a id="4846" class="Symbol">)</a>
 
 <a id="roundtrip-cim-ma"></a><a id="4849" href="/Examples/Classical/CommutativeIdempotentMagma/#4849" class="Function">roundtrip-cim-ma</a> <a id="4866" class="Symbol">:</a> <a id="4868" class="Symbol">∀</a> <a id="4870" class="Symbol">(</a><a id="4871" href="/Examples/Classical/CommutativeIdempotentMagma/#4871" class="Bound">a</a> <a id="4873" href="/Examples/Classical/CommutativeIdempotentMagma/#4873" class="Bound">b</a> <a id="4875" class="Symbol">:</a> <a id="4877" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="4881" class="Number">4</a><a id="4882" class="Symbol">)</a> <a id="4884" class="Symbol">→</a> <a id="4886" href="/Examples/Classical/CommutativeIdempotentMagma/#4871" class="Bound">a</a> <a id="4888" href="/Examples/Classical/CommutativeIdempotentMagma/#4841" class="Function Operator">·′</a> <a id="4891" href="/Examples/Classical/CommutativeIdempotentMagma/#4873" class="Bound">b</a> <a id="4893" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="4895" href="/Examples/Classical/CommutativeIdempotentMagma/#4871" class="Bound">a</a> <a id="4897" href="/Examples/Classical/CommutativeIdempotentMagma/#2723" class="Function Operator">·</a> <a id="4899" href="/Examples/Classical/CommutativeIdempotentMagma/#4873" class="Bound">b</a>
 <a id="4901" href="/Examples/Classical/CommutativeIdempotentMagma/#4849" class="Function">roundtrip-cim-ma</a> <a id="4918" href="/Examples/Classical/CommutativeIdempotentMagma/#4918" class="Bound">a</a> <a id="4920" href="/Examples/Classical/CommutativeIdempotentMagma/#4920" class="Bound">b</a> <a id="4922" class="Symbol">=</a> <a id="4924" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a>

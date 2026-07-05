@@ -3738,8 +3738,6 @@
       
         
       
-        
-      
     
     
     
@@ -3861,34 +3859,6 @@
     
   
     FreeAlgebras
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Setoid/Varieties/FreeBridge/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    FreeBridge
   
 
     
@@ -4070,7 +4040,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_12_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_12_9" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -4092,14 +4062,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2_2_12_10" id="__nav_2_2_12_10_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2_2_12_9" id="__nav_2_2_12_9_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_12_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2_12_10">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_12_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_12_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -12149,7 +12119,7 @@ definitionally to <code>a</code> and <code>b</code> respectively.</p>
 
 <a id="1855" class="Comment">-- Imports from the Agda Universal Algebra Library ----------------------------</a>
 <a id="1935" class="Keyword">open</a> <a id="1940" class="Keyword">import</a> <a id="1947" href="/Classical/Signatures/Magma/" class="Module">Classical.Signatures.Magma</a>             <a id="1986" class="Keyword">using</a> <a id="1992" class="Symbol">(</a> <a id="1994" href="/Classical/Signatures/Magma/#3275" class="InductiveConstructor">∙-Op</a> <a id="1999" class="Symbol">;</a> <a id="2001" href="/Classical/Signatures/Magma/#3739" class="Function">Sig-Magma</a> <a id="2011" class="Symbol">)</a>
-<a id="2013" class="Keyword">open</a> <a id="2018" class="Keyword">import</a> <a id="2025" href="/Classical/Structures/Magma/" class="Module">Classical.Structures.Magma</a>             <a id="2064" class="Keyword">using</a> <a id="2070" class="Symbol">(</a> <a id="2072" href="/Classical/Structures/Magma/#3440" class="Function">Magma</a> <a id="2078" class="Symbol">;</a> <a id="2080" class="Keyword">module</a> <a id="2087" href="/Classical/Structures/Magma/#5441" class="Module">Magma-Op</a> <a id="2096" class="Symbol">)</a>
+<a id="2013" class="Keyword">open</a> <a id="2018" class="Keyword">import</a> <a id="2025" href="/Classical/Structures/Magma/" class="Module">Classical.Structures.Magma</a>             <a id="2064" class="Keyword">using</a> <a id="2070" class="Symbol">(</a> <a id="2072" href="/Classical/Structures/Magma/#3392" class="Function">Magma</a> <a id="2078" class="Symbol">;</a> <a id="2080" class="Keyword">module</a> <a id="2087" href="/Classical/Structures/Magma/#5393" class="Module">Magma-Op</a> <a id="2096" class="Symbol">)</a>
 <a id="2098" class="Keyword">open</a> <a id="2103" class="Keyword">import</a> <a id="2110" href="/Setoid/Algebras/Basic/" class="Module">Setoid.Algebras.Basic</a> <a id="2132" class="Symbol">{</a><a id="2133" class="Argument">𝑆</a> <a id="2135" class="Symbol">=</a> <a id="2137" href="/Classical/Signatures/Magma/#3739" class="Function">Sig-Magma</a><a id="2146" class="Symbol">}</a>  <a id="2149" class="Keyword">using</a> <a id="2155" class="Symbol">(</a> <a id="2157" href="/Setoid/Algebras/Basic/#2892" class="Record">Algebra</a> <a id="2165" class="Symbol">;</a> <a id="2167" href="/Setoid/Algebras/Basic/#3731" class="Function Operator">𝕌[_]</a> <a id="2172" class="Symbol">;</a> <a id="2174" href="/Setoid/Algebras/Basic/#3589" class="Function Operator">𝔻[_]</a> <a id="2179" class="Symbol">)</a>
 <a id="2181" class="Keyword">open</a> <a id="2186" class="Keyword">import</a> <a id="2193" href="/Setoid/Signatures/" class="Module">Setoid.Signatures</a>                      <a id="2232" class="Keyword">using</a>  <a id="2239" class="Symbol">(</a> <a id="2241" href="/Setoid/Signatures/#3346" class="Function Operator">⟨_⟩</a> <a id="2245" class="Symbol">)</a>
 <a id="2247" class="Keyword">open</a> <a id="2252" href="/Setoid/Algebras/Basic/#2892" class="Module">Algebra</a> <a id="2260" class="Keyword">using</a> <a id="2266" class="Symbol">(</a><a id="2267" href="/Setoid/Algebras/Basic/#2976" class="Field">Interp</a><a id="2273" class="Symbol">)</a>
@@ -12161,17 +12131,17 @@ definitionally to <code>a</code> and <code>b</code> respectively.</p>
 domain's <code>Carrier</code> and <code>_≈_</code>, exposes the operation in curried form via
 [<code>Classical.Structures.Magma</code>][]'s <code>_∙_</code>, and constructs the <code>IsMagma</code> witness
 from the algebra's <code>Interp.cong</code> by unpacking the Fin 2 pattern.</p>
-<pre class="Agda"><a id="⟨_⟩ᵐᵃ"></a><a id="2636" href="/Classical/Bundles/Magma/#2636" class="Function Operator">⟨_⟩ᵐᵃ</a> <a id="2642" class="Symbol">:</a> <a id="2644" href="/Classical/Structures/Magma/#3440" class="Function">Magma</a> <a id="2650" href="/Classical/Bundles/Magma/#2293" class="Generalizable">α</a> <a id="2652" href="/Classical/Bundles/Magma/#2295" class="Generalizable">ρ</a> <a id="2654" class="Symbol">→</a> <a id="2656" href="/Classical/Bundles/Magma/#1418" class="Record">stdlib-Magma</a> <a id="2669" href="/Classical/Bundles/Magma/#2293" class="Generalizable">α</a> <a id="2671" href="/Classical/Bundles/Magma/#2295" class="Generalizable">ρ</a>
+<pre class="Agda"><a id="⟨_⟩ᵐᵃ"></a><a id="2636" href="/Classical/Bundles/Magma/#2636" class="Function Operator">⟨_⟩ᵐᵃ</a> <a id="2642" class="Symbol">:</a> <a id="2644" href="/Classical/Structures/Magma/#3392" class="Function">Magma</a> <a id="2650" href="/Classical/Bundles/Magma/#2293" class="Generalizable">α</a> <a id="2652" href="/Classical/Bundles/Magma/#2295" class="Generalizable">ρ</a> <a id="2654" class="Symbol">→</a> <a id="2656" href="/Classical/Bundles/Magma/#1418" class="Record">stdlib-Magma</a> <a id="2669" href="/Classical/Bundles/Magma/#2293" class="Generalizable">α</a> <a id="2671" href="/Classical/Bundles/Magma/#2295" class="Generalizable">ρ</a>
 <a id="2673" href="/Classical/Bundles/Magma/#2636" class="Function Operator">⟨</a> <a id="2675" href="/Classical/Bundles/Magma/#2675" class="Bound">𝑴</a> <a id="2677" href="/Classical/Bundles/Magma/#2636" class="Function Operator">⟩ᵐᵃ</a> <a id="2681" class="Symbol">=</a> <a id="2683" class="Keyword">record</a>
   <a id="2692" class="Symbol">{</a> <a id="2694" href="/classic/Algebra.Bundles.html#1836" class="Field">Carrier</a> <a id="2702" class="Symbol">=</a> <a id="2704" href="/Setoid/Algebras/Basic/#3731" class="Function Operator">𝕌[</a> <a id="2707" href="/Classical/Bundles/Magma/#2675" class="Bound">𝑴</a> <a id="2709" href="/Setoid/Algebras/Basic/#3731" class="Function Operator">]</a>
   <a id="2713" class="Symbol">;</a> <a id="2715" href="/classic/Algebra.Bundles.html#1856" class="Field Operator">_≈_</a>     <a id="2723" class="Symbol">=</a> <a id="2725" href="/classic/Relation.Binary.Bundles.html#1324" class="Function Operator">_≈_</a>
-  <a id="2731" class="Symbol">;</a> <a id="2733" href="/classic/Algebra.Bundles.html#1884" class="Field Operator">_∙_</a>     <a id="2741" class="Symbol">=</a> <a id="2743" href="/Classical/Structures/Magma/#5503" class="Function Operator">_∙_</a>
+  <a id="2731" class="Symbol">;</a> <a id="2733" href="/classic/Algebra.Bundles.html#1884" class="Field Operator">_∙_</a>     <a id="2741" class="Symbol">=</a> <a id="2743" href="/Classical/Structures/Magma/#5455" class="Function Operator">_∙_</a>
   <a id="2749" class="Symbol">;</a> <a id="2751" href="/classic/Algebra.Bundles.html#1910" class="Field">isMagma</a> <a id="2759" class="Symbol">=</a> <a id="2761" class="Keyword">record</a>
       <a id="2774" class="Symbol">{</a> <a id="2776" href="/classic/Algebra.Structures.html#1760" class="Field">isEquivalence</a> <a id="2790" class="Symbol">=</a> <a id="2792" href="/classic/Relation.Binary.Bundles.html#1358" class="Function">isEquivalence</a>
       <a id="2812" class="Symbol">;</a> <a id="2814" href="/classic/Algebra.Structures.html#1798" class="Field">∙-cong</a> <a id="2821" class="Symbol">=</a> <a id="2823" class="Symbol">λ</a> <a id="2825" href="/Classical/Bundles/Magma/#2825" class="Bound">x≈y</a> <a id="2829" href="/Classical/Bundles/Magma/#2829" class="Bound">u≈v</a> <a id="2833" class="Symbol">→</a> <a id="2835" href="/classic/Function.Bundles.html#2111" class="Field">cong</a> <a id="2840" class="Symbol">(</a><a id="2841" href="/Setoid/Algebras/Basic/#2976" class="Field">Interp</a> <a id="2848" href="/Classical/Bundles/Magma/#2675" class="Bound">𝑴</a><a id="2849" class="Symbol">)</a> <a id="2851" class="Symbol">(</a><a id="2852" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">≡.refl</a> <a id="2859" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="2861" class="Symbol">λ</a> <a id="2863" class="Symbol">{</a> <a id="2865" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="2868" class="Symbol">→</a> <a id="2870" href="/Classical/Bundles/Magma/#2825" class="Bound">x≈y</a> <a id="2874" class="Symbol">;</a> <a id="2876" href="/classic/Data.Fin.Patterns.html#440" class="InductiveConstructor">1F</a> <a id="2879" class="Symbol">→</a> <a id="2881" href="/Classical/Bundles/Magma/#2829" class="Bound">u≈v</a> <a id="2885" class="Symbol">})</a>
       <a id="2894" class="Symbol">}</a>
   <a id="2898" class="Symbol">}</a>
-  <a id="2902" class="Keyword">where</a> <a id="2908" class="Keyword">open</a> <a id="2913" href="/Classical/Structures/Magma/#5441" class="Module">Magma-Op</a> <a id="2922" href="/Classical/Bundles/Magma/#2675" class="Bound">𝑴</a><a id="2923" class="Symbol">;</a> <a id="2925" class="Keyword">open</a> <a id="2930" href="/classic/Relation.Binary.Bundles.html#1235" class="Module">Setoid</a> <a id="2937" href="/Setoid/Algebras/Basic/#3589" class="Function Operator">𝔻[</a> <a id="2940" href="/Classical/Bundles/Magma/#2675" class="Bound">𝑴</a> <a id="2942" href="/Setoid/Algebras/Basic/#3589" class="Function Operator">]</a>
+  <a id="2902" class="Keyword">where</a> <a id="2908" class="Keyword">open</a> <a id="2913" href="/Classical/Structures/Magma/#5393" class="Module">Magma-Op</a> <a id="2922" href="/Classical/Bundles/Magma/#2675" class="Bound">𝑴</a><a id="2923" class="Symbol">;</a> <a id="2925" class="Keyword">open</a> <a id="2930" href="/classic/Relation.Binary.Bundles.html#1235" class="Module">Setoid</a> <a id="2937" href="/Setoid/Algebras/Basic/#3589" class="Function Operator">𝔻[</a> <a id="2940" href="/Classical/Bundles/Magma/#2675" class="Bound">𝑴</a> <a id="2942" href="/Setoid/Algebras/Basic/#3589" class="Function Operator">]</a>
 </pre>
 <h4 id="stdlib-bundle-to-core">Stdlib bundle to core<a class="headerlink" href="#stdlib-bundle-to-core" title="Anchor link to this section">&para;</a></h4>
 <p>The reverse direction reassembles the bundle's <code>Carrier</code>, <code>_≈_</code>, and <code>_∙_</code> into
@@ -12179,7 +12149,7 @@ an <code>Algebra Sig-Magma</code>.  The interpretation of <code>∙-Op</code> un
 <code>_∙_</code> by reading off <code>args 0F</code> and <code>args 1F</code>; the congruence of <code>Interp</code> is
 built from the bundle's <code>∙-cong</code> applied pointwise to the argument-tuple's
 equivalence proof.</p>
-<pre class="Agda"><a id="⟪_⟫ᵐᵃ"></a><a id="3313" href="/Classical/Bundles/Magma/#3313" class="Function Operator">⟪_⟫ᵐᵃ</a> <a id="3319" class="Symbol">:</a> <a id="3321" href="/Classical/Bundles/Magma/#1418" class="Record">stdlib-Magma</a> <a id="3334" href="/Classical/Bundles/Magma/#2293" class="Generalizable">α</a> <a id="3336" href="/Classical/Bundles/Magma/#2295" class="Generalizable">ρ</a> <a id="3338" class="Symbol">→</a> <a id="3340" href="/Classical/Structures/Magma/#3440" class="Function">Magma</a> <a id="3346" href="/Classical/Bundles/Magma/#2293" class="Generalizable">α</a> <a id="3348" href="/Classical/Bundles/Magma/#2295" class="Generalizable">ρ</a>
+<pre class="Agda"><a id="⟪_⟫ᵐᵃ"></a><a id="3313" href="/Classical/Bundles/Magma/#3313" class="Function Operator">⟪_⟫ᵐᵃ</a> <a id="3319" class="Symbol">:</a> <a id="3321" href="/Classical/Bundles/Magma/#1418" class="Record">stdlib-Magma</a> <a id="3334" href="/Classical/Bundles/Magma/#2293" class="Generalizable">α</a> <a id="3336" href="/Classical/Bundles/Magma/#2295" class="Generalizable">ρ</a> <a id="3338" class="Symbol">→</a> <a id="3340" href="/Classical/Structures/Magma/#3392" class="Function">Magma</a> <a id="3346" href="/Classical/Bundles/Magma/#2293" class="Generalizable">α</a> <a id="3348" href="/Classical/Bundles/Magma/#2295" class="Generalizable">ρ</a>
 <a id="3350" href="/Classical/Bundles/Magma/#3313" class="Function Operator">⟪</a> <a id="3352" href="/Classical/Bundles/Magma/#3352" class="Bound">M</a> <a id="3354" href="/Classical/Bundles/Magma/#3313" class="Function Operator">⟫ᵐᵃ</a> <a id="3358" class="Symbol">=</a> <a id="3360" class="Keyword">record</a>
   <a id="3369" class="Symbol">{</a> <a id="3371" href="/Setoid/Algebras/Basic/#2952" class="Field">Domain</a> <a id="3378" class="Symbol">=</a> <a id="3380" class="Keyword">record</a>
     <a id="3391" class="Symbol">{</a> <a id="3393" href="/classic/Relation.Binary.Bundles.html#1298" class="Field">Carrier</a>        <a id="3408" class="Symbol">=</a> <a id="3410" href="/classic/Algebra.Bundles.html#1836" class="Field">stdlib-Magma.Carrier</a> <a id="3431" href="/Classical/Bundles/Magma/#3352" class="Bound">M</a>
@@ -12198,11 +12168,11 @@ equivalence proof.</p>
 sides reduce to the same <code>(∙-Op ^ 𝑴) (pair a b)</code> definitionally — <code>pair a b 0F</code>
 and <code>pair a b 1F</code> reduce by the pattern matching in <code>pair</code> — so <code>Setoid.refl</code>
 discharges the obligation.</p>
-<pre class="Agda"><a id="4122" class="Keyword">module</a> <a id="4129" href="/Classical/Bundles/Magma/#4129" class="Module">_</a> <a id="4131" class="Symbol">{</a><a id="4132" href="/Classical/Bundles/Magma/#4132" class="Bound">𝑴</a> <a id="4134" class="Symbol">:</a> <a id="4136" href="/Classical/Structures/Magma/#3440" class="Function">Magma</a> <a id="4142" href="/Classical/Bundles/Magma/#2293" class="Generalizable">α</a> <a id="4144" href="/Classical/Bundles/Magma/#2295" class="Generalizable">ρ</a><a id="4145" class="Symbol">}</a> <a id="4147" class="Keyword">where</a>
-  <a id="4155" class="Keyword">open</a> <a id="4160" href="/Classical/Structures/Magma/#5441" class="Module">Magma-Op</a> <a id="4169" href="/Classical/Bundles/Magma/#4132" class="Bound">𝑴</a> <a id="4171" class="Symbol">;</a> <a id="4173" class="Keyword">open</a> <a id="4178" href="/classic/Relation.Binary.Bundles.html#1235" class="Module">Setoid</a> <a id="4185" href="/Setoid/Algebras/Basic/#3589" class="Function Operator">𝔻[</a> <a id="4188" href="/Classical/Bundles/Magma/#4132" class="Bound">𝑴</a> <a id="4190" href="/Setoid/Algebras/Basic/#3589" class="Function Operator">]</a>
-  <a id="4194" class="Keyword">open</a> <a id="4199" href="/Classical/Structures/Magma/#5441" class="Module">Magma-Op</a> <a id="4208" href="/Classical/Bundles/Magma/#3313" class="Function Operator">⟪</a> <a id="4210" href="/Classical/Bundles/Magma/#2636" class="Function Operator">⟨</a> <a id="4212" href="/Classical/Bundles/Magma/#4132" class="Bound">𝑴</a> <a id="4214" href="/Classical/Bundles/Magma/#2636" class="Function Operator">⟩ᵐᵃ</a> <a id="4218" href="/Classical/Bundles/Magma/#3313" class="Function Operator">⟫ᵐᵃ</a> <a id="4222" class="Keyword">renaming</a> <a id="4231" class="Symbol">(</a> <a id="4233" href="/Classical/Structures/Magma/#5503" class="Function Operator">_∙_</a> <a id="4237" class="Symbol">to</a> <a id="4240" class="Function Operator">_∙&#39;_</a> <a id="4245" class="Symbol">)</a>
+<pre class="Agda"><a id="4122" class="Keyword">module</a> <a id="4129" href="/Classical/Bundles/Magma/#4129" class="Module">_</a> <a id="4131" class="Symbol">{</a><a id="4132" href="/Classical/Bundles/Magma/#4132" class="Bound">𝑴</a> <a id="4134" class="Symbol">:</a> <a id="4136" href="/Classical/Structures/Magma/#3392" class="Function">Magma</a> <a id="4142" href="/Classical/Bundles/Magma/#2293" class="Generalizable">α</a> <a id="4144" href="/Classical/Bundles/Magma/#2295" class="Generalizable">ρ</a><a id="4145" class="Symbol">}</a> <a id="4147" class="Keyword">where</a>
+  <a id="4155" class="Keyword">open</a> <a id="4160" href="/Classical/Structures/Magma/#5393" class="Module">Magma-Op</a> <a id="4169" href="/Classical/Bundles/Magma/#4132" class="Bound">𝑴</a> <a id="4171" class="Symbol">;</a> <a id="4173" class="Keyword">open</a> <a id="4178" href="/classic/Relation.Binary.Bundles.html#1235" class="Module">Setoid</a> <a id="4185" href="/Setoid/Algebras/Basic/#3589" class="Function Operator">𝔻[</a> <a id="4188" href="/Classical/Bundles/Magma/#4132" class="Bound">𝑴</a> <a id="4190" href="/Setoid/Algebras/Basic/#3589" class="Function Operator">]</a>
+  <a id="4194" class="Keyword">open</a> <a id="4199" href="/Classical/Structures/Magma/#5393" class="Module">Magma-Op</a> <a id="4208" href="/Classical/Bundles/Magma/#3313" class="Function Operator">⟪</a> <a id="4210" href="/Classical/Bundles/Magma/#2636" class="Function Operator">⟨</a> <a id="4212" href="/Classical/Bundles/Magma/#4132" class="Bound">𝑴</a> <a id="4214" href="/Classical/Bundles/Magma/#2636" class="Function Operator">⟩ᵐᵃ</a> <a id="4218" href="/Classical/Bundles/Magma/#3313" class="Function Operator">⟫ᵐᵃ</a> <a id="4222" class="Keyword">renaming</a> <a id="4231" class="Symbol">(</a> <a id="4233" href="/Classical/Structures/Magma/#5455" class="Function Operator">_∙_</a> <a id="4237" class="Symbol">to</a> <a id="4240" class="Function Operator">_∙&#39;_</a> <a id="4245" class="Symbol">)</a>
 
-  <a id="4250" href="/Classical/Bundles/Magma/#4250" class="Function">roundtrip-cbc-ma</a> <a id="4267" class="Symbol">:</a> <a id="4269" class="Symbol">(</a><a id="4270" href="/Classical/Bundles/Magma/#4270" class="Bound">a</a> <a id="4272" href="/Classical/Bundles/Magma/#4272" class="Bound">b</a> <a id="4274" class="Symbol">:</a> <a id="4276" href="/Setoid/Algebras/Basic/#3731" class="Function Operator">𝕌[</a> <a id="4279" href="/Classical/Bundles/Magma/#4132" class="Bound">𝑴</a> <a id="4281" href="/Setoid/Algebras/Basic/#3731" class="Function Operator">]</a><a id="4282" class="Symbol">)</a> <a id="4284" class="Symbol">→</a> <a id="4286" class="Symbol">(</a><a id="4287" href="/Classical/Bundles/Magma/#4270" class="Bound">a</a> <a id="4289" href="/Classical/Bundles/Magma/#4240" class="Function Operator">∙&#39;</a> <a id="4292" href="/Classical/Bundles/Magma/#4272" class="Bound">b</a><a id="4293" class="Symbol">)</a> <a id="4295" href="/classic/Relation.Binary.Bundles.html#1324" class="Function Operator">≈</a> <a id="4297" class="Symbol">(</a><a id="4298" href="/Classical/Bundles/Magma/#4270" class="Bound">a</a> <a id="4300" href="/Classical/Structures/Magma/#5503" class="Function Operator">∙</a> <a id="4302" href="/Classical/Bundles/Magma/#4272" class="Bound">b</a><a id="4303" class="Symbol">)</a>
+  <a id="4250" href="/Classical/Bundles/Magma/#4250" class="Function">roundtrip-cbc-ma</a> <a id="4267" class="Symbol">:</a> <a id="4269" class="Symbol">(</a><a id="4270" href="/Classical/Bundles/Magma/#4270" class="Bound">a</a> <a id="4272" href="/Classical/Bundles/Magma/#4272" class="Bound">b</a> <a id="4274" class="Symbol">:</a> <a id="4276" href="/Setoid/Algebras/Basic/#3731" class="Function Operator">𝕌[</a> <a id="4279" href="/Classical/Bundles/Magma/#4132" class="Bound">𝑴</a> <a id="4281" href="/Setoid/Algebras/Basic/#3731" class="Function Operator">]</a><a id="4282" class="Symbol">)</a> <a id="4284" class="Symbol">→</a> <a id="4286" class="Symbol">(</a><a id="4287" href="/Classical/Bundles/Magma/#4270" class="Bound">a</a> <a id="4289" href="/Classical/Bundles/Magma/#4240" class="Function Operator">∙&#39;</a> <a id="4292" href="/Classical/Bundles/Magma/#4272" class="Bound">b</a><a id="4293" class="Symbol">)</a> <a id="4295" href="/classic/Relation.Binary.Bundles.html#1324" class="Function Operator">≈</a> <a id="4297" class="Symbol">(</a><a id="4298" href="/Classical/Bundles/Magma/#4270" class="Bound">a</a> <a id="4300" href="/Classical/Structures/Magma/#5455" class="Function Operator">∙</a> <a id="4302" href="/Classical/Bundles/Magma/#4272" class="Bound">b</a><a id="4303" class="Symbol">)</a>
   <a id="4307" href="/Classical/Bundles/Magma/#4250" class="Function">roundtrip-cbc-ma</a> <a id="4324" href="/Classical/Bundles/Magma/#4324" class="Bound">a</a> <a id="4326" href="/Classical/Bundles/Magma/#4326" class="Bound">b</a> <a id="4328" class="Symbol">=</a> <a id="4330" href="/classic/Relation.Binary.Structures.html#1641" class="Function">refl</a>
 </pre>
 <p>The reverse direction, bundle → core → bundle, holds pointwise on the bundle's

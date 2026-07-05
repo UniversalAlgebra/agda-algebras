@@ -3738,8 +3738,6 @@
       
         
       
-        
-      
     
     
     
@@ -3861,34 +3859,6 @@
     
   
     FreeAlgebras
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../Setoid/Varieties/FreeBridge/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    FreeBridge
   
 
     
@@ -4070,7 +4040,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_12_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_12_9" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -4092,14 +4062,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2_2_12_10" id="__nav_2_2_12_10_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2_2_12_9" id="__nav_2_2_12_9_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_12_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2_12_10">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_12_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_12_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -12120,14 +12090,14 @@ foreground.</p>
 </pre>
 <h4 id="the-level-fixed-magma-type">The level-fixed Magma Type<a class="headerlink" href="#the-level-fixed-magma-type" title="Anchor link to this section">&para;</a></h4>
 <pre class="Agda"><a id="Magma"></a><a id="1392" href="/Classical/Small/Structures/Magma/#1392" class="Function">Magma</a> <a id="1398" class="Symbol">:</a> <a id="1400" href="/Classical/Small/Structures/Magma/#1162" class="Primitive">Type</a> <a id="1405" class="Symbol">(</a><a id="1406" href="/classic/Agda.Primitive.html#931" class="Primitive">suc</a> <a id="1410" href="/classic/Level.html#521" class="Function">0ℓ</a><a id="1412" class="Symbol">)</a>
-<a id="1414" href="/Classical/Small/Structures/Magma/#1392" class="Function">Magma</a> <a id="1420" class="Symbol">=</a> <a id="1422" href="/Classical/Structures/Magma/#3440" class="Function">Polymorphic.Magma</a> <a id="1440" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="1443" href="/classic/Level.html#521" class="Function">0ℓ</a>
+<a id="1414" href="/Classical/Small/Structures/Magma/#1392" class="Function">Magma</a> <a id="1420" class="Symbol">=</a> <a id="1422" href="/Classical/Structures/Magma/#3392" class="Function">Polymorphic.Magma</a> <a id="1440" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="1443" href="/classic/Level.html#521" class="Function">0ℓ</a>
 </pre>
 <h4 id="small-opstomagma">Small <code>opsToMagma</code><a class="headerlink" href="#small-opstomagma" title="Anchor link to this section">&para;</a></h4>
 <p>The polymorphic <code>opsToMagma</code> specializes immediately: with <code>α = 0ℓ</code>, it produces
 a <code>Polymorphic.Magma 0ℓ 0ℓ</code> from <code>(A : Type 0ℓ) → (A → A → A)</code>, which
 is exactly the level-fixed <code>Magma</code> above.</p>
 <pre class="Agda"><a id="opsToMagma"></a><a id="1678" href="/Classical/Small/Structures/Magma/#1678" class="Function">opsToMagma</a> <a id="1689" class="Symbol">:</a> <a id="1691" class="Symbol">(</a><a id="1692" href="/Classical/Small/Structures/Magma/#1692" class="Bound">A</a> <a id="1694" class="Symbol">:</a> <a id="1696" href="/Classical/Small/Structures/Magma/#1162" class="Primitive">Type</a> <a id="1701" href="/classic/Level.html#521" class="Function">0ℓ</a><a id="1703" class="Symbol">)</a> <a id="1705" class="Symbol">→</a> <a id="1707" class="Symbol">(</a><a id="1708" href="/Classical/Small/Structures/Magma/#1692" class="Bound">A</a> <a id="1710" class="Symbol">→</a> <a id="1712" href="/Classical/Small/Structures/Magma/#1692" class="Bound">A</a> <a id="1714" class="Symbol">→</a> <a id="1716" href="/Classical/Small/Structures/Magma/#1692" class="Bound">A</a><a id="1717" class="Symbol">)</a> <a id="1719" class="Symbol">→</a> <a id="1721" href="/Classical/Small/Structures/Magma/#1392" class="Function">Magma</a>
-<a id="1727" href="/Classical/Small/Structures/Magma/#1678" class="Function">opsToMagma</a> <a id="1738" href="/Classical/Small/Structures/Magma/#1738" class="Bound">A</a> <a id="1740" class="Symbol">=</a> <a id="1742" href="/Classical/Structures/Magma/#6396" class="Function">Polymorphic.opsToMagma</a> <a id="1765" class="Symbol">{</a><a id="1766" class="Argument">A</a> <a id="1768" class="Symbol">=</a> <a id="1770" href="/Classical/Small/Structures/Magma/#1738" class="Bound">A</a><a id="1771" class="Symbol">}</a>
+<a id="1727" href="/Classical/Small/Structures/Magma/#1678" class="Function">opsToMagma</a> <a id="1738" href="/Classical/Small/Structures/Magma/#1738" class="Bound">A</a> <a id="1740" class="Symbol">=</a> <a id="1742" href="/Classical/Structures/Magma/#6348" class="Function">Polymorphic.opsToMagma</a> <a id="1765" class="Symbol">{</a><a id="1766" class="Argument">A</a> <a id="1768" class="Symbol">=</a> <a id="1770" href="/Classical/Small/Structures/Magma/#1738" class="Bound">A</a><a id="1771" class="Symbol">}</a>
 </pre>
 
 <!-- File: docs/_links.md -->
