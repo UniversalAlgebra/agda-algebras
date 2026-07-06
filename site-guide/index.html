@@ -11495,6 +11495,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#hiding-a-modules-import-scaffolding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hiding a module's import scaffolding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#build-commands" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -12106,6 +12117,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#hiding-a-modules-import-scaffolding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hiding a module's import scaffolding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#build-commands" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -12299,7 +12321,29 @@ separate copy of the documentation.  The decision record is
 <li><strong><code>docs/assets/js/agda-copy.js</code></strong> — adds a copy button to the highlighted
    <code>&lt;pre class="Agda"&gt;</code> blocks (Material's own copy button only covers its
    <code>.highlight</code> blocks, which the <code>agda --html</code> output is not).</li>
+<li><strong><code>docs/assets/js/agda-toggle.js</code></strong> — the header's "Show more Agda" control (<a href="https://github.com/ualib/agda-algebras/issues/431">#431</a>).  Module sources wrap their leading OPTIONS/module/import scaffolding in <code>&lt;!-- … --&gt;</code> comments; <code>mkdocs_gen_library.py</code> re-surfaces those blocks tagged <code>hidden-source</code>, and this control shows or re-hides them all at once, with the choice persisted in <code>localStorage</code> like the palette toggle.</li>
 </ul>
+<h3 id="hiding-a-modules-import-scaffolding">Hiding a module's import scaffolding<a class="headerlink" href="#hiding-a-modules-import-scaffolding" title="Anchor link to this section">&para;</a></h3>
+<p>Every module's leading scaffolding block — the <code>OPTIONS</code> pragma, the <code>module … where</code> header, the imports, and the <code>private variable</code> declarations — is wrapped in an HTML comment in the <code>.lagda.md</code> source:</p>
+<div class="highlight"><pre><span></span><code>&lt;!--
+<span class="sb">```agda</span>
+<span class="cm">{-# OPTIONS --cubical-compatible --exact-split --safe #-}</span>
+
+<span class="kr">module</span><span class="w"> </span><span class="n">Setoid.Homomorphisms.Noether</span><span class="w"> </span><span class="kr">where</span>
+
+<span class="kr">open</span><span class="w"> </span><span class="kr">import</span><span class="w"> </span><span class="n">Level</span><span class="w"> </span><span class="kr">using</span><span class="w"> </span><span class="o">(</span><span class="w"> </span>Level<span class="w"> </span><span class="o">)</span>
+<span class="c1">-- … the rest of the imports …</span>
+<span class="sb">```</span>
+--&gt;
+</code></pre></div>
+<p>Agda still type-checks the block (fenced <code>agda</code> code inside an HTML comment is still code), GitHub's Markdown renderer collapses it, and on the site it becomes a toggleable <code>hidden-source</code> block, revealed either by the header's "Show more Agda" control (all blocks, persisted) or by the small <code>▸ hidden code (n lines)</code> note that agda-toggle.js places in front of each hidden block (that block only).  When the scaffolding shares its fence with real definitions, split the fence and wrap only the scaffolding part.  New modules should follow the same convention.</p>
+<p>The wrapper must be an HTML comment rather than any indenting construct: Agda requires its code at column 0, so a block can never be indented into a <code>??? note</code> admonition or a Markdown-nested <code>&lt;details&gt;</code> — indenting the fence breaks type-checking.  The comment wrapper adds no indentation, which is exactly why issue #431 settled on this mechanism.</p>
+<p>Two kinds of module are deliberate exceptions:</p>
+<ul>
+<li><strong>Pedagogical modules</strong> whose scaffolding is the subject of the surrounding prose stay fully unwrapped: <code>Overture.Basic</code> (which explains the <code>OPTIONS</code> pragma, modules, and imports) and <code>Demos.HSP</code> (the TYPES 2021 paper, which discusses its imports in the text).</li>
+<li><strong>Barrel modules</strong> stay unwrapped too: a barrel's annotated <code>open import … public</code> list is the page's content, and hiding its only block would leave a blank page that reads as unfinished.</li>
+</ul>
+<p>As a tripwire against accidentally wrapping a barrel, the build logs a <code>⚠ &lt;Module&gt;: every code block on this page is hidden</code> line for any page that would render code-free.  Three prose-first pages hide their lone <code>OPTIONS</code>/module block by design and are exempt from that check: <code>Overture.Preface</code>, <code>Demos.GeneralOperationsAndRelations</code>, and <code>Setoid.Complexity.Basic</code> (<code>PROSE_ONLY_MODULES</code> in <code>mkdocs_gen_library.py</code>).</p>
 <h3 id="build-commands">Build commands<a class="headerlink" href="#build-commands" title="Anchor link to this section">&para;</a></h3>
 <p>Run these inside <code>nix develop</code> (the MkDocs toolchain is pinned in <code>flake.nix</code>):</p>
 <table>
@@ -12609,6 +12653,8 @@ scripts/python/
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../assets/js/agda-copy.js"></script>
+      
+        <script src="../assets/js/agda-toggle.js"></script>
       
         <script src="../assets/js/carousel.js"></script>
       

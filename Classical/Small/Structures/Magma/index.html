@@ -12077,27 +12077,28 @@ and <a href="/Demos/"><code>Demos/</code></a> typically live in this small case;
 fixed-type-universe-level specialization out keeps the polymorphic core unencumbered
 while giving downstream consumers a flat import without universe polymorphism in the
 foreground.</p>
-<pre class="Agda"><a id="921" class="Symbol">{-#</a> <a id="925" class="Keyword">OPTIONS</a> <a id="933" class="Pragma">--cubical-compatible</a> <a id="954" class="Pragma">--exact-split</a> <a id="968" class="Pragma">--safe</a> <a id="975" class="Symbol">#-}</a>
+<pre class="Agda hidden-source"><a id="926" class="Symbol">{-#</a> <a id="930" class="Keyword">OPTIONS</a> <a id="938" class="Pragma">--cubical-compatible</a> <a id="959" class="Pragma">--exact-split</a> <a id="973" class="Pragma">--safe</a> <a id="980" class="Symbol">#-}</a>
 
-<a id="980" class="Keyword">module</a> <a id="987" href="/Classical/Small/Structures/Magma/" class="Module">Classical.Small.Structures.Magma</a> <a id="1020" class="Keyword">where</a>
+<a id="985" class="Keyword">module</a> <a id="992" href="/Classical/Small/Structures/Magma/" class="Module">Classical.Small.Structures.Magma</a> <a id="1025" class="Keyword">where</a>
 
-<a id="1027" class="Comment">-- Imports from Agda and the Agda Standard Library ----------------------------</a>
-<a id="1107" class="Keyword">open</a> <a id="1112" class="Keyword">import</a> <a id="1119" href="/classic/Agda.Primitive.html" class="Module">Agda.Primitive</a>  <a id="1135" class="Keyword">using</a> <a id="1141" class="Symbol">()</a> <a id="1144" class="Keyword">renaming</a> <a id="1153" class="Symbol">(</a> <a id="1155" href="/classic/Agda.Primitive.html#388" class="Primitive">Set</a> <a id="1159" class="Symbol">to</a> <a id="1162" class="Primitive">Type</a> <a id="1167" class="Symbol">)</a>
-<a id="1169" class="Keyword">open</a> <a id="1174" class="Keyword">import</a> <a id="1181" href="/classic/Level.html" class="Module">Level</a>           <a id="1197" class="Keyword">using</a> <a id="1203" class="Symbol">(</a> <a id="1205" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="1208" class="Symbol">;</a> <a id="1210" href="/classic/Agda.Primitive.html#931" class="Primitive">suc</a> <a id="1214" class="Symbol">)</a>
+<a id="1032" class="Comment">-- Imports from Agda and the Agda Standard Library ----------------------------</a>
+<a id="1112" class="Keyword">open</a> <a id="1117" class="Keyword">import</a> <a id="1124" href="/classic/Agda.Primitive.html" class="Module">Agda.Primitive</a>  <a id="1140" class="Keyword">using</a> <a id="1146" class="Symbol">()</a> <a id="1149" class="Keyword">renaming</a> <a id="1158" class="Symbol">(</a> <a id="1160" href="/classic/Agda.Primitive.html#388" class="Primitive">Set</a> <a id="1164" class="Symbol">to</a> <a id="1167" class="Primitive">Type</a> <a id="1172" class="Symbol">)</a>
+<a id="1174" class="Keyword">open</a> <a id="1179" class="Keyword">import</a> <a id="1186" href="/classic/Level.html" class="Module">Level</a>           <a id="1202" class="Keyword">using</a> <a id="1208" class="Symbol">(</a> <a id="1210" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="1213" class="Symbol">;</a> <a id="1215" href="/classic/Agda.Primitive.html#931" class="Primitive">suc</a> <a id="1219" class="Symbol">)</a>
 
-<a id="1217" class="Comment">-- Imports from the Agda Universal Algebra Library ----------------------------</a>
-<a id="1297" class="Keyword">import</a> <a id="1304" href="/Classical/Structures/Magma/" class="Module">Classical.Structures.Magma</a> <a id="1331" class="Symbol">as</a> <a id="1334" class="Module">Polymorphic</a>
+<a id="1222" class="Comment">-- Imports from the Agda Universal Algebra Library ----------------------------</a>
+<a id="1302" class="Keyword">import</a> <a id="1309" href="/Classical/Structures/Magma/" class="Module">Classical.Structures.Magma</a> <a id="1336" class="Symbol">as</a> <a id="1339" class="Module">Polymorphic</a>
 </pre>
+
 <h4 id="the-level-fixed-magma-type">The level-fixed Magma Type<a class="headerlink" href="#the-level-fixed-magma-type" title="Anchor link to this section">&para;</a></h4>
-<pre class="Agda"><a id="Magma"></a><a id="1392" href="/Classical/Small/Structures/Magma/#1392" class="Function">Magma</a> <a id="1398" class="Symbol">:</a> <a id="1400" href="/Classical/Small/Structures/Magma/#1162" class="Primitive">Type</a> <a id="1405" class="Symbol">(</a><a id="1406" href="/classic/Agda.Primitive.html#931" class="Primitive">suc</a> <a id="1410" href="/classic/Level.html#521" class="Function">0ℓ</a><a id="1412" class="Symbol">)</a>
-<a id="1414" href="/Classical/Small/Structures/Magma/#1392" class="Function">Magma</a> <a id="1420" class="Symbol">=</a> <a id="1422" href="/Classical/Structures/Magma/#3392" class="Function">Polymorphic.Magma</a> <a id="1440" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="1443" href="/classic/Level.html#521" class="Function">0ℓ</a>
+<pre class="Agda"><a id="Magma"></a><a id="1401" href="/Classical/Small/Structures/Magma/#1401" class="Function">Magma</a> <a id="1407" class="Symbol">:</a> <a id="1409" href="/Classical/Small/Structures/Magma/#1167" class="Primitive">Type</a> <a id="1414" class="Symbol">(</a><a id="1415" href="/classic/Agda.Primitive.html#931" class="Primitive">suc</a> <a id="1419" href="/classic/Level.html#521" class="Function">0ℓ</a><a id="1421" class="Symbol">)</a>
+<a id="1423" href="/Classical/Small/Structures/Magma/#1401" class="Function">Magma</a> <a id="1429" class="Symbol">=</a> <a id="1431" href="/Classical/Structures/Magma/#3401" class="Function">Polymorphic.Magma</a> <a id="1449" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="1452" href="/classic/Level.html#521" class="Function">0ℓ</a>
 </pre>
 <h4 id="small-opstomagma">Small <code>opsToMagma</code><a class="headerlink" href="#small-opstomagma" title="Anchor link to this section">&para;</a></h4>
 <p>The polymorphic <code>opsToMagma</code> specializes immediately: with <code>α = 0ℓ</code>, it produces
 a <code>Polymorphic.Magma 0ℓ 0ℓ</code> from <code>(A : Type 0ℓ) → (A → A → A)</code>, which
 is exactly the level-fixed <code>Magma</code> above.</p>
-<pre class="Agda"><a id="opsToMagma"></a><a id="1678" href="/Classical/Small/Structures/Magma/#1678" class="Function">opsToMagma</a> <a id="1689" class="Symbol">:</a> <a id="1691" class="Symbol">(</a><a id="1692" href="/Classical/Small/Structures/Magma/#1692" class="Bound">A</a> <a id="1694" class="Symbol">:</a> <a id="1696" href="/Classical/Small/Structures/Magma/#1162" class="Primitive">Type</a> <a id="1701" href="/classic/Level.html#521" class="Function">0ℓ</a><a id="1703" class="Symbol">)</a> <a id="1705" class="Symbol">→</a> <a id="1707" class="Symbol">(</a><a id="1708" href="/Classical/Small/Structures/Magma/#1692" class="Bound">A</a> <a id="1710" class="Symbol">→</a> <a id="1712" href="/Classical/Small/Structures/Magma/#1692" class="Bound">A</a> <a id="1714" class="Symbol">→</a> <a id="1716" href="/Classical/Small/Structures/Magma/#1692" class="Bound">A</a><a id="1717" class="Symbol">)</a> <a id="1719" class="Symbol">→</a> <a id="1721" href="/Classical/Small/Structures/Magma/#1392" class="Function">Magma</a>
-<a id="1727" href="/Classical/Small/Structures/Magma/#1678" class="Function">opsToMagma</a> <a id="1738" href="/Classical/Small/Structures/Magma/#1738" class="Bound">A</a> <a id="1740" class="Symbol">=</a> <a id="1742" href="/Classical/Structures/Magma/#6348" class="Function">Polymorphic.opsToMagma</a> <a id="1765" class="Symbol">{</a><a id="1766" class="Argument">A</a> <a id="1768" class="Symbol">=</a> <a id="1770" href="/Classical/Small/Structures/Magma/#1738" class="Bound">A</a><a id="1771" class="Symbol">}</a>
+<pre class="Agda"><a id="opsToMagma"></a><a id="1687" href="/Classical/Small/Structures/Magma/#1687" class="Function">opsToMagma</a> <a id="1698" class="Symbol">:</a> <a id="1700" class="Symbol">(</a><a id="1701" href="/Classical/Small/Structures/Magma/#1701" class="Bound">A</a> <a id="1703" class="Symbol">:</a> <a id="1705" href="/Classical/Small/Structures/Magma/#1167" class="Primitive">Type</a> <a id="1710" href="/classic/Level.html#521" class="Function">0ℓ</a><a id="1712" class="Symbol">)</a> <a id="1714" class="Symbol">→</a> <a id="1716" class="Symbol">(</a><a id="1717" href="/Classical/Small/Structures/Magma/#1701" class="Bound">A</a> <a id="1719" class="Symbol">→</a> <a id="1721" href="/Classical/Small/Structures/Magma/#1701" class="Bound">A</a> <a id="1723" class="Symbol">→</a> <a id="1725" href="/Classical/Small/Structures/Magma/#1701" class="Bound">A</a><a id="1726" class="Symbol">)</a> <a id="1728" class="Symbol">→</a> <a id="1730" href="/Classical/Small/Structures/Magma/#1401" class="Function">Magma</a>
+<a id="1736" href="/Classical/Small/Structures/Magma/#1687" class="Function">opsToMagma</a> <a id="1747" href="/Classical/Small/Structures/Magma/#1747" class="Bound">A</a> <a id="1749" class="Symbol">=</a> <a id="1751" href="/Classical/Structures/Magma/#6357" class="Function">Polymorphic.opsToMagma</a> <a id="1774" class="Symbol">{</a><a id="1775" class="Argument">A</a> <a id="1777" class="Symbol">=</a> <a id="1779" href="/Classical/Small/Structures/Magma/#1747" class="Bound">A</a><a id="1780" class="Symbol">}</a>
 </pre>
 
 <!-- File: docs/_links.md -->
@@ -12230,6 +12231,8 @@ is exactly the level-fixed <code>Magma</code> above.</p>
       <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../../../assets/js/agda-copy.js"></script>
+      
+        <script src="../../../../assets/js/agda-toggle.js"></script>
       
         <script src="../../../../assets/js/carousel.js"></script>
       
