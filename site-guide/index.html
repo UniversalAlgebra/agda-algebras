@@ -11516,6 +11516,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#recovering-a-stuck-pages-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recovering a stuck Pages deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -12138,6 +12149,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#recovering-a-stuck-pages-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recovering a stuck Pages deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -12386,6 +12408,23 @@ separate copy of the documentation.  The decision record is
 because the <code>agda --html</code> passes are skipped.  Use <strong><code>make serve-full</code></strong> to
 preview exactly what gets deployed.</p>
 </div>
+<h3 id="recovering-a-stuck-pages-deployment">Recovering a stuck Pages deployment<a class="headerlink" href="#recovering-a-stuck-pages-deployment" title="Anchor link to this section">&para;</a></h3>
+<p>Publishing is a two-repository chain: the Docs workflow here builds <code>./site</code> and pushes it to the <code>gh-pages</code> branch of <a href="https://github.com/universalalgebra/agda-algebras"><code>universalalgebra/agda-algebras</code></a>, and GitHub's auto-generated <code>pages-build-deployment</code> workflow in <em>that</em> repository publishes the branch to the live site.  The last hop occasionally fails with a transient <code>Deployment failed, try again later</code>, and a failed run can wedge in <code>queued</code> when re-run.  Recovery steps, in escalating order:</p>
+<ul>
+<li><strong>Check for a platform incident</strong> at <a href="https://www.githubstatus.com/">githubstatus.com</a>; this error is almost always GitHub-side, and waiting often suffices.</li>
+<li><strong>Re-run the failed <code>pages-build-deployment</code> run</strong> from the Actions tab of <code>universalalgebra/agda-algebras</code>.</li>
+<li><strong>Re-run the Docs workflow here</strong> (Actions → Docs → Run workflow).  Note this re-triggers publication only when the rebuilt site differs from what is already on <code>gh-pages</code> — the publish action skips the push when nothing changed, so an unchanged same-day rebuild is a no-op.</li>
+<li>
+<p><strong>Force a fresh deployment with an empty commit</strong>, which always re-triggers the publisher:</p>
+<div class="highlight"><pre><span></span><code><span class="go">git clone --branch gh-pages --depth 1 git@github.com:universalalgebra/agda-algebras.git ua-pages</span>
+<span class="go">cd ua-pages</span>
+<span class="go">git commit --allow-empty -m &quot;retrigger Pages deployment&quot;</span>
+<span class="go">git push</span>
+</code></pre></div>
+</li>
+</ul>
+<p>Merging any content change to <code>master</code> also re-pushes <code>gh-pages</code> and re-triggers publication as a side effect.  When checking what is actually live, remember the Pages CDN caches responses for up to ten minutes and your browser caches the HTML and CSS on top of that — hard-refresh, or probe a file headers-only with <code>curl -sI https://agda-algebras.universalalgebra.org/assets/js/agda-copy.js</code>.</p>
+<p>Resist the temptation to add a deployment workflow to the <code>gh-pages</code> branch itself: that branch is disposable build output which the publish action overwrites, and keeping such a file alive would require <code>keep_files: true</code>, which never deletes anything and so leaks renamed or removed pages onto the live site forever.</p>
 <h2 id="changing-the-settings">Changing the settings<a class="headerlink" href="#changing-the-settings" title="Anchor link to this section">&para;</a></h2>
 <h3 id="colours-and-the-theme">Colours and the theme<a class="headerlink" href="#colours-and-the-theme" title="Anchor link to this section">&para;</a></h3>
 <p>The active palette is <strong>Aurora</strong> (indigo→violet chrome, orange accent), a set of
