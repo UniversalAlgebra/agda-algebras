@@ -55,7 +55,7 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/custom.css">
+      <link rel="stylesheet" href="../stylesheets/custom.css?h=b9640cc2">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -12424,6 +12424,7 @@ preview exactly what gets deployed.</p>
 </li>
 </ul>
 <p>Merging any content change to <code>master</code> also re-pushes <code>gh-pages</code> and re-triggers publication as a side effect.  When checking what is actually live, remember the Pages CDN caches responses for up to ten minutes and your browser caches the HTML and CSS on top of that — hard-refresh, or probe a file headers-only with <code>curl -sI https://agda-algebras.universalalgebra.org/assets/js/agda-copy.js</code>.</p>
+<p>The site's own CSS/JS are <strong>content-hashed</strong> so that a returning visitor never renders fresh HTML against a stale-cached stylesheet or script (the assets carry a multi-hour <code>max-age</code>, far longer than the HTML's ten minutes).  <code>on_config</code> in <a href="https://github.com/ualib/agda-algebras/blob/master/scripts/python/mkdocs_hooks.py"><code>scripts/python/mkdocs_hooks.py</code></a> appends an eight-character hash of each <code>extra_css</code> / <code>extra_javascript</code> file to its URL (<code>custom.css?h=…</code>); a changed asset therefore gets a fresh URL, which the short-lived HTML picks up within minutes (#429).  The copied file keeps its plain name — only the reference carries the query — so the headers-only probe above is unaffected.</p>
 <p>Resist the temptation to add a deployment workflow to the <code>gh-pages</code> branch itself: that branch is disposable build output which the publish action overwrites, and keeping such a file alive would require <code>keep_files: true</code>, which never deletes anything and so leaks renamed or removed pages onto the live site forever.</p>
 <h2 id="changing-the-settings">Changing the settings<a class="headerlink" href="#changing-the-settings" title="Anchor link to this section">&para;</a></h2>
 <h3 id="colours-and-the-theme">Colours and the theme<a class="headerlink" href="#colours-and-the-theme" title="Anchor link to this section">&para;</a></h3>
@@ -12691,13 +12692,13 @@ scripts/python/
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="../assets/js/agda-copy.js"></script>
+        <script src="../assets/js/agda-copy.js?h=1e452fb9"></script>
       
-        <script src="../assets/js/agda-toggle.js"></script>
+        <script src="../assets/js/agda-toggle.js?h=1bfe91e4"></script>
       
-        <script src="../assets/js/agda-hover.js"></script>
+        <script src="../assets/js/agda-hover.js?h=e1a7b72f"></script>
       
-        <script src="../assets/js/carousel.js"></script>
+        <script src="../assets/js/carousel.js?h=3a3ff133"></script>
       
     
   </body>
