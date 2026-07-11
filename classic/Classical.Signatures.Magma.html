@@ -65,13 +65,13 @@ extending or reusing as appropriate.
 
 A magma has a single binary operation symbol.  The constructor is named `∙-Op`
 following the `&lt;symbol&gt;-Op` convention; the bare `∙` is reserved for the curried
-user-facing accessor introduced in [`Classical.Structures.Magma`][].
+user-facing accessor introduced in [`Classical.Structures.Magma`][Classical.Structures.Magma].
 
-</a><a id="3247" class="Markup">```agda
-</a><a id="3255" class="Keyword">data</a> <a id="Op-Magma"></a><a id="3260" href="Classical.Signatures.Magma.html#3260" class="Datatype">Op-Magma</a> <a id="3269" class="Symbol">:</a> <a id="3271" href="Classical.Signatures.Magma.html#2714" class="Primitive">Type</a> <a id="3276" class="Keyword">where</a>
-  <a id="Op-Magma.∙-Op"></a><a id="3284" href="Classical.Signatures.Magma.html#3284" class="InductiveConstructor">∙-Op</a> <a id="3289" class="Symbol">:</a> <a id="3291" href="Classical.Signatures.Magma.html#3260" class="Datatype">Op-Magma</a>
-<a id="3300" class="Markup">```
-</a><a id="3304" class="Background">
+</a><a id="3273" class="Markup">```agda
+</a><a id="3281" class="Keyword">data</a> <a id="Op-Magma"></a><a id="3286" href="Classical.Signatures.Magma.html#3286" class="Datatype">Op-Magma</a> <a id="3295" class="Symbol">:</a> <a id="3297" href="Classical.Signatures.Magma.html#2714" class="Primitive">Type</a> <a id="3302" class="Keyword">where</a>
+  <a id="Op-Magma.∙-Op"></a><a id="3310" href="Classical.Signatures.Magma.html#3310" class="InductiveConstructor">∙-Op</a> <a id="3315" class="Symbol">:</a> <a id="3317" href="Classical.Signatures.Magma.html#3286" class="Datatype">Op-Magma</a>
+<a id="3326" class="Markup">```
+</a><a id="3330" class="Background">
 #### The arity function
 
 `∙-Op` is binary, so its arity is `Fin 2`.  Direct pattern matching on the single
@@ -80,15 +80,15 @@ this is what makes the arity-conformance evidence `refl` of type
 `ArityOf Sig-Magma ∙-Op ≡ Fin 2` typecheck in `Th-Semigroup` (M3-4) and every
 subsequent theory.
 
-</a><a id="3652" class="Markup">```agda
-</a><a id="ar-Magma"></a><a id="3660" href="Classical.Signatures.Magma.html#3660" class="Function">ar-Magma</a> <a id="3669" class="Symbol">:</a> <a id="3671" href="Classical.Signatures.Magma.html#3260" class="Datatype">Op-Magma</a> <a id="3680" class="Symbol">→</a> <a id="3682" href="Classical.Signatures.Magma.html#2714" class="Primitive">Type</a>
-<a id="3687" href="Classical.Signatures.Magma.html#3660" class="Function">ar-Magma</a> <a id="3696" href="Classical.Signatures.Magma.html#3284" class="InductiveConstructor">∙-Op</a> <a id="3701" class="Symbol">=</a> <a id="3703" href="Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="3707" class="Number">2</a>
-<a id="3709" class="Markup">```
-</a><a id="3713" class="Background">
+</a><a id="3678" class="Markup">```agda
+</a><a id="ar-Magma"></a><a id="3686" href="Classical.Signatures.Magma.html#3686" class="Function">ar-Magma</a> <a id="3695" class="Symbol">:</a> <a id="3697" href="Classical.Signatures.Magma.html#3286" class="Datatype">Op-Magma</a> <a id="3706" class="Symbol">→</a> <a id="3708" href="Classical.Signatures.Magma.html#2714" class="Primitive">Type</a>
+<a id="3713" href="Classical.Signatures.Magma.html#3686" class="Function">ar-Magma</a> <a id="3722" href="Classical.Signatures.Magma.html#3310" class="InductiveConstructor">∙-Op</a> <a id="3727" class="Symbol">=</a> <a id="3729" href="Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="3733" class="Number">2</a>
+<a id="3735" class="Markup">```
+</a><a id="3739" class="Background">
 #### The signature value
 
-</a><a id="3740" class="Markup">```agda
-</a><a id="Sig-Magma"></a><a id="3748" href="Classical.Signatures.Magma.html#3748" class="Function">Sig-Magma</a> <a id="3758" class="Symbol">:</a> <a id="3760" href="Overture.Signatures.html#3218" class="Function">Signature</a> <a id="3770" href="Level.html#521" class="Function">0ℓ</a> <a id="3773" href="Level.html#521" class="Function">0ℓ</a>
-<a id="3776" href="Classical.Signatures.Magma.html#3748" class="Function">Sig-Magma</a> <a id="3786" class="Symbol">=</a> <a id="3788" href="Classical.Signatures.Magma.html#3260" class="Datatype">Op-Magma</a> <a id="3797" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="3799" href="Classical.Signatures.Magma.html#3660" class="Function">ar-Magma</a>
-<a id="3808" class="Markup">```
+</a><a id="3766" class="Markup">```agda
+</a><a id="Sig-Magma"></a><a id="3774" href="Classical.Signatures.Magma.html#3774" class="Function">Sig-Magma</a> <a id="3784" class="Symbol">:</a> <a id="3786" href="Overture.Signatures.html#3218" class="Function">Signature</a> <a id="3796" href="Level.html#521" class="Function">0ℓ</a> <a id="3799" href="Level.html#521" class="Function">0ℓ</a>
+<a id="3802" href="Classical.Signatures.Magma.html#3774" class="Function">Sig-Magma</a> <a id="3812" class="Symbol">=</a> <a id="3814" href="Classical.Signatures.Magma.html#3286" class="Datatype">Op-Magma</a> <a id="3823" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="3825" href="Classical.Signatures.Magma.html#3686" class="Function">ar-Magma</a>
+<a id="3834" class="Markup">```
 </a></pre></body></html>

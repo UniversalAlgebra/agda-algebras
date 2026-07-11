@@ -11953,25 +11953,25 @@
 <h1 id="examplessetoid">Examples.Setoid<a class="headerlink" href="#examplessetoid" title="Anchor link to this section">&para;</a></h1>
 <h3 id="examples-setoid">Worked examples over the Setoid universal-algebra layer<a class="headerlink" href="#examples-setoid" title="Anchor link to this section">&para;</a></h3>
 <p>This is the <a href="/Examples/Setoid/">Examples.Setoid</a> module of the <a href="/">Agda Universal Algebra Library</a>.</p>
-<p>Whereas [<code>Examples/Classical/</code>][] pairs one worked instance with each <em>concrete
+<p>Whereas <a href="/Examples/Classical/"><code>Examples/Classical/</code></a> pairs one worked instance with each <em>concrete
 structure</em> (magma, semigroup, monoid, …), the modules collected here exercise the
-generic [<code>Setoid/</code>][] universal-algebra machinery directly: free algebras over a
+generic <a href="/Setoid/"><code>Setoid/</code></a> universal-algebra machinery directly: free algebras over a
 signature, relatively free algebras / presentations, quotients by a congruence, and
 Birkhoff's HSP theorem specialized to a concrete algebra.  They are the
 cross-structure and "richer" examples requested in
 <a href="https://github.com/ualib/agda-algebras/issues/266">issue #266</a>.</p>
-<pre class="Agda"><a id="846" class="Symbol">{-#</a> <a id="850" class="Keyword">OPTIONS</a> <a id="858" class="Pragma">--cubical-compatible</a> <a id="879" class="Pragma">--exact-split</a> <a id="893" class="Pragma">--safe</a> <a id="900" class="Symbol">#-}</a>
+<pre class="Agda"><a id="870" class="Symbol">{-#</a> <a id="874" class="Keyword">OPTIONS</a> <a id="882" class="Pragma">--cubical-compatible</a> <a id="903" class="Pragma">--exact-split</a> <a id="917" class="Pragma">--safe</a> <a id="924" class="Symbol">#-}</a>
 
-<a id="905" class="Keyword">module</a> <a id="912" href="/Examples/Setoid/" class="Module">Examples.Setoid</a> <a id="928" class="Keyword">where</a>
+<a id="929" class="Keyword">module</a> <a id="936" href="/Examples/Setoid/" class="Module">Examples.Setoid</a> <a id="952" class="Keyword">where</a>
 
-<a id="935" class="Comment">-- Each worked example defines its own local syntactic-product helper `_·_`, so they</a>
-<a id="1020" class="Comment">-- must be opened without `public`: re-exporting would fail due to name clash.</a>
-<a id="1099" class="Comment">-- This barrel keeps the five modules in the build and the documentation tree.</a>
-<a id="1178" class="Keyword">open</a> <a id="1183" class="Keyword">import</a> <a id="1190" href="/Examples/Setoid/FreeMagma/" class="Module">Examples.Setoid.FreeMagma</a>
-<a id="1216" class="Keyword">open</a> <a id="1221" class="Keyword">import</a> <a id="1228" href="/Examples/Setoid/FreeSemigroup/" class="Module">Examples.Setoid.FreeSemigroup</a>
-<a id="1258" class="Keyword">open</a> <a id="1263" class="Keyword">import</a> <a id="1270" href="/Examples/Setoid/Presentation/" class="Module">Examples.Setoid.Presentation</a>
-<a id="1299" class="Keyword">open</a> <a id="1304" class="Keyword">import</a> <a id="1311" href="/Examples/Setoid/FiniteQuotient/" class="Module">Examples.Setoid.FiniteQuotient</a>
-<a id="1342" class="Keyword">open</a> <a id="1347" class="Keyword">import</a> <a id="1354" href="/Examples/Setoid/HSPCommutativeMonoid/" class="Module">Examples.Setoid.HSPCommutativeMonoid</a>
+<a id="959" class="Comment">-- Each worked example defines its own local syntactic-product helper `_·_`, so they</a>
+<a id="1044" class="Comment">-- must be opened without `public`: re-exporting would fail due to name clash.</a>
+<a id="1123" class="Comment">-- This barrel keeps the five modules in the build and the documentation tree.</a>
+<a id="1202" class="Keyword">open</a> <a id="1207" class="Keyword">import</a> <a id="1214" href="/Examples/Setoid/FreeMagma/" class="Module">Examples.Setoid.FreeMagma</a>
+<a id="1240" class="Keyword">open</a> <a id="1245" class="Keyword">import</a> <a id="1252" href="/Examples/Setoid/FreeSemigroup/" class="Module">Examples.Setoid.FreeSemigroup</a>
+<a id="1282" class="Keyword">open</a> <a id="1287" class="Keyword">import</a> <a id="1294" href="/Examples/Setoid/Presentation/" class="Module">Examples.Setoid.Presentation</a>
+<a id="1323" class="Keyword">open</a> <a id="1328" class="Keyword">import</a> <a id="1335" href="/Examples/Setoid/FiniteQuotient/" class="Module">Examples.Setoid.FiniteQuotient</a>
+<a id="1366" class="Keyword">open</a> <a id="1371" class="Keyword">import</a> <a id="1378" href="/Examples/Setoid/HSPCommutativeMonoid/" class="Module">Examples.Setoid.HSPCommutativeMonoid</a>
 </pre>
 
 <!-- File: docs/_links.md -->

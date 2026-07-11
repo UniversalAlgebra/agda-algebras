@@ -12146,7 +12146,7 @@ Agda type checker.</p>
 <h4 id="decidable-algebraic-laws">Decidable algebraic laws<a class="headerlink" href="#decidable-algebraic-laws" title="Anchor link to this section">&para;</a></h4>
 <p>The decidable equational-law checkers for finite operations — <code>Associative?</code>,
 <code>Commutative?</code>, <code>Idempotent?</code>, the identity/inverse laws, and the two-operation
-absorption and distributivity laws — live in [<code>Overture.Operations.Properties</code>][].
+absorption and distributivity laws — live in <a href="/Overture/Operations/Properties/"><code>Overture.Operations.Properties</code></a>.
 They take an arbitrary finite operation <code>Fin n → Fin n → Fin n</code> and do not touch the
 table representation, so they are not specific to Cayley tables; finiteness is simply
 what makes the laws decidable.  Together with the <code>Table</code>/<code>⟦_⟧</code> machinery here and
@@ -12164,7 +12164,7 @@ b</code> is the row-<code>a</code>, column-<code>b</code> entry) and the <code c
 Routing <code class="AgdaFunction">⟦_⟧</code> through the tuple-indexed <code>Op (Fin 2) (Fin n)</code> would
 only insert <code>Curry₂</code>/<code>Uncurry₂</code> adapters at every call site and obscure the
 two-dimensional table, so the finite Cayley-table case keeps the plain curried
-function type.  The decidable-law checkers in [<code>Overture.Operations.Properties</code>][]
+function type.  The decidable-law checkers in <a href="/Overture/Operations/Properties/"><code>Overture.Operations.Properties</code></a>
 take the same bare <code>Fin n → Fin n → Fin n</code>, for the same reason: finiteness is what
 makes the laws decidable, independently of how an operation's arguments are packaged.</p>
 <!-- File: docs/_links.md -->

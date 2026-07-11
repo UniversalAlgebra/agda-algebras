@@ -11,27 +11,27 @@ author: &quot;the agda-algebras development team&quot;
 
 This is the [Classical.Small.Structures][] module of the [Agda Universal Algebra Library][].
 
-This is the parallel-to-[`Classical.Structures`][] aggregator inside the
-[`Classical.Small`][] subtree.  It re-exports each per-structure level-fixed
+This is the parallel-to-[`Classical.Structures`][Classical.Structures] aggregator inside the
+[`Classical.Small`][Classical.Small] subtree.  It re-exports each per-structure level-fixed
 veneer in `Classical/Small/Structures/X.lagda.md` as those land under milestone
 M3.  See [ADR-002][] for the design rationale.
 
-</a><a id="596" class="Markup">```agda
-</a><a id="604" class="Symbol">{-#</a> <a id="608" class="Keyword">OPTIONS</a> <a id="616" class="Pragma">--cubical-compatible</a> <a id="637" class="Pragma">--exact-split</a> <a id="651" class="Pragma">--safe</a> <a id="658" class="Symbol">#-}</a>
+</a><a id="631" class="Markup">```agda
+</a><a id="639" class="Symbol">{-#</a> <a id="643" class="Keyword">OPTIONS</a> <a id="651" class="Pragma">--cubical-compatible</a> <a id="672" class="Pragma">--exact-split</a> <a id="686" class="Pragma">--safe</a> <a id="693" class="Symbol">#-}</a>
 
-<a id="663" class="Keyword">module</a> <a id="670" href="Classical.Small.Structures.html" class="Module">Classical.Small.Structures</a> <a id="697" class="Keyword">where</a>
+<a id="698" class="Keyword">module</a> <a id="705" href="Classical.Small.Structures.html" class="Module">Classical.Small.Structures</a> <a id="732" class="Keyword">where</a>
 
-<a id="704" class="Keyword">open</a> <a id="709" class="Keyword">import</a> <a id="716" href="Classical.Small.Structures.AbelianGroup.html" class="Module">Classical.Small.Structures.AbelianGroup</a> <a id="756" class="Keyword">public</a>
-<a id="763" class="Keyword">open</a> <a id="768" class="Keyword">import</a> <a id="775" href="Classical.Small.Structures.CommutativeMonoid.html" class="Module">Classical.Small.Structures.CommutativeMonoid</a> <a id="820" class="Keyword">public</a>
-<a id="827" class="Keyword">open</a> <a id="832" class="Keyword">import</a> <a id="839" href="Classical.Small.Structures.CommutativeRing.html" class="Module">Classical.Small.Structures.CommutativeRing</a> <a id="882" class="Keyword">public</a>
-<a id="889" class="Keyword">open</a> <a id="894" class="Keyword">import</a> <a id="901" href="Classical.Small.Structures.CommutativeSemigroup.html" class="Module">Classical.Small.Structures.CommutativeSemigroup</a> <a id="949" class="Keyword">public</a>
-<a id="956" class="Keyword">open</a> <a id="961" class="Keyword">import</a> <a id="968" href="Classical.Small.Structures.DistributiveLattice.html" class="Module">Classical.Small.Structures.DistributiveLattice</a> <a id="1015" class="Keyword">public</a>
-<a id="1022" class="Keyword">open</a> <a id="1027" class="Keyword">import</a> <a id="1034" href="Classical.Small.Structures.Group.html" class="Module">Classical.Small.Structures.Group</a> <a id="1067" class="Keyword">public</a>
-<a id="1074" class="Keyword">open</a> <a id="1079" class="Keyword">import</a> <a id="1086" href="Classical.Small.Structures.Lattice.html" class="Module">Classical.Small.Structures.Lattice</a> <a id="1121" class="Keyword">public</a>
-<a id="1128" class="Keyword">open</a> <a id="1133" class="Keyword">import</a> <a id="1140" href="Classical.Small.Structures.Magma.html" class="Module">Classical.Small.Structures.Magma</a> <a id="1173" class="Keyword">public</a>
-<a id="1180" class="Keyword">open</a> <a id="1185" class="Keyword">import</a> <a id="1192" href="Classical.Small.Structures.Monoid.html" class="Module">Classical.Small.Structures.Monoid</a> <a id="1226" class="Keyword">public</a>
-<a id="1233" class="Keyword">open</a> <a id="1238" class="Keyword">import</a> <a id="1245" href="Classical.Small.Structures.Ring.html" class="Module">Classical.Small.Structures.Ring</a> <a id="1277" class="Keyword">public</a>
-<a id="1284" class="Keyword">open</a> <a id="1289" class="Keyword">import</a> <a id="1296" href="Classical.Small.Structures.Semigroup.html" class="Module">Classical.Small.Structures.Semigroup</a> <a id="1333" class="Keyword">public</a>
-<a id="1340" class="Keyword">open</a> <a id="1345" class="Keyword">import</a> <a id="1352" href="Classical.Small.Structures.Semilattice.html" class="Module">Classical.Small.Structures.Semilattice</a> <a id="1391" class="Keyword">public</a>
-<a id="1398" class="Markup">```
+<a id="739" class="Keyword">open</a> <a id="744" class="Keyword">import</a> <a id="751" href="Classical.Small.Structures.AbelianGroup.html" class="Module">Classical.Small.Structures.AbelianGroup</a> <a id="791" class="Keyword">public</a>
+<a id="798" class="Keyword">open</a> <a id="803" class="Keyword">import</a> <a id="810" href="Classical.Small.Structures.CommutativeMonoid.html" class="Module">Classical.Small.Structures.CommutativeMonoid</a> <a id="855" class="Keyword">public</a>
+<a id="862" class="Keyword">open</a> <a id="867" class="Keyword">import</a> <a id="874" href="Classical.Small.Structures.CommutativeRing.html" class="Module">Classical.Small.Structures.CommutativeRing</a> <a id="917" class="Keyword">public</a>
+<a id="924" class="Keyword">open</a> <a id="929" class="Keyword">import</a> <a id="936" href="Classical.Small.Structures.CommutativeSemigroup.html" class="Module">Classical.Small.Structures.CommutativeSemigroup</a> <a id="984" class="Keyword">public</a>
+<a id="991" class="Keyword">open</a> <a id="996" class="Keyword">import</a> <a id="1003" href="Classical.Small.Structures.DistributiveLattice.html" class="Module">Classical.Small.Structures.DistributiveLattice</a> <a id="1050" class="Keyword">public</a>
+<a id="1057" class="Keyword">open</a> <a id="1062" class="Keyword">import</a> <a id="1069" href="Classical.Small.Structures.Group.html" class="Module">Classical.Small.Structures.Group</a> <a id="1102" class="Keyword">public</a>
+<a id="1109" class="Keyword">open</a> <a id="1114" class="Keyword">import</a> <a id="1121" href="Classical.Small.Structures.Lattice.html" class="Module">Classical.Small.Structures.Lattice</a> <a id="1156" class="Keyword">public</a>
+<a id="1163" class="Keyword">open</a> <a id="1168" class="Keyword">import</a> <a id="1175" href="Classical.Small.Structures.Magma.html" class="Module">Classical.Small.Structures.Magma</a> <a id="1208" class="Keyword">public</a>
+<a id="1215" class="Keyword">open</a> <a id="1220" class="Keyword">import</a> <a id="1227" href="Classical.Small.Structures.Monoid.html" class="Module">Classical.Small.Structures.Monoid</a> <a id="1261" class="Keyword">public</a>
+<a id="1268" class="Keyword">open</a> <a id="1273" class="Keyword">import</a> <a id="1280" href="Classical.Small.Structures.Ring.html" class="Module">Classical.Small.Structures.Ring</a> <a id="1312" class="Keyword">public</a>
+<a id="1319" class="Keyword">open</a> <a id="1324" class="Keyword">import</a> <a id="1331" href="Classical.Small.Structures.Semigroup.html" class="Module">Classical.Small.Structures.Semigroup</a> <a id="1368" class="Keyword">public</a>
+<a id="1375" class="Keyword">open</a> <a id="1380" class="Keyword">import</a> <a id="1387" href="Classical.Small.Structures.Semilattice.html" class="Module">Classical.Small.Structures.Semilattice</a> <a id="1426" class="Keyword">public</a>
+<a id="1433" class="Markup">```
 </a></pre></body></html>
