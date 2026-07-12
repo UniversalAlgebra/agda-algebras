@@ -21,6 +21,10 @@
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
+         <loc>https://agda-algebras.universalalgebra.org/FLRP/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
          <loc>https://agda-algebras.universalalgebra.org/GITHUB_PROJECT/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
@@ -502,6 +506,10 @@
     </url>
     <url>
          <loc>https://agda-algebras.universalalgebra.org/Exercises/Complexity/FiniteCSP/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/FLRP/Problem/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
@@ -1226,6 +1234,10 @@
     </url>
     <url>
          <loc>https://agda-algebras.universalalgebra.org/adr/007-mkdocs-rendering-pipeline/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/adr/008-two-layer-congruence-discipline/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
 </urlset>

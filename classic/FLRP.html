@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>FLRP</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">---
+layout: default
+file: &quot;src/FLRP.lagda.md&quot;
+title: &quot;FLRP module (The Agda Universal Algebra Library)&quot;
+date: &quot;2026-07-11&quot;
+author: &quot;the agda-algebras development team&quot;
+---
+
+### The Finite Lattice Representation Problem
+
+This is the [FLRP][] module of the [Agda Universal Algebra Library][].
+
+This top-level `FLRP/` tree hosts the library&#39;s research program on the
+**Finite Lattice Representation Problem**: is every finite lattice isomorphic to the
+congruence lattice of a *finite* algebra?  The program&#39;s plan (the state of the art,
+the primary avenue of attack via interval-enforceable properties, and the breakdown
+into work packages) lives in `docs/notes/flrp-research-roadmap.md`; this tree holds
+only problem-specific formal content, while reusable mathematics developed along the
+way (group actions, subgroup lattices, closure combinatorics) lands in the `Setoid/`,
+`Classical/`, and `Order/` trees proper.
+
+Two standing warnings apply to everything under this namespace.
+
++  **Research-track separation**.  The FLRP is distinct from the algebraic-complexity
+   / finite-CSP track and from the Maltsev and interpretability infrastructure, even
+   where they share modules; do not conflate them (see `CLAUDE.md` and
+   `docs/GITHUB_PROJECT.md`).
++  **Experimental status**.  FLRP modules are research material and are exempt from
+   the stable-API deprecation discipline until their results stabilize.
+
+**Current submodules**.
+
++  [FLRP.Problem][] — the representability predicate `Representable`, the
+   formal statement of the problem, the first worked instance (the one-element
+   chain), and the constructive no-go theorem for the two-element chain.
+
+**Planned submodules** (per § 6 of the roadmap).
+
++  `FLRP.Closure` (closure properties of the representable class);
++  `FLRP.Intervals` (intervals in subgroup lattices and core-free normalization);
++  `FLRP.Enforceable` (interval-enforceable properties);
++  `FLRP.Reductions` (the catalog of reduction theorems);
++  `FLRP.Certificates` (machine-checked representation certificates);
++  `FLRP.Assumptions` (the registry of classical theorems imported as explicit
+   hypotheses, keeping the tree honest under `--safe`).
+
+</a><a id="2182" class="Markup">```agda
+</a><a id="2190" class="Symbol">{-#</a> <a id="2194" class="Keyword">OPTIONS</a> <a id="2202" class="Pragma">--cubical-compatible</a> <a id="2223" class="Pragma">--exact-split</a> <a id="2237" class="Pragma">--safe</a> <a id="2244" class="Symbol">#-}</a>
+
+<a id="2249" class="Keyword">module</a> <a id="2256" href="FLRP.html" class="Module">FLRP</a> <a id="2261" class="Keyword">where</a>
+
+<a id="2268" class="Keyword">open</a> <a id="2273" class="Keyword">import</a> <a id="2280" href="FLRP.Problem.html" class="Module">FLRP.Problem</a> <a id="2293" class="Keyword">public</a>
+<a id="2300" class="Markup">```
+</a></pre></body></html>
