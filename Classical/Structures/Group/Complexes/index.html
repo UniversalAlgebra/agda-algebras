@@ -12,31 +12,31 @@
         <meta name="author" content="The agda-algebras development team">
       
       
-        <link rel="canonical" href="https://agda-algebras.universalalgebra.org/Classical/Structures/AbelianGroup/">
+        <link rel="canonical" href="https://agda-algebras.universalalgebra.org/Classical/Structures/Group/Complexes/">
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../Basic/">
       
       
-        <link rel="next" href="../CommutativeMonoid/">
+        <link rel="next" href="../Conjugation/">
       
       
         
       
       
-      <link rel="icon" href="../../../assets/lambda.png">
+      <link rel="icon" href="../../../../assets/lambda.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>AbelianGroup - The Agda Universal Algebra Library</title>
+        <title>Complexes - The Agda Universal Algebra Library</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -55,9 +55,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/custom.css?h=b9640cc2">
+      <link rel="stylesheet" href="../../../../stylesheets/custom.css?h=b9640cc2">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#classicalstructuresabeliangroup" class="md-skip">
+        <a href="#classicalstructuresgroupcomplexes" class="md-skip">
           Skip to content
         </a>
       
@@ -98,9 +98,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="The Agda Universal Algebra Library" class="md-header__button md-logo" aria-label="The Agda Universal Algebra Library" data-md-component="logo">
+    <a href="../../../.." title="The Agda Universal Algebra Library" class="md-header__button md-logo" aria-label="The Agda Universal Algebra Library" data-md-component="logo">
       
-  <img src="../../../assets/lambda.png" alt="logo">
+  <img src="../../../../assets/lambda.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AbelianGroup
+              Complexes
             
           </span>
         </div>
@@ -229,7 +229,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../../../.." class="md-tabs__link">
         
   
   
@@ -252,7 +252,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../Overture/" class="md-tabs__link">
+        <a href="../../../../Overture/" class="md-tabs__link">
           
   
   
@@ -272,7 +272,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../constellation/" class="md-tabs__link">
+      <a href="../../../../constellation/" class="md-tabs__link">
         
   
   
@@ -293,7 +293,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../GITHUB_PROJECT/" class="md-tabs__link">
+        <a href="../../../../GITHUB_PROJECT/" class="md-tabs__link">
           
   
   
@@ -335,9 +335,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="The Agda Universal Algebra Library" class="md-nav__button md-logo" aria-label="The Agda Universal Algebra Library" data-md-component="logo">
+    <a href="../../../.." title="The Agda Universal Algebra Library" class="md-nav__button md-logo" aria-label="The Agda Universal Algebra Library" data-md-component="logo">
       
-  <img src="../../../assets/lambda.png" alt="logo">
+  <img src="../../../../assets/lambda.png" alt="logo">
 
     </a>
     The Agda Universal Algebra Library
@@ -364,7 +364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   
@@ -505,7 +505,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Overture/" class="md-nav__link ">
+            <a href="../../../../Overture/" class="md-nav__link ">
               
   
   
@@ -570,7 +570,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Overture/Adjunction/" class="md-nav__link ">
+            <a href="../../../../Overture/Adjunction/" class="md-nav__link ">
               
   
   
@@ -612,7 +612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Overture/Adjunction/Closure/" class="md-nav__link">
+      <a href="../../../../Overture/Adjunction/Closure/" class="md-nav__link">
         
   
   
@@ -640,7 +640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Overture/Adjunction/Galois/" class="md-nav__link">
+      <a href="../../../../Overture/Adjunction/Galois/" class="md-nav__link">
         
   
   
@@ -668,7 +668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Overture/Adjunction/Residuation/" class="md-nav__link">
+      <a href="../../../../Overture/Adjunction/Residuation/" class="md-nav__link">
         
   
   
@@ -704,7 +704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Overture/Basic/" class="md-nav__link">
+      <a href="../../../../Overture/Basic/" class="md-nav__link">
         
   
   
@@ -732,7 +732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Overture/Cayley/" class="md-nav__link">
+      <a href="../../../../Overture/Cayley/" class="md-nav__link">
         
   
   
@@ -760,7 +760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Overture/Functions/" class="md-nav__link">
+      <a href="../../../../Overture/Functions/" class="md-nav__link">
         
   
   
@@ -807,7 +807,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Overture/Operations/" class="md-nav__link ">
+            <a href="../../../../Overture/Operations/" class="md-nav__link ">
               
   
   
@@ -849,7 +849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Overture/Operations/Properties/" class="md-nav__link">
+      <a href="../../../../Overture/Operations/Properties/" class="md-nav__link">
         
   
   
@@ -885,7 +885,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Overture/Preface/" class="md-nav__link">
+      <a href="../../../../Overture/Preface/" class="md-nav__link">
         
   
   
@@ -913,7 +913,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Overture/Relations/" class="md-nav__link">
+      <a href="../../../../Overture/Relations/" class="md-nav__link">
         
   
   
@@ -960,7 +960,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Overture/Signatures/" class="md-nav__link ">
+            <a href="../../../../Overture/Signatures/" class="md-nav__link ">
               
   
   
@@ -1002,7 +1002,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Overture/Signatures/Morphisms/" class="md-nav__link">
+      <a href="../../../../Overture/Signatures/Morphisms/" class="md-nav__link">
         
   
   
@@ -1061,7 +1061,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Overture/Terms/" class="md-nav__link ">
+            <a href="../../../../Overture/Terms/" class="md-nav__link ">
               
   
   
@@ -1103,7 +1103,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Overture/Terms/Basic/" class="md-nav__link">
+      <a href="../../../../Overture/Terms/Basic/" class="md-nav__link">
         
   
   
@@ -1131,7 +1131,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Overture/Terms/Interpretation/" class="md-nav__link">
+      <a href="../../../../Overture/Terms/Interpretation/" class="md-nav__link">
         
   
   
@@ -1159,7 +1159,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Overture/Terms/Translation/" class="md-nav__link">
+      <a href="../../../../Overture/Terms/Translation/" class="md-nav__link">
         
   
   
@@ -1244,7 +1244,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Setoid/" class="md-nav__link ">
+            <a href="../../../../Setoid/" class="md-nav__link ">
               
   
   
@@ -1311,7 +1311,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Setoid/Algebras/" class="md-nav__link ">
+            <a href="../../../../Setoid/Algebras/" class="md-nav__link ">
               
   
   
@@ -1353,7 +1353,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Algebras/Basic/" class="md-nav__link">
+      <a href="../../../../Setoid/Algebras/Basic/" class="md-nav__link">
         
   
   
@@ -1381,7 +1381,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Algebras/Finite/" class="md-nav__link">
+      <a href="../../../../Setoid/Algebras/Finite/" class="md-nav__link">
         
   
   
@@ -1409,7 +1409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Algebras/Products/" class="md-nav__link">
+      <a href="../../../../Setoid/Algebras/Products/" class="md-nav__link">
         
   
   
@@ -1437,7 +1437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Algebras/Reduct/" class="md-nav__link">
+      <a href="../../../../Setoid/Algebras/Reduct/" class="md-nav__link">
         
   
   
@@ -1506,7 +1506,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Setoid/Categories/" class="md-nav__link ">
+            <a href="../../../../Setoid/Categories/" class="md-nav__link ">
               
   
   
@@ -1548,7 +1548,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Categories/Adjunction/" class="md-nav__link">
+      <a href="../../../../Setoid/Categories/Adjunction/" class="md-nav__link">
         
   
   
@@ -1576,7 +1576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Categories/Algebra/" class="md-nav__link">
+      <a href="../../../../Setoid/Categories/Algebra/" class="md-nav__link">
         
   
   
@@ -1604,7 +1604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Categories/Category/" class="md-nav__link">
+      <a href="../../../../Setoid/Categories/Category/" class="md-nav__link">
         
   
   
@@ -1632,7 +1632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Categories/FullSubcategory/" class="md-nav__link">
+      <a href="../../../../Setoid/Categories/FullSubcategory/" class="md-nav__link">
         
   
   
@@ -1660,7 +1660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Categories/Functor/" class="md-nav__link">
+      <a href="../../../../Setoid/Categories/Functor/" class="md-nav__link">
         
   
   
@@ -1688,7 +1688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Categories/Monad/" class="md-nav__link">
+      <a href="../../../../Setoid/Categories/Monad/" class="md-nav__link">
         
   
   
@@ -1716,7 +1716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Categories/NaturalTransformation/" class="md-nav__link">
+      <a href="../../../../Setoid/Categories/NaturalTransformation/" class="md-nav__link">
         
   
   
@@ -1744,7 +1744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Categories/Reduct/" class="md-nav__link">
+      <a href="../../../../Setoid/Categories/Reduct/" class="md-nav__link">
         
   
   
@@ -1801,7 +1801,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Setoid/Complexity/" class="md-nav__link ">
+            <a href="../../../../Setoid/Complexity/" class="md-nav__link ">
               
   
   
@@ -1843,7 +1843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Complexity/Basic/" class="md-nav__link">
+      <a href="../../../../Setoid/Complexity/Basic/" class="md-nav__link">
         
   
   
@@ -1871,7 +1871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Complexity/CSP/" class="md-nav__link">
+      <a href="../../../../Setoid/Complexity/CSP/" class="md-nav__link">
         
   
   
@@ -1942,7 +1942,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Setoid/Congruences/" class="md-nav__link ">
+            <a href="../../../../Setoid/Congruences/" class="md-nav__link ">
               
   
   
@@ -1984,7 +1984,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Congruences/Basic/" class="md-nav__link">
+      <a href="../../../../Setoid/Congruences/Basic/" class="md-nav__link">
         
   
   
@@ -2012,7 +2012,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Congruences/ChainJoin/" class="md-nav__link">
+      <a href="../../../../Setoid/Congruences/ChainJoin/" class="md-nav__link">
         
   
   
@@ -2040,7 +2040,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Congruences/CompleteLattice/" class="md-nav__link">
+      <a href="../../../../Setoid/Congruences/CompleteLattice/" class="md-nav__link">
         
   
   
@@ -2068,7 +2068,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Congruences/Finite/" class="md-nav__link">
+      <a href="../../../../Setoid/Congruences/Finite/" class="md-nav__link">
         
   
   
@@ -2096,7 +2096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Congruences/Generation/" class="md-nav__link">
+      <a href="../../../../Setoid/Congruences/Generation/" class="md-nav__link">
         
   
   
@@ -2124,7 +2124,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Congruences/Lattice/" class="md-nav__link">
+      <a href="../../../../Setoid/Congruences/Lattice/" class="md-nav__link">
         
   
   
@@ -2152,7 +2152,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Congruences/Monolith/" class="md-nav__link">
+      <a href="../../../../Setoid/Congruences/Monolith/" class="md-nav__link">
         
   
   
@@ -2180,7 +2180,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Congruences/Permutability/" class="md-nav__link">
+      <a href="../../../../Setoid/Congruences/Permutability/" class="md-nav__link">
         
   
   
@@ -2208,7 +2208,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Congruences/Properties/" class="md-nav__link">
+      <a href="../../../../Setoid/Congruences/Properties/" class="md-nav__link">
         
   
   
@@ -2271,7 +2271,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Setoid/Functions/" class="md-nav__link ">
+            <a href="../../../../Setoid/Functions/" class="md-nav__link ">
               
   
   
@@ -2313,7 +2313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Functions/Basic/" class="md-nav__link">
+      <a href="../../../../Setoid/Functions/Basic/" class="md-nav__link">
         
   
   
@@ -2341,7 +2341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Functions/Bijective/" class="md-nav__link">
+      <a href="../../../../Setoid/Functions/Bijective/" class="md-nav__link">
         
   
   
@@ -2369,7 +2369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Functions/Injective/" class="md-nav__link">
+      <a href="../../../../Setoid/Functions/Injective/" class="md-nav__link">
         
   
   
@@ -2397,7 +2397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Functions/Inverses/" class="md-nav__link">
+      <a href="../../../../Setoid/Functions/Inverses/" class="md-nav__link">
         
   
   
@@ -2425,7 +2425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Functions/Surjective/" class="md-nav__link">
+      <a href="../../../../Setoid/Functions/Surjective/" class="md-nav__link">
         
   
   
@@ -2494,7 +2494,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Setoid/Homomorphisms/" class="md-nav__link ">
+            <a href="../../../../Setoid/Homomorphisms/" class="md-nav__link ">
               
   
   
@@ -2536,7 +2536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Homomorphisms/Basic/" class="md-nav__link">
+      <a href="../../../../Setoid/Homomorphisms/Basic/" class="md-nav__link">
         
   
   
@@ -2564,7 +2564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Homomorphisms/Factor/" class="md-nav__link">
+      <a href="../../../../Setoid/Homomorphisms/Factor/" class="md-nav__link">
         
   
   
@@ -2592,7 +2592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Homomorphisms/HomomorphicImages/" class="md-nav__link">
+      <a href="../../../../Setoid/Homomorphisms/HomomorphicImages/" class="md-nav__link">
         
   
   
@@ -2620,7 +2620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Homomorphisms/Isomorphisms/" class="md-nav__link">
+      <a href="../../../../Setoid/Homomorphisms/Isomorphisms/" class="md-nav__link">
         
   
   
@@ -2648,7 +2648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Homomorphisms/Kernels/" class="md-nav__link">
+      <a href="../../../../Setoid/Homomorphisms/Kernels/" class="md-nav__link">
         
   
   
@@ -2676,7 +2676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Homomorphisms/Noether/" class="md-nav__link">
+      <a href="../../../../Setoid/Homomorphisms/Noether/" class="md-nav__link">
         
   
   
@@ -2704,7 +2704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Homomorphisms/Products/" class="md-nav__link">
+      <a href="../../../../Setoid/Homomorphisms/Products/" class="md-nav__link">
         
   
   
@@ -2732,7 +2732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Homomorphisms/Properties/" class="md-nav__link">
+      <a href="../../../../Setoid/Homomorphisms/Properties/" class="md-nav__link">
         
   
   
@@ -2787,7 +2787,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Setoid/Operations/" class="md-nav__link ">
+            <a href="../../../../Setoid/Operations/" class="md-nav__link ">
               
   
   
@@ -2829,7 +2829,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Operations/Properties/" class="md-nav__link">
+      <a href="../../../../Setoid/Operations/Properties/" class="md-nav__link">
         
   
   
@@ -2890,7 +2890,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Setoid/Relations/" class="md-nav__link ">
+            <a href="../../../../Setoid/Relations/" class="md-nav__link ">
               
   
   
@@ -2932,7 +2932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Relations/Continuous/" class="md-nav__link">
+      <a href="../../../../Setoid/Relations/Continuous/" class="md-nav__link">
         
   
   
@@ -2960,7 +2960,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Relations/Discrete/" class="md-nav__link">
+      <a href="../../../../Setoid/Relations/Discrete/" class="md-nav__link">
         
   
   
@@ -2988,7 +2988,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Relations/Properties/" class="md-nav__link">
+      <a href="../../../../Setoid/Relations/Properties/" class="md-nav__link">
         
   
   
@@ -3016,7 +3016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Relations/Quotients/" class="md-nav__link">
+      <a href="../../../../Setoid/Relations/Quotients/" class="md-nav__link">
         
   
   
@@ -3071,7 +3071,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Setoid/Signatures/" class="md-nav__link ">
+            <a href="../../../../Setoid/Signatures/" class="md-nav__link ">
               
   
   
@@ -3113,7 +3113,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Signatures/Functor/" class="md-nav__link">
+      <a href="../../../../Setoid/Signatures/Functor/" class="md-nav__link">
         
   
   
@@ -3176,7 +3176,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Setoid/Subalgebras/" class="md-nav__link ">
+            <a href="../../../../Setoid/Subalgebras/" class="md-nav__link ">
               
   
   
@@ -3218,7 +3218,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Subalgebras/Basic/" class="md-nav__link">
+      <a href="../../../../Setoid/Subalgebras/Basic/" class="md-nav__link">
         
   
   
@@ -3246,7 +3246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Subalgebras/CompleteLattice/" class="md-nav__link">
+      <a href="../../../../Setoid/Subalgebras/CompleteLattice/" class="md-nav__link">
         
   
   
@@ -3274,7 +3274,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Subalgebras/Properties/" class="md-nav__link">
+      <a href="../../../../Setoid/Subalgebras/Properties/" class="md-nav__link">
         
   
   
@@ -3327,7 +3327,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Setoid/Subalgebras/Subdirect/" class="md-nav__link ">
+            <a href="../../../../Setoid/Subalgebras/Subdirect/" class="md-nav__link ">
               
   
   
@@ -3369,7 +3369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Subalgebras/Subdirect/Basic/" class="md-nav__link">
+      <a href="../../../../Setoid/Subalgebras/Subdirect/Basic/" class="md-nav__link">
         
   
   
@@ -3397,7 +3397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Subalgebras/Subdirect/BirkhoffSI/" class="md-nav__link">
+      <a href="../../../../Setoid/Subalgebras/Subdirect/BirkhoffSI/" class="md-nav__link">
         
   
   
@@ -3425,7 +3425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Subalgebras/Subdirect/Finite/" class="md-nav__link">
+      <a href="../../../../Setoid/Subalgebras/Subdirect/Finite/" class="md-nav__link">
         
   
   
@@ -3453,7 +3453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Subalgebras/Subdirect/Irreducible/" class="md-nav__link">
+      <a href="../../../../Setoid/Subalgebras/Subdirect/Irreducible/" class="md-nav__link">
         
   
   
@@ -3489,7 +3489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Subalgebras/Subuniverses/" class="md-nav__link">
+      <a href="../../../../Setoid/Subalgebras/Subuniverses/" class="md-nav__link">
         
   
   
@@ -3554,7 +3554,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Setoid/Terms/" class="md-nav__link ">
+            <a href="../../../../Setoid/Terms/" class="md-nav__link ">
               
   
   
@@ -3596,7 +3596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Terms/Basic/" class="md-nav__link">
+      <a href="../../../../Setoid/Terms/Basic/" class="md-nav__link">
         
   
   
@@ -3624,7 +3624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Terms/Interpretation/" class="md-nav__link">
+      <a href="../../../../Setoid/Terms/Interpretation/" class="md-nav__link">
         
   
   
@@ -3652,7 +3652,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Terms/Monad/" class="md-nav__link">
+      <a href="../../../../Setoid/Terms/Monad/" class="md-nav__link">
         
   
   
@@ -3680,7 +3680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Terms/Operations/" class="md-nav__link">
+      <a href="../../../../Setoid/Terms/Operations/" class="md-nav__link">
         
   
   
@@ -3708,7 +3708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Terms/Properties/" class="md-nav__link">
+      <a href="../../../../Setoid/Terms/Properties/" class="md-nav__link">
         
   
   
@@ -3736,7 +3736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Terms/Translation/" class="md-nav__link">
+      <a href="../../../../Setoid/Terms/Translation/" class="md-nav__link">
         
   
   
@@ -3815,7 +3815,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Setoid/Varieties/" class="md-nav__link ">
+            <a href="../../../../Setoid/Varieties/" class="md-nav__link ">
               
   
   
@@ -3857,7 +3857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Varieties/Closure/" class="md-nav__link">
+      <a href="../../../../Setoid/Varieties/Closure/" class="md-nav__link">
         
   
   
@@ -3885,7 +3885,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Varieties/EquationalLogic/" class="md-nav__link">
+      <a href="../../../../Setoid/Varieties/EquationalLogic/" class="md-nav__link">
         
   
   
@@ -3913,7 +3913,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Varieties/FreeAlgebras/" class="md-nav__link">
+      <a href="../../../../Setoid/Varieties/FreeAlgebras/" class="md-nav__link">
         
   
   
@@ -3941,7 +3941,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Varieties/FreeSubstitution/" class="md-nav__link">
+      <a href="../../../../Setoid/Varieties/FreeSubstitution/" class="md-nav__link">
         
   
   
@@ -3969,7 +3969,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Varieties/HSP/" class="md-nav__link">
+      <a href="../../../../Setoid/Varieties/HSP/" class="md-nav__link">
         
   
   
@@ -3997,7 +3997,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Varieties/Interpretation/" class="md-nav__link">
+      <a href="../../../../Setoid/Varieties/Interpretation/" class="md-nav__link">
         
   
   
@@ -4025,7 +4025,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Varieties/Invariance/" class="md-nav__link">
+      <a href="../../../../Setoid/Varieties/Invariance/" class="md-nav__link">
         
   
   
@@ -4053,7 +4053,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Varieties/Invariants/" class="md-nav__link">
+      <a href="../../../../Setoid/Varieties/Invariants/" class="md-nav__link">
         
   
   
@@ -4106,7 +4106,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Setoid/Varieties/Maltsev/" class="md-nav__link ">
+            <a href="../../../../Setoid/Varieties/Maltsev/" class="md-nav__link ">
               
   
   
@@ -4148,7 +4148,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Varieties/Maltsev/Basic/" class="md-nav__link">
+      <a href="../../../../Setoid/Varieties/Maltsev/Basic/" class="md-nav__link">
         
   
   
@@ -4176,7 +4176,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Varieties/Maltsev/Distributivity/" class="md-nav__link">
+      <a href="../../../../Setoid/Varieties/Maltsev/Distributivity/" class="md-nav__link">
         
   
   
@@ -4204,7 +4204,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Varieties/Maltsev/Modularity/" class="md-nav__link">
+      <a href="../../../../Setoid/Varieties/Maltsev/Modularity/" class="md-nav__link">
         
   
   
@@ -4232,7 +4232,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Varieties/Maltsev/Permutability/" class="md-nav__link">
+      <a href="../../../../Setoid/Varieties/Maltsev/Permutability/" class="md-nav__link">
         
   
   
@@ -4268,7 +4268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Varieties/Preservation/" class="md-nav__link">
+      <a href="../../../../Setoid/Varieties/Preservation/" class="md-nav__link">
         
   
   
@@ -4296,7 +4296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Varieties/Properties/" class="md-nav__link">
+      <a href="../../../../Setoid/Varieties/Properties/" class="md-nav__link">
         
   
   
@@ -4324,7 +4324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Varieties/Reducts/" class="md-nav__link">
+      <a href="../../../../Setoid/Varieties/Reducts/" class="md-nav__link">
         
   
   
@@ -4352,7 +4352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Setoid/Varieties/SoundAndComplete/" class="md-nav__link">
+      <a href="../../../../Setoid/Varieties/SoundAndComplete/" class="md-nav__link">
         
   
   
@@ -4435,7 +4435,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../../../" class="md-nav__link ">
               
   
   
@@ -4518,7 +4518,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Bundles/" class="md-nav__link ">
+            <a href="../../../Bundles/" class="md-nav__link ">
               
   
   
@@ -4560,7 +4560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Bundles/AbelianGroup/" class="md-nav__link">
+      <a href="../../../Bundles/AbelianGroup/" class="md-nav__link">
         
   
   
@@ -4588,7 +4588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Bundles/CommutativeMonoid/" class="md-nav__link">
+      <a href="../../../Bundles/CommutativeMonoid/" class="md-nav__link">
         
   
   
@@ -4616,7 +4616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Bundles/CommutativeRing/" class="md-nav__link">
+      <a href="../../../Bundles/CommutativeRing/" class="md-nav__link">
         
   
   
@@ -4644,7 +4644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Bundles/CommutativeSemigroup/" class="md-nav__link">
+      <a href="../../../Bundles/CommutativeSemigroup/" class="md-nav__link">
         
   
   
@@ -4672,7 +4672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Bundles/DistributiveLattice/" class="md-nav__link">
+      <a href="../../../Bundles/DistributiveLattice/" class="md-nav__link">
         
   
   
@@ -4700,7 +4700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Bundles/Group/" class="md-nav__link">
+      <a href="../../../Bundles/Group/" class="md-nav__link">
         
   
   
@@ -4728,7 +4728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Bundles/Lattice/" class="md-nav__link">
+      <a href="../../../Bundles/Lattice/" class="md-nav__link">
         
   
   
@@ -4756,7 +4756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Bundles/Magma/" class="md-nav__link">
+      <a href="../../../Bundles/Magma/" class="md-nav__link">
         
   
   
@@ -4784,7 +4784,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Bundles/Monoid/" class="md-nav__link">
+      <a href="../../../Bundles/Monoid/" class="md-nav__link">
         
   
   
@@ -4812,7 +4812,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Bundles/Ring/" class="md-nav__link">
+      <a href="../../../Bundles/Ring/" class="md-nav__link">
         
   
   
@@ -4840,7 +4840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Bundles/Semigroup/" class="md-nav__link">
+      <a href="../../../Bundles/Semigroup/" class="md-nav__link">
         
   
   
@@ -4868,7 +4868,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Bundles/Semilattice/" class="md-nav__link">
+      <a href="../../../Bundles/Semilattice/" class="md-nav__link">
         
   
   
@@ -4925,7 +4925,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Categories/" class="md-nav__link ">
+            <a href="../../../Categories/" class="md-nav__link ">
               
   
   
@@ -4967,7 +4967,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Categories/AdjoinUnit/" class="md-nav__link">
+      <a href="../../../Categories/AdjoinUnit/" class="md-nav__link">
         
   
   
@@ -4995,7 +4995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Categories/Forgetful/" class="md-nav__link">
+      <a href="../../../Categories/Forgetful/" class="md-nav__link">
         
   
   
@@ -5031,7 +5031,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Equations/" class="md-nav__link">
+      <a href="../../../Equations/" class="md-nav__link">
         
   
   
@@ -5078,7 +5078,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Interpretations/" class="md-nav__link ">
+            <a href="../../../Interpretations/" class="md-nav__link ">
               
   
   
@@ -5120,7 +5120,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Interpretations/Maltsev/" class="md-nav__link">
+      <a href="../../../Interpretations/Maltsev/" class="md-nav__link">
         
   
   
@@ -5156,7 +5156,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Operations/" class="md-nav__link">
+      <a href="../../../Operations/" class="md-nav__link">
         
   
   
@@ -5203,7 +5203,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Properties/" class="md-nav__link ">
+            <a href="../../../Properties/" class="md-nav__link ">
               
   
   
@@ -5245,7 +5245,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Properties/Lattice/" class="md-nav__link">
+      <a href="../../../Properties/Lattice/" class="md-nav__link">
         
   
   
@@ -5293,6 +5293,8 @@
       
         
       
+        
+      
     
     
     
@@ -5308,7 +5310,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Signatures/" class="md-nav__link ">
+            <a href="../../../Signatures/" class="md-nav__link ">
               
   
   
@@ -5350,7 +5352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Signatures/Group/" class="md-nav__link">
+      <a href="../../../Signatures/Group/" class="md-nav__link">
         
   
   
@@ -5378,7 +5380,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Signatures/Lattice/" class="md-nav__link">
+      <a href="../../../Signatures/Lattice/" class="md-nav__link">
         
   
   
@@ -5406,7 +5408,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Signatures/Magma/" class="md-nav__link">
+      <a href="../../../Signatures/Magma/" class="md-nav__link">
         
   
   
@@ -5434,7 +5436,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Signatures/Monoid/" class="md-nav__link">
+      <a href="../../../Signatures/Monoid/" class="md-nav__link">
         
   
   
@@ -5462,7 +5464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Signatures/Ring/" class="md-nav__link">
+      <a href="../../../Signatures/Ring/" class="md-nav__link">
         
   
   
@@ -5470,6 +5472,34 @@
     
   
     Ring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Signatures/Unary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unary
   
 
     
@@ -5517,7 +5547,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Small/" class="md-nav__link ">
+            <a href="../../../Small/" class="md-nav__link ">
               
   
   
@@ -5600,7 +5630,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Small/Structures/" class="md-nav__link ">
+            <a href="../../../Small/Structures/" class="md-nav__link ">
               
   
   
@@ -5642,7 +5672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Small/Structures/AbelianGroup/" class="md-nav__link">
+      <a href="../../../Small/Structures/AbelianGroup/" class="md-nav__link">
         
   
   
@@ -5670,7 +5700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Small/Structures/CommutativeMonoid/" class="md-nav__link">
+      <a href="../../../Small/Structures/CommutativeMonoid/" class="md-nav__link">
         
   
   
@@ -5698,7 +5728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Small/Structures/CommutativeRing/" class="md-nav__link">
+      <a href="../../../Small/Structures/CommutativeRing/" class="md-nav__link">
         
   
   
@@ -5726,7 +5756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Small/Structures/CommutativeSemigroup/" class="md-nav__link">
+      <a href="../../../Small/Structures/CommutativeSemigroup/" class="md-nav__link">
         
   
   
@@ -5754,7 +5784,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Small/Structures/DistributiveLattice/" class="md-nav__link">
+      <a href="../../../Small/Structures/DistributiveLattice/" class="md-nav__link">
         
   
   
@@ -5782,7 +5812,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Small/Structures/Group/" class="md-nav__link">
+      <a href="../../../Small/Structures/Group/" class="md-nav__link">
         
   
   
@@ -5810,7 +5840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Small/Structures/Lattice/" class="md-nav__link">
+      <a href="../../../Small/Structures/Lattice/" class="md-nav__link">
         
   
   
@@ -5838,7 +5868,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Small/Structures/Magma/" class="md-nav__link">
+      <a href="../../../Small/Structures/Magma/" class="md-nav__link">
         
   
   
@@ -5866,7 +5896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Small/Structures/Monoid/" class="md-nav__link">
+      <a href="../../../Small/Structures/Monoid/" class="md-nav__link">
         
   
   
@@ -5894,7 +5924,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Small/Structures/Ring/" class="md-nav__link">
+      <a href="../../../Small/Structures/Ring/" class="md-nav__link">
         
   
   
@@ -5922,7 +5952,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Small/Structures/Semigroup/" class="md-nav__link">
+      <a href="../../../Small/Structures/Semigroup/" class="md-nav__link">
         
   
   
@@ -5950,7 +5980,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Small/Structures/Semilattice/" class="md-nav__link">
+      <a href="../../../Small/Structures/Semilattice/" class="md-nav__link">
         
   
   
@@ -6022,8 +6052,6 @@
       
         
       
-        
-      
     
     
     
@@ -6039,7 +6067,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   
@@ -6078,146 +6106,10 @@
                 
   
   
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    AbelianGroup
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    AbelianGroup
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#classical-structures-abeliangroup" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Abelian Groups
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Abelian Groups">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#satisfaction-predicate-and-the-abeliangroup-type" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Satisfaction predicate and the AbelianGroup type
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-forgetful-projection-to-groups" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The forgetful projection to groups
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-abeliangroup-op-module" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The AbelianGroup-Op module
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#eqstoabeliangroup" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        eqsToAbelianGroup
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
   
   
     <li class="md-nav__item">
-      <a href="../CommutativeMonoid/" class="md-nav__link">
+      <a href="../../CommutativeMonoid/" class="md-nav__link">
         
   
   
@@ -6245,7 +6137,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CommutativeRing/" class="md-nav__link">
+      <a href="../../CommutativeRing/" class="md-nav__link">
         
   
   
@@ -6273,7 +6165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CommutativeSemigroup/" class="md-nav__link">
+      <a href="../../CommutativeSemigroup/" class="md-nav__link">
         
   
   
@@ -6301,7 +6193,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../DistributiveLattice/" class="md-nav__link">
+      <a href="../../DistributiveLattice/" class="md-nav__link">
         
   
   
@@ -6326,17 +6218,98 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Group/" class="md-nav__link">
+  
+    
+    
+      
         
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_9_5" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
     
   
     Group
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3_9_5" id="__nav_2_3_9_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_3_9_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3_9_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Group
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AbelianGroup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AbelianGroup
   
 
     
@@ -6357,7 +6330,353 @@
   
   
     <li class="md-nav__item">
-      <a href="../Interpret/" class="md-nav__link">
+      <a href="../Basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Complexes
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Complexes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#complex-products" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complex products
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Complex products">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-complex-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The complex product
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subgroups-absorb-their-own-complex-square" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subgroups absorb their own complex square
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Conjugation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conjugation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cosets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cosets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Dedekind/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dedekind
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GSet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GSet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NormalCore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NormalCore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SubgroupLattice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SubgroupLattice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Subgroups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subgroups
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Interpret/" class="md-nav__link">
         
   
   
@@ -6385,7 +6704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Lattice/" class="md-nav__link">
+      <a href="../../Lattice/" class="md-nav__link">
         
   
   
@@ -6413,7 +6732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Magma/" class="md-nav__link">
+      <a href="../../Magma/" class="md-nav__link">
         
   
   
@@ -6441,7 +6760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Monoid/" class="md-nav__link">
+      <a href="../../Monoid/" class="md-nav__link">
         
   
   
@@ -6469,7 +6788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Ring/" class="md-nav__link">
+      <a href="../../Ring/" class="md-nav__link">
         
   
   
@@ -6497,7 +6816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Semigroup/" class="md-nav__link">
+      <a href="../../Semigroup/" class="md-nav__link">
         
   
   
@@ -6525,7 +6844,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Semilattice/" class="md-nav__link">
+      <a href="../../Semilattice/" class="md-nav__link">
         
   
   
@@ -6600,7 +6919,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Theories/" class="md-nav__link ">
+            <a href="../../../Theories/" class="md-nav__link ">
               
   
   
@@ -6642,7 +6961,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Theories/AbelianGroup/" class="md-nav__link">
+      <a href="../../../Theories/AbelianGroup/" class="md-nav__link">
         
   
   
@@ -6670,7 +6989,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Theories/CommutativeMonoid/" class="md-nav__link">
+      <a href="../../../Theories/CommutativeMonoid/" class="md-nav__link">
         
   
   
@@ -6698,7 +7017,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Theories/CommutativeRing/" class="md-nav__link">
+      <a href="../../../Theories/CommutativeRing/" class="md-nav__link">
         
   
   
@@ -6726,7 +7045,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Theories/CommutativeSemigroup/" class="md-nav__link">
+      <a href="../../../Theories/CommutativeSemigroup/" class="md-nav__link">
         
   
   
@@ -6754,7 +7073,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Theories/DistributiveLattice/" class="md-nav__link">
+      <a href="../../../Theories/DistributiveLattice/" class="md-nav__link">
         
   
   
@@ -6782,7 +7101,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Theories/Group/" class="md-nav__link">
+      <a href="../../../Theories/Group/" class="md-nav__link">
         
   
   
@@ -6810,7 +7129,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Theories/Lattice/" class="md-nav__link">
+      <a href="../../../Theories/Lattice/" class="md-nav__link">
         
   
   
@@ -6838,7 +7157,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Theories/Monoid/" class="md-nav__link">
+      <a href="../../../Theories/Monoid/" class="md-nav__link">
         
   
   
@@ -6866,7 +7185,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Theories/Ring/" class="md-nav__link">
+      <a href="../../../Theories/Ring/" class="md-nav__link">
         
   
   
@@ -6894,7 +7213,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Theories/Semigroup/" class="md-nav__link">
+      <a href="../../../Theories/Semigroup/" class="md-nav__link">
         
   
   
@@ -6922,7 +7241,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Theories/Semilattice/" class="md-nav__link">
+      <a href="../../../Theories/Semilattice/" class="md-nav__link">
         
   
   
@@ -6970,6 +7289,8 @@
       
         
       
+        
+      
     
     
     
@@ -6985,7 +7306,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Order/" class="md-nav__link ">
+            <a href="../../../../Order/" class="md-nav__link ">
               
   
   
@@ -7027,7 +7348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Order/CompleteLattice/" class="md-nav__link">
+      <a href="../../../../Order/CompleteLattice/" class="md-nav__link">
         
   
   
@@ -7035,6 +7356,34 @@
     
   
     CompleteLattice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Order/Interval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interval
   
 
     
@@ -7090,7 +7439,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Examples/" class="md-nav__link ">
+            <a href="../../../../Examples/" class="md-nav__link ">
               
   
   
@@ -7169,7 +7518,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Examples/Classical/" class="md-nav__link ">
+            <a href="../../../../Examples/Classical/" class="md-nav__link ">
               
   
   
@@ -7211,7 +7560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Examples/Classical/CommutativeIdempotentMagma/" class="md-nav__link">
+      <a href="../../../../Examples/Classical/CommutativeIdempotentMagma/" class="md-nav__link">
         
   
   
@@ -7239,7 +7588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Examples/Classical/CommutativeMonoid/" class="md-nav__link">
+      <a href="../../../../Examples/Classical/CommutativeMonoid/" class="md-nav__link">
         
   
   
@@ -7267,7 +7616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Examples/Classical/CommutativeRing/" class="md-nav__link">
+      <a href="../../../../Examples/Classical/CommutativeRing/" class="md-nav__link">
         
   
   
@@ -7295,7 +7644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Examples/Classical/CommutativeSemigroup/" class="md-nav__link">
+      <a href="../../../../Examples/Classical/CommutativeSemigroup/" class="md-nav__link">
         
   
   
@@ -7350,7 +7699,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Examples/Classical/Groups/" class="md-nav__link ">
+            <a href="../../../../Examples/Classical/Groups/" class="md-nav__link ">
               
   
   
@@ -7392,7 +7741,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Examples/Classical/Groups/AbelianGroup/" class="md-nav__link">
+      <a href="../../../../Examples/Classical/Groups/AbelianGroup/" class="md-nav__link">
         
   
   
@@ -7420,7 +7769,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Examples/Classical/Groups/CyclicGroup/" class="md-nav__link">
+      <a href="../../../../Examples/Classical/Groups/CyclicGroup/" class="md-nav__link">
         
   
   
@@ -7448,7 +7797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Examples/Classical/Groups/CyclicGroup3/" class="md-nav__link">
+      <a href="../../../../Examples/Classical/Groups/CyclicGroup3/" class="md-nav__link">
         
   
   
@@ -7476,7 +7825,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Examples/Classical/Groups/KleinFourGroup/" class="md-nav__link">
+      <a href="../../../../Examples/Classical/Groups/KleinFourGroup/" class="md-nav__link">
         
   
   
@@ -7504,7 +7853,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Examples/Classical/Groups/SymmetricGroup3/" class="md-nav__link">
+      <a href="../../../../Examples/Classical/Groups/SymmetricGroup3/" class="md-nav__link">
         
   
   
@@ -7565,7 +7914,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Examples/Classical/Lattices/" class="md-nav__link ">
+            <a href="../../../../Examples/Classical/Lattices/" class="md-nav__link ">
               
   
   
@@ -7607,7 +7956,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Examples/Classical/Lattices/L2/" class="md-nav__link">
+      <a href="../../../../Examples/Classical/Lattices/L2/" class="md-nav__link">
         
   
   
@@ -7635,7 +7984,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Examples/Classical/Lattices/L2Distributive/" class="md-nav__link">
+      <a href="../../../../Examples/Classical/Lattices/L2Distributive/" class="md-nav__link">
         
   
   
@@ -7663,7 +8012,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Examples/Classical/Lattices/L3Heyting/" class="md-nav__link">
+      <a href="../../../../Examples/Classical/Lattices/L3Heyting/" class="md-nav__link">
         
   
   
@@ -7691,7 +8040,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Examples/Classical/Lattices/L7/" class="md-nav__link">
+      <a href="../../../../Examples/Classical/Lattices/L7/" class="md-nav__link">
         
   
   
@@ -7727,7 +8076,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Examples/Classical/Magma/" class="md-nav__link">
+      <a href="../../../../Examples/Classical/Magma/" class="md-nav__link">
         
   
   
@@ -7755,7 +8104,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Examples/Classical/Monoid/" class="md-nav__link">
+      <a href="../../../../Examples/Classical/Monoid/" class="md-nav__link">
         
   
   
@@ -7783,7 +8132,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Examples/Classical/Semigroup/" class="md-nav__link">
+      <a href="../../../../Examples/Classical/Semigroup/" class="md-nav__link">
         
   
   
@@ -7811,7 +8160,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Examples/Classical/Semilattice/" class="md-nav__link">
+      <a href="../../../../Examples/Classical/Semilattice/" class="md-nav__link">
         
   
   
@@ -7847,7 +8196,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Examples/FunctionTypeBijections/" class="md-nav__link">
+      <a href="../../../../Examples/FunctionTypeBijections/" class="md-nav__link">
         
   
   
@@ -7894,7 +8243,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Examples/PolynomialFunctors/" class="md-nav__link ">
+            <a href="../../../../Examples/PolynomialFunctors/" class="md-nav__link ">
               
   
   
@@ -7936,7 +8285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Examples/PolynomialFunctors/Functors/" class="md-nav__link">
+      <a href="../../../../Examples/PolynomialFunctors/Functors/" class="md-nav__link">
         
   
   
@@ -8007,7 +8356,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Examples/Setoid/" class="md-nav__link ">
+            <a href="../../../../Examples/Setoid/" class="md-nav__link ">
               
   
   
@@ -8049,7 +8398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Examples/Setoid/CongruenceLattice/" class="md-nav__link">
+      <a href="../../../../Examples/Setoid/CongruenceLattice/" class="md-nav__link">
         
   
   
@@ -8077,7 +8426,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Examples/Setoid/FinitarySignatures/" class="md-nav__link">
+      <a href="../../../../Examples/Setoid/FinitarySignatures/" class="md-nav__link">
         
   
   
@@ -8105,7 +8454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Examples/Setoid/FiniteQuotient/" class="md-nav__link">
+      <a href="../../../../Examples/Setoid/FiniteQuotient/" class="md-nav__link">
         
   
   
@@ -8133,7 +8482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Examples/Setoid/FreeMagma/" class="md-nav__link">
+      <a href="../../../../Examples/Setoid/FreeMagma/" class="md-nav__link">
         
   
   
@@ -8161,7 +8510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Examples/Setoid/FreeSemigroup/" class="md-nav__link">
+      <a href="../../../../Examples/Setoid/FreeSemigroup/" class="md-nav__link">
         
   
   
@@ -8189,7 +8538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Examples/Setoid/HSPCommutativeMonoid/" class="md-nav__link">
+      <a href="../../../../Examples/Setoid/HSPCommutativeMonoid/" class="md-nav__link">
         
   
   
@@ -8217,7 +8566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Examples/Setoid/Presentation/" class="md-nav__link">
+      <a href="../../../../Examples/Setoid/Presentation/" class="md-nav__link">
         
   
   
@@ -8245,7 +8594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Examples/Setoid/SubalgebraLattice/" class="md-nav__link">
+      <a href="../../../../Examples/Setoid/SubalgebraLattice/" class="md-nav__link">
         
   
   
@@ -8273,7 +8622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Examples/Setoid/SubgroupLattice/" class="md-nav__link">
+      <a href="../../../../Examples/Setoid/SubgroupLattice/" class="md-nav__link">
         
   
   
@@ -8330,7 +8679,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Examples/Structures/" class="md-nav__link ">
+            <a href="../../../../Examples/Structures/" class="md-nav__link ">
               
   
   
@@ -8372,7 +8721,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Examples/Structures/Basic/" class="md-nav__link">
+      <a href="../../../../Examples/Structures/Basic/" class="md-nav__link">
         
   
   
@@ -8400,7 +8749,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Examples/Structures/Signatures/" class="md-nav__link">
+      <a href="../../../../Examples/Structures/Signatures/" class="md-nav__link">
         
   
   
@@ -8463,7 +8812,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Exercises/" class="md-nav__link ">
+            <a href="../../../../Exercises/" class="md-nav__link ">
               
   
   
@@ -8524,7 +8873,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Exercises/Complexity/" class="md-nav__link ">
+            <a href="../../../../Exercises/Complexity/" class="md-nav__link ">
               
   
   
@@ -8566,7 +8915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Exercises/Complexity/FiniteCSP/" class="md-nav__link">
+      <a href="../../../../Exercises/Complexity/FiniteCSP/" class="md-nav__link">
         
   
   
@@ -8633,7 +8982,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Demos/" class="md-nav__link ">
+            <a href="../../../../Demos/" class="md-nav__link ">
               
   
   
@@ -8675,7 +9024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Demos/ContraX/" class="md-nav__link">
+      <a href="../../../../Demos/ContraX/" class="md-nav__link">
         
   
   
@@ -8703,7 +9052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Demos/GeneralOperationsAndRelations/" class="md-nav__link">
+      <a href="../../../../Demos/GeneralOperationsAndRelations/" class="md-nav__link">
         
   
   
@@ -8731,7 +9080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Demos/HSP/" class="md-nav__link">
+      <a href="../../../../Demos/HSP/" class="md-nav__link">
         
   
   
@@ -8862,7 +9211,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Legacy/Base/" class="md-nav__link ">
+            <a href="../../../../Legacy/Base/" class="md-nav__link ">
               
   
   
@@ -8927,7 +9276,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Legacy/Base/Adjunction/" class="md-nav__link ">
+            <a href="../../../../Legacy/Base/Adjunction/" class="md-nav__link ">
               
   
   
@@ -8969,7 +9318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Adjunction/Closure/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Adjunction/Closure/" class="md-nav__link">
         
   
   
@@ -8997,7 +9346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Adjunction/Galois/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Adjunction/Galois/" class="md-nav__link">
         
   
   
@@ -9025,7 +9374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Adjunction/Residuation/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Adjunction/Residuation/" class="md-nav__link">
         
   
   
@@ -9084,7 +9433,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Legacy/Base/Algebras/" class="md-nav__link ">
+            <a href="../../../../Legacy/Base/Algebras/" class="md-nav__link ">
               
   
   
@@ -9126,7 +9475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Algebras/Basic/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Algebras/Basic/" class="md-nav__link">
         
   
   
@@ -9154,7 +9503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Algebras/Congruences/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Algebras/Congruences/" class="md-nav__link">
         
   
   
@@ -9182,7 +9531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Algebras/Products/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Algebras/Products/" class="md-nav__link">
         
   
   
@@ -9237,7 +9586,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Legacy/Base/Categories/" class="md-nav__link ">
+            <a href="../../../../Legacy/Base/Categories/" class="md-nav__link ">
               
   
   
@@ -9279,7 +9628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Categories/Functors/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Categories/Functors/" class="md-nav__link">
         
   
   
@@ -9336,7 +9685,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Legacy/Base/Complexity/" class="md-nav__link ">
+            <a href="../../../../Legacy/Base/Complexity/" class="md-nav__link ">
               
   
   
@@ -9378,7 +9727,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Complexity/Basic/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Complexity/Basic/" class="md-nav__link">
         
   
   
@@ -9406,7 +9755,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Complexity/CSP/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Complexity/CSP/" class="md-nav__link">
         
   
   
@@ -9465,7 +9814,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Legacy/Base/Equality/" class="md-nav__link ">
+            <a href="../../../../Legacy/Base/Equality/" class="md-nav__link ">
               
   
   
@@ -9507,7 +9856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Equality/Extensionality/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Equality/Extensionality/" class="md-nav__link">
         
   
   
@@ -9535,7 +9884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Equality/Truncation/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Equality/Truncation/" class="md-nav__link">
         
   
   
@@ -9563,7 +9912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Equality/Welldefined/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Equality/Welldefined/" class="md-nav__link">
         
   
   
@@ -9624,7 +9973,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Legacy/Base/Functions/" class="md-nav__link ">
+            <a href="../../../../Legacy/Base/Functions/" class="md-nav__link ">
               
   
   
@@ -9666,7 +10015,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Functions/Injective/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Functions/Injective/" class="md-nav__link">
         
   
   
@@ -9694,7 +10043,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Functions/Inverses/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Functions/Inverses/" class="md-nav__link">
         
   
   
@@ -9722,7 +10071,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Functions/Surjective/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Functions/Surjective/" class="md-nav__link">
         
   
   
@@ -9750,7 +10099,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Functions/Transformers/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Functions/Transformers/" class="md-nav__link">
         
   
   
@@ -9819,7 +10168,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Legacy/Base/Homomorphisms/" class="md-nav__link ">
+            <a href="../../../../Legacy/Base/Homomorphisms/" class="md-nav__link ">
               
   
   
@@ -9861,7 +10210,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Homomorphisms/Basic/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Homomorphisms/Basic/" class="md-nav__link">
         
   
   
@@ -9889,7 +10238,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Homomorphisms/Factor/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Homomorphisms/Factor/" class="md-nav__link">
         
   
   
@@ -9917,7 +10266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Homomorphisms/HomomorphicImages/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Homomorphisms/HomomorphicImages/" class="md-nav__link">
         
   
   
@@ -9945,7 +10294,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Homomorphisms/Isomorphisms/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Homomorphisms/Isomorphisms/" class="md-nav__link">
         
   
   
@@ -9973,7 +10322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Homomorphisms/Kernels/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Homomorphisms/Kernels/" class="md-nav__link">
         
   
   
@@ -10001,7 +10350,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Homomorphisms/Noether/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Homomorphisms/Noether/" class="md-nav__link">
         
   
   
@@ -10029,7 +10378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Homomorphisms/Products/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Homomorphisms/Products/" class="md-nav__link">
         
   
   
@@ -10057,7 +10406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Homomorphisms/Properties/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Homomorphisms/Properties/" class="md-nav__link">
         
   
   
@@ -10118,7 +10467,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Legacy/Base/Relations/" class="md-nav__link ">
+            <a href="../../../../Legacy/Base/Relations/" class="md-nav__link ">
               
   
   
@@ -10160,7 +10509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Relations/Continuous/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Relations/Continuous/" class="md-nav__link">
         
   
   
@@ -10188,7 +10537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Relations/Discrete/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Relations/Discrete/" class="md-nav__link">
         
   
   
@@ -10216,7 +10565,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Relations/Properties/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Relations/Properties/" class="md-nav__link">
         
   
   
@@ -10244,7 +10593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Relations/Quotients/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Relations/Quotients/" class="md-nav__link">
         
   
   
@@ -10317,7 +10666,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Legacy/Base/Structures/" class="md-nav__link ">
+            <a href="../../../../Legacy/Base/Structures/" class="md-nav__link ">
               
   
   
@@ -10359,7 +10708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Structures/Basic/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Structures/Basic/" class="md-nav__link">
         
   
   
@@ -10387,7 +10736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Structures/Congruences/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Structures/Congruences/" class="md-nav__link">
         
   
   
@@ -10415,7 +10764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Structures/EquationalLogic/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Structures/EquationalLogic/" class="md-nav__link">
         
   
   
@@ -10443,7 +10792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Structures/Graphs/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Structures/Graphs/" class="md-nav__link">
         
   
   
@@ -10471,7 +10820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Structures/Homs/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Structures/Homs/" class="md-nav__link">
         
   
   
@@ -10499,7 +10848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Structures/Isos/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Structures/Isos/" class="md-nav__link">
         
   
   
@@ -10527,7 +10876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Structures/Products/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Structures/Products/" class="md-nav__link">
         
   
   
@@ -10582,7 +10931,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Legacy/Base/Structures/Sigma/" class="md-nav__link ">
+            <a href="../../../../Legacy/Base/Structures/Sigma/" class="md-nav__link ">
               
   
   
@@ -10624,7 +10973,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Structures/Sigma/Basic/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Structures/Sigma/Basic/" class="md-nav__link">
         
   
   
@@ -10652,7 +11001,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Structures/Sigma/Congruences/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Structures/Sigma/Congruences/" class="md-nav__link">
         
   
   
@@ -10680,7 +11029,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Structures/Sigma/Homs/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Structures/Sigma/Homs/" class="md-nav__link">
         
   
   
@@ -10708,7 +11057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Structures/Sigma/Isos/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Structures/Sigma/Isos/" class="md-nav__link">
         
   
   
@@ -10736,7 +11085,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Structures/Sigma/Products/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Structures/Sigma/Products/" class="md-nav__link">
         
   
   
@@ -10772,7 +11121,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Structures/Substructures/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Structures/Substructures/" class="md-nav__link">
         
   
   
@@ -10800,7 +11149,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Structures/Terms/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Structures/Terms/" class="md-nav__link">
         
   
   
@@ -10859,7 +11208,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Legacy/Base/Subalgebras/" class="md-nav__link ">
+            <a href="../../../../Legacy/Base/Subalgebras/" class="md-nav__link ">
               
   
   
@@ -10901,7 +11250,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Subalgebras/Properties/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Subalgebras/Properties/" class="md-nav__link">
         
   
   
@@ -10929,7 +11278,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Subalgebras/Subalgebras/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Subalgebras/Subalgebras/" class="md-nav__link">
         
   
   
@@ -10957,7 +11306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Subalgebras/Subuniverses/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Subalgebras/Subuniverses/" class="md-nav__link">
         
   
   
@@ -11016,7 +11365,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Legacy/Base/Terms/" class="md-nav__link ">
+            <a href="../../../../Legacy/Base/Terms/" class="md-nav__link ">
               
   
   
@@ -11058,7 +11407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Terms/Basic/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Terms/Basic/" class="md-nav__link">
         
   
   
@@ -11086,7 +11435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Terms/Operations/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Terms/Operations/" class="md-nav__link">
         
   
   
@@ -11114,7 +11463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Terms/Properties/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Terms/Properties/" class="md-nav__link">
         
   
   
@@ -11179,7 +11528,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Legacy/Base/Varieties/" class="md-nav__link ">
+            <a href="../../../../Legacy/Base/Varieties/" class="md-nav__link ">
               
   
   
@@ -11221,7 +11570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Varieties/Closure/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Varieties/Closure/" class="md-nav__link">
         
   
   
@@ -11249,7 +11598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Varieties/EquationalLogic/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Varieties/EquationalLogic/" class="md-nav__link">
         
   
   
@@ -11277,7 +11626,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Varieties/FreeAlgebras/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Varieties/FreeAlgebras/" class="md-nav__link">
         
   
   
@@ -11305,7 +11654,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Varieties/Invariants/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Varieties/Invariants/" class="md-nav__link">
         
   
   
@@ -11333,7 +11682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Varieties/Preservation/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Varieties/Preservation/" class="md-nav__link">
         
   
   
@@ -11361,7 +11710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Legacy/Base/Varieties/Properties/" class="md-nav__link">
+      <a href="../../../../Legacy/Base/Varieties/Properties/" class="md-nav__link">
         
   
   
@@ -11432,7 +11781,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../FLRP/" class="md-nav__link ">
+            <a href="../../../../FLRP/" class="md-nav__link ">
               
   
   
@@ -11474,7 +11823,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../FLRP/Problem/" class="md-nav__link">
+      <a href="../../../../FLRP/Problem/" class="md-nav__link">
         
   
   
@@ -11510,7 +11859,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../agda-algebras/" class="md-nav__link">
+      <a href="../../../../agda-algebras/" class="md-nav__link">
         
   
   
@@ -11538,7 +11887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../classic/Everything.html" class="md-nav__link">
+      <a href="../../../../classic/Everything.html" class="md-nav__link">
         
   
   
@@ -11573,7 +11922,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../constellation/" class="md-nav__link">
+      <a href="../../../../constellation/" class="md-nav__link">
         
   
   
@@ -11666,7 +12015,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GITHUB_PROJECT/" class="md-nav__link">
+      <a href="../../../../GITHUB_PROJECT/" class="md-nav__link">
         
   
   
@@ -11694,7 +12043,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../site-guide/" class="md-nav__link">
+      <a href="../../../../site-guide/" class="md-nav__link">
         
   
   
@@ -11722,7 +12071,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../STYLE_GUIDE/" class="md-nav__link">
+      <a href="../../../../STYLE_GUIDE/" class="md-nav__link">
         
   
   
@@ -11789,7 +12138,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../adr/" class="md-nav__link ">
+            <a href="../../../../adr/" class="md-nav__link ">
               
   
   
@@ -11833,7 +12182,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../adr/000-template/" class="md-nav__link">
+      <a href="../../../../adr/000-template/" class="md-nav__link">
         
   
   
@@ -11861,7 +12210,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../adr/001-setoid-as-canonical/" class="md-nav__link">
+      <a href="../../../../adr/001-setoid-as-canonical/" class="md-nav__link">
         
   
   
@@ -11889,7 +12238,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../adr/002-classical-layer-design/" class="md-nav__link">
+      <a href="../../../../adr/002-classical-layer-design/" class="md-nav__link">
         
   
   
@@ -11917,7 +12266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../adr/003-cubical-canonical-target/" class="md-nav__link">
+      <a href="../../../../adr/003-cubical-canonical-target/" class="md-nav__link">
         
   
   
@@ -11945,7 +12294,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../adr/004-lagda-md-canonical/" class="md-nav__link">
+      <a href="../../../../adr/004-lagda-md-canonical/" class="md-nav__link">
         
   
   
@@ -11973,7 +12322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../adr/005-universe-level-variable-scope/" class="md-nav__link">
+      <a href="../../../../adr/005-universe-level-variable-scope/" class="md-nav__link">
         
   
   
@@ -12001,7 +12350,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../adr/006-signature-morphism-category/" class="md-nav__link">
+      <a href="../../../../adr/006-signature-morphism-category/" class="md-nav__link">
         
   
   
@@ -12029,7 +12378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../adr/007-mkdocs-rendering-pipeline/" class="md-nav__link">
+      <a href="../../../../adr/007-mkdocs-rendering-pipeline/" class="md-nav__link">
         
   
   
@@ -12057,7 +12406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../adr/008-two-layer-congruence-discipline/" class="md-nav__link">
+      <a href="../../../../adr/008-two-layer-congruence-discipline/" class="md-nav__link">
         
   
   
@@ -12093,7 +12442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../install/" class="md-nav__link">
+      <a href="../../../../install/" class="md-nav__link">
         
   
   
@@ -12121,7 +12470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/" class="md-nav__link">
+      <a href="../../../../contributing/" class="md-nav__link">
         
   
   
@@ -12149,7 +12498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/" class="md-nav__link">
+      <a href="../../../../changelog/" class="md-nav__link">
         
   
   
@@ -12204,22 +12553,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#classical-structures-abeliangroup" class="md-nav__link">
+  <a href="#complex-products" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Abelian Groups
+        Complex products
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Abelian Groups">
+    <nav class="md-nav" aria-label="Complex products">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#satisfaction-predicate-and-the-abeliangroup-type" class="md-nav__link">
+  <a href="#the-complex-product" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Satisfaction predicate and the AbelianGroup type
+        The complex product
       
     </span>
   </a>
@@ -12227,32 +12576,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-forgetful-projection-to-groups" class="md-nav__link">
+  <a href="#subgroups-absorb-their-own-complex-square" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The forgetful projection to groups
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-abeliangroup-op-module" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The AbelianGroup-Op module
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#eqstoabeliangroup" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        eqsToAbelianGroup
+        Subgroups absorb their own complex square
       
     </span>
   </a>
@@ -12281,7 +12608,7 @@
 
 
   
-    <a href="https://github.com/ualib/agda-algebras/edit/master/src/Classical/Structures/AbelianGroup.lagda.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/ualib/agda-algebras/edit/master/src/Classical/Structures/Group/Complexes.lagda.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.06 9 .94.94L5.92 19H5v-.92zm3.6-6c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29m-3.6 3.19L3 17.25V21h3.75L17.81 9.94z"/></svg>
     </a>
@@ -12290,99 +12617,101 @@
     
       
     
-    <a href="https://github.com/ualib/agda-algebras/raw/master/src/Classical/Structures/AbelianGroup.lagda.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/ualib/agda-algebras/raw/master/src/Classical/Structures/Group/Complexes.lagda.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="classicalstructuresabeliangroup">Classical.Structures.AbelianGroup<a class="headerlink" href="#classicalstructuresabeliangroup" title="Anchor link to this section">&para;</a></h1>
-<h3 id="classical-structures-abeliangroup">Abelian Groups<a class="headerlink" href="#classical-structures-abeliangroup" title="Anchor link to this section">&para;</a></h3>
-<p>This is the <a href="/Classical/Structures/AbelianGroup/">Classical.Structures.AbelianGroup</a> module of the <a href="/">Agda Universal Algebra Library</a>.</p>
-<p><code>Σ[ 𝑨 ∈ Algebra α ρ ] 𝑨 ⊨ Th-AbelianGroup</code> over <code>Sig-Group</code>.  An equation-only
-extension of Group, structurally identical to the way <code>CommutativeMonoid</code> extends
-<code>Monoid</code>: <code>abelianGroup→group</code> is a pure theory-reindex (<code>proj₁</code> on the underlying
-algebra), and <code>AbelianGroup-Op</code> inherits <code>_∙_</code>, <code>ε</code>, <code>_⁻¹</code>, and all five group laws
-through it, adding <code>comm-law</code>.</p>
-<pre class="Agda hidden-source"><a id="726" class="Symbol">{-#</a> <a id="730" class="Keyword">OPTIONS</a> <a id="738" class="Pragma">--cubical-compatible</a> <a id="759" class="Pragma">--exact-split</a> <a id="773" class="Pragma">--safe</a> <a id="780" class="Symbol">#-}</a>
+<h1 id="classicalstructuresgroupcomplexes">Classical.Structures.Group.Complexes<a class="headerlink" href="#classicalstructuresgroupcomplexes" title="Anchor link to this section">&para;</a></h1>
+<h3 id="complex-products">Complex products<a class="headerlink" href="#complex-products" title="Anchor link to this section">&para;</a></h3>
+<p>This is the [Classical.Structures.Group.Complexes][] module of the <a href="/">Agda Universal Algebra Library</a>.</p>
+<p>For subsets <code>P</code> and <code>Q</code> of a group (also known as <em>complexes</em>), the <strong>complex product</strong>
+is <code>P Q = { p ∙ q ∣ p ∈ P , q ∈ Q }</code>.</p>
+<p>Over a setoid carrier we take the <strong>≈-saturated image</strong>, that is, an element belongs
+to <code>P ∙ᶜ Q</code> when it is ≈-equal to some product <code>p ∙ q</code>.  So the complex product
+respects the setoid equality by construction, exactly as the subgroup conjugate of
+[Classical.Structures.Group.Conjugation][] does.</p>
+<p>The complex product of two subgroups is generally <em>not</em> a subgroup; it is one
+precisely when the two subgroups permute.  Thus, <code class="AgdaFunction">_∙ᶜ_</code> is defined on raw
+predicates.[^1]</p>
+<pre class="Agda hidden-source"><a id="949" class="Symbol">{-#</a> <a id="953" class="Keyword">OPTIONS</a> <a id="961" class="Pragma">--cubical-compatible</a> <a id="982" class="Pragma">--exact-split</a> <a id="996" class="Pragma">--safe</a> <a id="1003" class="Symbol">#-}</a>
 
-<a id="785" class="Keyword">module</a> <a id="792" href="/Classical/Structures/AbelianGroup/" class="Module">Classical.Structures.AbelianGroup</a> <a id="826" class="Keyword">where</a>
+<a id="1008" class="Keyword">module</a> <a id="1015" href="/Classical/Structures/Group/Complexes/" class="Module">Classical.Structures.Group.Complexes</a> <a id="1052" class="Keyword">where</a>
 
-<a id="833" class="Keyword">open</a> <a id="838" class="Keyword">import</a> <a id="845" href="/classic/Agda.Primitive.html" class="Module">Agda.Primitive</a>                          <a id="885" class="Keyword">using</a> <a id="891" class="Symbol">()</a> <a id="894" class="Keyword">renaming</a> <a id="903" class="Symbol">(</a> <a id="905" href="/classic/Agda.Primitive.html#388" class="Primitive">Set</a> <a id="909" class="Symbol">to</a> <a id="912" class="Primitive">Type</a> <a id="917" class="Symbol">)</a>
+<a id="1059" class="Keyword">open</a> <a id="1064" class="Keyword">import</a> <a id="1071" href="/classic/Agda.Primitive.html" class="Module">Agda.Primitive</a> <a id="1086" class="Keyword">using</a> <a id="1092" class="Symbol">()</a> <a id="1095" class="Keyword">renaming</a> <a id="1104" class="Symbol">(</a> <a id="1106" href="/classic/Agda.Primitive.html#388" class="Primitive">Set</a> <a id="1110" class="Symbol">to</a> <a id="1113" class="Primitive">Type</a> <a id="1118" class="Symbol">)</a>
 
-<a id="920" class="Keyword">open</a> <a id="925" class="Keyword">import</a> <a id="932" href="/classic/Data.Fin.Base.html" class="Module">Data.Fin.Base</a>                          <a id="971" class="Keyword">using</a> <a id="977" class="Symbol">(</a> <a id="979" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="983" class="Symbol">)</a>
-<a id="985" class="Keyword">open</a> <a id="990" class="Keyword">import</a> <a id="997" href="/classic/Data.Fin.Patterns.html" class="Module">Data.Fin.Patterns</a>                      <a id="1036" class="Keyword">using</a> <a id="1042" class="Symbol">(</a> <a id="1044" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="1047" class="Symbol">;</a> <a id="1049" href="/classic/Data.Fin.Patterns.html#440" class="InductiveConstructor">1F</a> <a id="1052" class="Symbol">;</a> <a id="1054" href="/classic/Data.Fin.Patterns.html#460" class="InductiveConstructor">2F</a> <a id="1057" class="Symbol">)</a>
-<a id="1059" class="Keyword">open</a> <a id="1064" class="Keyword">import</a> <a id="1071" href="/classic/Data.Product.html" class="Module">Data.Product</a>                           <a id="1110" class="Keyword">using</a> <a id="1116" class="Symbol">(</a> <a id="1118" href="/classic/Data.Product.Base.html#1244" class="Function">Σ-syntax</a> <a id="1127" class="Symbol">;</a> <a id="1129" href="/classic/Data.Product.Base.html#1618" class="Function Operator">_×_</a> <a id="1133" class="Symbol">;</a> <a id="1135" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">_,_</a> <a id="1139" class="Symbol">;</a> <a id="1141" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="1147" class="Symbol">;</a> <a id="1149" href="/classic/Data.Product.Base.html#650" class="Field">proj₂</a> <a id="1155" class="Symbol">)</a>
-<a id="1157" class="Keyword">open</a> <a id="1162" class="Keyword">import</a> <a id="1169" href="/classic/Level.html" class="Module">Level</a>                                  <a id="1208" class="Keyword">using</a> <a id="1214" class="Symbol">(</a> <a id="1216" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a> <a id="1222" class="Symbol">;</a> <a id="1224" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">_⊔_</a> <a id="1228" class="Symbol">;</a> <a id="1230" href="/classic/Agda.Primitive.html#931" class="Primitive">suc</a> <a id="1234" class="Symbol">)</a>
-<a id="1236" class="Keyword">open</a> <a id="1241" class="Keyword">import</a> <a id="1248" href="/classic/Relation.Binary.html" class="Module">Relation.Binary</a>                        <a id="1287" class="Keyword">using</a> <a id="1293" class="Symbol">(</a> <a id="1295" href="/classic/Relation.Binary.Bundles.html#1235" class="Record">Setoid</a> <a id="1302" class="Symbol">)</a>
-<a id="1304" class="Keyword">open</a> <a id="1309" class="Keyword">import</a> <a id="1316" href="/classic/Relation.Binary.PropositionalEquality.html" class="Module">Relation.Binary.PropositionalEquality</a>  <a id="1355" class="Keyword">using</a> <a id="1361" class="Symbol">(</a> <a id="1363" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">_≡_</a> <a id="1367" class="Symbol">)</a>
+<a id="1121" class="Comment">-- Imports from the Agda Standard Library ---------------------------------------</a>
+<a id="1203" class="Keyword">open</a> <a id="1208" class="Keyword">import</a> <a id="1215" href="/classic/Data.Product.html" class="Module">Data.Product</a>                  <a id="1245" class="Keyword">using</a> <a id="1251" class="Symbol">(</a> <a id="1253" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">_,_</a> <a id="1257" class="Symbol">;</a> <a id="1259" href="/classic/Data.Product.Base.html#1618" class="Function Operator">_×_</a> <a id="1263" class="Symbol">;</a> <a id="1265" href="/classic/Data.Product.Base.html#1244" class="Function">Σ-syntax</a> <a id="1274" class="Symbol">;</a> <a id="1276" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="1282" class="Symbol">;</a> <a id="1284" href="/classic/Data.Product.Base.html#650" class="Field">proj₂</a> <a id="1290" class="Symbol">)</a>
+<a id="1292" class="Keyword">open</a> <a id="1297" class="Keyword">import</a> <a id="1304" href="/classic/Level.html" class="Module">Level</a>                         <a id="1334" class="Keyword">using</a> <a id="1340" class="Symbol">(</a> <a id="1342" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a> <a id="1348" class="Symbol">;</a> <a id="1350" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">_⊔_</a> <a id="1354" class="Symbol">)</a>
+<a id="1356" class="Keyword">open</a> <a id="1361" class="Keyword">import</a> <a id="1368" href="/classic/Relation.Binary.html" class="Module">Relation.Binary</a>               <a id="1398" class="Keyword">using</a> <a id="1404" class="Symbol">(</a> <a id="1406" href="/classic/Relation.Binary.Bundles.html#1235" class="Record">Setoid</a> <a id="1413" class="Symbol">)</a>
+<a id="1415" class="Keyword">open</a> <a id="1420" class="Keyword">import</a> <a id="1427" href="/classic/Relation.Binary.Definitions.html" class="Module">Relation.Binary.Definitions</a>   <a id="1457" class="Keyword">using</a> <a id="1463" class="Symbol">(</a> <a id="1465" href="/classic/Relation.Binary.Definitions.html#5277" class="Function Operator">_Respects_</a> <a id="1476" class="Symbol">)</a>
+<a id="1478" class="Keyword">open</a> <a id="1483" class="Keyword">import</a> <a id="1490" href="/classic/Relation.Unary.html" class="Module">Relation.Unary</a>                <a id="1520" class="Keyword">using</a> <a id="1526" class="Symbol">(</a> <a id="1528" href="/classic/Relation.Unary.html#1178" class="Function">Pred</a> <a id="1533" class="Symbol">;</a> <a id="1535" href="/classic/Relation.Unary.html#1818" class="Function Operator">_∈_</a> <a id="1539" class="Symbol">;</a> <a id="1541" href="/classic/Relation.Unary.html#2046" class="Function Operator">_⊆_</a> <a id="1545" class="Symbol">;</a> <a id="1547" href="/classic/Relation.Unary.html#2494" class="Function Operator">_≐_</a> <a id="1551" class="Symbol">)</a>
 
-<a id="1370" class="Keyword">open</a> <a id="1375" class="Keyword">import</a> <a id="1382" href="/Classical/Signatures/Group/" class="Module">Classical.Signatures.Group</a>             <a id="1421" class="Keyword">using</a> <a id="1427" class="Symbol">(</a> <a id="1429" href="/Classical/Signatures/Group/#1718" class="Function">Sig-Group</a> <a id="1439" class="Symbol">)</a>
-<a id="1441" class="Keyword">open</a> <a id="1446" class="Keyword">import</a> <a id="1453" href="/Classical/Structures/Group/" class="Module">Classical.Structures.Group</a>             <a id="1492" class="Keyword">using</a> <a id="1498" class="Symbol">(</a> <a id="1500" href="/Classical/Structures/Group/#4473" class="Function">Group</a> <a id="1506" class="Symbol">;</a> <a id="1508" class="Keyword">module</a> <a id="1515" href="/Classical/Structures/Group/#6735" class="Module">Group-Op</a> <a id="1524" class="Symbol">;</a> <a id="1526" href="/Classical/Structures/Group/#12529" class="Function">opsToBareGroup</a> <a id="1541" class="Symbol">)</a>
-<a id="1543" class="Keyword">open</a> <a id="1548" class="Keyword">import</a> <a id="1555" href="/Classical/Theories/Group/" class="Module">Classical.Theories.Group</a>               <a id="1594" class="Keyword">using</a> <a id="1600" class="Symbol">(</a> <a id="1602" href="/Classical/Theories/Group/#2099" class="InductiveConstructor">assoc</a> <a id="1608" class="Symbol">;</a> <a id="1610" href="/Classical/Theories/Group/#2105" class="InductiveConstructor">idˡ</a> <a id="1614" class="Symbol">;</a> <a id="1616" href="/Classical/Theories/Group/#2109" class="InductiveConstructor">idʳ</a> <a id="1620" class="Symbol">;</a> <a id="1622" href="/Classical/Theories/Group/#2113" class="InductiveConstructor">invˡ</a> <a id="1627" class="Symbol">;</a> <a id="1629" href="/Classical/Theories/Group/#2118" class="InductiveConstructor">invʳ</a> <a id="1634" class="Symbol">)</a>
-<a id="1636" class="Keyword">open</a> <a id="1641" class="Keyword">import</a> <a id="1648" href="/Classical/Theories/AbelianGroup/" class="Module">Classical.Theories.AbelianGroup</a>        <a id="1687" class="Keyword">using</a> <a id="1693" class="Symbol">(</a> <a id="1695" href="/Classical/Theories/AbelianGroup/#1329" class="Datatype">Eq-AbelianGroup</a> <a id="1711" class="Symbol">;</a> <a id="1713" href="/Classical/Theories/AbelianGroup/#1408" class="Function">Th-AbelianGroup</a> <a id="1729" class="Symbol">;</a> <a id="1731" href="/Classical/Theories/AbelianGroup/#1384" class="InductiveConstructor">comm</a> <a id="1736" class="Symbol">)</a>
-                                                   <a id="1789" class="Keyword">renaming</a> <a id="1798" class="Symbol">(</a> <a id="1800" href="/Classical/Theories/AbelianGroup/#1360" class="InductiveConstructor">assoc</a> <a id="1806" class="Symbol">to</a> <a id="1809" class="InductiveConstructor">assocᵃ</a> <a id="1816" class="Symbol">;</a> <a id="1818" href="/Classical/Theories/AbelianGroup/#1366" class="InductiveConstructor">idˡ</a> <a id="1822" class="Symbol">to</a> <a id="1825" class="InductiveConstructor">idˡᵃ</a> <a id="1830" class="Symbol">;</a> <a id="1832" href="/Classical/Theories/AbelianGroup/#1370" class="InductiveConstructor">idʳ</a> <a id="1836" class="Symbol">to</a> <a id="1839" class="InductiveConstructor">idʳᵃ</a>
-                                                            <a id="1904" class="Symbol">;</a> <a id="1906" href="/Classical/Theories/AbelianGroup/#1374" class="InductiveConstructor">invˡ</a> <a id="1911" class="Symbol">to</a> <a id="1914" class="InductiveConstructor">invˡᵃ</a> <a id="1920" class="Symbol">;</a> <a id="1922" href="/Classical/Theories/AbelianGroup/#1379" class="InductiveConstructor">invʳ</a> <a id="1927" class="Symbol">to</a> <a id="1930" class="InductiveConstructor">invʳᵃ</a> <a id="1936" class="Symbol">)</a>
-<a id="1938" class="Keyword">open</a> <a id="1943" class="Keyword">import</a> <a id="1950" href="/Overture/Terms/" class="Module">Overture.Terms</a> <a id="1965" class="Symbol">{</a><a id="1966" class="Argument">𝑆</a> <a id="1968" class="Symbol">=</a> <a id="1970" href="/Classical/Signatures/Group/#1718" class="Function">Sig-Group</a><a id="1979" class="Symbol">}</a>         <a id="1989" class="Keyword">using</a> <a id="1995" class="Symbol">(</a> <a id="1997" href="/Overture/Terms/Basic/#3256" class="Datatype">Term</a> <a id="2002" class="Symbol">;</a> <a id="2004" href="/Overture/Terms/Basic/#3296" class="InductiveConstructor">ℊ</a> <a id="2006" class="Symbol">)</a>
-<a id="2008" class="Keyword">open</a> <a id="2013" class="Keyword">import</a> <a id="2020" href="/Setoid/Algebras/Basic/" class="Module">Setoid.Algebras.Basic</a> <a id="2042" class="Symbol">{</a><a id="2043" class="Argument">𝑆</a> <a id="2045" class="Symbol">=</a> <a id="2047" href="/Classical/Signatures/Group/#1718" class="Function">Sig-Group</a><a id="2056" class="Symbol">}</a>  <a id="2059" class="Keyword">using</a> <a id="2065" class="Symbol">(</a> <a id="2067" href="/Setoid/Algebras/Basic/#2913" class="Record">Algebra</a> <a id="2075" class="Symbol">;</a> <a id="2077" href="/Setoid/Algebras/Basic/#3610" class="Function Operator">𝔻[_]</a> <a id="2082" class="Symbol">;</a> <a id="2084" href="/Setoid/Algebras/Basic/#3752" class="Function Operator">𝕌[_]</a> <a id="2089" class="Symbol">)</a>
-<a id="2091" class="Keyword">open</a> <a id="2096" class="Keyword">import</a> <a id="2103" href="/Setoid/Varieties/EquationalLogic/" class="Module">Setoid.Varieties.EquationalLogic</a> <a id="2136" class="Symbol">{</a><a id="2137" class="Argument">𝑆</a> <a id="2139" class="Symbol">=</a> <a id="2141" href="/Classical/Signatures/Group/#1718" class="Function">Sig-Group</a><a id="2150" class="Symbol">}</a> <a id="2152" class="Keyword">using</a> <a id="2158" class="Symbol">(</a> <a id="2160" href="/Setoid/Varieties/EquationalLogic/#2697" class="Function Operator">_⊧_≈_</a> <a id="2166" class="Symbol">)</a>
+<a id="1554" class="Comment">-- Imports from the Agda Universal Algebra Library ------------------------------</a>
+<a id="1636" class="Keyword">open</a> <a id="1641" class="Keyword">import</a> <a id="1648" href="/Classical/Signatures/Group/" class="Module">Classical.Signatures.Group</a>           <a id="1685" class="Keyword">using</a> <a id="1691" class="Symbol">(</a> <a id="1693" href="/Classical/Signatures/Group/#1718" class="Function">Sig-Group</a> <a id="1703" class="Symbol">)</a>
+<a id="1705" class="Keyword">open</a> <a id="1710" class="Keyword">import</a> <a id="1717" href="/Classical/Structures/Group/Basic/" class="Module">Classical.Structures.Group.Basic</a>           <a id="1760" class="Keyword">using</a> <a id="1766" class="Symbol">(</a> <a id="1768" href="/Classical/Structures/Group/Basic/#4497" class="Function">Group</a> <a id="1774" class="Symbol">;</a> <a id="1776" class="Keyword">module</a> <a id="1783" href="/Classical/Structures/Group/Basic/#6759" class="Module">Group-Op</a> <a id="1792" class="Symbol">)</a>
+<a id="1794" class="Keyword">open</a> <a id="1799" class="Keyword">import</a> <a id="1806" href="/Classical/Structures/Group/Subgroups/" class="Module">Classical.Structures.Group.Subgroups</a> <a id="1843" class="Keyword">using</a> <a id="1849" class="Symbol">(</a> <a id="1851" href="/Classical/Structures/Group/Subgroups/#6501" class="Record">IsSubgroup</a> <a id="1862" class="Symbol">)</a>
 
-<a id="2169" class="Keyword">private</a> <a id="2177" class="Keyword">variable</a> <a id="2186" href="/Classical/Structures/AbelianGroup/#2186" class="Generalizable">α</a> <a id="2188" href="/Classical/Structures/AbelianGroup/#2188" class="Generalizable">ρ</a> <a id="2190" class="Symbol">:</a> <a id="2192" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a>
+<a id="1865" class="Keyword">open</a> <a id="1870" class="Keyword">import</a> <a id="1877" href="/Setoid/Algebras/Basic/" class="Module">Setoid.Algebras.Basic</a> <a id="1899" class="Symbol">{</a><a id="1900" class="Argument">𝑆</a> <a id="1902" class="Symbol">=</a> <a id="1904" href="/Classical/Signatures/Group/#1718" class="Function">Sig-Group</a><a id="1913" class="Symbol">}</a> <a id="1915" class="Keyword">using</a> <a id="1921" class="Symbol">(</a> <a id="1923" href="/Setoid/Algebras/Basic/#2913" class="Record">Algebra</a> <a id="1931" class="Symbol">;</a> <a id="1933" href="/Setoid/Algebras/Basic/#3752" class="Function Operator">𝕌[_]</a> <a id="1938" class="Symbol">;</a> <a id="1940" href="/Setoid/Algebras/Basic/#3610" class="Function Operator">𝔻[_]</a> <a id="1945" class="Symbol">)</a>
+
+<a id="1948" class="Keyword">private</a> <a id="1956" class="Keyword">variable</a> <a id="1965" href="/Classical/Structures/Group/Complexes/#1965" class="Generalizable">ℓ</a> <a id="1967" href="/Classical/Structures/Group/Complexes/#1967" class="Generalizable">ℓ&#39;</a> <a id="1970" class="Symbol">:</a> <a id="1972" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a>
 </pre>
 
-<h4 id="satisfaction-predicate-and-the-abeliangroup-type">Satisfaction predicate and the <code>AbelianGroup</code> type<a class="headerlink" href="#satisfaction-predicate-and-the-abeliangroup-type" title="Anchor link to this section">&para;</a></h4>
-<pre class="Agda"><a id="2272" class="Keyword">infix</a> <a id="2278" class="Number">4</a> <a id="2280" href="/Classical/Structures/AbelianGroup/#2286" class="Function Operator">_⊨ᵃᵍ_</a>
-<a id="_⊨ᵃᵍ_"></a><a id="2286" href="/Classical/Structures/AbelianGroup/#2286" class="Function Operator">_⊨ᵃᵍ_</a> <a id="2292" class="Symbol">:</a> <a id="2294" class="Symbol">(</a><a id="2295" href="/Classical/Structures/AbelianGroup/#2295" class="Bound">𝑨</a> <a id="2297" class="Symbol">:</a> <a id="2299" href="/Setoid/Algebras/Basic/#2913" class="Record">Algebra</a> <a id="2307" href="/Classical/Structures/AbelianGroup/#2186" class="Generalizable">α</a> <a id="2309" href="/Classical/Structures/AbelianGroup/#2188" class="Generalizable">ρ</a><a id="2310" class="Symbol">)</a> <a id="2312" class="Symbol">(</a><a id="2313" href="/Classical/Structures/AbelianGroup/#2313" class="Bound">ℰ</a> <a id="2315" class="Symbol">:</a> <a id="2317" href="/Classical/Theories/AbelianGroup/#1329" class="Datatype">Eq-AbelianGroup</a> <a id="2333" class="Symbol">→</a> <a id="2335" href="/Overture/Terms/Basic/#3256" class="Datatype">Term</a> <a id="2340" class="Symbol">(</a><a id="2341" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="2345" class="Number">3</a><a id="2346" class="Symbol">)</a> <a id="2348" href="/classic/Data.Product.Base.html#1618" class="Function Operator">×</a> <a id="2350" href="/Overture/Terms/Basic/#3256" class="Datatype">Term</a> <a id="2355" class="Symbol">(</a><a id="2356" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="2360" class="Number">3</a><a id="2361" class="Symbol">))</a> <a id="2364" class="Symbol">→</a> <a id="2366" href="/Classical/Structures/AbelianGroup/#912" class="Primitive">Type</a> <a id="2371" class="Symbol">(</a><a id="2372" href="/Classical/Structures/AbelianGroup/#2186" class="Generalizable">α</a> <a id="2374" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="2376" href="/Classical/Structures/AbelianGroup/#2188" class="Generalizable">ρ</a><a id="2377" class="Symbol">)</a>
-<a id="2379" href="/Classical/Structures/AbelianGroup/#2379" class="Bound">𝑨</a> <a id="2381" href="/Classical/Structures/AbelianGroup/#2286" class="Function Operator">⊨ᵃᵍ</a> <a id="2385" href="/Classical/Structures/AbelianGroup/#2385" class="Bound">ℰ</a> <a id="2387" class="Symbol">=</a> <a id="2389" class="Symbol">∀</a> <a id="2391" href="/Classical/Structures/AbelianGroup/#2391" class="Bound">i</a> <a id="2393" class="Symbol">→</a> <a id="2395" href="/Classical/Structures/AbelianGroup/#2379" class="Bound">𝑨</a> <a id="2397" href="/Setoid/Varieties/EquationalLogic/#2697" class="Function Operator">⊧</a> <a id="2399" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="2405" class="Symbol">(</a><a id="2406" href="/Classical/Structures/AbelianGroup/#2385" class="Bound">ℰ</a> <a id="2408" href="/Classical/Structures/AbelianGroup/#2391" class="Bound">i</a><a id="2409" class="Symbol">)</a> <a id="2411" href="/Setoid/Varieties/EquationalLogic/#2697" class="Function Operator">≈</a> <a id="2413" href="/classic/Data.Product.Base.html#650" class="Field">proj₂</a> <a id="2419" class="Symbol">(</a><a id="2420" href="/Classical/Structures/AbelianGroup/#2385" class="Bound">ℰ</a> <a id="2422" href="/Classical/Structures/AbelianGroup/#2391" class="Bound">i</a><a id="2423" class="Symbol">)</a>
+<h4 id="the-complex-product">The complex product<a class="headerlink" href="#the-complex-product" title="Anchor link to this section">&para;</a></h4>
+<pre class="Agda"><a id="2021" class="Keyword">module</a> <a id="Complex"></a><a id="2028" href="/Classical/Structures/Group/Complexes/#2028" class="Module">Complex</a> <a id="2036" class="Symbol">{</a><a id="2037" href="/Classical/Structures/Group/Complexes/#2037" class="Bound">α</a> <a id="2039" href="/Classical/Structures/Group/Complexes/#2039" class="Bound">ρ</a> <a id="2041" class="Symbol">:</a> <a id="2043" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a><a id="2048" class="Symbol">}</a> <a id="2050" class="Symbol">(</a><a id="2051" href="/Classical/Structures/Group/Complexes/#2051" class="Bound">𝒢</a> <a id="2053" class="Symbol">:</a> <a id="2055" href="/Classical/Structures/Group/Basic/#4497" class="Function">Group</a> <a id="2061" href="/Classical/Structures/Group/Complexes/#2037" class="Bound">α</a> <a id="2063" href="/Classical/Structures/Group/Complexes/#2039" class="Bound">ρ</a><a id="2064" class="Symbol">)</a> <a id="2066" class="Keyword">where</a>
+  <a id="2074" class="Keyword">private</a>
+    <a id="Complex.𝑮"></a><a id="2086" href="/Classical/Structures/Group/Complexes/#2086" class="Function">𝑮</a> <a id="2088" class="Symbol">=</a> <a id="2090" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="2096" href="/Classical/Structures/Group/Complexes/#2051" class="Bound">𝒢</a>  <a id="2099" class="Comment">-- the algebra</a>
+    <a id="Complex.G"></a><a id="2118" href="/Classical/Structures/Group/Complexes/#2118" class="Function">G</a> <a id="2120" class="Symbol">=</a> <a id="2122" href="/Setoid/Algebras/Basic/#3752" class="Function Operator">𝕌[</a> <a id="2125" href="/Classical/Structures/Group/Complexes/#2086" class="Function">𝑮</a> <a id="2127" href="/Setoid/Algebras/Basic/#3752" class="Function Operator">]</a>   <a id="2131" class="Comment">-- the universe (or carrier)</a>
 
-<a id="AbelianGroup"></a><a id="2426" href="/Classical/Structures/AbelianGroup/#2426" class="Function">AbelianGroup</a> <a id="2439" class="Symbol">:</a> <a id="2441" class="Symbol">(</a><a id="2442" href="/Classical/Structures/AbelianGroup/#2442" class="Bound">α</a> <a id="2444" href="/Classical/Structures/AbelianGroup/#2444" class="Bound">ρ</a> <a id="2446" class="Symbol">:</a> <a id="2448" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a><a id="2453" class="Symbol">)</a> <a id="2455" class="Symbol">→</a> <a id="2457" href="/Classical/Structures/AbelianGroup/#912" class="Primitive">Type</a> <a id="2462" class="Symbol">(</a><a id="2463" href="/classic/Agda.Primitive.html#931" class="Primitive">suc</a> <a id="2467" href="/Classical/Structures/AbelianGroup/#2442" class="Bound">α</a> <a id="2469" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="2471" href="/classic/Agda.Primitive.html#931" class="Primitive">suc</a> <a id="2475" href="/Classical/Structures/AbelianGroup/#2444" class="Bound">ρ</a><a id="2476" class="Symbol">)</a>
-<a id="2478" href="/Classical/Structures/AbelianGroup/#2426" class="Function">AbelianGroup</a> <a id="2491" href="/Classical/Structures/AbelianGroup/#2491" class="Bound">α</a> <a id="2493" href="/Classical/Structures/AbelianGroup/#2493" class="Bound">ρ</a> <a id="2495" class="Symbol">=</a> <a id="2497" href="/classic/Data.Product.Base.html#1244" class="Function">Σ[</a> <a id="2500" href="/Classical/Structures/AbelianGroup/#2500" class="Bound">𝑨</a> <a id="2502" href="/classic/Data.Product.Base.html#1244" class="Function">∈</a> <a id="2504" href="/Setoid/Algebras/Basic/#2913" class="Record">Algebra</a> <a id="2512" href="/Classical/Structures/AbelianGroup/#2491" class="Bound">α</a> <a id="2514" href="/Classical/Structures/AbelianGroup/#2493" class="Bound">ρ</a> <a id="2516" href="/classic/Data.Product.Base.html#1244" class="Function">]</a> <a id="2518" href="/Classical/Structures/AbelianGroup/#2500" class="Bound">𝑨</a> <a id="2520" href="/Classical/Structures/AbelianGroup/#2286" class="Function Operator">⊨ᵃᵍ</a> <a id="2524" href="/Classical/Theories/AbelianGroup/#1408" class="Function">Th-AbelianGroup</a>
+  <a id="2163" class="Keyword">open</a> <a id="2168" href="/classic/Relation.Binary.Bundles.html#1235" class="Module">Setoid</a> <a id="2175" href="/Setoid/Algebras/Basic/#3610" class="Function Operator">𝔻[</a> <a id="2178" href="/Classical/Structures/Group/Complexes/#2086" class="Function">𝑮</a> <a id="2180" href="/Setoid/Algebras/Basic/#3610" class="Function Operator">]</a> <a id="2182" class="Keyword">using</a> <a id="2188" class="Symbol">(</a> <a id="2190" href="/classic/Relation.Binary.Bundles.html#1324" class="Field Operator">_≈_</a> <a id="2194" class="Symbol">)</a> <a id="2196" class="Keyword">renaming</a> <a id="2205" class="Symbol">(</a> <a id="2207" href="/classic/Relation.Binary.Structures.html#1641" class="Function">refl</a> <a id="2212" class="Symbol">to</a> <a id="2215" class="Function">≈refl</a> <a id="2221" class="Symbol">;</a> <a id="2223" href="/classic/Relation.Binary.Structures.html#1245" class="Function">sym</a> <a id="2227" class="Symbol">to</a> <a id="2230" class="Function">≈sym</a> <a id="2235" class="Symbol">;</a> <a id="2237" href="/classic/Relation.Binary.Structures.html#1271" class="Function">trans</a> <a id="2243" class="Symbol">to</a> <a id="2246" class="Function">≈trans</a> <a id="2253" class="Symbol">)</a>
+  <a id="2257" class="Keyword">open</a> <a id="2262" href="/Classical/Structures/Group/Basic/#6759" class="Module">Group-Op</a> <a id="2271" href="/Classical/Structures/Group/Complexes/#2051" class="Bound">𝒢</a> <a id="2273" class="Keyword">using</a> <a id="2279" class="Symbol">(</a> <a id="2281" href="/Classical/Structures/Group/Basic/#6997" class="Function Operator">_∙_</a> <a id="2285" class="Symbol">;</a> <a id="2287" href="/Classical/Structures/Group/Basic/#7057" class="Function">ε</a> <a id="2289" class="Symbol">;</a> <a id="2291" href="/Classical/Structures/Group/Basic/#8455" class="Function">idʳ-law</a> <a id="2299" class="Symbol">)</a>
+
+  <a id="2304" class="Keyword">infixl</a> <a id="2311" class="Number">7</a> <a id="2313" href="/Classical/Structures/Group/Complexes/#2422" class="Function Operator">_∙ᶜ_</a>
+
+  <a id="2321" class="Comment">-- The complex product: x ∈ P ∙ᶜ Q when x is ≈-equal to a product p ∙ q</a>
+  <a id="2395" class="Comment">-- with p ∈ P and q ∈ Q.</a>
+  <a id="Complex._∙ᶜ_"></a><a id="2422" href="/Classical/Structures/Group/Complexes/#2422" class="Function Operator">_∙ᶜ_</a> <a id="2427" class="Symbol">:</a> <a id="2429" href="/classic/Relation.Unary.html#1178" class="Function">Pred</a> <a id="2434" href="/Classical/Structures/Group/Complexes/#2118" class="Function">G</a> <a id="2436" href="/Classical/Structures/Group/Complexes/#1965" class="Generalizable">ℓ</a> <a id="2438" class="Symbol">→</a> <a id="2440" href="/classic/Relation.Unary.html#1178" class="Function">Pred</a> <a id="2445" href="/Classical/Structures/Group/Complexes/#2118" class="Function">G</a> <a id="2447" href="/Classical/Structures/Group/Complexes/#1967" class="Generalizable">ℓ&#39;</a> <a id="2450" class="Symbol">→</a> <a id="2452" href="/classic/Relation.Unary.html#1178" class="Function">Pred</a> <a id="2457" href="/Classical/Structures/Group/Complexes/#2118" class="Function">G</a> <a id="2459" class="Symbol">(</a><a id="2460" href="/Classical/Structures/Group/Complexes/#2037" class="Bound">α</a> <a id="2462" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="2464" href="/Classical/Structures/Group/Complexes/#2039" class="Bound">ρ</a> <a id="2466" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="2468" href="/Classical/Structures/Group/Complexes/#1965" class="Generalizable">ℓ</a> <a id="2470" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="2472" href="/Classical/Structures/Group/Complexes/#1967" class="Generalizable">ℓ&#39;</a><a id="2474" class="Symbol">)</a>
+  <a id="2478" class="Symbol">(</a><a id="2479" href="/Classical/Structures/Group/Complexes/#2479" class="Bound">P</a> <a id="2481" href="/Classical/Structures/Group/Complexes/#2422" class="Function Operator">∙ᶜ</a> <a id="2484" href="/Classical/Structures/Group/Complexes/#2484" class="Bound">Q</a><a id="2485" class="Symbol">)</a> <a id="2487" href="/Classical/Structures/Group/Complexes/#2487" class="Bound">x</a> <a id="2489" class="Symbol">=</a> <a id="2491" href="/classic/Data.Product.Base.html#1244" class="Function">Σ[</a> <a id="2494" href="/Classical/Structures/Group/Complexes/#2494" class="Bound">p</a> <a id="2496" href="/classic/Data.Product.Base.html#1244" class="Function">∈</a> <a id="2498" href="/Classical/Structures/Group/Complexes/#2118" class="Function">G</a> <a id="2500" href="/classic/Data.Product.Base.html#1244" class="Function">]</a> <a id="2502" href="/classic/Data.Product.Base.html#1244" class="Function">Σ[</a> <a id="2505" href="/Classical/Structures/Group/Complexes/#2505" class="Bound">q</a> <a id="2507" href="/classic/Data.Product.Base.html#1244" class="Function">∈</a> <a id="2509" href="/Classical/Structures/Group/Complexes/#2118" class="Function">G</a> <a id="2511" href="/classic/Data.Product.Base.html#1244" class="Function">]</a> <a id="2513" class="Symbol">(</a><a id="2514" href="/Classical/Structures/Group/Complexes/#2494" class="Bound">p</a> <a id="2516" href="/classic/Relation.Unary.html#1818" class="Function Operator">∈</a> <a id="2518" href="/Classical/Structures/Group/Complexes/#2479" class="Bound">P</a> <a id="2520" href="/classic/Data.Product.Base.html#1618" class="Function Operator">×</a> <a id="2522" href="/Classical/Structures/Group/Complexes/#2505" class="Bound">q</a> <a id="2524" href="/classic/Relation.Unary.html#1818" class="Function Operator">∈</a> <a id="2526" href="/Classical/Structures/Group/Complexes/#2484" class="Bound">Q</a> <a id="2528" href="/classic/Data.Product.Base.html#1618" class="Function Operator">×</a> <a id="2530" href="/Classical/Structures/Group/Complexes/#2487" class="Bound">x</a> <a id="2532" href="/classic/Relation.Binary.Bundles.html#1324" class="Function Operator">≈</a> <a id="2534" href="/Classical/Structures/Group/Complexes/#2494" class="Bound">p</a> <a id="2536" href="/Classical/Structures/Group/Basic/#6997" class="Function Operator">∙</a> <a id="2538" href="/Classical/Structures/Group/Complexes/#2505" class="Bound">q</a><a id="2539" class="Symbol">)</a>
+
+  <a id="2544" class="Comment">-- A literal product of members is a member of the complex product.</a>
+  <a id="Complex.mem-∙ᶜ"></a><a id="2614" href="/Classical/Structures/Group/Complexes/#2614" class="Function">mem-∙ᶜ</a> <a id="2621" class="Symbol">:</a> <a id="2623" class="Symbol">{</a><a id="2624" href="/Classical/Structures/Group/Complexes/#2624" class="Bound">P</a> <a id="2626" class="Symbol">:</a> <a id="2628" href="/classic/Relation.Unary.html#1178" class="Function">Pred</a> <a id="2633" href="/Classical/Structures/Group/Complexes/#2118" class="Function">G</a> <a id="2635" href="/Classical/Structures/Group/Complexes/#1965" class="Generalizable">ℓ</a><a id="2636" class="Symbol">}</a> <a id="2638" class="Symbol">{</a><a id="2639" href="/Classical/Structures/Group/Complexes/#2639" class="Bound">Q</a> <a id="2641" class="Symbol">:</a> <a id="2643" href="/classic/Relation.Unary.html#1178" class="Function">Pred</a> <a id="2648" href="/Classical/Structures/Group/Complexes/#2118" class="Function">G</a> <a id="2650" href="/Classical/Structures/Group/Complexes/#1967" class="Generalizable">ℓ&#39;</a><a id="2652" class="Symbol">}</a> <a id="2654" class="Symbol">{</a><a id="2655" href="/Classical/Structures/Group/Complexes/#2655" class="Bound">p</a> <a id="2657" href="/Classical/Structures/Group/Complexes/#2657" class="Bound">q</a> <a id="2659" class="Symbol">:</a> <a id="2661" href="/Classical/Structures/Group/Complexes/#2118" class="Function">G</a><a id="2662" class="Symbol">}</a>
+    <a id="2668" class="Symbol">→</a>  <a id="2671" href="/Classical/Structures/Group/Complexes/#2655" class="Bound">p</a> <a id="2673" href="/classic/Relation.Unary.html#1818" class="Function Operator">∈</a> <a id="2675" href="/Classical/Structures/Group/Complexes/#2624" class="Bound">P</a> <a id="2677" class="Symbol">→</a> <a id="2679" href="/Classical/Structures/Group/Complexes/#2657" class="Bound">q</a> <a id="2681" href="/classic/Relation.Unary.html#1818" class="Function Operator">∈</a> <a id="2683" href="/Classical/Structures/Group/Complexes/#2639" class="Bound">Q</a> <a id="2685" class="Symbol">→</a> <a id="2687" href="/Classical/Structures/Group/Complexes/#2655" class="Bound">p</a> <a id="2689" href="/Classical/Structures/Group/Basic/#6997" class="Function Operator">∙</a> <a id="2691" href="/Classical/Structures/Group/Complexes/#2657" class="Bound">q</a> <a id="2693" href="/classic/Relation.Unary.html#1818" class="Function Operator">∈</a> <a id="2695" href="/Classical/Structures/Group/Complexes/#2624" class="Bound">P</a> <a id="2697" href="/Classical/Structures/Group/Complexes/#2422" class="Function Operator">∙ᶜ</a> <a id="2700" href="/Classical/Structures/Group/Complexes/#2639" class="Bound">Q</a>
+  <a id="2704" href="/Classical/Structures/Group/Complexes/#2614" class="Function">mem-∙ᶜ</a> <a id="2711" href="/Classical/Structures/Group/Complexes/#2711" class="Bound">p∈P</a> <a id="2715" href="/Classical/Structures/Group/Complexes/#2715" class="Bound">q∈Q</a> <a id="2719" class="Symbol">=</a> <a id="2721" class="Symbol">_</a> <a id="2723" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="2725" class="Symbol">_</a> <a id="2727" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="2729" href="/Classical/Structures/Group/Complexes/#2711" class="Bound">p∈P</a> <a id="2733" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="2735" href="/Classical/Structures/Group/Complexes/#2715" class="Bound">q∈Q</a> <a id="2739" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="2741" href="/Classical/Structures/Group/Complexes/#2215" class="Function">≈refl</a>
+
+  <a id="2750" class="Comment">-- The complex product respects the setoid equality, with no hypotheses on P, Q.</a>
+  <a id="Complex.∙ᶜ-respects"></a><a id="2833" href="/Classical/Structures/Group/Complexes/#2833" class="Function">∙ᶜ-respects</a> <a id="2845" class="Symbol">:</a> <a id="2847" class="Symbol">(</a><a id="2848" href="/Classical/Structures/Group/Complexes/#2848" class="Bound">P</a> <a id="2850" class="Symbol">:</a> <a id="2852" href="/classic/Relation.Unary.html#1178" class="Function">Pred</a> <a id="2857" href="/Classical/Structures/Group/Complexes/#2118" class="Function">G</a> <a id="2859" href="/Classical/Structures/Group/Complexes/#1965" class="Generalizable">ℓ</a><a id="2860" class="Symbol">)</a> <a id="2862" class="Symbol">(</a><a id="2863" href="/Classical/Structures/Group/Complexes/#2863" class="Bound">Q</a> <a id="2865" class="Symbol">:</a> <a id="2867" href="/classic/Relation.Unary.html#1178" class="Function">Pred</a> <a id="2872" href="/Classical/Structures/Group/Complexes/#2118" class="Function">G</a> <a id="2874" href="/Classical/Structures/Group/Complexes/#1967" class="Generalizable">ℓ&#39;</a><a id="2876" class="Symbol">)</a> <a id="2878" class="Symbol">→</a> <a id="2880" class="Symbol">(</a><a id="2881" href="/Classical/Structures/Group/Complexes/#2848" class="Bound">P</a> <a id="2883" href="/Classical/Structures/Group/Complexes/#2422" class="Function Operator">∙ᶜ</a> <a id="2886" href="/Classical/Structures/Group/Complexes/#2863" class="Bound">Q</a><a id="2887" class="Symbol">)</a> <a id="2889" href="/classic/Relation.Binary.Definitions.html#5277" class="Function Operator">Respects</a> <a id="2898" href="/classic/Relation.Binary.Bundles.html#1324" class="Function Operator">_≈_</a>
+  <a id="2904" href="/Classical/Structures/Group/Complexes/#2833" class="Function">∙ᶜ-respects</a> <a id="2916" href="/Classical/Structures/Group/Complexes/#2916" class="Bound">P</a> <a id="2918" href="/Classical/Structures/Group/Complexes/#2918" class="Bound">Q</a> <a id="2920" href="/Classical/Structures/Group/Complexes/#2920" class="Bound">x≈y</a> <a id="2924" class="Symbol">(</a><a id="2925" href="/Classical/Structures/Group/Complexes/#2925" class="Bound">p</a> <a id="2927" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="2929" href="/Classical/Structures/Group/Complexes/#2929" class="Bound">q</a> <a id="2931" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="2933" href="/Classical/Structures/Group/Complexes/#2933" class="Bound">p∈P</a> <a id="2937" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="2939" href="/Classical/Structures/Group/Complexes/#2939" class="Bound">q∈Q</a> <a id="2943" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="2945" href="/Classical/Structures/Group/Complexes/#2945" class="Bound">x≈pq</a><a id="2949" class="Symbol">)</a> <a id="2951" class="Symbol">=</a>
+    <a id="2957" href="/Classical/Structures/Group/Complexes/#2925" class="Bound">p</a> <a id="2959" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="2961" href="/Classical/Structures/Group/Complexes/#2929" class="Bound">q</a> <a id="2963" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="2965" href="/Classical/Structures/Group/Complexes/#2933" class="Bound">p∈P</a> <a id="2969" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="2971" href="/Classical/Structures/Group/Complexes/#2939" class="Bound">q∈Q</a> <a id="2975" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="2977" href="/Classical/Structures/Group/Complexes/#2246" class="Function">≈trans</a> <a id="2984" class="Symbol">(</a><a id="2985" href="/Classical/Structures/Group/Complexes/#2230" class="Function">≈sym</a> <a id="2990" href="/Classical/Structures/Group/Complexes/#2920" class="Bound">x≈y</a><a id="2993" class="Symbol">)</a> <a id="2995" href="/Classical/Structures/Group/Complexes/#2945" class="Bound">x≈pq</a>
+
+  <a id="3003" class="Comment">-- The complex product is monotone in both arguments.</a>
+  <a id="Complex.∙ᶜ-mono"></a><a id="3059" href="/Classical/Structures/Group/Complexes/#3059" class="Function">∙ᶜ-mono</a> <a id="3067" class="Symbol">:</a> <a id="3069" class="Symbol">{</a><a id="3070" href="/Classical/Structures/Group/Complexes/#3070" class="Bound">P</a> <a id="3072" href="/Classical/Structures/Group/Complexes/#3072" class="Bound">P&#39;</a> <a id="3075" class="Symbol">:</a> <a id="3077" href="/classic/Relation.Unary.html#1178" class="Function">Pred</a> <a id="3082" href="/Classical/Structures/Group/Complexes/#2118" class="Function">G</a> <a id="3084" href="/Classical/Structures/Group/Complexes/#1965" class="Generalizable">ℓ</a><a id="3085" class="Symbol">}</a> <a id="3087" class="Symbol">{</a><a id="3088" href="/Classical/Structures/Group/Complexes/#3088" class="Bound">Q</a> <a id="3090" href="/Classical/Structures/Group/Complexes/#3090" class="Bound">Q&#39;</a> <a id="3093" class="Symbol">:</a> <a id="3095" href="/classic/Relation.Unary.html#1178" class="Function">Pred</a> <a id="3100" href="/Classical/Structures/Group/Complexes/#2118" class="Function">G</a> <a id="3102" href="/Classical/Structures/Group/Complexes/#1967" class="Generalizable">ℓ&#39;</a><a id="3104" class="Symbol">}</a>
+    <a id="3110" class="Symbol">→</a>  <a id="3113" href="/Classical/Structures/Group/Complexes/#3070" class="Bound">P</a> <a id="3115" href="/classic/Relation.Unary.html#2046" class="Function Operator">⊆</a> <a id="3117" href="/Classical/Structures/Group/Complexes/#3072" class="Bound">P&#39;</a> <a id="3120" class="Symbol">→</a> <a id="3122" href="/Classical/Structures/Group/Complexes/#3088" class="Bound">Q</a> <a id="3124" href="/classic/Relation.Unary.html#2046" class="Function Operator">⊆</a> <a id="3126" href="/Classical/Structures/Group/Complexes/#3090" class="Bound">Q&#39;</a> <a id="3129" class="Symbol">→</a> <a id="3131" href="/Classical/Structures/Group/Complexes/#3070" class="Bound">P</a> <a id="3133" href="/Classical/Structures/Group/Complexes/#2422" class="Function Operator">∙ᶜ</a> <a id="3136" href="/Classical/Structures/Group/Complexes/#3088" class="Bound">Q</a> <a id="3138" href="/classic/Relation.Unary.html#2046" class="Function Operator">⊆</a> <a id="3140" href="/Classical/Structures/Group/Complexes/#3072" class="Bound">P&#39;</a> <a id="3143" href="/Classical/Structures/Group/Complexes/#2422" class="Function Operator">∙ᶜ</a> <a id="3146" href="/Classical/Structures/Group/Complexes/#3090" class="Bound">Q&#39;</a>
+  <a id="3151" href="/Classical/Structures/Group/Complexes/#3059" class="Function">∙ᶜ-mono</a> <a id="3159" href="/Classical/Structures/Group/Complexes/#3159" class="Bound">P⊆P&#39;</a> <a id="3164" href="/Classical/Structures/Group/Complexes/#3164" class="Bound">Q⊆Q&#39;</a> <a id="3169" class="Symbol">(</a><a id="3170" href="/Classical/Structures/Group/Complexes/#3170" class="Bound">p</a> <a id="3172" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="3174" href="/Classical/Structures/Group/Complexes/#3174" class="Bound">q</a> <a id="3176" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="3178" href="/Classical/Structures/Group/Complexes/#3178" class="Bound">p∈P</a> <a id="3182" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="3184" href="/Classical/Structures/Group/Complexes/#3184" class="Bound">q∈Q</a> <a id="3188" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="3190" href="/Classical/Structures/Group/Complexes/#3190" class="Bound">x≈pq</a><a id="3194" class="Symbol">)</a> <a id="3196" class="Symbol">=</a>
+    <a id="3202" href="/Classical/Structures/Group/Complexes/#3170" class="Bound">p</a> <a id="3204" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="3206" href="/Classical/Structures/Group/Complexes/#3174" class="Bound">q</a> <a id="3208" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="3210" href="/Classical/Structures/Group/Complexes/#3159" class="Bound">P⊆P&#39;</a> <a id="3215" href="/Classical/Structures/Group/Complexes/#3178" class="Bound">p∈P</a> <a id="3219" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="3221" href="/Classical/Structures/Group/Complexes/#3164" class="Bound">Q⊆Q&#39;</a> <a id="3226" href="/Classical/Structures/Group/Complexes/#3184" class="Bound">q∈Q</a> <a id="3230" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="3232" href="/Classical/Structures/Group/Complexes/#3190" class="Bound">x≈pq</a>
 </pre>
-<h4 id="the-forgetful-projection-to-groups">The forgetful projection to groups<a class="headerlink" href="#the-forgetful-projection-to-groups" title="Anchor link to this section">&para;</a></h4>
-<pre class="Agda"><a id="abelianGroup→group"></a><a id="2594" href="/Classical/Structures/AbelianGroup/#2594" class="Function">abelianGroup→group</a> <a id="2613" class="Symbol">:</a> <a id="2615" href="/Classical/Structures/AbelianGroup/#2426" class="Function">AbelianGroup</a> <a id="2628" href="/Classical/Structures/AbelianGroup/#2186" class="Generalizable">α</a> <a id="2630" href="/Classical/Structures/AbelianGroup/#2188" class="Generalizable">ρ</a> <a id="2632" class="Symbol">→</a> <a id="2634" href="/Classical/Structures/Group/#4473" class="Function">Group</a> <a id="2640" href="/Classical/Structures/AbelianGroup/#2186" class="Generalizable">α</a> <a id="2642" href="/Classical/Structures/AbelianGroup/#2188" class="Generalizable">ρ</a>
-<a id="2644" href="/Classical/Structures/AbelianGroup/#2594" class="Function">abelianGroup→group</a> <a id="2663" class="Symbol">(</a><a id="2664" href="/Classical/Structures/AbelianGroup/#2664" class="Bound">𝑨</a> <a id="2666" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="2668" href="/Classical/Structures/AbelianGroup/#2668" class="Bound">mod</a><a id="2671" class="Symbol">)</a> <a id="2673" class="Symbol">=</a> <a id="2675" href="/Classical/Structures/AbelianGroup/#2664" class="Bound">𝑨</a> <a id="2677" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="2679" class="Symbol">λ</a> <a id="2681" class="Symbol">{</a> <a id="2683" href="/Classical/Theories/Group/#2099" class="InductiveConstructor">assoc</a> <a id="2689" class="Symbol">→</a> <a id="2691" href="/Classical/Structures/AbelianGroup/#2668" class="Bound">mod</a> <a id="2695" href="/Classical/Structures/AbelianGroup/#1809" class="InductiveConstructor">assocᵃ</a>
-                                     <a id="2739" class="Symbol">;</a> <a id="2741" href="/Classical/Theories/Group/#2105" class="InductiveConstructor">idˡ</a>   <a id="2747" class="Symbol">→</a> <a id="2749" href="/Classical/Structures/AbelianGroup/#2668" class="Bound">mod</a> <a id="2753" href="/Classical/Structures/AbelianGroup/#1825" class="InductiveConstructor">idˡᵃ</a>
-                                     <a id="2795" class="Symbol">;</a> <a id="2797" href="/Classical/Theories/Group/#2109" class="InductiveConstructor">idʳ</a>   <a id="2803" class="Symbol">→</a> <a id="2805" href="/Classical/Structures/AbelianGroup/#2668" class="Bound">mod</a> <a id="2809" href="/Classical/Structures/AbelianGroup/#1839" class="InductiveConstructor">idʳᵃ</a>
-                                     <a id="2851" class="Symbol">;</a> <a id="2853" href="/Classical/Theories/Group/#2113" class="InductiveConstructor">invˡ</a>  <a id="2859" class="Symbol">→</a> <a id="2861" href="/Classical/Structures/AbelianGroup/#2668" class="Bound">mod</a> <a id="2865" href="/Classical/Structures/AbelianGroup/#1914" class="InductiveConstructor">invˡᵃ</a>
-                                     <a id="2908" class="Symbol">;</a> <a id="2910" href="/Classical/Theories/Group/#2118" class="InductiveConstructor">invʳ</a>  <a id="2916" class="Symbol">→</a> <a id="2918" href="/Classical/Structures/AbelianGroup/#2668" class="Bound">mod</a> <a id="2922" href="/Classical/Structures/AbelianGroup/#1930" class="InductiveConstructor">invʳᵃ</a> <a id="2928" class="Symbol">}</a>
+<h4 id="subgroups-absorb-their-own-complex-square">Subgroups absorb their own complex square<a class="headerlink" href="#subgroups-absorb-their-own-complex-square" title="Anchor link to this section">&para;</a></h4>
+<p>For a subgroup <code>H</code> the complex product <code>H H</code> collapses back to <code>H</code>: one inclusion
+is closure under <code>∙</code> (plus respect), the other writes <code>x</code> as <code>x ∙ ε</code>.  This is the
+prototypical use of the toolkit and a lemma the interval arguments reuse.</p>
+<pre class="Agda">  <a id="Complex.subgroup-∙ᶜ-idem"></a><a id="3540" href="/Classical/Structures/Group/Complexes/#3540" class="Function">subgroup-∙ᶜ-idem</a> <a id="3557" class="Symbol">:</a> <a id="3559" class="Symbol">{</a><a id="3560" href="/Classical/Structures/Group/Complexes/#3560" class="Bound">H</a> <a id="3562" class="Symbol">:</a> <a id="3564" href="/classic/Relation.Unary.html#1178" class="Function">Pred</a> <a id="3569" href="/Classical/Structures/Group/Complexes/#2118" class="Function">G</a> <a id="3571" href="/Classical/Structures/Group/Complexes/#1965" class="Generalizable">ℓ</a><a id="3572" class="Symbol">}</a> <a id="3574" class="Symbol">→</a> <a id="3576" href="/Classical/Structures/Group/Subgroups/#6501" class="Record">IsSubgroup</a> <a id="3587" href="/Classical/Structures/Group/Complexes/#2051" class="Bound">𝒢</a> <a id="3589" href="/Classical/Structures/Group/Complexes/#3560" class="Bound">H</a> <a id="3591" class="Symbol">→</a> <a id="3593" class="Symbol">(</a><a id="3594" href="/Classical/Structures/Group/Complexes/#3560" class="Bound">H</a> <a id="3596" href="/Classical/Structures/Group/Complexes/#2422" class="Function Operator">∙ᶜ</a> <a id="3599" href="/Classical/Structures/Group/Complexes/#3560" class="Bound">H</a><a id="3600" class="Symbol">)</a> <a id="3602" href="/classic/Relation.Unary.html#2494" class="Function Operator">≐</a> <a id="3604" href="/Classical/Structures/Group/Complexes/#3560" class="Bound">H</a>
+  <a id="3608" href="/Classical/Structures/Group/Complexes/#3540" class="Function">subgroup-∙ᶜ-idem</a> <a id="3625" class="Symbol">{</a><a id="3626" class="Argument">H</a> <a id="3628" class="Symbol">=</a> <a id="3630" href="/Classical/Structures/Group/Complexes/#3630" class="Bound">H</a><a id="3631" class="Symbol">}</a> <a id="3633" href="/Classical/Structures/Group/Complexes/#3633" class="Bound">H-isSubgroup</a> <a id="3646" class="Symbol">=</a> <a id="3648" href="/Classical/Structures/Group/Complexes/#3751" class="Function">below</a> <a id="3654" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="3656" href="/Classical/Structures/Group/Complexes/#3854" class="Function">above</a>
+    <a id="3666" class="Keyword">where</a>
+    <a id="3676" class="Keyword">open</a> <a id="3681" href="/Classical/Structures/Group/Subgroups/#6501" class="Module">IsSubgroup</a> <a id="3692" href="/Classical/Structures/Group/Complexes/#3633" class="Bound">H-isSubgroup</a> <a id="3705" class="Keyword">using</a> <a id="3711" class="Symbol">(</a> <a id="3713" href="/Classical/Structures/Group/Subgroups/#6568" class="Field">respects</a> <a id="3722" class="Symbol">;</a> <a id="3724" href="/Classical/Structures/Group/Subgroups/#6647" class="Function">∙-closed</a> <a id="3733" class="Symbol">;</a> <a id="3735" href="/Classical/Structures/Group/Subgroups/#6743" class="Function">ε-closed</a> <a id="3744" class="Symbol">)</a>
+
+    <a id="3751" href="/Classical/Structures/Group/Complexes/#3751" class="Function">below</a> <a id="3757" class="Symbol">:</a> <a id="3759" href="/Classical/Structures/Group/Complexes/#3630" class="Bound">H</a> <a id="3761" href="/Classical/Structures/Group/Complexes/#2422" class="Function Operator">∙ᶜ</a> <a id="3764" href="/Classical/Structures/Group/Complexes/#3630" class="Bound">H</a> <a id="3766" href="/classic/Relation.Unary.html#2046" class="Function Operator">⊆</a> <a id="3768" href="/Classical/Structures/Group/Complexes/#3630" class="Bound">H</a>
+    <a id="3774" href="/Classical/Structures/Group/Complexes/#3751" class="Function">below</a> <a id="3780" class="Symbol">(</a><a id="3781" href="/Classical/Structures/Group/Complexes/#3781" class="Bound">p</a> <a id="3783" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="3785" href="/Classical/Structures/Group/Complexes/#3785" class="Bound">q</a> <a id="3787" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="3789" href="/Classical/Structures/Group/Complexes/#3789" class="Bound">p∈H</a> <a id="3793" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="3795" href="/Classical/Structures/Group/Complexes/#3795" class="Bound">q∈H</a> <a id="3799" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="3801" href="/Classical/Structures/Group/Complexes/#3801" class="Bound">x≈pq</a><a id="3805" class="Symbol">)</a> <a id="3807" class="Symbol">=</a> <a id="3809" href="/Classical/Structures/Group/Subgroups/#6568" class="Field">respects</a> <a id="3818" class="Symbol">(</a><a id="3819" href="/Classical/Structures/Group/Complexes/#2230" class="Function">≈sym</a> <a id="3824" href="/Classical/Structures/Group/Complexes/#3801" class="Bound">x≈pq</a><a id="3828" class="Symbol">)</a> <a id="3830" class="Symbol">(</a><a id="3831" href="/Classical/Structures/Group/Subgroups/#6647" class="Function">∙-closed</a> <a id="3840" href="/Classical/Structures/Group/Complexes/#3789" class="Bound">p∈H</a> <a id="3844" href="/Classical/Structures/Group/Complexes/#3795" class="Bound">q∈H</a><a id="3847" class="Symbol">)</a>
+
+    <a id="3854" href="/Classical/Structures/Group/Complexes/#3854" class="Function">above</a> <a id="3860" class="Symbol">:</a> <a id="3862" href="/Classical/Structures/Group/Complexes/#3630" class="Bound">H</a> <a id="3864" href="/classic/Relation.Unary.html#2046" class="Function Operator">⊆</a> <a id="3866" href="/Classical/Structures/Group/Complexes/#3630" class="Bound">H</a> <a id="3868" href="/Classical/Structures/Group/Complexes/#2422" class="Function Operator">∙ᶜ</a> <a id="3871" href="/Classical/Structures/Group/Complexes/#3630" class="Bound">H</a>
+    <a id="3877" href="/Classical/Structures/Group/Complexes/#3854" class="Function">above</a> <a id="3883" class="Symbol">{</a><a id="3884" href="/Classical/Structures/Group/Complexes/#3884" class="Bound">x</a><a id="3885" class="Symbol">}</a> <a id="3887" href="/Classical/Structures/Group/Complexes/#3887" class="Bound">x∈H</a> <a id="3891" class="Symbol">=</a> <a id="3893" href="/Classical/Structures/Group/Complexes/#3884" class="Bound">x</a> <a id="3895" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="3897" href="/Classical/Structures/Group/Basic/#7057" class="Function">ε</a> <a id="3899" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="3901" href="/Classical/Structures/Group/Complexes/#3887" class="Bound">x∈H</a> <a id="3905" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="3907" href="/Classical/Structures/Group/Subgroups/#6743" class="Function">ε-closed</a> <a id="3916" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="3918" href="/Classical/Structures/Group/Complexes/#2230" class="Function">≈sym</a> <a id="3923" class="Symbol">(</a><a id="3924" href="/Classical/Structures/Group/Basic/#8455" class="Function">idʳ-law</a> <a id="3932" href="/Classical/Structures/Group/Complexes/#3884" class="Bound">x</a><a id="3933" class="Symbol">)</a>
 </pre>
-<h4 id="the-abeliangroup-op-module">The <code>AbelianGroup-Op</code> module<a class="headerlink" href="#the-abeliangroup-op-module" title="Anchor link to this section">&para;</a></h4>
-<pre class="Agda"><a id="2978" class="Keyword">module</a> <a id="AbelianGroup-Op"></a><a id="2985" href="/Classical/Structures/AbelianGroup/#2985" class="Module">AbelianGroup-Op</a> <a id="3001" class="Symbol">{</a><a id="3002" href="/Classical/Structures/AbelianGroup/#3002" class="Bound">α</a> <a id="3004" href="/Classical/Structures/AbelianGroup/#3004" class="Bound">ρ</a> <a id="3006" class="Symbol">:</a> <a id="3008" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a><a id="3013" class="Symbol">}</a> <a id="3015" class="Symbol">(</a><a id="3016" href="/Classical/Structures/AbelianGroup/#3016" class="Bound">𝑨𝑩</a> <a id="3019" class="Symbol">:</a> <a id="3021" href="/Classical/Structures/AbelianGroup/#2426" class="Function">AbelianGroup</a> <a id="3034" href="/Classical/Structures/AbelianGroup/#3002" class="Bound">α</a> <a id="3036" href="/Classical/Structures/AbelianGroup/#3004" class="Bound">ρ</a><a id="3037" class="Symbol">)</a> <a id="3039" class="Keyword">where</a>
-  <a id="3047" class="Keyword">private</a> <a id="AbelianGroup-Op.𝑨"></a><a id="3055" href="/Classical/Structures/AbelianGroup/#3055" class="Function">𝑨</a> <a id="3057" class="Symbol">=</a> <a id="3059" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="3065" href="/Classical/Structures/AbelianGroup/#3016" class="Bound">𝑨𝑩</a>
-  <a id="3070" class="Keyword">open</a> <a id="3075" href="/classic/Relation.Binary.Bundles.html#1235" class="Module">Setoid</a> <a id="3082" href="/Setoid/Algebras/Basic/#3610" class="Function Operator">𝔻[</a> <a id="3085" href="/Classical/Structures/AbelianGroup/#3055" class="Function">𝑨</a> <a id="3087" href="/Setoid/Algebras/Basic/#3610" class="Function Operator">]</a>
-
-  <a id="3092" class="Keyword">open</a> <a id="3097" href="/Classical/Structures/Group/#6735" class="Module">Group-Op</a> <a id="3106" class="Symbol">(</a><a id="3107" href="/Classical/Structures/AbelianGroup/#2594" class="Function">abelianGroup→group</a> <a id="3126" href="/Classical/Structures/AbelianGroup/#3016" class="Bound">𝑨𝑩</a><a id="3128" class="Symbol">)</a> <a id="3130" class="Keyword">public</a>
-    <a id="3141" class="Keyword">using</a> <a id="3147" class="Symbol">(</a> <a id="3149" href="/Classical/Structures/Group/#6973" class="Function Operator">_∙_</a> <a id="3153" class="Symbol">;</a> <a id="3155" href="/Classical/Structures/Group/#7033" class="Function">ε</a> <a id="3157" class="Symbol">;</a> <a id="3159" href="/Classical/Structures/Group/#7085" class="Function Operator">_⁻¹</a> <a id="3163" class="Symbol">;</a> <a id="3165" href="/Classical/Structures/Group/#7189" class="Function">∙-cong</a> <a id="3172" class="Symbol">;</a> <a id="3174" href="/Classical/Structures/Group/#7311" class="Function">⁻¹-cong</a> <a id="3182" class="Symbol">;</a> <a id="3184" href="/Classical/Structures/Group/#7407" class="Function">interp-node-∙</a> <a id="3198" class="Symbol">;</a> <a id="3200" href="/Classical/Structures/Group/#7606" class="Function">interp-node-ε</a> <a id="3214" class="Symbol">;</a> <a id="3216" href="/Classical/Structures/Group/#7723" class="Function">interp-node-⁻¹</a>
-          <a id="3241" class="Symbol">;</a> <a id="3243" href="/Classical/Structures/Group/#7897" class="Function">assoc-law</a> <a id="3253" class="Symbol">;</a> <a id="3255" href="/Classical/Structures/Group/#7971" class="Function">idˡ-law</a> <a id="3263" class="Symbol">;</a> <a id="3265" href="/Classical/Structures/Group/#8431" class="Function">idʳ-law</a> <a id="3273" class="Symbol">;</a> <a id="3275" href="/Classical/Structures/Group/#8891" class="Function">invˡ-law</a> <a id="3284" class="Symbol">;</a> <a id="3286" href="/Classical/Structures/Group/#9452" class="Function">invʳ-law</a> <a id="3295" class="Symbol">)</a>
-
-  <a id="AbelianGroup-Op.equations"></a><a id="3300" href="/Classical/Structures/AbelianGroup/#3300" class="Function">equations</a> <a id="3310" class="Symbol">:</a> <a id="3312" href="/Classical/Structures/AbelianGroup/#3055" class="Function">𝑨</a> <a id="3314" href="/Classical/Structures/AbelianGroup/#2286" class="Function Operator">⊨ᵃᵍ</a> <a id="3318" href="/Classical/Theories/AbelianGroup/#1408" class="Function">Th-AbelianGroup</a>
-  <a id="3336" href="/Classical/Structures/AbelianGroup/#3300" class="Function">equations</a> <a id="3346" class="Symbol">=</a> <a id="3348" href="/classic/Data.Product.Base.html#650" class="Field">proj₂</a> <a id="3354" href="/Classical/Structures/AbelianGroup/#3016" class="Bound">𝑨𝑩</a>
-
-  <a id="AbelianGroup-Op.comm-law"></a><a id="3360" href="/Classical/Structures/AbelianGroup/#3360" class="Function">comm-law</a> <a id="3369" class="Symbol">:</a> <a id="3371" class="Symbol">∀</a> <a id="3373" href="/Classical/Structures/AbelianGroup/#3373" class="Bound">x</a> <a id="3375" href="/Classical/Structures/AbelianGroup/#3375" class="Bound">y</a> <a id="3377" class="Symbol">→</a> <a id="3379" href="/Classical/Structures/AbelianGroup/#3373" class="Bound">x</a> <a id="3381" href="/Classical/Structures/Group/#6973" class="Function Operator">∙</a> <a id="3383" href="/Classical/Structures/AbelianGroup/#3375" class="Bound">y</a> <a id="3385" href="/classic/Relation.Binary.Bundles.html#1324" class="Function Operator">≈</a> <a id="3387" href="/Classical/Structures/AbelianGroup/#3375" class="Bound">y</a> <a id="3389" href="/Classical/Structures/Group/#6973" class="Function Operator">∙</a> <a id="3391" href="/Classical/Structures/AbelianGroup/#3373" class="Bound">x</a>
-  <a id="3395" href="/Classical/Structures/AbelianGroup/#3360" class="Function">comm-law</a> <a id="3404" href="/Classical/Structures/AbelianGroup/#3404" class="Bound">x</a> <a id="3406" href="/Classical/Structures/AbelianGroup/#3406" class="Bound">y</a> <a id="3408" class="Symbol">=</a> <a id="3410" href="/classic/Relation.Binary.Structures.html#1271" class="Function">trans</a> <a id="3416" class="Symbol">(</a><a id="3417" href="/classic/Relation.Binary.Structures.html#1245" class="Function">sym</a> <a id="3421" class="Symbol">(</a><a id="3422" href="/Classical/Structures/Group/#7407" class="Function">interp-node-∙</a> <a id="3436" class="Symbol">(</a><a id="3437" href="/Overture/Terms/Basic/#3296" class="InductiveConstructor">ℊ</a> <a id="3439" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a><a id="3441" class="Symbol">)</a> <a id="3443" class="Symbol">(</a><a id="3444" href="/Overture/Terms/Basic/#3296" class="InductiveConstructor">ℊ</a> <a id="3446" href="/classic/Data.Fin.Patterns.html#440" class="InductiveConstructor">1F</a><a id="3448" class="Symbol">)</a> <a id="3450" class="Symbol">{</a><a id="3451" href="/Classical/Structures/AbelianGroup/#3550" class="Function">η</a><a id="3452" class="Symbol">}))</a>
-                       <a id="3479" class="Symbol">(</a><a id="3480" href="/classic/Relation.Binary.Structures.html#1271" class="Function">trans</a> <a id="3486" class="Symbol">(</a><a id="3487" href="/Classical/Structures/AbelianGroup/#3300" class="Function">equations</a> <a id="3497" href="/Classical/Theories/AbelianGroup/#1384" class="InductiveConstructor">comm</a> <a id="3502" href="/Classical/Structures/AbelianGroup/#3550" class="Function">η</a><a id="3503" class="Symbol">)</a> <a id="3505" class="Symbol">(</a><a id="3506" href="/Classical/Structures/Group/#7407" class="Function">interp-node-∙</a> <a id="3520" class="Symbol">(</a><a id="3521" href="/Overture/Terms/Basic/#3296" class="InductiveConstructor">ℊ</a> <a id="3523" href="/classic/Data.Fin.Patterns.html#440" class="InductiveConstructor">1F</a><a id="3525" class="Symbol">)</a> <a id="3527" class="Symbol">(</a><a id="3528" href="/Overture/Terms/Basic/#3296" class="InductiveConstructor">ℊ</a> <a id="3530" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a><a id="3532" class="Symbol">)</a> <a id="3534" class="Symbol">{</a><a id="3535" href="/Classical/Structures/AbelianGroup/#3550" class="Function">η</a><a id="3536" class="Symbol">}))</a>
-    <a id="3544" class="Keyword">where</a> <a id="3550" href="/Classical/Structures/AbelianGroup/#3550" class="Function">η</a> <a id="3552" class="Symbol">:</a> <a id="3554" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="3558" class="Number">3</a> <a id="3560" class="Symbol">→</a> <a id="3562" href="/Setoid/Algebras/Basic/#3752" class="Function Operator">𝕌[</a> <a id="3565" href="/Classical/Structures/AbelianGroup/#3055" class="Function">𝑨</a> <a id="3567" href="/Setoid/Algebras/Basic/#3752" class="Function Operator">]</a>
-          <a id="3579" href="/Classical/Structures/AbelianGroup/#3550" class="Function">η</a> <a id="3581" class="Symbol">=</a> <a id="3583" class="Symbol">λ</a> <a id="3585" class="Symbol">{</a> <a id="3587" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="3590" class="Symbol">→</a> <a id="3592" href="/Classical/Structures/AbelianGroup/#3404" class="Bound">x</a> <a id="3594" class="Symbol">;</a> <a id="3596" href="/classic/Data.Fin.Patterns.html#440" class="InductiveConstructor">1F</a> <a id="3599" class="Symbol">→</a> <a id="3601" href="/Classical/Structures/AbelianGroup/#3406" class="Bound">y</a> <a id="3603" class="Symbol">;</a> <a id="3605" href="/classic/Data.Fin.Patterns.html#460" class="InductiveConstructor">2F</a> <a id="3608" class="Symbol">→</a> <a id="3610" href="/Classical/Structures/AbelianGroup/#3404" class="Bound">x</a> <a id="3612" class="Symbol">}</a>
-</pre>
-<h4 id="eqstoabeliangroup"><code>eqsToAbelianGroup</code><a class="headerlink" href="#eqstoabeliangroup" title="Anchor link to this section">&para;</a></h4>
-<pre class="Agda"><a id="eqsToAbelianGroup"></a><a id="3653" href="/Classical/Structures/AbelianGroup/#3653" class="Function">eqsToAbelianGroup</a> <a id="3671" class="Symbol">:</a> <a id="3673" class="Symbol">{</a><a id="3674" href="/Classical/Structures/AbelianGroup/#3674" class="Bound">A</a> <a id="3676" class="Symbol">:</a> <a id="3678" href="/Classical/Structures/AbelianGroup/#912" class="Primitive">Type</a> <a id="3683" href="/Classical/Structures/AbelianGroup/#2186" class="Generalizable">α</a><a id="3684" class="Symbol">}</a> <a id="3686" class="Symbol">(</a><a id="3687" href="/Classical/Structures/AbelianGroup/#3687" class="Bound Operator">_·_</a> <a id="3691" class="Symbol">:</a> <a id="3693" href="/Classical/Structures/AbelianGroup/#3674" class="Bound">A</a> <a id="3695" class="Symbol">→</a> <a id="3697" href="/Classical/Structures/AbelianGroup/#3674" class="Bound">A</a> <a id="3699" class="Symbol">→</a> <a id="3701" href="/Classical/Structures/AbelianGroup/#3674" class="Bound">A</a><a id="3702" class="Symbol">)</a> <a id="3704" class="Symbol">(</a><a id="3705" href="/Classical/Structures/AbelianGroup/#3705" class="Bound">e</a> <a id="3707" class="Symbol">:</a> <a id="3709" href="/Classical/Structures/AbelianGroup/#3674" class="Bound">A</a><a id="3710" class="Symbol">)</a> <a id="3712" class="Symbol">(</a><a id="3713" href="/Classical/Structures/AbelianGroup/#3713" class="Bound">i</a> <a id="3715" class="Symbol">:</a> <a id="3717" href="/Classical/Structures/AbelianGroup/#3674" class="Bound">A</a> <a id="3719" class="Symbol">→</a> <a id="3721" href="/Classical/Structures/AbelianGroup/#3674" class="Bound">A</a><a id="3722" class="Symbol">)</a>
-  <a id="3726" class="Symbol">→</a> <a id="3728" class="Symbol">(</a><a id="3729" href="/Classical/Structures/AbelianGroup/#3729" class="Bound">·-assoc</a> <a id="3737" class="Symbol">:</a> <a id="3739" class="Symbol">∀</a> <a id="3741" href="/Classical/Structures/AbelianGroup/#3741" class="Bound">a</a> <a id="3743" href="/Classical/Structures/AbelianGroup/#3743" class="Bound">b</a> <a id="3745" href="/Classical/Structures/AbelianGroup/#3745" class="Bound">c</a> <a id="3747" class="Symbol">→</a> <a id="3749" class="Symbol">(</a><a id="3750" href="/Classical/Structures/AbelianGroup/#3741" class="Bound">a</a> <a id="3752" href="/Classical/Structures/AbelianGroup/#3687" class="Bound Operator">·</a> <a id="3754" href="/Classical/Structures/AbelianGroup/#3743" class="Bound">b</a><a id="3755" class="Symbol">)</a> <a id="3757" href="/Classical/Structures/AbelianGroup/#3687" class="Bound Operator">·</a> <a id="3759" href="/Classical/Structures/AbelianGroup/#3745" class="Bound">c</a> <a id="3761" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="3763" href="/Classical/Structures/AbelianGroup/#3741" class="Bound">a</a> <a id="3765" href="/Classical/Structures/AbelianGroup/#3687" class="Bound Operator">·</a> <a id="3767" class="Symbol">(</a><a id="3768" href="/Classical/Structures/AbelianGroup/#3743" class="Bound">b</a> <a id="3770" href="/Classical/Structures/AbelianGroup/#3687" class="Bound Operator">·</a> <a id="3772" href="/Classical/Structures/AbelianGroup/#3745" class="Bound">c</a><a id="3773" class="Symbol">))</a>
-  <a id="3778" class="Symbol">→</a> <a id="3780" class="Symbol">(</a><a id="3781" href="/Classical/Structures/AbelianGroup/#3781" class="Bound">·-idˡ</a> <a id="3787" class="Symbol">:</a> <a id="3789" class="Symbol">∀</a> <a id="3791" href="/Classical/Structures/AbelianGroup/#3791" class="Bound">a</a> <a id="3793" class="Symbol">→</a> <a id="3795" href="/Classical/Structures/AbelianGroup/#3705" class="Bound">e</a> <a id="3797" href="/Classical/Structures/AbelianGroup/#3687" class="Bound Operator">·</a> <a id="3799" href="/Classical/Structures/AbelianGroup/#3791" class="Bound">a</a> <a id="3801" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="3803" href="/Classical/Structures/AbelianGroup/#3791" class="Bound">a</a><a id="3804" class="Symbol">)</a> <a id="3806" class="Symbol">(</a><a id="3807" href="/Classical/Structures/AbelianGroup/#3807" class="Bound">·-idʳ</a> <a id="3813" class="Symbol">:</a> <a id="3815" class="Symbol">∀</a> <a id="3817" href="/Classical/Structures/AbelianGroup/#3817" class="Bound">a</a> <a id="3819" class="Symbol">→</a> <a id="3821" href="/Classical/Structures/AbelianGroup/#3817" class="Bound">a</a> <a id="3823" href="/Classical/Structures/AbelianGroup/#3687" class="Bound Operator">·</a> <a id="3825" href="/Classical/Structures/AbelianGroup/#3705" class="Bound">e</a> <a id="3827" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="3829" href="/Classical/Structures/AbelianGroup/#3817" class="Bound">a</a><a id="3830" class="Symbol">)</a>
-  <a id="3834" class="Symbol">→</a> <a id="3836" class="Symbol">(</a><a id="3837" href="/Classical/Structures/AbelianGroup/#3837" class="Bound">·-invˡ</a> <a id="3844" class="Symbol">:</a> <a id="3846" class="Symbol">∀</a> <a id="3848" href="/Classical/Structures/AbelianGroup/#3848" class="Bound">a</a> <a id="3850" class="Symbol">→</a> <a id="3852" class="Symbol">(</a><a id="3853" href="/Classical/Structures/AbelianGroup/#3713" class="Bound">i</a> <a id="3855" href="/Classical/Structures/AbelianGroup/#3848" class="Bound">a</a><a id="3856" class="Symbol">)</a> <a id="3858" href="/Classical/Structures/AbelianGroup/#3687" class="Bound Operator">·</a> <a id="3860" href="/Classical/Structures/AbelianGroup/#3848" class="Bound">a</a> <a id="3862" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="3864" href="/Classical/Structures/AbelianGroup/#3705" class="Bound">e</a><a id="3865" class="Symbol">)</a> <a id="3867" class="Symbol">(</a><a id="3868" href="/Classical/Structures/AbelianGroup/#3868" class="Bound">·-invʳ</a> <a id="3875" class="Symbol">:</a> <a id="3877" class="Symbol">∀</a> <a id="3879" href="/Classical/Structures/AbelianGroup/#3879" class="Bound">a</a> <a id="3881" class="Symbol">→</a> <a id="3883" href="/Classical/Structures/AbelianGroup/#3879" class="Bound">a</a> <a id="3885" href="/Classical/Structures/AbelianGroup/#3687" class="Bound Operator">·</a> <a id="3887" class="Symbol">(</a><a id="3888" href="/Classical/Structures/AbelianGroup/#3713" class="Bound">i</a> <a id="3890" href="/Classical/Structures/AbelianGroup/#3879" class="Bound">a</a><a id="3891" class="Symbol">)</a> <a id="3893" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="3895" href="/Classical/Structures/AbelianGroup/#3705" class="Bound">e</a><a id="3896" class="Symbol">)</a>
-  <a id="3900" class="Symbol">→</a> <a id="3902" class="Symbol">(</a><a id="3903" href="/Classical/Structures/AbelianGroup/#3903" class="Bound">·-comm</a> <a id="3910" class="Symbol">:</a> <a id="3912" class="Symbol">∀</a> <a id="3914" href="/Classical/Structures/AbelianGroup/#3914" class="Bound">a</a> <a id="3916" href="/Classical/Structures/AbelianGroup/#3916" class="Bound">b</a> <a id="3918" class="Symbol">→</a> <a id="3920" href="/Classical/Structures/AbelianGroup/#3914" class="Bound">a</a> <a id="3922" href="/Classical/Structures/AbelianGroup/#3687" class="Bound Operator">·</a> <a id="3924" href="/Classical/Structures/AbelianGroup/#3916" class="Bound">b</a> <a id="3926" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="3928" href="/Classical/Structures/AbelianGroup/#3916" class="Bound">b</a> <a id="3930" href="/Classical/Structures/AbelianGroup/#3687" class="Bound Operator">·</a> <a id="3932" href="/Classical/Structures/AbelianGroup/#3914" class="Bound">a</a><a id="3933" class="Symbol">)</a>
-  <a id="3937" class="Symbol">→</a> <a id="3939" href="/Classical/Structures/AbelianGroup/#2426" class="Function">AbelianGroup</a> <a id="3952" href="/Classical/Structures/AbelianGroup/#2186" class="Generalizable">α</a> <a id="3954" href="/Classical/Structures/AbelianGroup/#2186" class="Generalizable">α</a>
-<a id="3956" href="/Classical/Structures/AbelianGroup/#3653" class="Function">eqsToAbelianGroup</a> <a id="3974" href="/Classical/Structures/AbelianGroup/#3974" class="Bound Operator">_·_</a> <a id="3978" href="/Classical/Structures/AbelianGroup/#3978" class="Bound">e</a> <a id="3980" href="/Classical/Structures/AbelianGroup/#3980" class="Bound">i</a> <a id="3982" href="/Classical/Structures/AbelianGroup/#3982" class="Bound">·-assoc</a> <a id="3990" href="/Classical/Structures/AbelianGroup/#3990" class="Bound">·-idˡ</a> <a id="3996" href="/Classical/Structures/AbelianGroup/#3996" class="Bound">·-idʳ</a> <a id="4002" href="/Classical/Structures/AbelianGroup/#4002" class="Bound">·-invˡ</a> <a id="4009" href="/Classical/Structures/AbelianGroup/#4009" class="Bound">·-invʳ</a> <a id="4016" href="/Classical/Structures/AbelianGroup/#4016" class="Bound">·-comm</a> <a id="4023" class="Symbol">=</a> <a id="4025" href="/Classical/Structures/Group/#12529" class="Function">opsToBareGroup</a> <a id="4040" href="/Classical/Structures/AbelianGroup/#3974" class="Bound Operator">_·_</a> <a id="4044" href="/Classical/Structures/AbelianGroup/#3978" class="Bound">e</a> <a id="4046" href="/Classical/Structures/AbelianGroup/#3980" class="Bound">i</a> <a id="4048" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="4050" href="/Classical/Structures/AbelianGroup/#4066" class="Function">proof</a>
-  <a id="4058" class="Keyword">where</a>
-  <a id="4066" href="/Classical/Structures/AbelianGroup/#4066" class="Function">proof</a> <a id="4072" class="Symbol">:</a> <a id="4074" href="/Classical/Structures/Group/#12529" class="Function">opsToBareGroup</a> <a id="4089" href="/Classical/Structures/AbelianGroup/#3974" class="Bound Operator">_·_</a> <a id="4093" href="/Classical/Structures/AbelianGroup/#3978" class="Bound">e</a> <a id="4095" href="/Classical/Structures/AbelianGroup/#3980" class="Bound">i</a> <a id="4097" href="/Classical/Structures/AbelianGroup/#2286" class="Function Operator">⊨ᵃᵍ</a> <a id="4101" href="/Classical/Theories/AbelianGroup/#1408" class="Function">Th-AbelianGroup</a>
-  <a id="4119" href="/Classical/Structures/AbelianGroup/#4066" class="Function">proof</a> <a id="4125" href="/Classical/Structures/AbelianGroup/#1809" class="InductiveConstructor">assocᵃ</a> <a id="4132" href="/Classical/Structures/AbelianGroup/#4132" class="Bound">ρ</a> <a id="4134" class="Symbol">=</a> <a id="4136" href="/Classical/Structures/AbelianGroup/#3982" class="Bound">·-assoc</a> <a id="4144" class="Symbol">(</a><a id="4145" href="/Classical/Structures/AbelianGroup/#4132" class="Bound">ρ</a> <a id="4147" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a><a id="4149" class="Symbol">)</a> <a id="4151" class="Symbol">(</a><a id="4152" href="/Classical/Structures/AbelianGroup/#4132" class="Bound">ρ</a> <a id="4154" href="/classic/Data.Fin.Patterns.html#440" class="InductiveConstructor">1F</a><a id="4156" class="Symbol">)</a> <a id="4158" class="Symbol">(</a><a id="4159" href="/Classical/Structures/AbelianGroup/#4132" class="Bound">ρ</a> <a id="4161" href="/classic/Data.Fin.Patterns.html#460" class="InductiveConstructor">2F</a><a id="4163" class="Symbol">)</a>
-  <a id="4167" href="/Classical/Structures/AbelianGroup/#4066" class="Function">proof</a> <a id="4173" href="/Classical/Structures/AbelianGroup/#1825" class="InductiveConstructor">idˡᵃ</a>   <a id="4180" href="/Classical/Structures/AbelianGroup/#4180" class="Bound">ρ</a> <a id="4182" class="Symbol">=</a> <a id="4184" href="/Classical/Structures/AbelianGroup/#3990" class="Bound">·-idˡ</a>   <a id="4192" class="Symbol">(</a><a id="4193" href="/Classical/Structures/AbelianGroup/#4180" class="Bound">ρ</a> <a id="4195" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a><a id="4197" class="Symbol">)</a>
-  <a id="4201" href="/Classical/Structures/AbelianGroup/#4066" class="Function">proof</a> <a id="4207" href="/Classical/Structures/AbelianGroup/#1839" class="InductiveConstructor">idʳᵃ</a>   <a id="4214" href="/Classical/Structures/AbelianGroup/#4214" class="Bound">ρ</a> <a id="4216" class="Symbol">=</a> <a id="4218" href="/Classical/Structures/AbelianGroup/#3996" class="Bound">·-idʳ</a>   <a id="4226" class="Symbol">(</a><a id="4227" href="/Classical/Structures/AbelianGroup/#4214" class="Bound">ρ</a> <a id="4229" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a><a id="4231" class="Symbol">)</a>
-  <a id="4235" href="/Classical/Structures/AbelianGroup/#4066" class="Function">proof</a> <a id="4241" href="/Classical/Structures/AbelianGroup/#1914" class="InductiveConstructor">invˡᵃ</a>  <a id="4248" href="/Classical/Structures/AbelianGroup/#4248" class="Bound">ρ</a> <a id="4250" class="Symbol">=</a> <a id="4252" href="/Classical/Structures/AbelianGroup/#4002" class="Bound">·-invˡ</a>  <a id="4260" class="Symbol">(</a><a id="4261" href="/Classical/Structures/AbelianGroup/#4248" class="Bound">ρ</a> <a id="4263" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a><a id="4265" class="Symbol">)</a>
-  <a id="4269" href="/Classical/Structures/AbelianGroup/#4066" class="Function">proof</a> <a id="4275" href="/Classical/Structures/AbelianGroup/#1930" class="InductiveConstructor">invʳᵃ</a>  <a id="4282" href="/Classical/Structures/AbelianGroup/#4282" class="Bound">ρ</a> <a id="4284" class="Symbol">=</a> <a id="4286" href="/Classical/Structures/AbelianGroup/#4009" class="Bound">·-invʳ</a>  <a id="4294" class="Symbol">(</a><a id="4295" href="/Classical/Structures/AbelianGroup/#4282" class="Bound">ρ</a> <a id="4297" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a><a id="4299" class="Symbol">)</a>
-  <a id="4303" href="/Classical/Structures/AbelianGroup/#4066" class="Function">proof</a> <a id="4309" href="/Classical/Theories/AbelianGroup/#1384" class="InductiveConstructor">comm</a>   <a id="4316" href="/Classical/Structures/AbelianGroup/#4316" class="Bound">ρ</a> <a id="4318" class="Symbol">=</a> <a id="4320" href="/Classical/Structures/AbelianGroup/#4016" class="Bound">·-comm</a>  <a id="4328" class="Symbol">(</a><a id="4329" href="/Classical/Structures/AbelianGroup/#4316" class="Bound">ρ</a> <a id="4331" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a><a id="4333" class="Symbol">)</a> <a id="4335" class="Symbol">(</a><a id="4336" href="/Classical/Structures/AbelianGroup/#4316" class="Bound">ρ</a> <a id="4338" href="/classic/Data.Fin.Patterns.html#440" class="InductiveConstructor">1F</a><a id="4340" class="Symbol">)</a>
-</pre>
-
+<hr />
+<p>[^1] The role played by <code class="AgdaFunction">_∙ᶜ_</code> in this development is as the
+     vocabulary of <strong>Dedekind's rule</strong> (<code>A ≤ B → A(C ∩ B) = AC ∩ B</code>, in
+     [Classical.Structures.Group.Dedekind][]) and, downstream, of the
+     permuting-complement and parachute arguments of the FLRP research program
+     (<code>docs/notes/flrp-research-roadmap.md</code> § 4).</p>
 <!-- File: docs/_links.md -->
 <!-- agda-algebras shared reference-link library (ADR-007). -->
 <!-- pymdownx.snippets auto-appends this file to every page so reference-style -->
@@ -12430,7 +12759,7 @@ through it, adding <code>comm-law</code>.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Structures">
+          <a href="../Basic/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Basic">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -12440,20 +12769,20 @@ through it, adding <code>comm-law</code>.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Structures
+                Basic
               </div>
             </div>
           </a>
         
         
           
-          <a href="../CommutativeMonoid/" class="md-footer__link md-footer__link--next" aria-label="Next: CommutativeMonoid">
+          <a href="../Conjugation/" class="md-footer__link md-footer__link--next" aria-label="Next: Conjugation">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                CommutativeMonoid
+                Conjugation
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -12507,18 +12836,18 @@ through it, adding <code>comm-law</code>.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.indexes", "navigation.tracking", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.action.edit", "content.action.view", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.indexes", "navigation.tracking", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.action.edit", "content.action.view", "content.tooltips"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="../../../assets/js/agda-copy.js?h=1e452fb9"></script>
+        <script src="../../../../assets/js/agda-copy.js?h=1e452fb9"></script>
       
-        <script src="../../../assets/js/agda-toggle.js?h=1bfe91e4"></script>
+        <script src="../../../../assets/js/agda-toggle.js?h=1bfe91e4"></script>
       
-        <script src="../../../assets/js/agda-hover.js?h=e1a7b72f"></script>
+        <script src="../../../../assets/js/agda-hover.js?h=e1a7b72f"></script>
       
-        <script src="../../../assets/js/carousel.js?h=3a3ff133"></script>
+        <script src="../../../../assets/js/carousel.js?h=3a3ff133"></script>
       
     
   </body>

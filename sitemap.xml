@@ -197,6 +197,10 @@
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Signatures/Unary/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
          <loc>https://agda-algebras.universalalgebra.org/Classical/Small/Structures/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
@@ -249,10 +253,6 @@
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
-         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/AbelianGroup/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
          <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/CommutativeMonoid/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
@@ -298,6 +298,46 @@
     </url>
     <url>
          <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Semilattice/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/AbelianGroup/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/Basic/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/Complexes/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/Conjugation/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/Cosets/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/Dedekind/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/GSet/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/NormalCore/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/SubgroupLattice/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/Subgroups/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
@@ -786,6 +826,10 @@
     </url>
     <url>
          <loc>https://agda-algebras.universalalgebra.org/Order/CompleteLattice/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Order/Interval/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
