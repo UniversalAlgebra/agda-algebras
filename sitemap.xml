@@ -901,6 +901,10 @@
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
+         <loc>https://agda-algebras.universalalgebra.org/Setoid/Algebras/Finite/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
          <loc>https://agda-algebras.universalalgebra.org/Setoid/Algebras/Products/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
@@ -958,6 +962,10 @@
     </url>
     <url>
          <loc>https://agda-algebras.universalalgebra.org/Setoid/Congruences/CompleteLattice/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Setoid/Congruences/Finite/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>

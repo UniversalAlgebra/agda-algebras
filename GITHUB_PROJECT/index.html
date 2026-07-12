@@ -1287,6 +1287,8 @@
       
         
       
+        
+      
     
     
     
@@ -1352,6 +1354,34 @@
     
   
     Basic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Setoid/Algebras/Finite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Finite
   
 
     
@@ -1888,6 +1918,8 @@
       
         
       
+        
+      
     
     
     
@@ -2009,6 +2041,34 @@
     
   
     CompleteLattice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Setoid/Congruences/Finite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Finite
   
 
     
@@ -17250,41 +17310,9 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <p>🤖 Generated with <a href="https://claude.com/claude-code">Claude Code</a></p>
 <p>https://claude.ai/code/session_01MvPrLTCxKjFgsnTMK8j2qZ</p>
 <hr />
-<h3 id="issue-m6-4-suba-as-a-complete-lattice-next-setoidalgebraslattices-instance-373-closed">Issue M6-4: Sub(A) as a complete lattice (next Setoid.Algebras.Lattices instance) (#373, closed)<a class="headerlink" href="#issue-m6-4-suba-as-a-complete-lattice-next-setoidalgebraslattices-instance-373-closed" title="Anchor link to this section">&para;</a></h3>
-<p><strong>Labels</strong>: <code>milestone-6-flrp</code></p>
-<h2 id="description_51">Description<a class="headerlink" href="#description_51" title="Anchor link to this section">&para;</a></h2>
-<p>With the congruence lattice now in place (<a href="https://github.com/ualib/agda-algebras/issues/271">#271</a>, modules <code>Setoid.Algebras.Congruences.{Lattice,Generation,CompleteLattice}</code> plus the general <code>Setoid.Algebras.Lattices.CompleteLattice</code> record), the natural companion is the <strong>subalgebra lattice</strong>: the subuniverses of a setoid algebra <code>𝑨</code>, ordered by inclusion, form a complete lattice <code>Sub 𝑨</code>.  This is the second motivating instance of the <code>CompleteLattice</code> record and is foundational for the FLRP (every finite lattice question is, after all, about lattices of the form <code>Con 𝑨</code> / <code>Sub 𝑨</code>).</p>
-<p>Most of the hard work already exists in <code>Setoid.Subalgebras.Subuniverses</code>:</p>
-<ul>
-<li><code>Subuniverses 𝑨</code> — the predicate "is a subuniverse" (closed under the basic operations);</li>
-<li><code>Sg 𝑨 G</code> — the inductively generated subuniverse, with <code>sgIsSub</code> (it is a subuniverse) and <code>sgIsSmallest</code> (the generation theorem / universal property);</li>
-<li><code>⋂s</code> — an arbitrary intersection of subuniverses is a subuniverse (the infinitary meet).</li>
-</ul>
-<p>So assembling the lattice is a "step-3"-style task, closely parallel to the congruence-lattice assembly.</p>
-<h2 id="tasks_51">Tasks<a class="headerlink" href="#tasks_51" title="Anchor link to this section">&para;</a></h2>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Define <code>Sub 𝑨</code> (the type of subuniverses, as a Σ of a predicate with its subuniverse proof) and the inclusion order <code>_≤_</code> (= <code>_⊆_</code>).</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Meet <code>B ∧ C = B ∩ C</code>, join <code>B ∨ C = Sg(B ∪ C)</code>.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>Sub-Lattice : (𝑨 : Algebra α ρ)(ℓ₀ : Level) → Lattice _ _ _</code>, at the absorbing level <code>L = 𝓞 ⊔ 𝓥 ⊔ α ⊔ ℓ₀</code> (where <code>Sg</code> stays at <code>L</code>).</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Bounds: bottom <code>Sg ∅</code> (smallest subuniverse) and top <code>U</code> (the whole carrier); <code>Sub-BoundedLattice</code>.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Infinitary meet <code>⋂</code> (via <code>⋂s</code>) and join <code>Sg(⋃ …)</code>; <code>Sub-CompleteLattice</code> instantiating the <code>CompleteLattice</code> record.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> A small worked example.</li>
-</ul>
-<h2 id="acceptance-criteria_60">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_60" title="Anchor link to this section">&para;</a></h2>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>Sub-Lattice 𝑨</code> / <code>Sub-CompleteLattice 𝑨</code> type-check and satisfy the (complete-)lattice axioms.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Bounds proved as <code>⊥</code>/<code>⊤</code>.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> At least one small worked example.</li>
-</ul>
-<h2 id="notes_4">Notes<a class="headerlink" href="#notes_4" title="Anchor link to this section">&para;</a></h2>
-<ul>
-<li>Placement, mirroring the congruence case (<code>Setoid.Algebras.Congruences.CompleteLattice</code>): the instance goes in <code>Setoid.Subalgebras.CompleteLattice</code>, instantiating the general record in <code>Setoid.Algebras.Lattices.CompleteLattice</code>.</li>
-<li>A richer worked example — the <strong>subgroup lattice of a concrete finite group</strong> — is appealing but a sizeable undertaking (defining the group over a signature, classifying its subgroups); it is tracked as a separate follow-up so this PR can stay focused.</li>
-</ul>
-<hr />
 <h3 id="issue-m6-5-converse-of-maltsevs-theorem-congruence-permutable-maltsev-term-411-closed">Issue M6-5: Converse of Maltsev's theorem: congruence-permutable ⟹ Maltsev term (#411, closed)<a class="headerlink" href="#issue-m6-5-converse-of-maltsevs-theorem-congruence-permutable-maltsev-term-411-closed" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>milestone-6-flrp</code></p>
-<h2 id="description_52">Description<a class="headerlink" href="#description_52" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_51">Description<a class="headerlink" href="#description_51" title="Anchor link to this section">&para;</a></h2>
 <p>Complete the <strong>congruence-permutability</strong> characterization by proving the converse of Maltsev's theorem: a congruence-permutable variety has a Maltsev term.  Concretely, inhabit <code>CP⇒maltsev-Statement</code> in <code>Setoid.Varieties.Maltsev.Permutability</code>.  M6-3 (#273, PR #409) proved the forward direction (<code>MaltsevTerm⇒CP</code>); together they give the iff.</p>
 <h2 id="background_1">Background<a class="headerlink" href="#background_1" title="Anchor link to this section">&para;</a></h2>
 <p>Construction (Burris–Sankappanavar, Thm. 12.2), detailed in <code>docs/notes/m6-3-maltsev-conditions.md</code>:</p>
@@ -17295,7 +17323,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li>Package <code>M</code> as the interpretation <code>Th-Maltsev ≼ ℰ</code> and discharge via <code>⊧-interp</code> + soundness.</li>
 </ul>
 <p>Note: #273's text says "the free algebra on two generators"; the standard construction is on <strong>three</strong> generators <code>x , y , z</code>, since the Maltsev term has three variables.</p>
-<h2 id="tasks_52">Tasks<a class="headerlink" href="#tasks_52" title="Anchor link to this section">&para;</a></h2>
+<h2 id="tasks_51">Tasks<a class="headerlink" href="#tasks_51" title="Anchor link to this section">&para;</a></h2>
 <ul>
 <li>Build the principal congruences and the <code>θ ∘ φ</code> membership in <code>𝔽[ Fin 3 ]</code>; apply the CP hypothesis.</li>
 <li>Extract the witness <code>w</code> as a term and translate both memberships to the two identities via the [M6-4] bridge (#410).</li>
@@ -17305,7 +17333,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <ul>
 <li>[M6-4] (#410) — the free-algebra congruence/derivability bridge.  This is the smallest client of that bridge and a good first validation of it.</li>
 </ul>
-<h2 id="acceptance-criteria_61">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_61" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_60">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_60" title="Anchor link to this section">&para;</a></h2>
 <ul>
 <li><code>CP⇒maltsev-Statement</code> is inhabited; with <code>maltsev⇒CP</code>, congruence permutability is characterized by the Maltsev term (a complete iff).</li>
 </ul>
@@ -17319,30 +17347,9 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <p>🤖 Generated with <a href="https://claude.com/claude-code">Claude Code</a></p>
 <p>https://claude.ai/code/session_01MvPrLTCxKjFgsnTMK8j2qZ</p>
 <hr />
-<h3 id="issue-m6-5-worked-example-the-subgroup-lattice-of-a-concrete-finite-group-374-closed">Issue M6-5: Worked example: the subgroup lattice of a concrete finite group (#374, closed)<a class="headerlink" href="#issue-m6-5-worked-example-the-subgroup-lattice-of-a-concrete-finite-group-374-closed" title="Anchor link to this section">&para;</a></h3>
-<p><strong>Labels</strong>: <code>milestone-6-flrp</code></p>
-<h2 id="description_53">Description<a class="headerlink" href="#description_53" title="Anchor link to this section">&para;</a></h2>
-<p>Follow-up to the subalgebra-lattice infrastructure (#373).  Once <code>Sub 𝑨</code> is available as a complete lattice, a compelling worked example is the <strong>subgroup lattice of a concrete finite group</strong> — e.g. <code>ℤ/4ℤ</code> (the 3-element chain <code>0 &lt; ⟨2⟩ &lt; ℤ/4ℤ</code>), the Klein four-group <code>V₄</code> (the diamond <code>M₃</code>-minus, i.e. <code>2³</code>-style with three order-2 subgroups), or <code>S₃</code> (the well-known six-subgroup lattice).</p>
-<p>This is separated from #373 because it is a sizeable undertaking on its own:</p>
-<ul>
-<li>realize the group concretely as a setoid algebra over a group signature (the <code>Classical/</code> tree has group machinery to draw on);</li>
-<li>identify the subuniverses (= subgroups, since the signature includes inverse and identity);</li>
-<li>classify them and exhibit the lattice order, ideally matching a known finite lattice.</li>
-</ul>
-<h2 id="acceptance-criteria_62">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_62" title="Anchor link to this section">&para;</a></h2>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> A concrete finite group built as a <code>Setoid</code> algebra.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Its subgroups exhibited as elements of <code>Sub 𝑨</code>, with the lattice order between them.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Prose identifying the resulting lattice (chain / diamond / <code>S₃</code> lattice).</li>
-</ul>
-<h2 id="notes_5">Notes<a class="headerlink" href="#notes_5" title="Anchor link to this section">&para;</a></h2>
-<ul>
-<li>Subuniverses of a group algebra are exactly its subgroups precisely because the signature carries the unary inverse and the nullary identity, so closure under the operations forces the subgroup axioms — worth stating explicitly in the example.</li>
-</ul>
-<hr />
 <h3 id="issue-m6-6-forward-jonssonday-jonsson-terms-cd-and-day-terms-cm-412-closed">Issue M6-6: Forward Jónsson/Day: Jónsson terms ⟹ CD and Day terms ⟹ CM (#412, closed)<a class="headerlink" href="#issue-m6-6-forward-jonssonday-jonsson-terms-cd-and-day-terms-cm-412-closed" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>enhancement</code>, <code>milestone-6-flrp</code></p>
-<h2 id="description_54">Description<a class="headerlink" href="#description_54" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_52">Description<a class="headerlink" href="#description_52" title="Anchor link to this section">&para;</a></h2>
 <p>Prove the "terms ⟹ lattice property" halves of Jónsson's and Day's theorems: a variety with Jónsson terms is congruence-distributive, and a variety with Day terms is congruence-modular.  These are the <strong>second</strong> projections of <code>Jonsson-Statement</code> and <code>Day-Statement</code> in the <code>Setoid.Varieties.Maltsev</code> subtree (<code>Jonsson-Statement</code> in <code>Maltsev.Distributivity</code>, <code>Day-Statement</code> in <code>Maltsev.Modularity</code>): with <code>P ⇔ Q = (P → Q) × (Q → P)</code> and <code>Jonsson-Statement = CongruenceDistributiveVariety ⇔ (Σ n, HasJonssonTerms n)</code>, the term ⟹ CD direction is <code>proj₂</code> (<code>Q → P</code>), not the first projection.  (The original text said "first projections"; corrected here.)</p>
 <p>These halves are independent of [M6-4] (#410): they use the chain terms available on every algebra via the interpretation, plus <code>term-compatible</code> and an induction over the join.</p>
 <h2 id="status-complete-forward-jonsson-in-pr-428-forward-day-in-pr-442">Status: COMPLETE (forward Jónsson in PR #428; forward Day in PR #442)<a class="headerlink" href="#status-complete-forward-jonsson-in-pr-428-forward-day-in-pr-442" title="Anchor link to this section">&para;</a></h2>
@@ -17370,12 +17377,12 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <ul>
 <li>None beyond M6-3 (#273, PR #409): reuses <code>term-compatible</code>, the curried-extraction pattern, and the congruence lattice (<code>Setoid.Congruences.{Lattice,Generation,Properties}</code>).  Independent of [M6-4] (#410).</li>
 </ul>
-<h2 id="acceptance-criteria_63">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_63" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_61">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_61" title="Anchor link to this section">&para;</a></h2>
 <ul>
 <li>Forward Jónsson type-checks under <code>--safe</code>; the term ⟹ CD direction of Jónsson's theorem is done, and the <strong>finitary</strong> version is unconditional.  ✅ (PR #428; <code>make check</code> passes.)</li>
 <li>Forward Day type-checks under <code>--safe</code>; the term ⟹ CM direction of Day's theorem is done, the <strong>finitary</strong> version is unconditional, and <code>Day-theorem</code> assembles the complete iff.  ✅ (PR #442; <code>make check</code> passes.)</li>
 </ul>
-<h2 id="notes_6">Notes<a class="headerlink" href="#notes_6" title="Anchor link to this section">&para;</a></h2>
+<h2 id="notes_4">Notes<a class="headerlink" href="#notes_4" title="Anchor link to this section">&para;</a></h2>
 <ul>
 <li>Difficulty: the Jónsson half was moderate as expected; the realized work surfaced two findings — the <code>Gen</code>-vs-chain (infinitary <code>comp</code>) obstruction, discharged for finitary signatures, and that Day is <strong>not</strong> a mechanical mirror of Jónsson.  The Day half then required the genuinely two-dimensional FM Lemma 2.3 ladder, with a ϕ-count measure whose decrease is a two-steps-into-one fusion.  All of this is recorded in <code>docs/notes/m6-6-forward-jonsson-day.md</code> ("Why Day is not a mirror — and the ladder that works").</li>
 </ul>
@@ -17391,7 +17398,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <hr />
 <h3 id="issue-m6-7-converse-jonssonday-cd-jonsson-terms-and-cm-day-terms-413-closed">Issue M6-7: Converse Jónsson/Day: CD ⟹ Jónsson terms and CM ⟹ Day terms (#413, closed)<a class="headerlink" href="#issue-m6-7-converse-jonssonday-cd-jonsson-terms-and-cm-day-terms-413-closed" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>enhancement</code>, <code>milestone-6-flrp</code>, <code>research-exploratory</code></p>
-<h2 id="description_55">Description<a class="headerlink" href="#description_55" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_53">Description<a class="headerlink" href="#description_53" title="Anchor link to this section">&para;</a></h2>
 <p>Complete Jónsson's and Day's theorems with the hard "lattice property ⟹ terms" directions: a congruence-distributive variety has Jónsson terms, and a congruence-modular variety has Day terms.  These inhabit the converse projections of <code>Jonsson-Statement</code> and <code>Day-Statement</code> (with the orientation <code>P ⇔ Q = (P → Q) × (Q → P)</code> fixed in #412, the CD ⟹ terms direction is the <em>first</em> projection; the original text said "second"), turning both into complete iffs.  Following the #428 module split, the statements live in <code>Setoid.Varieties.Maltsev.{Distributivity,Modularity}</code>.</p>
 <p>This is the research-grade end of the M6-3 track.  Beyond the [M6-4] (#410) bridge, it requires extracting the <strong>chain length <code>n</code></strong> and the terms <code>dᵢ</code> / <code>mᵢ</code> from the inductive derivation witnessing a join membership — the source of the <code>Σ[ n ∈ ℕ ]</code> in the statements, and the part with no off-the-shelf analogue in the library.</p>
 <h2 id="background_2">Background<a class="headerlink" href="#background_2" title="Anchor link to this section">&para;</a></h2>
@@ -17419,7 +17426,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li>Design note: <code>docs/notes/m6-7-reverse-day.md</code>; roadmap updated in <code>docs/GITHUB_PROJECT.md</code>.</li>
 </ul>
 <p>Day's <em>forward</em> half (terms ⟹ CM) was tracked separately on #412 and has since <strong>landed</strong> (PR #442, closing #412): <code>Day-theorem</code> assembles the complete iff, so Day's theorem now stands as an iff alongside <code>jonsson-theorem</code>, and no Day item remains open anywhere.</p>
-<h2 id="tasks_53">Tasks<a class="headerlink" href="#tasks_53" title="Anchor link to this section">&para;</a></h2>
+<h2 id="tasks_52">Tasks<a class="headerlink" href="#tasks_52" title="Anchor link to this section">&para;</a></h2>
 <ul>
 <li>~CD ⟹ Jónsson terms: extract the ternary chain <code>d₀ … dₙ</code> and inhabit the converse projection of <code>Jonsson-Statement</code>.~  ✅ PR #438 (<code>CD⇒jonsson</code>, <code>jonsson-theorem</code>).</li>
 <li>~CM ⟹ Day terms: extract the quaternary chain <code>m₀ … mₙ</code> and inhabit the converse projection of <code>Day-Statement</code>.~  ✅ PR #440 (<code>CM⇒Day</code>, <code>Setoid.Varieties.Maltsev.Modularity</code>; renamed from <code>CM⇒day</code> in PR #442).</li>
@@ -17430,11 +17437,11 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li>[M6-4] (#410) — the free-algebra congruence/derivability bridge.</li>
 <li>[M6-6] (#412) — the chain-term extraction and the forward halves (reused for the parity bookkeeping and the curried chain operations).</li>
 </ul>
-<h2 id="acceptance-criteria_64">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_64" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_62">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_62" title="Anchor link to this section">&para;</a></h2>
 <ul>
 <li>Both converse implications type-check under <code>--safe</code>; Jónsson's and Day's theorems are complete iffs.  ✅ in full: Jónsson converse PR #438 with the complete iff <code>jonsson-theorem</code>; Day converse PR #440; and the once re-scoped clause — Day's full iff — discharged by PR #442 on #412, which landed the forward half and assembled <code>Day-theorem</code>.</li>
 </ul>
-<h2 id="notes_7">Notes<a class="headerlink" href="#notes_7" title="Anchor link to this section">&para;</a></h2>
+<h2 id="notes_5">Notes<a class="headerlink" href="#notes_5" title="Anchor link to this section">&para;</a></h2>
 <ul>
 <li>Difficulty: hard.  The derivation-length / chain extraction from an inductively-generated congruence is the crux; budget accordingly and consider landing CD ⟹ Jónsson first, with CM ⟹ Day mirroring it.  (Realized as planned: reverse Jónsson landed first; the crux decomposed into the M6-6 <code>finitary⇒JoinIsChain</code> plus the new parity normalization, and reverse Day was the predicted mechanical mirror.)</li>
 <li>Close-out: PR #446 reconciles the two M6-7 design notes with the post-#442 state (the <code>CM⇒Day</code> rename and the landed forward half) and closes this issue on merge.</li>
@@ -17450,11 +17457,11 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <hr />
 <h3 id="issue-m6-8-finite-birkhoff-discharge-subdirectsirep-constructively-for-finite-algebras-with-decidable-equality-419-closed">Issue M6-8: Finite Birkhoff: discharge SubdirectSIRep constructively for finite algebras with decidable equality (#419, closed)<a class="headerlink" href="#issue-m6-8-finite-birkhoff-discharge-subdirectsirep-constructively-for-finite-algebras-with-decidable-equality-419-closed" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>enhancement</code>, <code>milestone-6-flrp</code></p>
-<h2 id="description_56">Description<a class="headerlink" href="#description_56" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_54">Description<a class="headerlink" href="#description_54" title="Anchor link to this section">&para;</a></h2>
 <p>[M6-2] (#272, PR #418) proved the choice-free core of Birkhoff's subdirect representation theorem: the bridge <code>separating→SubdirectEmbedding</code> (a family of congruences whose meet is the diagonal embeds <code>𝑨</code> subdirectly into the product of its quotients) and the reduction <code>SIRep→Representable</code>.  The full theorem <code>Birkhoff-subdirect</code> is stated <em>relative to</em> a module parameter <code>SubdirectSIRep 𝑨</code> — the existence of a separating family of SI-quotient congruences — because producing it in general is a Zorn's-lemma step (a congruence maximal among those excluding a given pair), incompatible with postulate-free <code>--safe</code>.</p>
 <p>For <strong>finite algebras with decidable setoid equality</strong> that parameter can be <em>discharged constructively</em>: the congruence lattice is finite and searchable, so for each pair <code>a ≢ b</code> one finds a congruence maximal among those not relating <code>a , b</code> by search.  Such a congruence is completely meet-irreducible, hence its quotient is subdirectly irreducible (via the monolith characterization in <code>Setoid.Congruences.Monolith</code>), and the family over all distinct pairs separates points.  This turns <code>Birkhoff-subdirect</code> into an <em>unconditional</em> theorem on finite algebras — and finiteness is exactly the FLRP setting, so this is the payoff direction.</p>
 <p>This is option (b) of the M6-2 design note (<code>docs/notes/m6-2-subdirect.md</code>).</p>
-<h2 id="tasks_54">Tasks<a class="headerlink" href="#tasks_54" title="Anchor link to this section">&para;</a></h2>
+<h2 id="tasks_53">Tasks<a class="headerlink" href="#tasks_53" title="Anchor link to this section">&para;</a></h2>
 <ul>
 <li>Fix the finiteness/decidability interface: a decidable setoid equality on <code>𝕌[ 𝑨 ]</code> and a finiteness/enumerability witness for the relevant congruences at the working level.  Decide the cleanest encoding (reuse any existing <code>Fin</code>/<code>Setoid</code>-based finiteness already in the tree).</li>
 <li>For a distinct pair <code>a , b</code>, search the (finite) set of congruences not relating <code>a , b</code> for a maximal one, and prove its maximality.</li>
@@ -17465,7 +17472,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <ul>
 <li>[M6-2] (#272, PR #418) — <code>Setoid.Subalgebras.Subdirect</code> (the bridge, <code>SubdirectSIRep</code>, <code>Birkhoff-subdirect</code>) and <code>Setoid.Congruences.Monolith</code> (SI via monolith, <code>monolith⇒cmi</code>).</li>
 </ul>
-<h2 id="acceptance-criteria_65">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_65" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_63">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_63" title="Anchor link to this section">&para;</a></h2>
 <ul>
 <li>A constructive <code>SubdirectSIRep 𝑨</code> for finite algebras with decidable equality, and <code>Birkhoff-subdirect</code> instantiated to an unconditional subdirect-representation theorem on that class, type-checking under <code>--cubical-compatible --exact-split --safe</code>.</li>
 </ul>
@@ -17479,10 +17486,10 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <hr />
 <h3 id="issue-m6-9-the-completely-meet-irreducible-monolith-converse-needs-an-impredicativeresized-congruence-meet-420">Issue M6-9: The completely-meet-irreducible ⟹ monolith converse (needs an impredicative/resized congruence meet) (#420)<a class="headerlink" href="#issue-m6-9-the-completely-meet-irreducible-monolith-converse-needs-an-impredicativeresized-congruence-meet-420" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>enhancement</code>, <code>milestone-6-flrp</code>, <code>design-discussion</code></p>
-<h2 id="description_57">Description<a class="headerlink" href="#description_57" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_55">Description<a class="headerlink" href="#description_55" title="Anchor link to this section">&para;</a></h2>
 <p><code>Setoid.Congruences.Monolith</code> (from [M6-2] (#272, PR #418)) proves the useful direction of the subdirect-irreducibility characterization: a monolith makes <code>0ᴬ</code> completely meet-irreducible (<code>monolith⇒cmi</code>, in the constructive contrapositive form "every member of a family nonzero ⟹ the meet is nonzero").</p>
 <p>The <strong>converse</strong> — <code>0ᴬ</code> completely meet-irreducible ⟹ a monolith exists — is not proved, for a predicativity reason.  The natural construction takes the monolith to be <code>μ = ⋀ { θ : Nonzero θ }</code>, the meet of <em>all</em> nonzero congruences; but that family is indexed by <code>Σ[ θ ∈ Con 𝑨 ℓ ] Nonzero θ</code>, which lives one universe up, so the meet lands at a level <code>ℓ′ &gt; ℓ</code> and is not a monolith <em>at level <code>ℓ</code></em>.  This is the same predicativity wall the complete-lattice construction meets (completeness only for <code>ℓ₀</code>-small families).</p>
-<h2 id="tasks_55">Tasks<a class="headerlink" href="#tasks_55" title="Anchor link to this section">&para;</a></h2>
+<h2 id="tasks_54">Tasks<a class="headerlink" href="#tasks_54" title="Anchor link to this section">&para;</a></h2>
 <ul>
 <li>Decide the resolution: (i) a level-polymorphic monolith / <code>IsSubdirectlyIrreducible</code> allowing the monolith one level up; (ii) an impredicative or resized congruence meet, taken as an explicit parameter (mirroring the M6-2 choice-principle discipline, so nothing is postulated under <code>--safe</code>); or (iii) restrict to a setting where the nonzero congruences are <code>ℓ</code>-small (e.g. finite, dovetailing with [M6-8]).</li>
 <li>Prove the converse under the chosen resolution: from completely-meet-irreducible <code>0ᴬ</code> (and nontriviality) construct the least nonzero congruence and show <code>IsMonolith</code>.</li>
@@ -17492,7 +17499,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <ul>
 <li>[M6-2] (#272, PR #418) — <code>Setoid.Congruences.Monolith</code> (<code>IsMonolith</code>, <code>Nonzero</code>, <code>⋂</code>, <code>monolith⇒cmi</code>).</li>
 </ul>
-<h2 id="acceptance-criteria_66">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_66" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_64">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_64" title="Anchor link to this section">&para;</a></h2>
 <ul>
 <li><code>cmi ⟹ HasMonolith</code> proved (at the appropriate level / under the stated resizing assumption), completing the SI ⟺ completely-meet-irreducible characterization, type-checking under <code>--safe</code>.</li>
 </ul>
@@ -17505,9 +17512,9 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <hr />
 <h3 id="issue-m6-10-subdirectly-irreducible-no-nontrivial-subdirect-decomposition-the-structural-characterization-421-closed">Issue M6-10: Subdirectly irreducible ⟺ no nontrivial subdirect decomposition (the structural characterization) (#421, closed)<a class="headerlink" href="#issue-m6-10-subdirectly-irreducible-no-nontrivial-subdirect-decomposition-the-structural-characterization-421-closed" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>enhancement</code>, <code>milestone-6-flrp</code></p>
-<h2 id="description_58">Description<a class="headerlink" href="#description_58" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_56">Description<a class="headerlink" href="#description_56" title="Anchor link to this section">&para;</a></h2>
 <p><code>Setoid.Congruences.Monolith</code> (from [M6-2] (#272, PR #418)) <em>defines</em> subdirect irreducibility order-theoretically: <code>IsSubdirectlyIrreducible 𝑨 = Nontrivial 𝑨 × HasMonolith 𝑨</code>.  What makes the name apt is the <strong>structural</strong> characterization: <code>𝑨</code> is subdirectly irreducible iff it has no nontrivial subdirect decomposition — i.e. in every subdirect embedding <code>𝑨 ↪ ⨅ 𝒜</code>, some coordinate projection <code>projᵢ ∘ h</code> is an isomorphism.  This issue proves that equivalence, tying <code>Setoid.Congruences.Monolith</code> to <code>Setoid.Subalgebras.Subdirect</code>.</p>
-<h2 id="tasks_56">Tasks<a class="headerlink" href="#tasks_56" title="Anchor link to this section">&para;</a></h2>
+<h2 id="tasks_55">Tasks<a class="headerlink" href="#tasks_55" title="Anchor link to this section">&para;</a></h2>
 <ul>
 <li>State "no nontrivial subdirect decomposition": in every subdirect embedding <code>h : 𝑨 ↪ ⨅ 𝒜</code>, some coordinate map is an isomorphism.  Pick the cleanest constructive phrasing — via the kernels, a subdirect embedding corresponds to a separating family <code>θ</code> (<code>⋂ θ</code> the diagonal), and "some projection is iso" ⟺ "some <code>θ i ≑ 0ᴬ</code>".</li>
 <li>Prove monolith ⟹ structural irreducibility: if <code>⋂ θ</code> is the diagonal and <code>𝑨</code> has a monolith <code>μ</code>, then some <code>θ i ≑ 0ᴬ</code> (else <code>μ ⊆ θ i</code> for all <code>i</code>, so <code>μ ⊆ ⋂ θ ≑ 0ᴬ</code>, contradicting <code>Nonzero μ</code>) — <code>monolith⇒cmi</code> transported across the kernel/subdirect correspondence.  Extracting the specific <code>i</code> constructively may need the index decidable/finite (coordinate with [M6-8]); otherwise state the contrapositive.</li>
@@ -17518,7 +17525,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li>[M6-2] (#272, PR #418) — <code>Setoid.Subalgebras.Subdirect</code> and <code>Setoid.Congruences.Monolith</code>.</li>
 <li>Likely interacts with [M6-8] (finite/decidable extraction) and [M6-9] (the converse's predicativity).</li>
 </ul>
-<h2 id="acceptance-criteria_67">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_67" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_65">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_65" title="Anchor link to this section">&para;</a></h2>
 <ul>
 <li>The equivalence (at least the constructive direction, with the converse proved or its cost documented) type-checks under <code>--safe</code>, connecting <code>IsSubdirectlyIrreducible</code> to subdirect decompositions.</li>
 </ul>
@@ -17529,6 +17536,227 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 </ul>
 <p>🤖 Generated with <a href="https://claude.com/claude-code">Claude Code</a></p>
 <p>https://claude.ai/code/session_01B9q9aP34sakGdPgZVaXU2s</p>
+<hr />
+<h3 id="issue-m6-11-suba-as-a-complete-lattice-next-setoidalgebraslattices-instance-373-closed">Issue M6-11: Sub(A) as a complete lattice (next Setoid.Algebras.Lattices instance) (#373, closed)<a class="headerlink" href="#issue-m6-11-suba-as-a-complete-lattice-next-setoidalgebraslattices-instance-373-closed" title="Anchor link to this section">&para;</a></h3>
+<p><strong>Labels</strong>: <code>milestone-6-flrp</code></p>
+<h2 id="description_57">Description<a class="headerlink" href="#description_57" title="Anchor link to this section">&para;</a></h2>
+<p>With the congruence lattice now in place (<a href="https://github.com/ualib/agda-algebras/issues/271">#271</a>, modules <code>Setoid.Algebras.Congruences.{Lattice,Generation,CompleteLattice}</code> plus the general <code>Setoid.Algebras.Lattices.CompleteLattice</code> record), the natural companion is the <strong>subalgebra lattice</strong>: the subuniverses of a setoid algebra <code>𝑨</code>, ordered by inclusion, form a complete lattice <code>Sub 𝑨</code>.  This is the second motivating instance of the <code>CompleteLattice</code> record and is foundational for the FLRP (every finite lattice question is, after all, about lattices of the form <code>Con 𝑨</code> / <code>Sub 𝑨</code>).</p>
+<p>Most of the hard work already exists in <code>Setoid.Subalgebras.Subuniverses</code>:</p>
+<ul>
+<li><code>Subuniverses 𝑨</code> — the predicate "is a subuniverse" (closed under the basic operations);</li>
+<li><code>Sg 𝑨 G</code> — the inductively generated subuniverse, with <code>sgIsSub</code> (it is a subuniverse) and <code>sgIsSmallest</code> (the generation theorem / universal property);</li>
+<li><code>⋂s</code> — an arbitrary intersection of subuniverses is a subuniverse (the infinitary meet).</li>
+</ul>
+<p>So assembling the lattice is a "step-3"-style task, closely parallel to the congruence-lattice assembly.</p>
+<h2 id="tasks_56">Tasks<a class="headerlink" href="#tasks_56" title="Anchor link to this section">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Define <code>Sub 𝑨</code> (the type of subuniverses, as a Σ of a predicate with its subuniverse proof) and the inclusion order <code>_≤_</code> (= <code>_⊆_</code>).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Meet <code>B ∧ C = B ∩ C</code>, join <code>B ∨ C = Sg(B ∪ C)</code>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>Sub-Lattice : (𝑨 : Algebra α ρ)(ℓ₀ : Level) → Lattice _ _ _</code>, at the absorbing level <code>L = 𝓞 ⊔ 𝓥 ⊔ α ⊔ ℓ₀</code> (where <code>Sg</code> stays at <code>L</code>).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Bounds: bottom <code>Sg ∅</code> (smallest subuniverse) and top <code>U</code> (the whole carrier); <code>Sub-BoundedLattice</code>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Infinitary meet <code>⋂</code> (via <code>⋂s</code>) and join <code>Sg(⋃ …)</code>; <code>Sub-CompleteLattice</code> instantiating the <code>CompleteLattice</code> record.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> A small worked example.</li>
+</ul>
+<h2 id="acceptance-criteria_66">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_66" title="Anchor link to this section">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>Sub-Lattice 𝑨</code> / <code>Sub-CompleteLattice 𝑨</code> type-check and satisfy the (complete-)lattice axioms.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Bounds proved as <code>⊥</code>/<code>⊤</code>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> At least one small worked example.</li>
+</ul>
+<h2 id="notes_6">Notes<a class="headerlink" href="#notes_6" title="Anchor link to this section">&para;</a></h2>
+<ul>
+<li>Placement, mirroring the congruence case (<code>Setoid.Algebras.Congruences.CompleteLattice</code>): the instance goes in <code>Setoid.Subalgebras.CompleteLattice</code>, instantiating the general record in <code>Setoid.Algebras.Lattices.CompleteLattice</code>.</li>
+<li>A richer worked example — the <strong>subgroup lattice of a concrete finite group</strong> — is appealing but a sizeable undertaking (defining the group over a signature, classifying its subgroups); it is tracked as a separate follow-up so this PR can stay focused.</li>
+</ul>
+<hr />
+<h3 id="issue-m6-12-worked-example-the-subgroup-lattice-of-a-concrete-finite-group-374-closed">Issue M6-12: Worked example: the subgroup lattice of a concrete finite group (#374, closed)<a class="headerlink" href="#issue-m6-12-worked-example-the-subgroup-lattice-of-a-concrete-finite-group-374-closed" title="Anchor link to this section">&para;</a></h3>
+<p><strong>Labels</strong>: <code>milestone-6-flrp</code></p>
+<h2 id="description_58">Description<a class="headerlink" href="#description_58" title="Anchor link to this section">&para;</a></h2>
+<p>Follow-up to the subalgebra-lattice infrastructure (#373).  Once <code>Sub 𝑨</code> is available as a complete lattice, a compelling worked example is the <strong>subgroup lattice of a concrete finite group</strong> — e.g. <code>ℤ/4ℤ</code> (the 3-element chain <code>0 &lt; ⟨2⟩ &lt; ℤ/4ℤ</code>), the Klein four-group <code>V₄</code> (the diamond <code>M₃</code>-minus, i.e. <code>2³</code>-style with three order-2 subgroups), or <code>S₃</code> (the well-known six-subgroup lattice).</p>
+<p>This is separated from #373 because it is a sizeable undertaking on its own:</p>
+<ul>
+<li>realize the group concretely as a setoid algebra over a group signature (the <code>Classical/</code> tree has group machinery to draw on);</li>
+<li>identify the subuniverses (= subgroups, since the signature includes inverse and identity);</li>
+<li>classify them and exhibit the lattice order, ideally matching a known finite lattice.</li>
+</ul>
+<h2 id="acceptance-criteria_67">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_67" title="Anchor link to this section">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> A concrete finite group built as a <code>Setoid</code> algebra.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Its subgroups exhibited as elements of <code>Sub 𝑨</code>, with the lattice order between them.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Prose identifying the resulting lattice (chain / diamond / <code>S₃</code> lattice).</li>
+</ul>
+<h2 id="notes_7">Notes<a class="headerlink" href="#notes_7" title="Anchor link to this section">&para;</a></h2>
+<ul>
+<li>Subuniverses of a group algebra are exactly its subgroups precisely because the signature carries the unary inverse and the nullary identity, so closure under the operations forces the subgroup axioms — worth stating explicitly in the example.</li>
+</ul>
+<hr />
+<h3 id="issue-m6-13-flrp-research-program-tracking-issue-451">Issue M6-13: FLRP research program — tracking issue (#451)<a class="headerlink" href="#issue-m6-13-flrp-research-program-tracking-issue-451" title="Anchor link to this section">&para;</a></h3>
+<p><strong>Labels</strong>: <code>research-exploratory</code>, <code>flrp-research</code></p>
+<h2 id="description_59">Description<a class="headerlink" href="#description_59" title="Anchor link to this section">&para;</a></h2>
+<p>Umbrella issue for the research program on the Finite Lattice Representation Problem.  The roadmap is <code>docs/notes/flrp-research-roadmap.md</code> (added in #450), and the interval-enforceable-properties note it builds on is vendored at <code>docs/papers/flrp/ieprops/</code> (arXiv:1205.1927, v4).</p>
+<p>The program is organized as six PR-sized work packages (WP-1…WP-6) building the formal infrastructure, and four research phases (RP-1…RP-4) pursuing the interval-enforceable-properties attack described in roadmap § 4.  The critical path to RP-1 is WP-1 → WP-2 → WP-3 → WP-4.</p>
+<p>This program is a separate research track from the M7 algebraic-complexity / CSP work and from the M6 infrastructure milestone; do not conflate them (see <code>CLAUDE.md</code>).</p>
+<h2 id="structure">Structure<a class="headerlink" href="#structure" title="Anchor link to this section">&para;</a></h2>
+<ul>
+<li>WP-1…WP-6 — infrastructure and formalization steps, each intended to land as one focused PR; tracked as sub-issues.</li>
+<li>RP-1…RP-4 — open-ended research phases with the success/kill criteria of roadmap § 4; tracked as sub-issues and reviewed quarterly.</li>
+</ul>
+<h2 id="acceptance-criteria_68">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_68" title="Anchor link to this section">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> All WP sub-issues are closed.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Each RP phase has either produced results or hit its documented kill criterion.</li>
+</ul>
+<hr />
+<h3 id="issue-m6-13a-flrp-wp-1-flrpproblem-formal-statement-and-representability-predicate-452">Issue M6-13a: FLRP WP-1: FLRP.Problem — formal statement and representability predicate (#452)<a class="headerlink" href="#issue-m6-13a-flrp-wp-1-flrpproblem-formal-statement-and-representability-predicate-452" title="Anchor link to this section">&para;</a></h3>
+<p><strong>Labels</strong>: <code>research-exploratory</code>, <code>flrp-research</code></p>
+<h2 id="description_60">Description<a class="headerlink" href="#description_60" title="Anchor link to this section">&para;</a></h2>
+<p>Create the new top-level tree <code>src/FLRP/</code> (barrel plus first submodule <code>FLRP.Problem</code>) containing the formal core of the problem: a <code>Representable</code> predicate — "there exists a finite algebra whose congruence lattice is isomorphic to <code>L</code>" — and the FLRP statement as a type, together with at least one worked instance.  Design guidance: roadmap §§ 6–7 (<code>docs/notes/flrp-research-roadmap.md</code>).  Reuse the <code>FiniteAlgebra</code> interface from <code>Setoid.Subalgebras.Subdirect.Finite</code> and the congruence lattice from <code>Setoid.Congruences.CompleteLattice</code>.</p>
+<p>Part of #451.</p>
+<h2 id="tasks_57">Tasks<a class="headerlink" href="#tasks_57" title="Anchor link to this section">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>src/FLRP.lagda.md</code> barrel and <code>src/FLRP/Problem.lagda.md</code>, scaffolded per house conventions.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>Representable L</code> for a finite lattice <code>L</code>; choose and document the lattice-presentation and isomorphism notions, preferring existing library or stdlib infrastructure.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The FLRP statement as a type, with prose making clear that it is stated, not asserted.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> One worked instance wired to existing examples (e.g. the two-element chain as <code>Con</code> of a two-element algebra with no operations), with <code>L7</code> referenced in prose as the distinguished open instance.</li>
+</ul>
+<h2 id="acceptance-criteria_69">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_69" title="Anchor link to this section">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> New modules type-check under <code>--cubical-compatible --exact-split --safe</code>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Every public definition has an explicit type signature and a prose comment.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Changes to existing modules are limited to what promotion of <code>FiniteAlgebra</code> (if needed) strictly requires.</li>
+</ul>
+<hr />
+<h3 id="issue-m6-13b-flrp-wp-2-group-action-infrastructure-subgroups-core-cosets-g-sets-subg-intervals-453">Issue M6-13b: FLRP WP-2: group-action infrastructure — subgroups, core, cosets, G-sets, Sub(G), intervals (#453)<a class="headerlink" href="#issue-m6-13b-flrp-wp-2-group-action-infrastructure-subgroups-core-cosets-g-sets-subg-intervals-453" title="Anchor link to this section">&para;</a></h3>
+<p><strong>Labels</strong>: <code>research-exploratory</code>, <code>flrp-research</code></p>
+<h2 id="description_61">Description<a class="headerlink" href="#description_61" title="Anchor link to this section">&para;</a></h2>
+<p>Reusable group-theoretic infrastructure needed by the Pálfy–Pudlák bridge (WP-3) and the enforceability framework (WP-4): subgroups as subalgebras with <code>Sub(G)</code> as a complete lattice (generalizing the Klein-four worked example <code>Examples.Setoid.SubgroupLattice</code>), conjugation/normality and the normal core <code>Core_G(H)</code>, cosets with the transitive coset G-set as a unary algebra, and upper intervals <code>[H, G]</code> as bounded lattices.  Per roadmap § 6 this lands in the <code>Classical/</code> and <code>Setoid/</code> trees, not in <code>FLRP/</code>, so the library gains value independently of the research program.</p>
+<p>Part of #451.</p>
+<h2 id="tasks_58">Tasks<a class="headerlink" href="#tasks_58" title="Anchor link to this section">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Subgroups of a <code>Group</code> as subuniverses/subalgebras; <code>Sub(G)</code> via <code>Setoid.Subalgebras.CompleteLattice</code>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Conjugation, normal subgroups, and <code>Core_G(H)</code> (largest normal subgroup of <code>G</code> below <code>H</code>).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Cosets <code>G/H</code> and the coset G-set as a unary algebra (one operation per group element).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Upper intervals <code>[H, G]</code> in <code>Sub(G)</code> as bounded lattices.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Dedekind's rule <code>A ≤ B → A(C ∩ B) = AC ∩ B</code> at least stated (its proof may land here or in RP-1).</li>
+</ul>
+<h2 id="acceptance-criteria_70">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_70" title="Anchor link to this section">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> New modules type-check under the standard pragma; changes are additive.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The Klein-four subgroup-lattice example still type-checks.</li>
+</ul>
+<p>Scope note: this is the largest WP; splitting into WP-2a (subgroups/core) and WP-2b (cosets/G-sets/intervals) at PR time is acceptable and expected if the diff grows.</p>
+<hr />
+<h3 id="issue-m6-13c-flrp-wp-3-palfypudlak-bridge-easy-direction-cong-gh-h-g-454">Issue M6-13c: FLRP WP-3: Pálfy–Pudlák bridge, easy direction — Con(G ↷ G/H) ≅ [H, G] (#454)<a class="headerlink" href="#issue-m6-13c-flrp-wp-3-palfypudlak-bridge-easy-direction-cong-gh-h-g-454" title="Anchor link to this section">&para;</a></h3>
+<p><strong>Labels</strong>: <code>research-exploratory</code>, <code>flrp-research</code></p>
+<h2 id="description_62">Description<a class="headerlink" href="#description_62" title="Anchor link to this section">&para;</a></h2>
+<p>The first substantive FLRP theorem in the library: the congruence lattice of the transitive G-set on the cosets <code>G/H</code> is isomorphic to the upper interval <code>[H, G]</code> in <code>Sub(G)</code>.  Classical references: McKenzie–McNulty–Taylor (Lemma 4.20) and Dixon–Mortimer (Theorem 1.5A); see roadmap § 2 and the introduction of the vendored note <code>docs/papers/flrp/ieprops/</code>.  Corollary, wired into <code>FLRP.Problem</code>: every group-representable lattice is representable as the congruence lattice of a finite algebra.</p>
+<p>Depends on WP-1 and WP-2.  Part of #451.</p>
+<h2 id="tasks_59">Tasks<a class="headerlink" href="#tasks_59" title="Anchor link to this section">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Congruences of the coset G-set correspond to intermediate subgroups (both directions as separate named lemmas).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The order/lattice isomorphism <code>Con(G ↷ G/H) ≅ [H, G]</code>, assembled from small lemmas.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Corollary: group representable implies representable, in <code>FLRP.Problem</code> terms.</li>
+</ul>
+<h2 id="acceptance-criteria_71">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_71" title="Anchor link to this section">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Type-checks under <code>--safe</code>; each direction of the correspondence is its own lemma; every public definition carries prose.</li>
+</ul>
+<hr />
+<h3 id="issue-m6-13d-flrp-wp-4-flrpenforceable-ie-cf-ie-min-ie-and-the-no-go-lemmas-455">Issue M6-13d: FLRP WP-4: FLRP.Enforceable — IE, cf-IE, min-IE, and the no-go lemmas (#455)<a class="headerlink" href="#issue-m6-13d-flrp-wp-4-flrpenforceable-ie-cf-ie-min-ie-and-the-no-go-lemmas-455" title="Anchor link to this section">&para;</a></h3>
+<p><strong>Labels</strong>: <code>research-exploratory</code>, <code>flrp-research</code></p>
+<h2 id="description_63">Description<a class="headerlink" href="#description_63" title="Anchor link to this section">&para;</a></h2>
+<p>Formalize § 2 of the vendored note (<code>docs/papers/flrp/ieprops/</code>): the definitions of <em>interval enforceable</em> (IE), <em>core-free interval enforceable</em> (cf-IE), <em>min-IE</em>, and <em>group representable</em>, with the vacuity subtlety handled by tracking group representability of the enforcing lattice explicitly.  Then the first structural results of its § 3: Lemma 3.1 (if the complementary class is closed under homomorphic images, cf-IE upgrades to IE), the fattening remark (<code>[H × K, G × K] ≅ [H, G]</code>, so solvability is not IE), and Lemma 3.2 (a property and its negation cannot both be IE via group-representable lattices).  This machine-checks why the program lives at the core-free level (roadmap § 4).</p>
+<p>Depends on WP-2 (WP-3 is helpful but not required).  Part of #451.</p>
+<h2 id="tasks_60">Tasks<a class="headerlink" href="#tasks_60" title="Anchor link to this section">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>FLRP/Enforceable.lagda.md</code> with the four definitions and representability tracking.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Fattening lemma <code>[H × K, G × K] ≅ [H, G]</code> (needs direct products of groups).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Lemma 3.1 and Lemma 3.2, with names traceable to the note.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Statement (hypotheses named, proof deferred to RP-1) of the parachute meta-theorem.</li>
+</ul>
+<h2 id="acceptance-criteria_72">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_72" title="Anchor link to this section">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Type-checks under <code>--safe</code>; no postulates; deferred results appear only as explicit hypotheses.</li>
+</ul>
+<hr />
+<h3 id="issue-m6-13e-flrp-wp-5-closure-toolkit-products-ordinal-sums-kurzweilnetter-duality-456">Issue M6-13e: FLRP WP-5: closure toolkit — products, ordinal sums, Kurzweil–Netter duality (#456)<a class="headerlink" href="#issue-m6-13e-flrp-wp-5-closure-toolkit-products-ordinal-sums-kurzweilnetter-duality-456" title="Anchor link to this section">&para;</a></h3>
+<p><strong>Labels</strong>: <code>research-exploratory</code>, <code>flrp-research</code></p>
+<h2 id="description_64">Description<a class="headerlink" href="#description_64" title="Anchor link to this section">&para;</a></h2>
+<p>Formalize closure of the class of representable lattices under finite direct products and ordinal sums, and establish the <code>FLRP.Assumptions</code> registry pattern by recording duality (Kurzweil 1985, Netter 1986) as its first entry — a precise statement with citation, imported as an explicit hypothesis, keeping <code>--safe</code>.  Stretch goal: reprove Netter's duality construction formally; the content is finite and combinatorial, plausibly tractable, and Netter's proof may never have been published, so a formal reproof is independently valuable (roadmap § 7).</p>
+<p>Depends on WP-1.  Part of #451.</p>
+<h2 id="tasks_61">Tasks<a class="headerlink" href="#tasks_61" title="Anchor link to this section">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Product closure of <code>Representable</code>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Ordinal-sum closure of <code>Representable</code>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>FLRP/Assumptions.lagda.md</code> with the duality entry (statement, source, citation discipline documented).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Stretch: formal proof of duality closure via the Kurzweil–Netter construction.</li>
+</ul>
+<h2 id="acceptance-criteria_73">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_73" title="Anchor link to this section">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Type-checks under <code>--safe</code>; the assumptions registry documents every imported statement with its citation.</li>
+</ul>
+<hr />
+<h3 id="issue-m6-13f-flrp-wp-6-certificate-pipeline-schema-agda-checker-gapsat-emitters-457">Issue M6-13f: FLRP WP-6: certificate pipeline — schema, Agda checker, GAP/SAT emitters (#457)<a class="headerlink" href="#issue-m6-13f-flrp-wp-6-certificate-pipeline-schema-agda-checker-gapsat-emitters-457" title="Anchor link to this section">&para;</a></h3>
+<p><strong>Labels</strong>: <code>research-exploratory</code>, <code>flrp-research</code></p>
+<h2 id="description_65">Description<a class="headerlink" href="#description_65" title="Anchor link to this section">&para;</a></h2>
+<p>External searches (GAP, UACalc, SAT/model finders) must never be trusted directly: they emit finite certificate data — operation tables plus a lattice-isomorphism witness — which Agda re-checks by decision over the finite carrier, in exactly the style of <code>Examples.Classical.Lattices.L7</code>.  Build the certificate schema, the generic Agda checker, at least one emitter script, and a pilot re-verification of one thesis-era small-lattice representation end-to-end.  Search scripts and raw logs live outside <code>src/</code> (roadmap § 6; they move to a companion repo if they grow).</p>
+<p>Depends on WP-1.  Part of #451.</p>
+<h2 id="tasks_62">Tasks<a class="headerlink" href="#tasks_62" title="Anchor link to this section">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Certificate schema (finite algebra tables, target lattice, isomorphism witness).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Generic checker: given a certificate, decide <code>Con(𝑨) ≅ L</code> over the finite carrier.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> One emitter (GAP or SAT side) producing the schema.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Pilot: re-verify one small-lattice representation from the thesis era.</li>
+</ul>
+<h2 id="acceptance-criteria_74">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_74" title="Anchor link to this section">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> A certificate produced by an external tool round-trips to a type-checked Agda proof with no manual editing beyond file placement.</li>
+</ul>
+<hr />
+<h3 id="issue-m6-13g-flrp-rp-1-formalize-the-ie-framework-end-to-end-parachute-theorems-458">Issue M6-13g: FLRP RP-1: formalize the IE framework end-to-end (parachute theorems) (#458)<a class="headerlink" href="#issue-m6-13g-flrp-rp-1-formalize-the-ie-framework-end-to-end-parachute-theorems-458" title="Anchor link to this section">&para;</a></h3>
+<p><strong>Labels</strong>: <code>research-exploratory</code>, <code>flrp-research</code></p>
+<h2 id="description_66">Description<a class="headerlink" href="#description_66" title="Anchor link to this section">&para;</a></h2>
+<p>Research phase continuing from WP-4 through § 3 of the vendored note (<code>docs/papers/flrp/ieprops/</code>): Dedekind's rule and the antichain corollary (Corollary 3.5), the parachute construction <code>𝒫(L₁, …, Lₙ)</code>, Theorem 3.6 ((B) ⟺ (C)), Lemma 3.7 (a core-free parachute representation forces <code>G</code> subdirectly irreducible, nonsolvable, with <code>NH = G</code> and <code>C_G(N) = 1</code> for all nontrivial <code>N ⊴ G</code>), and Corollary 3.8 (cf-IE properties are closed under finite conjunction).  The phase is capped by the machine-checked strategy meta-theorem: finitely many cf-IE classes with empty intersection imply the corresponding parachute is not group representable, hence — with Pálfy–Pudlák imported as an explicit hypothesis — the FLRP has a negative answer.  The wreath Lemma 3.3 (requires wreath products and the double Kurzweil construction) either closes this phase or moves to RP-4.</p>
+<p>Depends on WP-2 and WP-4.  Part of #451; roadmap § 4.</p>
+<h2 id="exit-criterion_1">Exit criterion<a class="headerlink" href="#exit-criterion_1" title="Anchor link to this section">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The strategy meta-theorem type-checks under <code>--safe</code> with an explicit, auditable assumption registry.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> A short design note in <code>docs/notes/</code> records the formalization decisions and any divergences from the note's paper proofs.</li>
+</ul>
+<hr />
+<h3 id="issue-m6-13h-flrp-rp-2-the-enforcement-catalog-459">Issue M6-13h: FLRP RP-2: the enforcement catalog (#459)<a class="headerlink" href="#issue-m6-13h-flrp-rp-2-the-enforcement-catalog-459" title="Anchor link to this section">&para;</a></h3>
+<p><strong>Labels</strong>: <code>research-exploratory</code>, <code>flrp-research</code></p>
+<h2 id="description_67">Description<a class="headerlink" href="#description_67" title="Anchor link to this section">&para;</a></h2>
+<p>Build the machine-readable catalog of "interval shape forces group structure" theorems, each recast as a precise (cf-/min-)IE statement with an Agda statement — assumption-parameterized wherever the proof stays on paper.  Seed entries, per roadmap § 4: the note's classes <code>𝒢₀</code> (nonsolvable; IE), <code>𝒢₁</code> (neither alternating nor symmetric; IE), <code>𝒢₂</code> (subdirectly irreducible), <code>𝒢₃</code> (no nontrivial abelian normal subgroup), <code>𝒢₄</code> (<code>C_G(M) = 1</code> for all nontrivial normal <code>M</code>) — the last three cf-IE via parachutes.  External entries: Pálfy's solvable-exclusion lattices; Köhler/Feit <code>M₇</code> and Pálfy's minimality analysis of Feit's examples (min-IE); Baddeley–Lucchini reductions; Börner; Aschbacher's <code>D∆</code>/signalizer theorems specialized to parachutes (whose interiors are disconnected); Lucchini–Moscatiello–Palcoux–Spiga Boolean overgroup lattices.</p>
+<p>Depends on WP-4; grows alongside RP-1.  Part of #451.</p>
+<h2 id="exit-criterion_2">Exit criterion<a class="headerlink" href="#exit-criterion_2" title="Anchor link to this section">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> A catalog module plus survey note exists, with at least the note's five classes and two external entries formalized as statements.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Each entry records its source, its enforcing lattice(s), and whether the proof is formalized or imported as a hypothesis.</li>
+</ul>
+<hr />
+<h3 id="issue-m6-13i-flrp-rp-3-hunt-for-an-empty-intersection-of-cf-ie-classes-460">Issue M6-13i: FLRP RP-3: hunt for an empty intersection of cf-IE classes (#460)<a class="headerlink" href="#issue-m6-13i-flrp-rp-3-hunt-for-an-empty-intersection-of-cf-ie-classes-460" title="Anchor link to this section">&para;</a></h3>
+<p><strong>Labels</strong>: <code>research-exploratory</code>, <code>flrp-research</code></p>
+<h2 id="description_68">Description<a class="headerlink" href="#description_68" title="Anchor link to this section">&para;</a></h2>
+<p>The kill shot, per Theorem 3.6 of the vendored note: exhibit finitely many cf-IE classes whose intersection is empty, and the FLRP has a negative answer (a property and its negation is the special case <code>n = 2</code>).  The wreath no-go (Lemma 3.3) constrains the hunt: every cf-IE-by-group-representable class contains wreath products <code>S ≀ Ū</code> for every finite nonabelian simple <code>S</code>, so every member of a candidate family is wreath-rich, and the joint tension must come from finer invariants — the structure of the unique minimal normal subgroup forced by Lemma 3.7, its centralizer and complement behavior, and the permutation action on it.</p>
+<p>Method discipline: use computation as cheap falsification.  Before investing in a non-representability proof for a candidate parachute, search for representations of it over the small-groups and primitive-groups libraries (Hulpke's intermediate-subgroup algorithms), and attempt UA-side representations of small candidates directly; certificates flow through the WP-6 pipeline.</p>
+<p>Depends on RP-1 and RP-2.  Part of #451; success/kill criteria in roadmap § 4.</p>
+<h2 id="exit-criterion_3">Exit criterion<a class="headerlink" href="#exit-criterion_3" title="Anchor link to this section">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Success: a finite lattice with a machine-checked non-representability proof (modulo the explicit assumption registry).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Kill: two consecutive quarterly reviews with no viable candidate family, documented in the tracking issue.</li>
+</ul>
+<hr />
+<h3 id="issue-m6-13j-flrp-rp-4-dead-end-branch-can-a-property-and-its-negation-both-be-cf-ie-461">Issue M6-13j: FLRP RP-4: dead-end branch — can a property and its negation both be cf-IE? (#461)<a class="headerlink" href="#issue-m6-13j-flrp-rp-4-dead-end-branch-can-a-property-and-its-negation-both-be-cf-ie-461" title="Anchor link to this section">&para;</a></h3>
+<p><strong>Labels</strong>: <code>research-exploratory</code>, <code>flrp-research</code></p>
+<h2 id="description_69">Description<a class="headerlink" href="#description_69" title="Anchor link to this section">&para;</a></h2>
+<p>Prove or refute the implicit conjecture of the vendored note: a group property and its negation cannot both be core-free interval enforceable by group-representable lattices.  The wreath no-go (Lemma 3.3, via the double Kurzweil construction) is the prototype tool and already excludes the classes omitting wreath products <code>S ≀ Ū</code> (solvable, alternating/symmetric, almost simple); the phase extends it toward a structure theory of the cf-IE class, and more generally characterizes what an empty-intersection family (RP-3) would have to look like.</p>
+<p>Either outcome is valuable.  A proof is the honorable dead end for the <code>n = 2</code> case and independently a publishable structure theorem about intervals in subgroup lattices; a refutation is a concrete path toward a negative FLRP answer.  A sobering asymmetry to keep in view: the existence of empty-intersection families cannot be ruled out without proving statement (B) itself, so the realistic aim is structure theorems constraining the families we can actually construct.</p>
+<p>Depends on RP-1 (wreath products, Kurzweil construction).  Part of #451; roadmap § 4.</p>
+<h2 id="exit-criterion_4">Exit criterion<a class="headerlink" href="#exit-criterion_4" title="Anchor link to this section">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> A theorem (formalized, or paper-proved with a formal statement) settling the <code>n = 2</code> conjecture in either direction, or a documented reduction of it to named open questions.</li>
+</ul>
 <!-- END GENERATED: milestone-6 -->
 
 <h3 id="milestone-6-dependencies">Milestone 6 Dependencies<a class="headerlink" href="#milestone-6-dependencies" title="Anchor link to this section">&para;</a></h3>
@@ -17549,10 +17777,10 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 
 <h3 id="issue-m7-1-extend-complexity-module-beyond-basic-and-csp-274">Issue M7-1: Extend Complexity module beyond Basic and CSP (#274)<a class="headerlink" href="#issue-m7-1-extend-complexity-module-beyond-basic-and-csp-274" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>milestone-7-csp</code>, <code>design-discussion</code></p>
-<h2 id="description_59">Description<a class="headerlink" href="#description_59" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_70">Description<a class="headerlink" href="#description_70" title="Anchor link to this section">&para;</a></h2>
 <p>The current <code>Base.Complexity</code> module has only two submodules (<code>Basic</code> and <code>CSP</code>).  The CSP module is little more than a bare definition with no theorems.  This is a separate research track from the FLRP (M6): the FLRP is about which lattices arise as congruence lattices of finite algebras, while finite-template algebraic CSP is about the complexity of constraint satisfaction problems as a function of the polymorphism clone of the underlying finite relational structure.  Both use universal algebra, but they are different questions.  Infinite-template extensions (ω-categorical, Bodirsky–Pinsker) are covered separately under M9-2.</p>
 <p>This issue is research-flavored and best decomposed after discussion.</p>
-<h2 id="tasks_57">Tasks<a class="headerlink" href="#tasks_57" title="Anchor link to this section">&para;</a></h2>
+<h2 id="tasks_63">Tasks<a class="headerlink" href="#tasks_63" title="Anchor link to this section">&para;</a></h2>
 <p>Candidate content, to be prioritized:</p>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Polymorphism clones: <code>Pol(A, Γ)</code> as a first-class type.</li>
@@ -17561,7 +17789,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Specific CSP tractability classes as worked examples (Horn-SAT, 2-SAT, linear systems over finite fields).</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Statement (not necessarily proof) of the Bulatov–Zhuk algebraic dichotomy.</li>
 </ul>
-<h2 id="acceptance-criteria_68">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_68" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_75">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_75" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Polymorphism clones available as a type with basic operations.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Jeavons Galois connection is proved for a fixed finite domain, OR a clear research-plan issue is filed continuing the work.</li>
@@ -17576,9 +17804,9 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 
 <h3 id="issue-m8-1-publish-theorem-proof-corpus-for-llm-training-275">Issue M8-1: Publish (theorem, proof) corpus for LLM training (#275)<a class="headerlink" href="#issue-m8-1-publish-theorem-proof-corpus-for-llm-training-275" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>documentation</code>, <code>milestone-8-llm</code></p>
-<h2 id="description_60">Description<a class="headerlink" href="#description_60" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_71">Description<a class="headerlink" href="#description_71" title="Anchor link to this section">&para;</a></h2>
 <p>Once <code>Setoid/</code> and <code>Classical/</code> are stable post-M4, publish a training and retrieval corpus for language models.</p>
-<h2 id="tasks_58">Tasks<a class="headerlink" href="#tasks_58" title="Anchor link to this section">&para;</a></h2>
+<h2 id="tasks_64">Tasks<a class="headerlink" href="#tasks_64" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Design a schema for corpus records: module path, theorem statement, proof term, dependencies, prose summary, keywords.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Implement an extractor that walks the library and emits records.</li>
@@ -17586,7 +17814,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add a CI job that regenerates the corpus on each release.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Write a short paper or blog post describing the dataset.</li>
 </ul>
-<h2 id="acceptance-criteria_69">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_69" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_76">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_76" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Dataset published with ≥ 500 (theorem, proof) records.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> CI regenerates on release.</li>
@@ -17595,15 +17823,15 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <hr />
 <h3 id="issue-m8-2-explore-integration-with-agda-native-air-276">Issue M8-2: Explore integration with agda-native-air (#276)<a class="headerlink" href="#issue-m8-2-explore-integration-with-agda-native-air-276" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>milestone-8-llm</code>, <code>design-discussion</code></p>
-<h2 id="description_61">Description<a class="headerlink" href="#description_61" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_72">Description<a class="headerlink" href="#description_72" title="Anchor link to this section">&para;</a></h2>
 <p><code>agda-native-air</code> (a parallel project on AI-assisted formal proof) is a natural consumer of the agda-algebras corpus.  This issue tracks the integration.  Exploratory; low-priority until <code>agda-native-air</code> stabilizes.</p>
-<h2 id="tasks_59">Tasks<a class="headerlink" href="#tasks_59" title="Anchor link to this section">&para;</a></h2>
+<h2 id="tasks_65">Tasks<a class="headerlink" href="#tasks_65" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Document what API / metadata / annotations agda-native-air needs from agda-algebras.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Identify any agda-algebras design choices that help or hinder agda-native-air consumption.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Write an integration report.</li>
 </ul>
-<h2 id="acceptance-criteria_70">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_70" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_77">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_77" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Integration report exists in <code>docs/integration-agda-native-air.md</code>.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Any design changes required are filed as separate issues.</li>
@@ -17616,11 +17844,11 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 
 <h3 id="issue-m9-1-scott-continuous-relations-on-dcpos-using-relationscontinuous-282">Issue M9-1: Scott-continuous relations on DCPOs using <code>Relations.Continuous</code> (#282)<a class="headerlink" href="#issue-m9-1-scott-continuous-relations-on-dcpos-using-relationscontinuous-282" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>design-discussion</code>, <code>milestone-9-apps</code></p>
-<h2 id="description_62">Description<a class="headerlink" href="#description_62" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_73">Description<a class="headerlink" href="#description_73" title="Anchor link to this section">&para;</a></h2>
 <p>The <code>Base.Relations.Continuous</code> formalization generalizes classical relations: the arity is an arbitrary type rather than a natural number, and compatibility with an operation is stated pointwise over that arity.  That shape turns out to be the right one for a notion with a distinguished mathematical pedigree: <strong>Scott-continuous relations on directed-complete partial orders (DCPOs)</strong>.</p>
 <p>A relation <code>R ⊆ X × Y</code> between DCPOs is <em>Scott-continuous</em> when, for every directed family <code>{(xᵢ, yᵢ)}ᵢ∈I</code> in <code>R</code>, the supremum <code>(⊔ xᵢ, ⊔ yᵢ)</code> is again in <code>R</code>.  This is a statement about arbitrary-arity suprema — the index set <code>I</code> is genuinely arbitrary — and factors through the continuous-relation API naturally.</p>
 <p>The broader context is <em>domain theory</em> in the Scott sense, which underlies the denotational semantics of typed lambda calculi, topologically-enriched model theory and partial-function spaces, and constructive analysis via Escardó's work on exhaustively searchable sets.  The Escardó connection is worth flagging: his LICS 2007 result "Infinite sets that admit fast exhaustive search" characterizes searchable sets via a topological continuity condition on their decision procedures, and provides a computability-flavored reason to care about Scott-continuous relations on specific DCPOs such as the Cantor space.</p>
-<h2 id="tasks_60">Tasks<a class="headerlink" href="#tasks_60" title="Anchor link to this section">&para;</a></h2>
+<h2 id="tasks_66">Tasks<a class="headerlink" href="#tasks_66" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>Classical/Order/DCPO.agda</code> (or <code>Setoid/Order/DCPO.agda</code> if it will be adapted for Cubical later): DCPO as a record bundle — a poset with directed suprema.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>Classical/Order/ScottContinuous.agda</code>: a <code>ScottContinuous</code> predicate on pairs of a <code>Continuous</code> relation and a DCPO structure on its carriers.</li>
@@ -17628,7 +17856,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> At least one non-trivial example: the graph of a Scott-continuous function is Scott-continuous as a relation; conversely, a single-valued Scott-continuous relation is the graph of a Scott-continuous function.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Optional stretch goal: a path to Escardó's characterization of searchable sets, formalized as far as tractable.  If <code>TypeTopology</code> is the cleanest source, import from there rather than re-derive.</li>
 </ul>
-<h2 id="acceptance-criteria_71">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_71" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_78">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_78" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> DCPO record and ScottContinuous predicate type-check.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The graph-of-continuous-function ↔ single-valued-continuous-relation characterization is proved.</li>
@@ -17646,7 +17874,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <hr />
 <h3 id="issue-m9-2-infinitary-csp-over-categorical-templates-via-continuous-relations-281">Issue M9-2: Infinitary CSP over ω-categorical templates via continuous relations (#281)<a class="headerlink" href="#issue-m9-2-infinitary-csp-over-categorical-templates-via-continuous-relations-281" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>design-discussion</code>, <code>milestone-9-apps</code></p>
-<h2 id="description_63">Description<a class="headerlink" href="#description_63" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_74">Description<a class="headerlink" href="#description_74" title="Anchor link to this section">&para;</a></h2>
 <p>The CSP module under M7 targets finite-template CSPs with finite-arity relations.  A rich body of contemporary work — most visibly the Bodirsky–Pinsker program — studies CSPs whose template is an ω-categorical structure with a countable domain and potentially infinitary relations.  The central tools there include:</p>
 <ul>
 <li><strong>Polymorphism clones of ω-categorical structures</strong>, which control CSP complexity via a topological-dynamical analog of the finite-domain algebraic approach.</li>
@@ -17655,7 +17883,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 </ul>
 <p>The <code>Base.Relations.Continuous</code> formalization in agda-algebras happens to be exactly the right abstraction for this setting.  An ω-categorical template has relations whose natural arity is a countable index set; a continuous-in-our-sense relation drops in unchanged.</p>
 <p>This is a design-discussion issue, not an implementation plan.</p>
-<h2 id="tasks_61">Tasks<a class="headerlink" href="#tasks_61" title="Anchor link to this section">&para;</a></h2>
+<h2 id="tasks_67">Tasks<a class="headerlink" href="#tasks_67" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Which definitions port over unchanged from <code>Setoid/Complexity/CSP</code> (post M7-1), and which need generalization?</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> What is the minimal API for a "template" in the ω-categorical setting (base structure, automorphism group, topological structure)?</li>
@@ -17683,12 +17911,12 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <hr />
 <h3 id="issue-m9-3-exploratory-coalgebraic-bisimulation-as-a-continuous-relation-283">Issue M9-3: Exploratory: coalgebraic bisimulation as a continuous relation (#283)<a class="headerlink" href="#issue-m9-3-exploratory-coalgebraic-bisimulation-as-a-continuous-relation-283" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>design-discussion</code>, <code>milestone-9-apps</code></p>
-<h2 id="description_64">Description<a class="headerlink" href="#description_64" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_75">Description<a class="headerlink" href="#description_75" title="Anchor link to this section">&para;</a></h2>
 <p>An exploratory issue, not a deliverable.  The goal is to read, think, and write up findings about whether the <code>Continuous</code> relation API has novel applications in coalgebra, particularly for bisimulation of non-finitary coalgebras.</p>
 <p>A bisimulation between F-coalgebras <code>(c : A → F A, d : B → F B)</code> is classically a relation <code>R ⊆ A × B</code> that lifts along <code>F</code>: if <code>(a, b) ∈ R</code> then there is a witness <code>(F R) (c a) (d b)</code>.  When <code>F</code> is a finitary polynomial functor (e.g. finite-branching trees), <code>R</code> is naturally a finite-arity relation.  When <code>F</code> is continuous — for example, the stream functor <code>F X = X × A</code>, or the unbounded-branching tree functor <code>F X = X ^ ℕ</code> — the natural witness type for a bisimilarity step is an arbitrary-arity relation.  This is where the <code>Continuous</code> API might fit.</p>
 <p>The intersection of coalgebra and classical universal algebra has many smart people (Rutten, Jacobs, Kurz, Adámek, Pattinson, et al.), but most of that work targets theoretical-CS applications (automata, regular languages, process calculi).  It is much less developed on the universal-algebra-in-the-Birkhoff-sense side.  It is plausible that low-hanging fruit remains at the intersection, but finding it requires sustained reading, not speculation.</p>
 <p>Progress on this issue is measured in paragraphs written, not in type-checked Agda.</p>
-<h2 id="tasks_62">Tasks<a class="headerlink" href="#tasks_62" title="Anchor link to this section">&para;</a></h2>
+<h2 id="tasks_68">Tasks<a class="headerlink" href="#tasks_68" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Read Rutten, "Universal coalgebra: a theory of systems," TCS 2000 (the standard introduction).</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Read one or two recent survey articles on coalgebraic bisimulation for continuous functors.</li>
@@ -17696,7 +17924,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Identify at least one concrete formalization candidate, even if small (e.g. a bisimulation characterization of stream equality using the <code>Continuous</code> API).  If no such candidate emerges, document why.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Optional: formalize the candidate, or file a follow-up M9-3a issue.</li>
 </ul>
-<h2 id="acceptance-criteria_72">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_72" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_79">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_79" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>docs/exploration/coalgebra.md</code> exists and is at least 2000 words.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The document contains a concrete verdict: either "there is a formalization project worth pursuing" (in which case a follow-up issue is filed) or "the area is saturated / the fit is not natural" (in which case this issue is closed).</li>
@@ -17793,7 +18021,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Delete <code>_layouts/</code>, <code>_config.yml</code>, and any other Jekyll-only files at the repo root or under <code>docs/</code>.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Remove the <code>make html</code> target and replace it with <code>make site</code>; update <code>Makefile</code>, <code>README.md</code>, and <code>INSTALL.md</code> accordingly.</li>
 </ul>
-<h2 id="acceptance-criteria_73">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_73" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_80">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_80" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>make site</code> builds the full library at <code>site/</code> (or wherever MkDocs writes output) without errors.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Spot-checked rendered pages match the pre-migration archive in content; minor styling differences are acceptable.</li>
@@ -17840,7 +18068,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <h2 id="process">Process<a class="headerlink" href="#process" title="Anchor link to this section">&para;</a></h2>
 <p>GitHub's "Transfer ownership" feature (Settings → General → Danger zone → Transfer) preserves stars, forks, watchers, issues, PRs, releases, and — critically — installs HTTP redirects from the old <code>ualib/agda-algebras</code> URLs to the new <code>agda/agda-algebras</code> URLs at the GitHub level.  External links don't need to be rewritten on day one.</p>
 <hr />
-<h2 id="tasks_63">Tasks<a class="headerlink" href="#tasks_63" title="Anchor link to this section">&para;</a></h2>
+<h2 id="tasks_69">Tasks<a class="headerlink" href="#tasks_69" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Approach the agda-org maintainers (Andreas Abel, Nils Anders Danielsson, etc.) informally first.  Confirm they're amenable to hosting the library and what their org-level expectations are (CI, code of conduct, license, responsiveness on issues).</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> File a tracking issue in <code>agda/agda-algebras</code> (or wherever the discussion lives) for cross-referencing.</li>
@@ -17857,7 +18085,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li>Migrating off the existing <code>ualib.org</code> documentation domain.  That decision is independent and tracked separately.</li>
 </ul>
 <hr />
-<h3 id="issue-m10-3-type-on-hover-tooltips-for-agda-tokens-1lab-style-with-a-toggle-429">Issue M10-3: Type-on-hover tooltips for Agda tokens (1Lab-style), with a toggle (#429)<a class="headerlink" href="#issue-m10-3-type-on-hover-tooltips-for-agda-tokens-1lab-style-with-a-toggle-429" title="Anchor link to this section">&para;</a></h3>
+<h3 id="issue-m10-3-type-on-hover-tooltips-for-agda-tokens-1lab-style-with-a-toggle-429-closed">Issue M10-3: Type-on-hover tooltips for Agda tokens (1Lab-style), with a toggle (#429, closed)<a class="headerlink" href="#issue-m10-3-type-on-hover-tooltips-for-agda-tokens-1lab-style-with-a-toggle-429-closed" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>documentation</code>, <code>milestone-10-polish</code></p>
 <h2 id="context_11">Context<a class="headerlink" href="#context_11" title="Anchor link to this section">&para;</a></h2>
 <p>M10-1 (#295, PR #427) brought full <code>agda --html</code> token highlighting with <strong>per-token hyperlinks to definitions</strong> into the MkDocs site, plus the classic clickable-HTML site at <code>/classic/</code>.  Tokens are now classed and linked; the natural next step — deferred from the #295 review — is <strong>type-on-hover tooltips</strong> (like <a href="https://1lab.dev/">1lab.dev</a>, and the less polished <a href="https://intersectmbo.github.io/formal-ledger-specifications/site/">Ledger formal spec</a> and <a href="https://leios.cardano-scaling.org/formal-spec/Leios.Linear.html">Leios formal spec</a>): hover a token, see a small popover with its definition, without leaving the page.</p>
@@ -17898,7 +18126,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <h2 id="motivation_2">Motivation<a class="headerlink" href="#motivation_2" title="Anchor link to this section">&para;</a></h2>
 <p>The repo's <code>flake.nix</code> provides a <em>development</em> environment — <code>nix develop</code> gives a contributor a pinned Agda + stdlib shell.  It does not provide a <em>consumer</em> Nix package: a downstream Nix user who wants to depend on agda-algebras as a library has to vendor a flake input or rebuild the package themselves.  Promoting agda-algebras to a first-class entry under <code>nixpkgs.agdaPackages</code> solves this and tracks how the rest of the Agda ecosystem is distributed (<code>agdaPackages.standard-library</code>, <code>agdaPackages.agda-categories</code>, <code>agdaPackages.cubical</code>, etc.).</p>
 <hr />
-<h2 id="tasks_64">Tasks<a class="headerlink" href="#tasks_64" title="Anchor link to this section">&para;</a></h2>
+<h2 id="tasks_70">Tasks<a class="headerlink" href="#tasks_70" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Audit <code>nixpkgs/pkgs/build-support/agda</code> and the existing <code>agdaPackages.*</code> entries to confirm the packaging contract (build inputs, <code>everythingFile</code>, library-name conventions, version pinning).</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add a <code>pkgs/agda-modules/agda-algebras.nix</code> (or whatever the current nixpkgs path is) defining the package: source from a tagged release on <code>master</code>, depend on <code>standard-library</code> ≥ 2.3, build <code>Everything.agda</code>.</li>
@@ -17908,7 +18136,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Coordinate with each subsequent agda-algebras release: tag, update the nixpkgs entry's source hash, bump the package version.</li>
 </ul>
 <hr />
-<h2 id="acceptance-criteria_74">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_74" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_81">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_81" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>nix-shell -p 'agdaPackages.agda-algebras'</code> produces a working environment in which <code>agda --library agda-algebras</code> resolves correctly.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The flake also exposes the library derivation: <code>nix build github:ualib/agda-algebras#lib</code> (or the post-transfer <code>agda/agda-algebras</code> URL).</li>
@@ -17955,7 +18183,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Confirm HTTPS (GitHub-provisioned certificate) is active on the apex and <code>www</code>.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Confirm a sample of legacy <code>….html</code> URLs resolve — <strong>directly</strong> now (parked at <code>ualib.org</code>), rather than via a redirect.</li>
 </ul>
-<h2 id="acceptance-criteria_75">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_75" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_82">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_82" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <code>https://agda-algebras.universalalgebra.org</code> serves the new MkDocs site over HTTPS.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> The old site is parked at its original URL (<code>ualib.org</code>) and shows a dated deprecation banner linking to the new site.</li>
