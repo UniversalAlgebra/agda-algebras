@@ -1922,6 +1922,8 @@
       
         
       
+        
+      
     
     
     
@@ -2191,6 +2193,103 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_4_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Setoid/Congruences/Presented/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Presented
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2_4_9" id="__nav_2_2_4_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_4_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Presented
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Setoid/Congruences/Presented/Decidable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decidable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -3051,6 +3150,8 @@
       
         
       
+        
+      
     
     
     
@@ -3100,6 +3201,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Setoid/Signatures/Finite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Finite
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -5288,6 +5417,8 @@
       
         
       
+        
+      
     
     
     
@@ -5337,6 +5468,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Classical/Signatures/Finite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Finite
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -12678,7 +12837,7 @@
 <h2 id="status">Status<a class="headerlink" href="#status" title="Anchor link to this section">&para;</a></h2>
 <p>Accepted — 2026-07-12.</p>
 <h2 id="context">Context<a class="headerlink" href="#context" title="Anchor link to this section">&para;</a></h2>
-<p>Congruences in this library are <code>Type</code>-valued compatible equivalence relations (<code>Con</code>, in <code>Setoid.Congruences</code>), which is what kernels, quotient algebras, the isomorphism theorems, subdirect representation, and the HSP theorem consume, for finite and infinite algebras alike.  Work package WP-1 of the FLRP research program (PR #462) proved that this semantic type is classically loaded even over finite carriers: <code>Con 𝑨</code> contains a <em>switch congruence</em> <code>Cg (λ _ _ → P)</code> for every proposition <code>P</code>, so any order isomorphism <code>Con 𝑨 ≅ 𝟚</code> decides between <code>¬ P</code> and <code>¬ ¬ P</code> — weak excluded middle.  Constructively <code>Con 𝟚</code> is the lattice of propositions, not the two-element lattice, so no re-encoding of <code>Con</code> avoids this (including the planned Cubical port), and banning switch congruences is not possible without losing the kernel property, since every switch congruence is the kernel of a quotient map.</p>
+<p>Congruences in this library are <code>Type</code>-valued compatible equivalence relations (<code>Con</code>, in <code>Setoid.Congruences</code>), which is what kernels, quotient algebras, the isomorphism theorems, subdirect representation, and the HSP theorem consume, for finite and infinite algebras alike.  Work package WP-1 of the FLRP research program (PR #462) proved that this semantic type is classically loaded even over finite carriers: <code>Con 𝑨</code> contains the <em>oracle congruence</em> <code>Cg (λ _ _ → P)</code> for every proposition <code>P</code>, so any order isomorphism <code>Con 𝑨 ≅ 𝟚</code> decides between <code>¬ P</code> and <code>¬ ¬ P</code> — weak excluded middle.  Constructively <code>Con 𝟚</code> is the lattice of propositions, not the two-element lattice, so no re-encoding of <code>Con</code> avoids this (including the planned Cubical port), and banning oracle congruences is not possible without losing the kernel property, since every oracle congruence is the kernel of a quotient map.</p>
 <p>At the same time, the library's finiteness interfaces — the bare carrier record <code>FiniteAlgebra</code> of <code>Setoid.Algebras.Finite</code> and the congruence-side <code>FiniteCongruences</code> of <code>Setoid.Congruences.Finite</code>, split along exactly this seam by #465 — provide decidable congruences (<code>DecCon</code>) with decidable pair-membership, and isolate the classical content of "finite" in the <code>complete</code> field of <code>FiniteCongruences</code>.  A decision was needed on which object the FLRP formalization quantifies over, and how the classical content is accounted for, before work packages WP-3 through WP-6 proceed.</p>
 <h2 id="decision">Decision<a class="headerlink" href="#decision" title="Anchor link to this section">&para;</a></h2>
 <p>Keep the semantic congruence layer unchanged; build a first-class decidable layer for finite finitary algebras; state all computational results at the decidable layer; and cross between the layers through exactly one registered classical assumption.</p>

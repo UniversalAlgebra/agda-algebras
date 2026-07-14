@@ -177,6 +177,10 @@
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Signatures/Finite/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
          <loc>https://agda-algebras.universalalgebra.org/Classical/Signatures/Group/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
@@ -1037,7 +1041,15 @@
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
+         <loc>https://agda-algebras.universalalgebra.org/Setoid/Congruences/Presented/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
          <loc>https://agda-algebras.universalalgebra.org/Setoid/Congruences/Properties/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Setoid/Congruences/Presented/Decidable/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
@@ -1110,6 +1122,10 @@
     </url>
     <url>
          <loc>https://agda-algebras.universalalgebra.org/Setoid/Relations/Quotients/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Setoid/Signatures/Finite/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>

@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://agda-algebras.universalalgebra.org/Setoid/Congruences/Properties/">
       
       
-        <link rel="prev" href="../Permutability/">
+        <link rel="prev" href="../Presented/Decidable/">
       
       
         <link rel="next" href="../../Functions/">
@@ -1931,6 +1931,8 @@
       
         
       
+        
+      
     
     
     
@@ -2200,6 +2202,103 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_4_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../Presented/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Presented
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2_4_9" id="__nav_2_2_4_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_4_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Presented
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Presented/Decidable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decidable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -3157,6 +3256,8 @@
       
         
       
+        
+      
     
     
     
@@ -3206,6 +3307,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Signatures/Finite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Finite
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -5394,6 +5523,8 @@
       
         
       
+        
+      
     
     
     
@@ -5443,6 +5574,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Classical/Signatures/Finite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Finite
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -12667,16 +12826,16 @@ the meet <code>_∧_</code>, so both are operations on <code>Con 𝑨 (𝐋 ℓ�
 <a id="1367" class="Keyword">open</a> <a id="1372" class="Keyword">import</a> <a id="1379" href="/classic/Level.html" class="Module">Level</a>           <a id="1395" class="Keyword">using</a> <a id="1401" class="Symbol">(</a> <a id="1403" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a> <a id="1409" class="Symbol">;</a> <a id="1411" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">_⊔_</a> <a id="1415" class="Symbol">)</a> <a id="1417" class="Keyword">renaming</a> <a id="1426" class="Symbol">(</a><a id="1427" href="/classic/Agda.Primitive.html#931" class="Primitive">suc</a> <a id="1431" class="Symbol">to</a> <a id="1434" class="Primitive">lsuc</a><a id="1438" class="Symbol">)</a>
 
 <a id="1441" class="Comment">-- Imports from the Agda Universal Algebra Library ----------------------------</a>
-<a id="1521" class="Keyword">open</a> <a id="1526" class="Keyword">import</a> <a id="1533" href="/Setoid/Algebras/Basic/" class="Module">Setoid.Algebras.Basic</a>          <a id="1564" class="Symbol">{</a><a id="1565" class="Argument">𝑆</a> <a id="1567" class="Symbol">=</a> <a id="1569" href="/Setoid/Congruences/Properties/#1199" class="Bound">𝑆</a><a id="1570" class="Symbol">}</a> <a id="1572" class="Keyword">using</a> <a id="1578" class="Symbol">(</a> <a id="1580" href="/Setoid/Algebras/Basic/#2913" class="Record">Algebra</a> <a id="1588" class="Symbol">)</a>
-<a id="1590" class="Keyword">open</a> <a id="1595" class="Keyword">import</a> <a id="1602" href="/Setoid/Congruences/Basic/" class="Module">Setoid.Congruences.Basic</a>       <a id="1633" class="Symbol">{</a><a id="1634" class="Argument">𝑆</a> <a id="1636" class="Symbol">=</a> <a id="1638" href="/Setoid/Congruences/Properties/#1199" class="Bound">𝑆</a><a id="1639" class="Symbol">}</a> <a id="1641" class="Keyword">using</a> <a id="1647" class="Symbol">(</a> <a id="1649" href="/Setoid/Congruences/Basic/#3191" class="Function">Con</a> <a id="1653" class="Symbol">)</a>
-<a id="1655" class="Keyword">open</a> <a id="1660" class="Keyword">import</a> <a id="1667" href="/Setoid/Congruences/Lattice/" class="Module">Setoid.Congruences.Lattice</a>     <a id="1698" class="Symbol">{</a><a id="1699" class="Argument">𝑆</a> <a id="1701" class="Symbol">=</a> <a id="1703" href="/Setoid/Congruences/Properties/#1199" class="Bound">𝑆</a><a id="1704" class="Symbol">}</a> <a id="1706" class="Keyword">using</a> <a id="1712" class="Symbol">(</a> <a id="1714" href="/Setoid/Congruences/Lattice/#3515" class="Function Operator">_⊆_</a> <a id="1718" class="Symbol">;</a> <a id="1720" href="/Setoid/Congruences/Lattice/#3724" class="Function Operator">_≑_</a> <a id="1724" class="Symbol">;</a> <a id="1726" href="/Setoid/Congruences/Lattice/#7126" class="Function Operator">_∧_</a> <a id="1730" class="Symbol">)</a>
-<a id="1732" class="Keyword">open</a> <a id="1737" class="Keyword">import</a> <a id="1744" href="/Setoid/Congruences/Generation/" class="Module">Setoid.Congruences.Generation</a>  <a id="1775" class="Symbol">{</a><a id="1776" class="Argument">𝑆</a> <a id="1778" class="Symbol">=</a> <a id="1780" href="/Setoid/Congruences/Properties/#1199" class="Bound">𝑆</a><a id="1781" class="Symbol">}</a> <a id="1783" class="Keyword">using</a> <a id="1789" class="Symbol">(</a> <a id="1791" href="/Setoid/Congruences/Generation/#6450" class="Function Operator">_∨_</a> <a id="1795" class="Symbol">)</a>
+<a id="1521" class="Keyword">open</a> <a id="1526" class="Keyword">import</a> <a id="1533" href="/Setoid/Algebras/Basic/" class="Module">Setoid.Algebras.Basic</a>          <a id="1564" class="Symbol">{</a><a id="1565" class="Argument">𝑆</a> <a id="1567" class="Symbol">=</a> <a id="1569" href="/Setoid/Congruences/Properties/#1199" class="Bound">𝑆</a><a id="1570" class="Symbol">}</a>  <a id="1573" class="Keyword">using</a> <a id="1579" class="Symbol">(</a> <a id="1581" href="/Setoid/Algebras/Basic/#2913" class="Record">Algebra</a> <a id="1589" class="Symbol">)</a>
+<a id="1591" class="Keyword">open</a> <a id="1596" class="Keyword">import</a> <a id="1603" href="/Setoid/Congruences/Basic/" class="Module">Setoid.Congruences.Basic</a>       <a id="1634" class="Symbol">{</a><a id="1635" class="Argument">𝑆</a> <a id="1637" class="Symbol">=</a> <a id="1639" href="/Setoid/Congruences/Properties/#1199" class="Bound">𝑆</a><a id="1640" class="Symbol">}</a>  <a id="1643" class="Keyword">using</a> <a id="1649" class="Symbol">(</a> <a id="1651" href="/Setoid/Congruences/Basic/#3191" class="Function">Con</a> <a id="1655" class="Symbol">)</a>
+<a id="1657" class="Keyword">open</a> <a id="1662" class="Keyword">import</a> <a id="1669" href="/Setoid/Congruences/Lattice/" class="Module">Setoid.Congruences.Lattice</a>     <a id="1700" class="Symbol">{</a><a id="1701" class="Argument">𝑆</a> <a id="1703" class="Symbol">=</a> <a id="1705" href="/Setoid/Congruences/Properties/#1199" class="Bound">𝑆</a><a id="1706" class="Symbol">}</a>  <a id="1709" class="Keyword">using</a> <a id="1715" class="Symbol">(</a> <a id="1717" href="/Setoid/Congruences/Lattice/#3515" class="Function Operator">_⊆_</a> <a id="1721" class="Symbol">;</a> <a id="1723" href="/Setoid/Congruences/Lattice/#3724" class="Function Operator">_≑_</a> <a id="1727" class="Symbol">;</a> <a id="1729" href="/Setoid/Congruences/Lattice/#7126" class="Function Operator">_∧_</a> <a id="1733" class="Symbol">)</a>
+<a id="1735" class="Keyword">open</a> <a id="1740" class="Keyword">import</a> <a id="1747" href="/Setoid/Congruences/Generation/" class="Module">Setoid.Congruences.Generation</a>           <a id="1787" class="Keyword">using</a> <a id="1793" class="Symbol">(</a> <a id="1795" href="/Setoid/Congruences/Generation/#6375" class="Function Operator">_∨_</a> <a id="1799" class="Symbol">)</a>
 </pre>
 
 <h4 id="the-absorbing-relation-level">The absorbing relation level<a class="headerlink" href="#the-absorbing-relation-level" title="Anchor link to this section">&para;</a></h4>
-<pre class="Agda"><a id="1849" class="Comment">-- The relation level at which both meet and join are operations on Con 𝑨.</a>
-<a id="Ł"></a><a id="1924" href="/Setoid/Congruences/Properties/#1924" class="Function">Ł</a> <a id="1926" class="Symbol">:</a> <a id="1928" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a> <a id="1934" class="Symbol">→</a> <a id="1936" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a> <a id="1942" class="Symbol">→</a> <a id="1944" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a> <a id="1950" class="Symbol">→</a> <a id="1952" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a>
-<a id="1958" href="/Setoid/Congruences/Properties/#1924" class="Function">Ł</a> <a id="1960" href="/Setoid/Congruences/Properties/#1960" class="Bound">α</a> <a id="1962" href="/Setoid/Congruences/Properties/#1962" class="Bound">ρ</a> <a id="1964" href="/Setoid/Congruences/Properties/#1964" class="Bound">ℓ₀</a> <a id="1967" class="Symbol">=</a> <a id="1969" href="/Setoid/Congruences/Properties/#1213" class="Bound">𝓞</a> <a id="1971" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="1973" href="/Setoid/Congruences/Properties/#1215" class="Bound">𝓥</a> <a id="1975" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="1977" href="/Setoid/Congruences/Properties/#1960" class="Bound">α</a> <a id="1979" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="1981" href="/Setoid/Congruences/Properties/#1962" class="Bound">ρ</a> <a id="1983" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="1985" href="/Setoid/Congruences/Properties/#1964" class="Bound">ℓ₀</a>
+<pre class="Agda"><a id="1853" class="Comment">-- The relation level at which both meet and join are operations on Con 𝑨.</a>
+<a id="Ł"></a><a id="1928" href="/Setoid/Congruences/Properties/#1928" class="Function">Ł</a> <a id="1930" class="Symbol">:</a> <a id="1932" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a> <a id="1938" class="Symbol">→</a> <a id="1940" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a> <a id="1946" class="Symbol">→</a> <a id="1948" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a> <a id="1954" class="Symbol">→</a> <a id="1956" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a>
+<a id="1962" href="/Setoid/Congruences/Properties/#1928" class="Function">Ł</a> <a id="1964" href="/Setoid/Congruences/Properties/#1964" class="Bound">α</a> <a id="1966" href="/Setoid/Congruences/Properties/#1966" class="Bound">ρ</a> <a id="1968" href="/Setoid/Congruences/Properties/#1968" class="Bound">ℓ₀</a> <a id="1971" class="Symbol">=</a> <a id="1973" href="/Setoid/Congruences/Properties/#1213" class="Bound">𝓞</a> <a id="1975" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="1977" href="/Setoid/Congruences/Properties/#1215" class="Bound">𝓥</a> <a id="1979" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="1981" href="/Setoid/Congruences/Properties/#1964" class="Bound">α</a> <a id="1983" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="1985" href="/Setoid/Congruences/Properties/#1966" class="Bound">ρ</a> <a id="1987" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="1989" href="/Setoid/Congruences/Properties/#1968" class="Bound">ℓ₀</a>
 </pre>
 <h4 id="congruence-distributivity">Congruence distributivity<a class="headerlink" href="#congruence-distributivity" title="Anchor link to this section">&para;</a></h4>
 <p>An algebra <code>𝑨</code> is <strong>congruence-distributive</strong> (CD) when its congruence lattice
@@ -12684,17 +12843,17 @@ satisfies the distributive law <code>θ ∧ (φ ∨ ψ) ≑ (θ ∧ φ) ∨ (θ 
 containment half of this <code>≑</code> is automatic in any lattice; the distributive law is the
 forward containment <code>θ ∧ (φ ∨ ψ) ⊆ (θ ∧ φ) ∨ (θ ∧ ψ)</code>, but we state the full
 symmetric <code>≑</code> result for uniformity.)</p>
-<pre class="Agda"><a id="2394" class="Keyword">module</a> <a id="2401" href="/Setoid/Congruences/Properties/#2401" class="Module">_</a> <a id="2403" class="Symbol">{</a><a id="2404" href="/Setoid/Congruences/Properties/#2404" class="Bound">α</a> <a id="2406" href="/Setoid/Congruences/Properties/#2406" class="Bound">ρ</a> <a id="2408" class="Symbol">:</a> <a id="2410" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a><a id="2415" class="Symbol">}</a> <a id="2417" class="Symbol">(</a><a id="2418" href="/Setoid/Congruences/Properties/#2418" class="Bound">𝑨</a> <a id="2420" class="Symbol">:</a> <a id="2422" href="/Setoid/Algebras/Basic/#2913" class="Record">Algebra</a> <a id="2430" href="/Setoid/Congruences/Properties/#2404" class="Bound">α</a> <a id="2432" href="/Setoid/Congruences/Properties/#2406" class="Bound">ρ</a><a id="2433" class="Symbol">)(</a><a id="2435" href="/Setoid/Congruences/Properties/#2435" class="Bound">ℓ₀</a> <a id="2438" class="Symbol">:</a> <a id="2440" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a><a id="2445" class="Symbol">)</a> <a id="2447" class="Keyword">where</a>
-  <a id="2455" href="/Setoid/Congruences/Properties/#2455" class="Function">CongruenceDistributive</a> <a id="2478" class="Symbol">:</a> <a id="2480" href="/Setoid/Congruences/Properties/#1360" class="Primitive">Type</a> <a id="2485" class="Symbol">(</a><a id="2486" href="/Setoid/Congruences/Properties/#1434" class="Primitive">lsuc</a> <a id="2491" class="Symbol">(</a><a id="2492" href="/Setoid/Congruences/Properties/#1924" class="Function">Ł</a> <a id="2494" href="/Setoid/Congruences/Properties/#2404" class="Bound">α</a> <a id="2496" href="/Setoid/Congruences/Properties/#2406" class="Bound">ρ</a> <a id="2498" href="/Setoid/Congruences/Properties/#2435" class="Bound">ℓ₀</a><a id="2500" class="Symbol">))</a>
-  <a id="2505" href="/Setoid/Congruences/Properties/#2455" class="Function">CongruenceDistributive</a> <a id="2528" class="Symbol">=</a> <a id="2530" class="Symbol">(</a><a id="2531" href="/Setoid/Congruences/Properties/#2531" class="Bound">θ</a> <a id="2533" href="/Setoid/Congruences/Properties/#2533" class="Bound">φ</a> <a id="2535" href="/Setoid/Congruences/Properties/#2535" class="Bound">ψ</a> <a id="2537" class="Symbol">:</a> <a id="2539" href="/Setoid/Congruences/Basic/#3191" class="Function">Con</a> <a id="2543" href="/Setoid/Congruences/Properties/#2418" class="Bound">𝑨</a> <a id="2545" class="Symbol">(</a><a id="2546" href="/Setoid/Congruences/Properties/#1924" class="Function">Ł</a> <a id="2548" href="/Setoid/Congruences/Properties/#2404" class="Bound">α</a> <a id="2550" href="/Setoid/Congruences/Properties/#2406" class="Bound">ρ</a> <a id="2552" href="/Setoid/Congruences/Properties/#2435" class="Bound">ℓ₀</a><a id="2554" class="Symbol">))</a> <a id="2557" class="Symbol">→</a> <a id="2559" href="/Setoid/Congruences/Properties/#2531" class="Bound">θ</a> <a id="2561" href="/Setoid/Congruences/Lattice/#7126" class="Function Operator">∧</a> <a id="2563" class="Symbol">(</a><a id="2564" href="/Setoid/Congruences/Properties/#2533" class="Bound">φ</a> <a id="2566" href="/Setoid/Congruences/Generation/#6450" class="Function Operator">∨</a> <a id="2568" href="/Setoid/Congruences/Properties/#2535" class="Bound">ψ</a><a id="2569" class="Symbol">)</a> <a id="2571" href="/Setoid/Congruences/Lattice/#3724" class="Function Operator">≑</a> <a id="2573" class="Symbol">(</a><a id="2574" href="/Setoid/Congruences/Properties/#2531" class="Bound">θ</a> <a id="2576" href="/Setoid/Congruences/Lattice/#7126" class="Function Operator">∧</a> <a id="2578" href="/Setoid/Congruences/Properties/#2533" class="Bound">φ</a><a id="2579" class="Symbol">)</a> <a id="2581" href="/Setoid/Congruences/Generation/#6450" class="Function Operator">∨</a> <a id="2583" class="Symbol">(</a><a id="2584" href="/Setoid/Congruences/Properties/#2531" class="Bound">θ</a> <a id="2586" href="/Setoid/Congruences/Lattice/#7126" class="Function Operator">∧</a> <a id="2588" href="/Setoid/Congruences/Properties/#2535" class="Bound">ψ</a><a id="2589" class="Symbol">)</a>
+<pre class="Agda"><a id="2398" class="Keyword">module</a> <a id="2405" href="/Setoid/Congruences/Properties/#2405" class="Module">_</a> <a id="2407" class="Symbol">{</a><a id="2408" href="/Setoid/Congruences/Properties/#2408" class="Bound">α</a> <a id="2410" href="/Setoid/Congruences/Properties/#2410" class="Bound">ρ</a> <a id="2412" class="Symbol">:</a> <a id="2414" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a><a id="2419" class="Symbol">}</a> <a id="2421" class="Symbol">(</a><a id="2422" href="/Setoid/Congruences/Properties/#2422" class="Bound">𝑨</a> <a id="2424" class="Symbol">:</a> <a id="2426" href="/Setoid/Algebras/Basic/#2913" class="Record">Algebra</a> <a id="2434" href="/Setoid/Congruences/Properties/#2408" class="Bound">α</a> <a id="2436" href="/Setoid/Congruences/Properties/#2410" class="Bound">ρ</a><a id="2437" class="Symbol">)(</a><a id="2439" href="/Setoid/Congruences/Properties/#2439" class="Bound">ℓ₀</a> <a id="2442" class="Symbol">:</a> <a id="2444" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a><a id="2449" class="Symbol">)</a> <a id="2451" class="Keyword">where</a>
+  <a id="2459" href="/Setoid/Congruences/Properties/#2459" class="Function">CongruenceDistributive</a> <a id="2482" class="Symbol">:</a> <a id="2484" href="/Setoid/Congruences/Properties/#1360" class="Primitive">Type</a> <a id="2489" class="Symbol">(</a><a id="2490" href="/Setoid/Congruences/Properties/#1434" class="Primitive">lsuc</a> <a id="2495" class="Symbol">(</a><a id="2496" href="/Setoid/Congruences/Properties/#1928" class="Function">Ł</a> <a id="2498" href="/Setoid/Congruences/Properties/#2408" class="Bound">α</a> <a id="2500" href="/Setoid/Congruences/Properties/#2410" class="Bound">ρ</a> <a id="2502" href="/Setoid/Congruences/Properties/#2439" class="Bound">ℓ₀</a><a id="2504" class="Symbol">))</a>
+  <a id="2509" href="/Setoid/Congruences/Properties/#2459" class="Function">CongruenceDistributive</a> <a id="2532" class="Symbol">=</a> <a id="2534" class="Symbol">(</a><a id="2535" href="/Setoid/Congruences/Properties/#2535" class="Bound">θ</a> <a id="2537" href="/Setoid/Congruences/Properties/#2537" class="Bound">φ</a> <a id="2539" href="/Setoid/Congruences/Properties/#2539" class="Bound">ψ</a> <a id="2541" class="Symbol">:</a> <a id="2543" href="/Setoid/Congruences/Basic/#3191" class="Function">Con</a> <a id="2547" href="/Setoid/Congruences/Properties/#2422" class="Bound">𝑨</a> <a id="2549" class="Symbol">(</a><a id="2550" href="/Setoid/Congruences/Properties/#1928" class="Function">Ł</a> <a id="2552" href="/Setoid/Congruences/Properties/#2408" class="Bound">α</a> <a id="2554" href="/Setoid/Congruences/Properties/#2410" class="Bound">ρ</a> <a id="2556" href="/Setoid/Congruences/Properties/#2439" class="Bound">ℓ₀</a><a id="2558" class="Symbol">))</a> <a id="2561" class="Symbol">→</a> <a id="2563" href="/Setoid/Congruences/Properties/#2535" class="Bound">θ</a> <a id="2565" href="/Setoid/Congruences/Lattice/#7126" class="Function Operator">∧</a> <a id="2567" class="Symbol">(</a><a id="2568" href="/Setoid/Congruences/Properties/#2537" class="Bound">φ</a> <a id="2570" href="/Setoid/Congruences/Generation/#6375" class="Function Operator">∨</a> <a id="2572" href="/Setoid/Congruences/Properties/#2539" class="Bound">ψ</a><a id="2573" class="Symbol">)</a> <a id="2575" href="/Setoid/Congruences/Lattice/#3724" class="Function Operator">≑</a> <a id="2577" class="Symbol">(</a><a id="2578" href="/Setoid/Congruences/Properties/#2535" class="Bound">θ</a> <a id="2580" href="/Setoid/Congruences/Lattice/#7126" class="Function Operator">∧</a> <a id="2582" href="/Setoid/Congruences/Properties/#2537" class="Bound">φ</a><a id="2583" class="Symbol">)</a> <a id="2585" href="/Setoid/Congruences/Generation/#6375" class="Function Operator">∨</a> <a id="2587" class="Symbol">(</a><a id="2588" href="/Setoid/Congruences/Properties/#2535" class="Bound">θ</a> <a id="2590" href="/Setoid/Congruences/Lattice/#7126" class="Function Operator">∧</a> <a id="2592" href="/Setoid/Congruences/Properties/#2539" class="Bound">ψ</a><a id="2593" class="Symbol">)</a>
 </pre>
 <h4 id="congruence-modularity">Congruence modularity<a class="headerlink" href="#congruence-modularity" title="Anchor link to this section">&para;</a></h4>
 <p>An algebra <code>𝑨</code> is <strong>congruence-modular</strong> (CM) when its congruence lattice satisfies
 the modular law: whenever <code>θ ⊆ ψ</code>, <code>θ ∨ (φ ∧ ψ) ≑ (θ ∨ φ) ∧ ψ</code>.  Distributivity
 implies modularity, so the congruence-distributive algebras form a subclass of the
 congruence-modular ones.</p>
-<pre class="Agda">  <a id="2907" href="/Setoid/Congruences/Properties/#2907" class="Function">CongruenceModular</a> <a id="2925" class="Symbol">:</a> <a id="2927" href="/Setoid/Congruences/Properties/#1360" class="Primitive">Type</a> <a id="2932" class="Symbol">(</a><a id="2933" href="/Setoid/Congruences/Properties/#1434" class="Primitive">lsuc</a> <a id="2938" class="Symbol">(</a><a id="2939" href="/Setoid/Congruences/Properties/#1924" class="Function">Ł</a> <a id="2941" href="/Setoid/Congruences/Properties/#2404" class="Bound">α</a> <a id="2943" href="/Setoid/Congruences/Properties/#2406" class="Bound">ρ</a> <a id="2945" href="/Setoid/Congruences/Properties/#2435" class="Bound">ℓ₀</a><a id="2947" class="Symbol">))</a>
-  <a id="2952" href="/Setoid/Congruences/Properties/#2907" class="Function">CongruenceModular</a> <a id="2970" class="Symbol">=</a> <a id="2972" class="Symbol">(</a><a id="2973" href="/Setoid/Congruences/Properties/#2973" class="Bound">θ</a> <a id="2975" href="/Setoid/Congruences/Properties/#2975" class="Bound">φ</a> <a id="2977" href="/Setoid/Congruences/Properties/#2977" class="Bound">ψ</a> <a id="2979" class="Symbol">:</a> <a id="2981" href="/Setoid/Congruences/Basic/#3191" class="Function">Con</a> <a id="2985" href="/Setoid/Congruences/Properties/#2418" class="Bound">𝑨</a> <a id="2987" class="Symbol">(</a><a id="2988" href="/Setoid/Congruences/Properties/#1924" class="Function">Ł</a> <a id="2990" href="/Setoid/Congruences/Properties/#2404" class="Bound">α</a> <a id="2992" href="/Setoid/Congruences/Properties/#2406" class="Bound">ρ</a> <a id="2994" href="/Setoid/Congruences/Properties/#2435" class="Bound">ℓ₀</a><a id="2996" class="Symbol">))</a> <a id="2999" class="Symbol">→</a> <a id="3001" href="/Setoid/Congruences/Properties/#2973" class="Bound">θ</a> <a id="3003" href="/Setoid/Congruences/Lattice/#3515" class="Function Operator">⊆</a> <a id="3005" href="/Setoid/Congruences/Properties/#2977" class="Bound">ψ</a> <a id="3007" class="Symbol">→</a> <a id="3009" href="/Setoid/Congruences/Properties/#2973" class="Bound">θ</a> <a id="3011" href="/Setoid/Congruences/Generation/#6450" class="Function Operator">∨</a> <a id="3013" class="Symbol">(</a><a id="3014" href="/Setoid/Congruences/Properties/#2975" class="Bound">φ</a> <a id="3016" href="/Setoid/Congruences/Lattice/#7126" class="Function Operator">∧</a> <a id="3018" href="/Setoid/Congruences/Properties/#2977" class="Bound">ψ</a><a id="3019" class="Symbol">)</a> <a id="3021" href="/Setoid/Congruences/Lattice/#3724" class="Function Operator">≑</a> <a id="3023" class="Symbol">(</a><a id="3024" href="/Setoid/Congruences/Properties/#2973" class="Bound">θ</a> <a id="3026" href="/Setoid/Congruences/Generation/#6450" class="Function Operator">∨</a> <a id="3028" href="/Setoid/Congruences/Properties/#2975" class="Bound">φ</a><a id="3029" class="Symbol">)</a> <a id="3031" href="/Setoid/Congruences/Lattice/#7126" class="Function Operator">∧</a> <a id="3033" href="/Setoid/Congruences/Properties/#2977" class="Bound">ψ</a>
+<pre class="Agda">  <a id="2911" href="/Setoid/Congruences/Properties/#2911" class="Function">CongruenceModular</a> <a id="2929" class="Symbol">:</a> <a id="2931" href="/Setoid/Congruences/Properties/#1360" class="Primitive">Type</a> <a id="2936" class="Symbol">(</a><a id="2937" href="/Setoid/Congruences/Properties/#1434" class="Primitive">lsuc</a> <a id="2942" class="Symbol">(</a><a id="2943" href="/Setoid/Congruences/Properties/#1928" class="Function">Ł</a> <a id="2945" href="/Setoid/Congruences/Properties/#2408" class="Bound">α</a> <a id="2947" href="/Setoid/Congruences/Properties/#2410" class="Bound">ρ</a> <a id="2949" href="/Setoid/Congruences/Properties/#2439" class="Bound">ℓ₀</a><a id="2951" class="Symbol">))</a>
+  <a id="2956" href="/Setoid/Congruences/Properties/#2911" class="Function">CongruenceModular</a> <a id="2974" class="Symbol">=</a> <a id="2976" class="Symbol">(</a><a id="2977" href="/Setoid/Congruences/Properties/#2977" class="Bound">θ</a> <a id="2979" href="/Setoid/Congruences/Properties/#2979" class="Bound">φ</a> <a id="2981" href="/Setoid/Congruences/Properties/#2981" class="Bound">ψ</a> <a id="2983" class="Symbol">:</a> <a id="2985" href="/Setoid/Congruences/Basic/#3191" class="Function">Con</a> <a id="2989" href="/Setoid/Congruences/Properties/#2422" class="Bound">𝑨</a> <a id="2991" class="Symbol">(</a><a id="2992" href="/Setoid/Congruences/Properties/#1928" class="Function">Ł</a> <a id="2994" href="/Setoid/Congruences/Properties/#2408" class="Bound">α</a> <a id="2996" href="/Setoid/Congruences/Properties/#2410" class="Bound">ρ</a> <a id="2998" href="/Setoid/Congruences/Properties/#2439" class="Bound">ℓ₀</a><a id="3000" class="Symbol">))</a> <a id="3003" class="Symbol">→</a> <a id="3005" href="/Setoid/Congruences/Properties/#2977" class="Bound">θ</a> <a id="3007" href="/Setoid/Congruences/Lattice/#3515" class="Function Operator">⊆</a> <a id="3009" href="/Setoid/Congruences/Properties/#2981" class="Bound">ψ</a> <a id="3011" class="Symbol">→</a> <a id="3013" href="/Setoid/Congruences/Properties/#2977" class="Bound">θ</a> <a id="3015" href="/Setoid/Congruences/Generation/#6375" class="Function Operator">∨</a> <a id="3017" class="Symbol">(</a><a id="3018" href="/Setoid/Congruences/Properties/#2979" class="Bound">φ</a> <a id="3020" href="/Setoid/Congruences/Lattice/#7126" class="Function Operator">∧</a> <a id="3022" href="/Setoid/Congruences/Properties/#2981" class="Bound">ψ</a><a id="3023" class="Symbol">)</a> <a id="3025" href="/Setoid/Congruences/Lattice/#3724" class="Function Operator">≑</a> <a id="3027" class="Symbol">(</a><a id="3028" href="/Setoid/Congruences/Properties/#2977" class="Bound">θ</a> <a id="3030" href="/Setoid/Congruences/Generation/#6375" class="Function Operator">∨</a> <a id="3032" href="/Setoid/Congruences/Properties/#2979" class="Bound">φ</a><a id="3033" class="Symbol">)</a> <a id="3035" href="/Setoid/Congruences/Lattice/#7126" class="Function Operator">∧</a> <a id="3037" href="/Setoid/Congruences/Properties/#2981" class="Bound">ψ</a>
 </pre>
 
 <!-- File: docs/_links.md -->
@@ -12744,7 +12903,7 @@ congruence-modular ones.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../Permutability/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Permutability">
+          <a href="../Presented/Decidable/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Decidable">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -12754,7 +12913,7 @@ congruence-modular ones.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Permutability
+                Decidable
               </div>
             </div>
           </a>

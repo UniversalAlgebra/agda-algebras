@@ -3,19 +3,21 @@
 layout: default
 file: &quot;src/Classical/Signatures/Unary.lagda.md&quot;
 title: &quot;Classical.Signatures.Unary module&quot;
-date: &quot;2026-07-11&quot;
+date: &quot;2026-07-12&quot;
 author: &quot;the agda-algebras development team&quot;
 ---
 
-### The purely unary signature on a set of symbols
+### The signature of unary algebras
 
 This is the [Classical.Signatures.Unary][] module of the [Agda Universal Algebra Library][].
 
-`Sig-Unary Ops` is the signature whose operation symbols are the elements of a
-given type `Ops`, every symbol of arity one.  Unlike the fixed finite signatures of
-this subtree (`Sig-Magma`, `Sig-Group`, …), the symbol set is a *parameter*: the
-motivating instance takes `Ops` to be the carrier of a group `G`, which turns a
-G-set into an ordinary unary algebra with one basic operation per group element.
+A *unary algebra* over a set `A` of operation symbols is a carrier equipped with
+one unary operation per element of `A`.  The most important examples are
+**G-sets**: for a group `G`, an action of `G` on a set is exactly an algebra over
+the unary signature whose symbol set is the carrier of `G` (satisfying the action
+equations).  The two-layer congruence programme (ADR-008) uses this signature for
+its coset algebras `G ↷ G/H`, whose congruence lattices realize the intervals
+`[H, G]` of subgroup lattices.
 
 Because a `Sig-Unary`-algebra is an `Algebra`{.AgdaRecord} like any other, the whole
 congruence machinery (`Con`{.AgdaFunction}, quotients, homomorphism theorems) applies
@@ -24,27 +26,40 @@ to G-sets with no special cases.
 The arity of every symbol is `Fin 1`, matching the convention of the unary symbol
 `⁻¹-Op` in [`Sig-Group`][Classical.Signatures.Group].
 
+This module deviates from the normative `Op-X`/`ar-X` pattern of
+[Classical.Signatures.Magma][] in one respect, and deliberately so: the
+operation-symbol type is a *parameter* `A`, not a fixed data type of named
+constructors, so there is no `Op-Unary` data declaration and no pattern-matching
+arity function.  The arity function is constantly `Fin 1` — the &quot;recommended
+shape&quot; of [Examples.Setoid.FinitarySignatures][], under which every arity reduces
+definitionally to a concrete `Fin`, so finiteness witnesses need no case split
+(see `Classical.Signatures.Finite`).
+
 &lt;!--
-</a><a id="1080" class="Markup">```agda
-</a><a id="1088" class="Symbol">{-#</a> <a id="1092" class="Keyword">OPTIONS</a> <a id="1100" class="Pragma">--cubical-compatible</a> <a id="1121" class="Pragma">--exact-split</a> <a id="1135" class="Pragma">--safe</a> <a id="1142" class="Symbol">#-}</a>
+</a><a id="1738" class="Markup">```agda
+</a><a id="1746" class="Symbol">{-#</a> <a id="1750" class="Keyword">OPTIONS</a> <a id="1758" class="Pragma">--cubical-compatible</a> <a id="1779" class="Pragma">--exact-split</a> <a id="1793" class="Pragma">--safe</a> <a id="1800" class="Symbol">#-}</a>
 
-<a id="1147" class="Keyword">module</a> <a id="1154" href="Classical.Signatures.Unary.html" class="Module">Classical.Signatures.Unary</a> <a id="1181" class="Keyword">where</a>
+<a id="1805" class="Keyword">module</a> <a id="1812" href="Classical.Signatures.Unary.html" class="Module">Classical.Signatures.Unary</a> <a id="1839" class="Keyword">where</a>
 
-<a id="1188" class="Keyword">open</a> <a id="1193" class="Keyword">import</a> <a id="1200" href="Agda.Primitive.html" class="Module">Agda.Primitive</a> <a id="1215" class="Keyword">using</a> <a id="1221" class="Symbol">(</a> <a id="1223" href="Agda.Primitive.html#742" class="Postulate">Level</a> <a id="1229" class="Symbol">)</a> <a id="1231" class="Keyword">renaming</a> <a id="1240" class="Symbol">(</a> <a id="1242" href="Agda.Primitive.html#388" class="Primitive">Set</a> <a id="1246" class="Symbol">to</a> <a id="1249" class="Primitive">Type</a> <a id="1254" class="Symbol">)</a>
+<a id="1846" class="Comment">-- Imports from Agda and the Agda Standard Library ----------------------------</a>
+<a id="1926" class="Keyword">open</a> <a id="1931" class="Keyword">import</a> <a id="1938" href="Agda.Primitive.html" class="Module">Agda.Primitive</a> <a id="1953" class="Keyword">using</a> <a id="1959" class="Symbol">()</a> <a id="1962" class="Keyword">renaming</a> <a id="1971" class="Symbol">(</a> <a id="1973" href="Agda.Primitive.html#388" class="Primitive">Set</a> <a id="1977" class="Symbol">to</a> <a id="1980" class="Primitive">Type</a> <a id="1985" class="Symbol">)</a>
+<a id="1987" class="Keyword">open</a> <a id="1992" class="Keyword">import</a> <a id="1999" href="Data.Fin.Base.html" class="Module">Data.Fin.Base</a>  <a id="2014" class="Keyword">using</a> <a id="2020" class="Symbol">(</a> <a id="2022" href="Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="2026" class="Symbol">)</a>
+<a id="2028" class="Keyword">open</a> <a id="2033" class="Keyword">import</a> <a id="2040" href="Data.Product.html" class="Module">Data.Product</a>   <a id="2055" class="Keyword">using</a> <a id="2061" class="Symbol">(</a> <a id="2063" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">_,_</a> <a id="2067" class="Symbol">)</a>
+<a id="2069" class="Keyword">open</a> <a id="2074" class="Keyword">import</a> <a id="2081" href="Level.html" class="Module">Level</a>          <a id="2096" class="Keyword">using</a> <a id="2102" class="Symbol">(</a> <a id="2104" href="Agda.Primitive.html#742" class="Postulate">Level</a> <a id="2110" class="Symbol">;</a> <a id="2112" href="Level.html#521" class="Function">0ℓ</a> <a id="2115" class="Symbol">)</a>
 
-<a id="1257" class="Comment">-- Imports from the Agda Standard Library ---------------------------------------</a>
-<a id="1339" class="Keyword">open</a> <a id="1344" class="Keyword">import</a> <a id="1351" href="Data.Fin.Base.html" class="Module">Data.Fin.Base</a> <a id="1365" class="Keyword">using</a> <a id="1371" class="Symbol">(</a> <a id="1373" href="Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="1377" class="Symbol">)</a>
-<a id="1379" class="Keyword">open</a> <a id="1384" class="Keyword">import</a> <a id="1391" href="Data.Product.html" class="Module">Data.Product</a>  <a id="1405" class="Keyword">using</a> <a id="1411" class="Symbol">(</a> <a id="1413" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">_,_</a> <a id="1417" class="Symbol">)</a>
-<a id="1419" class="Keyword">open</a> <a id="1424" class="Keyword">import</a> <a id="1431" href="Level.html" class="Module">Level</a>         <a id="1445" class="Keyword">using</a> <a id="1451" class="Symbol">(</a> <a id="1453" href="Level.html#521" class="Function">0ℓ</a> <a id="1456" class="Symbol">)</a>
+<a id="2118" class="Comment">-- Imports from the Agda Universal Algebra Library ----------------------------</a>
+<a id="2198" class="Keyword">open</a> <a id="2203" class="Keyword">import</a> <a id="2210" href="Overture.Signatures.html" class="Module">Overture.Signatures</a> <a id="2230" class="Keyword">using</a> <a id="2236" class="Symbol">(</a> <a id="2238" href="Overture.Signatures.html#3218" class="Function">Signature</a> <a id="2248" class="Symbol">)</a>
+<a id="2250" class="Markup">```
+</a><a id="2254" class="Background">--&gt;
 
-<a id="1459" class="Comment">-- Imports from the Agda Universal Algebra Library ------------------------------</a>
-<a id="1541" class="Keyword">open</a> <a id="1546" class="Keyword">import</a> <a id="1553" href="Overture.Signatures.html" class="Module">Overture.Signatures</a> <a id="1573" class="Keyword">using</a> <a id="1579" class="Symbol">(</a> <a id="1581" href="Overture.Signatures.html#3218" class="Function">Signature</a> <a id="1591" class="Symbol">)</a>
-<a id="1593" class="Markup">```
-</a><a id="1597" class="Background">--&gt;
+#### The signature value
 
-</a><a id="1602" class="Markup">```agda
-</a><a id="1610" class="Comment">-- The signature with symbol set Ops, every symbol unary.</a>
-<a id="Sig-Unary"></a><a id="1668" href="Classical.Signatures.Unary.html#1668" class="Function">Sig-Unary</a> <a id="1678" class="Symbol">:</a> <a id="1680" class="Symbol">{</a><a id="1681" href="Classical.Signatures.Unary.html#1681" class="Bound">𝓞</a> <a id="1683" class="Symbol">:</a> <a id="1685" href="Agda.Primitive.html#742" class="Postulate">Level</a><a id="1690" class="Symbol">}</a> <a id="1692" class="Symbol">→</a> <a id="1694" href="Classical.Signatures.Unary.html#1249" class="Primitive">Type</a> <a id="1699" href="Classical.Signatures.Unary.html#1681" class="Bound">𝓞</a> <a id="1701" class="Symbol">→</a> <a id="1703" href="Overture.Signatures.html#3218" class="Function">Signature</a> <a id="1713" href="Classical.Signatures.Unary.html#1681" class="Bound">𝓞</a> <a id="1715" href="Level.html#521" class="Function">0ℓ</a>
-<a id="1718" href="Classical.Signatures.Unary.html#1668" class="Function">Sig-Unary</a> <a id="1728" href="Classical.Signatures.Unary.html#1728" class="Bound">Ops</a> <a id="1732" class="Symbol">=</a> <a id="1734" href="Classical.Signatures.Unary.html#1728" class="Bound">Ops</a> <a id="1738" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="1740" class="Symbol">λ</a> <a id="1742" href="Classical.Signatures.Unary.html#1742" class="Bound">_</a> <a id="1744" class="Symbol">→</a> <a id="1746" href="Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="1750" class="Number">1</a>
-<a id="1752" class="Markup">```
+One unary operation symbol per element of `A`.
+
+</a><a id="2333" class="Markup">```agda
+</a><a id="Sig-Unary"></a><a id="2341" href="Classical.Signatures.Unary.html#2341" class="Function">Sig-Unary</a> <a id="2351" class="Symbol">:</a> <a id="2353" class="Symbol">{</a><a id="2354" href="Classical.Signatures.Unary.html#2354" class="Bound">ℓ</a> <a id="2356" class="Symbol">:</a> <a id="2358" href="Agda.Primitive.html#742" class="Postulate">Level</a><a id="2363" class="Symbol">}</a> <a id="2365" class="Symbol">→</a> <a id="2367" href="Classical.Signatures.Unary.html#1980" class="Primitive">Type</a> <a id="2372" href="Classical.Signatures.Unary.html#2354" class="Bound">ℓ</a> <a id="2374" class="Symbol">→</a> <a id="2376" href="Overture.Signatures.html#3218" class="Function">Signature</a> <a id="2386" href="Classical.Signatures.Unary.html#2354" class="Bound">ℓ</a> <a id="2388" href="Level.html#521" class="Function">0ℓ</a>
+<a id="2391" href="Classical.Signatures.Unary.html#2341" class="Function">Sig-Unary</a> <a id="2401" href="Classical.Signatures.Unary.html#2401" class="Bound">A</a> <a id="2403" class="Symbol">=</a> <a id="2405" href="Classical.Signatures.Unary.html#2401" class="Bound">A</a> <a id="2407" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="2409" class="Symbol">λ</a> <a id="2411" href="Classical.Signatures.Unary.html#2411" class="Bound">_</a> <a id="2413" class="Symbol">→</a> <a id="2415" href="Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="2419" class="Number">1</a>
+<a id="2421" class="Markup">```
+</a><a id="2425" class="Background">
+--------------------------------------
 </a></pre></body></html>

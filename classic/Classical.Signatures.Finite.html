@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>Classical.Signatures.Finite</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">---
+layout: default
+file: &quot;src/Classical/Signatures/Finite.lagda.md&quot;
+title: &quot;Classical.Signatures.Finite module&quot;
+date: &quot;2026-07-12&quot;
+author: &quot;the agda-algebras development team&quot;
+---
+
+### Finite finitary witnesses for concrete signatures
+
+This is the [Classical.Signatures.Finite][] module of the [Agda Universal Algebra Library][].
+
+The record `FiniteSignature`{.AgdaRecord} of [Setoid.Signatures.Finite][] packages
+what it means for a signature to be *finite finitary*: a finite surjective
+enumeration of its operation symbols, plus the `Finitary`{.AgdaFunction} witness
+that every arity is finite.  This module supplies the following canonical sanity-check
+instances:[^1]
+
++  `Sig-Lattice`{.AgdaFunction} ([Classical.Signatures.Lattice][]): two binary
+   operation symbols; both halves of the witness are finite case splits.
++  `Sig-Unary A`{.AgdaFunction} ([Classical.Signatures.Unary][]): one unary symbol
+   per element of `A`; the witness is exactly an enumeration of `A`.
+
+#### A caveat on enumerations up to `≈` versus up to `≡`
+
+The symbol type of a signature is a bare type, so `opEnum-sur`{.AgdaField} demands
+surjectivity up to propositional equality `_≡_`.  The carrier enumeration of a
+`FiniteAlgebra`{.AgdaRecord} ([Setoid.Algebras.Finite][]) is surjective only up to
+the carrier&#39;s setoid equality `_≈_`, which is *not* enough here.  Indeed, on a
+quotient carrier the enumeration hits every element up to the coarser `≈` while
+missing raw elements up to `≡`.
+
+Consequently `Sig-Unary-FiniteSignature`{.AgdaFunction} below asks for an honest
+`_≡_`-surjective enumeration of the bare type `A` rather than for a
+`FiniteAlgebra`{.AgdaRecord} witness.  In the intended applications this costs
+nothing; in points of fact,
+
++  for a concrete finite group the raw carrier is typically `Fin n` or a finite data
+   type, where `≈` *is* `≡`;
++  the raw carrier of a quotient `G/H` is that of `G` itself, so the same bare
+   enumeration serves all coset algebras of `G` with no choice of coset
+   representatives.
+
+&lt;!--
+</a><a id="2023" class="Markup">```agda
+</a><a id="2031" class="Symbol">{-#</a> <a id="2035" class="Keyword">OPTIONS</a> <a id="2043" class="Pragma">--cubical-compatible</a> <a id="2064" class="Pragma">--exact-split</a> <a id="2078" class="Pragma">--safe</a> <a id="2085" class="Symbol">#-}</a>
+
+<a id="2090" class="Keyword">module</a> <a id="2097" href="Classical.Signatures.Finite.html" class="Module">Classical.Signatures.Finite</a> <a id="2125" class="Keyword">where</a>
+
+<a id="2132" class="Comment">-- Imports from Agda and the Agda Standard Library ----------------------------</a>
+<a id="2212" class="Keyword">open</a> <a id="2217" class="Keyword">import</a> <a id="2224" href="Agda.Primitive.html" class="Module">Agda.Primitive</a>               <a id="2253" class="Keyword">using</a> <a id="2259" class="Symbol">()</a> <a id="2262" class="Keyword">renaming</a> <a id="2271" class="Symbol">(</a> <a id="2273" href="Agda.Primitive.html#388" class="Primitive">Set</a> <a id="2277" class="Symbol">to</a> <a id="2280" class="Primitive">Type</a> <a id="2285" class="Symbol">)</a>
+<a id="2287" class="Keyword">open</a> <a id="2292" class="Keyword">import</a> <a id="2299" href="Data.Fin.Base.html" class="Module">Data.Fin.Base</a>                <a id="2328" class="Keyword">using</a> <a id="2334" class="Symbol">(</a> <a id="2336" href="Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="2340" class="Symbol">;</a> <a id="2342" href="Data.Fin.Base.html#1154" class="InductiveConstructor">zero</a> <a id="2347" class="Symbol">;</a> <a id="2349" href="Data.Fin.Base.html#1175" class="InductiveConstructor">suc</a> <a id="2353" class="Symbol">)</a>
+<a id="2355" class="Keyword">open</a> <a id="2360" class="Keyword">import</a> <a id="2367" href="Data.Nat.Base.html" class="Module">Data.Nat.Base</a>                <a id="2396" class="Keyword">using</a> <a id="2402" class="Symbol">(</a> <a id="2404" href="Agda.Builtin.Nat.html#203" class="Datatype">ℕ</a> <a id="2406" class="Symbol">)</a>
+<a id="2408" class="Keyword">open</a> <a id="2413" class="Keyword">import</a> <a id="2420" href="Data.Product.html" class="Module">Data.Product</a>                 <a id="2449" class="Keyword">using</a> <a id="2455" class="Symbol">(</a> <a id="2457" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">_,_</a> <a id="2461" class="Symbol">;</a> <a id="2463" href="Data.Product.Base.html#1371" class="Function">∃-syntax</a> <a id="2472" class="Symbol">)</a>
+<a id="2474" class="Keyword">open</a> <a id="2479" class="Keyword">import</a> <a id="2486" href="Function.Construct.Identity.html" class="Module">Function.Construct.Identity</a>  <a id="2515" class="Keyword">using</a> <a id="2521" class="Symbol">(</a> <a id="2523" href="Function.Construct.Identity.html#4621" class="Function">↔-id</a> <a id="2528" class="Symbol">)</a>
+<a id="2530" class="Keyword">open</a> <a id="2535" class="Keyword">import</a> <a id="2542" href="Level.html" class="Module">Level</a>                        <a id="2571" class="Keyword">using</a> <a id="2577" class="Symbol">(</a> <a id="2579" href="Agda.Primitive.html#742" class="Postulate">Level</a> <a id="2585" class="Symbol">)</a>
+
+<a id="2588" class="Keyword">open</a> <a id="2593" class="Keyword">import</a> <a id="2600" href="Relation.Binary.PropositionalEquality.html" class="Module">Relation.Binary.PropositionalEquality</a> <a id="2638" class="Keyword">using</a> <a id="2644" class="Symbol">(</a> <a id="2646" href="Agda.Builtin.Equality.html#150" class="Datatype Operator">_≡_</a> <a id="2650" class="Symbol">;</a> <a id="2652" href="Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="2657" class="Symbol">)</a>
+
+<a id="2660" class="Comment">-- Imports from the Agda Universal Algebra Library ----------------------------</a>
+<a id="2740" class="Keyword">open</a> <a id="2745" class="Keyword">import</a> <a id="2752" href="Classical.Signatures.Lattice.html" class="Module">Classical.Signatures.Lattice</a>  <a id="2782" class="Keyword">using</a> <a id="2788" class="Symbol">(</a> <a id="2790" href="Classical.Signatures.Lattice.html#1626" class="Function">Sig-Lattice</a> <a id="2802" class="Symbol">;</a> <a id="2804" href="Classical.Signatures.Lattice.html#1522" class="InductiveConstructor">∧-Op</a> <a id="2809" class="Symbol">;</a> <a id="2811" href="Classical.Signatures.Lattice.html#1527" class="InductiveConstructor">∨-Op</a> <a id="2816" class="Symbol">)</a>
+<a id="2818" class="Keyword">open</a> <a id="2823" class="Keyword">import</a> <a id="2830" href="Classical.Signatures.Unary.html" class="Module">Classical.Signatures.Unary</a>    <a id="2860" class="Keyword">using</a> <a id="2866" class="Symbol">(</a> <a id="2868" href="Classical.Signatures.Unary.html#2341" class="Function">Sig-Unary</a> <a id="2878" class="Symbol">)</a>
+<a id="2880" class="Keyword">open</a> <a id="2885" class="Keyword">import</a> <a id="2892" href="Setoid.Congruences.ChainJoin.html" class="Module">Setoid.Congruences.ChainJoin</a>  <a id="2922" class="Keyword">using</a> <a id="2928" class="Symbol">(</a> <a id="2930" href="Setoid.Congruences.ChainJoin.html#7787" class="Function">Finitary</a> <a id="2939" class="Symbol">)</a>
+<a id="2941" class="Keyword">open</a> <a id="2946" class="Keyword">import</a> <a id="2953" href="Setoid.Signatures.Finite.html" class="Module">Setoid.Signatures.Finite</a>      <a id="2983" class="Keyword">using</a> <a id="2989" class="Symbol">(</a> <a id="2991" href="Setoid.Signatures.Finite.html#5275" class="Record">FiniteSignature</a> <a id="3007" class="Symbol">)</a>
+
+<a id="3010" class="Keyword">open</a> <a id="3015" href="Setoid.Signatures.Finite.html#5275" class="Module">FiniteSignature</a>
+<a id="3031" class="Markup">```
+</a><a id="3035" class="Background">--&gt;
+
+#### The lattice signature is finite finitary
+
+Both lattice operation symbols are binary, so the `Finitary`{.AgdaFunction}
+witness names the identity bijection once per symbol, and the symbol enumeration
+lists the two symbols.
+
+</a><a id="3268" class="Markup">```agda
+</a><a id="3276" class="Comment">-- Each lattice operation symbol has finite arity (namely 2).</a>
+<a id="Sig-Lattice-Finitary"></a><a id="3338" href="Classical.Signatures.Finite.html#3338" class="Function">Sig-Lattice-Finitary</a> <a id="3359" class="Symbol">:</a> <a id="3361" href="Setoid.Congruences.ChainJoin.html#7787" class="Function">Finitary</a> <a id="3370" href="Classical.Signatures.Lattice.html#1626" class="Function">Sig-Lattice</a>
+<a id="3382" href="Classical.Signatures.Finite.html#3338" class="Function">Sig-Lattice-Finitary</a> <a id="3403" href="Classical.Signatures.Lattice.html#1522" class="InductiveConstructor">∧-Op</a> <a id="3408" class="Symbol">=</a> <a id="3410" class="Number">2</a> <a id="3412" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="3414" href="Function.Construct.Identity.html#4621" class="Function">↔-id</a> <a id="3419" class="Symbol">_</a>
+<a id="3421" href="Classical.Signatures.Finite.html#3338" class="Function">Sig-Lattice-Finitary</a> <a id="3442" href="Classical.Signatures.Lattice.html#1527" class="InductiveConstructor">∨-Op</a> <a id="3447" class="Symbol">=</a> <a id="3449" class="Number">2</a> <a id="3451" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="3453" href="Function.Construct.Identity.html#4621" class="Function">↔-id</a> <a id="3458" class="Symbol">_</a>
+
+<a id="3461" class="Comment">-- The lattice signature is finite finitary.</a>
+<a id="Sig-Lattice-FiniteSignature"></a><a id="3506" href="Classical.Signatures.Finite.html#3506" class="Function">Sig-Lattice-FiniteSignature</a> <a id="3534" class="Symbol">:</a> <a id="3536" href="Setoid.Signatures.Finite.html#5275" class="Record">FiniteSignature</a> <a id="3552" href="Classical.Signatures.Lattice.html#1626" class="Function">Sig-Lattice</a>
+<a id="3564" href="Classical.Signatures.Finite.html#3506" class="Function">Sig-Lattice-FiniteSignature</a> <a id="3592" class="Symbol">.</a><a id="3593" href="Setoid.Signatures.Finite.html#5344" class="Field">opCard</a>              <a id="3613" class="Symbol">=</a> <a id="3615" class="Number">2</a>
+<a id="3617" href="Classical.Signatures.Finite.html#3506" class="Function">Sig-Lattice-FiniteSignature</a> <a id="3645" class="Symbol">.</a><a id="3646" href="Setoid.Signatures.Finite.html#5364" class="Field">opEnum</a> <a id="3653" href="Data.Fin.Base.html#1154" class="InductiveConstructor">zero</a>         <a id="3666" class="Symbol">=</a> <a id="3668" href="Classical.Signatures.Lattice.html#1522" class="InductiveConstructor">∧-Op</a>
+<a id="3673" href="Classical.Signatures.Finite.html#3506" class="Function">Sig-Lattice-FiniteSignature</a> <a id="3701" class="Symbol">.</a><a id="3702" href="Setoid.Signatures.Finite.html#5364" class="Field">opEnum</a> <a id="3709" class="Symbol">(</a><a id="3710" href="Data.Fin.Base.html#1175" class="InductiveConstructor">suc</a> <a id="3714" href="Data.Fin.Base.html#1154" class="InductiveConstructor">zero</a><a id="3718" class="Symbol">)</a>   <a id="3722" class="Symbol">=</a> <a id="3724" href="Classical.Signatures.Lattice.html#1527" class="InductiveConstructor">∨-Op</a>
+<a id="3729" href="Classical.Signatures.Finite.html#3506" class="Function">Sig-Lattice-FiniteSignature</a> <a id="3757" class="Symbol">.</a><a id="3758" href="Setoid.Signatures.Finite.html#5447" class="Field">opEnum-sur</a> <a id="3769" href="Classical.Signatures.Lattice.html#1522" class="InductiveConstructor">∧-Op</a>     <a id="3778" class="Symbol">=</a> <a id="3780" href="Data.Fin.Base.html#1154" class="InductiveConstructor">zero</a> <a id="3785" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="3787" href="Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a>
+<a id="3792" href="Classical.Signatures.Finite.html#3506" class="Function">Sig-Lattice-FiniteSignature</a> <a id="3820" class="Symbol">.</a><a id="3821" href="Setoid.Signatures.Finite.html#5447" class="Field">opEnum-sur</a> <a id="3832" href="Classical.Signatures.Lattice.html#1527" class="InductiveConstructor">∨-Op</a>     <a id="3841" class="Symbol">=</a> <a id="3843" href="Data.Fin.Base.html#1175" class="InductiveConstructor">suc</a> <a id="3847" href="Data.Fin.Base.html#1154" class="InductiveConstructor">zero</a> <a id="3852" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="3854" href="Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a>
+<a id="3859" href="Classical.Signatures.Finite.html#3506" class="Function">Sig-Lattice-FiniteSignature</a> <a id="3887" class="Symbol">.</a><a id="3888" href="Setoid.Signatures.Finite.html#5514" class="Field">finitary</a>            <a id="3908" class="Symbol">=</a> <a id="3910" href="Classical.Signatures.Finite.html#3338" class="Function">Sig-Lattice-Finitary</a>
+<a id="3931" class="Markup">```
+</a><a id="3935" class="Background">
+#### The unary signature over an enumerated symbol type
+
+Given a surjective (up to `_≡_`; see the caveat above) enumeration of the bare
+type `A`, the unary signature over `A` is finite finitary: the symbol enumeration
+is the given one, and every arity is `Fin 1` definitionally.
+
+</a><a id="4216" class="Markup">```agda
+</a><a id="4224" class="Keyword">module</a> <a id="4231" href="Classical.Signatures.Finite.html#4231" class="Module">_</a> <a id="4233" class="Symbol">{</a><a id="4234" href="Classical.Signatures.Finite.html#4234" class="Bound">ℓ</a> <a id="4236" class="Symbol">:</a> <a id="4238" href="Agda.Primitive.html#742" class="Postulate">Level</a><a id="4243" class="Symbol">}{</a><a id="4245" href="Classical.Signatures.Finite.html#4245" class="Bound">A</a> <a id="4247" class="Symbol">:</a> <a id="4249" href="Classical.Signatures.Finite.html#2280" class="Primitive">Type</a> <a id="4254" href="Classical.Signatures.Finite.html#4234" class="Bound">ℓ</a><a id="4255" class="Symbol">}</a>
+         <a id="4266" class="Symbol">(</a><a id="4267" href="Classical.Signatures.Finite.html#4267" class="Bound">n</a> <a id="4269" class="Symbol">:</a> <a id="4271" href="Agda.Builtin.Nat.html#203" class="Datatype">ℕ</a><a id="4272" class="Symbol">)(</a><a id="4274" href="Classical.Signatures.Finite.html#4274" class="Bound">e</a> <a id="4276" class="Symbol">:</a> <a id="4278" href="Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="4282" href="Classical.Signatures.Finite.html#4267" class="Bound">n</a> <a id="4284" class="Symbol">→</a> <a id="4286" href="Classical.Signatures.Finite.html#4245" class="Bound">A</a><a id="4287" class="Symbol">)(</a><a id="4289" href="Classical.Signatures.Finite.html#4289" class="Bound">e-sur</a> <a id="4295" class="Symbol">:</a> <a id="4297" class="Symbol">(</a><a id="4298" href="Classical.Signatures.Finite.html#4298" class="Bound">a</a> <a id="4300" class="Symbol">:</a> <a id="4302" href="Classical.Signatures.Finite.html#4245" class="Bound">A</a><a id="4303" class="Symbol">)</a> <a id="4305" class="Symbol">→</a> <a id="4307" href="Data.Product.Base.html#1371" class="Function">∃[</a> <a id="4310" href="Classical.Signatures.Finite.html#4310" class="Bound">i</a> <a id="4312" href="Data.Product.Base.html#1371" class="Function">]</a> <a id="4314" href="Classical.Signatures.Finite.html#4274" class="Bound">e</a> <a id="4316" href="Classical.Signatures.Finite.html#4310" class="Bound">i</a> <a id="4318" href="Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="4320" href="Classical.Signatures.Finite.html#4298" class="Bound">a</a><a id="4321" class="Symbol">)</a> <a id="4323" class="Keyword">where</a>
+
+  <a id="4332" class="Comment">-- The unary signature over an enumerated symbol type is finite finitary.</a>
+  <a id="4408" href="Classical.Signatures.Finite.html#4408" class="Function">Sig-Unary-FiniteSignature</a> <a id="4434" class="Symbol">:</a> <a id="4436" href="Setoid.Signatures.Finite.html#5275" class="Record">FiniteSignature</a> <a id="4452" class="Symbol">(</a><a id="4453" href="Classical.Signatures.Unary.html#2341" class="Function">Sig-Unary</a> <a id="4463" href="Classical.Signatures.Finite.html#4245" class="Bound">A</a><a id="4464" class="Symbol">)</a>
+  <a id="4468" href="Classical.Signatures.Finite.html#4408" class="Function">Sig-Unary-FiniteSignature</a> <a id="4494" class="Symbol">.</a><a id="4495" href="Setoid.Signatures.Finite.html#5344" class="Field">opCard</a>      <a id="4507" class="Symbol">=</a> <a id="4509" href="Classical.Signatures.Finite.html#4267" class="Bound">n</a>
+  <a id="4513" href="Classical.Signatures.Finite.html#4408" class="Function">Sig-Unary-FiniteSignature</a> <a id="4539" class="Symbol">.</a><a id="4540" href="Setoid.Signatures.Finite.html#5364" class="Field">opEnum</a>      <a id="4552" class="Symbol">=</a> <a id="4554" href="Classical.Signatures.Finite.html#4274" class="Bound">e</a>
+  <a id="4558" href="Classical.Signatures.Finite.html#4408" class="Function">Sig-Unary-FiniteSignature</a> <a id="4584" class="Symbol">.</a><a id="4585" href="Setoid.Signatures.Finite.html#5447" class="Field">opEnum-sur</a>  <a id="4597" class="Symbol">=</a> <a id="4599" href="Classical.Signatures.Finite.html#4289" class="Bound">e-sur</a>
+  <a id="4607" href="Classical.Signatures.Finite.html#4408" class="Function">Sig-Unary-FiniteSignature</a> <a id="4633" class="Symbol">.</a><a id="4634" href="Setoid.Signatures.Finite.html#5514" class="Field">finitary</a> <a id="4643" class="Symbol">_</a>  <a id="4646" class="Symbol">=</a> <a id="4648" class="Number">1</a> <a id="4650" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="4652" href="Function.Construct.Identity.html#4621" class="Function">↔-id</a> <a id="4657" class="Symbol">_</a>
+<a id="4659" class="Markup">```
+</a><a id="4663" class="Background">
+--------------------------------------
+
+[^1]: We place these instances here, rather than beside the record, because concrete
+      signatures live in the `Classical/` tree and the `Setoid/` tree does not import it.
+</a></pre></body></html>
