@@ -1,0 +1,69 @@
+# =============================================================================
+#  deploy.yml — build and deploy the GitHub Pages site
+#  ----------------------------------------------------------------------------
+#
+#  This workflow replaces the legacy automatic "pages build and deployment"
+#  internal workflow, which is less reliable for cross-repository deployments.
+#
+#  The site content is pushed here from ualib/agda-algebras by the docs.yml
+#  workflow in that repository (using peaceiris/actions-gh-pages@v4 with an
+#  SSH deploy key).  That workflow must set `keep_files: true` so that this
+#  workflow file is preserved on every content push.  Without keep_files: true
+#  the workflow file is overwritten by each orphan commit and only manual
+#  (workflow_dispatch) deployments will work.
+#
+#  Triggers:
+#    push to gh-pages  — automatic deployment on every content update
+#    workflow_dispatch  — manual fallback when automatic deployment is stuck
+#
+#  Root cause of the original failure (job 85388613366, run 28796583331):
+#    actions/deploy-pages@v5 returned "Deployment failed, try again later."
+#    from the GitHub Pages API.  This is a transient Pages infrastructure
+#    error that causes the pages build and deployment internal workflow to
+#    fail.  This workflow provides a more controlled deployment path with
+#    explicit Pages source configuration via actions/configure-pages.
+# =============================================================================
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [gh-pages]
+  workflow_dispatch:
+
+# Allow only one concurrent deployment; do not cancel in-progress runs so
+# that production deployments always complete.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    name: Deploy site
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v4
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload the entire branch content as the Pages artifact.
+          # The .github/ directory is ignored by Pages automatically.
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
