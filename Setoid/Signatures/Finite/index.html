@@ -2071,9 +2071,30 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../Congruences/Finite/" class="md-nav__link">
+    
+    
+      
         
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_4_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Congruences/Finite/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -2087,7 +2108,85 @@
   
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2_4_4" id="__nav_2_2_4_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Finite
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Congruences/Finite/Basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic
+  
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Congruences/Finite/Decidable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decidable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2216,6 +2315,8 @@
       
         
       
+        
+      
     
     
     
@@ -2265,6 +2366,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Congruences/Presented/Basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -12877,7 +13006,7 @@ and for the unary signature <code class="AgdaFunction">Sig-Unary</code> <code>A<
 <a id="4740" class="Comment">-- Imports from the Agda Universal Algebra Library ----------------------------</a>
 <a id="4820" class="Keyword">open</a> <a id="4825" class="Keyword">import</a> <a id="4832" href="/Overture/" class="Module">Overture</a>                      <a id="4862" class="Keyword">using</a>  <a id="4869" class="Symbol">(</a> <a id="4871" href="/Overture/Signatures/#683" class="Generalizable">𝓞</a> <a id="4873" class="Symbol">;</a> <a id="4875" href="/Overture/Signatures/#685" class="Generalizable">𝓥</a> <a id="4877" class="Symbol">;</a> <a id="4879" href="/Overture/Signatures/#3218" class="Function">Signature</a>
                                                  <a id="4938" class="Symbol">;</a> <a id="4940" href="/Overture/Signatures/#4264" class="Function">OperationSymbolsOf</a> <a id="4959" class="Symbol">;</a> <a id="4961" href="/Overture/Signatures/#4340" class="Function">ArityOf</a> <a id="4969" class="Symbol">)</a>
-<a id="4971" class="Keyword">open</a> <a id="4976" class="Keyword">import</a> <a id="4983" href="/Setoid/Congruences/ChainJoin/" class="Module">Setoid.Congruences.ChainJoin</a>  <a id="5013" class="Keyword">using</a>  <a id="5020" class="Symbol">(</a> <a id="5022" href="/Setoid/Congruences/ChainJoin/#7787" class="Function">Finitary</a> <a id="5031" class="Symbol">)</a>
+<a id="4971" class="Keyword">open</a> <a id="4976" class="Keyword">import</a> <a id="4983" href="/Setoid/Congruences/ChainJoin/" class="Module">Setoid.Congruences.ChainJoin</a>  <a id="5013" class="Keyword">using</a>  <a id="5020" class="Symbol">(</a> <a id="5022" href="/Setoid/Congruences/ChainJoin/#7807" class="Function">Finitary</a> <a id="5031" class="Symbol">)</a>
 </pre>
 
 <h4 id="the-record">The record<a class="headerlink" href="#the-record" title="Anchor link to this section">&para;</a></h4>
@@ -12889,7 +13018,7 @@ arity type and a finite index type.</p>
     <a id="FiniteSignature.opCard"></a><a id="5344" href="/Setoid/Signatures/Finite/#5344" class="Field">opCard</a>      <a id="5356" class="Symbol">:</a> <a id="5358" href="/classic/Agda.Builtin.Nat.html#203" class="Datatype">ℕ</a>
     <a id="FiniteSignature.opEnum"></a><a id="5364" href="/Setoid/Signatures/Finite/#5364" class="Field">opEnum</a>      <a id="5376" class="Symbol">:</a> <a id="5378" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="5382" href="/Setoid/Signatures/Finite/#5344" class="Field">opCard</a> <a id="5389" class="Symbol">→</a> <a id="5391" href="/Overture/Signatures/#4264" class="Function">OperationSymbolsOf</a> <a id="5410" href="/Setoid/Signatures/Finite/#5292" class="Bound">𝑆</a>   <a id="5414" class="Comment">-- finite symbol enumeration</a>
     <a id="FiniteSignature.opEnum-sur"></a><a id="5447" href="/Setoid/Signatures/Finite/#5447" class="Field">opEnum-sur</a>  <a id="5459" class="Symbol">:</a> <a id="5461" class="Symbol">(</a><a id="5462" href="/Setoid/Signatures/Finite/#5462" class="Bound">f</a> <a id="5464" class="Symbol">:</a> <a id="5466" href="/Overture/Signatures/#4264" class="Function">OperationSymbolsOf</a> <a id="5485" href="/Setoid/Signatures/Finite/#5292" class="Bound">𝑆</a><a id="5486" class="Symbol">)</a> <a id="5488" class="Symbol">→</a> <a id="5490" href="/classic/Data.Product.Base.html#1371" class="Function">∃[</a> <a id="5493" href="/Setoid/Signatures/Finite/#5493" class="Bound">i</a> <a id="5495" href="/classic/Data.Product.Base.html#1371" class="Function">]</a> <a id="5497" href="/Setoid/Signatures/Finite/#5364" class="Field">opEnum</a> <a id="5504" href="/Setoid/Signatures/Finite/#5493" class="Bound">i</a> <a id="5506" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="5508" href="/Setoid/Signatures/Finite/#5462" class="Bound">f</a>
-    <a id="FiniteSignature.finitary"></a><a id="5514" href="/Setoid/Signatures/Finite/#5514" class="Field">finitary</a>    <a id="5526" class="Symbol">:</a> <a id="5528" href="/Setoid/Congruences/ChainJoin/#7787" class="Function">Finitary</a> <a id="5537" href="/Setoid/Signatures/Finite/#5292" class="Bound">𝑆</a>                          <a id="5564" class="Comment">-- each arity is finite</a>
+    <a id="FiniteSignature.finitary"></a><a id="5514" href="/Setoid/Signatures/Finite/#5514" class="Field">finitary</a>    <a id="5526" class="Symbol">:</a> <a id="5528" href="/Setoid/Congruences/ChainJoin/#7807" class="Function">Finitary</a> <a id="5537" href="/Setoid/Signatures/Finite/#5292" class="Bound">𝑆</a>                          <a id="5564" class="Comment">-- each arity is finite</a>
 </pre>
 <p>The derived accessors: <code class="AgdaFunction">arCard f</code> is the arity of <code>f</code> as a natural
 number, <code class="AgdaFunction">arEnum f</code> enumerates the positions of <code>f</code>'s argument

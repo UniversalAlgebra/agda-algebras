@@ -2069,9 +2069,30 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../../Setoid/Congruences/Finite/" class="md-nav__link">
+    
+    
+      
         
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_4_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Setoid/Congruences/Finite/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -2085,7 +2106,85 @@
   
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2_4_4" id="__nav_2_2_4_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Finite
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Setoid/Congruences/Finite/Basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic
+  
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Setoid/Congruences/Finite/Decidable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decidable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2214,6 +2313,8 @@
       
         
       
+        
+      
     
     
     
@@ -2263,6 +2364,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Setoid/Congruences/Presented/Basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -12836,7 +12965,7 @@ group <code>ℤ/2ℤ</code>.</p>
 <a id="1938" class="Keyword">open</a> <a id="1943" class="Keyword">import</a> <a id="1950" href="/Classical/Signatures/Monoid/" class="Module">Classical.Signatures.Monoid</a>          <a id="1987" class="Keyword">using</a> <a id="1993" class="Symbol">(</a> <a id="1995" href="/Classical/Signatures/Monoid/#1563" class="Function">Sig-Monoid</a> <a id="2006" class="Symbol">;</a> <a id="2008" href="/Classical/Signatures/Monoid/#1464" class="InductiveConstructor">∙-Op</a> <a id="2013" class="Symbol">;</a> <a id="2015" href="/Classical/Signatures/Monoid/#1469" class="InductiveConstructor">ε-Op</a> <a id="2020" class="Symbol">)</a>
 <a id="2022" class="Keyword">open</a> <a id="2027" class="Keyword">import</a> <a id="2034" href="/Overture/" class="Module">Overture</a>                             <a id="2071" class="Keyword">using</a> <a id="2077" class="Symbol">(</a> <a id="2079" href="/Overture/Signatures/#4340" class="Function">ArityOf</a> <a id="2087" class="Symbol">;</a> <a id="2089" href="/Overture/Operations/#1488" class="Function">Op</a> <a id="2092" class="Symbol">)</a>
 <a id="2094" class="Keyword">open</a> <a id="2099" class="Keyword">import</a> <a id="2106" href="/Setoid/Algebras/" class="Module">Setoid.Algebras</a> <a id="2122" class="Symbol">{</a><a id="2123" class="Argument">𝑆</a> <a id="2125" class="Symbol">=</a> <a id="2127" href="/Classical/Signatures/Monoid/#1563" class="Function">Sig-Monoid</a><a id="2137" class="Symbol">}</a>     <a id="2143" class="Keyword">using</a> <a id="2149" class="Symbol">(</a> <a id="2151" href="/Setoid/Algebras/Basic/#2913" class="Record">Algebra</a> <a id="2159" class="Symbol">;</a> <a id="2161" href="/Setoid/Algebras/Basic/#3610" class="Function Operator">𝔻[_]</a> <a id="2166" class="Symbol">;</a> <a id="2168" href="/Setoid/Algebras/Basic/#6811" class="Function">mkAlgebraₚ</a> <a id="2179" class="Symbol">;</a> <a id="2181" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">_,_</a> <a id="2185" class="Symbol">)</a>
-<a id="2187" class="Keyword">open</a> <a id="2192" class="Keyword">import</a> <a id="2199" href="/Setoid/Congruences/" class="Module">Setoid.Congruences</a> <a id="2218" class="Symbol">{</a><a id="2219" class="Argument">𝑆</a> <a id="2221" class="Symbol">=</a> <a id="2223" href="/Classical/Signatures/Monoid/#1563" class="Function">Sig-Monoid</a><a id="2233" class="Symbol">}</a>  <a id="2236" class="Keyword">using</a> <a id="2242" class="Symbol">(</a> <a id="2244" href="/Setoid/Congruences/Basic/#3191" class="Function">Con</a> <a id="2248" class="Symbol">;</a> <a id="2250" href="/Setoid/Congruences/Basic/#1825" class="Function Operator">_∣≈_</a> <a id="2255" class="Symbol">;</a> <a id="2257" href="/Setoid/Congruences/Basic/#4138" class="Function Operator">_╱_</a> <a id="2261" class="Symbol">)</a>
+<a id="2187" class="Keyword">open</a> <a id="2192" class="Keyword">import</a> <a id="2199" href="/Setoid/Congruences/" class="Module">Setoid.Congruences</a> <a id="2218" class="Symbol">{</a><a id="2219" class="Argument">𝑆</a> <a id="2221" class="Symbol">=</a> <a id="2223" href="/Classical/Signatures/Monoid/#1563" class="Function">Sig-Monoid</a><a id="2233" class="Symbol">}</a>  <a id="2236" class="Keyword">using</a> <a id="2242" class="Symbol">(</a> <a id="2244" href="/Setoid/Congruences/Basic/#3158" class="Function">Con</a> <a id="2248" class="Symbol">;</a> <a id="2250" href="/Setoid/Congruences/Basic/#1754" class="Function Operator">_∣≈_</a> <a id="2255" class="Symbol">;</a> <a id="2257" href="/Setoid/Congruences/Basic/#4190" class="Function Operator">_╱_</a> <a id="2261" class="Symbol">)</a>
 <a id="2263" class="Keyword">open</a> <a id="2268" class="Keyword">import</a> <a id="2275" href="/Setoid/Homomorphisms/Isomorphisms/" class="Module">Setoid.Homomorphisms.Isomorphisms</a>    <a id="2312" class="Keyword">using</a> <a id="2318" class="Symbol">(</a><a id="2319" href="/Setoid/Homomorphisms/Isomorphisms/#3124" class="Record Operator">_≅_</a> <a id="2323" class="Symbol">;</a> <a id="2325" href="/Setoid/Homomorphisms/Isomorphisms/#7011" class="Function">≅-mkAlgebra</a><a id="2336" class="Symbol">)</a>
 <a id="2338" class="Keyword">open</a> <a id="2343" class="Keyword">import</a> <a id="2350" href="/Setoid/Signatures/" class="Module">Setoid.Signatures</a>                    <a id="2387" class="Keyword">using</a> <a id="2393" class="Symbol">(</a> <a id="2395" href="/Setoid/Signatures/#3355" class="Function Operator">⟨_⟩</a> <a id="2399" class="Symbol">)</a>
 
@@ -12891,24 +13020,24 @@ compatibility with the nullary <code>0</code> is immediate.</p>
 <a id="4765" href="/Examples/Setoid/FiniteQuotient/#4737" class="Function">θ-isEquiv</a> <a id="4775" class="Symbol">=</a> <a id="4777" class="Keyword">record</a> <a id="4784" class="Symbol">{</a> <a id="4786" href="/classic/Relation.Binary.Structures.html#1641" class="Field">refl</a> <a id="4791" class="Symbol">=</a> <a id="4793" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="4798" class="Symbol">;</a> <a id="4800" href="/classic/Relation.Binary.Structures.html#1667" class="Field">sym</a> <a id="4804" class="Symbol">=</a> <a id="4806" href="/classic/Relation.Binary.PropositionalEquality.Core.html#2035" class="Function">sym</a> <a id="4810" class="Symbol">;</a> <a id="4812" href="/classic/Relation.Binary.Structures.html#1693" class="Field">trans</a> <a id="4818" class="Symbol">=</a> <a id="4820" href="/classic/Relation.Binary.PropositionalEquality.Core.html#2080" class="Function">trans</a> <a id="4826" class="Symbol">}</a>
 
 <a id="4829" class="Comment">-- + preserves parity:  (u₀ + u₁) % 2 ≡ (v₀ + v₁) % 2  from  uᵢ % 2 ≡ vᵢ % 2.</a>
-<a id="θ-compatible"></a><a id="4907" href="/Examples/Setoid/FiniteQuotient/#4907" class="Function">θ-compatible</a> <a id="4920" class="Symbol">:</a> <a id="4922" href="/Examples/Setoid/FiniteQuotient/#2949" class="Function">ℕ+-monoid</a> <a id="4932" href="/Setoid/Congruences/Basic/#1825" class="Function Operator">∣≈</a> <a id="4935" href="/Examples/Setoid/FiniteQuotient/#4697" class="Function">θ</a>
+<a id="θ-compatible"></a><a id="4907" href="/Examples/Setoid/FiniteQuotient/#4907" class="Function">θ-compatible</a> <a id="4920" class="Symbol">:</a> <a id="4922" href="/Examples/Setoid/FiniteQuotient/#2949" class="Function">ℕ+-monoid</a> <a id="4932" href="/Setoid/Congruences/Basic/#1754" class="Function Operator">∣≈</a> <a id="4935" href="/Examples/Setoid/FiniteQuotient/#4697" class="Function">θ</a>
 <a id="4937" href="/Examples/Setoid/FiniteQuotient/#4907" class="Function">θ-compatible</a> <a id="4950" href="/Classical/Signatures/Monoid/#1464" class="InductiveConstructor">∙-Op</a> <a id="4955" class="Symbol">{</a><a id="4956" href="/Examples/Setoid/FiniteQuotient/#4956" class="Bound">u</a><a id="4957" class="Symbol">}</a> <a id="4959" class="Symbol">{</a><a id="4960" href="/Examples/Setoid/FiniteQuotient/#4960" class="Bound">v</a><a id="4961" class="Symbol">}</a> <a id="4963" href="/Examples/Setoid/FiniteQuotient/#4963" class="Bound">h</a> <a id="4965" class="Symbol">=</a>
   <a id="4969" href="/classic/Relation.Binary.PropositionalEquality.Core.html#2080" class="Function">trans</a>  <a id="4976" class="Symbol">(</a><a id="4977" href="/classic/Data.Nat.DivMod.html#4173" class="Function">%-distribˡ-+</a> <a id="4990" class="Symbol">(</a><a id="4991" href="/Examples/Setoid/FiniteQuotient/#4956" class="Bound">u</a> <a id="4993" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a><a id="4995" class="Symbol">)</a> <a id="4997" class="Symbol">(</a><a id="4998" href="/Examples/Setoid/FiniteQuotient/#4956" class="Bound">u</a> <a id="5000" href="/classic/Data.Fin.Patterns.html#440" class="InductiveConstructor">1F</a><a id="5002" class="Symbol">)</a> <a id="5004" class="Number">2</a><a id="5005" class="Symbol">)</a>
          <a id="5016" class="Symbol">(</a><a id="5017" href="/classic/Relation.Binary.PropositionalEquality.Core.html#2080" class="Function">trans</a>  <a id="5024" class="Symbol">(</a><a id="5025" href="/classic/Relation.Binary.PropositionalEquality.Core.html#1718" class="Function">cong₂</a> <a id="5031" class="Symbol">(λ</a> <a id="5034" href="/Examples/Setoid/FiniteQuotient/#5034" class="Bound">r</a> <a id="5036" href="/Examples/Setoid/FiniteQuotient/#5036" class="Bound">s</a> <a id="5038" class="Symbol">→</a> <a id="5040" class="Symbol">(</a><a id="5041" href="/Examples/Setoid/FiniteQuotient/#5034" class="Bound">r</a> <a id="5043" href="/classic/Agda.Builtin.Nat.html#336" class="Primitive Operator">+</a> <a id="5045" href="/Examples/Setoid/FiniteQuotient/#5036" class="Bound">s</a><a id="5046" class="Symbol">)</a> <a id="5048" href="/classic/Data.Nat.Base.html#7285" class="Function Operator">%</a> <a id="5050" class="Number">2</a><a id="5051" class="Symbol">)</a> <a id="5053" class="Symbol">(</a><a id="5054" href="/Examples/Setoid/FiniteQuotient/#4963" class="Bound">h</a> <a id="5056" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a><a id="5058" class="Symbol">)</a> <a id="5060" class="Symbol">(</a><a id="5061" href="/Examples/Setoid/FiniteQuotient/#4963" class="Bound">h</a> <a id="5063" href="/classic/Data.Fin.Patterns.html#440" class="InductiveConstructor">1F</a><a id="5065" class="Symbol">))</a>
                  <a id="5085" class="Symbol">(</a><a id="5086" href="/classic/Relation.Binary.PropositionalEquality.Core.html#2035" class="Function">sym</a> <a id="5090" class="Symbol">(</a><a id="5091" href="/classic/Data.Nat.DivMod.html#4173" class="Function">%-distribˡ-+</a> <a id="5104" class="Symbol">(</a><a id="5105" href="/Examples/Setoid/FiniteQuotient/#4960" class="Bound">v</a> <a id="5107" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a><a id="5109" class="Symbol">)</a> <a id="5111" class="Symbol">(</a><a id="5112" href="/Examples/Setoid/FiniteQuotient/#4960" class="Bound">v</a> <a id="5114" href="/classic/Data.Fin.Patterns.html#440" class="InductiveConstructor">1F</a><a id="5116" class="Symbol">)</a> <a id="5118" class="Number">2</a><a id="5119" class="Symbol">)))</a>
 <a id="5123" href="/Examples/Setoid/FiniteQuotient/#4907" class="Function">θ-compatible</a> <a id="5136" href="/Classical/Signatures/Monoid/#1469" class="InductiveConstructor">ε-Op</a> <a id="5141" class="Symbol">_</a> <a id="5143" class="Symbol">=</a> <a id="5145" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a>
 
-<a id="parity"></a><a id="5151" href="/Examples/Setoid/FiniteQuotient/#5151" class="Function">parity</a> <a id="5158" class="Symbol">:</a> <a id="5160" href="/Setoid/Congruences/Basic/#3191" class="Function">Con</a> <a id="5164" href="/Examples/Setoid/FiniteQuotient/#2949" class="Function">ℕ+-monoid</a> <a id="5174" href="/classic/Level.html#521" class="Function">0ℓ</a>
-<a id="5177" href="/Examples/Setoid/FiniteQuotient/#5151" class="Function">parity</a> <a id="5184" class="Symbol">=</a> <a id="5186" href="/Examples/Setoid/FiniteQuotient/#4697" class="Function">θ</a> <a id="5188" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="5190" class="Keyword">record</a>  <a id="5198" class="Symbol">{</a> <a id="5200" href="/Setoid/Congruences/Basic/#2986" class="Field">reflexive</a>       <a id="5216" class="Symbol">=</a> <a id="5218" href="/classic/Relation.Binary.PropositionalEquality.Core.html#1481" class="Function">cong</a> <a id="5223" class="Symbol">(</a><a id="5224" href="/classic/Data.Nat.Base.html#7285" class="Function Operator">_%</a> <a id="5227" class="Number">2</a><a id="5228" class="Symbol">)</a>
-                     <a id="5251" class="Symbol">;</a> <a id="5253" href="/Setoid/Congruences/Basic/#3034" class="Field">is-equivalence</a>  <a id="5269" class="Symbol">=</a> <a id="5271" href="/Examples/Setoid/FiniteQuotient/#4737" class="Function">θ-isEquiv</a>
-                     <a id="5302" class="Symbol">;</a> <a id="5304" href="/Setoid/Congruences/Basic/#3073" class="Field">is-compatible</a>   <a id="5320" class="Symbol">=</a> <a id="5322" href="/Examples/Setoid/FiniteQuotient/#4907" class="Function">θ-compatible</a> <a id="5335" class="Symbol">}</a>
+<a id="parity"></a><a id="5151" href="/Examples/Setoid/FiniteQuotient/#5151" class="Function">parity</a> <a id="5158" class="Symbol">:</a> <a id="5160" href="/Setoid/Congruences/Basic/#3158" class="Function">Con</a> <a id="5164" href="/Examples/Setoid/FiniteQuotient/#2949" class="Function">ℕ+-monoid</a> <a id="5174" href="/classic/Level.html#521" class="Function">0ℓ</a>
+<a id="5177" href="/Examples/Setoid/FiniteQuotient/#5151" class="Function">parity</a> <a id="5184" class="Symbol">=</a> <a id="5186" href="/Examples/Setoid/FiniteQuotient/#4697" class="Function">θ</a> <a id="5188" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="5190" class="Keyword">record</a>  <a id="5198" class="Symbol">{</a> <a id="5200" href="/Setoid/Congruences/Basic/#2953" class="Field">reflexive</a>       <a id="5216" class="Symbol">=</a> <a id="5218" href="/classic/Relation.Binary.PropositionalEquality.Core.html#1481" class="Function">cong</a> <a id="5223" class="Symbol">(</a><a id="5224" href="/classic/Data.Nat.Base.html#7285" class="Function Operator">_%</a> <a id="5227" class="Number">2</a><a id="5228" class="Symbol">)</a>
+                     <a id="5251" class="Symbol">;</a> <a id="5253" href="/Setoid/Congruences/Basic/#3001" class="Field">is-equivalence</a>  <a id="5269" class="Symbol">=</a> <a id="5271" href="/Examples/Setoid/FiniteQuotient/#4737" class="Function">θ-isEquiv</a>
+                     <a id="5302" class="Symbol">;</a> <a id="5304" href="/Setoid/Congruences/Basic/#3040" class="Field">is-compatible</a>   <a id="5320" class="Symbol">=</a> <a id="5322" href="/Examples/Setoid/FiniteQuotient/#4907" class="Function">θ-compatible</a> <a id="5335" class="Symbol">}</a>
 </pre>
 <h4 id="the-quotient">The quotient <code>(ℕ, +, 0) ╱ parity ≅ ℤ/2ℤ</code><a class="headerlink" href="#the-quotient" title="Anchor link to this section">&para;</a></h4>
 <p>The carrier of the quotient is still <code class="AgdaDatatype">ℕ</code>, but its equality is parity,
 so distinct naturals of the same parity become equal.  We exhibit the two classes,
 the failure of cross-class identification, and the modular addition <code>1 + 1 ≈ 0</code>.</p>
 <pre class="Agda"><a id="ℤ/2"></a><a id="5663" href="/Examples/Setoid/FiniteQuotient/#5663" class="Function">ℤ/2</a> <a id="5667" class="Symbol">:</a> <a id="5669" href="/Setoid/Algebras/Basic/#2913" class="Record">Algebra</a> <a id="5677" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="5680" href="/classic/Level.html#521" class="Function">0ℓ</a>
-<a id="5683" href="/Examples/Setoid/FiniteQuotient/#5663" class="Function">ℤ/2</a> <a id="5687" class="Symbol">=</a> <a id="5689" href="/Examples/Setoid/FiniteQuotient/#2949" class="Function">ℕ+-monoid</a> <a id="5699" href="/Setoid/Congruences/Basic/#4138" class="Function Operator">╱</a> <a id="5701" href="/Examples/Setoid/FiniteQuotient/#5151" class="Function">parity</a>
+<a id="5683" href="/Examples/Setoid/FiniteQuotient/#5663" class="Function">ℤ/2</a> <a id="5687" class="Symbol">=</a> <a id="5689" href="/Examples/Setoid/FiniteQuotient/#2949" class="Function">ℕ+-monoid</a> <a id="5699" href="/Setoid/Congruences/Basic/#4190" class="Function Operator">╱</a> <a id="5701" href="/Examples/Setoid/FiniteQuotient/#5151" class="Function">parity</a>
 
 <a id="5709" class="Keyword">open</a> <a id="5714" href="/classic/Relation.Binary.Bundles.html#1235" class="Module">Setoid</a> <a id="5721" href="/Setoid/Algebras/Basic/#3610" class="Function Operator">𝔻[</a> <a id="5724" href="/Examples/Setoid/FiniteQuotient/#5663" class="Function">ℤ/2</a> <a id="5728" href="/Setoid/Algebras/Basic/#3610" class="Function Operator">]</a> <a id="5730" class="Keyword">using</a> <a id="5736" class="Symbol">(</a> <a id="5738" href="/classic/Relation.Binary.Bundles.html#1324" class="Field Operator">_≈_</a> <a id="5742" class="Symbol">)</a>
 

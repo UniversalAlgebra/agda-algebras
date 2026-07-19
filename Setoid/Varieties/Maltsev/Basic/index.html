@@ -2071,9 +2071,30 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../../Congruences/Finite/" class="md-nav__link">
+    
+    
+      
         
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_4_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Congruences/Finite/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -2087,7 +2108,85 @@
   
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2_4_4" id="__nav_2_2_4_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Finite
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Congruences/Finite/Basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic
+  
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Congruences/Finite/Decidable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decidable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2216,6 +2315,8 @@
       
         
       
+        
+      
     
     
     
@@ -2265,6 +2366,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Congruences/Presented/Basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -12848,7 +12977,7 @@ lives one layer up, in <a href="/Classical/Interpretations/Maltsev/">Classical.I
 <a id="2373" class="Comment">-- Imports from the Agda Universal Algebra Library ----------------------------</a>
 <a id="2453" class="Keyword">open</a> <a id="2458" class="Keyword">import</a> <a id="2465" href="/Overture/Signatures/" class="Module">Overture.Signatures</a>              <a id="2498" class="Keyword">using</a> <a id="2504" class="Symbol">(</a> <a id="2506" href="/Overture/Signatures/#683" class="Generalizable">𝓞</a> <a id="2508" class="Symbol">;</a> <a id="2510" href="/Overture/Signatures/#685" class="Generalizable">𝓥</a> <a id="2512" class="Symbol">;</a> <a id="2514" href="/Overture/Signatures/#3218" class="Function">Signature</a> <a id="2524" class="Symbol">)</a>
 <a id="2526" class="Keyword">open</a> <a id="2531" class="Keyword">import</a> <a id="2538" href="/Setoid/Algebras/Basic/" class="Module">Setoid.Algebras.Basic</a>            <a id="2571" class="Keyword">using</a> <a id="2577" class="Symbol">(</a> <a id="2579" href="/Setoid/Algebras/Basic/#2913" class="Record">Algebra</a> <a id="2587" class="Symbol">;</a> <a id="2589" href="/Setoid/Algebras/Basic/#3610" class="Function Operator">𝔻[_]</a> <a id="2594" class="Symbol">;</a> <a id="2596" href="/Setoid/Algebras/Basic/#3752" class="Function Operator">𝕌[_]</a> <a id="2601" class="Symbol">)</a>
-<a id="2603" class="Keyword">open</a> <a id="2608" class="Keyword">import</a> <a id="2615" href="/Setoid/Congruences/Basic/" class="Module">Setoid.Congruences.Basic</a>         <a id="2648" class="Keyword">using</a> <a id="2654" class="Symbol">(</a> <a id="2656" href="/Setoid/Congruences/Basic/#3191" class="Function">Con</a> <a id="2660" class="Symbol">;</a> <a id="2662" href="/Setoid/Congruences/Basic/#3073" class="Field">is-compatible</a> <a id="2676" class="Symbol">)</a>
+<a id="2603" class="Keyword">open</a> <a id="2608" class="Keyword">import</a> <a id="2615" href="/Setoid/Congruences/Basic/" class="Module">Setoid.Congruences.Basic</a>         <a id="2648" class="Keyword">using</a> <a id="2654" class="Symbol">(</a> <a id="2656" href="/Setoid/Congruences/Basic/#3158" class="Function">Con</a> <a id="2660" class="Symbol">;</a> <a id="2662" href="/Setoid/Congruences/Basic/#3040" class="Field">is-compatible</a> <a id="2676" class="Symbol">)</a>
 <a id="2678" class="Keyword">open</a> <a id="2683" class="Keyword">import</a> <a id="2690" href="/Setoid/Terms/Basic/" class="Module">Setoid.Terms.Basic</a>               <a id="2723" class="Keyword">using</a> <a id="2729" class="Symbol">(</a> <a id="2731" href="/Setoid/Terms/Basic/#3343" class="Function Operator">_[_]</a> <a id="2736" class="Symbol">;</a> <a id="2738" class="Keyword">module</a> <a id="2745" href="/Setoid/Terms/Basic/#3609" class="Module">Environment</a> <a id="2757" class="Symbol">)</a>
 <a id="2759" class="Keyword">open</a> <a id="2764" class="Keyword">import</a> <a id="2771" href="/Setoid/Varieties/Interpretation/" class="Module">Setoid.Varieties.Interpretation</a>  <a id="2804" class="Keyword">using</a> <a id="2810" class="Symbol">(</a> <a id="2812" class="Keyword">module</a> <a id="2819" href="/Setoid/Varieties/Interpretation/#10681" class="Module">Interpret</a> <a id="2829" class="Symbol">)</a>
 <a id="2831" class="Keyword">import</a> <a id="2838" href="/Overture/Terms/" class="Module">Overture.Terms</a> <a id="2853" class="Symbol">as</a> <a id="2856" class="Module">Terms</a>
@@ -12930,11 +13059,11 @@ environments are pointwise <code>ψ</code>-related at the leaves, the values of 
   <a id="5667" class="Keyword">open</a> <a id="5672" href="/Setoid/Terms/Basic/#3609" class="Module">Environment</a> <a id="5684" href="/Setoid/Varieties/Maltsev/Basic/#5632" class="Bound">𝑩</a> <a id="5686" class="Keyword">using</a> <a id="5692" class="Symbol">(</a> <a id="5694" href="/Setoid/Terms/Basic/#4659" class="Function Operator">⟦_⟧</a> <a id="5698" class="Symbol">)</a>
   <a id="5702" class="Keyword">open</a> <a id="5707" href="/Overture/Terms/" class="Module">Terms</a> <a id="5713" class="Symbol">{</a><a id="5714" class="Argument">𝑆</a> <a id="5716" class="Symbol">=</a> <a id="5718" href="/Setoid/Varieties/Maltsev/Basic/#5610" class="Bound">𝑆</a><a id="5719" class="Symbol">}</a> <a id="5721" class="Keyword">using</a> <a id="5727" class="Symbol">(</a><a id="5728" href="/Overture/Terms/Basic/#3256" class="Datatype">Term</a> <a id="5733" class="Symbol">;</a> <a id="5735" href="/Overture/Terms/Basic/#3296" class="InductiveConstructor">ℊ</a> <a id="5737" class="Symbol">;</a> <a id="5739" href="/Overture/Terms/Basic/#3368" class="InductiveConstructor">node</a><a id="5743" class="Symbol">)</a>
 
-  <a id="5748" href="/Setoid/Varieties/Maltsev/Basic/#5748" class="Function">term-compatible</a> <a id="5764" class="Symbol">:</a> <a id="5766" class="Symbol">{</a><a id="5767" href="/Setoid/Varieties/Maltsev/Basic/#5767" class="Bound">V</a> <a id="5769" class="Symbol">:</a> <a id="5771" href="/Setoid/Varieties/Maltsev/Basic/#1937" class="Primitive">Type</a> <a id="5776" href="/Setoid/Varieties/Maltsev/Basic/#2965" class="Generalizable">χ</a> <a id="5778" class="Symbol">}</a> <a id="5780" class="Symbol">(</a><a id="5781" href="/Setoid/Varieties/Maltsev/Basic/#5781" class="Symbol">(</a><a id="5782" href="/Setoid/Varieties/Maltsev/Basic/#5782" class="Bound Operator">_ψ_</a> <a id="5786" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="5788" href="/Setoid/Varieties/Maltsev/Basic/#5781" class="Symbol">_)</a> <a id="5791" class="Symbol">:</a> <a id="5793" href="/Setoid/Congruences/Basic/#3191" class="Function">Con</a> <a id="5797" href="/Setoid/Varieties/Maltsev/Basic/#5632" class="Bound">𝑩</a> <a id="5799" href="/Setoid/Varieties/Maltsev/Basic/#2967" class="Generalizable">ℓ</a> <a id="5801" class="Symbol">)</a>
+  <a id="5748" href="/Setoid/Varieties/Maltsev/Basic/#5748" class="Function">term-compatible</a> <a id="5764" class="Symbol">:</a> <a id="5766" class="Symbol">{</a><a id="5767" href="/Setoid/Varieties/Maltsev/Basic/#5767" class="Bound">V</a> <a id="5769" class="Symbol">:</a> <a id="5771" href="/Setoid/Varieties/Maltsev/Basic/#1937" class="Primitive">Type</a> <a id="5776" href="/Setoid/Varieties/Maltsev/Basic/#2965" class="Generalizable">χ</a> <a id="5778" class="Symbol">}</a> <a id="5780" class="Symbol">(</a><a id="5781" href="/Setoid/Varieties/Maltsev/Basic/#5781" class="Symbol">(</a><a id="5782" href="/Setoid/Varieties/Maltsev/Basic/#5782" class="Bound Operator">_ψ_</a> <a id="5786" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="5788" href="/Setoid/Varieties/Maltsev/Basic/#5781" class="Symbol">_)</a> <a id="5791" class="Symbol">:</a> <a id="5793" href="/Setoid/Congruences/Basic/#3158" class="Function">Con</a> <a id="5797" href="/Setoid/Varieties/Maltsev/Basic/#5632" class="Bound">𝑩</a> <a id="5799" href="/Setoid/Varieties/Maltsev/Basic/#2967" class="Generalizable">ℓ</a> <a id="5801" class="Symbol">)</a>
     <a id="5807" class="Symbol">(</a><a id="5808" href="/Setoid/Varieties/Maltsev/Basic/#5808" class="Bound">t</a> <a id="5810" class="Symbol">:</a> <a id="5812" href="/Overture/Terms/Basic/#3256" class="Datatype">Term</a> <a id="5817" href="/Setoid/Varieties/Maltsev/Basic/#5767" class="Bound">V</a> <a id="5819" class="Symbol">)</a> <a id="5821" class="Symbol">{</a><a id="5822" href="/Setoid/Varieties/Maltsev/Basic/#5822" class="Bound">η</a> <a id="5824" href="/Setoid/Varieties/Maltsev/Basic/#5824" class="Bound">η′</a>     <a id="5831" class="Symbol">:</a> <a id="5833" href="/Setoid/Varieties/Maltsev/Basic/#5767" class="Bound">V</a> <a id="5835" class="Symbol">→</a> <a id="5837" href="/Setoid/Algebras/Basic/#3752" class="Function Operator">𝕌[</a> <a id="5840" href="/Setoid/Varieties/Maltsev/Basic/#5632" class="Bound">𝑩</a> <a id="5842" href="/Setoid/Algebras/Basic/#3752" class="Function Operator">]</a> <a id="5844" class="Symbol">}</a>
     <a id="5850" class="Symbol">→</a> <a id="5852" class="Symbol">(∀</a> <a id="5855" href="/Setoid/Varieties/Maltsev/Basic/#5855" class="Bound">v</a> <a id="5857" class="Symbol">→</a> <a id="5859" class="Symbol">(</a><a id="5860" href="/Setoid/Varieties/Maltsev/Basic/#5822" class="Bound">η</a> <a id="5862" href="/Setoid/Varieties/Maltsev/Basic/#5855" class="Bound">v</a><a id="5863" class="Symbol">)</a> <a id="5865" href="/Setoid/Varieties/Maltsev/Basic/#5782" class="Bound Operator">ψ</a> <a id="5867" class="Symbol">(</a><a id="5868" href="/Setoid/Varieties/Maltsev/Basic/#5824" class="Bound">η′</a> <a id="5871" href="/Setoid/Varieties/Maltsev/Basic/#5855" class="Bound">v</a><a id="5872" class="Symbol">))</a> <a id="5875" class="Symbol">→</a> <a id="5877" class="Symbol">(</a><a id="5878" href="/Setoid/Terms/Basic/#4659" class="Function Operator">⟦</a> <a id="5880" href="/Setoid/Varieties/Maltsev/Basic/#5808" class="Bound">t</a> <a id="5882" href="/Setoid/Terms/Basic/#4659" class="Function Operator">⟧</a> <a id="5884" href="/Setoid/Varieties/Maltsev/Basic/#2935" class="Field Operator">⟨$⟩</a> <a id="5888" href="/Setoid/Varieties/Maltsev/Basic/#5822" class="Bound">η</a><a id="5889" class="Symbol">)</a> <a id="5891" href="/Setoid/Varieties/Maltsev/Basic/#5782" class="Bound Operator">ψ</a> <a id="5893" class="Symbol">(</a><a id="5894" href="/Setoid/Terms/Basic/#4659" class="Function Operator">⟦</a> <a id="5896" href="/Setoid/Varieties/Maltsev/Basic/#5808" class="Bound">t</a> <a id="5898" href="/Setoid/Terms/Basic/#4659" class="Function Operator">⟧</a> <a id="5900" href="/Setoid/Varieties/Maltsev/Basic/#2935" class="Field Operator">⟨$⟩</a> <a id="5904" href="/Setoid/Varieties/Maltsev/Basic/#5824" class="Bound">η′</a><a id="5906" class="Symbol">)</a>
   <a id="5910" href="/Setoid/Varieties/Maltsev/Basic/#5748" class="Function">term-compatible</a> <a id="5926" class="Symbol">_</a> <a id="5928" class="Symbol">(</a><a id="5929" href="/Overture/Terms/Basic/#3296" class="InductiveConstructor">ℊ</a> <a id="5931" href="/Setoid/Varieties/Maltsev/Basic/#5931" class="Bound">v</a><a id="5932" class="Symbol">)</a> <a id="5934" href="/Setoid/Varieties/Maltsev/Basic/#5934" class="Bound">h</a> <a id="5936" class="Symbol">=</a> <a id="5938" href="/Setoid/Varieties/Maltsev/Basic/#5934" class="Bound">h</a> <a id="5940" href="/Setoid/Varieties/Maltsev/Basic/#5931" class="Bound">v</a>
-  <a id="5944" href="/Setoid/Varieties/Maltsev/Basic/#5748" class="Function">term-compatible</a> <a id="5960" href="/Setoid/Varieties/Maltsev/Basic/#5960" class="Bound">ψ</a> <a id="5962" class="Symbol">(</a><a id="5963" href="/Overture/Terms/Basic/#3368" class="InductiveConstructor">node</a> <a id="5968" href="/Setoid/Varieties/Maltsev/Basic/#5968" class="Bound">f</a> <a id="5970" href="/Setoid/Varieties/Maltsev/Basic/#5970" class="Bound">ts</a><a id="5972" class="Symbol">)</a> <a id="5974" href="/Setoid/Varieties/Maltsev/Basic/#5974" class="Bound">h</a> <a id="5976" class="Symbol">=</a> <a id="5978" href="/Setoid/Congruences/Basic/#3073" class="Field">is-compatible</a> <a id="5992" class="Symbol">(</a><a id="5993" href="/Setoid/Varieties/Maltsev/Basic/#5960" class="Bound">ψ</a> <a id="5995" class="Symbol">.</a><a id="5996" href="/classic/Data.Product.Base.html#650" class="Field">proj₂</a><a id="6001" class="Symbol">)</a> <a id="6003" href="/Setoid/Varieties/Maltsev/Basic/#5968" class="Bound">f</a> <a id="6005" class="Symbol">(λ</a> <a id="6008" href="/Setoid/Varieties/Maltsev/Basic/#6008" class="Bound">i</a> <a id="6010" class="Symbol">→</a> <a id="6012" href="/Setoid/Varieties/Maltsev/Basic/#5748" class="Function">term-compatible</a> <a id="6028" href="/Setoid/Varieties/Maltsev/Basic/#5960" class="Bound">ψ</a> <a id="6030" class="Symbol">(</a><a id="6031" href="/Setoid/Varieties/Maltsev/Basic/#5970" class="Bound">ts</a> <a id="6034" href="/Setoid/Varieties/Maltsev/Basic/#6008" class="Bound">i</a><a id="6035" class="Symbol">)</a> <a id="6037" href="/Setoid/Varieties/Maltsev/Basic/#5974" class="Bound">h</a><a id="6038" class="Symbol">)</a>
+  <a id="5944" href="/Setoid/Varieties/Maltsev/Basic/#5748" class="Function">term-compatible</a> <a id="5960" href="/Setoid/Varieties/Maltsev/Basic/#5960" class="Bound">ψ</a> <a id="5962" class="Symbol">(</a><a id="5963" href="/Overture/Terms/Basic/#3368" class="InductiveConstructor">node</a> <a id="5968" href="/Setoid/Varieties/Maltsev/Basic/#5968" class="Bound">f</a> <a id="5970" href="/Setoid/Varieties/Maltsev/Basic/#5970" class="Bound">ts</a><a id="5972" class="Symbol">)</a> <a id="5974" href="/Setoid/Varieties/Maltsev/Basic/#5974" class="Bound">h</a> <a id="5976" class="Symbol">=</a> <a id="5978" href="/Setoid/Congruences/Basic/#3040" class="Field">is-compatible</a> <a id="5992" class="Symbol">(</a><a id="5993" href="/Setoid/Varieties/Maltsev/Basic/#5960" class="Bound">ψ</a> <a id="5995" class="Symbol">.</a><a id="5996" href="/classic/Data.Product.Base.html#650" class="Field">proj₂</a><a id="6001" class="Symbol">)</a> <a id="6003" href="/Setoid/Varieties/Maltsev/Basic/#5968" class="Bound">f</a> <a id="6005" class="Symbol">(λ</a> <a id="6008" href="/Setoid/Varieties/Maltsev/Basic/#6008" class="Bound">i</a> <a id="6010" class="Symbol">→</a> <a id="6012" href="/Setoid/Varieties/Maltsev/Basic/#5748" class="Function">term-compatible</a> <a id="6028" href="/Setoid/Varieties/Maltsev/Basic/#5960" class="Bound">ψ</a> <a id="6030" class="Symbol">(</a><a id="6031" href="/Setoid/Varieties/Maltsev/Basic/#5970" class="Bound">ts</a> <a id="6034" href="/Setoid/Varieties/Maltsev/Basic/#6008" class="Bound">i</a><a id="6035" class="Symbol">)</a> <a id="6037" href="/Setoid/Varieties/Maltsev/Basic/#5974" class="Bound">h</a><a id="6038" class="Symbol">)</a>
 </pre>
 <p>Finally, a function indicating the parity of a natural number is needed to split the
 Jónsson/Day "fork" identities by index in <a href="/Setoid/Varieties/Maltsev/Distributivity/">Setoid.Varieties.Maltsev.Distributivity</a>

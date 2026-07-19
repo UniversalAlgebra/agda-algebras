@@ -2069,9 +2069,30 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../../Setoid/Congruences/Finite/" class="md-nav__link">
+    
+    
+      
         
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_4_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Setoid/Congruences/Finite/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -2085,7 +2106,85 @@
   
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2_4_4" id="__nav_2_2_4_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Finite
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Setoid/Congruences/Finite/Basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic
+  
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Setoid/Congruences/Finite/Decidable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decidable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2214,6 +2313,8 @@
       
         
       
+        
+      
     
     
     
@@ -2263,6 +2364,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Setoid/Congruences/Presented/Basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -12852,7 +12981,7 @@ nothing; in points of fact,</p>
 <a id="2660" class="Comment">-- Imports from the Agda Universal Algebra Library ----------------------------</a>
 <a id="2740" class="Keyword">open</a> <a id="2745" class="Keyword">import</a> <a id="2752" href="/Classical/Signatures/Lattice/" class="Module">Classical.Signatures.Lattice</a>  <a id="2782" class="Keyword">using</a> <a id="2788" class="Symbol">(</a> <a id="2790" href="/Classical/Signatures/Lattice/#1626" class="Function">Sig-Lattice</a> <a id="2802" class="Symbol">;</a> <a id="2804" href="/Classical/Signatures/Lattice/#1522" class="InductiveConstructor">∧-Op</a> <a id="2809" class="Symbol">;</a> <a id="2811" href="/Classical/Signatures/Lattice/#1527" class="InductiveConstructor">∨-Op</a> <a id="2816" class="Symbol">)</a>
 <a id="2818" class="Keyword">open</a> <a id="2823" class="Keyword">import</a> <a id="2830" href="/Classical/Signatures/Unary/" class="Module">Classical.Signatures.Unary</a>    <a id="2860" class="Keyword">using</a> <a id="2866" class="Symbol">(</a> <a id="2868" href="/Classical/Signatures/Unary/#2341" class="Function">Sig-Unary</a> <a id="2878" class="Symbol">)</a>
-<a id="2880" class="Keyword">open</a> <a id="2885" class="Keyword">import</a> <a id="2892" href="/Setoid/Congruences/ChainJoin/" class="Module">Setoid.Congruences.ChainJoin</a>  <a id="2922" class="Keyword">using</a> <a id="2928" class="Symbol">(</a> <a id="2930" href="/Setoid/Congruences/ChainJoin/#7787" class="Function">Finitary</a> <a id="2939" class="Symbol">)</a>
+<a id="2880" class="Keyword">open</a> <a id="2885" class="Keyword">import</a> <a id="2892" href="/Setoid/Congruences/ChainJoin/" class="Module">Setoid.Congruences.ChainJoin</a>  <a id="2922" class="Keyword">using</a> <a id="2928" class="Symbol">(</a> <a id="2930" href="/Setoid/Congruences/ChainJoin/#7807" class="Function">Finitary</a> <a id="2939" class="Symbol">)</a>
 <a id="2941" class="Keyword">open</a> <a id="2946" class="Keyword">import</a> <a id="2953" href="/Setoid/Signatures/Finite/" class="Module">Setoid.Signatures.Finite</a>      <a id="2983" class="Keyword">using</a> <a id="2989" class="Symbol">(</a> <a id="2991" href="/Setoid/Signatures/Finite/#5275" class="Record">FiniteSignature</a> <a id="3007" class="Symbol">)</a>
 
 <a id="3010" class="Keyword">open</a> <a id="3015" href="/Setoid/Signatures/Finite/#5275" class="Module">FiniteSignature</a>
@@ -12863,7 +12992,7 @@ nothing; in points of fact,</p>
 witness names the identity bijection once per symbol, and the symbol enumeration
 lists the two symbols.</p>
 <pre class="Agda"><a id="3276" class="Comment">-- Each lattice operation symbol has finite arity (namely 2).</a>
-<a id="Sig-Lattice-Finitary"></a><a id="3338" href="/Classical/Signatures/Finite/#3338" class="Function">Sig-Lattice-Finitary</a> <a id="3359" class="Symbol">:</a> <a id="3361" href="/Setoid/Congruences/ChainJoin/#7787" class="Function">Finitary</a> <a id="3370" href="/Classical/Signatures/Lattice/#1626" class="Function">Sig-Lattice</a>
+<a id="Sig-Lattice-Finitary"></a><a id="3338" href="/Classical/Signatures/Finite/#3338" class="Function">Sig-Lattice-Finitary</a> <a id="3359" class="Symbol">:</a> <a id="3361" href="/Setoid/Congruences/ChainJoin/#7807" class="Function">Finitary</a> <a id="3370" href="/Classical/Signatures/Lattice/#1626" class="Function">Sig-Lattice</a>
 <a id="3382" href="/Classical/Signatures/Finite/#3338" class="Function">Sig-Lattice-Finitary</a> <a id="3403" href="/Classical/Signatures/Lattice/#1522" class="InductiveConstructor">∧-Op</a> <a id="3408" class="Symbol">=</a> <a id="3410" class="Number">2</a> <a id="3412" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="3414" href="/classic/Function.Construct.Identity.html#4621" class="Function">↔-id</a> <a id="3419" class="Symbol">_</a>
 <a id="3421" href="/Classical/Signatures/Finite/#3338" class="Function">Sig-Lattice-Finitary</a> <a id="3442" href="/Classical/Signatures/Lattice/#1527" class="InductiveConstructor">∨-Op</a> <a id="3447" class="Symbol">=</a> <a id="3449" class="Number">2</a> <a id="3451" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="3453" href="/classic/Function.Construct.Identity.html#4621" class="Function">↔-id</a> <a id="3458" class="Symbol">_</a>
 

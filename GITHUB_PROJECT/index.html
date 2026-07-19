@@ -2064,9 +2064,30 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../Setoid/Congruences/Finite/" class="md-nav__link">
+    
+    
+      
         
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_4_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../Setoid/Congruences/Finite/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -2080,7 +2101,85 @@
   
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2_4_4" id="__nav_2_2_4_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Finite
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Setoid/Congruences/Finite/Basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic
+  
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Setoid/Congruences/Finite/Decidable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decidable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2209,6 +2308,8 @@
       
         
       
+        
+      
     
     
     
@@ -2258,6 +2359,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Setoid/Congruences/Presented/Basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -18264,7 +18393,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Each RP phase has either produced results or hit its documented kill criterion.</li>
 </ul>
 <hr />
-<h3 id="issue-m6-13a-flrp-wp-1-flrpproblem-formal-statement-and-representability-predicate-452">Issue M6-13a: FLRP WP-1: FLRP.Problem — formal statement and representability predicate (#452)<a class="headerlink" href="#issue-m6-13a-flrp-wp-1-flrpproblem-formal-statement-and-representability-predicate-452" title="Anchor link to this section">&para;</a></h3>
+<h3 id="issue-m6-13a-flrp-wp-1-flrpproblem-formal-statement-and-representability-predicate-452-closed">Issue M6-13a: FLRP WP-1: FLRP.Problem — formal statement and representability predicate (#452, closed)<a class="headerlink" href="#issue-m6-13a-flrp-wp-1-flrpproblem-formal-statement-and-representability-predicate-452-closed" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>research-exploratory</code>, <code>flrp-research</code></p>
 <h2 id="description_60">Description<a class="headerlink" href="#description_60" title="Anchor link to this section">&para;</a></h2>
 <p>Create the new top-level tree <code>src/FLRP/</code> (barrel plus first submodule <code>FLRP.Problem</code>) containing the formal core of the problem: a <code>Representable</code> predicate — "there exists a finite algebra whose congruence lattice is isomorphic to <code>L</code>" — and the FLRP statement as a type, together with at least one worked instance.  Design guidance: roadmap §§ 6–7 (<code>docs/notes/flrp-research-roadmap.md</code>).  Reuse the <code>FiniteAlgebra</code> interface from <code>Setoid.Subalgebras.Subdirect.Finite</code> and the congruence lattice from <code>Setoid.Congruences.CompleteLattice</code>.</p>
@@ -18283,7 +18412,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Changes to existing modules are limited to what promotion of <code>FiniteAlgebra</code> (if needed) strictly requires.</li>
 </ul>
 <hr />
-<h3 id="issue-m6-13b-flrp-wp-2-group-action-infrastructure-subgroups-core-cosets-g-sets-subg-intervals-453">Issue M6-13b: FLRP WP-2: group-action infrastructure — subgroups, core, cosets, G-sets, Sub(G), intervals (#453)<a class="headerlink" href="#issue-m6-13b-flrp-wp-2-group-action-infrastructure-subgroups-core-cosets-g-sets-subg-intervals-453" title="Anchor link to this section">&para;</a></h3>
+<h3 id="issue-m6-13b-flrp-wp-2-group-action-infrastructure-subgroups-core-cosets-g-sets-subg-intervals-453-closed">Issue M6-13b: FLRP WP-2: group-action infrastructure — subgroups, core, cosets, G-sets, Sub(G), intervals (#453, closed)<a class="headerlink" href="#issue-m6-13b-flrp-wp-2-group-action-infrastructure-subgroups-core-cosets-g-sets-subg-intervals-453-closed" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>research-exploratory</code>, <code>flrp-research</code></p>
 <h2 id="description_61">Description<a class="headerlink" href="#description_61" title="Anchor link to this section">&para;</a></h2>
 <p>Reusable group-theoretic infrastructure needed by the Pálfy–Pudlák bridge (WP-3) and the enforceability framework (WP-4): subgroups as subalgebras with <code>Sub(G)</code> as a complete lattice (generalizing the Klein-four worked example <code>Examples.Setoid.SubgroupLattice</code>), conjugation/normality and the normal core <code>Core_G(H)</code>, cosets with the transitive coset G-set as a unary algebra, and upper intervals <code>[H, G]</code> as bounded lattices.  Per roadmap § 6 this lands in the <code>Classical/</code> and <code>Setoid/</code> trees, not in <code>FLRP/</code>, so the library gains value independently of the research program.</p>
@@ -18308,15 +18437,17 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <h2 id="description_62">Description<a class="headerlink" href="#description_62" title="Anchor link to this section">&para;</a></h2>
 <p>The first substantive FLRP theorem in the library: the congruence lattice of the transitive G-set on the cosets <code>G/H</code> is isomorphic to the upper interval <code>[H, G]</code> in <code>Sub(G)</code>.  Classical references: McKenzie–McNulty–Taylor (Lemma 4.20) and Dixon–Mortimer (Theorem 1.5A); see roadmap § 2 and the introduction of the vendored note <code>docs/papers/flrp/ieprops/</code>.  Corollary, wired into <code>FLRP.Problem</code>: every group-representable lattice is representable as the congruence lattice of a finite algebra.</p>
 <p>Depends on WP-1 and WP-2.  Part of #451.</p>
+<h2 id="scope-update-2026-07-12-adr-008">Scope update — 2026-07-12 (ADR-008)<a class="headerlink" href="#scope-update-2026-07-12-adr-008" title="Anchor link to this section">&para;</a></h2>
+<p>Per the ratified two-layer congruence discipline (<code>docs/adr/008-two-layer-congruence-discipline.md</code>; design note <code>docs/notes/flrp-two-layer-congruences.md</code> on #462), this theorem is to be stated at <strong>Layer D</strong>: for a finite group <code>G</code> carrying the standard finiteness data (surjective enumeration plus decidable equality) and a decidable subgroup <code>H</code>, the isomorphism is between the <code>DecCon</code> poset of the coset algebra and the interval <code>[H, G]</code> in <code>Sub(G)</code>, both of which are finite lattices with decidable order.  The Layer S version follows from the registered classical bridge if ever needed.  Consequently this issue now also depends on WP-7 (#466), which lands first per the ratified ordering; the corollary targets <code>Representableᵈ</code>.</p>
 <h2 id="tasks_59">Tasks<a class="headerlink" href="#tasks_59" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Congruences of the coset G-set correspond to intermediate subgroups (both directions as separate named lemmas).</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The order/lattice isomorphism <code>Con(G ↷ G/H) ≅ [H, G]</code>, assembled from small lemmas.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Corollary: group representable implies representable, in <code>FLRP.Problem</code> terms.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Congruences of the coset G-set correspond to intermediate subgroups (both directions as separate named lemmas), at Layer D.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The order/lattice isomorphism <code>Con (G ↷ G/H) ≅ [H, G]</code>, assembled from small lemmas.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Corollary: group representable implies <code>Representableᵈ</code>, in <code>FLRP.Problem</code>/<code>FLRP.ProblemDec</code> terms.</li>
 </ul>
 <h2 id="acceptance-criteria_71">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_71" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Type-checks under <code>--safe</code>; each direction of the correspondence is its own lemma; every public definition carries prose.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Type-checks under <code>--safe</code> with no classical assumptions; each direction of the correspondence is its own lemma; every public definition carries prose.</li>
 </ul>
 <hr />
 <h3 id="issue-m6-13d-flrp-wp-4-flrpenforceable-ie-cf-ie-min-ie-and-the-no-go-lemmas-455">Issue M6-13d: FLRP WP-4: FLRP.Enforceable — IE, cf-IE, min-IE, and the no-go lemmas (#455)<a class="headerlink" href="#issue-m6-13d-flrp-wp-4-flrpenforceable-ie-cf-ie-min-ie-and-the-no-go-lemmas-455" title="Anchor link to this section">&para;</a></h3>
@@ -18356,18 +18487,29 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <h3 id="issue-m6-13f-flrp-wp-6-certificate-pipeline-schema-agda-checker-gapsat-emitters-457">Issue M6-13f: FLRP WP-6: certificate pipeline — schema, Agda checker, GAP/SAT emitters (#457)<a class="headerlink" href="#issue-m6-13f-flrp-wp-6-certificate-pipeline-schema-agda-checker-gapsat-emitters-457" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>research-exploratory</code>, <code>flrp-research</code></p>
 <h2 id="description_65">Description<a class="headerlink" href="#description_65" title="Anchor link to this section">&para;</a></h2>
-<p>External searches (GAP, UACalc, SAT/model finders) must never be trusted directly: they emit finite certificate data — operation tables plus a lattice-isomorphism witness — which Agda re-checks by decision over the finite carrier, in exactly the style of <code>Examples.Classical.Lattices.L7</code>.  Build the certificate schema, the generic Agda checker, at least one emitter script, and a pilot re-verification of one thesis-era small-lattice representation end-to-end.  Search scripts and raw logs live outside <code>src/</code> (roadmap § 6; they move to a companion repo if they grow).</p>
+<p>External searches (GAP, UACalc, SAT/model finders) must never be trusted directly: they emit finite certificate data which Agda re-checks, in the style of <code>Examples.Classical.Lattices.L7</code>.  Build the certificate schema, the generic Agda checker, at least one emitter, and a pilot re-verification of one thesis-era small-lattice representation end-to-end.  Search scripts and raw logs live outside <code>src/</code> (roadmap § 6; they move to a companion repo if they grow).</p>
 <p>Depends on WP-1.  Part of #451.</p>
+<h2 id="design-fixed-2026-07-13-freese-traces">Design — fixed 2026-07-13 (Freese traces)<a class="headerlink" href="#design-fixed-2026-07-13-freese-traces" title="Anchor link to this section">&para;</a></h2>
+<p>Full design: <code>docs/notes/flrp-wp6-freese-certificates.md</code>.  Guiding principle: <strong>the checker never searches</strong> — all fixpoint iteration happens in the external engine, and Agda verifies a linear-size witness.</p>
+<ul>
+<li><strong>Per-congruence certificate</strong> for <code>θ ≑ Cg(fromPairs P)</code>: the claimed partition as a parent vector in Freese <em>normal form</em>, plus the <strong>Freese trace</strong> — the justified merge list of the <code>Cg</code> worklist algorithm of R. Freese, <em>Computing congruences efficiently</em> (https://math.hawaii.edu/~ralph/Preprints/cg2.pdf), which is literally a <code>Gen</code>-derivation skeleton (seeds ↦ <code>base</code>, translate applications ↦ operation compatibility).</li>
+<li><strong>Checker obligations</strong>, each linear and search-free: C1 trace soundness (every merge derivable); C2 claimed ⊆ generated (forest edges covered by the trace); C3 generated ⊆ claimed (contains <code>P</code>; compatibility checked on the <code>≤ n − 1</code> forest edges only, extended by symmetry/transitivity through roots).</li>
+<li><strong>Whole-lattice certificates</strong> (<code>FiniteCongruencesᵈ</code> instances, <code>Representableᵈ</code> targets): the congruence list plus, for every carrier pair, a pointer to its principal congruence with trace; order/meet/join verified definitionally by root lookups.  The union-find join and <strong>root-pair-hashing meet</strong> of R. Freese, <em>Partition algorithms</em> (https://math.hawaii.edu/~ralph/Notes/Partitions/partitions.pdf, Algorithm 4) are the <em>engine-side</em> devices for producing these tables; <code>cg2</code> supersedes that note for generation only, so the 3-pager remains the lattice-structure reference.</li>
+<li><strong>Engine</strong>: UACalc instrumented to emit its merge trace, or a ~100-line reimplementation of the <code>cg2</code> worklist algorithm in the scripts layer.</li>
+<li><strong>Non-goal (parked)</strong>: a verified in-Agda union-find.  The Layer-D abstraction boundary (<code>Cg-dec</code> is <code>Dec</code>-valued with an <code>abstract</code> implementation, #467) makes a fast decider a drop-in later if a concrete consumer ever needs in-Agda computation at scale.</li>
+<li>Background: Tarjan, <em>Efficiency of a good but not linear set union algorithm</em>, J. ACM 22 (1975) — the <code>O(m·α(m,n))</code> union-find analysis both notes rest on.</li>
+</ul>
 <h2 id="tasks_62">Tasks<a class="headerlink" href="#tasks_62" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Certificate schema (finite algebra tables, target lattice, isomorphism witness).</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Generic checker: given a certificate, decide <code>Con(𝑨) ≅ L</code> over the finite carrier.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> One emitter (GAP or SAT side) producing the schema.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Pilot: re-verify one small-lattice representation from the thesis era.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Certificate schema: normal-form parent vectors + Freese traces (per-congruence), plus the whole-lattice pointer structure (design note § 4).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Generic checker discharging obligations C1–C3 and the whole-lattice verifications, with no fixpoint iteration or search.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> One emitter producing traces (instrumented UACalc or standalone <code>cg2</code> reimplementation).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Pilot: re-verify one small-lattice representation from the thesis era end-to-end through the pipeline.</li>
 </ul>
 <h2 id="acceptance-criteria_74">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_74" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> A certificate produced by an external tool round-trips to a type-checked Agda proof with no manual editing beyond file placement.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Checking cost is linear in trace + table size (no <code>Cg-dec</code> execution in the checking path).</li>
 </ul>
 <hr />
 <h3 id="issue-m6-13g-flrp-rp-1-formalize-the-ie-framework-end-to-end-parachute-theorems-458">Issue M6-13g: FLRP RP-1: formalize the IE framework end-to-end (parachute theorems) (#458)<a class="headerlink" href="#issue-m6-13g-flrp-rp-1-formalize-the-ie-framework-end-to-end-parachute-theorems-458" title="Anchor link to this section">&para;</a></h3>
@@ -18414,6 +18556,25 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> A theorem (formalized, or paper-proved with a formal statement) settling the <code>n = 2</code> conjecture in either direction, or a documented reduction of it to named open questions.</li>
 </ul>
+<hr />
+<h3 id="issue-m6-13k-flrp-wp-7-the-decidable-layer-presented-congruences-finitealgebrad-representabled-466">Issue M6-13k: FLRP WP-7: the decidable layer — presented congruences, FiniteAlgebraᵈ, Representableᵈ (#466)<a class="headerlink" href="#issue-m6-13k-flrp-wp-7-the-decidable-layer-presented-congruences-finitealgebrad-representabled-466" title="Anchor link to this section">&para;</a></h3>
+<p><strong>Labels</strong>: <code>flrp-research</code></p>
+<h2 id="description_70">Description<a class="headerlink" href="#description_70" title="Anchor link to this section">&para;</a></h2>
+<p>Implement Layer D of the two-layer congruence discipline ratified in ADR-008 (<code>docs/adr/008-two-layer-congruence-discipline.md</code>; design note <code>docs/notes/flrp-two-layer-congruences.md</code>, PR #462): finitely presented congruences with decidable membership on finite finitary algebras, the reconstruction theorem, a constructive completeness theorem yielding <code>FiniteCongruencesᵈ</code>, the single registered classical bridge, and <code>Representableᵈ</code> as the FLRP program's working notion.  Per the ratified ordering this lands before WP-3 (#454), which will be stated at Layer D.</p>
+<p>Interface update: #465 has since split the old interface into the bare carrier record <code>FiniteAlgebra</code> (<code>Setoid.Algebras.Finite</code>, no classical content) and the congruence-side <code>FiniteCongruences</code> (<code>Setoid.Congruences.Finite</code>, home of <code>DecCon</code> and the classical <code>complete</code> field), so Layer D's constructive completeness record is the congruence-side counterpart, working name <code>FiniteCongruencesᵈ</code>.</p>
+<p>Part of #451.</p>
+<h2 id="tasks-three-pr-sized-slices">Tasks (three PR-sized slices)<a class="headerlink" href="#tasks-three-pr-sized-slices" title="Anchor link to this section">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Slice (i) — L1 + L2: <code>Cg</code> of a finite pair list on a finite finitary algebra has decidable membership (congruence-closure computation), and every <code>DecCon</code> is <code>≑</code> to <code>Cg</code> of its related-pairs list; includes fixing the Agda packaging of finite finitary signatures (audit A3).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Slice (ii) — L3 + audits: constructive completeness for <code>DecCon</code> via enumeration of Bool-valued tables; the <code>FiniteCongruencesᵈ</code> interface; audit A1 (which m6-8 consumers, in particular finite Birkhoff, survive on <code>FiniteAlgebra</code> + <code>FiniteCongruencesᵈ</code> alone) and audit A2 (WP-2 group modules are Layer-D ready).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Slice (iii) — L4 + L5: the <code>FLRP.Assumptions</code> registry with the classical bridge (<code>complete</code> of <code>FiniteCongruences</code>) as its first entry, strength documented (between WLEM and LEM at the working level); the <code>DecCon</code> poset as a finite lattice with decidable order; <code>Representableᵈ</code> and <code>FLRP-Statementᵈ</code>; the constructive <code>chain₂</code> instance; and, under the bridge, <code>Representable 𝑳 ↔ Representableᵈ 𝑳</code>.</li>
+</ul>
+<h2 id="acceptance-criteria_75">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_75" title="Anchor link to this section">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> All new modules type-check under <code>--cubical-compatible --exact-split --safe</code>; no postulates; the bridge appears only as an explicit hypothesis.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>Representableᵈ (toLattice chain₂)</code> is inhabited with no classical assumptions.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The m6-8 note gains an addendum recording the A1 audit outcome.</li>
+</ul>
 <!-- END GENERATED: milestone-6 -->
 
 <h3 id="milestone-6-dependencies">Milestone 6 Dependencies<a class="headerlink" href="#milestone-6-dependencies" title="Anchor link to this section">&para;</a></h3>
@@ -18434,7 +18595,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 
 <h3 id="issue-m7-1-extend-complexity-module-beyond-basic-and-csp-274">Issue M7-1: Extend Complexity module beyond Basic and CSP (#274)<a class="headerlink" href="#issue-m7-1-extend-complexity-module-beyond-basic-and-csp-274" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>milestone-7-csp</code>, <code>design-discussion</code></p>
-<h2 id="description_70">Description<a class="headerlink" href="#description_70" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_71">Description<a class="headerlink" href="#description_71" title="Anchor link to this section">&para;</a></h2>
 <p>The current <code>Base.Complexity</code> module has only two submodules (<code>Basic</code> and <code>CSP</code>).  The CSP module is little more than a bare definition with no theorems.  This is a separate research track from the FLRP (M6): the FLRP is about which lattices arise as congruence lattices of finite algebras, while finite-template algebraic CSP is about the complexity of constraint satisfaction problems as a function of the polymorphism clone of the underlying finite relational structure.  Both use universal algebra, but they are different questions.  Infinite-template extensions (ω-categorical, Bodirsky–Pinsker) are covered separately under M9-2.</p>
 <p>This issue is research-flavored and best decomposed after discussion.</p>
 <h2 id="tasks_63">Tasks<a class="headerlink" href="#tasks_63" title="Anchor link to this section">&para;</a></h2>
@@ -18446,7 +18607,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Specific CSP tractability classes as worked examples (Horn-SAT, 2-SAT, linear systems over finite fields).</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Statement (not necessarily proof) of the Bulatov–Zhuk algebraic dichotomy.</li>
 </ul>
-<h2 id="acceptance-criteria_75">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_75" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_76">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_76" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Polymorphism clones available as a type with basic operations.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Jeavons Galois connection is proved for a fixed finite domain, OR a clear research-plan issue is filed continuing the work.</li>
@@ -18461,7 +18622,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 
 <h3 id="issue-m8-1-publish-theorem-proof-corpus-for-llm-training-275">Issue M8-1: Publish (theorem, proof) corpus for LLM training (#275)<a class="headerlink" href="#issue-m8-1-publish-theorem-proof-corpus-for-llm-training-275" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>documentation</code>, <code>milestone-8-llm</code></p>
-<h2 id="description_71">Description<a class="headerlink" href="#description_71" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_72">Description<a class="headerlink" href="#description_72" title="Anchor link to this section">&para;</a></h2>
 <p>Once <code>Setoid/</code> and <code>Classical/</code> are stable post-M4, publish a training and retrieval corpus for language models.</p>
 <h2 id="tasks_64">Tasks<a class="headerlink" href="#tasks_64" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
@@ -18471,7 +18632,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add a CI job that regenerates the corpus on each release.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Write a short paper or blog post describing the dataset.</li>
 </ul>
-<h2 id="acceptance-criteria_76">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_76" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_77">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_77" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Dataset published with ≥ 500 (theorem, proof) records.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> CI regenerates on release.</li>
@@ -18480,7 +18641,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <hr />
 <h3 id="issue-m8-2-explore-integration-with-agda-native-air-276">Issue M8-2: Explore integration with agda-native-air (#276)<a class="headerlink" href="#issue-m8-2-explore-integration-with-agda-native-air-276" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>milestone-8-llm</code>, <code>design-discussion</code></p>
-<h2 id="description_72">Description<a class="headerlink" href="#description_72" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_73">Description<a class="headerlink" href="#description_73" title="Anchor link to this section">&para;</a></h2>
 <p><code>agda-native-air</code> (a parallel project on AI-assisted formal proof) is a natural consumer of the agda-algebras corpus.  This issue tracks the integration.  Exploratory; low-priority until <code>agda-native-air</code> stabilizes.</p>
 <h2 id="tasks_65">Tasks<a class="headerlink" href="#tasks_65" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
@@ -18488,7 +18649,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Identify any agda-algebras design choices that help or hinder agda-native-air consumption.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Write an integration report.</li>
 </ul>
-<h2 id="acceptance-criteria_77">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_77" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_78">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_78" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Integration report exists in <code>docs/integration-agda-native-air.md</code>.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Any design changes required are filed as separate issues.</li>
@@ -18501,7 +18662,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 
 <h3 id="issue-m9-1-scott-continuous-relations-on-dcpos-using-relationscontinuous-282">Issue M9-1: Scott-continuous relations on DCPOs using <code>Relations.Continuous</code> (#282)<a class="headerlink" href="#issue-m9-1-scott-continuous-relations-on-dcpos-using-relationscontinuous-282" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>design-discussion</code>, <code>milestone-9-apps</code></p>
-<h2 id="description_73">Description<a class="headerlink" href="#description_73" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_74">Description<a class="headerlink" href="#description_74" title="Anchor link to this section">&para;</a></h2>
 <p>The <code>Base.Relations.Continuous</code> formalization generalizes classical relations: the arity is an arbitrary type rather than a natural number, and compatibility with an operation is stated pointwise over that arity.  That shape turns out to be the right one for a notion with a distinguished mathematical pedigree: <strong>Scott-continuous relations on directed-complete partial orders (DCPOs)</strong>.</p>
 <p>A relation <code>R ⊆ X × Y</code> between DCPOs is <em>Scott-continuous</em> when, for every directed family <code>{(xᵢ, yᵢ)}ᵢ∈I</code> in <code>R</code>, the supremum <code>(⊔ xᵢ, ⊔ yᵢ)</code> is again in <code>R</code>.  This is a statement about arbitrary-arity suprema — the index set <code>I</code> is genuinely arbitrary — and factors through the continuous-relation API naturally.</p>
 <p>The broader context is <em>domain theory</em> in the Scott sense, which underlies the denotational semantics of typed lambda calculi, topologically-enriched model theory and partial-function spaces, and constructive analysis via Escardó's work on exhaustively searchable sets.  The Escardó connection is worth flagging: his LICS 2007 result "Infinite sets that admit fast exhaustive search" characterizes searchable sets via a topological continuity condition on their decision procedures, and provides a computability-flavored reason to care about Scott-continuous relations on specific DCPOs such as the Cantor space.</p>
@@ -18513,7 +18674,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> At least one non-trivial example: the graph of a Scott-continuous function is Scott-continuous as a relation; conversely, a single-valued Scott-continuous relation is the graph of a Scott-continuous function.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Optional stretch goal: a path to Escardó's characterization of searchable sets, formalized as far as tractable.  If <code>TypeTopology</code> is the cleanest source, import from there rather than re-derive.</li>
 </ul>
-<h2 id="acceptance-criteria_78">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_78" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_79">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_79" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> DCPO record and ScottContinuous predicate type-check.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The graph-of-continuous-function ↔ single-valued-continuous-relation characterization is proved.</li>
@@ -18531,7 +18692,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <hr />
 <h3 id="issue-m9-2-infinitary-csp-over-categorical-templates-via-continuous-relations-281">Issue M9-2: Infinitary CSP over ω-categorical templates via continuous relations (#281)<a class="headerlink" href="#issue-m9-2-infinitary-csp-over-categorical-templates-via-continuous-relations-281" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>design-discussion</code>, <code>milestone-9-apps</code></p>
-<h2 id="description_74">Description<a class="headerlink" href="#description_74" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_75">Description<a class="headerlink" href="#description_75" title="Anchor link to this section">&para;</a></h2>
 <p>The CSP module under M7 targets finite-template CSPs with finite-arity relations.  A rich body of contemporary work — most visibly the Bodirsky–Pinsker program — studies CSPs whose template is an ω-categorical structure with a countable domain and potentially infinitary relations.  The central tools there include:</p>
 <ul>
 <li><strong>Polymorphism clones of ω-categorical structures</strong>, which control CSP complexity via a topological-dynamical analog of the finite-domain algebraic approach.</li>
@@ -18568,7 +18729,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <hr />
 <h3 id="issue-m9-3-exploratory-coalgebraic-bisimulation-as-a-continuous-relation-283">Issue M9-3: Exploratory: coalgebraic bisimulation as a continuous relation (#283)<a class="headerlink" href="#issue-m9-3-exploratory-coalgebraic-bisimulation-as-a-continuous-relation-283" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>design-discussion</code>, <code>milestone-9-apps</code></p>
-<h2 id="description_75">Description<a class="headerlink" href="#description_75" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_76">Description<a class="headerlink" href="#description_76" title="Anchor link to this section">&para;</a></h2>
 <p>An exploratory issue, not a deliverable.  The goal is to read, think, and write up findings about whether the <code>Continuous</code> relation API has novel applications in coalgebra, particularly for bisimulation of non-finitary coalgebras.</p>
 <p>A bisimulation between F-coalgebras <code>(c : A → F A, d : B → F B)</code> is classically a relation <code>R ⊆ A × B</code> that lifts along <code>F</code>: if <code>(a, b) ∈ R</code> then there is a witness <code>(F R) (c a) (d b)</code>.  When <code>F</code> is a finitary polynomial functor (e.g. finite-branching trees), <code>R</code> is naturally a finite-arity relation.  When <code>F</code> is continuous — for example, the stream functor <code>F X = X × A</code>, or the unbounded-branching tree functor <code>F X = X ^ ℕ</code> — the natural witness type for a bisimilarity step is an arbitrary-arity relation.  This is where the <code>Continuous</code> API might fit.</p>
 <p>The intersection of coalgebra and classical universal algebra has many smart people (Rutten, Jacobs, Kurz, Adámek, Pattinson, et al.), but most of that work targets theoretical-CS applications (automata, regular languages, process calculi).  It is much less developed on the universal-algebra-in-the-Birkhoff-sense side.  It is plausible that low-hanging fruit remains at the intersection, but finding it requires sustained reading, not speculation.</p>
@@ -18581,7 +18742,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Identify at least one concrete formalization candidate, even if small (e.g. a bisimulation characterization of stream equality using the <code>Continuous</code> API).  If no such candidate emerges, document why.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Optional: formalize the candidate, or file a follow-up M9-3a issue.</li>
 </ul>
-<h2 id="acceptance-criteria_79">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_79" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_80">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_80" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>docs/exploration/coalgebra.md</code> exists and is at least 2000 words.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The document contains a concrete verdict: either "there is a formalization project worth pursuing" (in which case a follow-up issue is filed) or "the area is saturated / the fit is not natural" (in which case this issue is closed).</li>
@@ -18678,7 +18839,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Delete <code>_layouts/</code>, <code>_config.yml</code>, and any other Jekyll-only files at the repo root or under <code>docs/</code>.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Remove the <code>make html</code> target and replace it with <code>make site</code>; update <code>Makefile</code>, <code>README.md</code>, and <code>INSTALL.md</code> accordingly.</li>
 </ul>
-<h2 id="acceptance-criteria_80">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_80" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_81">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_81" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>make site</code> builds the full library at <code>site/</code> (or wherever MkDocs writes output) without errors.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Spot-checked rendered pages match the pre-migration archive in content; minor styling differences are acceptable.</li>
@@ -18793,7 +18954,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Coordinate with each subsequent agda-algebras release: tag, update the nixpkgs entry's source hash, bump the package version.</li>
 </ul>
 <hr />
-<h2 id="acceptance-criteria_81">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_81" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_82">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_82" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>nix-shell -p 'agdaPackages.agda-algebras'</code> produces a working environment in which <code>agda --library agda-algebras</code> resolves correctly.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The flake also exposes the library derivation: <code>nix build github:ualib/agda-algebras#lib</code> (or the post-transfer <code>agda/agda-algebras</code> URL).</li>
@@ -18840,7 +19001,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Confirm HTTPS (GitHub-provisioned certificate) is active on the apex and <code>www</code>.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Confirm a sample of legacy <code>….html</code> URLs resolve — <strong>directly</strong> now (parked at <code>ualib.org</code>), rather than via a redirect.</li>
 </ul>
-<h2 id="acceptance-criteria_82">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_82" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_83">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_83" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <code>https://agda-algebras.universalalgebra.org</code> serves the new MkDocs site over HTTPS.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> The old site is parked at its original URL (<code>ualib.org</code>) and shows a dated deprecation banner linking to the new site.</li>

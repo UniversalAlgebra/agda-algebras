@@ -2071,9 +2071,30 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../../Congruences/Finite/" class="md-nav__link">
+    
+    
+      
         
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_4_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Congruences/Finite/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -2087,7 +2108,85 @@
   
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2_4_4" id="__nav_2_2_4_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Finite
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Congruences/Finite/Basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic
+  
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Congruences/Finite/Decidable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decidable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2216,6 +2315,8 @@
       
         
       
+        
+      
     
     
     
@@ -2265,6 +2366,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Congruences/Presented/Basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -12891,7 +13020,7 @@ congruence-lattice statement about separating families, where the monolith argum
 <a id="2753" class="Comment">-- Imports from the Agda Universal Algebra Library ----------------------------</a>
 <a id="2833" class="Keyword">open</a> <a id="2838" class="Keyword">import</a> <a id="2845" href="/Setoid/Functions/" class="Module">Setoid.Functions</a>                       <a id="2884" class="Keyword">using</a>  <a id="2891" class="Symbol">(</a> <a id="2893" href="/Setoid/Functions/Injective/#2092" class="Function">IsInjective</a> <a id="2905" class="Symbol">;</a> <a id="2907" href="/Setoid/Functions/Surjective/#2049" class="Function">IsSurjective</a> <a id="2920" class="Symbol">)</a>
 <a id="2922" class="Keyword">open</a> <a id="2927" class="Keyword">import</a> <a id="2934" href="/Setoid/Algebras/" class="Module">Setoid.Algebras</a>              <a id="2963" class="Symbol">{</a><a id="2964" class="Argument">𝑆</a> <a id="2966" class="Symbol">=</a> <a id="2968" href="/Setoid/Subalgebras/Subdirect/Irreducible/#1912" class="Bound">𝑆</a><a id="2969" class="Symbol">}</a>   <a id="2973" class="Keyword">using</a>  <a id="2980" class="Symbol">(</a> <a id="2982" href="/Setoid/Algebras/Basic/#2913" class="Record">Algebra</a> <a id="2990" class="Symbol">;</a> <a id="2992" href="/Setoid/Algebras/Products/#1550" class="Function">⨅</a> <a id="2994" class="Symbol">)</a>
-<a id="2996" class="Keyword">open</a> <a id="3001" class="Keyword">import</a> <a id="3008" href="/Setoid/Congruences/" class="Module">Setoid.Congruences</a>           <a id="3037" class="Symbol">{</a><a id="3038" class="Argument">𝑆</a> <a id="3040" class="Symbol">=</a> <a id="3042" href="/Setoid/Subalgebras/Subdirect/Irreducible/#1912" class="Bound">𝑆</a><a id="3043" class="Symbol">}</a>   <a id="3047" class="Keyword">using</a>  <a id="3054" class="Symbol">(</a> <a id="3056" href="/Setoid/Congruences/Basic/#3191" class="Function">Con</a> <a id="3060" class="Symbol">)</a>
+<a id="2996" class="Keyword">open</a> <a id="3001" class="Keyword">import</a> <a id="3008" href="/Setoid/Congruences/" class="Module">Setoid.Congruences</a>           <a id="3037" class="Symbol">{</a><a id="3038" class="Argument">𝑆</a> <a id="3040" class="Symbol">=</a> <a id="3042" href="/Setoid/Subalgebras/Subdirect/Irreducible/#1912" class="Bound">𝑆</a><a id="3043" class="Symbol">}</a>   <a id="3047" class="Keyword">using</a>  <a id="3054" class="Symbol">(</a> <a id="3056" href="/Setoid/Congruences/Basic/#3158" class="Function">Con</a> <a id="3060" class="Symbol">)</a>
 <a id="3062" class="Keyword">open</a> <a id="3067" class="Keyword">import</a> <a id="3074" href="/Setoid/Homomorphisms/" class="Module">Setoid.Homomorphisms</a>         <a id="3103" class="Symbol">{</a><a id="3104" class="Argument">𝑆</a> <a id="3106" class="Symbol">=</a> <a id="3108" href="/Setoid/Subalgebras/Subdirect/Irreducible/#1912" class="Bound">𝑆</a><a id="3109" class="Symbol">}</a>   <a id="3113" class="Keyword">using</a>  <a id="3120" class="Symbol">(</a> <a id="3122" href="/Setoid/Homomorphisms/Basic/#1951" class="Function">hom</a> <a id="3126" class="Symbol">;</a> <a id="3128" href="/Setoid/Homomorphisms/Kernels/#2437" class="Function">kercon</a> <a id="3135" class="Symbol">;</a> <a id="3137" href="/Setoid/Homomorphisms/Isomorphisms/#3124" class="Record Operator">_≅_</a> <a id="3141" class="Symbol">;</a> <a id="3143" href="/Setoid/Homomorphisms/Isomorphisms/#8528" class="Function">Bijective→≅</a> <a id="3155" class="Symbol">)</a>
 <a id="3157" class="Keyword">open</a> <a id="3162" class="Keyword">import</a> <a id="3169" href="/Setoid/Congruences/Monolith/" class="Module">Setoid.Congruences.Monolith</a>  <a id="3198" class="Symbol">{</a><a id="3199" class="Argument">𝑆</a> <a id="3201" class="Symbol">=</a> <a id="3203" href="/Setoid/Subalgebras/Subdirect/Irreducible/#1912" class="Bound">𝑆</a><a id="3204" class="Symbol">}</a>   <a id="3208" class="Keyword">using</a>  <a id="3215" class="Symbol">(</a> <a id="3217" href="/Setoid/Congruences/Monolith/#5370" class="Function">HasMonolith</a> <a id="3229" class="Symbol">;</a> <a id="3231" href="/Setoid/Congruences/Monolith/#3648" class="Function">Nonzero</a> <a id="3239" class="Symbol">;</a> <a id="3241" href="/Setoid/Congruences/Monolith/#3483" class="Function">BelowDiagonal</a>
                                                           <a id="3313" class="Symbol">;</a> <a id="3315" href="/Setoid/Congruences/Monolith/#6097" class="Function">IsSubdirectlyIrreducible</a>
@@ -12910,7 +13039,7 @@ the kernels are <code>Con 𝑨 ρ</code>), and a homomorphism <code>h : 𝑨 →
 
   <a id="4018" class="Comment">-- The kernel of the i-th coordinate map: the congruence on 𝑨 whose quotient is the</a>
   <a id="4104" class="Comment">-- image of 𝑨 under projᵢ ∘ h.</a>
-  <a id="4137" href="/Setoid/Subalgebras/Subdirect/Irreducible/#4137" class="Function">kerfam</a> <a id="4144" class="Symbol">:</a> <a id="4146" href="/Setoid/Subalgebras/Subdirect/Irreducible/#3941" class="Bound">I</a> <a id="4148" class="Symbol">→</a> <a id="4150" href="/Setoid/Congruences/Basic/#3191" class="Function">Con</a> <a id="4154" href="/Setoid/Subalgebras/Subdirect/Irreducible/#3953" class="Bound">𝑨</a> <a id="4156" href="/Setoid/Subalgebras/Subdirect/Irreducible/#3967" class="Bound">ρ</a>
+  <a id="4137" href="/Setoid/Subalgebras/Subdirect/Irreducible/#4137" class="Function">kerfam</a> <a id="4144" class="Symbol">:</a> <a id="4146" href="/Setoid/Subalgebras/Subdirect/Irreducible/#3941" class="Bound">I</a> <a id="4148" class="Symbol">→</a> <a id="4150" href="/Setoid/Congruences/Basic/#3158" class="Function">Con</a> <a id="4154" href="/Setoid/Subalgebras/Subdirect/Irreducible/#3953" class="Bound">𝑨</a> <a id="4156" href="/Setoid/Subalgebras/Subdirect/Irreducible/#3967" class="Bound">ρ</a>
   <a id="4160" href="/Setoid/Subalgebras/Subdirect/Irreducible/#4137" class="Function">kerfam</a> <a id="4167" href="/Setoid/Subalgebras/Subdirect/Irreducible/#4167" class="Bound">i</a> <a id="4169" class="Symbol">=</a> <a id="4171" href="/Setoid/Homomorphisms/Kernels/#2437" class="Function">kercon</a> <a id="4178" class="Symbol">(</a><a id="4179" href="/Setoid/Subalgebras/Subdirect/Basic/#2586" class="Function">coord</a> <a id="4185" href="/Setoid/Subalgebras/Subdirect/Irreducible/#3970" class="Bound">𝒜</a> <a id="4187" href="/Setoid/Subalgebras/Subdirect/Irreducible/#3992" class="Bound">h</a> <a id="4189" href="/Setoid/Subalgebras/Subdirect/Irreducible/#4167" class="Bound">i</a><a id="4190" class="Symbol">)</a>
 </pre>
 <p>The first two bridges are <em>definitional identities</em>, recorded as <code>id</code> (the
@@ -12958,7 +13087,7 @@ below the diagonal — contradicting that <code>μ</code> is nonzero.  This is t
 honest, contrapositive reading of "<code>0ᴬ</code> is completely meet-irreducible".</p>
 <pre class="Agda"><a id="6392" class="Keyword">module</a> <a id="6399" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6399" class="Module">_</a> <a id="6401" class="Symbol">{</a><a id="6402" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6402" class="Bound">𝑨</a> <a id="6404" class="Symbol">:</a> <a id="6406" href="/Setoid/Algebras/Basic/#2913" class="Record">Algebra</a> <a id="6414" href="/Setoid/Subalgebras/Subdirect/Irreducible/#3581" class="Generalizable">α</a> <a id="6416" href="/Setoid/Subalgebras/Subdirect/Irreducible/#3583" class="Generalizable">ρ</a><a id="6417" class="Symbol">}</a> <a id="6419" class="Keyword">where</a>
 
-  <a id="6428" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6428" class="Function">monolith⇒¬all-nonzero</a> <a id="6450" class="Symbol">:</a>  <a id="6453" href="/Setoid/Congruences/Monolith/#5370" class="Function">HasMonolith</a> <a id="6465" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6402" class="Bound">𝑨</a> <a id="6467" class="Symbol">→</a> <a id="6469" class="Symbol">{</a><a id="6470" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6470" class="Bound">I</a> <a id="6472" class="Symbol">:</a> <a id="6474" href="/Setoid/Subalgebras/Subdirect/Irreducible/#2096" class="Primitive">Type</a> <a id="6479" href="/Setoid/Subalgebras/Subdirect/Irreducible/#3588" class="Generalizable">ι</a><a id="6480" class="Symbol">}(</a><a id="6482" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6482" class="Bound">θ</a> <a id="6484" class="Symbol">:</a> <a id="6486" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6470" class="Bound">I</a> <a id="6488" class="Symbol">→</a> <a id="6490" href="/Setoid/Congruences/Basic/#3191" class="Function">Con</a> <a id="6494" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6402" class="Bound">𝑨</a> <a id="6496" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6416" class="Bound">ρ</a><a id="6497" class="Symbol">)</a>
+  <a id="6428" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6428" class="Function">monolith⇒¬all-nonzero</a> <a id="6450" class="Symbol">:</a>  <a id="6453" href="/Setoid/Congruences/Monolith/#5370" class="Function">HasMonolith</a> <a id="6465" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6402" class="Bound">𝑨</a> <a id="6467" class="Symbol">→</a> <a id="6469" class="Symbol">{</a><a id="6470" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6470" class="Bound">I</a> <a id="6472" class="Symbol">:</a> <a id="6474" href="/Setoid/Subalgebras/Subdirect/Irreducible/#2096" class="Primitive">Type</a> <a id="6479" href="/Setoid/Subalgebras/Subdirect/Irreducible/#3588" class="Generalizable">ι</a><a id="6480" class="Symbol">}(</a><a id="6482" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6482" class="Bound">θ</a> <a id="6484" class="Symbol">:</a> <a id="6486" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6470" class="Bound">I</a> <a id="6488" class="Symbol">→</a> <a id="6490" href="/Setoid/Congruences/Basic/#3158" class="Function">Con</a> <a id="6494" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6402" class="Bound">𝑨</a> <a id="6496" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6416" class="Bound">ρ</a><a id="6497" class="Symbol">)</a>
                         <a id="6523" class="Symbol">→</a>  <a id="6526" href="/Setoid/Subalgebras/Subdirect/Basic/#4280" class="Function">Separates</a> <a id="6536" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6482" class="Bound">θ</a> <a id="6538" class="Symbol">→</a> <a id="6540" href="/classic/Relation.Nullary.Negation.Core.html#677" class="Function Operator">¬</a> <a id="6542" class="Symbol">(∀</a> <a id="6545" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6545" class="Bound">i</a> <a id="6547" class="Symbol">→</a> <a id="6549" href="/Setoid/Congruences/Monolith/#3648" class="Function">Nonzero</a> <a id="6557" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6402" class="Bound">𝑨</a> <a id="6559" class="Symbol">(</a><a id="6560" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6482" class="Bound">θ</a> <a id="6562" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6545" class="Bound">i</a><a id="6563" class="Symbol">))</a>
   <a id="6568" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6428" class="Function">monolith⇒¬all-nonzero</a> <a id="6590" class="Symbol">(</a><a id="6591" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6591" class="Bound">μ</a> <a id="6593" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="6595" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6595" class="Bound">mono</a><a id="6599" class="Symbol">)</a> <a id="6601" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6601" class="Bound">θ</a> <a id="6603" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6603" class="Bound">sep</a> <a id="6607" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6607" class="Bound">all-nz</a> <a id="6614" class="Symbol">=</a> <a id="6616" href="/Setoid/Congruences/Monolith/#5261" class="Field">mono-nonzero</a> <a id="6629" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6595" class="Bound">mono</a> <a id="6634" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6802" class="Function">μ-below</a>
     <a id="6646" class="Keyword">where</a>
@@ -12973,7 +13102,7 @@ assertion that the meet <code>⋂ θ</code> is below the diagonal — the exact 
 meet-irreducibility — so the two coincide.  The direct proof above additionally removes
 the <code>ρ</code>-small-index restriction that <code class="AgdaFunction">⋂</code> imposes (it is needed below for a
 <code>Fin n</code>-indexed decomposition).</p>
-<pre class="Agda">  <a id="7382" href="/Setoid/Subalgebras/Subdirect/Irreducible/#7382" class="Function">separates≡below-meet</a> <a id="7403" class="Symbol">:</a> <a id="7405" class="Symbol">{</a><a id="7406" href="/Setoid/Subalgebras/Subdirect/Irreducible/#7406" class="Bound">I</a> <a id="7408" class="Symbol">:</a> <a id="7410" href="/Setoid/Subalgebras/Subdirect/Irreducible/#2096" class="Primitive">Type</a> <a id="7415" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6416" class="Bound">ρ</a><a id="7416" class="Symbol">}(</a><a id="7418" href="/Setoid/Subalgebras/Subdirect/Irreducible/#7418" class="Bound">θ</a> <a id="7420" class="Symbol">:</a> <a id="7422" href="/Setoid/Subalgebras/Subdirect/Irreducible/#7406" class="Bound">I</a> <a id="7424" class="Symbol">→</a> <a id="7426" href="/Setoid/Congruences/Basic/#3191" class="Function">Con</a> <a id="7430" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6402" class="Bound">𝑨</a> <a id="7432" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6416" class="Bound">ρ</a><a id="7433" class="Symbol">)</a> <a id="7435" class="Symbol">→</a> <a id="7437" href="/Setoid/Subalgebras/Subdirect/Basic/#4280" class="Function">Separates</a> <a id="7447" href="/Setoid/Subalgebras/Subdirect/Irreducible/#7418" class="Bound">θ</a> <a id="7449" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="7451" href="/Setoid/Congruences/Monolith/#3483" class="Function">BelowDiagonal</a> <a id="7465" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6402" class="Bound">𝑨</a> <a id="7467" class="Symbol">(</a><a id="7468" href="/Setoid/Congruences/Monolith/#4139" class="Function">⋂</a> <a id="7470" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6402" class="Bound">𝑨</a> <a id="7472" href="/Setoid/Subalgebras/Subdirect/Irreducible/#7418" class="Bound">θ</a><a id="7473" class="Symbol">)</a>
+<pre class="Agda">  <a id="7382" href="/Setoid/Subalgebras/Subdirect/Irreducible/#7382" class="Function">separates≡below-meet</a> <a id="7403" class="Symbol">:</a> <a id="7405" class="Symbol">{</a><a id="7406" href="/Setoid/Subalgebras/Subdirect/Irreducible/#7406" class="Bound">I</a> <a id="7408" class="Symbol">:</a> <a id="7410" href="/Setoid/Subalgebras/Subdirect/Irreducible/#2096" class="Primitive">Type</a> <a id="7415" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6416" class="Bound">ρ</a><a id="7416" class="Symbol">}(</a><a id="7418" href="/Setoid/Subalgebras/Subdirect/Irreducible/#7418" class="Bound">θ</a> <a id="7420" class="Symbol">:</a> <a id="7422" href="/Setoid/Subalgebras/Subdirect/Irreducible/#7406" class="Bound">I</a> <a id="7424" class="Symbol">→</a> <a id="7426" href="/Setoid/Congruences/Basic/#3158" class="Function">Con</a> <a id="7430" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6402" class="Bound">𝑨</a> <a id="7432" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6416" class="Bound">ρ</a><a id="7433" class="Symbol">)</a> <a id="7435" class="Symbol">→</a> <a id="7437" href="/Setoid/Subalgebras/Subdirect/Basic/#4280" class="Function">Separates</a> <a id="7447" href="/Setoid/Subalgebras/Subdirect/Irreducible/#7418" class="Bound">θ</a> <a id="7449" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="7451" href="/Setoid/Congruences/Monolith/#3483" class="Function">BelowDiagonal</a> <a id="7465" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6402" class="Bound">𝑨</a> <a id="7467" class="Symbol">(</a><a id="7468" href="/Setoid/Congruences/Monolith/#4139" class="Function">⋂</a> <a id="7470" href="/Setoid/Subalgebras/Subdirect/Irreducible/#6402" class="Bound">𝑨</a> <a id="7472" href="/Setoid/Subalgebras/Subdirect/Irreducible/#7418" class="Bound">θ</a><a id="7473" class="Symbol">)</a>
   <a id="7477" href="/Setoid/Subalgebras/Subdirect/Irreducible/#7382" class="Function">separates≡below-meet</a> <a id="7498" href="/Setoid/Subalgebras/Subdirect/Irreducible/#7498" class="Bound">θ</a> <a id="7500" class="Symbol">=</a> <a id="7502" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a>
 </pre>
 <h4 id="no-nontrivial-subdirect-decomposition">No nontrivial subdirect decomposition<a class="headerlink" href="#no-nontrivial-subdirect-decomposition" title="Anchor link to this section">&para;</a></h4>
@@ -13067,7 +13196,7 @@ universe up, so the resulting meet is a <code>Con 𝑨 ℓ′</code> with <code>
 <p>Restricting to a finite, complete list of congruences does not escape the wall
 either: the complete congruence enumerations available constructively (the
 <code class="AgdaField">cons</code> field of <code class="AgdaRecord">FiniteCongruences</code> in
-<a href="/Setoid/Congruences/Finite/">Setoid.Congruences.Finite</a>) live at the absorbing level <code>clv α ρ ⊒ ρ</code>, so the
+<a href="/Setoid/Congruences/Finite/">Setoid.Congruences.Finite</a>) live at the absorbing level <code>𝓞 ⊔ 𝓥 ⊔ α ⊔ ρ ⊒ ρ</code>, so the
 finite meet is again above <code>ρ</code>.  Stating the converse cleanly would need an
 impredicative (or universe-resized) meet, or a level-generic <code>IsMonolith</code>; we record
 it here as a known limitation, as the forward direction is the one consumed

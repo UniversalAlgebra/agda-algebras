@@ -2159,9 +2159,30 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../Congruences/Finite/" class="md-nav__link">
+    
+    
+      
         
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_4_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Congruences/Finite/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -2175,7 +2196,85 @@
   
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2_4_4" id="__nav_2_2_4_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Finite
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Congruences/Finite/Basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic
+  
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Congruences/Finite/Decidable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decidable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2304,6 +2403,8 @@
       
         
       
+        
+      
     
     
     
@@ -2353,6 +2454,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Congruences/Presented/Basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -12814,70 +12943,67 @@ independent interface is <code class="AgdaRecord">FiniteCongruences</code>, defi
 <a href="/Setoid/Subalgebras/Subdirect/Finite/">Setoid.Subalgebras.Subdirect.Finite</a>.</p>
 <pre class="Agda hidden-source"><a id="1939" class="Symbol">{-#</a> <a id="1943" class="Keyword">OPTIONS</a> <a id="1951" class="Pragma">--cubical-compatible</a> <a id="1972" class="Pragma">--exact-split</a> <a id="1986" class="Pragma">--safe</a> <a id="1993" class="Symbol">#-}</a>
 
-<a id="1998" class="Keyword">open</a> <a id="2003" class="Keyword">import</a> <a id="2010" href="/Overture/" class="Module">Overture</a> <a id="2019" class="Keyword">using</a> <a id="2025" class="Symbol">(</a> <a id="2027" href="/Overture/Signatures/#683" class="Generalizable">𝓞</a> <a id="2029" class="Symbol">;</a> <a id="2031" href="/Overture/Signatures/#685" class="Generalizable">𝓥</a> <a id="2033" class="Symbol">;</a> <a id="2035" href="/Overture/Signatures/#3218" class="Function">Signature</a> <a id="2045" class="Symbol">)</a>
+<a id="1998" class="Keyword">module</a> <a id="2005" href="/Setoid/Algebras/Finite/" class="Module">Setoid.Algebras.Finite</a>  <a id="2029" class="Keyword">where</a>
 
-<a id="2048" class="Comment">-- module Setoid.Algebras.Finite {𝑆 : Signature 𝓞 𝓥} where</a>
-<a id="2107" class="Keyword">module</a> <a id="2114" href="/Setoid/Algebras/Finite/" class="Module">Setoid.Algebras.Finite</a>  <a id="2138" class="Keyword">where</a>
-<a id="2144" class="Keyword">open</a> <a id="2149" class="Keyword">import</a> <a id="2156" href="/classic/Agda.Primitive.html" class="Module">Agda.Primitive</a> <a id="2171" class="Keyword">using</a> <a id="2177" class="Symbol">()</a> <a id="2180" class="Keyword">renaming</a> <a id="2189" class="Symbol">(</a> <a id="2191" href="/classic/Agda.Primitive.html#388" class="Primitive">Set</a> <a id="2195" class="Symbol">to</a> <a id="2198" class="Primitive">Type</a> <a id="2203" class="Symbol">)</a>
+<a id="2036" class="Keyword">open</a> <a id="2041" class="Keyword">import</a> <a id="2048" href="/classic/Agda.Primitive.html" class="Module">Agda.Primitive</a> <a id="2063" class="Keyword">using</a> <a id="2069" class="Symbol">()</a> <a id="2072" class="Keyword">renaming</a> <a id="2081" class="Symbol">(</a> <a id="2083" href="/classic/Agda.Primitive.html#388" class="Primitive">Set</a> <a id="2087" class="Symbol">to</a> <a id="2090" class="Primitive">Type</a> <a id="2095" class="Symbol">)</a>
 
-<a id="2206" class="Comment">-- Imports from the Agda Standard Library -----------------------------------</a>
-<a id="2284" class="Keyword">open</a> <a id="2289" class="Keyword">import</a> <a id="2296" href="/classic/Data.Fin.Base.html" class="Module">Data.Fin.Base</a>     <a id="2314" class="Keyword">using</a> <a id="2320" class="Symbol">(</a> <a id="2322" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="2326" class="Symbol">;</a> <a id="2328" href="/classic/Data.Fin.Base.html#1154" class="InductiveConstructor">zero</a> <a id="2333" class="Symbol">)</a>
-<a id="2335" class="Keyword">open</a> <a id="2340" class="Keyword">import</a> <a id="2347" href="/classic/Data.Nat.Base.html" class="Module">Data.Nat.Base</a>     <a id="2365" class="Keyword">using</a> <a id="2371" class="Symbol">(</a> <a id="2373" href="/classic/Agda.Builtin.Nat.html#203" class="Datatype">ℕ</a> <a id="2375" class="Symbol">)</a>
-<a id="2377" class="Keyword">open</a> <a id="2382" class="Keyword">import</a> <a id="2389" href="/classic/Data.Product.html" class="Module">Data.Product</a>      <a id="2407" class="Keyword">using</a> <a id="2413" class="Symbol">(</a> <a id="2415" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">_,_</a>  <a id="2420" class="Symbol">;</a> <a id="2422" href="/classic/Data.Product.Base.html#1371" class="Function">∃-syntax</a> <a id="2431" class="Symbol">)</a>
-<a id="2433" class="Keyword">open</a> <a id="2438" class="Keyword">import</a> <a id="2445" href="/classic/Data.Unit.Base.html" class="Module">Data.Unit.Base</a>    <a id="2463" class="Keyword">using</a> <a id="2469" class="Symbol">(</a> <a id="2471" href="/classic/Agda.Builtin.Unit.html#175" class="Record">⊤</a> <a id="2473" class="Symbol">;</a> <a id="2475" href="/classic/Agda.Builtin.Unit.html#212" class="InductiveConstructor">tt</a> <a id="2478" class="Symbol">)</a>
-<a id="2480" class="Keyword">open</a> <a id="2485" class="Keyword">import</a> <a id="2492" href="/classic/Function.html" class="Module">Function</a>          <a id="2510" class="Keyword">using</a> <a id="2516" class="Symbol">(</a> <a id="2518" href="/classic/Function.Bundles.html#2041" class="Record">Func</a> <a id="2523" class="Symbol">)</a>
-<a id="2525" class="Keyword">open</a> <a id="2530" class="Keyword">import</a> <a id="2537" href="/classic/Level.html" class="Module">Level</a>             <a id="2555" class="Keyword">using</a> <a id="2561" class="Symbol">(</a> <a id="2563" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a> <a id="2569" class="Symbol">;</a> <a id="2571" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">_⊔_</a> <a id="2575" class="Symbol">;</a> <a id="2577" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="2580" class="Symbol">)</a>
-<a id="2582" class="Keyword">open</a> <a id="2587" class="Keyword">import</a> <a id="2594" href="/classic/Relation.Binary.html" class="Module">Relation.Binary</a>   <a id="2612" class="Keyword">using</a> <a id="2618" class="Symbol">(</a> <a id="2620" href="/classic/Relation.Binary.Bundles.html#1235" class="Record">Setoid</a> <a id="2627" class="Symbol">)</a>
-<a id="2629" class="Keyword">open</a> <a id="2634" class="Keyword">import</a> <a id="2641" href="/classic/Relation.Nullary.html" class="Module">Relation.Nullary</a>  <a id="2659" class="Keyword">using</a> <a id="2665" class="Symbol">(</a> <a id="2667" href="/classic/Relation.Nullary.Decidable.Core.html#1966" class="Record">Dec</a> <a id="2671" class="Symbol">;</a> <a id="2673" href="/classic/Relation.Nullary.Decidable.Core.html#2099" class="InductiveConstructor">yes</a> <a id="2677" class="Symbol">)</a>
+<a id="2098" class="Comment">-- Imports from the Agda Standard Library -----------------------------------</a>
+<a id="2176" class="Keyword">open</a> <a id="2181" class="Keyword">import</a> <a id="2188" href="/classic/Data.Fin.Base.html" class="Module">Data.Fin.Base</a>     <a id="2206" class="Keyword">using</a> <a id="2212" class="Symbol">(</a> <a id="2214" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="2218" class="Symbol">;</a> <a id="2220" href="/classic/Data.Fin.Base.html#1154" class="InductiveConstructor">zero</a> <a id="2225" class="Symbol">)</a>
+<a id="2227" class="Keyword">open</a> <a id="2232" class="Keyword">import</a> <a id="2239" href="/classic/Data.Nat.Base.html" class="Module">Data.Nat.Base</a>     <a id="2257" class="Keyword">using</a> <a id="2263" class="Symbol">(</a> <a id="2265" href="/classic/Agda.Builtin.Nat.html#203" class="Datatype">ℕ</a> <a id="2267" class="Symbol">)</a>
+<a id="2269" class="Keyword">open</a> <a id="2274" class="Keyword">import</a> <a id="2281" href="/classic/Data.Product.html" class="Module">Data.Product</a>      <a id="2299" class="Keyword">using</a> <a id="2305" class="Symbol">(</a> <a id="2307" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">_,_</a>  <a id="2312" class="Symbol">;</a> <a id="2314" href="/classic/Data.Product.Base.html#1371" class="Function">∃-syntax</a> <a id="2323" class="Symbol">)</a>
+<a id="2325" class="Keyword">open</a> <a id="2330" class="Keyword">import</a> <a id="2337" href="/classic/Data.Unit.Base.html" class="Module">Data.Unit.Base</a>    <a id="2355" class="Keyword">using</a> <a id="2361" class="Symbol">(</a> <a id="2363" href="/classic/Agda.Builtin.Unit.html#175" class="Record">⊤</a> <a id="2365" class="Symbol">;</a> <a id="2367" href="/classic/Agda.Builtin.Unit.html#212" class="InductiveConstructor">tt</a> <a id="2370" class="Symbol">)</a>
+<a id="2372" class="Keyword">open</a> <a id="2377" class="Keyword">import</a> <a id="2384" href="/classic/Function.html" class="Module">Function</a>          <a id="2402" class="Keyword">using</a> <a id="2408" class="Symbol">(</a> <a id="2410" href="/classic/Function.Bundles.html#2041" class="Record">Func</a> <a id="2415" class="Symbol">)</a>
+<a id="2417" class="Keyword">open</a> <a id="2422" class="Keyword">import</a> <a id="2429" href="/classic/Level.html" class="Module">Level</a>             <a id="2447" class="Keyword">using</a> <a id="2453" class="Symbol">(</a> <a id="2455" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a> <a id="2461" class="Symbol">;</a> <a id="2463" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">_⊔_</a> <a id="2467" class="Symbol">;</a> <a id="2469" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="2472" class="Symbol">)</a>
+<a id="2474" class="Keyword">open</a> <a id="2479" class="Keyword">import</a> <a id="2486" href="/classic/Relation.Binary.html" class="Module">Relation.Binary</a>   <a id="2504" class="Keyword">using</a> <a id="2510" class="Symbol">(</a> <a id="2512" href="/classic/Relation.Binary.Bundles.html#1235" class="Record">Setoid</a> <a id="2519" class="Symbol">)</a>
+<a id="2521" class="Keyword">open</a> <a id="2526" class="Keyword">import</a> <a id="2533" href="/classic/Relation.Nullary.html" class="Module">Relation.Nullary</a>  <a id="2551" class="Keyword">using</a> <a id="2557" class="Symbol">(</a> <a id="2559" href="/classic/Relation.Nullary.Decidable.Core.html#1966" class="Record">Dec</a> <a id="2563" class="Symbol">;</a> <a id="2565" href="/classic/Relation.Nullary.Decidable.Core.html#2099" class="InductiveConstructor">yes</a> <a id="2569" class="Symbol">)</a>
 
-<a id="2680" class="Comment">-- Imports from the Agda Universal Algebra Library ----------------------------</a>
-<a id="2760" class="Keyword">open</a> <a id="2765" class="Keyword">import</a> <a id="2772" href="/Setoid/Algebras/Basic/" class="Module">Setoid.Algebras.Basic</a>  <a id="2795" class="Keyword">using</a> <a id="2801" class="Symbol">(</a> <a id="2803" href="/Setoid/Algebras/Basic/#2913" class="Record">Algebra</a> <a id="2811" class="Symbol">;</a> <a id="2813" href="/Setoid/Algebras/Basic/#3752" class="Function Operator">𝕌[_]</a> <a id="2818" class="Symbol">;</a> <a id="2820" href="/Setoid/Algebras/Basic/#3610" class="Function Operator">𝔻[_]</a> <a id="2825" class="Symbol">)</a>
+<a id="2572" class="Comment">-- Imports from the Agda Universal Algebra Library ----------------------------</a>
+<a id="2652" class="Keyword">open</a> <a id="2657" class="Keyword">import</a> <a id="2664" href="/Overture/" class="Module">Overture</a>               <a id="2687" class="Keyword">using</a> <a id="2693" class="Symbol">(</a> <a id="2695" href="/Overture/Signatures/#683" class="Generalizable">𝓞</a> <a id="2697" class="Symbol">;</a> <a id="2699" href="/Overture/Signatures/#685" class="Generalizable">𝓥</a> <a id="2701" class="Symbol">;</a> <a id="2703" href="/Overture/Signatures/#3218" class="Function">Signature</a> <a id="2713" class="Symbol">)</a>
+<a id="2715" class="Keyword">open</a> <a id="2720" class="Keyword">import</a> <a id="2727" href="/Setoid/Algebras/Basic/" class="Module">Setoid.Algebras.Basic</a>  <a id="2750" class="Keyword">using</a> <a id="2756" class="Symbol">(</a> <a id="2758" href="/Setoid/Algebras/Basic/#2913" class="Record">Algebra</a> <a id="2766" class="Symbol">;</a> <a id="2768" href="/Setoid/Algebras/Basic/#3752" class="Function Operator">𝕌[_]</a> <a id="2773" class="Symbol">;</a> <a id="2775" href="/Setoid/Algebras/Basic/#3610" class="Function Operator">𝔻[_]</a> <a id="2780" class="Symbol">)</a>
 
-<a id="2828" class="Keyword">open</a> <a id="2833" href="/Setoid/Algebras/Basic/#2913" class="Module">Algebra</a>  <a id="2842" class="Keyword">using</a> <a id="2848" class="Symbol">(</a> <a id="2850" href="/Setoid/Algebras/Basic/#2973" class="Field">Domain</a> <a id="2857" class="Symbol">;</a> <a id="2859" href="/Setoid/Algebras/Basic/#2997" class="Field">Interp</a> <a id="2866" class="Symbol">)</a>
-<a id="2868" class="Keyword">open</a> <a id="2873" href="/classic/Function.Bundles.html#2041" class="Module">Func</a>     <a id="2882" class="Keyword">using</a> <a id="2888" class="Symbol">(</a> <a id="2890" href="/classic/Function.Bundles.html#2111" class="Field">cong</a> <a id="2895" class="Symbol">)</a> <a id="2897" class="Keyword">renaming</a> <a id="2906" class="Symbol">(</a> <a id="2908" href="/classic/Function.Bundles.html#2092" class="Field">to</a> <a id="2911" class="Symbol">to</a> <a id="2914" class="Field">_⟨$⟩_</a> <a id="2920" class="Symbol">)</a>
-<a id="2922" class="Keyword">open</a> <a id="2927" href="/classic/Relation.Binary.Structures.html#1595" class="Module">Relation.Binary.IsEquivalence</a>
+<a id="2783" class="Keyword">open</a> <a id="2788" href="/Setoid/Algebras/Basic/#2913" class="Module">Algebra</a>  <a id="2797" class="Keyword">using</a> <a id="2803" class="Symbol">(</a> <a id="2805" href="/Setoid/Algebras/Basic/#2973" class="Field">Domain</a> <a id="2812" class="Symbol">;</a> <a id="2814" href="/Setoid/Algebras/Basic/#2997" class="Field">Interp</a> <a id="2821" class="Symbol">)</a>
+<a id="2823" class="Keyword">open</a> <a id="2828" href="/classic/Function.Bundles.html#2041" class="Module">Func</a>     <a id="2837" class="Keyword">using</a> <a id="2843" class="Symbol">(</a> <a id="2845" href="/classic/Function.Bundles.html#2111" class="Field">cong</a> <a id="2850" class="Symbol">)</a> <a id="2852" class="Keyword">renaming</a> <a id="2861" class="Symbol">(</a> <a id="2863" href="/classic/Function.Bundles.html#2092" class="Field">to</a> <a id="2866" class="Symbol">to</a> <a id="2869" class="Field">_⟨$⟩_</a> <a id="2875" class="Symbol">)</a>
+<a id="2877" class="Keyword">open</a> <a id="2882" href="/classic/Relation.Binary.Structures.html#1595" class="Module">Relation.Binary.IsEquivalence</a>
 
-
-<a id="2959" class="Keyword">private</a> <a id="2967" class="Keyword">variable</a>
-  <a id="2978" href="/Setoid/Algebras/Finite/#2978" class="Generalizable">α</a> <a id="2980" href="/Setoid/Algebras/Finite/#2980" class="Generalizable">ρ</a> <a id="2982" class="Symbol">:</a> <a id="2984" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a>
+<a id="2913" class="Keyword">private</a> <a id="2921" class="Keyword">variable</a> <a id="2930" href="/Setoid/Algebras/Finite/#2930" class="Generalizable">α</a> <a id="2932" href="/Setoid/Algebras/Finite/#2932" class="Generalizable">ρ</a> <a id="2934" class="Symbol">:</a> <a id="2936" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a>
 </pre>
 
 <h4 id="the-bare-finiteness-interface">The bare finiteness interface<a class="headerlink" href="#the-bare-finiteness-interface" title="Anchor link to this section">&para;</a></h4>
 <p>A <strong>finite algebra</strong> is an algebra together with a decision procedure for its setoid
 equality and a surjective enumeration of its carrier by a finite index type.</p>
-<pre class="Agda"><a id="3206" class="Keyword">module</a> <a id="3213" href="/Setoid/Algebras/Finite/#3213" class="Module">_</a> <a id="3215" class="Symbol">{</a><a id="3216" href="/Setoid/Algebras/Finite/#3216" class="Bound">𝑆</a> <a id="3218" class="Symbol">:</a> <a id="3220" href="/Overture/Signatures/#3218" class="Function">Signature</a> <a id="3230" href="/Overture/Signatures/#683" class="Generalizable">𝓞</a> <a id="3232" href="/Overture/Signatures/#685" class="Generalizable">𝓥</a><a id="3233" class="Symbol">}</a> <a id="3235" class="Keyword">where</a>
-  <a id="3243" class="Keyword">record</a> <a id="3250" href="/Setoid/Algebras/Finite/#3250" class="Record">FiniteAlgebra</a> <a id="3264" class="Symbol">(</a><a id="3265" href="/Setoid/Algebras/Finite/#3265" class="Bound">𝑨</a> <a id="3267" class="Symbol">:</a> <a id="3269" href="/Setoid/Algebras/Basic/#2913" class="Record">Algebra</a> <a id="3277" class="Symbol">{</a><a id="3278" class="Argument">𝑆</a> <a id="3280" class="Symbol">=</a> <a id="3282" href="/Setoid/Algebras/Finite/#3216" class="Bound">𝑆</a><a id="3283" class="Symbol">}</a> <a id="3285" href="/Setoid/Algebras/Finite/#2978" class="Generalizable">α</a> <a id="3287" href="/Setoid/Algebras/Finite/#2980" class="Generalizable">ρ</a><a id="3288" class="Symbol">)</a> <a id="3290" class="Symbol">:</a> <a id="3292" href="/Setoid/Algebras/Finite/#2198" class="Primitive">Type</a> <a id="3297" class="Symbol">(</a><a id="3298" href="/Setoid/Algebras/Finite/#3285" class="Bound">α</a> <a id="3300" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="3302" href="/Setoid/Algebras/Finite/#3287" class="Bound">ρ</a><a id="3303" class="Symbol">)</a> <a id="3305" class="Keyword">where</a>
-    <a id="3315" class="Keyword">open</a> <a id="3320" href="/classic/Relation.Binary.Bundles.html#1235" class="Module">Setoid</a> <a id="3327" href="/Setoid/Algebras/Basic/#3610" class="Function Operator">𝔻[</a> <a id="3330" href="/Setoid/Algebras/Finite/#3265" class="Bound">𝑨</a> <a id="3332" href="/Setoid/Algebras/Basic/#3610" class="Function Operator">]</a> <a id="3334" class="Keyword">using</a> <a id="3340" class="Symbol">(</a> <a id="3342" href="/classic/Relation.Binary.Bundles.html#1324" class="Field Operator">_≈_</a> <a id="3346" class="Symbol">)</a>
-    <a id="3352" class="Keyword">field</a>
-      <a id="3364" href="/Setoid/Algebras/Finite/#3364" class="Field Operator">_≟_</a>       <a id="3374" class="Symbol">:</a> <a id="3376" class="Symbol">∀</a> <a id="3378" href="/Setoid/Algebras/Finite/#3378" class="Bound">x</a> <a id="3380" href="/Setoid/Algebras/Finite/#3380" class="Bound">y</a> <a id="3382" class="Symbol">→</a> <a id="3384" href="/classic/Relation.Nullary.Decidable.Core.html#1966" class="Record">Dec</a> <a id="3388" class="Symbol">(</a><a id="3389" href="/Setoid/Algebras/Finite/#3378" class="Bound">x</a> <a id="3391" href="/classic/Relation.Binary.Bundles.html#1324" class="Function Operator">≈</a> <a id="3393" href="/Setoid/Algebras/Finite/#3380" class="Bound">y</a><a id="3394" class="Symbol">)</a>      <a id="3401" class="Comment">-- decidable setoid equality carrier of 𝑨</a>
-      <a id="3449" href="/Setoid/Algebras/Finite/#3449" class="Field">card</a>      <a id="3459" class="Symbol">:</a> <a id="3461" href="/classic/Agda.Builtin.Nat.html#203" class="Datatype">ℕ</a>
-      <a id="3469" href="/Setoid/Algebras/Finite/#3469" class="Field">enum</a>      <a id="3479" class="Symbol">:</a> <a id="3481" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="3485" href="/Setoid/Algebras/Finite/#3449" class="Field">card</a> <a id="3490" class="Symbol">→</a> <a id="3492" href="/Setoid/Algebras/Basic/#3752" class="Function Operator">𝕌[</a> <a id="3495" href="/Setoid/Algebras/Finite/#3265" class="Bound">𝑨</a> <a id="3497" href="/Setoid/Algebras/Basic/#3752" class="Function Operator">]</a>       <a id="3505" class="Comment">-- finite enumeration of the carrier</a>
-      <a id="3548" href="/Setoid/Algebras/Finite/#3548" class="Field">enum-sur</a>  <a id="3558" class="Symbol">:</a> <a id="3560" class="Symbol">∀</a> <a id="3562" href="/Setoid/Algebras/Finite/#3562" class="Bound">x</a> <a id="3564" class="Symbol">→</a> <a id="3566" href="/classic/Data.Product.Base.html#1371" class="Function">∃[</a> <a id="3569" href="/Setoid/Algebras/Finite/#3569" class="Bound">i</a> <a id="3571" href="/classic/Data.Product.Base.html#1371" class="Function">]</a> <a id="3573" href="/Setoid/Algebras/Finite/#3469" class="Field">enum</a> <a id="3578" href="/Setoid/Algebras/Finite/#3569" class="Bound">i</a> <a id="3580" href="/classic/Relation.Binary.Bundles.html#1324" class="Function Operator">≈</a> <a id="3582" href="/Setoid/Algebras/Finite/#3562" class="Bound">x</a>  <a id="3585" class="Comment">-- that hits every element, up to ≈</a>
-  <a id="3623" class="Keyword">open</a> <a id="3628" href="/Setoid/Algebras/Finite/#3250" class="Module">FiniteAlgebra</a>
+<pre class="Agda"><a id="3158" class="Keyword">module</a> <a id="3165" href="/Setoid/Algebras/Finite/#3165" class="Module">_</a> <a id="3167" class="Symbol">{</a><a id="3168" href="/Setoid/Algebras/Finite/#3168" class="Bound">𝑆</a> <a id="3170" class="Symbol">:</a> <a id="3172" href="/Overture/Signatures/#3218" class="Function">Signature</a> <a id="3182" href="/Overture/Signatures/#683" class="Generalizable">𝓞</a> <a id="3184" href="/Overture/Signatures/#685" class="Generalizable">𝓥</a><a id="3185" class="Symbol">}</a> <a id="3187" class="Keyword">where</a>
+  <a id="3195" class="Keyword">record</a> <a id="3202" href="/Setoid/Algebras/Finite/#3202" class="Record">FiniteAlgebra</a> <a id="3216" class="Symbol">(</a><a id="3217" href="/Setoid/Algebras/Finite/#3217" class="Bound">𝑨</a> <a id="3219" class="Symbol">:</a> <a id="3221" href="/Setoid/Algebras/Basic/#2913" class="Record">Algebra</a> <a id="3229" class="Symbol">{</a><a id="3230" class="Argument">𝑆</a> <a id="3232" class="Symbol">=</a> <a id="3234" href="/Setoid/Algebras/Finite/#3168" class="Bound">𝑆</a><a id="3235" class="Symbol">}</a> <a id="3237" href="/Setoid/Algebras/Finite/#2930" class="Generalizable">α</a> <a id="3239" href="/Setoid/Algebras/Finite/#2932" class="Generalizable">ρ</a><a id="3240" class="Symbol">)</a> <a id="3242" class="Symbol">:</a> <a id="3244" href="/Setoid/Algebras/Finite/#2090" class="Primitive">Type</a> <a id="3249" class="Symbol">(</a><a id="3250" href="/Setoid/Algebras/Finite/#3237" class="Bound">α</a> <a id="3252" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="3254" href="/Setoid/Algebras/Finite/#3239" class="Bound">ρ</a><a id="3255" class="Symbol">)</a> <a id="3257" class="Keyword">where</a>
+    <a id="3267" class="Keyword">open</a> <a id="3272" href="/classic/Relation.Binary.Bundles.html#1235" class="Module">Setoid</a> <a id="3279" href="/Setoid/Algebras/Basic/#3610" class="Function Operator">𝔻[</a> <a id="3282" href="/Setoid/Algebras/Finite/#3217" class="Bound">𝑨</a> <a id="3284" href="/Setoid/Algebras/Basic/#3610" class="Function Operator">]</a> <a id="3286" class="Keyword">using</a> <a id="3292" class="Symbol">(</a> <a id="3294" href="/classic/Relation.Binary.Bundles.html#1324" class="Field Operator">_≈_</a> <a id="3298" class="Symbol">)</a>
+    <a id="3304" class="Keyword">field</a>
+      <a id="3316" href="/Setoid/Algebras/Finite/#3316" class="Field Operator">_≟_</a>       <a id="3326" class="Symbol">:</a> <a id="3328" class="Symbol">∀</a> <a id="3330" href="/Setoid/Algebras/Finite/#3330" class="Bound">x</a> <a id="3332" href="/Setoid/Algebras/Finite/#3332" class="Bound">y</a> <a id="3334" class="Symbol">→</a> <a id="3336" href="/classic/Relation.Nullary.Decidable.Core.html#1966" class="Record">Dec</a> <a id="3340" class="Symbol">(</a><a id="3341" href="/Setoid/Algebras/Finite/#3330" class="Bound">x</a> <a id="3343" href="/classic/Relation.Binary.Bundles.html#1324" class="Function Operator">≈</a> <a id="3345" href="/Setoid/Algebras/Finite/#3332" class="Bound">y</a><a id="3346" class="Symbol">)</a>      <a id="3353" class="Comment">-- decidable setoid equality carrier of 𝑨</a>
+      <a id="3401" href="/Setoid/Algebras/Finite/#3401" class="Field">card</a>      <a id="3411" class="Symbol">:</a> <a id="3413" href="/classic/Agda.Builtin.Nat.html#203" class="Datatype">ℕ</a>
+      <a id="3421" href="/Setoid/Algebras/Finite/#3421" class="Field">enum</a>      <a id="3431" class="Symbol">:</a> <a id="3433" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="3437" href="/Setoid/Algebras/Finite/#3401" class="Field">card</a> <a id="3442" class="Symbol">→</a> <a id="3444" href="/Setoid/Algebras/Basic/#3752" class="Function Operator">𝕌[</a> <a id="3447" href="/Setoid/Algebras/Finite/#3217" class="Bound">𝑨</a> <a id="3449" href="/Setoid/Algebras/Basic/#3752" class="Function Operator">]</a>       <a id="3457" class="Comment">-- finite enumeration of the carrier</a>
+      <a id="3500" href="/Setoid/Algebras/Finite/#3500" class="Field">enum-sur</a>  <a id="3510" class="Symbol">:</a> <a id="3512" class="Symbol">∀</a> <a id="3514" href="/Setoid/Algebras/Finite/#3514" class="Bound">x</a> <a id="3516" class="Symbol">→</a> <a id="3518" href="/classic/Data.Product.Base.html#1371" class="Function">∃[</a> <a id="3521" href="/Setoid/Algebras/Finite/#3521" class="Bound">i</a> <a id="3523" href="/classic/Data.Product.Base.html#1371" class="Function">]</a> <a id="3525" href="/Setoid/Algebras/Finite/#3421" class="Field">enum</a> <a id="3530" href="/Setoid/Algebras/Finite/#3521" class="Bound">i</a> <a id="3532" href="/classic/Relation.Binary.Bundles.html#1324" class="Function Operator">≈</a> <a id="3534" href="/Setoid/Algebras/Finite/#3514" class="Bound">x</a>  <a id="3537" class="Comment">-- that hits every element, up to ≈</a>
+  <a id="3575" class="Keyword">open</a> <a id="3580" href="/Setoid/Algebras/Finite/#3202" class="Module">FiniteAlgebra</a>
 </pre>
 <h4 id="non-vacuity-the-one-element-algebra-is-finite">Non-vacuity: the one-element algebra is finite<a class="headerlink" href="#non-vacuity-the-one-element-algebra-is-finite" title="Anchor link to this section">&para;</a></h4>
 <p>The record is genuine, computational data, so we exhibit an inhabitant.  The
 one-element algebra <code class="AgdaFunction">𝟏</code> over the ambient signature has carrier <code>⊤</code>,
 trivial setoid equality, and each operation constantly <code>tt</code>; its finiteness witness
 is immediate.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
-<pre class="Agda"><a id="3971" class="Comment">-- The one-element algebra over the signature 𝑆.</a>
-  <a id="4022" class="Keyword">open</a> <a id="4027" href="/classic/Relation.Binary.Bundles.html#1235" class="Module">Setoid</a>
+<pre class="Agda"><a id="3923" class="Comment">-- The one-element algebra over the signature 𝑆.</a>
+  <a id="3974" class="Keyword">open</a> <a id="3979" href="/classic/Relation.Binary.Bundles.html#1235" class="Module">Setoid</a>
 
-  <a id="4037" href="/Setoid/Algebras/Finite/#4037" class="Function">𝟏</a> <a id="4039" class="Symbol">:</a> <a id="4041" href="/Setoid/Algebras/Basic/#2913" class="Record">Algebra</a> <a id="4049" class="Symbol">{</a><a id="4050" class="Argument">𝑆</a> <a id="4052" class="Symbol">=</a> <a id="4054" href="/Setoid/Algebras/Finite/#3216" class="Bound">𝑆</a><a id="4055" class="Symbol">}</a> <a id="4057" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="4060" href="/classic/Level.html#521" class="Function">0ℓ</a>
-  <a id="4065" href="/Setoid/Algebras/Finite/#4037" class="Function">𝟏</a> <a id="4067" class="Symbol">.</a><a id="4068" href="/Setoid/Algebras/Basic/#2973" class="Field">Domain</a> <a id="4075" class="Symbol">.</a><a id="4076" href="/classic/Relation.Binary.Bundles.html#1298" class="Field">Carrier</a>        <a id="4091" class="Symbol">=</a> <a id="4093" href="/classic/Agda.Builtin.Unit.html#175" class="Record">⊤</a>
-  <a id="4097" href="/Setoid/Algebras/Finite/#4037" class="Function">𝟏</a> <a id="4099" class="Symbol">.</a><a id="4100" href="/Setoid/Algebras/Basic/#2973" class="Field">Domain</a> <a id="4107" class="Symbol">.</a><a id="4108" href="/classic/Relation.Binary.Bundles.html#1324" class="Field Operator">_≈_</a>            <a id="4123" class="Symbol">=</a> <a id="4125" class="Symbol">λ</a> <a id="4127" href="/Setoid/Algebras/Finite/#4127" class="Bound">_</a> <a id="4129" href="/Setoid/Algebras/Finite/#4129" class="Bound">_</a> <a id="4131" class="Symbol">→</a> <a id="4133" href="/classic/Agda.Builtin.Unit.html#175" class="Record">⊤</a>
-  <a id="4137" href="/Setoid/Algebras/Finite/#4037" class="Function">𝟏</a> <a id="4139" class="Symbol">.</a><a id="4140" href="/Setoid/Algebras/Basic/#2973" class="Field">Domain</a> <a id="4147" class="Symbol">.</a><a id="4148" href="/classic/Relation.Binary.Bundles.html#1358" class="Field">isEquivalence</a>  <a id="4163" class="Symbol">=</a> <a id="4165" class="Keyword">record</a>  <a id="4173" class="Symbol">{</a> <a id="4175" href="/classic/Relation.Binary.Structures.html#1641" class="Field">refl</a>   <a id="4182" class="Symbol">=</a> <a id="4184" href="/classic/Agda.Builtin.Unit.html#212" class="InductiveConstructor">tt</a>
-                                      <a id="4225" class="Symbol">;</a> <a id="4227" href="/classic/Relation.Binary.Structures.html#1667" class="Field">sym</a>    <a id="4234" class="Symbol">=</a> <a id="4236" class="Symbol">λ</a> <a id="4238" href="/Setoid/Algebras/Finite/#4238" class="Bound">_</a> <a id="4240" class="Symbol">→</a> <a id="4242" href="/classic/Agda.Builtin.Unit.html#212" class="InductiveConstructor">tt</a>
-                                      <a id="4283" class="Symbol">;</a> <a id="4285" href="/classic/Relation.Binary.Structures.html#1693" class="Field">trans</a>  <a id="4292" class="Symbol">=</a> <a id="4294" class="Symbol">λ</a> <a id="4296" href="/Setoid/Algebras/Finite/#4296" class="Bound">_</a> <a id="4298" href="/Setoid/Algebras/Finite/#4298" class="Bound">_</a> <a id="4300" class="Symbol">→</a> <a id="4302" href="/classic/Agda.Builtin.Unit.html#212" class="InductiveConstructor">tt</a> <a id="4305" class="Symbol">}</a>
-  <a id="4309" href="/Setoid/Algebras/Finite/#4037" class="Function">𝟏</a> <a id="4311" class="Symbol">.</a><a id="4312" href="/Setoid/Algebras/Basic/#2997" class="Field">Interp</a> <a id="4319" href="/Setoid/Algebras/Finite/#2914" class="Field Operator">⟨$⟩</a> <a id="4323" class="Symbol">_</a>           <a id="4335" class="Symbol">=</a> <a id="4337" href="/classic/Agda.Builtin.Unit.html#212" class="InductiveConstructor">tt</a>
-  <a id="4342" href="/Setoid/Algebras/Finite/#4037" class="Function">𝟏</a> <a id="4344" class="Symbol">.</a><a id="4345" href="/Setoid/Algebras/Basic/#2997" class="Field">Interp</a> <a id="4352" class="Symbol">.</a><a id="4353" href="/classic/Function.Bundles.html#2111" class="Field">cong</a> <a id="4358" class="Symbol">_</a>         <a id="4368" class="Symbol">=</a> <a id="4370" href="/classic/Agda.Builtin.Unit.html#212" class="InductiveConstructor">tt</a>
+  <a id="3989" href="/Setoid/Algebras/Finite/#3989" class="Function">𝟏</a> <a id="3991" class="Symbol">:</a> <a id="3993" href="/Setoid/Algebras/Basic/#2913" class="Record">Algebra</a> <a id="4001" class="Symbol">{</a><a id="4002" class="Argument">𝑆</a> <a id="4004" class="Symbol">=</a> <a id="4006" href="/Setoid/Algebras/Finite/#3168" class="Bound">𝑆</a><a id="4007" class="Symbol">}</a> <a id="4009" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="4012" href="/classic/Level.html#521" class="Function">0ℓ</a>
+  <a id="4017" href="/Setoid/Algebras/Finite/#3989" class="Function">𝟏</a> <a id="4019" class="Symbol">.</a><a id="4020" href="/Setoid/Algebras/Basic/#2973" class="Field">Domain</a> <a id="4027" class="Symbol">.</a><a id="4028" href="/classic/Relation.Binary.Bundles.html#1298" class="Field">Carrier</a>        <a id="4043" class="Symbol">=</a> <a id="4045" href="/classic/Agda.Builtin.Unit.html#175" class="Record">⊤</a>
+  <a id="4049" href="/Setoid/Algebras/Finite/#3989" class="Function">𝟏</a> <a id="4051" class="Symbol">.</a><a id="4052" href="/Setoid/Algebras/Basic/#2973" class="Field">Domain</a> <a id="4059" class="Symbol">.</a><a id="4060" href="/classic/Relation.Binary.Bundles.html#1324" class="Field Operator">_≈_</a>            <a id="4075" class="Symbol">=</a> <a id="4077" class="Symbol">λ</a> <a id="4079" href="/Setoid/Algebras/Finite/#4079" class="Bound">_</a> <a id="4081" href="/Setoid/Algebras/Finite/#4081" class="Bound">_</a> <a id="4083" class="Symbol">→</a> <a id="4085" href="/classic/Agda.Builtin.Unit.html#175" class="Record">⊤</a>
+  <a id="4089" href="/Setoid/Algebras/Finite/#3989" class="Function">𝟏</a> <a id="4091" class="Symbol">.</a><a id="4092" href="/Setoid/Algebras/Basic/#2973" class="Field">Domain</a> <a id="4099" class="Symbol">.</a><a id="4100" href="/classic/Relation.Binary.Bundles.html#1358" class="Field">isEquivalence</a>  <a id="4115" class="Symbol">=</a> <a id="4117" class="Keyword">record</a>  <a id="4125" class="Symbol">{</a> <a id="4127" href="/classic/Relation.Binary.Structures.html#1641" class="Field">refl</a>   <a id="4134" class="Symbol">=</a> <a id="4136" href="/classic/Agda.Builtin.Unit.html#212" class="InductiveConstructor">tt</a>
+                                      <a id="4177" class="Symbol">;</a> <a id="4179" href="/classic/Relation.Binary.Structures.html#1667" class="Field">sym</a>    <a id="4186" class="Symbol">=</a> <a id="4188" class="Symbol">λ</a> <a id="4190" href="/Setoid/Algebras/Finite/#4190" class="Bound">_</a> <a id="4192" class="Symbol">→</a> <a id="4194" href="/classic/Agda.Builtin.Unit.html#212" class="InductiveConstructor">tt</a>
+                                      <a id="4235" class="Symbol">;</a> <a id="4237" href="/classic/Relation.Binary.Structures.html#1693" class="Field">trans</a>  <a id="4244" class="Symbol">=</a> <a id="4246" class="Symbol">λ</a> <a id="4248" href="/Setoid/Algebras/Finite/#4248" class="Bound">_</a> <a id="4250" href="/Setoid/Algebras/Finite/#4250" class="Bound">_</a> <a id="4252" class="Symbol">→</a> <a id="4254" href="/classic/Agda.Builtin.Unit.html#212" class="InductiveConstructor">tt</a> <a id="4257" class="Symbol">}</a>
+  <a id="4261" href="/Setoid/Algebras/Finite/#3989" class="Function">𝟏</a> <a id="4263" class="Symbol">.</a><a id="4264" href="/Setoid/Algebras/Basic/#2997" class="Field">Interp</a> <a id="4271" href="/Setoid/Algebras/Finite/#2869" class="Field Operator">⟨$⟩</a> <a id="4275" class="Symbol">_</a>           <a id="4287" class="Symbol">=</a> <a id="4289" href="/classic/Agda.Builtin.Unit.html#212" class="InductiveConstructor">tt</a>
+  <a id="4294" href="/Setoid/Algebras/Finite/#3989" class="Function">𝟏</a> <a id="4296" class="Symbol">.</a><a id="4297" href="/Setoid/Algebras/Basic/#2997" class="Field">Interp</a> <a id="4304" class="Symbol">.</a><a id="4305" href="/classic/Function.Bundles.html#2111" class="Field">cong</a> <a id="4310" class="Symbol">_</a>         <a id="4320" class="Symbol">=</a> <a id="4322" href="/classic/Agda.Builtin.Unit.html#212" class="InductiveConstructor">tt</a>
 
-  <a id="4376" class="Comment">-- The one-element algebra is a finite algebra.</a>
-  <a id="4426" href="/Setoid/Algebras/Finite/#4426" class="Function">𝟏-FiniteAlgebra</a> <a id="4442" class="Symbol">:</a> <a id="4444" href="/Setoid/Algebras/Finite/#3250" class="Record">FiniteAlgebra</a> <a id="4458" href="/Setoid/Algebras/Finite/#4037" class="Function">𝟏</a>
-  <a id="4462" href="/Setoid/Algebras/Finite/#4426" class="Function">𝟏-FiniteAlgebra</a> <a id="4478" class="Symbol">.</a><a id="4479" href="/Setoid/Algebras/Finite/#3364" class="Field Operator">_≟_</a>       <a id="4489" class="Symbol">=</a> <a id="4491" class="Symbol">λ</a> <a id="4493" href="/Setoid/Algebras/Finite/#4493" class="Bound">_</a> <a id="4495" href="/Setoid/Algebras/Finite/#4495" class="Bound">_</a> <a id="4497" class="Symbol">→</a> <a id="4499" href="/classic/Relation.Nullary.Decidable.Core.html#2099" class="InductiveConstructor">yes</a> <a id="4503" href="/classic/Agda.Builtin.Unit.html#212" class="InductiveConstructor">tt</a>
-  <a id="4508" href="/Setoid/Algebras/Finite/#4426" class="Function">𝟏-FiniteAlgebra</a> <a id="4524" class="Symbol">.</a><a id="4525" href="/Setoid/Algebras/Finite/#3449" class="Field">card</a>      <a id="4535" class="Symbol">=</a> <a id="4537" class="Number">1</a>
-  <a id="4541" href="/Setoid/Algebras/Finite/#4426" class="Function">𝟏-FiniteAlgebra</a> <a id="4557" class="Symbol">.</a><a id="4558" href="/Setoid/Algebras/Finite/#3469" class="Field">enum</a>      <a id="4568" class="Symbol">=</a> <a id="4570" class="Symbol">λ</a> <a id="4572" href="/Setoid/Algebras/Finite/#4572" class="Bound">_</a> <a id="4574" class="Symbol">→</a> <a id="4576" href="/classic/Agda.Builtin.Unit.html#212" class="InductiveConstructor">tt</a>
-  <a id="4581" href="/Setoid/Algebras/Finite/#4426" class="Function">𝟏-FiniteAlgebra</a> <a id="4597" class="Symbol">.</a><a id="4598" href="/Setoid/Algebras/Finite/#3548" class="Field">enum-sur</a>  <a id="4608" class="Symbol">=</a> <a id="4610" class="Symbol">λ</a> <a id="4612" href="/Setoid/Algebras/Finite/#4612" class="Bound">_</a> <a id="4614" class="Symbol">→</a> <a id="4616" href="/classic/Data.Fin.Base.html#1154" class="InductiveConstructor">zero</a> <a id="4621" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="4623" href="/classic/Agda.Builtin.Unit.html#212" class="InductiveConstructor">tt</a>
+  <a id="4328" class="Comment">-- The one-element algebra is a finite algebra.</a>
+  <a id="4378" href="/Setoid/Algebras/Finite/#4378" class="Function">𝟏-FiniteAlgebra</a> <a id="4394" class="Symbol">:</a> <a id="4396" href="/Setoid/Algebras/Finite/#3202" class="Record">FiniteAlgebra</a> <a id="4410" href="/Setoid/Algebras/Finite/#3989" class="Function">𝟏</a>
+  <a id="4414" href="/Setoid/Algebras/Finite/#4378" class="Function">𝟏-FiniteAlgebra</a> <a id="4430" class="Symbol">.</a><a id="4431" href="/Setoid/Algebras/Finite/#3316" class="Field Operator">_≟_</a>       <a id="4441" class="Symbol">=</a> <a id="4443" class="Symbol">λ</a> <a id="4445" href="/Setoid/Algebras/Finite/#4445" class="Bound">_</a> <a id="4447" href="/Setoid/Algebras/Finite/#4447" class="Bound">_</a> <a id="4449" class="Symbol">→</a> <a id="4451" href="/classic/Relation.Nullary.Decidable.Core.html#2099" class="InductiveConstructor">yes</a> <a id="4455" href="/classic/Agda.Builtin.Unit.html#212" class="InductiveConstructor">tt</a>
+  <a id="4460" href="/Setoid/Algebras/Finite/#4378" class="Function">𝟏-FiniteAlgebra</a> <a id="4476" class="Symbol">.</a><a id="4477" href="/Setoid/Algebras/Finite/#3401" class="Field">card</a>      <a id="4487" class="Symbol">=</a> <a id="4489" class="Number">1</a>
+  <a id="4493" href="/Setoid/Algebras/Finite/#4378" class="Function">𝟏-FiniteAlgebra</a> <a id="4509" class="Symbol">.</a><a id="4510" href="/Setoid/Algebras/Finite/#3421" class="Field">enum</a>      <a id="4520" class="Symbol">=</a> <a id="4522" class="Symbol">λ</a> <a id="4524" href="/Setoid/Algebras/Finite/#4524" class="Bound">_</a> <a id="4526" class="Symbol">→</a> <a id="4528" href="/classic/Agda.Builtin.Unit.html#212" class="InductiveConstructor">tt</a>
+  <a id="4533" href="/Setoid/Algebras/Finite/#4378" class="Function">𝟏-FiniteAlgebra</a> <a id="4549" class="Symbol">.</a><a id="4550" href="/Setoid/Algebras/Finite/#3500" class="Field">enum-sur</a>  <a id="4560" class="Symbol">=</a> <a id="4562" class="Symbol">λ</a> <a id="4564" href="/Setoid/Algebras/Finite/#4564" class="Bound">_</a> <a id="4566" class="Symbol">→</a> <a id="4568" href="/classic/Data.Fin.Base.html#1154" class="InductiveConstructor">zero</a> <a id="4573" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="4575" href="/classic/Agda.Builtin.Unit.html#212" class="InductiveConstructor">tt</a>
 </pre>
 <hr />
 <!-- File: docs/_links.md -->

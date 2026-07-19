@@ -2069,9 +2069,30 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../../../Setoid/Congruences/Finite/" class="md-nav__link">
+    
+    
+      
         
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_4_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../Setoid/Congruences/Finite/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -2085,7 +2106,85 @@
   
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2_4_4" id="__nav_2_2_4_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Finite
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Setoid/Congruences/Finite/Basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic
+  
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Setoid/Congruences/Finite/Decidable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decidable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2214,6 +2313,8 @@
       
         
       
+        
+      
     
     
     
@@ -2263,6 +2364,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Setoid/Congruences/Presented/Basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -12856,8 +12985,8 @@ through it, adding <code>comm-law</code>.</p>
 <a id="1823" class="Keyword">open</a> <a id="1828" class="Keyword">import</a> <a id="1835" href="/Classical/Theories/AbelianGroup/" class="Module">Classical.Theories.AbelianGroup</a>        <a id="1874" class="Keyword">using</a> <a id="1880" class="Symbol">(</a> <a id="1882" href="/Classical/Theories/AbelianGroup/#1329" class="Datatype">Eq-AbelianGroup</a> <a id="1898" class="Symbol">;</a> <a id="1900" href="/Classical/Theories/AbelianGroup/#1408" class="Function">Th-AbelianGroup</a> <a id="1916" class="Symbol">;</a> <a id="1918" href="/Classical/Theories/AbelianGroup/#1384" class="InductiveConstructor">comm</a> <a id="1923" class="Symbol">)</a>
                                                    <a id="1976" class="Keyword">renaming</a> <a id="1985" class="Symbol">(</a> <a id="1987" href="/Classical/Theories/AbelianGroup/#1360" class="InductiveConstructor">assoc</a> <a id="1993" class="Symbol">to</a> <a id="1996" class="InductiveConstructor">assocᵃ</a> <a id="2003" class="Symbol">;</a> <a id="2005" href="/Classical/Theories/AbelianGroup/#1366" class="InductiveConstructor">idˡ</a> <a id="2009" class="Symbol">to</a> <a id="2012" class="InductiveConstructor">idˡᵃ</a> <a id="2017" class="Symbol">;</a> <a id="2019" href="/Classical/Theories/AbelianGroup/#1370" class="InductiveConstructor">idʳ</a> <a id="2023" class="Symbol">to</a> <a id="2026" class="InductiveConstructor">idʳᵃ</a>
                                                             <a id="2091" class="Symbol">;</a> <a id="2093" href="/Classical/Theories/AbelianGroup/#1374" class="InductiveConstructor">invˡ</a> <a id="2098" class="Symbol">to</a> <a id="2101" class="InductiveConstructor">invˡᵃ</a> <a id="2107" class="Symbol">;</a> <a id="2109" href="/Classical/Theories/AbelianGroup/#1379" class="InductiveConstructor">invʳ</a> <a id="2114" class="Symbol">to</a> <a id="2117" class="InductiveConstructor">invʳᵃ</a> <a id="2123" class="Symbol">)</a>
-<a id="2125" class="Keyword">open</a> <a id="2130" class="Keyword">import</a> <a id="2137" href="/Overture/Terms/" class="Module">Overture.Terms</a> <a id="2152" class="Symbol">{</a><a id="2153" class="Argument">𝑆</a> <a id="2155" class="Symbol">=</a> <a id="2157" href="/Classical/Signatures/Group/#1718" class="Function">Sig-Group</a><a id="2166" class="Symbol">}</a>         <a id="2176" class="Keyword">using</a> <a id="2182" class="Symbol">(</a> <a id="2184" href="/Overture/Terms/Basic/#3256" class="Datatype">Term</a> <a id="2189" class="Symbol">;</a> <a id="2191" href="/Overture/Terms/Basic/#3296" class="InductiveConstructor">ℊ</a> <a id="2193" class="Symbol">)</a>
-<a id="2195" class="Keyword">open</a> <a id="2200" class="Keyword">import</a> <a id="2207" href="/Setoid/Algebras/Basic/" class="Module">Setoid.Algebras.Basic</a> <a id="2229" class="Symbol">{</a><a id="2230" class="Argument">𝑆</a> <a id="2232" class="Symbol">=</a> <a id="2234" href="/Classical/Signatures/Group/#1718" class="Function">Sig-Group</a><a id="2243" class="Symbol">}</a>  <a id="2246" class="Keyword">using</a> <a id="2252" class="Symbol">(</a> <a id="2254" href="/Setoid/Algebras/Basic/#2913" class="Record">Algebra</a> <a id="2262" class="Symbol">;</a> <a id="2264" href="/Setoid/Algebras/Basic/#3610" class="Function Operator">𝔻[_]</a> <a id="2269" class="Symbol">;</a> <a id="2271" href="/Setoid/Algebras/Basic/#3752" class="Function Operator">𝕌[_]</a> <a id="2276" class="Symbol">)</a>
+<a id="2125" class="Keyword">open</a> <a id="2130" class="Keyword">import</a> <a id="2137" href="/Overture/Terms/" class="Module">Overture.Terms</a>                         <a id="2176" class="Keyword">using</a> <a id="2182" class="Symbol">(</a> <a id="2184" href="/Overture/Terms/Basic/#3256" class="Datatype">Term</a> <a id="2189" class="Symbol">;</a> <a id="2191" href="/Overture/Terms/Basic/#3296" class="InductiveConstructor">ℊ</a> <a id="2193" class="Symbol">)</a>
+<a id="2195" class="Keyword">open</a> <a id="2200" class="Keyword">import</a> <a id="2207" href="/Setoid/Algebras/Basic/" class="Module">Setoid.Algebras.Basic</a>                  <a id="2246" class="Keyword">using</a> <a id="2252" class="Symbol">(</a> <a id="2254" href="/Setoid/Algebras/Basic/#2913" class="Record">Algebra</a> <a id="2262" class="Symbol">;</a> <a id="2264" href="/Setoid/Algebras/Basic/#3610" class="Function Operator">𝔻[_]</a> <a id="2269" class="Symbol">;</a> <a id="2271" href="/Setoid/Algebras/Basic/#3752" class="Function Operator">𝕌[_]</a> <a id="2276" class="Symbol">)</a>
 <a id="2278" class="Keyword">open</a> <a id="2283" class="Keyword">import</a> <a id="2290" href="/Setoid/Varieties/EquationalLogic/" class="Module">Setoid.Varieties.EquationalLogic</a> <a id="2323" class="Symbol">{</a><a id="2324" class="Argument">𝑆</a> <a id="2326" class="Symbol">=</a> <a id="2328" href="/Classical/Signatures/Group/#1718" class="Function">Sig-Group</a><a id="2337" class="Symbol">}</a> <a id="2339" class="Keyword">using</a> <a id="2345" class="Symbol">(</a> <a id="2347" href="/Setoid/Varieties/EquationalLogic/#2697" class="Function Operator">_⊧_≈_</a> <a id="2353" class="Symbol">)</a>
 
 <a id="2356" class="Keyword">private</a> <a id="2364" class="Keyword">variable</a> <a id="2373" href="/Classical/Structures/Group/AbelianGroup/#2373" class="Generalizable">α</a> <a id="2375" href="/Classical/Structures/Group/AbelianGroup/#2375" class="Generalizable">ρ</a> <a id="2377" class="Symbol">:</a> <a id="2379" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a>
