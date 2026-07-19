@@ -1312,4 +1312,8 @@
          <loc>https://agda-algebras.universalalgebra.org/adr/008-two-layer-congruence-discipline/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/adr/009-signature-genericity-generalized-variables/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
 </urlset>
