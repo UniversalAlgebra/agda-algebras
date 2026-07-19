@@ -34,22 +34,27 @@ Two standing warnings apply to everything under this namespace.
 +  [FLRP.Problem][] — the representability predicate `Representable`, the
    formal statement of the problem, the first worked instance (the one-element
    chain), and the constructive no-go theorem for the two-element chain.
++  [FLRP.Enforceable][] — group representability of a lattice, the
+   interval-enforceability classification (IE, cf-IE, min-IE), the fattening
+   isomorphism `[H × K, G × K] ≅ [H, G]`, the no-contradictory-IE theorem
+   (the note&#39;s Lemma 3.2), and hypothesis-parameterized statements of Lemma 3.1
+   and the parachute meta-theorem.
 
 **Planned submodules** (per § 6 of the roadmap).
 
 +  `FLRP.Closure` (closure properties of the representable class);
 +  `FLRP.Intervals` (intervals in subgroup lattices and core-free normalization);
-+  `FLRP.Enforceable` (interval-enforceable properties);
 +  `FLRP.Reductions` (the catalog of reduction theorems);
 +  `FLRP.Certificates` (machine-checked representation certificates);
 +  `FLRP.Assumptions` (the registry of classical theorems imported as explicit
    hypotheses, keeping the tree honest under `--safe`).
 
-</a><a id="2182" class="Markup">```agda
-</a><a id="2190" class="Symbol">{-#</a> <a id="2194" class="Keyword">OPTIONS</a> <a id="2202" class="Pragma">--cubical-compatible</a> <a id="2223" class="Pragma">--exact-split</a> <a id="2237" class="Pragma">--safe</a> <a id="2244" class="Symbol">#-}</a>
+</a><a id="2458" class="Markup">```agda
+</a><a id="2466" class="Symbol">{-#</a> <a id="2470" class="Keyword">OPTIONS</a> <a id="2478" class="Pragma">--cubical-compatible</a> <a id="2499" class="Pragma">--exact-split</a> <a id="2513" class="Pragma">--safe</a> <a id="2520" class="Symbol">#-}</a>
 
-<a id="2249" class="Keyword">module</a> <a id="2256" href="FLRP.html" class="Module">FLRP</a> <a id="2261" class="Keyword">where</a>
+<a id="2525" class="Keyword">module</a> <a id="2532" href="FLRP.html" class="Module">FLRP</a> <a id="2537" class="Keyword">where</a>
 
-<a id="2268" class="Keyword">open</a> <a id="2273" class="Keyword">import</a> <a id="2280" href="FLRP.Problem.html" class="Module">FLRP.Problem</a> <a id="2293" class="Keyword">public</a>
-<a id="2300" class="Markup">```
+<a id="2544" class="Keyword">open</a> <a id="2549" class="Keyword">import</a> <a id="2556" href="FLRP.Problem.html" class="Module">FLRP.Problem</a> <a id="2569" class="Keyword">public</a>
+<a id="2576" class="Keyword">open</a> <a id="2581" class="Keyword">import</a> <a id="2588" href="FLRP.Enforceable.html" class="Module">FLRP.Enforceable</a> <a id="2605" class="Keyword">public</a>
+<a id="2612" class="Markup">```
 </a></pre></body></html>

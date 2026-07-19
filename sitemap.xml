@@ -333,6 +333,10 @@
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/Product/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
          <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/SubgroupLattice/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
@@ -550,6 +554,10 @@
     </url>
     <url>
          <loc>https://agda-algebras.universalalgebra.org/Exercises/Complexity/FiniteCSP/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/FLRP/Enforceable/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>

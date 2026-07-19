@@ -18,7 +18,7 @@
         <link rel="prev" href="../Legacy/Base/Varieties/Properties/">
       
       
-        <link rel="next" href="Problem/">
+        <link rel="next" href="Enforceable/">
       
       
         
@@ -6525,6 +6525,8 @@
       
         
       
+        
+      
     
     
     
@@ -6786,6 +6788,34 @@
     
   
     NormalCore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Classical/Structures/Group/Product/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Product
   
 
     
@@ -11964,6 +11994,8 @@
       
         
       
+        
+      
     
     
     
@@ -12013,6 +12045,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Enforceable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enforceable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -12849,22 +12909,27 @@ way (group actions, subgroup lattices, closure combinatorics) lands in the <code
 <li><a href="/FLRP/Problem/">FLRP.Problem</a> — the representability predicate <code>Representable</code>, the
    formal statement of the problem, the first worked instance (the one-element
    chain), and the constructive no-go theorem for the two-element chain.</li>
+<li>[FLRP.Enforceable][] — group representability of a lattice, the
+   interval-enforceability classification (IE, cf-IE, min-IE), the fattening
+   isomorphism <code>[H × K, G × K] ≅ [H, G]</code>, the no-contradictory-IE theorem
+   (the note's Lemma 3.2), and hypothesis-parameterized statements of Lemma 3.1
+   and the parachute meta-theorem.</li>
 </ul>
 <p><strong>Planned submodules</strong> (per § 6 of the roadmap).</p>
 <ul>
 <li><code>FLRP.Closure</code> (closure properties of the representable class);</li>
 <li><code>FLRP.Intervals</code> (intervals in subgroup lattices and core-free normalization);</li>
-<li><code>FLRP.Enforceable</code> (interval-enforceable properties);</li>
 <li><code>FLRP.Reductions</code> (the catalog of reduction theorems);</li>
 <li><code>FLRP.Certificates</code> (machine-checked representation certificates);</li>
 <li><code>FLRP.Assumptions</code> (the registry of classical theorems imported as explicit
    hypotheses, keeping the tree honest under <code>--safe</code>).</li>
 </ul>
-<pre class="Agda"><a id="2190" class="Symbol">{-#</a> <a id="2194" class="Keyword">OPTIONS</a> <a id="2202" class="Pragma">--cubical-compatible</a> <a id="2223" class="Pragma">--exact-split</a> <a id="2237" class="Pragma">--safe</a> <a id="2244" class="Symbol">#-}</a>
+<pre class="Agda"><a id="2466" class="Symbol">{-#</a> <a id="2470" class="Keyword">OPTIONS</a> <a id="2478" class="Pragma">--cubical-compatible</a> <a id="2499" class="Pragma">--exact-split</a> <a id="2513" class="Pragma">--safe</a> <a id="2520" class="Symbol">#-}</a>
 
-<a id="2249" class="Keyword">module</a> <a id="2256" href="/FLRP/" class="Module">FLRP</a> <a id="2261" class="Keyword">where</a>
+<a id="2525" class="Keyword">module</a> <a id="2532" href="/FLRP/" class="Module">FLRP</a> <a id="2537" class="Keyword">where</a>
 
-<a id="2268" class="Keyword">open</a> <a id="2273" class="Keyword">import</a> <a id="2280" href="/FLRP/Problem/" class="Module">FLRP.Problem</a> <a id="2293" class="Keyword">public</a>
+<a id="2544" class="Keyword">open</a> <a id="2549" class="Keyword">import</a> <a id="2556" href="/FLRP/Problem/" class="Module">FLRP.Problem</a> <a id="2569" class="Keyword">public</a>
+<a id="2576" class="Keyword">open</a> <a id="2581" class="Keyword">import</a> <a id="2588" href="/FLRP/Enforceable/" class="Module">FLRP.Enforceable</a> <a id="2605" class="Keyword">public</a>
 </pre>
 
 <!-- File: docs/_links.md -->
@@ -12931,13 +12996,13 @@ way (group actions, subgroup lattices, closure combinatorics) lands in the <code
         
         
           
-          <a href="Problem/" class="md-footer__link md-footer__link--next" aria-label="Next: Problem">
+          <a href="Enforceable/" class="md-footer__link md-footer__link--next" aria-label="Next: Enforceable">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Problem
+                Enforceable
               </div>
             </div>
             <div class="md-footer__button md-icon">
