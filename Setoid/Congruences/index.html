@@ -12950,20 +12950,18 @@
 <h3 id="congruences">Congruences<a class="headerlink" href="#congruences" title="Anchor link to this section">&para;</a></h3>
 <pre class="Agda"><a id="182" class="Symbol">{-#</a> <a id="186" class="Keyword">OPTIONS</a> <a id="194" class="Pragma">--cubical-compatible</a> <a id="215" class="Pragma">--exact-split</a> <a id="229" class="Pragma">--safe</a> <a id="236" class="Symbol">#-}</a>
 
-<a id="241" class="Keyword">open</a> <a id="246" class="Keyword">import</a> <a id="253" href="/Overture/" class="Module">Overture</a> <a id="262" class="Keyword">using</a> <a id="268" class="Symbol">(</a><a id="269" href="/Overture/Signatures/#683" class="Generalizable">𝓞</a> <a id="271" class="Symbol">;</a> <a id="273" href="/Overture/Signatures/#685" class="Generalizable">𝓥</a> <a id="275" class="Symbol">;</a> <a id="277" href="/Overture/Signatures/#3218" class="Function">Signature</a> <a id="287" class="Symbol">;</a> <a id="289" href="/Overture/Signatures/#3990" class="Generalizable">𝑆</a><a id="290" class="Symbol">)</a>
+<a id="241" class="Keyword">module</a> <a id="248" href="/Setoid/Congruences/" class="Module">Setoid.Congruences</a> <a id="267" class="Keyword">where</a>
 
-<a id="293" class="Keyword">module</a> <a id="300" href="/Setoid/Congruences/" class="Module">Setoid.Congruences</a> <a id="319" class="Keyword">where</a>
-
-<a id="326" class="Keyword">open</a> <a id="331" class="Keyword">import</a> <a id="338" href="/Setoid/Congruences/Basic/" class="Module">Setoid.Congruences.Basic</a>                    <a id="382" class="Keyword">public</a>
-<a id="389" class="Keyword">open</a> <a id="394" class="Keyword">import</a> <a id="401" href="/Setoid/Congruences/Permutability/" class="Module">Setoid.Congruences.Permutability</a> <a id="434" class="Keyword">public</a>
-<a id="441" class="Keyword">open</a> <a id="446" class="Keyword">import</a> <a id="453" href="/Setoid/Congruences/Lattice/" class="Module">Setoid.Congruences.Lattice</a> <a id="480" class="Keyword">public</a>
-<a id="487" class="Keyword">open</a> <a id="492" class="Keyword">import</a> <a id="499" href="/Setoid/Congruences/CompleteLattice/" class="Module">Setoid.Congruences.CompleteLattice</a> <a id="534" class="Keyword">public</a>
-<a id="541" class="Keyword">open</a> <a id="546" class="Keyword">import</a> <a id="553" href="/Setoid/Congruences/Monolith/" class="Module">Setoid.Congruences.Monolith</a> <a id="581" class="Keyword">public</a>
-<a id="588" class="Keyword">open</a> <a id="593" class="Keyword">import</a> <a id="600" href="/Setoid/Congruences/Properties/" class="Module">Setoid.Congruences.Properties</a> <a id="630" class="Keyword">public</a>
-<a id="637" class="Keyword">open</a> <a id="642" class="Keyword">import</a> <a id="649" href="/Setoid/Congruences/ChainJoin/" class="Module">Setoid.Congruences.ChainJoin</a>                <a id="693" class="Keyword">public</a>
-<a id="700" class="Keyword">open</a> <a id="705" class="Keyword">import</a> <a id="712" href="/Setoid/Congruences/Generation/" class="Module">Setoid.Congruences.Generation</a>               <a id="756" class="Keyword">public</a>
-<a id="763" class="Keyword">open</a> <a id="768" class="Keyword">import</a> <a id="775" href="/Setoid/Congruences/Finite/" class="Module">Setoid.Congruences.Finite</a>                   <a id="819" class="Keyword">public</a>
-<a id="826" class="Keyword">open</a> <a id="831" class="Keyword">import</a> <a id="838" href="/Setoid/Congruences/Presented/" class="Module">Setoid.Congruences.Presented</a>                <a id="882" class="Keyword">public</a>
+<a id="274" class="Keyword">open</a> <a id="279" class="Keyword">import</a> <a id="286" href="/Setoid/Congruences/Basic/" class="Module">Setoid.Congruences.Basic</a>                    <a id="330" class="Keyword">public</a>
+<a id="337" class="Keyword">open</a> <a id="342" class="Keyword">import</a> <a id="349" href="/Setoid/Congruences/Permutability/" class="Module">Setoid.Congruences.Permutability</a> <a id="382" class="Keyword">public</a>
+<a id="389" class="Keyword">open</a> <a id="394" class="Keyword">import</a> <a id="401" href="/Setoid/Congruences/Lattice/" class="Module">Setoid.Congruences.Lattice</a> <a id="428" class="Keyword">public</a>
+<a id="435" class="Keyword">open</a> <a id="440" class="Keyword">import</a> <a id="447" href="/Setoid/Congruences/CompleteLattice/" class="Module">Setoid.Congruences.CompleteLattice</a> <a id="482" class="Keyword">public</a>
+<a id="489" class="Keyword">open</a> <a id="494" class="Keyword">import</a> <a id="501" href="/Setoid/Congruences/Monolith/" class="Module">Setoid.Congruences.Monolith</a> <a id="529" class="Keyword">public</a>
+<a id="536" class="Keyword">open</a> <a id="541" class="Keyword">import</a> <a id="548" href="/Setoid/Congruences/Properties/" class="Module">Setoid.Congruences.Properties</a> <a id="578" class="Keyword">public</a>
+<a id="585" class="Keyword">open</a> <a id="590" class="Keyword">import</a> <a id="597" href="/Setoid/Congruences/ChainJoin/" class="Module">Setoid.Congruences.ChainJoin</a>                <a id="641" class="Keyword">public</a>
+<a id="648" class="Keyword">open</a> <a id="653" class="Keyword">import</a> <a id="660" href="/Setoid/Congruences/Generation/" class="Module">Setoid.Congruences.Generation</a>               <a id="704" class="Keyword">public</a>
+<a id="711" class="Keyword">open</a> <a id="716" class="Keyword">import</a> <a id="723" href="/Setoid/Congruences/Finite/" class="Module">Setoid.Congruences.Finite</a>                   <a id="767" class="Keyword">public</a>
+<a id="774" class="Keyword">open</a> <a id="779" class="Keyword">import</a> <a id="786" href="/Setoid/Congruences/Presented/" class="Module">Setoid.Congruences.Presented</a>                <a id="830" class="Keyword">public</a>
 </pre>
 
 <!-- File: docs/_links.md -->
