@@ -12465,6 +12465,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#generalizing-the-signature-s-adr-009" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generalizing the signature 𝑆 (ADR-009)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#line-length" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -13789,6 +13800,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#generalizing-the-signature-s-adr-009" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generalizing the signature 𝑆 (ADR-009)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#line-length" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -14657,14 +14679,21 @@ date : &quot;2021-09-24&quot;
 <li><code>src/Setoid/Algebras/Basic.lagda.md</code> → <code>module Setoid.Algebras.Basic where</code>.</li>
 <li><code>src/Classical/Structures/Semigroup.lagda.md</code> → <code>module Classical.Structures.Semigroup where</code>.</li>
 </ul>
-<p>Parametrized modules declare their parameters in the header:</p>
+<p>The generic <code>Setoid/</code> core does <em>not</em> fix the signature as a module parameter.  Instead <code>𝑆</code> is a public generalized <code>variable</code> — declared once in <code>Overture.Signatures</code> and imported by name — so a generic definition ranges over an arbitrary signature by mentioning <code>𝑆</code> in its type and letting Agda generalize it.  A core module header therefore takes no signature parameter:</p>
 <div class="highlight"><pre><span></span><code><span class="cm">{-# OPTIONS --cubical-compatible --exact-split --safe #-}</span>
 
-<span class="kr">open</span><span class="w"> </span><span class="kr">import</span><span class="w"> </span><span class="n">Overture</span><span class="w"> </span><span class="kr">using</span><span class="w"> </span><span class="o">(</span><span class="w"> </span>𝓞<span class="w"> </span>;<span class="w"> </span>𝓥<span class="w"> </span>;<span class="w"> </span>Signature<span class="w"> </span><span class="o">)</span>
+<span class="kr">open</span><span class="w"> </span><span class="kr">import</span><span class="w"> </span><span class="n">Overture</span><span class="w"> </span><span class="kr">using</span><span class="w"> </span><span class="o">(</span><span class="w"> </span>𝓞<span class="w"> </span>;<span class="w"> </span>𝓥<span class="w"> </span>;<span class="w"> </span>Signature<span class="w"> </span>;<span class="w"> </span>𝑆<span class="w"> </span><span class="o">)</span>
 
-<span class="kr">module</span><span class="w"> </span><span class="n">Setoid.Algebras.Basic</span><span class="w"> </span><span class="o">{</span>𝑆<span class="w"> </span><span class="ow">:</span><span class="w"> </span>Signature<span class="w"> </span>𝓞<span class="w"> </span>𝓥<span class="o">}</span><span class="w"> </span><span class="kr">where</span>
+<span class="kr">module</span><span class="w"> </span><span class="n">Setoid.Algebras.Basic</span><span class="w"> </span><span class="kr">where</span>
 </code></pre></div>
-<p>The only imports allowed <em>before</em> the module header are those required to state the header's parameters (here, <code>Overture</code>'s <code>𝓞</code>, <code>𝓥</code>, <code>Signature</code>).  All other imports go after the header.</p>
+<p>A module that genuinely needs parameters still declares them in the header: a frozen <code>Legacy/</code> module keeps its <code>{𝑆 : Signature 𝓞 𝓥}</code>, and a <code>Classical/</code> module may fix a concrete signature.  This is the ADR-009 convention, detailed in the next subsection.  The only imports allowed <em>before</em> the module header are those required to state the header's own parameters (here, <code>Overture</code>'s <code>𝓞</code>, <code>𝓥</code>, <code>Signature</code>, and the generalized <code>𝑆</code>).  All other imports go after the header.</p>
+<h3 id="generalizing-the-signature-s-adr-009">Generalizing the signature <code>𝑆</code> (ADR-009)<a class="headerlink" href="#generalizing-the-signature-s-adr-009" title="Anchor link to this section">&para;</a></h3>
+<p>The generic <code>Setoid/</code> core generalizes over its signature rather than fixing it as a module parameter.  Following <a href="../adr/009-signature-genericity-generalized-variables/">ADR-009</a>, <code>𝑆</code> is declared once — public, co-located with <code>Signature</code> and the level variables it depends on — in <code>Overture.Signatures</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">variable</span><span class="w"> </span>𝑆<span class="w"> </span><span class="ow">:</span><span class="w"> </span>Signature<span class="w"> </span>𝓞<span class="w"> </span>𝓥
+</code></pre></div>
+<p>and re-exported through the <code>Overture</code> barrel.  A generic module imports it by name (<code>open import Overture using ( 𝓞 ; 𝓥 ; Signature ; 𝑆 )</code>) — never re-declaring it — and writes definitions whose type signatures mention <code>𝑆</code>; Agda generalizes it, together with its levels <code>𝓞</code> and <code>𝓥</code>, as an implicit argument.  For the definitions that dominate the API — those taking an algebra or other structure whose type already carries <code>𝑆</code> (<code>Con 𝑨</code>, <code>Sub 𝑮</code>, <code>hom 𝑨 𝑩</code>) — <code>𝑆</code> is inferred from that argument and never written.</p>
+<p>Where a definition is signature-dependent but has no signature-carrying argument, pin <code>𝑆</code> explicitly rather than parametrizing the module: anchor it at the use site (<code>Algebra {𝑆 = 𝑆} α ρ</code>, <code>Term {𝑆 = 𝑆} X</code>, <code>ov {𝑆 = 𝑆} ℓ</code>), or, when several definitions in a block share it — or a sort names <code>𝓞 ⊔ 𝓥</code> — bind it once on an enclosing anonymous module (<code>module _ {𝑆 : Signature 𝓞 𝓥} … where</code>).  Because the generalized <code>𝑆</code> is inserted ahead of the level variables in a definition's telescope, a value that was passed by <em>position</em> before de-parametrization may need to move to a <em>named</em> implicit (<code>_≅_ {α = α}{ρᵃ = ρᵃ}{𝑆 = 𝑆}</code>) to keep binding the argument it intends.</p>
+<p>The <code>Classical/</code> tree is the deliberate exception.  It builds specific theories over concrete signatures (<code>Sig-Group</code>, <code>Sig-Lattice</code>, …), so it <em>may</em> fix a signature — as a module parameter or a concrete value pinned at each use (<code>Algebra {𝑆 = Sig-Semigroup} …</code>) — whenever the whole module concerns one signature and saying so improves clarity.  A <code>Classical/</code> module that is genuinely generic over signatures follows the core convention instead.  Within any single barrel-and-submodule re-export chain the style is uniform, so <code>open import Sub public</code> never applies <code>{𝑆 = 𝑆}</code> to an un-parametrized module (or omits it from a parametrized one).</p>
 <h3 id="line-length">Line length<a class="headerlink" href="#line-length" title="Anchor link to this section">&para;</a></h3>
 <p>Prefer lines of at most 100 characters.  This is a soft limit: breaking a long type signature to respect it is almost always worth the extra line, while breaking an equational-reasoning chain is usually not.</p>
 <h3 id="trailing-whitespace-and-blank-lines">Trailing whitespace and blank lines<a class="headerlink" href="#trailing-whitespace-and-blank-lines" title="Anchor link to this section">&para;</a></h3>
@@ -14689,14 +14718,16 @@ date : &quot;2021-09-24&quot;
 <p>A module whose name has no final segment past the conceptual theme (e.g. <code>Base.Homomorphisms</code>, <code>Setoid.Algebras</code>) acts as a barrel of submodules, which it re-exports (using the <code>public</code> keyword); e.g.,</p>
 <div class="highlight"><pre><span></span><code><span class="cm">{-# OPTIONS --cubical-compatible --exact-split --safe #-}</span>
 
-<span class="kr">open</span><span class="w"> </span><span class="kr">import</span><span class="w"> </span><span class="n">Overture</span><span class="w"> </span><span class="kr">using</span><span class="w"> </span><span class="o">(</span><span class="w"> </span>𝓞<span class="w"> </span>;<span class="w"> </span>𝓥<span class="w"> </span>;<span class="w"> </span>Signature<span class="w"> </span><span class="o">)</span>
+<span class="kr">open</span><span class="w"> </span><span class="kr">import</span><span class="w"> </span><span class="n">Overture</span><span class="w"> </span><span class="kr">using</span><span class="w"> </span><span class="o">(</span><span class="w"> </span>𝓞<span class="w"> </span>;<span class="w"> </span>𝓥<span class="w"> </span>;<span class="w"> </span>Signature<span class="w"> </span>;<span class="w"> </span>𝑆<span class="w"> </span><span class="o">)</span>
 
-<span class="kr">module</span><span class="w"> </span><span class="n">Setoid.Algebras</span><span class="w"> </span><span class="o">{</span>𝑆<span class="w"> </span><span class="ow">:</span><span class="w"> </span>Signature<span class="w"> </span>𝓞<span class="w"> </span>𝓥<span class="o">}</span><span class="w"> </span><span class="kr">where</span>
+<span class="kr">module</span><span class="w"> </span><span class="n">Setoid.Algebras</span><span class="w"> </span><span class="kr">where</span>
 
-<span class="kr">open</span><span class="w"> </span><span class="kr">import</span><span class="w"> </span><span class="n">Setoid.Algebras.Basic</span><span class="w">          </span><span class="o">{</span>𝑆<span class="w"> </span><span class="ow">=</span><span class="w"> </span>𝑆<span class="o">}</span><span class="w"> </span>public
-<span class="kr">open</span><span class="w"> </span><span class="kr">import</span><span class="w"> </span><span class="n">Setoid.Algebras.Products</span><span class="w">       </span><span class="o">{</span>𝑆<span class="w"> </span><span class="ow">=</span><span class="w"> </span>𝑆<span class="o">}</span><span class="w"> </span>public
-<span class="kr">open</span><span class="w"> </span><span class="kr">import</span><span class="w"> </span><span class="n">Setoid.Algebras.Congruences</span><span class="w">    </span><span class="o">{</span>𝑆<span class="w"> </span><span class="ow">=</span><span class="w"> </span>𝑆<span class="o">}</span><span class="w"> </span>public
+<span class="kr">open</span><span class="w"> </span><span class="kr">import</span><span class="w"> </span><span class="n">Setoid.Algebras.Basic</span><span class="w">          </span>public
+<span class="kr">open</span><span class="w"> </span><span class="kr">import</span><span class="w"> </span><span class="n">Setoid.Algebras.Finite</span><span class="w">         </span>public
+<span class="kr">open</span><span class="w"> </span><span class="kr">import</span><span class="w"> </span><span class="n">Setoid.Algebras.Products</span><span class="w">       </span>public
+<span class="kr">open</span><span class="w"> </span><span class="kr">import</span><span class="w"> </span><span class="n">Setoid.Algebras.Reduct</span><span class="w">         </span>public
 </code></pre></div>
+<p>Because the core is uniformly generalized over <code>𝑆</code> (see <a href="../adr/009-signature-genericity-generalized-variables/">ADR-009</a>), the barrel neither parametrizes its own header nor threads <code>{𝑆 = 𝑆}</code> into each re-export; <code>open import Sub public</code> is uniform across the chain.</p>
 <p>Downstream modules <code>open import Setoid.Algebras</code> to get the whole theme and <code>open import Setoid.Algebras.Basic</code> to get a specific submodule, but we strongly <em>prefer modules that import precisely what they need</em> — see <a href="#imports">Imports</a> below. </p>
 <h3 id="classical-structures-quintuple">Classical structures quintuple<a class="headerlink" href="#classical-structures-quintuple" title="Anchor link to this section">&para;</a></h3>
 <p>In upcoming versions of agda-algebras (to land in [Milestone 3][<code>docs/GITHUB_PROJECT.md</code>]), each classical algebraic structure <code>X</code> will ship as a quintuple of modules under <code>src/Classical/</code>:</p>
@@ -14717,9 +14748,9 @@ date : &quot;2021-09-24&quot;
 <p>and only then the opening fence:</p>
 <div class="highlight"><pre><span></span><code><span class="cm">{-# OPTIONS --cubical-compatible --exact-split --safe #-}</span>
 
-<span class="kr">open</span><span class="w"> </span><span class="kr">import</span><span class="w"> </span><span class="n">Overture</span><span class="w"> </span><span class="kr">using</span><span class="w"> </span><span class="o">(</span><span class="w"> </span>𝓞<span class="w"> </span>;<span class="w"> </span>𝓥<span class="w"> </span>;<span class="w"> </span>Signature<span class="w"> </span><span class="o">)</span>
+<span class="kr">open</span><span class="w"> </span><span class="kr">import</span><span class="w"> </span><span class="n">Overture</span><span class="w"> </span><span class="kr">using</span><span class="w"> </span><span class="o">(</span><span class="w"> </span>𝓞<span class="w"> </span>;<span class="w"> </span>𝓥<span class="w"> </span>;<span class="w"> </span>Signature<span class="w"> </span>;<span class="w"> </span>𝑆<span class="w"> </span><span class="o">)</span>
 
-<span class="kr">module</span><span class="w"> </span><span class="n">Setoid.Algebras.Basic</span><span class="w"> </span><span class="o">{</span>𝑆<span class="w"> </span><span class="ow">:</span><span class="w"> </span>Signature<span class="w"> </span>𝓞<span class="w"> </span>𝓥<span class="o">}</span><span class="w"> </span><span class="kr">where</span>
+<span class="kr">module</span><span class="w"> </span><span class="n">Setoid.Algebras.Basic</span><span class="w"> </span><span class="kr">where</span>
 </code></pre></div>
 <p>The content of these blocks matters — see <a href="#comments-and-documentation">Comments and documentation</a> below.</p>
 <hr />
@@ -15138,10 +15169,10 @@ V′<span class="w"> </span>ℓ<span class="w"> </span>ι<span class="w"> </span
 <div class="highlight"><pre><span></span><code><span class="c1">-- File: Classical/Structures/Semigroup.lagda.md</span>
 <span class="kr">module</span><span class="w"> </span><span class="n">Classical.Structures.Semigroup</span><span class="w"> </span><span class="kr">where</span>
 <span class="kr">open</span><span class="w"> </span><span class="kr">import</span><span class="w"> </span><span class="n">Classical.Signatures.Semigroup</span><span class="w"> </span><span class="kr">using</span><span class="w"> </span><span class="o">(</span><span class="w"> </span>𝑆ₛ<span class="w"> </span><span class="o">)</span>
-<span class="kr">open</span><span class="w"> </span><span class="kr">import</span><span class="w"> </span><span class="n">Setoid.Algebras</span><span class="w"> </span><span class="o">{</span>𝑆<span class="w"> </span><span class="ow">=</span><span class="w"> </span>𝑆ₛ<span class="o">}</span><span class="w"> </span><span class="kr">using</span><span class="w"> </span><span class="o">(</span><span class="w"> </span>Algebra<span class="w"> </span><span class="o">)</span>
+<span class="kr">open</span><span class="w"> </span><span class="kr">import</span><span class="w"> </span><span class="n">Setoid.Algebras</span><span class="w"> </span><span class="kr">using</span><span class="w"> </span><span class="o">(</span><span class="w"> </span>Algebra<span class="w"> </span><span class="o">)</span>
 <span class="c1">-- ...</span>
 <span class="nf">Semigroup</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="o">(</span>α<span class="w"> </span>ρ<span class="w"> </span><span class="ow">:</span><span class="w"> </span>Level<span class="o">)</span><span class="w"> </span><span class="ow">→</span><span class="w"> </span>Type<span class="w"> </span>_
-Semigroup<span class="w"> </span>α<span class="w"> </span>ρ<span class="w"> </span><span class="ow">=</span><span class="w"> </span>Σ[<span class="w"> </span>𝑨<span class="w"> </span>∈<span class="w"> </span>Algebra<span class="w"> </span>α<span class="w"> </span>ρ<span class="w"> </span>]<span class="w"> </span>𝑨<span class="w"> </span>⊨<span class="w"> </span>Eₛ
+Semigroup<span class="w"> </span>α<span class="w"> </span>ρ<span class="w"> </span><span class="ow">=</span><span class="w"> </span>Σ[<span class="w"> </span>𝑨<span class="w"> </span>∈<span class="w"> </span>Algebra<span class="w"> </span><span class="o">{</span>𝑆<span class="w"> </span><span class="ow">=</span><span class="w"> </span>𝑆ₛ<span class="o">}</span><span class="w"> </span>α<span class="w"> </span>ρ<span class="w"> </span>]<span class="w"> </span>𝑨<span class="w"> </span>⊨<span class="w"> </span>Eₛ
 
 <span class="c1">-- File: Classical/Bundles/Semigroup.lagda.md</span>
 <span class="kr">record</span><span class="w"> </span>SemigroupBundle<span class="w"> </span>α<span class="w"> </span>ρ<span class="w"> </span><span class="ow">:</span><span class="w"> </span>Type<span class="w"> </span>_<span class="w"> </span><span class="kr">where</span><span class="w"> </span><span class="ow">...</span>
