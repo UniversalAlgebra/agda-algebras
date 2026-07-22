@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>Classical.Structures.Unary</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">---
+layout: default
+file: &quot;src/Classical/Structures/Unary.lagda.md&quot;
+title: &quot;Classical.Structures.Unary module&quot;
+date: &quot;2026-07-22&quot;
+author: &quot;the agda-algebras development team&quot;
+---
+
+### Finite unary algebras from operation tables
+
+This is the [Classical.Structures.Unary][] module of the [Agda Universal Algebra Library][].
+
+A finite unary algebra — a carrier `Fin`{.AgdaDatatype}` n` with one unary
+operation per symbol of `Fin`{.AgdaDatatype}` k` — is completely specified by a
+`k × n` table of values, in exactly the way a binary operation is specified by
+a Cayley table ([Overture.Cayley][]).  This module fixes that presentation and
+its finiteness witnesses once, so that concrete unary algebras (G-sets given by
+their action tables, and the certificate pipeline&#39;s externally computed
+algebras — [Setoid.Congruences.Certificates][]) are literals plus one
+constructor call, with no per-example boilerplate:
+
++  `tablesToUnaryAlgebra`{.AgdaFunction} — the algebra over
+   `Sig-Unary (Fin k)` ([Classical.Signatures.Unary][]) whose
+   `f`-th operation is row `f` of the table, built by
+   `mkAlgebraₚ`{.AgdaFunction} over the propositional-equality carrier;
++  `tablesToUnaryAlgebra-FiniteAlgebra`{.AgdaFunction} — the carrier-finiteness
+   witness ([Setoid.Algebras.Finite][]): decidable equality and the identity
+   enumeration of `Fin`{.AgdaDatatype}` n`;
++  `Sig-Unary-Fin-FiniteSignature`{.AgdaFunction} — the signature-finiteness
+   witness ([Setoid.Signatures.Finite][]): the identity enumeration of the
+   symbol type `Fin`{.AgdaDatatype}` k`, through the general
+   `Sig-Unary-FiniteSignature`{.AgdaFunction} of [Classical.Signatures.Finite][].
+
+&lt;!--
+</a><a id="1661" class="Markup">```agda
+</a><a id="1669" class="Symbol">{-#</a> <a id="1673" class="Keyword">OPTIONS</a> <a id="1681" class="Pragma">--cubical-compatible</a> <a id="1702" class="Pragma">--exact-split</a> <a id="1716" class="Pragma">--safe</a> <a id="1723" class="Symbol">#-}</a>
+
+<a id="1728" class="Keyword">module</a> <a id="1735" href="Classical.Structures.Unary.html" class="Module">Classical.Structures.Unary</a> <a id="1762" class="Keyword">where</a>
+
+<a id="1769" class="Comment">-- Imports from Agda and the Agda Standard Library ----------------------------</a>
+<a id="1849" class="Keyword">open</a> <a id="1854" class="Keyword">import</a> <a id="1861" href="Data.Fin.Base.html" class="Module">Data.Fin.Base</a>                          <a id="1900" class="Keyword">using</a>  <a id="1907" class="Symbol">(</a> <a id="1909" href="Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="1913" class="Symbol">)</a>
+<a id="1915" class="Keyword">open</a> <a id="1920" class="Keyword">import</a> <a id="1927" href="Data.Fin.Patterns.html" class="Module">Data.Fin.Patterns</a>                      <a id="1966" class="Keyword">using</a>  <a id="1973" class="Symbol">(</a> <a id="1975" href="Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="1978" class="Symbol">)</a>
+<a id="1980" class="Keyword">open</a> <a id="1985" class="Keyword">import</a> <a id="1992" href="Data.Fin.Properties.html" class="Module">Data.Fin.Properties</a>                    <a id="2031" class="Keyword">using</a>  <a id="2038" class="Symbol">()</a> <a id="2041" class="Keyword">renaming</a> <a id="2050" class="Symbol">(</a> <a id="2052" href="Data.Fin.Properties.html#3739" class="Function Operator">_≟_</a> <a id="2056" class="Symbol">to</a> <a id="2059" class="Function Operator">_≟ᶠ_</a> <a id="2064" class="Symbol">)</a>
+<a id="2066" class="Keyword">open</a> <a id="2071" class="Keyword">import</a> <a id="2078" href="Data.Nat.Base.html" class="Module">Data.Nat.Base</a>                          <a id="2117" class="Keyword">using</a>  <a id="2124" class="Symbol">(</a> <a id="2126" href="Agda.Builtin.Nat.html#203" class="Datatype">ℕ</a> <a id="2128" class="Symbol">)</a>
+<a id="2130" class="Keyword">open</a> <a id="2135" class="Keyword">import</a> <a id="2142" href="Data.Product.html" class="Module">Data.Product</a>                           <a id="2181" class="Keyword">using</a>  <a id="2188" class="Symbol">(</a> <a id="2190" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">_,_</a> <a id="2194" class="Symbol">)</a>
+<a id="2196" class="Keyword">open</a> <a id="2201" class="Keyword">import</a> <a id="2208" href="Data.Vec.Base.html" class="Module">Data.Vec.Base</a>                          <a id="2247" class="Keyword">using</a>  <a id="2254" class="Symbol">(</a> <a id="2256" href="Data.Vec.Base.html#1119" class="Datatype">Vec</a> <a id="2260" class="Symbol">;</a> <a id="2262" href="Data.Vec.Base.html#1676" class="Function">lookup</a> <a id="2269" class="Symbol">)</a>
+<a id="2271" class="Keyword">open</a> <a id="2276" class="Keyword">import</a> <a id="2283" href="Level.html" class="Module">Level</a>                                  <a id="2322" class="Keyword">using</a>  <a id="2329" class="Symbol">(</a> <a id="2331" href="Level.html#521" class="Function">0ℓ</a> <a id="2334" class="Symbol">)</a>
+<a id="2336" class="Keyword">open</a> <a id="2341" class="Keyword">import</a> <a id="2348" href="Relation.Binary.PropositionalEquality.html" class="Module">Relation.Binary.PropositionalEquality</a>  <a id="2387" class="Keyword">using</a>  <a id="2394" class="Symbol">(</a> <a id="2396" href="Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="2401" class="Symbol">;</a> <a id="2403" href="Relation.Binary.PropositionalEquality.Core.html#1481" class="Function">cong</a> <a id="2408" class="Symbol">)</a>
+
+<a id="2411" class="Comment">-- Imports from the Agda Universal Algebra Library ----------------------------</a>
+<a id="2491" class="Keyword">open</a> <a id="2496" class="Keyword">import</a> <a id="2503" href="Classical.Signatures.Finite.html" class="Module">Classical.Signatures.Finite</a>  <a id="2532" class="Keyword">using</a>  <a id="2539" class="Symbol">(</a> <a id="2541" href="Classical.Signatures.Finite.html#4408" class="Function">Sig-Unary-FiniteSignature</a> <a id="2567" class="Symbol">)</a>
+<a id="2569" class="Keyword">open</a> <a id="2574" class="Keyword">import</a> <a id="2581" href="Classical.Signatures.Unary.html" class="Module">Classical.Signatures.Unary</a>   <a id="2610" class="Keyword">using</a>  <a id="2617" class="Symbol">(</a> <a id="2619" href="Classical.Signatures.Unary.html#2341" class="Function">Sig-Unary</a> <a id="2629" class="Symbol">)</a>
+<a id="2631" class="Keyword">open</a> <a id="2636" class="Keyword">import</a> <a id="2643" href="Setoid.Algebras.Basic.html" class="Module">Setoid.Algebras.Basic</a>        <a id="2672" class="Keyword">using</a>  <a id="2679" class="Symbol">(</a> <a id="2681" href="Setoid.Algebras.Basic.html#2918" class="Record">Algebra</a> <a id="2689" class="Symbol">;</a> <a id="2691" href="Setoid.Algebras.Basic.html#6876" class="Function">mkAlgebraₚ</a> <a id="2702" class="Symbol">)</a>
+<a id="2704" class="Keyword">open</a> <a id="2709" class="Keyword">import</a> <a id="2716" href="Setoid.Algebras.Finite.html" class="Module">Setoid.Algebras.Finite</a>       <a id="2745" class="Keyword">using</a>  <a id="2752" class="Symbol">(</a> <a id="2754" href="Setoid.Algebras.Finite.html#3202" class="Record">FiniteAlgebra</a> <a id="2768" class="Symbol">)</a>
+<a id="2770" class="Keyword">open</a> <a id="2775" class="Keyword">import</a> <a id="2782" href="Setoid.Signatures.Finite.html" class="Module">Setoid.Signatures.Finite</a>     <a id="2811" class="Keyword">using</a>  <a id="2818" class="Symbol">(</a> <a id="2820" href="Setoid.Signatures.Finite.html#5275" class="Record">FiniteSignature</a> <a id="2836" class="Symbol">)</a>
+<a id="2838" class="Markup">```
+</a><a id="2842" class="Background">--&gt;
+
+#### The algebra of a table
+
+Row `f`, column `i` of the table is the value of the `f`-th operation at `i`.
+The congruence obligation of `mkAlgebraₚ`{.AgdaFunction} is one
+`cong`{.AgdaFunction} at the single argument position.
+
+</a><a id="3074" class="Markup">```agda
+</a><a id="3082" class="Keyword">module</a> <a id="3089" href="Classical.Structures.Unary.html#3089" class="Module">_</a> <a id="3091" class="Symbol">(</a><a id="3092" href="Classical.Structures.Unary.html#3092" class="Bound">n</a> <a id="3094" href="Classical.Structures.Unary.html#3094" class="Bound">k</a> <a id="3096" class="Symbol">:</a> <a id="3098" href="Agda.Builtin.Nat.html#203" class="Datatype">ℕ</a><a id="3099" class="Symbol">)</a> <a id="3101" class="Symbol">(</a><a id="3102" href="Classical.Structures.Unary.html#3102" class="Bound">tables</a> <a id="3109" class="Symbol">:</a> <a id="3111" href="Data.Vec.Base.html#1119" class="Datatype">Vec</a> <a id="3115" class="Symbol">(</a><a id="3116" href="Data.Vec.Base.html#1119" class="Datatype">Vec</a> <a id="3120" class="Symbol">(</a><a id="3121" href="Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="3125" href="Classical.Structures.Unary.html#3092" class="Bound">n</a><a id="3126" class="Symbol">)</a> <a id="3128" href="Classical.Structures.Unary.html#3092" class="Bound">n</a><a id="3129" class="Symbol">)</a> <a id="3131" href="Classical.Structures.Unary.html#3094" class="Bound">k</a><a id="3132" class="Symbol">)</a> <a id="3134" class="Keyword">where</a>
+
+  <a id="3143" class="Comment">-- The f-th unary operation: row f of the table.</a>
+  <a id="3194" href="Classical.Structures.Unary.html#3194" class="Function">unaryOp</a> <a id="3202" class="Symbol">:</a> <a id="3204" href="Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="3208" href="Classical.Structures.Unary.html#3094" class="Bound">k</a> <a id="3210" class="Symbol">→</a> <a id="3212" href="Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="3216" href="Classical.Structures.Unary.html#3092" class="Bound">n</a> <a id="3218" class="Symbol">→</a> <a id="3220" href="Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="3224" href="Classical.Structures.Unary.html#3092" class="Bound">n</a>
+  <a id="3228" href="Classical.Structures.Unary.html#3194" class="Function">unaryOp</a> <a id="3236" href="Classical.Structures.Unary.html#3236" class="Bound">f</a> <a id="3238" href="Classical.Structures.Unary.html#3238" class="Bound">i</a> <a id="3240" class="Symbol">=</a> <a id="3242" href="Data.Vec.Base.html#1676" class="Function">lookup</a> <a id="3249" class="Symbol">(</a><a id="3250" href="Data.Vec.Base.html#1676" class="Function">lookup</a> <a id="3257" href="Classical.Structures.Unary.html#3102" class="Bound">tables</a> <a id="3264" href="Classical.Structures.Unary.html#3236" class="Bound">f</a><a id="3265" class="Symbol">)</a> <a id="3267" href="Classical.Structures.Unary.html#3238" class="Bound">i</a>
+
+  <a id="3272" class="Comment">-- The unary algebra presented by the table.</a>
+  <a id="3319" href="Classical.Structures.Unary.html#3319" class="Function">tablesToUnaryAlgebra</a> <a id="3340" class="Symbol">:</a> <a id="3342" href="Setoid.Algebras.Basic.html#2918" class="Record">Algebra</a> <a id="3350" class="Symbol">{</a><a id="3351" class="Argument">𝑆</a> <a id="3353" class="Symbol">=</a> <a id="3355" href="Classical.Signatures.Unary.html#2341" class="Function">Sig-Unary</a> <a id="3365" class="Symbol">(</a><a id="3366" href="Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="3370" href="Classical.Structures.Unary.html#3094" class="Bound">k</a><a id="3371" class="Symbol">)}</a> <a id="3374" href="Level.html#521" class="Function">0ℓ</a> <a id="3377" href="Level.html#521" class="Function">0ℓ</a>
+  <a id="3382" href="Classical.Structures.Unary.html#3319" class="Function">tablesToUnaryAlgebra</a> <a id="3403" class="Symbol">=</a>
+    <a id="3409" href="Setoid.Algebras.Basic.html#6876" class="Function">mkAlgebraₚ</a> <a id="3420" class="Symbol">(</a><a id="3421" href="Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="3425" href="Classical.Structures.Unary.html#3092" class="Bound">n</a><a id="3426" class="Symbol">)</a>
+               <a id="3443" class="Symbol">(λ</a> <a id="3446" href="Classical.Structures.Unary.html#3446" class="Bound">f</a> <a id="3448" href="Classical.Structures.Unary.html#3448" class="Bound">args</a> <a id="3453" class="Symbol">→</a> <a id="3455" href="Classical.Structures.Unary.html#3194" class="Function">unaryOp</a> <a id="3463" href="Classical.Structures.Unary.html#3446" class="Bound">f</a> <a id="3465" class="Symbol">(</a><a id="3466" href="Classical.Structures.Unary.html#3448" class="Bound">args</a> <a id="3471" href="Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a><a id="3473" class="Symbol">))</a>
+               <a id="3491" class="Symbol">(λ</a> <a id="3494" href="Classical.Structures.Unary.html#3494" class="Bound">f</a> <a id="3496" href="Classical.Structures.Unary.html#3496" class="Bound">h</a> <a id="3498" class="Symbol">→</a> <a id="3500" href="Relation.Binary.PropositionalEquality.Core.html#1481" class="Function">cong</a> <a id="3505" class="Symbol">(</a><a id="3506" href="Classical.Structures.Unary.html#3194" class="Function">unaryOp</a> <a id="3514" href="Classical.Structures.Unary.html#3494" class="Bound">f</a><a id="3515" class="Symbol">)</a> <a id="3517" class="Symbol">(</a><a id="3518" href="Classical.Structures.Unary.html#3496" class="Bound">h</a> <a id="3520" href="Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a><a id="3522" class="Symbol">))</a>
+<a id="3525" class="Markup">```
+</a><a id="3529" class="Background">
+#### The finiteness witnesses
+
+The carrier is `Fin`{.AgdaDatatype}` n` on the nose, so decidable equality and a
+surjective enumeration are the identity story; likewise for the symbol type
+`Fin`{.AgdaDatatype}` k` on the signature side.
+
+</a><a id="3767" class="Markup">```agda
+</a>  <a id="3777" class="Comment">-- The table algebra is a finite algebra.</a>
+  <a id="3821" class="Keyword">open</a> <a id="3826" href="Setoid.Algebras.Finite.html#3202" class="Module">FiniteAlgebra</a>
+
+  <a id="3843" href="Classical.Structures.Unary.html#3843" class="Function">tablesToUnaryAlgebra-FiniteAlgebra</a> <a id="3878" class="Symbol">:</a> <a id="3880" href="Setoid.Algebras.Finite.html#3202" class="Record">FiniteAlgebra</a> <a id="3894" href="Classical.Structures.Unary.html#3319" class="Function">tablesToUnaryAlgebra</a>
+  <a id="3917" href="Classical.Structures.Unary.html#3843" class="Function">tablesToUnaryAlgebra-FiniteAlgebra</a> <a id="3952" class="Symbol">.</a><a id="3953" href="Setoid.Algebras.Finite.html#3316" class="Field Operator">_≟_</a>       <a id="3963" class="Symbol">=</a> <a id="3965" href="Classical.Structures.Unary.html#2059" class="Function Operator">_≟ᶠ_</a>
+  <a id="3972" href="Classical.Structures.Unary.html#3843" class="Function">tablesToUnaryAlgebra-FiniteAlgebra</a> <a id="4007" class="Symbol">.</a><a id="4008" href="Setoid.Algebras.Finite.html#3401" class="Field">card</a>      <a id="4018" class="Symbol">=</a> <a id="4020" href="Classical.Structures.Unary.html#3092" class="Bound">n</a>
+  <a id="4024" href="Classical.Structures.Unary.html#3843" class="Function">tablesToUnaryAlgebra-FiniteAlgebra</a> <a id="4059" class="Symbol">.</a><a id="4060" href="Setoid.Algebras.Finite.html#3421" class="Field">enum</a>      <a id="4070" class="Symbol">=</a> <a id="4072" class="Symbol">λ</a> <a id="4074" href="Classical.Structures.Unary.html#4074" class="Bound">i</a> <a id="4076" class="Symbol">→</a> <a id="4078" href="Classical.Structures.Unary.html#4074" class="Bound">i</a>
+  <a id="4082" href="Classical.Structures.Unary.html#3843" class="Function">tablesToUnaryAlgebra-FiniteAlgebra</a> <a id="4117" class="Symbol">.</a><a id="4118" href="Setoid.Algebras.Finite.html#3500" class="Field">enum-sur</a>  <a id="4128" class="Symbol">=</a> <a id="4130" class="Symbol">λ</a> <a id="4132" href="Classical.Structures.Unary.html#4132" class="Bound">x</a> <a id="4134" class="Symbol">→</a> <a id="4136" href="Classical.Structures.Unary.html#4132" class="Bound">x</a> <a id="4138" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="4140" href="Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a>
+
+<a id="4146" class="Comment">-- The unary signature on Fin k is finite finitary (identity enumeration).</a>
+<a id="Sig-Unary-Fin-FiniteSignature"></a><a id="4221" href="Classical.Structures.Unary.html#4221" class="Function">Sig-Unary-Fin-FiniteSignature</a> <a id="4251" class="Symbol">:</a> <a id="4253" class="Symbol">(</a><a id="4254" href="Classical.Structures.Unary.html#4254" class="Bound">k</a> <a id="4256" class="Symbol">:</a> <a id="4258" href="Agda.Builtin.Nat.html#203" class="Datatype">ℕ</a><a id="4259" class="Symbol">)</a> <a id="4261" class="Symbol">→</a> <a id="4263" href="Setoid.Signatures.Finite.html#5275" class="Record">FiniteSignature</a> <a id="4279" class="Symbol">(</a><a id="4280" href="Classical.Signatures.Unary.html#2341" class="Function">Sig-Unary</a> <a id="4290" class="Symbol">(</a><a id="4291" href="Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="4295" href="Classical.Structures.Unary.html#4254" class="Bound">k</a><a id="4296" class="Symbol">))</a>
+<a id="4299" href="Classical.Structures.Unary.html#4221" class="Function">Sig-Unary-Fin-FiniteSignature</a> <a id="4329" href="Classical.Structures.Unary.html#4329" class="Bound">k</a> <a id="4331" class="Symbol">=</a>
+  <a id="4335" href="Classical.Signatures.Finite.html#4408" class="Function">Sig-Unary-FiniteSignature</a> <a id="4361" href="Classical.Structures.Unary.html#4329" class="Bound">k</a> <a id="4363" class="Symbol">(λ</a> <a id="4366" href="Classical.Structures.Unary.html#4366" class="Bound">f</a> <a id="4368" class="Symbol">→</a> <a id="4370" href="Classical.Structures.Unary.html#4366" class="Bound">f</a><a id="4371" class="Symbol">)</a> <a id="4373" class="Symbol">(λ</a> <a id="4376" href="Classical.Structures.Unary.html#4376" class="Bound">f</a> <a id="4378" class="Symbol">→</a> <a id="4380" href="Classical.Structures.Unary.html#4376" class="Bound">f</a> <a id="4382" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="4384" href="Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a><a id="4388" class="Symbol">)</a>
+<a id="4390" class="Markup">```
+</a><a id="4394" class="Background">
+--------------------------------------
+</a></pre></body></html>
