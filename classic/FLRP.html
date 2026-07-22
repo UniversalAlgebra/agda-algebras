@@ -68,6 +68,12 @@ Two standing warnings apply to everything under this namespace.
    `Setoid.Congruences.Certificates` checkers) into a `Representableᵈ` witness
    for the target lattice, so external searches (GAP, UACalc, SAT) enter the
    corpus only through the checker.
++  [FLRP.L7EqSix][] — the explicit Pudlák–Tůma witness for the distinguished
+   open instance: seven partitions of a six-element set (the minimum possible)
+   forming a sublattice of `Eq(6)` isomorphic to `L7`, with meets, join upper
+   bounds, injectivity, and normal forms decided over the finite carrier and
+   join least-ness proved against arbitrary equivalence relations via bounded
+   alternating chains (issue #484; session note `docs/notes/flrp-l7-eq6.md`).
 
 **Planned submodules** (per § 6 of the roadmap).
 
@@ -75,17 +81,18 @@ Two standing warnings apply to everything under this namespace.
 +  `FLRP.Intervals` (intervals in subgroup lattices and core-free normalization);
 +  `FLRP.Reductions` (the catalog of reduction theorems).
 
-</a><a id="4110" class="Markup">```agda
-</a><a id="4118" class="Symbol">{-#</a> <a id="4122" class="Keyword">OPTIONS</a> <a id="4130" class="Pragma">--cubical-compatible</a> <a id="4151" class="Pragma">--exact-split</a> <a id="4165" class="Pragma">--safe</a> <a id="4172" class="Symbol">#-}</a>
+</a><a id="4577" class="Markup">```agda
+</a><a id="4585" class="Symbol">{-#</a> <a id="4589" class="Keyword">OPTIONS</a> <a id="4597" class="Pragma">--cubical-compatible</a> <a id="4618" class="Pragma">--exact-split</a> <a id="4632" class="Pragma">--safe</a> <a id="4639" class="Symbol">#-}</a>
 
-<a id="4177" class="Keyword">module</a> <a id="4184" href="FLRP.html" class="Module">FLRP</a> <a id="4189" class="Keyword">where</a>
+<a id="4644" class="Keyword">module</a> <a id="4651" href="FLRP.html" class="Module">FLRP</a> <a id="4656" class="Keyword">where</a>
 
-<a id="4196" class="Keyword">open</a> <a id="4201" class="Keyword">import</a> <a id="4208" href="FLRP.Problem.html" class="Module">FLRP.Problem</a> <a id="4221" class="Keyword">public</a>
-<a id="4228" class="Keyword">open</a> <a id="4233" class="Keyword">import</a> <a id="4240" href="FLRP.Enforceable.html" class="Module">FLRP.Enforceable</a> <a id="4257" class="Keyword">public</a>
-<a id="4264" class="Keyword">open</a> <a id="4269" class="Keyword">import</a> <a id="4276" href="FLRP.Bridge.html" class="Module">FLRP.Bridge</a> <a id="4288" class="Keyword">public</a>
-<a id="4295" class="Keyword">open</a> <a id="4300" class="Keyword">import</a> <a id="4307" href="FLRP.Representable.html" class="Module">FLRP.Representable</a> <a id="4326" class="Keyword">public</a>
-<a id="4333" class="Keyword">open</a> <a id="4338" class="Keyword">import</a> <a id="4345" href="FLRP.Assumptions.html" class="Module">FLRP.Assumptions</a> <a id="4362" class="Keyword">public</a>
-<a id="4369" class="Keyword">open</a> <a id="4374" class="Keyword">import</a> <a id="4381" href="FLRP.LayerBridge.html" class="Module">FLRP.LayerBridge</a> <a id="4398" class="Keyword">public</a>
-<a id="4405" class="Keyword">open</a> <a id="4410" class="Keyword">import</a> <a id="4417" href="FLRP.Certificates.html" class="Module">FLRP.Certificates</a> <a id="4435" class="Keyword">public</a>
-<a id="4442" class="Markup">```
+<a id="4663" class="Keyword">open</a> <a id="4668" class="Keyword">import</a> <a id="4675" href="FLRP.Problem.html" class="Module">FLRP.Problem</a> <a id="4688" class="Keyword">public</a>
+<a id="4695" class="Keyword">open</a> <a id="4700" class="Keyword">import</a> <a id="4707" href="FLRP.Enforceable.html" class="Module">FLRP.Enforceable</a> <a id="4724" class="Keyword">public</a>
+<a id="4731" class="Keyword">open</a> <a id="4736" class="Keyword">import</a> <a id="4743" href="FLRP.Bridge.html" class="Module">FLRP.Bridge</a> <a id="4755" class="Keyword">public</a>
+<a id="4762" class="Keyword">open</a> <a id="4767" class="Keyword">import</a> <a id="4774" href="FLRP.Representable.html" class="Module">FLRP.Representable</a> <a id="4793" class="Keyword">public</a>
+<a id="4800" class="Keyword">open</a> <a id="4805" class="Keyword">import</a> <a id="4812" href="FLRP.Assumptions.html" class="Module">FLRP.Assumptions</a> <a id="4829" class="Keyword">public</a>
+<a id="4836" class="Keyword">open</a> <a id="4841" class="Keyword">import</a> <a id="4848" href="FLRP.LayerBridge.html" class="Module">FLRP.LayerBridge</a> <a id="4865" class="Keyword">public</a>
+<a id="4872" class="Keyword">open</a> <a id="4877" class="Keyword">import</a> <a id="4884" href="FLRP.Certificates.html" class="Module">FLRP.Certificates</a> <a id="4902" class="Keyword">public</a>
+<a id="4909" class="Keyword">open</a> <a id="4914" class="Keyword">import</a> <a id="4921" href="FLRP.L7EqSix.html" class="Module">FLRP.L7EqSix</a> <a id="4934" class="Keyword">public</a>
+<a id="4941" class="Markup">```
 </a></pre></body></html>
