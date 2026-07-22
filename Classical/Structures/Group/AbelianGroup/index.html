@@ -12112,6 +12112,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -12169,6 +12173,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../FLRP/Assumptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assumptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../FLRP/Bridge/" class="md-nav__link">
         
   
@@ -12205,6 +12237,34 @@
     
   
     Enforceable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../FLRP/LayerBridge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LayerBridge
   
 
     
@@ -13137,7 +13197,7 @@ through it, adding <code>comm-law</code>.</p>
                                                             <a id="2091" class="Symbol">;</a> <a id="2093" href="/Classical/Theories/AbelianGroup/#1374" class="InductiveConstructor">invˡ</a> <a id="2098" class="Symbol">to</a> <a id="2101" class="InductiveConstructor">invˡᵃ</a> <a id="2107" class="Symbol">;</a> <a id="2109" href="/Classical/Theories/AbelianGroup/#1379" class="InductiveConstructor">invʳ</a> <a id="2114" class="Symbol">to</a> <a id="2117" class="InductiveConstructor">invʳᵃ</a> <a id="2123" class="Symbol">)</a>
 <a id="2125" class="Keyword">open</a> <a id="2130" class="Keyword">import</a> <a id="2137" href="/Overture/Terms/" class="Module">Overture.Terms</a>                         <a id="2176" class="Keyword">using</a> <a id="2182" class="Symbol">(</a> <a id="2184" href="/Overture/Terms/Basic/#3256" class="Datatype">Term</a> <a id="2189" class="Symbol">;</a> <a id="2191" href="/Overture/Terms/Basic/#3296" class="InductiveConstructor">ℊ</a> <a id="2193" class="Symbol">)</a>
 <a id="2195" class="Keyword">open</a> <a id="2200" class="Keyword">import</a> <a id="2207" href="/Setoid/Algebras/Basic/" class="Module">Setoid.Algebras.Basic</a>                  <a id="2246" class="Keyword">using</a> <a id="2252" class="Symbol">(</a> <a id="2254" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="2262" class="Symbol">;</a> <a id="2264" href="/Setoid/Algebras/Basic/#3635" class="Function Operator">𝔻[_]</a> <a id="2269" class="Symbol">;</a> <a id="2271" href="/Setoid/Algebras/Basic/#3785" class="Function Operator">𝕌[_]</a> <a id="2276" class="Symbol">)</a>
-<a id="2278" class="Keyword">open</a> <a id="2283" class="Keyword">import</a> <a id="2290" href="/Setoid/Varieties/EquationalLogic/" class="Module">Setoid.Varieties.EquationalLogic</a> <a id="2323" class="Keyword">using</a> <a id="2329" class="Symbol">(</a> <a id="2331" href="/Setoid/Varieties/EquationalLogic/#2666" class="Function Operator">_⊧_≈_</a> <a id="2337" class="Symbol">)</a>
+<a id="2278" class="Keyword">open</a> <a id="2283" class="Keyword">import</a> <a id="2290" href="/Setoid/Varieties/EquationalLogic/" class="Module">Setoid.Varieties.EquationalLogic</a> <a id="2323" class="Keyword">using</a> <a id="2329" class="Symbol">(</a> <a id="2331" href="/Setoid/Varieties/EquationalLogic/#2646" class="Function Operator">_⊧_≈_</a> <a id="2337" class="Symbol">)</a>
 
 <a id="2340" class="Keyword">private</a> <a id="2348" class="Keyword">variable</a> <a id="2357" href="/Classical/Structures/Group/AbelianGroup/#2357" class="Generalizable">α</a> <a id="2359" href="/Classical/Structures/Group/AbelianGroup/#2359" class="Generalizable">ρ</a> <a id="2361" class="Symbol">:</a> <a id="2363" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a>
 </pre>
@@ -13145,7 +13205,7 @@ through it, adding <code>comm-law</code>.</p>
 <h4 id="satisfaction-predicate-and-the-abeliangroup-type">Satisfaction predicate and the <code>AbelianGroup</code> type<a class="headerlink" href="#satisfaction-predicate-and-the-abeliangroup-type" title="Anchor link to this section">&para;</a></h4>
 <pre class="Agda"><a id="2443" class="Keyword">infix</a> <a id="2449" class="Number">4</a> <a id="2451" href="/Classical/Structures/Group/AbelianGroup/#2457" class="Function Operator">_⊨ᵃᵍ_</a>
 <a id="_⊨ᵃᵍ_"></a><a id="2457" href="/Classical/Structures/Group/AbelianGroup/#2457" class="Function Operator">_⊨ᵃᵍ_</a> <a id="2463" class="Symbol">:</a> <a id="2465" class="Symbol">(</a><a id="2466" href="/Classical/Structures/Group/AbelianGroup/#2466" class="Bound">𝑨</a> <a id="2468" class="Symbol">:</a> <a id="2470" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="2478" class="Symbol">{</a><a id="2479" class="Argument">𝑆</a> <a id="2481" class="Symbol">=</a> <a id="2483" href="/Classical/Signatures/Group/#1718" class="Function">Sig-Group</a><a id="2492" class="Symbol">}</a> <a id="2494" href="/Classical/Structures/Group/AbelianGroup/#2357" class="Generalizable">α</a> <a id="2496" href="/Classical/Structures/Group/AbelianGroup/#2359" class="Generalizable">ρ</a><a id="2497" class="Symbol">)</a> <a id="2499" class="Symbol">(</a><a id="2500" href="/Classical/Structures/Group/AbelianGroup/#2500" class="Bound">ℰ</a> <a id="2502" class="Symbol">:</a> <a id="2504" href="/Classical/Theories/AbelianGroup/#1329" class="Datatype">Eq-AbelianGroup</a> <a id="2520" class="Symbol">→</a> <a id="2522" href="/Overture/Terms/Basic/#3256" class="Datatype">Term</a> <a id="2527" class="Symbol">(</a><a id="2528" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="2532" class="Number">3</a><a id="2533" class="Symbol">)</a> <a id="2535" href="/classic/Data.Product.Base.html#1618" class="Function Operator">×</a> <a id="2537" href="/Overture/Terms/Basic/#3256" class="Datatype">Term</a> <a id="2542" class="Symbol">(</a><a id="2543" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="2547" class="Number">3</a><a id="2548" class="Symbol">))</a> <a id="2551" class="Symbol">→</a> <a id="2553" href="/Classical/Structures/Group/AbelianGroup/#935" class="Primitive">Type</a> <a id="2558" class="Symbol">(</a><a id="2559" href="/Classical/Structures/Group/AbelianGroup/#2357" class="Generalizable">α</a> <a id="2561" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="2563" href="/Classical/Structures/Group/AbelianGroup/#2359" class="Generalizable">ρ</a><a id="2564" class="Symbol">)</a>
-<a id="2566" href="/Classical/Structures/Group/AbelianGroup/#2566" class="Bound">𝑨</a> <a id="2568" href="/Classical/Structures/Group/AbelianGroup/#2457" class="Function Operator">⊨ᵃᵍ</a> <a id="2572" href="/Classical/Structures/Group/AbelianGroup/#2572" class="Bound">ℰ</a> <a id="2574" class="Symbol">=</a> <a id="2576" class="Symbol">∀</a> <a id="2578" href="/Classical/Structures/Group/AbelianGroup/#2578" class="Bound">i</a> <a id="2580" class="Symbol">→</a> <a id="2582" href="/Classical/Structures/Group/AbelianGroup/#2566" class="Bound">𝑨</a> <a id="2584" href="/Setoid/Varieties/EquationalLogic/#2666" class="Function Operator">⊧</a> <a id="2586" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="2592" class="Symbol">(</a><a id="2593" href="/Classical/Structures/Group/AbelianGroup/#2572" class="Bound">ℰ</a> <a id="2595" href="/Classical/Structures/Group/AbelianGroup/#2578" class="Bound">i</a><a id="2596" class="Symbol">)</a> <a id="2598" href="/Setoid/Varieties/EquationalLogic/#2666" class="Function Operator">≈</a> <a id="2600" href="/classic/Data.Product.Base.html#650" class="Field">proj₂</a> <a id="2606" class="Symbol">(</a><a id="2607" href="/Classical/Structures/Group/AbelianGroup/#2572" class="Bound">ℰ</a> <a id="2609" href="/Classical/Structures/Group/AbelianGroup/#2578" class="Bound">i</a><a id="2610" class="Symbol">)</a>
+<a id="2566" href="/Classical/Structures/Group/AbelianGroup/#2566" class="Bound">𝑨</a> <a id="2568" href="/Classical/Structures/Group/AbelianGroup/#2457" class="Function Operator">⊨ᵃᵍ</a> <a id="2572" href="/Classical/Structures/Group/AbelianGroup/#2572" class="Bound">ℰ</a> <a id="2574" class="Symbol">=</a> <a id="2576" class="Symbol">∀</a> <a id="2578" href="/Classical/Structures/Group/AbelianGroup/#2578" class="Bound">i</a> <a id="2580" class="Symbol">→</a> <a id="2582" href="/Classical/Structures/Group/AbelianGroup/#2566" class="Bound">𝑨</a> <a id="2584" href="/Setoid/Varieties/EquationalLogic/#2646" class="Function Operator">⊧</a> <a id="2586" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="2592" class="Symbol">(</a><a id="2593" href="/Classical/Structures/Group/AbelianGroup/#2572" class="Bound">ℰ</a> <a id="2595" href="/Classical/Structures/Group/AbelianGroup/#2578" class="Bound">i</a><a id="2596" class="Symbol">)</a> <a id="2598" href="/Setoid/Varieties/EquationalLogic/#2646" class="Function Operator">≈</a> <a id="2600" href="/classic/Data.Product.Base.html#650" class="Field">proj₂</a> <a id="2606" class="Symbol">(</a><a id="2607" href="/Classical/Structures/Group/AbelianGroup/#2572" class="Bound">ℰ</a> <a id="2609" href="/Classical/Structures/Group/AbelianGroup/#2578" class="Bound">i</a><a id="2610" class="Symbol">)</a>
 
 <a id="AbelianGroup"></a><a id="2613" href="/Classical/Structures/Group/AbelianGroup/#2613" class="Function">AbelianGroup</a> <a id="2626" class="Symbol">:</a> <a id="2628" class="Symbol">(</a><a id="2629" href="/Classical/Structures/Group/AbelianGroup/#2629" class="Bound">α</a> <a id="2631" href="/Classical/Structures/Group/AbelianGroup/#2631" class="Bound">ρ</a> <a id="2633" class="Symbol">:</a> <a id="2635" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a><a id="2640" class="Symbol">)</a> <a id="2642" class="Symbol">→</a> <a id="2644" href="/Classical/Structures/Group/AbelianGroup/#935" class="Primitive">Type</a> <a id="2649" class="Symbol">(</a><a id="2650" href="/classic/Agda.Primitive.html#931" class="Primitive">suc</a> <a id="2654" href="/Classical/Structures/Group/AbelianGroup/#2629" class="Bound">α</a> <a id="2656" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="2658" href="/classic/Agda.Primitive.html#931" class="Primitive">suc</a> <a id="2662" href="/Classical/Structures/Group/AbelianGroup/#2631" class="Bound">ρ</a><a id="2663" class="Symbol">)</a>
 <a id="2665" href="/Classical/Structures/Group/AbelianGroup/#2613" class="Function">AbelianGroup</a> <a id="2678" href="/Classical/Structures/Group/AbelianGroup/#2678" class="Bound">α</a> <a id="2680" href="/Classical/Structures/Group/AbelianGroup/#2680" class="Bound">ρ</a> <a id="2682" class="Symbol">=</a> <a id="2684" href="/classic/Data.Product.Base.html#1244" class="Function">Σ[</a> <a id="2687" href="/Classical/Structures/Group/AbelianGroup/#2687" class="Bound">𝑨</a> <a id="2689" href="/classic/Data.Product.Base.html#1244" class="Function">∈</a> <a id="2691" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="2699" class="Symbol">{</a><a id="2700" class="Argument">𝑆</a> <a id="2702" class="Symbol">=</a> <a id="2704" href="/Classical/Signatures/Group/#1718" class="Function">Sig-Group</a><a id="2713" class="Symbol">}</a> <a id="2715" href="/Classical/Structures/Group/AbelianGroup/#2678" class="Bound">α</a> <a id="2717" href="/Classical/Structures/Group/AbelianGroup/#2680" class="Bound">ρ</a> <a id="2719" href="/classic/Data.Product.Base.html#1244" class="Function">]</a> <a id="2721" href="/Classical/Structures/Group/AbelianGroup/#2687" class="Bound">𝑨</a> <a id="2723" href="/Classical/Structures/Group/AbelianGroup/#2457" class="Function Operator">⊨ᵃᵍ</a> <a id="2727" href="/Classical/Theories/AbelianGroup/#1408" class="Function">Th-AbelianGroup</a>

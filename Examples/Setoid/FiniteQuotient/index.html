@@ -12099,6 +12099,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -12156,6 +12160,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../FLRP/Assumptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assumptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../FLRP/Bridge/" class="md-nav__link">
         
   
@@ -12192,6 +12224,34 @@
     
   
     Enforceable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../FLRP/LayerBridge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LayerBridge
   
 
     
@@ -13116,7 +13176,7 @@ group <code>ℤ/2ℤ</code>.</p>
 <a id="2022" class="Keyword">open</a> <a id="2027" class="Keyword">import</a> <a id="2034" href="/Overture/" class="Module">Overture</a>                             <a id="2071" class="Keyword">using</a> <a id="2077" class="Symbol">(</a> <a id="2079" href="/Overture/Signatures/#5037" class="Function">ArityOf</a> <a id="2087" class="Symbol">;</a> <a id="2089" href="/Overture/Operations/#1488" class="Function">Op</a> <a id="2092" class="Symbol">)</a>
 <a id="2094" class="Keyword">open</a> <a id="2099" class="Keyword">import</a> <a id="2106" href="/Setoid/Algebras/" class="Module">Setoid.Algebras</a>     <a id="2126" class="Keyword">using</a> <a id="2132" class="Symbol">(</a> <a id="2134" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="2142" class="Symbol">;</a> <a id="2144" href="/Setoid/Algebras/Basic/#3635" class="Function Operator">𝔻[_]</a> <a id="2149" class="Symbol">;</a> <a id="2151" href="/Setoid/Algebras/Basic/#6876" class="Function">mkAlgebraₚ</a> <a id="2162" class="Symbol">;</a> <a id="2164" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">_,_</a> <a id="2168" class="Symbol">)</a>
 <a id="2170" class="Keyword">open</a> <a id="2175" class="Keyword">import</a> <a id="2182" href="/Setoid/Congruences/" class="Module">Setoid.Congruences</a>  <a id="2202" class="Keyword">using</a> <a id="2208" class="Symbol">(</a> <a id="2210" href="/Setoid/Congruences/Basic/#3122" class="Function">Con</a> <a id="2214" class="Symbol">;</a> <a id="2216" href="/Setoid/Congruences/Basic/#1720" class="Function Operator">_∣≈_</a> <a id="2221" class="Symbol">;</a> <a id="2223" href="/Setoid/Congruences/Basic/#4154" class="Function Operator">_╱_</a> <a id="2227" class="Symbol">)</a>
-<a id="2229" class="Keyword">open</a> <a id="2234" class="Keyword">import</a> <a id="2241" href="/Setoid/Homomorphisms/Isomorphisms/" class="Module">Setoid.Homomorphisms.Isomorphisms</a>    <a id="2278" class="Keyword">using</a> <a id="2284" class="Symbol">(</a><a id="2285" href="/Setoid/Homomorphisms/Isomorphisms/#3106" class="Record Operator">_≅_</a> <a id="2289" class="Symbol">;</a> <a id="2291" href="/Setoid/Homomorphisms/Isomorphisms/#7130" class="Function">≅-mkAlgebra</a><a id="2302" class="Symbol">)</a>
+<a id="2229" class="Keyword">open</a> <a id="2234" class="Keyword">import</a> <a id="2241" href="/Setoid/Homomorphisms/Isomorphisms/" class="Module">Setoid.Homomorphisms.Isomorphisms</a>    <a id="2278" class="Keyword">using</a> <a id="2284" class="Symbol">(</a><a id="2285" href="/Setoid/Homomorphisms/Isomorphisms/#3088" class="Record Operator">_≅_</a> <a id="2289" class="Symbol">;</a> <a id="2291" href="/Setoid/Homomorphisms/Isomorphisms/#7112" class="Function">≅-mkAlgebra</a><a id="2302" class="Symbol">)</a>
 <a id="2304" class="Keyword">open</a> <a id="2309" class="Keyword">import</a> <a id="2316" href="/Setoid/Signatures/" class="Module">Setoid.Signatures</a>                    <a id="2353" class="Keyword">using</a> <a id="2359" class="Symbol">(</a> <a id="2361" href="/Setoid/Signatures/#3355" class="Function Operator">⟨_⟩</a> <a id="2365" class="Symbol">)</a>
 
 <a id="2368" class="Keyword">open</a> <a id="2373" href="/Examples/Setoid/FiniteQuotient/#1564" class="Module">_⟶_</a> <a id="2377" class="Keyword">renaming</a> <a id="2386" class="Symbol">(</a> <a id="2388" href="/classic/Function.Bundles.html#2092" class="Field">to</a> <a id="2391" class="Symbol">to</a> <a id="2394" class="Field">_⟨$⟩_</a> <a id="2400" class="Symbol">;</a> <a id="2402" href="/classic/Function.Bundles.html#2111" class="Field">cong</a> <a id="2407" class="Symbol">to</a> <a id="2410" class="Field">≈cong</a> <a id="2416" class="Symbol">)</a>
@@ -13152,8 +13212,8 @@ the definition slightly less tedious.</p>
 </pre>
 <p>Constructing the algebra with <code>mkAlgebraₚ</code> results in an algebra that is isomorphic
 to the algebra <code>ℕ+-monoid</code> defined above.</p>
-<pre class="Agda"><a id="ℕ+-monoid-≅"></a><a id="4030" href="/Examples/Setoid/FiniteQuotient/#4030" class="Function">ℕ+-monoid-≅</a> <a id="4042" class="Symbol">:</a> <a id="4044" href="/Examples/Setoid/FiniteQuotient/#2915" class="Function">ℕ+-monoid</a> <a id="4054" href="/Setoid/Homomorphisms/Isomorphisms/#3106" class="Record Operator">≅</a> <a id="4056" href="/Setoid/Algebras/Basic/#6876" class="Function">mkAlgebraₚ</a> <a id="4067" href="/classic/Agda.Builtin.Nat.html#203" class="Datatype">ℕ</a> <a id="4069" href="/Examples/Setoid/FiniteQuotient/#3642" class="Function">f</a> <a id="4071" href="/Examples/Setoid/FiniteQuotient/#3729" class="Function">cong-f</a>
-<a id="4078" href="/Examples/Setoid/FiniteQuotient/#4030" class="Function">ℕ+-monoid-≅</a> <a id="4090" class="Symbol">=</a> <a id="4092" href="/Setoid/Homomorphisms/Isomorphisms/#7130" class="Function">≅-mkAlgebra</a> <a id="4104" href="/Examples/Setoid/FiniteQuotient/#3642" class="Function">f</a> <a id="4106" href="/Examples/Setoid/FiniteQuotient/#3729" class="Function">cong-f</a> <a id="4113" class="Symbol">λ</a> <a id="4115" class="Symbol">{</a> <a id="4117" href="/Classical/Signatures/Monoid/#1464" class="InductiveConstructor">∙-Op</a> <a id="4122" class="Symbol">_</a> <a id="4124" class="Symbol">→</a> <a id="4126" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="4131" class="Symbol">;</a> <a id="4133" href="/Classical/Signatures/Monoid/#1469" class="InductiveConstructor">ε-Op</a> <a id="4138" class="Symbol">_</a> <a id="4140" class="Symbol">→</a> <a id="4142" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="4147" class="Symbol">}</a>
+<pre class="Agda"><a id="ℕ+-monoid-≅"></a><a id="4030" href="/Examples/Setoid/FiniteQuotient/#4030" class="Function">ℕ+-monoid-≅</a> <a id="4042" class="Symbol">:</a> <a id="4044" href="/Examples/Setoid/FiniteQuotient/#2915" class="Function">ℕ+-monoid</a> <a id="4054" href="/Setoid/Homomorphisms/Isomorphisms/#3088" class="Record Operator">≅</a> <a id="4056" href="/Setoid/Algebras/Basic/#6876" class="Function">mkAlgebraₚ</a> <a id="4067" href="/classic/Agda.Builtin.Nat.html#203" class="Datatype">ℕ</a> <a id="4069" href="/Examples/Setoid/FiniteQuotient/#3642" class="Function">f</a> <a id="4071" href="/Examples/Setoid/FiniteQuotient/#3729" class="Function">cong-f</a>
+<a id="4078" href="/Examples/Setoid/FiniteQuotient/#4030" class="Function">ℕ+-monoid-≅</a> <a id="4090" class="Symbol">=</a> <a id="4092" href="/Setoid/Homomorphisms/Isomorphisms/#7112" class="Function">≅-mkAlgebra</a> <a id="4104" href="/Examples/Setoid/FiniteQuotient/#3642" class="Function">f</a> <a id="4106" href="/Examples/Setoid/FiniteQuotient/#3729" class="Function">cong-f</a> <a id="4113" class="Symbol">λ</a> <a id="4115" class="Symbol">{</a> <a id="4117" href="/Classical/Signatures/Monoid/#1464" class="InductiveConstructor">∙-Op</a> <a id="4122" class="Symbol">_</a> <a id="4124" class="Symbol">→</a> <a id="4126" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="4131" class="Symbol">;</a> <a id="4133" href="/Classical/Signatures/Monoid/#1469" class="InductiveConstructor">ε-Op</a> <a id="4138" class="Symbol">_</a> <a id="4140" class="Symbol">→</a> <a id="4142" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="4147" class="Symbol">}</a>
 </pre>
 <p>Both algebras carry <code>(ℕ, ≡)</code> and interpret each operation symbol identically,
 so the identity map is a homomorphism in each direction and the two round

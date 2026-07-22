@@ -12110,6 +12110,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -12167,6 +12171,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../FLRP/Assumptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assumptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../FLRP/Bridge/" class="md-nav__link">
         
   
@@ -12203,6 +12235,34 @@
     
   
     Enforceable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../FLRP/LayerBridge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LayerBridge
   
 
     
@@ -13141,7 +13201,7 @@ the curried <code>idem-law</code>.</p>
                                                                 <a id="2453" class="Symbol">;</a> <a id="2455" href="/Classical/Theories/Semilattice/#1414" class="InductiveConstructor">comm</a>  <a id="2461" class="Symbol">to</a> <a id="2464" class="InductiveConstructor">commˢˡ</a> <a id="2471" class="Symbol">)</a>
 <a id="2473" class="Keyword">open</a> <a id="2478" class="Keyword">import</a> <a id="2485" href="/Overture/Terms/" class="Module">Overture.Terms</a> <a id="2500" class="Symbol">{</a><a id="2501" class="Argument">𝑆</a> <a id="2503" class="Symbol">=</a> <a id="2505" href="/Classical/Signatures/Magma/#3774" class="Function">Sig-Magma</a><a id="2514" class="Symbol">}</a>             <a id="2528" class="Keyword">using</a>  <a id="2535" class="Symbol">(</a> <a id="2537" href="/Overture/Terms/Basic/#3256" class="Datatype">Term</a> <a id="2542" class="Symbol">;</a> <a id="2544" href="/Overture/Terms/Basic/#3296" class="InductiveConstructor">ℊ</a> <a id="2546" class="Symbol">)</a>
 <a id="2548" class="Keyword">open</a> <a id="2553" class="Keyword">import</a> <a id="2560" href="/Setoid/Algebras/Basic/" class="Module">Setoid.Algebras.Basic</a>      <a id="2587" class="Keyword">using</a>  <a id="2594" class="Symbol">(</a> <a id="2596" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="2604" class="Symbol">;</a> <a id="2606" href="/Setoid/Algebras/Basic/#3635" class="Function Operator">𝔻[_]</a> <a id="2611" class="Symbol">;</a> <a id="2613" href="/Setoid/Algebras/Basic/#3785" class="Function Operator">𝕌[_]</a> <a id="2618" class="Symbol">)</a>
-<a id="2620" class="Keyword">open</a> <a id="2625" class="Keyword">import</a> <a id="2632" href="/Setoid/Varieties/EquationalLogic/" class="Module">Setoid.Varieties.EquationalLogic</a> <a id="2665" class="Keyword">using</a> <a id="2671" class="Symbol">(</a> <a id="2673" href="/Setoid/Varieties/EquationalLogic/#2666" class="Function Operator">_⊧_≈_</a> <a id="2679" class="Symbol">)</a>
+<a id="2620" class="Keyword">open</a> <a id="2625" class="Keyword">import</a> <a id="2632" href="/Setoid/Varieties/EquationalLogic/" class="Module">Setoid.Varieties.EquationalLogic</a> <a id="2665" class="Keyword">using</a> <a id="2671" class="Symbol">(</a> <a id="2673" href="/Setoid/Varieties/EquationalLogic/#2646" class="Function Operator">_⊧_≈_</a> <a id="2679" class="Symbol">)</a>
 
 <a id="2682" class="Keyword">private</a> <a id="2690" class="Keyword">variable</a> <a id="2699" href="/Classical/Structures/Semilattice/#2699" class="Generalizable">α</a> <a id="2701" href="/Classical/Structures/Semilattice/#2701" class="Generalizable">ρ</a> <a id="2703" class="Symbol">:</a> <a id="2705" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a>
 </pre>
@@ -13149,7 +13209,7 @@ the curried <code>idem-law</code>.</p>
 <h4 id="satisfaction-predicate-and-the-type">Satisfaction predicate and the type<a class="headerlink" href="#satisfaction-predicate-and-the-type" title="Anchor link to this section">&para;</a></h4>
 <pre class="Agda"><a id="2770" class="Keyword">infix</a> <a id="2776" class="Number">4</a> <a id="2778" href="/Classical/Structures/Semilattice/#2784" class="Function Operator">_⊨ˢˡ_</a>
 <a id="_⊨ˢˡ_"></a><a id="2784" href="/Classical/Structures/Semilattice/#2784" class="Function Operator">_⊨ˢˡ_</a> <a id="2790" class="Symbol">:</a> <a id="2792" class="Symbol">(</a><a id="2793" href="/Classical/Structures/Semilattice/#2793" class="Bound">𝑨</a> <a id="2795" class="Symbol">:</a> <a id="2797" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="2805" class="Symbol">{</a><a id="2806" class="Argument">𝑆</a> <a id="2808" class="Symbol">=</a> <a id="2810" href="/Classical/Signatures/Magma/#3774" class="Function">Sig-Magma</a><a id="2819" class="Symbol">}</a> <a id="2821" href="/Classical/Structures/Semilattice/#2699" class="Generalizable">α</a> <a id="2823" href="/Classical/Structures/Semilattice/#2701" class="Generalizable">ρ</a><a id="2824" class="Symbol">)</a> <a id="2826" class="Symbol">(</a><a id="2827" href="/Classical/Structures/Semilattice/#2827" class="Bound">ℰ</a> <a id="2829" class="Symbol">:</a> <a id="2831" href="/Classical/Theories/Semilattice/#1378" class="Datatype">Eq-Semilattice</a> <a id="2846" class="Symbol">→</a> <a id="2848" href="/Overture/Terms/Basic/#3256" class="Datatype">Term</a> <a id="2853" class="Symbol">(</a><a id="2854" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="2858" class="Number">3</a><a id="2859" class="Symbol">)</a> <a id="2861" href="/classic/Data.Product.Base.html#1618" class="Function Operator">×</a> <a id="2863" href="/Overture/Terms/Basic/#3256" class="Datatype">Term</a> <a id="2868" class="Symbol">(</a><a id="2869" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="2873" class="Number">3</a><a id="2874" class="Symbol">))</a> <a id="2877" class="Symbol">→</a> <a id="2879" href="/Classical/Structures/Semilattice/#1099" class="Primitive">Type</a> <a id="2884" class="Symbol">(</a><a id="2885" href="/Classical/Structures/Semilattice/#2699" class="Generalizable">α</a> <a id="2887" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="2889" href="/Classical/Structures/Semilattice/#2701" class="Generalizable">ρ</a><a id="2890" class="Symbol">)</a>
-<a id="2892" href="/Classical/Structures/Semilattice/#2892" class="Bound">𝑨</a> <a id="2894" href="/Classical/Structures/Semilattice/#2784" class="Function Operator">⊨ˢˡ</a> <a id="2898" href="/Classical/Structures/Semilattice/#2898" class="Bound">ℰ</a> <a id="2900" class="Symbol">=</a> <a id="2902" class="Symbol">∀</a> <a id="2904" href="/Classical/Structures/Semilattice/#2904" class="Bound">i</a> <a id="2906" class="Symbol">→</a> <a id="2908" href="/Classical/Structures/Semilattice/#2892" class="Bound">𝑨</a> <a id="2910" href="/Setoid/Varieties/EquationalLogic/#2666" class="Function Operator">⊧</a> <a id="2912" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="2918" class="Symbol">(</a><a id="2919" href="/Classical/Structures/Semilattice/#2898" class="Bound">ℰ</a> <a id="2921" href="/Classical/Structures/Semilattice/#2904" class="Bound">i</a><a id="2922" class="Symbol">)</a> <a id="2924" href="/Setoid/Varieties/EquationalLogic/#2666" class="Function Operator">≈</a> <a id="2926" href="/classic/Data.Product.Base.html#650" class="Field">proj₂</a> <a id="2932" class="Symbol">(</a><a id="2933" href="/Classical/Structures/Semilattice/#2898" class="Bound">ℰ</a> <a id="2935" href="/Classical/Structures/Semilattice/#2904" class="Bound">i</a><a id="2936" class="Symbol">)</a>
+<a id="2892" href="/Classical/Structures/Semilattice/#2892" class="Bound">𝑨</a> <a id="2894" href="/Classical/Structures/Semilattice/#2784" class="Function Operator">⊨ˢˡ</a> <a id="2898" href="/Classical/Structures/Semilattice/#2898" class="Bound">ℰ</a> <a id="2900" class="Symbol">=</a> <a id="2902" class="Symbol">∀</a> <a id="2904" href="/Classical/Structures/Semilattice/#2904" class="Bound">i</a> <a id="2906" class="Symbol">→</a> <a id="2908" href="/Classical/Structures/Semilattice/#2892" class="Bound">𝑨</a> <a id="2910" href="/Setoid/Varieties/EquationalLogic/#2646" class="Function Operator">⊧</a> <a id="2912" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="2918" class="Symbol">(</a><a id="2919" href="/Classical/Structures/Semilattice/#2898" class="Bound">ℰ</a> <a id="2921" href="/Classical/Structures/Semilattice/#2904" class="Bound">i</a><a id="2922" class="Symbol">)</a> <a id="2924" href="/Setoid/Varieties/EquationalLogic/#2646" class="Function Operator">≈</a> <a id="2926" href="/classic/Data.Product.Base.html#650" class="Field">proj₂</a> <a id="2932" class="Symbol">(</a><a id="2933" href="/Classical/Structures/Semilattice/#2898" class="Bound">ℰ</a> <a id="2935" href="/Classical/Structures/Semilattice/#2904" class="Bound">i</a><a id="2936" class="Symbol">)</a>
 
 <a id="Semilattice"></a><a id="2939" href="/Classical/Structures/Semilattice/#2939" class="Function">Semilattice</a> <a id="2951" class="Symbol">:</a> <a id="2953" class="Symbol">(</a><a id="2954" href="/Classical/Structures/Semilattice/#2954" class="Bound">α</a> <a id="2956" href="/Classical/Structures/Semilattice/#2956" class="Bound">ρ</a> <a id="2958" class="Symbol">:</a> <a id="2960" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a><a id="2965" class="Symbol">)</a> <a id="2967" class="Symbol">→</a> <a id="2969" href="/Classical/Structures/Semilattice/#1099" class="Primitive">Type</a> <a id="2974" class="Symbol">(</a><a id="2975" href="/classic/Agda.Primitive.html#931" class="Primitive">suc</a> <a id="2979" href="/Classical/Structures/Semilattice/#2954" class="Bound">α</a> <a id="2981" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="2983" href="/classic/Agda.Primitive.html#931" class="Primitive">suc</a> <a id="2987" href="/Classical/Structures/Semilattice/#2956" class="Bound">ρ</a><a id="2988" class="Symbol">)</a>
 <a id="2990" href="/Classical/Structures/Semilattice/#2939" class="Function">Semilattice</a> <a id="3002" href="/Classical/Structures/Semilattice/#3002" class="Bound">α</a> <a id="3004" href="/Classical/Structures/Semilattice/#3004" class="Bound">ρ</a> <a id="3006" class="Symbol">=</a> <a id="3008" href="/classic/Data.Product.Base.html#1244" class="Function">Σ[</a> <a id="3011" href="/Classical/Structures/Semilattice/#3011" class="Bound">𝑨</a> <a id="3013" href="/classic/Data.Product.Base.html#1244" class="Function">∈</a> <a id="3015" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="3023" class="Symbol">{</a><a id="3024" class="Argument">𝑆</a> <a id="3026" class="Symbol">=</a> <a id="3028" href="/Classical/Signatures/Magma/#3774" class="Function">Sig-Magma</a><a id="3037" class="Symbol">}</a> <a id="3039" href="/Classical/Structures/Semilattice/#3002" class="Bound">α</a> <a id="3041" href="/Classical/Structures/Semilattice/#3004" class="Bound">ρ</a> <a id="3043" href="/classic/Data.Product.Base.html#1244" class="Function">]</a> <a id="3045" href="/Classical/Structures/Semilattice/#3011" class="Bound">𝑨</a> <a id="3047" href="/Classical/Structures/Semilattice/#2784" class="Function Operator">⊨ˢˡ</a> <a id="3051" href="/Classical/Theories/Semilattice/#1442" class="Function">Th-Semilattice</a>

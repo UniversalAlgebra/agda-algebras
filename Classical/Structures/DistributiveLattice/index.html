@@ -12110,6 +12110,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -12167,6 +12171,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../FLRP/Assumptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assumptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../FLRP/Bridge/" class="md-nav__link">
         
   
@@ -12203,6 +12235,34 @@
     
   
     Enforceable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../FLRP/LayerBridge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LayerBridge
   
 
     
@@ -13158,7 +13218,7 @@ left and a right law.</p>
 <a id="3236" class="Keyword">open</a> <a id="3241" class="Keyword">import</a> <a id="3248" href="/Overture/Terms/" class="Module">Overture.Terms</a> <a id="3263" class="Symbol">{</a><a id="3264" class="Argument">𝑆</a> <a id="3266" class="Symbol">=</a> <a id="3268" href="/Classical/Signatures/Lattice/#1626" class="Function">Sig-Lattice</a><a id="3279" class="Symbol">}</a> <a id="3281" class="Keyword">using</a> <a id="3287" class="Symbol">(</a> <a id="3289" href="/Overture/Terms/Basic/#3256" class="Datatype">Term</a> <a id="3294" class="Symbol">;</a> <a id="3296" href="/Overture/Terms/Basic/#3296" class="InductiveConstructor">ℊ</a> <a id="3298" class="Symbol">;</a> <a id="3300" href="/Overture/Terms/Basic/#3368" class="InductiveConstructor">node</a> <a id="3305" class="Symbol">)</a>
 <a id="3307" class="Keyword">open</a> <a id="3312" class="Keyword">import</a> <a id="3319" href="/Setoid/Algebras/Basic/" class="Module">Setoid.Algebras.Basic</a> <a id="3341" class="Keyword">using</a> <a id="3347" class="Symbol">(</a> <a id="3349" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="3357" class="Symbol">;</a> <a id="3359" href="/Setoid/Algebras/Basic/#3635" class="Function Operator">𝔻[_]</a> <a id="3364" class="Symbol">;</a> <a id="3366" href="/Setoid/Algebras/Basic/#3785" class="Function Operator">𝕌[_]</a> <a id="3371" class="Symbol">)</a>
 <a id="3373" class="Keyword">open</a> <a id="3378" class="Keyword">import</a> <a id="3385" href="/Setoid/Terms/" class="Module">Setoid.Terms</a> <a id="3398" class="Keyword">using</a> <a id="3404" class="Symbol">(</a> <a id="3406" class="Keyword">module</a> <a id="3413" href="/Setoid/Terms/Basic/#3823" class="Module">Environment</a> <a id="3425" class="Symbol">)</a>
-<a id="3427" class="Keyword">open</a> <a id="3432" class="Keyword">import</a> <a id="3439" href="/Setoid/Varieties/EquationalLogic/" class="Module">Setoid.Varieties.EquationalLogic</a> <a id="3472" class="Keyword">using</a> <a id="3478" class="Symbol">(</a> <a id="3480" href="/Setoid/Varieties/EquationalLogic/#2666" class="Function Operator">_⊧_≈_</a> <a id="3486" class="Symbol">)</a>
+<a id="3427" class="Keyword">open</a> <a id="3432" class="Keyword">import</a> <a id="3439" href="/Setoid/Varieties/EquationalLogic/" class="Module">Setoid.Varieties.EquationalLogic</a> <a id="3472" class="Keyword">using</a> <a id="3478" class="Symbol">(</a> <a id="3480" href="/Setoid/Varieties/EquationalLogic/#2646" class="Function Operator">_⊧_≈_</a> <a id="3486" class="Symbol">)</a>
 
 <a id="3489" class="Keyword">private</a> <a id="3497" class="Keyword">variable</a> <a id="3506" href="/Classical/Structures/DistributiveLattice/#3506" class="Generalizable">α</a> <a id="3508" href="/Classical/Structures/DistributiveLattice/#3508" class="Generalizable">ρ</a> <a id="3510" class="Symbol">:</a> <a id="3512" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a>
 </pre>
@@ -13168,7 +13228,7 @@ left and a right law.</p>
 <a id="_⊨ᵈˡ_"></a><a id="3632" href="/Classical/Structures/DistributiveLattice/#3632" class="Function Operator">_⊨ᵈˡ_</a> <a id="3638" class="Symbol">:</a> <a id="3640" class="Symbol">(</a><a id="3641" href="/Classical/Structures/DistributiveLattice/#3641" class="Bound">𝑨</a> <a id="3643" class="Symbol">:</a> <a id="3645" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="3653" class="Symbol">{</a><a id="3654" class="Argument">𝑆</a> <a id="3656" class="Symbol">=</a> <a id="3658" href="/Classical/Signatures/Lattice/#1626" class="Function">Sig-Lattice</a><a id="3669" class="Symbol">}</a> <a id="3671" href="/Classical/Structures/DistributiveLattice/#3506" class="Generalizable">α</a> <a id="3673" href="/Classical/Structures/DistributiveLattice/#3508" class="Generalizable">ρ</a><a id="3674" class="Symbol">)</a> <a id="3676" class="Symbol">(</a><a id="3677" href="/Classical/Structures/DistributiveLattice/#3677" class="Bound">ℰ</a> <a id="3679" class="Symbol">:</a> <a id="3681" href="/Classical/Theories/DistributiveLattice/#2374" class="Datatype">Eq-DistributiveLattice</a> <a id="3704" class="Symbol">→</a> <a id="3706" href="/Overture/Terms/Basic/#3256" class="Datatype">Term</a> <a id="3711" class="Symbol">(</a><a id="3712" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="3716" class="Number">3</a><a id="3717" class="Symbol">)</a> <a id="3719" href="/classic/Data.Product.Base.html#1618" class="Function Operator">×</a> <a id="3721" href="/Overture/Terms/Basic/#3256" class="Datatype">Term</a> <a id="3726" class="Symbol">(</a><a id="3727" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="3731" class="Number">3</a><a id="3732" class="Symbol">))</a>
   <a id="3737" class="Symbol">→</a> <a id="3739" href="/Classical/Structures/DistributiveLattice/#1734" class="Primitive">Type</a> <a id="3744" class="Symbol">(</a><a id="3745" href="/Classical/Structures/DistributiveLattice/#3506" class="Generalizable">α</a> <a id="3747" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="3749" href="/Classical/Structures/DistributiveLattice/#3508" class="Generalizable">ρ</a><a id="3750" class="Symbol">)</a>
 
-<a id="3753" href="/Classical/Structures/DistributiveLattice/#3753" class="Bound">𝑨</a> <a id="3755" href="/Classical/Structures/DistributiveLattice/#3632" class="Function Operator">⊨ᵈˡ</a> <a id="3759" href="/Classical/Structures/DistributiveLattice/#3759" class="Bound">ℰ</a> <a id="3761" class="Symbol">=</a> <a id="3763" class="Symbol">∀</a> <a id="3765" href="/Classical/Structures/DistributiveLattice/#3765" class="Bound">i</a> <a id="3767" class="Symbol">→</a> <a id="3769" href="/Classical/Structures/DistributiveLattice/#3753" class="Bound">𝑨</a> <a id="3771" href="/Setoid/Varieties/EquationalLogic/#2666" class="Function Operator">⊧</a> <a id="3773" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="3779" class="Symbol">(</a><a id="3780" href="/Classical/Structures/DistributiveLattice/#3759" class="Bound">ℰ</a> <a id="3782" href="/Classical/Structures/DistributiveLattice/#3765" class="Bound">i</a><a id="3783" class="Symbol">)</a> <a id="3785" href="/Setoid/Varieties/EquationalLogic/#2666" class="Function Operator">≈</a> <a id="3787" href="/classic/Data.Product.Base.html#650" class="Field">proj₂</a> <a id="3793" class="Symbol">(</a><a id="3794" href="/Classical/Structures/DistributiveLattice/#3759" class="Bound">ℰ</a> <a id="3796" href="/Classical/Structures/DistributiveLattice/#3765" class="Bound">i</a><a id="3797" class="Symbol">)</a>
+<a id="3753" href="/Classical/Structures/DistributiveLattice/#3753" class="Bound">𝑨</a> <a id="3755" href="/Classical/Structures/DistributiveLattice/#3632" class="Function Operator">⊨ᵈˡ</a> <a id="3759" href="/Classical/Structures/DistributiveLattice/#3759" class="Bound">ℰ</a> <a id="3761" class="Symbol">=</a> <a id="3763" class="Symbol">∀</a> <a id="3765" href="/Classical/Structures/DistributiveLattice/#3765" class="Bound">i</a> <a id="3767" class="Symbol">→</a> <a id="3769" href="/Classical/Structures/DistributiveLattice/#3753" class="Bound">𝑨</a> <a id="3771" href="/Setoid/Varieties/EquationalLogic/#2646" class="Function Operator">⊧</a> <a id="3773" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="3779" class="Symbol">(</a><a id="3780" href="/Classical/Structures/DistributiveLattice/#3759" class="Bound">ℰ</a> <a id="3782" href="/Classical/Structures/DistributiveLattice/#3765" class="Bound">i</a><a id="3783" class="Symbol">)</a> <a id="3785" href="/Setoid/Varieties/EquationalLogic/#2646" class="Function Operator">≈</a> <a id="3787" href="/classic/Data.Product.Base.html#650" class="Field">proj₂</a> <a id="3793" class="Symbol">(</a><a id="3794" href="/Classical/Structures/DistributiveLattice/#3759" class="Bound">ℰ</a> <a id="3796" href="/Classical/Structures/DistributiveLattice/#3765" class="Bound">i</a><a id="3797" class="Symbol">)</a>
 
 <a id="DistributiveLattice"></a><a id="3800" href="/Classical/Structures/DistributiveLattice/#3800" class="Function">DistributiveLattice</a> <a id="3820" class="Symbol">:</a> <a id="3822" class="Symbol">(</a><a id="3823" href="/Classical/Structures/DistributiveLattice/#3823" class="Bound">α</a> <a id="3825" href="/Classical/Structures/DistributiveLattice/#3825" class="Bound">ρ</a> <a id="3827" class="Symbol">:</a> <a id="3829" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a><a id="3834" class="Symbol">)</a> <a id="3836" class="Symbol">→</a> <a id="3838" href="/Classical/Structures/DistributiveLattice/#1734" class="Primitive">Type</a> <a id="3843" class="Symbol">(</a><a id="3844" href="/classic/Agda.Primitive.html#931" class="Primitive">suc</a> <a id="3848" href="/Classical/Structures/DistributiveLattice/#3823" class="Bound">α</a> <a id="3850" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="3852" href="/classic/Agda.Primitive.html#931" class="Primitive">suc</a> <a id="3856" href="/Classical/Structures/DistributiveLattice/#3825" class="Bound">ρ</a><a id="3857" class="Symbol">)</a>
 <a id="3859" href="/Classical/Structures/DistributiveLattice/#3800" class="Function">DistributiveLattice</a> <a id="3879" href="/Classical/Structures/DistributiveLattice/#3879" class="Bound">α</a> <a id="3881" href="/Classical/Structures/DistributiveLattice/#3881" class="Bound">ρ</a> <a id="3883" class="Symbol">=</a> <a id="3885" href="/classic/Data.Product.Base.html#1244" class="Function">Σ[</a> <a id="3888" href="/Classical/Structures/DistributiveLattice/#3888" class="Bound">𝑨</a> <a id="3890" href="/classic/Data.Product.Base.html#1244" class="Function">∈</a> <a id="3892" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="3900" class="Symbol">{</a><a id="3901" class="Argument">𝑆</a> <a id="3903" class="Symbol">=</a> <a id="3905" href="/Classical/Signatures/Lattice/#1626" class="Function">Sig-Lattice</a><a id="3916" class="Symbol">}</a> <a id="3918" href="/Classical/Structures/DistributiveLattice/#3879" class="Bound">α</a> <a id="3920" href="/Classical/Structures/DistributiveLattice/#3881" class="Bound">ρ</a> <a id="3922" href="/classic/Data.Product.Base.html#1244" class="Function">]</a> <a id="3924" href="/Classical/Structures/DistributiveLattice/#3888" class="Bound">𝑨</a> <a id="3926" href="/Classical/Structures/DistributiveLattice/#3632" class="Function Operator">⊨ᵈˡ</a> <a id="3930" href="/Classical/Theories/DistributiveLattice/#2607" class="Function">Th-DistributiveLattice</a>

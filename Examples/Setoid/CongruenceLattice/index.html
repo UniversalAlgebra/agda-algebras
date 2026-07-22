@@ -12110,6 +12110,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -12167,6 +12171,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../FLRP/Assumptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assumptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../FLRP/Bridge/" class="md-nav__link">
         
   
@@ -12203,6 +12235,34 @@
     
   
     Enforceable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../FLRP/LayerBridge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LayerBridge
   
 
     
@@ -13164,7 +13224,7 @@ has no operations — compatibility is vacuous.</p>
 <h4 id="instantiating-the-bundles">Instantiating the bundles<a class="headerlink" href="#instantiating-the-bundles" title="Anchor link to this section">&para;</a></h4>
 <p>With the base level <code>ℓ₀ = 0ℓ</code> the absorbing level <code>L</code> is <code>0ℓ</code>, so the congruence
 lattice of <code>𝟚</code> is the chain on <code>Con 𝟚 {0ℓ}</code>.  All three bundles type-check.</p>
-<pre class="Agda"><a id="3020" class="Keyword">open</a> <a id="3025" class="Keyword">import</a> <a id="3032" href="/Setoid/Congruences/Lattice/" class="Module">Setoid.Congruences.Lattice</a> <a id="3059" class="Keyword">using</a> <a id="3065" class="Symbol">(</a> <a id="3067" href="/Setoid/Congruences/Lattice/#3490" class="Function Operator">_⊆_</a> <a id="3071" class="Symbol">)</a>
+<pre class="Agda"><a id="3020" class="Keyword">open</a> <a id="3025" class="Keyword">import</a> <a id="3032" href="/Setoid/Congruences/Lattice/" class="Module">Setoid.Congruences.Lattice</a> <a id="3059" class="Keyword">using</a> <a id="3065" class="Symbol">(</a> <a id="3067" href="/Setoid/Congruences/Lattice/#3470" class="Function Operator">_⊆_</a> <a id="3071" class="Symbol">)</a>
 <a id="3073" class="Keyword">open</a> <a id="3078" class="Keyword">import</a> <a id="3085" href="/Setoid/Congruences/CompleteLattice/" class="Module">Setoid.Congruences.CompleteLattice</a>
   <a id="3122" class="Keyword">using</a> <a id="3128" class="Symbol">(</a> <a id="3130" href="/Setoid/Congruences/CompleteLattice/#4497" class="Function">Con-Lattice</a> <a id="3142" class="Symbol">;</a> <a id="3144" href="/Setoid/Congruences/CompleteLattice/#6238" class="Function">Con-BoundedLattice</a> <a id="3163" class="Symbol">;</a> <a id="3165" href="/Setoid/Congruences/CompleteLattice/#8693" class="Function">Con-CompleteLattice</a> <a id="3185" class="Symbol">;</a> <a id="3187" href="/Setoid/Congruences/CompleteLattice/#5685" class="Function">1ᴬ</a> <a id="3190" class="Symbol">;</a> <a id="3192" href="/Setoid/Congruences/CompleteLattice/#5654" class="Function">0ᴬ</a> <a id="3195" class="Symbol">;</a> <a id="3197" href="/Setoid/Congruences/CompleteLattice/#5716" class="Function">0ᴬ-minimum</a> <a id="3208" class="Symbol">)</a>
 
@@ -13177,7 +13237,7 @@ lattice of <code>𝟚</code> is the chain on <code>Con 𝟚 {0ℓ}</code>.  All 
 <code>0 ≤ Δ</code> (the bottom is the least congruence, so it is below <code>Δ</code>) would give <code>⊤ ≤ Δ</code>;
 but <code>⊤</code> relates <code>true</code> and <code>false</code> while <code>Δ</code> (namely <code>_≡_</code>) does not, so <code>true ≡ false</code>
 — a contradiction.</p>
-<pre class="Agda"><a id="Con𝟚-nontrivial"></a><a id="3695" href="/Examples/Setoid/CongruenceLattice/#3695" class="Function">Con𝟚-nontrivial</a> <a id="3711" class="Symbol">:</a> <a id="3713" href="/classic/Relation.Nullary.Negation.Core.html#677" class="Function Operator">¬</a> <a id="3715" class="Symbol">(</a> <a id="3717" class="Symbol">(</a><a id="3718" href="/Setoid/Congruences/CompleteLattice/#5685" class="Function">1ᴬ</a> <a id="3721" href="/Examples/Setoid/CongruenceLattice/#2242" class="Function">𝟚</a> <a id="3723" href="/classic/Level.html#521" class="Function">0ℓ</a><a id="3725" class="Symbol">)</a> <a id="3727" href="/Setoid/Congruences/Lattice/#3490" class="Function Operator">⊆</a> <a id="3729" class="Symbol">(</a><a id="3730" href="/Setoid/Congruences/CompleteLattice/#5654" class="Function">0ᴬ</a> <a id="3733" href="/Examples/Setoid/CongruenceLattice/#2242" class="Function">𝟚</a> <a id="3735" href="/classic/Level.html#521" class="Function">0ℓ</a><a id="3737" class="Symbol">)</a> <a id="3739" class="Symbol">)</a>
+<pre class="Agda"><a id="Con𝟚-nontrivial"></a><a id="3695" href="/Examples/Setoid/CongruenceLattice/#3695" class="Function">Con𝟚-nontrivial</a> <a id="3711" class="Symbol">:</a> <a id="3713" href="/classic/Relation.Nullary.Negation.Core.html#677" class="Function Operator">¬</a> <a id="3715" class="Symbol">(</a> <a id="3717" class="Symbol">(</a><a id="3718" href="/Setoid/Congruences/CompleteLattice/#5685" class="Function">1ᴬ</a> <a id="3721" href="/Examples/Setoid/CongruenceLattice/#2242" class="Function">𝟚</a> <a id="3723" href="/classic/Level.html#521" class="Function">0ℓ</a><a id="3725" class="Symbol">)</a> <a id="3727" href="/Setoid/Congruences/Lattice/#3470" class="Function Operator">⊆</a> <a id="3729" class="Symbol">(</a><a id="3730" href="/Setoid/Congruences/CompleteLattice/#5654" class="Function">0ᴬ</a> <a id="3733" href="/Examples/Setoid/CongruenceLattice/#2242" class="Function">𝟚</a> <a id="3735" href="/classic/Level.html#521" class="Function">0ℓ</a><a id="3737" class="Symbol">)</a> <a id="3739" class="Symbol">)</a>
 <a id="3741" href="/Examples/Setoid/CongruenceLattice/#3695" class="Function">Con𝟚-nontrivial</a> <a id="3757" href="/Examples/Setoid/CongruenceLattice/#3757" class="Bound">⊤≤⊥</a> <a id="3761" class="Keyword">with</a> <a id="3766" href="/Setoid/Congruences/CompleteLattice/#5716" class="Function">0ᴬ-minimum</a> <a id="3777" href="/Examples/Setoid/CongruenceLattice/#2242" class="Function">𝟚</a> <a id="3779" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="3782" href="/Examples/Setoid/CongruenceLattice/#2677" class="Function">Δ</a> <a id="3784" class="Symbol">(</a><a id="3785" href="/Examples/Setoid/CongruenceLattice/#3757" class="Bound">⊤≤⊥</a> <a id="3789" class="Symbol">{</a><a id="3790" href="/classic/Agda.Builtin.Bool.html#198" class="InductiveConstructor">true</a><a id="3794" class="Symbol">}</a> <a id="3796" class="Symbol">{</a><a id="3797" href="/classic/Agda.Builtin.Bool.html#192" class="InductiveConstructor">false</a><a id="3802" class="Symbol">}</a> <a id="3804" class="Symbol">(</a><a id="3805" href="/classic/Level.html#466" class="InductiveConstructor">lift</a> <a id="3810" class="Symbol">_))</a>
 <a id="3814" class="Symbol">...</a> <a id="3818" class="Symbol">|</a> <a id="3820" class="Symbol">()</a>
 </pre>

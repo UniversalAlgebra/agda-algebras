@@ -1,0 +1,195 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>FLRP.Assumptions</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">---
+layout: default
+file: &quot;src/FLRP/Assumptions.lagda.md&quot;
+title: &quot;FLRP.Assumptions module (The Agda Universal Algebra Library)&quot;
+date: &quot;2026-07-20&quot;
+author: &quot;the agda-algebras development team&quot;
+---
+
+### The registry of classical assumptions of the FLRP program
+
+This is the [FLRP.Assumptions][] module of the [Agda Universal Algebra Library][].
+
+The [Agda Universal Algebra Library][] is postulate-free, confined to
+[*Safe Agda*](https://agda.readthedocs.io/en/v2.8.0-r3/language/safe-agda.html#safe-agda),
+and the FLRP tree is no execption.  Where a result genuinely depends on a classical
+theorem, that theorem is never introduced as a `postulate`; it is stated as an
+*explicit hypothesis* and threaded through the results that consume it.
+
+The present module is the single place these hypotheses are *named, documented, and
+given their logical strength*, so that the classical content of the FLRP research
+program is auditable at one site rather than smeared across the development.[^1]
+
+**Entry 1**: the congruence-completeness bridge.  This is the *single* classical
+assumption of the two-layer discipline: the one place a result may cross from the
+semantic congruence layer (Layer S, `Con`{.AgdaFunction}) to the decidable layer
+(Layer D, `DecCon`{.AgdaFunction}).  It is registered here as
+`CongruenceCompleteness`{.AgdaFunction} `𝑨`.
+
++  **Meaning**.  Every *semantic* congruence of `𝑨`{.AgdaBound} is `≑`{.AgdaFunction}
+   to a *decidable* one.  (`≑`{.AgdaFunction} is mutual containment.)
+
++  **Source**.  It is exactly the `complete`{.AgdaField} field of
+   `FiniteCongruences`{.AgdaRecord} of [Setoid.Congruences.Finite.Basic][], with the
+   finite list and its membership proof forgotten (the list side is *constructive* —
+   see below), so `fromFiniteCongruences`{.AgdaFunction} extracts it from the canonical
+   record.
+
++  **Strength**.  It sits strictly *between weak excluded middle and excluded middle*
+   at the working relation level.  The lower bound is the no-go theorem
+   `chain₂-ConIso→WLEM`{.AgdaFunction} / `chain₂-Representable→WLEM`{.AgdaFunction} of
+   [FLRP.Problem][]: on a nontrivial algebra the bridge lets an oracle congruence be
+   decided, yielding weak excluded middle.  The upper bound is that full excluded
+   middle at the working level supplies it.[^2]
+
+The constructive *complement* of this assumption is already discharged with no axiom:
+the finite list of decidable congruences and its completeness *for the decidable layer*
+is `FiniteCongruencesᵈ`{.AgdaRecord} of [Setoid.Congruences.Finite.Decidable][], built
+from carrier- and signature-finiteness alone.  `toFiniteCongruences`{.AgdaFunction}
+below makes this precise: adjoining `CongruenceCompleteness`{.AgdaFunction} to that
+free constructive data reconstitutes the full semantic
+`FiniteCongruences`{.AgdaRecord}, so the assumption is exactly the classical delta
+between the two layers, no more, no less.
+
+**Coordination note**.  Work package 5 (WP-5) also plans to register
+its Kurzweil–Netter duality in this module.[^3]  The module is structured as
+*per-assumption statement definitions* (rather than one monolithic record) precisely
+so that a second entry can be appended without disturbing the first: WP-5 should add
+its duality as &quot;Entry 2&quot; alongside `CongruenceCompleteness`{.AgdaFunction}, and
+downstream results take whichever entry they need as an ordinary argument.[^4]
+
+&lt;!--
+</a><a id="3387" class="Markup">```agda
+</a><a id="3395" class="Symbol">{-#</a> <a id="3399" class="Keyword">OPTIONS</a> <a id="3407" class="Pragma">--cubical-compatible</a> <a id="3428" class="Pragma">--exact-split</a> <a id="3442" class="Pragma">--safe</a> <a id="3449" class="Symbol">#-}</a>
+
+<a id="3454" class="Keyword">module</a> <a id="3461" href="FLRP.Assumptions.html" class="Module">FLRP.Assumptions</a> <a id="3478" class="Keyword">where</a>
+
+<a id="3485" class="Keyword">open</a> <a id="3490" class="Keyword">import</a> <a id="3497" href="Agda.Primitive.html" class="Module">Agda.Primitive</a> <a id="3512" class="Keyword">using</a> <a id="3518" class="Symbol">()</a> <a id="3521" class="Keyword">renaming</a> <a id="3530" class="Symbol">(</a> <a id="3532" href="Agda.Primitive.html#388" class="Primitive">Set</a> <a id="3536" class="Symbol">to</a> <a id="3539" class="Primitive">Type</a> <a id="3544" class="Symbol">)</a>
+
+<a id="3547" class="Comment">-- Imports from the Agda Standard Library ---------------------------------------</a>
+<a id="3629" class="Keyword">open</a> <a id="3634" class="Keyword">import</a> <a id="3641" href="Data.List.Membership.Propositional.html" class="Module">Data.List.Membership.Propositional</a>    <a id="3679" class="Keyword">using</a>  <a id="3686" class="Symbol">(</a> <a id="3688" href="Data.List.Membership.Setoid.html#925" class="Function Operator">_∈_</a> <a id="3692" class="Symbol">)</a>
+<a id="3694" class="Keyword">open</a> <a id="3699" class="Keyword">import</a> <a id="3706" href="Data.Product.html" class="Module">Data.Product</a>                          <a id="3744" class="Keyword">using</a>  <a id="3751" class="Symbol">(</a> <a id="3753" href="Data.Product.Base.html#1618" class="Function Operator">_×_</a> <a id="3757" class="Symbol">;</a> <a id="3759" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">_,_</a> <a id="3763" class="Symbol">;</a> <a id="3765" href="Data.Product.Base.html#1244" class="Function">Σ-syntax</a>
+                                                         <a id="3831" class="Symbol">;</a> <a id="3833" href="Data.Product.Base.html#636" class="Field">proj₁</a> <a id="3839" class="Symbol">;</a> <a id="3841" href="Data.Product.Base.html#650" class="Field">proj₂</a> <a id="3847" class="Symbol">)</a>
+<a id="3849" class="Keyword">open</a> <a id="3854" class="Keyword">import</a> <a id="3861" href="Function.html" class="Module">Function</a>                              <a id="3899" class="Keyword">using</a>  <a id="3906" class="Symbol">(</a><a id="3907" href="Function.Base.html#1134" class="Function Operator">_∘_</a><a id="3910" class="Symbol">)</a>
+<a id="3912" class="Keyword">open</a> <a id="3917" class="Keyword">import</a> <a id="3924" href="Level.html" class="Module">Level</a>                                 <a id="3962" class="Keyword">using</a>  <a id="3969" class="Symbol">(</a> <a id="3971" href="Agda.Primitive.html#742" class="Postulate">Level</a> <a id="3977" class="Symbol">;</a> <a id="3979" href="Agda.Primitive.html#961" class="Primitive Operator">_⊔_</a> <a id="3983" class="Symbol">)</a>
+                                                  <a id="4035" class="Keyword">renaming</a> <a id="4044" class="Symbol">(</a> <a id="4046" href="Agda.Primitive.html#931" class="Primitive">suc</a> <a id="4050" class="Symbol">to</a> <a id="4053" class="Primitive">lsuc</a> <a id="4058" class="Symbol">)</a>
+
+<a id="4061" class="Comment">-- Imports from the Agda Universal Algebra Library ------------------------------</a>
+<a id="4143" class="Keyword">open</a> <a id="4148" class="Keyword">import</a> <a id="4155" href="Overture.html" class="Module">Overture</a>                              <a id="4193" class="Keyword">using</a>  <a id="4200" class="Symbol">(</a> <a id="4202" href="Overture.Signatures.html#683" class="Generalizable">𝓞</a> <a id="4204" class="Symbol">;</a> <a id="4206" href="Overture.Signatures.html#685" class="Generalizable">𝓥</a> <a id="4208" class="Symbol">;</a> <a id="4210" href="Overture.Signatures.html#3218" class="Function">Signature</a> <a id="4220" class="Symbol">)</a>
+<a id="4222" class="Keyword">open</a> <a id="4227" class="Keyword">import</a> <a id="4234" href="Setoid.Algebras.Basic.html" class="Module">Setoid.Algebras.Basic</a>                 <a id="4272" class="Keyword">using</a>  <a id="4279" class="Symbol">(</a> <a id="4281" href="Setoid.Algebras.Basic.html#2918" class="Record">Algebra</a> <a id="4289" class="Symbol">)</a>
+<a id="4291" class="Keyword">open</a> <a id="4296" class="Keyword">import</a> <a id="4303" href="Setoid.Algebras.Finite.html" class="Module">Setoid.Algebras.Finite</a>                <a id="4341" class="Keyword">using</a>  <a id="4348" class="Symbol">(</a> <a id="4350" href="Setoid.Algebras.Finite.html#3202" class="Record">FiniteAlgebra</a> <a id="4364" class="Symbol">)</a>
+<a id="4366" class="Keyword">open</a> <a id="4371" class="Keyword">import</a> <a id="4378" href="Setoid.Signatures.Finite.html" class="Module">Setoid.Signatures.Finite</a>              <a id="4416" class="Keyword">using</a>  <a id="4423" class="Symbol">(</a> <a id="4425" href="Setoid.Signatures.Finite.html#5275" class="Record">FiniteSignature</a> <a id="4441" class="Symbol">)</a>
+<a id="4443" class="Keyword">open</a> <a id="4448" class="Keyword">import</a> <a id="4455" href="Setoid.Congruences.Basic.html" class="Module">Setoid.Congruences.Basic</a>              <a id="4493" class="Keyword">using</a>  <a id="4500" class="Symbol">(</a> <a id="4502" href="Setoid.Congruences.Basic.html#3122" class="Function">Con</a> <a id="4506" class="Symbol">)</a>
+<a id="4508" class="Keyword">open</a> <a id="4513" class="Keyword">import</a> <a id="4520" href="Setoid.Congruences.Lattice.html" class="Module">Setoid.Congruences.Lattice</a>            <a id="4558" class="Keyword">using</a>  <a id="4565" class="Symbol">(</a> <a id="4567" href="Setoid.Congruences.Lattice.html#3679" class="Function Operator">_≑_</a> <a id="4571" class="Symbol">)</a>
+<a id="4573" class="Keyword">open</a> <a id="4578" class="Keyword">import</a> <a id="4585" href="Setoid.Congruences.Finite.Basic.html" class="Module">Setoid.Congruences.Finite.Basic</a>       <a id="4623" class="Keyword">using</a>  <a id="4630" class="Symbol">(</a> <a id="4632" href="Setoid.Congruences.Finite.Basic.html#5072" class="Function">DecCon</a> <a id="4639" class="Symbol">;</a> <a id="4641" href="Setoid.Congruences.Finite.Basic.html#5776" class="Record">FiniteCongruences</a> <a id="4659" class="Symbol">)</a>
+<a id="4661" class="Keyword">open</a> <a id="4666" class="Keyword">import</a> <a id="4673" href="Setoid.Congruences.Finite.Decidable.html" class="Module">Setoid.Congruences.Finite.Decidable</a>   <a id="4711" class="Keyword">using</a>  <a id="4718" class="Symbol">(</a> <a id="4720" href="Setoid.Congruences.Finite.Decidable.html#9006" class="Record">FiniteCongruencesᵈ</a>
+                                                         <a id="4796" class="Symbol">;</a> <a id="4798" href="Setoid.Congruences.Finite.Decidable.html#20080" class="Function">FiniteAlgebra→FiniteCongruencesᵈ</a> <a id="4831" class="Symbol">)</a>
+
+<a id="4834" class="Keyword">private</a> <a id="4842" class="Keyword">variable</a> <a id="4851" href="FLRP.Assumptions.html#4851" class="Generalizable">α</a> <a id="4853" href="FLRP.Assumptions.html#4853" class="Generalizable">ρ</a> <a id="4855" class="Symbol">:</a> <a id="4857" href="Agda.Primitive.html#742" class="Postulate">Level</a>
+<a id="4863" class="Markup">```
+</a><a id="4867" class="Background">--&gt;
+
+#### Entry 1: the congruence-completeness bridge
+
+Throughout we fix an algebra `𝑨`{.AgdaBound} and work at its
+**working congruence level** `ℓ = 𝓞 ⊔ 𝓥 ⊔ α ⊔ ρ` — the absorbing level at which the
+decidable-layer machinery of [Setoid.Congruences.Finite.Basic][] and
+[Setoid.Congruences.Finite.Decidable][] lives, and the level at which the `complete`
+field of `FiniteCongruences`{.AgdaRecord} quantifies.
+
+</a><a id="5276" class="Markup">```agda
+</a><a id="5284" class="Keyword">module</a> <a id="5291" href="FLRP.Assumptions.html#5291" class="Module">_</a> <a id="5293" class="Symbol">{</a><a id="5294" href="FLRP.Assumptions.html#5294" class="Bound">𝑆</a> <a id="5296" class="Symbol">:</a> <a id="5298" href="Overture.Signatures.html#3218" class="Function">Signature</a> <a id="5308" href="Overture.Signatures.html#683" class="Generalizable">𝓞</a> <a id="5310" href="Overture.Signatures.html#685" class="Generalizable">𝓥</a><a id="5311" class="Symbol">}(</a><a id="5313" href="FLRP.Assumptions.html#5313" class="Bound">𝑨</a> <a id="5315" class="Symbol">:</a> <a id="5317" href="Setoid.Algebras.Basic.html#2918" class="Record">Algebra</a> <a id="5325" class="Symbol">{</a><a id="5326" class="Argument">𝑆</a> <a id="5328" class="Symbol">=</a> <a id="5330" href="FLRP.Assumptions.html#5294" class="Bound">𝑆</a><a id="5331" class="Symbol">}</a> <a id="5333" href="FLRP.Assumptions.html#4851" class="Generalizable">α</a> <a id="5335" href="FLRP.Assumptions.html#4853" class="Generalizable">ρ</a><a id="5336" class="Symbol">)</a> <a id="5338" class="Keyword">where</a>
+  <a id="5346" class="Keyword">private</a>
+    <a id="5358" href="FLRP.Assumptions.html#5358" class="Function">ℓ</a> <a id="5360" class="Symbol">:</a> <a id="5362" href="Agda.Primitive.html#742" class="Postulate">Level</a>
+    <a id="5372" href="FLRP.Assumptions.html#5358" class="Function">ℓ</a> <a id="5374" class="Symbol">=</a> <a id="5376" href="FLRP.Assumptions.html#5308" class="Bound">𝓞</a> <a id="5378" href="Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="5380" href="FLRP.Assumptions.html#5310" class="Bound">𝓥</a> <a id="5382" href="Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="5384" href="FLRP.Assumptions.html#5333" class="Bound">α</a> <a id="5386" href="Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="5388" href="FLRP.Assumptions.html#5335" class="Bound">ρ</a>
+<a id="5390" class="Markup">```
+</a><a id="5394" class="Background">
+`CongruenceCompleteness`{.AgdaFunction} `𝑨` is the assumption itself; it is a
+function that, given *any* semantic congruence `φ`{.AgdaBound}, produces a decidable
+congruence `≑`{.AgdaFunction} to it.
+
+This is the `complete`{.AgdaField} field of `FiniteCongruences`{.AgdaRecord} with the
+list `cons`{.AgdaField} and the membership proof `d ∈ cons`{.AgdaFunction} dropped;
+those record the *finiteness* of the collection of decidable congruences, which is
+constructive (`FiniteCongruencesᵈ`{.AgdaRecord}), whereas the classical content is
+precisely the existence of a decidable `≑`-representative for a congruence that need
+carry no decision procedure of its own.
+
+</a><a id="6058" class="Markup">```agda
+</a>  <a id="6068" class="Comment">-- For each semantic congruence φ, there exists a decidable congruence d such that φ ≑ d.</a>
+  <a id="6160" href="FLRP.Assumptions.html#6160" class="Function">CongruenceCompleteness</a> <a id="6183" class="Symbol">:</a> <a id="6185" href="FLRP.Assumptions.html#3539" class="Primitive">Type</a> <a id="6190" class="Symbol">(</a><a id="6191" href="FLRP.Assumptions.html#4053" class="Primitive">lsuc</a> <a id="6196" href="FLRP.Assumptions.html#5358" class="Function">ℓ</a><a id="6197" class="Symbol">)</a>
+  <a id="6201" href="FLRP.Assumptions.html#6160" class="Function">CongruenceCompleteness</a> <a id="6224" class="Symbol">=</a> <a id="6226" class="Symbol">(</a><a id="6227" href="FLRP.Assumptions.html#6227" class="Bound">φ</a> <a id="6229" class="Symbol">:</a> <a id="6231" href="Setoid.Congruences.Basic.html#3122" class="Function">Con</a> <a id="6235" href="FLRP.Assumptions.html#5313" class="Bound">𝑨</a> <a id="6237" href="FLRP.Assumptions.html#5358" class="Function">ℓ</a><a id="6238" class="Symbol">)</a> <a id="6240" class="Symbol">→</a> <a id="6242" href="Data.Product.Base.html#1244" class="Function">Σ[</a> <a id="6245" href="FLRP.Assumptions.html#6245" class="Bound">(</a><a id="6246" href="FLRP.Assumptions.html#6246" class="Bound">d</a> <a id="6248" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="6250" href="FLRP.Assumptions.html#6245" class="Bound">_)</a> <a id="6253" href="Data.Product.Base.html#1244" class="Function">∈</a> <a id="6255" href="Setoid.Congruences.Finite.Basic.html#5072" class="Function">DecCon</a> <a id="6262" href="FLRP.Assumptions.html#5313" class="Bound">𝑨</a> <a id="6264" href="FLRP.Assumptions.html#5358" class="Function">ℓ</a> <a id="6266" href="Data.Product.Base.html#1244" class="Function">]</a> <a id="6268" href="FLRP.Assumptions.html#6227" class="Bound">φ</a> <a id="6270" href="Setoid.Congruences.Lattice.html#3679" class="Function Operator">≑</a> <a id="6272" href="FLRP.Assumptions.html#6246" class="Bound">d</a>
+<a id="6274" class="Markup">```
+</a><a id="6278" class="Background">
+**The source**.  A `FiniteCongruences`{.AgdaRecord} witness — the canonical form of
+the assumption in the library — yields the bridge by forgetting the list and its
+membership proof.  This is the direction a consumer already in posession of the full
+record would use.
+
+</a><a id="6548" class="Markup">```agda
+</a>  <a id="6558" href="FLRP.Assumptions.html#6558" class="Function">fromFiniteCongruences</a> <a id="6580" class="Symbol">:</a> <a id="6582" href="Setoid.Congruences.Finite.Basic.html#5776" class="Record">FiniteCongruences</a> <a id="6600" href="FLRP.Assumptions.html#5313" class="Bound">𝑨</a> <a id="6602" class="Symbol">→</a> <a id="6604" href="FLRP.Assumptions.html#6160" class="Function">CongruenceCompleteness</a>
+  <a id="6629" href="FLRP.Assumptions.html#6558" class="Function">fromFiniteCongruences</a> <a id="6651" href="FLRP.Assumptions.html#6651" class="Bound">𝑪</a> <a id="6653" href="FLRP.Assumptions.html#6653" class="Bound">φ</a> <a id="6655" class="Symbol">=</a> <a id="6657" href="Setoid.Congruences.Finite.Basic.html#6113" class="Function">witness</a> <a id="6665" href="FLRP.Assumptions.html#6653" class="Bound">φ</a> <a id="6667" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="6669" href="Setoid.Congruences.Finite.Basic.html#6261" class="Function">witness≑</a> <a id="6678" href="FLRP.Assumptions.html#6653" class="Bound">φ</a>
+    <a id="6684" class="Keyword">where</a> <a id="6690" class="Keyword">open</a> <a id="6695" href="Setoid.Congruences.Finite.Basic.html#5776" class="Module">FiniteCongruences</a> <a id="6713" href="FLRP.Assumptions.html#6651" class="Bound">𝑪</a> <a id="6715" class="Keyword">using</a> <a id="6721" class="Symbol">(</a> <a id="6723" href="Setoid.Congruences.Finite.Basic.html#6113" class="Function">witness</a> <a id="6731" class="Symbol">;</a> <a id="6733" href="Setoid.Congruences.Finite.Basic.html#6261" class="Function">witness≑</a> <a id="6742" class="Symbol">)</a>
+  <a id="6746" class="Comment">-- Recall, `witness φ` is d and `witness≑ φ` is the proof of `φ ≑ proj₁ d`</a>
+
+<a id="6822" class="Markup">```
+</a><a id="6826" class="Background">
+**The classical delta**.  Conversely, adjoining the bridge to the *free constructive*
+data of a finite finitary algebra — its carrier finiteness
+(`FiniteAlgebra`{.AgdaRecord}) and signature finiteness (`FiniteSignature`{.AgdaRecord}),
+from which `FiniteAlgebra→FiniteCongruencesᵈ`{.AgdaFunction} builds a complete list of
+*decidable* congruences with no axiom — reconstitutes the full semantic
+`FiniteCongruences`{.AgdaRecord}.
+
+So `CongruenceCompleteness`{.AgdaFunction} is neither more nor less than the
+classical content of &quot;finite&quot; for congruence-lattice purposes: it is the gap
+between Layer D and Layer S, and nothing else.
+
+The list is the constructive `consᵈ`{.AgdaField}; completeness chains the bridge&#39;s
+`≑`{.AgdaFunction} into the decidable-layer completeness `completeᵈ`{.AgdaField} by
+transitivity.
+
+</a><a id="7640" class="Markup">```agda
+</a>  <a id="7650" href="FLRP.Assumptions.html#7650" class="Function">toFiniteCongruences</a> <a id="7670" class="Symbol">:</a> <a id="7672" href="FLRP.Assumptions.html#6160" class="Function">CongruenceCompleteness</a>
+    <a id="7699" class="Symbol">→</a> <a id="7701" href="Setoid.Algebras.Finite.html#3202" class="Record">FiniteAlgebra</a> <a id="7715" href="FLRP.Assumptions.html#5313" class="Bound">𝑨</a> <a id="7717" class="Symbol">→</a> <a id="7719" href="Setoid.Signatures.Finite.html#5275" class="Record">FiniteSignature</a> <a id="7735" href="FLRP.Assumptions.html#5294" class="Bound">𝑆</a> <a id="7737" class="Symbol">→</a> <a id="7739" href="Setoid.Congruences.Finite.Basic.html#5776" class="Record">FiniteCongruences</a> <a id="7757" href="FLRP.Assumptions.html#5313" class="Bound">𝑨</a>
+  <a id="7761" href="FLRP.Assumptions.html#7650" class="Function">toFiniteCongruences</a> <a id="7781" href="FLRP.Assumptions.html#7781" class="Bound">cc</a> <a id="7784" href="FLRP.Assumptions.html#7784" class="Bound">𝑭</a> <a id="7786" href="FLRP.Assumptions.html#7786" class="Bound">𝑺</a> <a id="7788" class="Symbol">=</a> <a id="7790" class="Keyword">record</a> <a id="7797" class="Symbol">{</a> <a id="7799" href="Setoid.Congruences.Finite.Basic.html#5942" class="Field">cons</a> <a id="7804" class="Symbol">=</a> <a id="7806" href="Setoid.Congruences.Finite.Decidable.html#9173" class="Function">consᵈ</a> <a id="7812" class="Symbol">;</a> <a id="7814" href="Setoid.Congruences.Finite.Basic.html#6049" class="Field">complete</a> <a id="7823" class="Symbol">=</a> <a id="7825" href="FLRP.Assumptions.html#7971" class="Function">comp</a> <a id="7830" class="Symbol">}</a>
+    <a id="7836" class="Keyword">where</a>
+    <a id="7846" class="Keyword">open</a> <a id="7851" href="Setoid.Congruences.Finite.Decidable.html#9006" class="Module">FiniteCongruencesᵈ</a> <a id="7870" class="Symbol">(</a><a id="7871" href="Setoid.Congruences.Finite.Decidable.html#20080" class="Function">FiniteAlgebra→FiniteCongruencesᵈ</a> <a id="7904" href="FLRP.Assumptions.html#7784" class="Bound">𝑭</a> <a id="7906" href="FLRP.Assumptions.html#7786" class="Bound">𝑺</a><a id="7907" class="Symbol">)</a>
+      <a id="7915" class="Keyword">using</a> <a id="7921" class="Symbol">(</a> <a id="7923" href="Setoid.Congruences.Finite.Decidable.html#9173" class="Field">consᵈ</a> <a id="7929" class="Symbol">;</a> <a id="7931" href="Setoid.Congruences.Finite.Decidable.html#9374" class="Function">witnessᵈ</a> <a id="7940" class="Symbol">;</a> <a id="7942" href="Setoid.Congruences.Finite.Decidable.html#9471" class="Function">witnessᵈ∈</a> <a id="7952" class="Symbol">;</a> <a id="7954" href="Setoid.Congruences.Finite.Decidable.html#9551" class="Function">witnessᵈ≑</a> <a id="7964" class="Symbol">)</a>
+
+    <a id="7971" href="FLRP.Assumptions.html#7971" class="Function">comp</a> <a id="7976" class="Symbol">:</a> <a id="7978" class="Symbol">(</a><a id="7979" href="FLRP.Assumptions.html#7979" class="Bound">φ</a> <a id="7981" class="Symbol">:</a> <a id="7983" href="Setoid.Congruences.Basic.html#3122" class="Function">Con</a> <a id="7987" href="FLRP.Assumptions.html#5313" class="Bound">𝑨</a> <a id="7989" href="FLRP.Assumptions.html#5358" class="Function">ℓ</a><a id="7990" class="Symbol">)</a> <a id="7992" class="Symbol">→</a> <a id="7994" href="Data.Product.Base.html#1244" class="Function">Σ[</a> <a id="7997" href="FLRP.Assumptions.html#7997" class="Bound">e</a> <a id="7999" href="Data.Product.Base.html#1244" class="Function">∈</a> <a id="8001" href="Setoid.Congruences.Finite.Basic.html#5072" class="Function">DecCon</a> <a id="8008" href="FLRP.Assumptions.html#5313" class="Bound">𝑨</a> <a id="8010" href="FLRP.Assumptions.html#5358" class="Function">ℓ</a> <a id="8012" href="Data.Product.Base.html#1244" class="Function">]</a> <a id="8014" href="FLRP.Assumptions.html#7997" class="Bound">e</a> <a id="8016" href="Data.List.Membership.Setoid.html#925" class="Function Operator">∈</a> <a id="8018" href="Setoid.Congruences.Finite.Decidable.html#9173" class="Function">consᵈ</a> <a id="8024" href="Data.Product.Base.html#1618" class="Function Operator">×</a> <a id="8026" href="FLRP.Assumptions.html#7979" class="Bound">φ</a> <a id="8028" href="Setoid.Congruences.Lattice.html#3679" class="Function Operator">≑</a> <a id="8030" href="Data.Product.Base.html#636" class="Field">proj₁</a> <a id="8036" href="FLRP.Assumptions.html#7997" class="Bound">e</a>
+    <a id="8042" href="FLRP.Assumptions.html#7971" class="Function">comp</a> <a id="8047" href="FLRP.Assumptions.html#8047" class="Bound">φ</a> <a id="8049" class="Symbol">=</a> <a id="8051" href="FLRP.Assumptions.html#8185" class="Function">e</a> <a id="8053" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="8055" href="Setoid.Congruences.Finite.Decidable.html#9471" class="Function">witnessᵈ∈</a> <a id="8065" href="FLRP.Assumptions.html#8091" class="Function">d</a> <a id="8067" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="8069" href="FLRP.Assumptions.html#8285" class="Function">φ≑e</a>
+      <a id="8079" class="Keyword">where</a>
+      <a id="8091" href="FLRP.Assumptions.html#8091" class="Function">d</a> <a id="8093" class="Symbol">:</a> <a id="8095" href="Setoid.Congruences.Finite.Basic.html#5072" class="Function">DecCon</a> <a id="8102" href="FLRP.Assumptions.html#5313" class="Bound">𝑨</a> <a id="8104" href="FLRP.Assumptions.html#5358" class="Function">ℓ</a>
+      <a id="8112" href="FLRP.Assumptions.html#8091" class="Function">d</a> <a id="8114" class="Symbol">=</a> <a id="8116" href="FLRP.Assumptions.html#7781" class="Bound">cc</a> <a id="8119" href="FLRP.Assumptions.html#8047" class="Bound">φ</a> <a id="8121" class="Symbol">.</a><a id="8122" href="Data.Product.Base.html#636" class="Field">proj₁</a>
+
+      <a id="8135" href="FLRP.Assumptions.html#8135" class="Function">φ≑d</a> <a id="8139" class="Symbol">:</a> <a id="8141" href="FLRP.Assumptions.html#8047" class="Bound">φ</a> <a id="8143" href="Setoid.Congruences.Lattice.html#3679" class="Function Operator">≑</a> <a id="8145" href="FLRP.Assumptions.html#8091" class="Function">d</a> <a id="8147" class="Symbol">.</a><a id="8148" href="Data.Product.Base.html#636" class="Field">proj₁</a>
+      <a id="8160" href="FLRP.Assumptions.html#8135" class="Function">φ≑d</a> <a id="8164" class="Symbol">=</a> <a id="8166" href="FLRP.Assumptions.html#7781" class="Bound">cc</a> <a id="8169" href="FLRP.Assumptions.html#8047" class="Bound">φ</a> <a id="8171" class="Symbol">.</a><a id="8172" href="Data.Product.Base.html#650" class="Field">proj₂</a>
+
+      <a id="8185" href="FLRP.Assumptions.html#8185" class="Function">e</a> <a id="8187" class="Symbol">:</a> <a id="8189" href="Setoid.Congruences.Finite.Basic.html#5072" class="Function">DecCon</a> <a id="8196" href="FLRP.Assumptions.html#5313" class="Bound">𝑨</a> <a id="8198" href="FLRP.Assumptions.html#5358" class="Function">ℓ</a>
+      <a id="8206" href="FLRP.Assumptions.html#8185" class="Function">e</a> <a id="8208" class="Symbol">=</a> <a id="8210" href="Setoid.Congruences.Finite.Decidable.html#9374" class="Function">witnessᵈ</a> <a id="8219" href="FLRP.Assumptions.html#8091" class="Function">d</a>
+
+      <a id="8228" href="FLRP.Assumptions.html#8228" class="Function">d≑e</a> <a id="8232" class="Symbol">:</a> <a id="8234" href="FLRP.Assumptions.html#8091" class="Function">d</a> <a id="8236" class="Symbol">.</a><a id="8237" href="Data.Product.Base.html#636" class="Field">proj₁</a> <a id="8243" href="Setoid.Congruences.Lattice.html#3679" class="Function Operator">≑</a> <a id="8245" href="FLRP.Assumptions.html#8185" class="Function">e</a> <a id="8247" class="Symbol">.</a><a id="8248" href="Data.Product.Base.html#636" class="Field">proj₁</a>
+      <a id="8260" href="FLRP.Assumptions.html#8228" class="Function">d≑e</a> <a id="8264" class="Symbol">=</a> <a id="8266" href="Setoid.Congruences.Finite.Decidable.html#9551" class="Function">witnessᵈ≑</a> <a id="8276" href="FLRP.Assumptions.html#8091" class="Function">d</a>
+
+      <a id="8285" href="FLRP.Assumptions.html#8285" class="Function">φ≑e</a> <a id="8289" class="Symbol">:</a> <a id="8291" href="FLRP.Assumptions.html#8047" class="Bound">φ</a> <a id="8293" href="Setoid.Congruences.Lattice.html#3679" class="Function Operator">≑</a> <a id="8295" href="FLRP.Assumptions.html#8185" class="Function">e</a> <a id="8297" class="Symbol">.</a><a id="8298" href="Data.Product.Base.html#636" class="Field">proj₁</a>
+      <a id="8310" href="FLRP.Assumptions.html#8285" class="Function">φ≑e</a> <a id="8314" class="Symbol">=</a> <a id="8316" href="FLRP.Assumptions.html#8228" class="Function">d≑e</a> <a id="8320" class="Symbol">.</a><a id="8321" href="Data.Product.Base.html#636" class="Field">proj₁</a> <a id="8327" href="Function.Base.html#1134" class="Function Operator">∘</a> <a id="8329" href="FLRP.Assumptions.html#8135" class="Function">φ≑d</a> <a id="8333" class="Symbol">.</a><a id="8334" href="Data.Product.Base.html#636" class="Field">proj₁</a> <a id="8340" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="8342" href="FLRP.Assumptions.html#8135" class="Function">φ≑d</a> <a id="8346" class="Symbol">.</a><a id="8347" href="Data.Product.Base.html#650" class="Field">proj₂</a> <a id="8353" href="Function.Base.html#1134" class="Function Operator">∘</a> <a id="8355" href="FLRP.Assumptions.html#8228" class="Function">d≑e</a> <a id="8359" class="Symbol">.</a><a id="8360" href="Data.Product.Base.html#650" class="Field">proj₂</a>
+<a id="8366" class="Markup">```
+</a><a id="8370" class="Background">
+--------------------------------------
+
+[^1]: This is the assumption-registry discipline of [ADR-008][] and the FLRP roadmap.
+
+[^2]: Pinning the exact strength is a side question the program does not need
+      (see `docs/notes/flrp-two-layer-congruences.md` § 2.1, L4).
+
+[^3]: **WP-5: closure toolkit** formalizes product and ordinal-sum closure of
+      representability (see
+      [`docs/notes/flrp-research-roadmap.md`](docs/notes/flrp-research-roadmap.md) § 7
+      and GitHub [Issue #456](https://github.com/ualib/agda-algebras/issues/456).
+
+[^4]: The standing FLRP research-track separation warning of [FLRP.Problem][] applies
+      here too: this is problem-specific formal content, not to be conflated with the
+      algebraic-complexity / finite-CSP work elsewhere in the library.
+</a></pre></body></html>

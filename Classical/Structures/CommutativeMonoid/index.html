@@ -12110,6 +12110,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -12167,6 +12171,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../FLRP/Assumptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assumptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../FLRP/Bridge/" class="md-nav__link">
         
   
@@ -12203,6 +12235,34 @@
     
   
     Enforceable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../FLRP/LayerBridge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LayerBridge
   
 
     
@@ -13131,7 +13191,7 @@ adding <code>comm-law</code>.</p>
                                                    <a id="1682" class="Keyword">renaming</a> <a id="1691" class="Symbol">(</a> <a id="1693" href="/Classical/Theories/CommutativeMonoid/#1241" class="InductiveConstructor">assoc</a> <a id="1699" class="Symbol">to</a> <a id="1702" class="InductiveConstructor">assocᶜ</a> <a id="1709" class="Symbol">;</a> <a id="1711" href="/Classical/Theories/CommutativeMonoid/#1247" class="InductiveConstructor">idˡ</a> <a id="1715" class="Symbol">to</a> <a id="1718" class="InductiveConstructor">idˡᶜ</a> <a id="1723" class="Symbol">;</a> <a id="1725" href="/Classical/Theories/CommutativeMonoid/#1251" class="InductiveConstructor">idʳ</a> <a id="1729" class="Symbol">to</a> <a id="1732" class="InductiveConstructor">idʳᶜ</a> <a id="1737" class="Symbol">)</a>
 <a id="1739" class="Keyword">open</a> <a id="1744" class="Keyword">import</a> <a id="1751" href="/Overture/Terms/" class="Module">Overture.Terms</a> <a id="1766" class="Symbol">{</a><a id="1767" class="Argument">𝑆</a> <a id="1769" class="Symbol">=</a> <a id="1771" href="/Classical/Signatures/Monoid/#1563" class="Function">Sig-Monoid</a><a id="1781" class="Symbol">}</a>        <a id="1790" class="Keyword">using</a> <a id="1796" class="Symbol">(</a><a id="1797" href="/Overture/Terms/Basic/#3256" class="Datatype">Term</a> <a id="1802" class="Symbol">;</a> <a id="1804" href="/Overture/Terms/Basic/#3296" class="InductiveConstructor">ℊ</a> <a id="1806" class="Symbol">)</a>
 <a id="1808" class="Keyword">open</a> <a id="1813" class="Keyword">import</a> <a id="1820" href="/Setoid/Algebras/Basic/" class="Module">Setoid.Algebras.Basic</a> <a id="1842" class="Keyword">using</a> <a id="1848" class="Symbol">(</a> <a id="1850" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="1858" class="Symbol">;</a> <a id="1860" href="/Setoid/Algebras/Basic/#3635" class="Function Operator">𝔻[_]</a> <a id="1865" class="Symbol">;</a> <a id="1867" href="/Setoid/Algebras/Basic/#3785" class="Function Operator">𝕌[_]</a> <a id="1872" class="Symbol">)</a>
-<a id="1874" class="Keyword">open</a> <a id="1879" class="Keyword">import</a> <a id="1886" href="/Setoid/Varieties/EquationalLogic/" class="Module">Setoid.Varieties.EquationalLogic</a> <a id="1919" class="Keyword">using</a> <a id="1925" class="Symbol">(</a> <a id="1927" href="/Setoid/Varieties/EquationalLogic/#2666" class="Function Operator">_⊧_≈_</a> <a id="1933" class="Symbol">)</a>
+<a id="1874" class="Keyword">open</a> <a id="1879" class="Keyword">import</a> <a id="1886" href="/Setoid/Varieties/EquationalLogic/" class="Module">Setoid.Varieties.EquationalLogic</a> <a id="1919" class="Keyword">using</a> <a id="1925" class="Symbol">(</a> <a id="1927" href="/Setoid/Varieties/EquationalLogic/#2646" class="Function Operator">_⊧_≈_</a> <a id="1933" class="Symbol">)</a>
 
 <a id="1936" class="Keyword">private</a> <a id="1944" class="Keyword">variable</a> <a id="1953" href="/Classical/Structures/CommutativeMonoid/#1953" class="Generalizable">α</a> <a id="1955" href="/Classical/Structures/CommutativeMonoid/#1955" class="Generalizable">ρ</a> <a id="1957" class="Symbol">:</a> <a id="1959" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a>
 </pre>
@@ -13139,7 +13199,7 @@ adding <code>comm-law</code>.</p>
 <h4 id="satisfaction-predicate-and-the-commutativemonoid-type">Satisfaction predicate and the <code>CommutativeMonoid</code> type<a class="headerlink" href="#satisfaction-predicate-and-the-commutativemonoid-type" title="Anchor link to this section">&para;</a></h4>
 <pre class="Agda"><a id="2044" class="Keyword">infix</a> <a id="2050" class="Number">4</a> <a id="2052" href="/Classical/Structures/CommutativeMonoid/#2059" class="Function Operator">_⊨ᶜᵐᵒ_</a>
 <a id="_⊨ᶜᵐᵒ_"></a><a id="2059" href="/Classical/Structures/CommutativeMonoid/#2059" class="Function Operator">_⊨ᶜᵐᵒ_</a> <a id="2066" class="Symbol">:</a> <a id="2068" class="Symbol">(</a><a id="2069" href="/Classical/Structures/CommutativeMonoid/#2069" class="Bound">𝑨</a> <a id="2071" class="Symbol">:</a> <a id="2073" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="2081" class="Symbol">{</a><a id="2082" class="Argument">𝑆</a> <a id="2084" class="Symbol">=</a> <a id="2086" href="/Classical/Signatures/Monoid/#1563" class="Function">Sig-Monoid</a><a id="2096" class="Symbol">}</a> <a id="2098" href="/Classical/Structures/CommutativeMonoid/#1953" class="Generalizable">α</a> <a id="2100" href="/Classical/Structures/CommutativeMonoid/#1955" class="Generalizable">ρ</a><a id="2101" class="Symbol">)</a> <a id="2103" class="Symbol">(</a><a id="2104" href="/Classical/Structures/CommutativeMonoid/#2104" class="Bound">ℰ</a> <a id="2106" class="Symbol">:</a> <a id="2108" href="/Classical/Theories/CommutativeMonoid/#1205" class="Datatype">Eq-CommutativeMonoid</a> <a id="2129" class="Symbol">→</a> <a id="2131" href="/Overture/Terms/Basic/#3256" class="Datatype">Term</a> <a id="2136" class="Symbol">(</a><a id="2137" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="2141" class="Number">3</a><a id="2142" class="Symbol">)</a> <a id="2144" href="/classic/Data.Product.Base.html#1618" class="Function Operator">×</a> <a id="2146" href="/Overture/Terms/Basic/#3256" class="Datatype">Term</a> <a id="2151" class="Symbol">(</a><a id="2152" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="2156" class="Number">3</a><a id="2157" class="Symbol">))</a> <a id="2160" class="Symbol">→</a> <a id="2162" href="/Classical/Structures/CommutativeMonoid/#805" class="Primitive">Type</a> <a id="2167" class="Symbol">(</a><a id="2168" href="/Classical/Structures/CommutativeMonoid/#1953" class="Generalizable">α</a> <a id="2170" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="2172" href="/Classical/Structures/CommutativeMonoid/#1955" class="Generalizable">ρ</a><a id="2173" class="Symbol">)</a>
-<a id="2175" href="/Classical/Structures/CommutativeMonoid/#2175" class="Bound">𝑨</a> <a id="2177" href="/Classical/Structures/CommutativeMonoid/#2059" class="Function Operator">⊨ᶜᵐᵒ</a> <a id="2182" href="/Classical/Structures/CommutativeMonoid/#2182" class="Bound">ℰ</a> <a id="2184" class="Symbol">=</a> <a id="2186" class="Symbol">∀</a> <a id="2188" href="/Classical/Structures/CommutativeMonoid/#2188" class="Bound">i</a> <a id="2190" class="Symbol">→</a> <a id="2192" href="/Classical/Structures/CommutativeMonoid/#2175" class="Bound">𝑨</a> <a id="2194" href="/Setoid/Varieties/EquationalLogic/#2666" class="Function Operator">⊧</a> <a id="2196" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="2202" class="Symbol">(</a><a id="2203" href="/Classical/Structures/CommutativeMonoid/#2182" class="Bound">ℰ</a> <a id="2205" href="/Classical/Structures/CommutativeMonoid/#2188" class="Bound">i</a><a id="2206" class="Symbol">)</a> <a id="2208" href="/Setoid/Varieties/EquationalLogic/#2666" class="Function Operator">≈</a> <a id="2210" href="/classic/Data.Product.Base.html#650" class="Field">proj₂</a> <a id="2216" class="Symbol">(</a><a id="2217" href="/Classical/Structures/CommutativeMonoid/#2182" class="Bound">ℰ</a> <a id="2219" href="/Classical/Structures/CommutativeMonoid/#2188" class="Bound">i</a><a id="2220" class="Symbol">)</a>
+<a id="2175" href="/Classical/Structures/CommutativeMonoid/#2175" class="Bound">𝑨</a> <a id="2177" href="/Classical/Structures/CommutativeMonoid/#2059" class="Function Operator">⊨ᶜᵐᵒ</a> <a id="2182" href="/Classical/Structures/CommutativeMonoid/#2182" class="Bound">ℰ</a> <a id="2184" class="Symbol">=</a> <a id="2186" class="Symbol">∀</a> <a id="2188" href="/Classical/Structures/CommutativeMonoid/#2188" class="Bound">i</a> <a id="2190" class="Symbol">→</a> <a id="2192" href="/Classical/Structures/CommutativeMonoid/#2175" class="Bound">𝑨</a> <a id="2194" href="/Setoid/Varieties/EquationalLogic/#2646" class="Function Operator">⊧</a> <a id="2196" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="2202" class="Symbol">(</a><a id="2203" href="/Classical/Structures/CommutativeMonoid/#2182" class="Bound">ℰ</a> <a id="2205" href="/Classical/Structures/CommutativeMonoid/#2188" class="Bound">i</a><a id="2206" class="Symbol">)</a> <a id="2208" href="/Setoid/Varieties/EquationalLogic/#2646" class="Function Operator">≈</a> <a id="2210" href="/classic/Data.Product.Base.html#650" class="Field">proj₂</a> <a id="2216" class="Symbol">(</a><a id="2217" href="/Classical/Structures/CommutativeMonoid/#2182" class="Bound">ℰ</a> <a id="2219" href="/Classical/Structures/CommutativeMonoid/#2188" class="Bound">i</a><a id="2220" class="Symbol">)</a>
 
 <a id="CommutativeMonoid"></a><a id="2223" href="/Classical/Structures/CommutativeMonoid/#2223" class="Function">CommutativeMonoid</a> <a id="2241" class="Symbol">:</a> <a id="2243" class="Symbol">(</a><a id="2244" href="/Classical/Structures/CommutativeMonoid/#2244" class="Bound">α</a> <a id="2246" href="/Classical/Structures/CommutativeMonoid/#2246" class="Bound">ρ</a> <a id="2248" class="Symbol">:</a> <a id="2250" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a><a id="2255" class="Symbol">)</a> <a id="2257" class="Symbol">→</a> <a id="2259" href="/Classical/Structures/CommutativeMonoid/#805" class="Primitive">Type</a> <a id="2264" class="Symbol">(</a><a id="2265" href="/classic/Agda.Primitive.html#931" class="Primitive">suc</a> <a id="2269" href="/Classical/Structures/CommutativeMonoid/#2244" class="Bound">α</a> <a id="2271" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="2273" href="/classic/Agda.Primitive.html#931" class="Primitive">suc</a> <a id="2277" href="/Classical/Structures/CommutativeMonoid/#2246" class="Bound">ρ</a><a id="2278" class="Symbol">)</a>
 <a id="2280" href="/Classical/Structures/CommutativeMonoid/#2223" class="Function">CommutativeMonoid</a> <a id="2298" href="/Classical/Structures/CommutativeMonoid/#2298" class="Bound">α</a> <a id="2300" href="/Classical/Structures/CommutativeMonoid/#2300" class="Bound">ρ</a> <a id="2302" class="Symbol">=</a> <a id="2304" href="/classic/Data.Product.Base.html#1244" class="Function">Σ[</a> <a id="2307" href="/Classical/Structures/CommutativeMonoid/#2307" class="Bound">𝑨</a> <a id="2309" href="/classic/Data.Product.Base.html#1244" class="Function">∈</a> <a id="2311" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="2319" class="Symbol">{</a><a id="2320" class="Argument">𝑆</a> <a id="2322" class="Symbol">=</a> <a id="2324" href="/Classical/Signatures/Monoid/#1563" class="Function">Sig-Monoid</a><a id="2334" class="Symbol">}</a> <a id="2336" href="/Classical/Structures/CommutativeMonoid/#2298" class="Bound">α</a> <a id="2338" href="/Classical/Structures/CommutativeMonoid/#2300" class="Bound">ρ</a> <a id="2340" href="/classic/Data.Product.Base.html#1244" class="Function">]</a> <a id="2342" href="/Classical/Structures/CommutativeMonoid/#2307" class="Bound">𝑨</a> <a id="2344" href="/Classical/Structures/CommutativeMonoid/#2059" class="Function Operator">⊨ᶜᵐᵒ</a> <a id="2349" href="/Classical/Theories/CommutativeMonoid/#1284" class="Function">Th-CommutativeMonoid</a>

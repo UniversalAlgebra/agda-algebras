@@ -13,19 +13,21 @@ This is the [FLRP][] module of the [Agda Universal Algebra Library][].
 
 This top-level `FLRP/` tree hosts the library&#39;s research program on the
 **Finite Lattice Representation Problem**: is every finite lattice isomorphic to the
-congruence lattice of a *finite* algebra?  The program&#39;s plan (the state of the art,
-the primary avenue of attack via interval-enforceable properties, and the breakdown
-into work packages) lives in `docs/notes/flrp-research-roadmap.md`; this tree holds
-only problem-specific formal content, while reusable mathematics developed along the
-way (group actions, subgroup lattices, closure combinatorics) lands in the `Setoid/`,
-`Classical/`, and `Order/` trees proper.
+congruence lattice of a *finite* algebra?
+
+The program&#39;s plan (the state of the art, the primary avenue of attack via
+interval-enforceable properties, and the breakdown into work packages) lives in
+[`docs/notes/flrp-research-roadmap.md`](docs/notes/flrp-research-roadmap.md).
+
+The `FLRP/` tree holds only problem-specific formal content, while reusable
+mathematics developed along the way (group actions, subgroup lattices, closure
+combinatorics) lives in the `Setoid/`, `Classical/`, and `Order/` trees.
 
 Two standing warnings apply to everything under this namespace.
 
 +  **Research-track separation**.  The FLRP is distinct from the algebraic-complexity
    / finite-CSP track and from the Maltsev and interpretability infrastructure, even
-   where they share modules; do not conflate them (see `CLAUDE.md` and
-   `docs/GITHUB_PROJECT.md`).
+   where they share modules.
 +  **Experimental status**.  FLRP modules are research material and are exempt from
    the stable-API deprecation discipline until their results stabilize.
 
@@ -37,37 +39,46 @@ Two standing warnings apply to everything under this namespace.
 +  [FLRP.Enforceable][] — group representability of a lattice, the
    interval-enforceability classification (IE, cf-IE, min-IE), the fattening
    isomorphism `[H × K, G × K] ≅ [H, G]`, the no-contradictory-IE theorem
-   (the note&#39;s Lemma 3.2), and hypothesis-parameterized statements of Lemma 3.1
-   and the parachute meta-theorem.
+   (the research note&#39;s Lemma 3.2), and hypothesis-parameterized statements of
+   Lemma 3.1 and the parachute meta-theorem.
 +  [FLRP.Bridge][] — the easy (constructive) direction of the Pálfy–Pudlák
-   correspondence at **Layer S**: the order isomorphism `Con (𝒢 ↷ 𝒢/H) ≅ [H, 𝒢]`
-   between the *semantic* congruence lattice of the transitive coset G-set and the
-   respecting upper interval in the subgroup lattice, with the representability
-   corollary.  The Layer D (`DecCon`) restatement required by issue #454&#39;s updated
-   criteria lands with the WP-7 decidable layer.
+   correspondence at the semantic layer (*Layer S*): the order isomorphism
+   `Con (𝒢 ↷ 𝒢/H) ≅ [H, 𝒢]` between the *semantic* congruence lattice of the
+   transitive G-set of cosets and the respecting upper interval in the subgroup
+   lattice, with the representability corollary.  The Layer D (`DecCon`) restatement
+   required by issue #454&#39;s updated criteria is now provided here as well
+   (`bridgeᵈ` / `interval-DecCon-representable`), by composing with the cross-layer
+   isomorphism of [FLRP.LayerBridge][].
 +  [FLRP.Representable][] — the Layer-D reformulation of the problem:
    decidable representability `Representableᵈ`, the statement
    `FLRP-Statementᵈ`, and the constructive two-element-chain representation
    `chain₂-Representableᵈ` (the object the no-go theorem forbids at Layer S,
    attained here with no postulate).
++  [FLRP.Assumptions][] — the registry of classical theorems imported as
+   explicit hypotheses (never postulates), keeping the tree honest under
+   `--safe`; its first entry is the congruence-completeness bridge
+   `CongruenceCompleteness`, the single Layer-S→Layer-D assumption of ADR-008.
++  [FLRP.LayerBridge][] — the cross-layer bridge: under the congruence-completeness
+   assumption, the semantic and decidable congruence posets are order-isomorphic
+   (`conDecIso`), whence `Representable 𝑳 ↔ Representableᵈ 𝑳`.
 
 **Planned submodules** (per § 6 of the roadmap).
 
 +  `FLRP.Closure` (closure properties of the representable class);
 +  `FLRP.Intervals` (intervals in subgroup lattices and core-free normalization);
 +  `FLRP.Reductions` (the catalog of reduction theorems);
-+  `FLRP.Certificates` (machine-checked representation certificates);
-+  `FLRP.Assumptions` (the registry of classical theorems imported as explicit
-   hypotheses, keeping the tree honest under `--safe`).
++  `FLRP.Certificates` (machine-checked representation certificates).
 
-</a><a id="3231" class="Markup">```agda
-</a><a id="3239" class="Symbol">{-#</a> <a id="3243" class="Keyword">OPTIONS</a> <a id="3251" class="Pragma">--cubical-compatible</a> <a id="3272" class="Pragma">--exact-split</a> <a id="3286" class="Pragma">--safe</a> <a id="3293" class="Symbol">#-}</a>
+</a><a id="3732" class="Markup">```agda
+</a><a id="3740" class="Symbol">{-#</a> <a id="3744" class="Keyword">OPTIONS</a> <a id="3752" class="Pragma">--cubical-compatible</a> <a id="3773" class="Pragma">--exact-split</a> <a id="3787" class="Pragma">--safe</a> <a id="3794" class="Symbol">#-}</a>
 
-<a id="3298" class="Keyword">module</a> <a id="3305" href="FLRP.html" class="Module">FLRP</a> <a id="3310" class="Keyword">where</a>
+<a id="3799" class="Keyword">module</a> <a id="3806" href="FLRP.html" class="Module">FLRP</a> <a id="3811" class="Keyword">where</a>
 
-<a id="3317" class="Keyword">open</a> <a id="3322" class="Keyword">import</a> <a id="3329" href="FLRP.Problem.html" class="Module">FLRP.Problem</a> <a id="3342" class="Keyword">public</a>
-<a id="3349" class="Keyword">open</a> <a id="3354" class="Keyword">import</a> <a id="3361" href="FLRP.Enforceable.html" class="Module">FLRP.Enforceable</a> <a id="3378" class="Keyword">public</a>
-<a id="3385" class="Keyword">open</a> <a id="3390" class="Keyword">import</a> <a id="3397" href="FLRP.Bridge.html" class="Module">FLRP.Bridge</a> <a id="3409" class="Keyword">public</a>
-<a id="3416" class="Keyword">open</a> <a id="3421" class="Keyword">import</a> <a id="3428" href="FLRP.Representable.html" class="Module">FLRP.Representable</a> <a id="3447" class="Keyword">public</a>
-<a id="3454" class="Markup">```
+<a id="3818" class="Keyword">open</a> <a id="3823" class="Keyword">import</a> <a id="3830" href="FLRP.Problem.html" class="Module">FLRP.Problem</a> <a id="3843" class="Keyword">public</a>
+<a id="3850" class="Keyword">open</a> <a id="3855" class="Keyword">import</a> <a id="3862" href="FLRP.Enforceable.html" class="Module">FLRP.Enforceable</a> <a id="3879" class="Keyword">public</a>
+<a id="3886" class="Keyword">open</a> <a id="3891" class="Keyword">import</a> <a id="3898" href="FLRP.Bridge.html" class="Module">FLRP.Bridge</a> <a id="3910" class="Keyword">public</a>
+<a id="3917" class="Keyword">open</a> <a id="3922" class="Keyword">import</a> <a id="3929" href="FLRP.Representable.html" class="Module">FLRP.Representable</a> <a id="3948" class="Keyword">public</a>
+<a id="3955" class="Keyword">open</a> <a id="3960" class="Keyword">import</a> <a id="3967" href="FLRP.Assumptions.html" class="Module">FLRP.Assumptions</a> <a id="3984" class="Keyword">public</a>
+<a id="3991" class="Keyword">open</a> <a id="3996" class="Keyword">import</a> <a id="4003" href="FLRP.LayerBridge.html" class="Module">FLRP.LayerBridge</a> <a id="4020" class="Keyword">public</a>
+<a id="4027" class="Markup">```
 </a></pre></body></html>

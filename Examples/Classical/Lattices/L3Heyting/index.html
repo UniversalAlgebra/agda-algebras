@@ -12123,6 +12123,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -12180,6 +12184,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../FLRP/Assumptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assumptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../FLRP/Bridge/" class="md-nav__link">
         
   
@@ -12216,6 +12248,34 @@
     
   
     Enforceable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../FLRP/LayerBridge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LayerBridge
   
 
     
@@ -13165,7 +13225,7 @@ the corresponding decision compute to <code>no</code>, and the example would fai
 <a id="2440" class="Keyword">open</a> <a id="2445" class="Keyword">import</a> <a id="2452" href="/Overture/Operations/Properties/" class="Module">Overture.Operations.Properties</a>                  <a id="2500" class="Keyword">using</a> <a id="2506" class="Symbol">(</a> <a id="2508" href="/Overture/Operations/Properties/#2575" class="Function">Associative?</a> <a id="2521" class="Symbol">;</a> <a id="2523" href="/Overture/Operations/Properties/#2418" class="Function">Commutative?</a> <a id="2536" class="Symbol">;</a> <a id="2538" href="/Overture/Operations/Properties/#2303" class="Function">Idempotent?</a>
                                                                    <a id="2617" class="Symbol">;</a> <a id="2619" href="/Overture/Operations/Properties/#3654" class="Function">Absorbsˡ?</a> <a id="2629" class="Symbol">;</a> <a id="2631" href="/Overture/Operations/Properties/#3778" class="Function">Absorbsʳ?</a> <a id="2641" class="Symbol">;</a> <a id="2643" href="/Overture/Operations/Properties/#3918" class="Function">Distributesˡ?</a> <a id="2657" class="Symbol">)</a>
 <a id="2659" class="Keyword">open</a> <a id="2664" class="Keyword">import</a> <a id="2671" href="/Classical/Bundles/DistributiveLattice/" class="Module">Classical.Bundles.DistributiveLattice</a>           <a id="2719" class="Keyword">using</a> <a id="2725" class="Symbol">(</a> <a id="2727" href="/Classical/Bundles/DistributiveLattice/#2957" class="Function Operator">⟨_⟩ᵈˡ</a> <a id="2733" class="Symbol">;</a> <a id="2735" href="/Classical/Bundles/DistributiveLattice/#3975" class="Function Operator">⟪_⟫ᵈˡ</a> <a id="2741" class="Symbol">)</a>
-<a id="2743" class="Keyword">open</a> <a id="2748" class="Keyword">import</a> <a id="2755" href="/Classical/Properties/Lattice/" class="Module">Classical.Properties.Lattice</a>                    <a id="2803" class="Keyword">using</a> <a id="2809" class="Symbol">(</a> <a id="2811" class="Keyword">module</a> <a id="2818" href="/Classical/Properties/Lattice/#7103" class="Module">FiniteOrder</a> <a id="2830" class="Symbol">)</a>
+<a id="2743" class="Keyword">open</a> <a id="2748" class="Keyword">import</a> <a id="2755" href="/Classical/Properties/Lattice/" class="Module">Classical.Properties.Lattice</a>                    <a id="2803" class="Keyword">using</a> <a id="2809" class="Symbol">(</a> <a id="2811" class="Keyword">module</a> <a id="2818" href="/Classical/Properties/Lattice/#7026" class="Module">FiniteOrder</a> <a id="2830" class="Symbol">)</a>
 <a id="2832" class="Keyword">open</a> <a id="2837" class="Keyword">import</a> <a id="2844" href="/Classical/Small/Structures/DistributiveLattice/" class="Module">Classical.Small.Structures.DistributiveLattice</a>  <a id="2892" class="Keyword">using</a> <a id="2898" class="Symbol">(</a> <a id="2900" href="/Classical/Small/Structures/DistributiveLattice/#1138" class="Function">DistributiveLattice</a> <a id="2920" class="Symbol">;</a> <a id="2922" href="/Classical/Small/Structures/DistributiveLattice/#1235" class="Function">eqsToDistributiveLattice</a> <a id="2947" class="Symbol">)</a>
 <a id="2949" class="Keyword">import</a> <a id="2956" href="/Classical/Structures/DistributiveLattice/" class="Module">Classical.Structures.DistributiveLattice</a> <a id="2997" class="Symbol">as</a> <a id="3000" class="Module">Polymorphic</a>
 </pre>
@@ -13295,16 +13355,16 @@ property of the Heyting implication is the residuation adjunction between <code>
 decidable (each is an implication between decidable meet-order facts), so the
 biconditional, quantified over the finite carrier, is decided and extracted by
 <code>from-yes</code>.</p>
-<pre class="Agda"><a id="5521" class="Keyword">open</a> <a id="5526" href="/Classical/Properties/Lattice/#7103" class="Module">FiniteOrder</a> <a id="5538" href="/Examples/Classical/Lattices/L3Heyting/#4044" class="Function Operator">_∧_</a>
+<pre class="Agda"><a id="5521" class="Keyword">open</a> <a id="5526" href="/Classical/Properties/Lattice/#7026" class="Module">FiniteOrder</a> <a id="5538" href="/Examples/Classical/Lattices/L3Heyting/#4044" class="Function Operator">_∧_</a>
 
-<a id="residuation?"></a><a id="5543" href="/Examples/Classical/Lattices/L3Heyting/#5543" class="Function">residuation?</a> <a id="5556" class="Symbol">:</a> <a id="5558" href="/classic/Relation.Nullary.Decidable.Core.html#1966" class="Record">Dec</a> <a id="5562" class="Symbol">(∀</a> <a id="5565" href="/Examples/Classical/Lattices/L3Heyting/#5565" class="Bound">a</a> <a id="5567" href="/Examples/Classical/Lattices/L3Heyting/#5567" class="Bound">b</a> <a id="5569" href="/Examples/Classical/Lattices/L3Heyting/#5569" class="Bound">c</a> <a id="5571" class="Symbol">→</a> <a id="5573" class="Symbol">(</a><a id="5574" href="/Examples/Classical/Lattices/L3Heyting/#5565" class="Bound">a</a> <a id="5576" href="/Examples/Classical/Lattices/L3Heyting/#4044" class="Function Operator">∧</a> <a id="5578" href="/Examples/Classical/Lattices/L3Heyting/#5567" class="Bound">b</a> <a id="5580" href="/Classical/Properties/Lattice/#7181" class="Function Operator">≤</a> <a id="5582" href="/Examples/Classical/Lattices/L3Heyting/#5569" class="Bound">c</a> <a id="5584" class="Symbol">→</a> <a id="5586" href="/Examples/Classical/Lattices/L3Heyting/#5565" class="Bound">a</a> <a id="5588" href="/Classical/Properties/Lattice/#7181" class="Function Operator">≤</a> <a id="5590" class="Symbol">(</a><a id="5591" href="/Examples/Classical/Lattices/L3Heyting/#5567" class="Bound">b</a> <a id="5593" href="/Examples/Classical/Lattices/L3Heyting/#4052" class="Function Operator">⇒</a> <a id="5595" href="/Examples/Classical/Lattices/L3Heyting/#5569" class="Bound">c</a><a id="5596" class="Symbol">))</a> <a id="5599" href="/classic/Data.Product.Base.html#1618" class="Function Operator">×</a> <a id="5601" class="Symbol">(</a><a id="5602" href="/Examples/Classical/Lattices/L3Heyting/#5565" class="Bound">a</a> <a id="5604" href="/Classical/Properties/Lattice/#7181" class="Function Operator">≤</a> <a id="5606" class="Symbol">(</a><a id="5607" href="/Examples/Classical/Lattices/L3Heyting/#5567" class="Bound">b</a> <a id="5609" href="/Examples/Classical/Lattices/L3Heyting/#4052" class="Function Operator">⇒</a> <a id="5611" href="/Examples/Classical/Lattices/L3Heyting/#5569" class="Bound">c</a><a id="5612" class="Symbol">)</a> <a id="5614" class="Symbol">→</a> <a id="5616" href="/Examples/Classical/Lattices/L3Heyting/#5565" class="Bound">a</a> <a id="5618" href="/Examples/Classical/Lattices/L3Heyting/#4044" class="Function Operator">∧</a> <a id="5620" href="/Examples/Classical/Lattices/L3Heyting/#5567" class="Bound">b</a> <a id="5622" href="/Classical/Properties/Lattice/#7181" class="Function Operator">≤</a> <a id="5624" href="/Examples/Classical/Lattices/L3Heyting/#5569" class="Bound">c</a><a id="5625" class="Symbol">))</a>
+<a id="residuation?"></a><a id="5543" href="/Examples/Classical/Lattices/L3Heyting/#5543" class="Function">residuation?</a> <a id="5556" class="Symbol">:</a> <a id="5558" href="/classic/Relation.Nullary.Decidable.Core.html#1966" class="Record">Dec</a> <a id="5562" class="Symbol">(∀</a> <a id="5565" href="/Examples/Classical/Lattices/L3Heyting/#5565" class="Bound">a</a> <a id="5567" href="/Examples/Classical/Lattices/L3Heyting/#5567" class="Bound">b</a> <a id="5569" href="/Examples/Classical/Lattices/L3Heyting/#5569" class="Bound">c</a> <a id="5571" class="Symbol">→</a> <a id="5573" class="Symbol">(</a><a id="5574" href="/Examples/Classical/Lattices/L3Heyting/#5565" class="Bound">a</a> <a id="5576" href="/Examples/Classical/Lattices/L3Heyting/#4044" class="Function Operator">∧</a> <a id="5578" href="/Examples/Classical/Lattices/L3Heyting/#5567" class="Bound">b</a> <a id="5580" href="/Classical/Properties/Lattice/#7104" class="Function Operator">≤</a> <a id="5582" href="/Examples/Classical/Lattices/L3Heyting/#5569" class="Bound">c</a> <a id="5584" class="Symbol">→</a> <a id="5586" href="/Examples/Classical/Lattices/L3Heyting/#5565" class="Bound">a</a> <a id="5588" href="/Classical/Properties/Lattice/#7104" class="Function Operator">≤</a> <a id="5590" class="Symbol">(</a><a id="5591" href="/Examples/Classical/Lattices/L3Heyting/#5567" class="Bound">b</a> <a id="5593" href="/Examples/Classical/Lattices/L3Heyting/#4052" class="Function Operator">⇒</a> <a id="5595" href="/Examples/Classical/Lattices/L3Heyting/#5569" class="Bound">c</a><a id="5596" class="Symbol">))</a> <a id="5599" href="/classic/Data.Product.Base.html#1618" class="Function Operator">×</a> <a id="5601" class="Symbol">(</a><a id="5602" href="/Examples/Classical/Lattices/L3Heyting/#5565" class="Bound">a</a> <a id="5604" href="/Classical/Properties/Lattice/#7104" class="Function Operator">≤</a> <a id="5606" class="Symbol">(</a><a id="5607" href="/Examples/Classical/Lattices/L3Heyting/#5567" class="Bound">b</a> <a id="5609" href="/Examples/Classical/Lattices/L3Heyting/#4052" class="Function Operator">⇒</a> <a id="5611" href="/Examples/Classical/Lattices/L3Heyting/#5569" class="Bound">c</a><a id="5612" class="Symbol">)</a> <a id="5614" class="Symbol">→</a> <a id="5616" href="/Examples/Classical/Lattices/L3Heyting/#5565" class="Bound">a</a> <a id="5618" href="/Examples/Classical/Lattices/L3Heyting/#4044" class="Function Operator">∧</a> <a id="5620" href="/Examples/Classical/Lattices/L3Heyting/#5567" class="Bound">b</a> <a id="5622" href="/Classical/Properties/Lattice/#7104" class="Function Operator">≤</a> <a id="5624" href="/Examples/Classical/Lattices/L3Heyting/#5569" class="Bound">c</a><a id="5625" class="Symbol">))</a>
 <a id="5628" href="/Examples/Classical/Lattices/L3Heyting/#5543" class="Function">residuation?</a> <a id="5641" class="Symbol">=</a>
   <a id="5645" href="/classic/Data.Fin.Properties.html#39512" class="Function">all?</a> <a id="5650" class="Symbol">(λ</a> <a id="5653" href="/Examples/Classical/Lattices/L3Heyting/#5653" class="Bound">a</a> <a id="5655" class="Symbol">→</a>
     <a id="5661" href="/classic/Data.Fin.Properties.html#39512" class="Function">all?</a> <a id="5666" class="Symbol">(λ</a> <a id="5669" href="/Examples/Classical/Lattices/L3Heyting/#5669" class="Bound">b</a> <a id="5671" class="Symbol">→</a>
       <a id="5679" href="/classic/Data.Fin.Properties.html#39512" class="Function">all?</a> <a id="5684" class="Symbol">(λ</a> <a id="5687" href="/Examples/Classical/Lattices/L3Heyting/#5687" class="Bound">c</a> <a id="5689" class="Symbol">→</a>
-        <a id="5699" class="Symbol">(</a><a id="5700" href="/Examples/Classical/Lattices/L3Heyting/#5653" class="Bound">a</a> <a id="5702" href="/Examples/Classical/Lattices/L3Heyting/#4044" class="Function Operator">∧</a> <a id="5704" href="/Examples/Classical/Lattices/L3Heyting/#5669" class="Bound">b</a> <a id="5706" href="/Classical/Properties/Lattice/#7231" class="Function Operator">≤?</a> <a id="5709" href="/Examples/Classical/Lattices/L3Heyting/#5687" class="Bound">c</a> <a id="5711" href="/classic/Relation.Nullary.Decidable.Core.html#3758" class="Function Operator">→-dec</a> <a id="5717" href="/Examples/Classical/Lattices/L3Heyting/#5653" class="Bound">a</a> <a id="5719" href="/Classical/Properties/Lattice/#7231" class="Function Operator">≤?</a> <a id="5722" class="Symbol">(</a><a id="5723" href="/Examples/Classical/Lattices/L3Heyting/#5669" class="Bound">b</a> <a id="5725" href="/Examples/Classical/Lattices/L3Heyting/#4052" class="Function Operator">⇒</a> <a id="5727" href="/Examples/Classical/Lattices/L3Heyting/#5687" class="Bound">c</a><a id="5728" class="Symbol">))</a> <a id="5731" href="/classic/Relation.Nullary.Decidable.Core.html#3432" class="Function Operator">×-dec</a> <a id="5737" class="Symbol">(</a><a id="5738" href="/Examples/Classical/Lattices/L3Heyting/#5653" class="Bound">a</a> <a id="5740" href="/Classical/Properties/Lattice/#7231" class="Function Operator">≤?</a> <a id="5743" class="Symbol">(</a><a id="5744" href="/Examples/Classical/Lattices/L3Heyting/#5669" class="Bound">b</a> <a id="5746" href="/Examples/Classical/Lattices/L3Heyting/#4052" class="Function Operator">⇒</a> <a id="5748" href="/Examples/Classical/Lattices/L3Heyting/#5687" class="Bound">c</a><a id="5749" class="Symbol">)</a> <a id="5751" href="/classic/Relation.Nullary.Decidable.Core.html#3758" class="Function Operator">→-dec</a> <a id="5757" href="/Examples/Classical/Lattices/L3Heyting/#5653" class="Bound">a</a> <a id="5759" href="/Examples/Classical/Lattices/L3Heyting/#4044" class="Function Operator">∧</a> <a id="5761" href="/Examples/Classical/Lattices/L3Heyting/#5669" class="Bound">b</a> <a id="5763" href="/Classical/Properties/Lattice/#7231" class="Function Operator">≤?</a> <a id="5766" href="/Examples/Classical/Lattices/L3Heyting/#5687" class="Bound">c</a><a id="5767" class="Symbol">))))</a>
+        <a id="5699" class="Symbol">(</a><a id="5700" href="/Examples/Classical/Lattices/L3Heyting/#5653" class="Bound">a</a> <a id="5702" href="/Examples/Classical/Lattices/L3Heyting/#4044" class="Function Operator">∧</a> <a id="5704" href="/Examples/Classical/Lattices/L3Heyting/#5669" class="Bound">b</a> <a id="5706" href="/Classical/Properties/Lattice/#7154" class="Function Operator">≤?</a> <a id="5709" href="/Examples/Classical/Lattices/L3Heyting/#5687" class="Bound">c</a> <a id="5711" href="/classic/Relation.Nullary.Decidable.Core.html#3758" class="Function Operator">→-dec</a> <a id="5717" href="/Examples/Classical/Lattices/L3Heyting/#5653" class="Bound">a</a> <a id="5719" href="/Classical/Properties/Lattice/#7154" class="Function Operator">≤?</a> <a id="5722" class="Symbol">(</a><a id="5723" href="/Examples/Classical/Lattices/L3Heyting/#5669" class="Bound">b</a> <a id="5725" href="/Examples/Classical/Lattices/L3Heyting/#4052" class="Function Operator">⇒</a> <a id="5727" href="/Examples/Classical/Lattices/L3Heyting/#5687" class="Bound">c</a><a id="5728" class="Symbol">))</a> <a id="5731" href="/classic/Relation.Nullary.Decidable.Core.html#3432" class="Function Operator">×-dec</a> <a id="5737" class="Symbol">(</a><a id="5738" href="/Examples/Classical/Lattices/L3Heyting/#5653" class="Bound">a</a> <a id="5740" href="/Classical/Properties/Lattice/#7154" class="Function Operator">≤?</a> <a id="5743" class="Symbol">(</a><a id="5744" href="/Examples/Classical/Lattices/L3Heyting/#5669" class="Bound">b</a> <a id="5746" href="/Examples/Classical/Lattices/L3Heyting/#4052" class="Function Operator">⇒</a> <a id="5748" href="/Examples/Classical/Lattices/L3Heyting/#5687" class="Bound">c</a><a id="5749" class="Symbol">)</a> <a id="5751" href="/classic/Relation.Nullary.Decidable.Core.html#3758" class="Function Operator">→-dec</a> <a id="5757" href="/Examples/Classical/Lattices/L3Heyting/#5653" class="Bound">a</a> <a id="5759" href="/Examples/Classical/Lattices/L3Heyting/#4044" class="Function Operator">∧</a> <a id="5761" href="/Examples/Classical/Lattices/L3Heyting/#5669" class="Bound">b</a> <a id="5763" href="/Classical/Properties/Lattice/#7154" class="Function Operator">≤?</a> <a id="5766" href="/Examples/Classical/Lattices/L3Heyting/#5687" class="Bound">c</a><a id="5767" class="Symbol">))))</a>
 
-<a id="residuation"></a><a id="5773" href="/Examples/Classical/Lattices/L3Heyting/#5773" class="Function">residuation</a> <a id="5785" class="Symbol">:</a> <a id="5787" class="Symbol">∀</a> <a id="5789" href="/Examples/Classical/Lattices/L3Heyting/#5789" class="Bound">a</a> <a id="5791" href="/Examples/Classical/Lattices/L3Heyting/#5791" class="Bound">b</a> <a id="5793" href="/Examples/Classical/Lattices/L3Heyting/#5793" class="Bound">c</a> <a id="5795" class="Symbol">→</a> <a id="5797" class="Symbol">((</a><a id="5799" href="/Examples/Classical/Lattices/L3Heyting/#5789" class="Bound">a</a> <a id="5801" href="/Examples/Classical/Lattices/L3Heyting/#4044" class="Function Operator">∧</a> <a id="5803" href="/Examples/Classical/Lattices/L3Heyting/#5791" class="Bound">b</a><a id="5804" class="Symbol">)</a> <a id="5806" href="/Classical/Properties/Lattice/#7181" class="Function Operator">≤</a> <a id="5808" href="/Examples/Classical/Lattices/L3Heyting/#5793" class="Bound">c</a> <a id="5810" class="Symbol">→</a> <a id="5812" href="/Examples/Classical/Lattices/L3Heyting/#5789" class="Bound">a</a> <a id="5814" href="/Classical/Properties/Lattice/#7181" class="Function Operator">≤</a> <a id="5816" class="Symbol">(</a><a id="5817" href="/Examples/Classical/Lattices/L3Heyting/#5791" class="Bound">b</a> <a id="5819" href="/Examples/Classical/Lattices/L3Heyting/#4052" class="Function Operator">⇒</a> <a id="5821" href="/Examples/Classical/Lattices/L3Heyting/#5793" class="Bound">c</a><a id="5822" class="Symbol">))</a> <a id="5825" href="/classic/Data.Product.Base.html#1618" class="Function Operator">×</a> <a id="5827" class="Symbol">(</a><a id="5828" href="/Examples/Classical/Lattices/L3Heyting/#5789" class="Bound">a</a> <a id="5830" href="/Classical/Properties/Lattice/#7181" class="Function Operator">≤</a> <a id="5832" class="Symbol">(</a><a id="5833" href="/Examples/Classical/Lattices/L3Heyting/#5791" class="Bound">b</a> <a id="5835" href="/Examples/Classical/Lattices/L3Heyting/#4052" class="Function Operator">⇒</a> <a id="5837" href="/Examples/Classical/Lattices/L3Heyting/#5793" class="Bound">c</a><a id="5838" class="Symbol">)</a> <a id="5840" class="Symbol">→</a> <a id="5842" class="Symbol">(</a><a id="5843" href="/Examples/Classical/Lattices/L3Heyting/#5789" class="Bound">a</a> <a id="5845" href="/Examples/Classical/Lattices/L3Heyting/#4044" class="Function Operator">∧</a> <a id="5847" href="/Examples/Classical/Lattices/L3Heyting/#5791" class="Bound">b</a><a id="5848" class="Symbol">)</a> <a id="5850" href="/Classical/Properties/Lattice/#7181" class="Function Operator">≤</a> <a id="5852" href="/Examples/Classical/Lattices/L3Heyting/#5793" class="Bound">c</a><a id="5853" class="Symbol">)</a>
+<a id="residuation"></a><a id="5773" href="/Examples/Classical/Lattices/L3Heyting/#5773" class="Function">residuation</a> <a id="5785" class="Symbol">:</a> <a id="5787" class="Symbol">∀</a> <a id="5789" href="/Examples/Classical/Lattices/L3Heyting/#5789" class="Bound">a</a> <a id="5791" href="/Examples/Classical/Lattices/L3Heyting/#5791" class="Bound">b</a> <a id="5793" href="/Examples/Classical/Lattices/L3Heyting/#5793" class="Bound">c</a> <a id="5795" class="Symbol">→</a> <a id="5797" class="Symbol">((</a><a id="5799" href="/Examples/Classical/Lattices/L3Heyting/#5789" class="Bound">a</a> <a id="5801" href="/Examples/Classical/Lattices/L3Heyting/#4044" class="Function Operator">∧</a> <a id="5803" href="/Examples/Classical/Lattices/L3Heyting/#5791" class="Bound">b</a><a id="5804" class="Symbol">)</a> <a id="5806" href="/Classical/Properties/Lattice/#7104" class="Function Operator">≤</a> <a id="5808" href="/Examples/Classical/Lattices/L3Heyting/#5793" class="Bound">c</a> <a id="5810" class="Symbol">→</a> <a id="5812" href="/Examples/Classical/Lattices/L3Heyting/#5789" class="Bound">a</a> <a id="5814" href="/Classical/Properties/Lattice/#7104" class="Function Operator">≤</a> <a id="5816" class="Symbol">(</a><a id="5817" href="/Examples/Classical/Lattices/L3Heyting/#5791" class="Bound">b</a> <a id="5819" href="/Examples/Classical/Lattices/L3Heyting/#4052" class="Function Operator">⇒</a> <a id="5821" href="/Examples/Classical/Lattices/L3Heyting/#5793" class="Bound">c</a><a id="5822" class="Symbol">))</a> <a id="5825" href="/classic/Data.Product.Base.html#1618" class="Function Operator">×</a> <a id="5827" class="Symbol">(</a><a id="5828" href="/Examples/Classical/Lattices/L3Heyting/#5789" class="Bound">a</a> <a id="5830" href="/Classical/Properties/Lattice/#7104" class="Function Operator">≤</a> <a id="5832" class="Symbol">(</a><a id="5833" href="/Examples/Classical/Lattices/L3Heyting/#5791" class="Bound">b</a> <a id="5835" href="/Examples/Classical/Lattices/L3Heyting/#4052" class="Function Operator">⇒</a> <a id="5837" href="/Examples/Classical/Lattices/L3Heyting/#5793" class="Bound">c</a><a id="5838" class="Symbol">)</a> <a id="5840" class="Symbol">→</a> <a id="5842" class="Symbol">(</a><a id="5843" href="/Examples/Classical/Lattices/L3Heyting/#5789" class="Bound">a</a> <a id="5845" href="/Examples/Classical/Lattices/L3Heyting/#4044" class="Function Operator">∧</a> <a id="5847" href="/Examples/Classical/Lattices/L3Heyting/#5791" class="Bound">b</a><a id="5848" class="Symbol">)</a> <a id="5850" href="/Classical/Properties/Lattice/#7104" class="Function Operator">≤</a> <a id="5852" href="/Examples/Classical/Lattices/L3Heyting/#5793" class="Bound">c</a><a id="5853" class="Symbol">)</a>
 <a id="5855" href="/Examples/Classical/Lattices/L3Heyting/#5773" class="Function">residuation</a> <a id="5867" class="Symbol">=</a> <a id="5869" href="/classic/Relation.Nullary.Decidable.Core.html#5912" class="Function">from-yes</a> <a id="5878" href="/Examples/Classical/Lattices/L3Heyting/#5543" class="Function">residuation?</a>
 </pre>
 <h4 id="identities">Heyting identities<a class="headerlink" href="#identities" title="Anchor link to this section">&para;</a></h4>

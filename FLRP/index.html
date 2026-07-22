@@ -18,7 +18,7 @@
         <link rel="prev" href="../Legacy/Base/Varieties/Properties/">
       
       
-        <link rel="next" href="Bridge/">
+        <link rel="next" href="Assumptions/">
       
       
         
@@ -12000,6 +12000,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -12057,6 +12061,34 @@
   
   
     <li class="md-nav__item">
+      <a href="Assumptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assumptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="Bridge/" class="md-nav__link">
         
   
@@ -12093,6 +12125,34 @@
     
   
     Enforceable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="LayerBridge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LayerBridge
   
 
     
@@ -12949,18 +13009,18 @@
 <p>This is the <a href="/FLRP/">FLRP</a> module of the <a href="/">Agda Universal Algebra Library</a>.</p>
 <p>This top-level <code>FLRP/</code> tree hosts the library's research program on the
 <strong>Finite Lattice Representation Problem</strong>: is every finite lattice isomorphic to the
-congruence lattice of a <em>finite</em> algebra?  The program's plan (the state of the art,
-the primary avenue of attack via interval-enforceable properties, and the breakdown
-into work packages) lives in <code>docs/notes/flrp-research-roadmap.md</code>; this tree holds
-only problem-specific formal content, while reusable mathematics developed along the
-way (group actions, subgroup lattices, closure combinatorics) lands in the <code>Setoid/</code>,
-<code>Classical/</code>, and <code>Order/</code> trees proper.</p>
+congruence lattice of a <em>finite</em> algebra?</p>
+<p>The program's plan (the state of the art, the primary avenue of attack via
+interval-enforceable properties, and the breakdown into work packages) lives in
+<a href="/notes/flrp-research-roadmap/"><code>docs/notes/flrp-research-roadmap.md</code></a>.</p>
+<p>The <code>FLRP/</code> tree holds only problem-specific formal content, while reusable
+mathematics developed along the way (group actions, subgroup lattices, closure
+combinatorics) lives in the <code>Setoid/</code>, <code>Classical/</code>, and <code>Order/</code> trees.</p>
 <p>Two standing warnings apply to everything under this namespace.</p>
 <ul>
 <li><strong>Research-track separation</strong>.  The FLRP is distinct from the algebraic-complexity
    / finite-CSP track and from the Maltsev and interpretability infrastructure, even
-   where they share modules; do not conflate them (see <code>CLAUDE.md</code> and
-   <code>docs/GITHUB_PROJECT.md</code>).</li>
+   where they share modules.</li>
 <li><strong>Experimental status</strong>.  FLRP modules are research material and are exempt from
    the stable-API deprecation discipline until their results stabilize.</li>
 </ul>
@@ -12969,40 +13029,49 @@ way (group actions, subgroup lattices, closure combinatorics) lands in the <code
 <li><a href="/FLRP/Problem/">FLRP.Problem</a> — the representability predicate <code>Representable</code>, the
    formal statement of the problem, the first worked instance (the one-element
    chain), and the constructive no-go theorem for the two-element chain.</li>
-<li>[FLRP.Enforceable][] — group representability of a lattice, the
+<li><a href="/FLRP/Enforceable/">FLRP.Enforceable</a> — group representability of a lattice, the
    interval-enforceability classification (IE, cf-IE, min-IE), the fattening
    isomorphism <code>[H × K, G × K] ≅ [H, G]</code>, the no-contradictory-IE theorem
-   (the note's Lemma 3.2), and hypothesis-parameterized statements of Lemma 3.1
-   and the parachute meta-theorem.</li>
-<li>[FLRP.Bridge][] — the easy (constructive) direction of the Pálfy–Pudlák
-   correspondence at <strong>Layer S</strong>: the order isomorphism <code>Con (𝒢 ↷ 𝒢/H) ≅ [H, 𝒢]</code>
-   between the <em>semantic</em> congruence lattice of the transitive coset G-set and the
-   respecting upper interval in the subgroup lattice, with the representability
-   corollary.  The Layer D (<code>DecCon</code>) restatement required by issue #454's updated
-   criteria lands with the WP-7 decidable layer.</li>
-<li>[FLRP.Representable][] — the Layer-D reformulation of the problem:
+   (the research note's Lemma 3.2), and hypothesis-parameterized statements of
+   Lemma 3.1 and the parachute meta-theorem.</li>
+<li><a href="/FLRP/Bridge/">FLRP.Bridge</a> — the easy (constructive) direction of the Pálfy–Pudlák
+   correspondence at the semantic layer (<em>Layer S</em>): the order isomorphism
+   <code>Con (𝒢 ↷ 𝒢/H) ≅ [H, 𝒢]</code> between the <em>semantic</em> congruence lattice of the
+   transitive G-set of cosets and the respecting upper interval in the subgroup
+   lattice, with the representability corollary.  The Layer D (<code>DecCon</code>) restatement
+   required by issue #454's updated criteria is now provided here as well
+   (<code>bridgeᵈ</code> / <code>interval-DecCon-representable</code>), by composing with the cross-layer
+   isomorphism of <a href="/FLRP/LayerBridge/">FLRP.LayerBridge</a>.</li>
+<li><a href="/FLRP/Representable/">FLRP.Representable</a> — the Layer-D reformulation of the problem:
    decidable representability <code>Representableᵈ</code>, the statement
    <code>FLRP-Statementᵈ</code>, and the constructive two-element-chain representation
    <code>chain₂-Representableᵈ</code> (the object the no-go theorem forbids at Layer S,
    attained here with no postulate).</li>
+<li><a href="/FLRP/Assumptions/">FLRP.Assumptions</a> — the registry of classical theorems imported as
+   explicit hypotheses (never postulates), keeping the tree honest under
+   <code>--safe</code>; its first entry is the congruence-completeness bridge
+   <code>CongruenceCompleteness</code>, the single Layer-S→Layer-D assumption of ADR-008.</li>
+<li><a href="/FLRP/LayerBridge/">FLRP.LayerBridge</a> — the cross-layer bridge: under the congruence-completeness
+   assumption, the semantic and decidable congruence posets are order-isomorphic
+   (<code>conDecIso</code>), whence <code>Representable 𝑳 ↔ Representableᵈ 𝑳</code>.</li>
 </ul>
 <p><strong>Planned submodules</strong> (per § 6 of the roadmap).</p>
 <ul>
 <li><code>FLRP.Closure</code> (closure properties of the representable class);</li>
 <li><code>FLRP.Intervals</code> (intervals in subgroup lattices and core-free normalization);</li>
 <li><code>FLRP.Reductions</code> (the catalog of reduction theorems);</li>
-<li><code>FLRP.Certificates</code> (machine-checked representation certificates);</li>
-<li><code>FLRP.Assumptions</code> (the registry of classical theorems imported as explicit
-   hypotheses, keeping the tree honest under <code>--safe</code>).</li>
+<li><code>FLRP.Certificates</code> (machine-checked representation certificates).</li>
 </ul>
-<pre class="Agda"><a id="3239" class="Symbol">{-#</a> <a id="3243" class="Keyword">OPTIONS</a> <a id="3251" class="Pragma">--cubical-compatible</a> <a id="3272" class="Pragma">--exact-split</a> <a id="3286" class="Pragma">--safe</a> <a id="3293" class="Symbol">#-}</a>
+<pre class="Agda"><a id="3740" class="Symbol">{-#</a> <a id="3744" class="Keyword">OPTIONS</a> <a id="3752" class="Pragma">--cubical-compatible</a> <a id="3773" class="Pragma">--exact-split</a> <a id="3787" class="Pragma">--safe</a> <a id="3794" class="Symbol">#-}</a>
 
-<a id="3298" class="Keyword">module</a> <a id="3305" href="/FLRP/" class="Module">FLRP</a> <a id="3310" class="Keyword">where</a>
+<a id="3799" class="Keyword">module</a> <a id="3806" href="/FLRP/" class="Module">FLRP</a> <a id="3811" class="Keyword">where</a>
 
-<a id="3317" class="Keyword">open</a> <a id="3322" class="Keyword">import</a> <a id="3329" href="/FLRP/Problem/" class="Module">FLRP.Problem</a> <a id="3342" class="Keyword">public</a>
-<a id="3349" class="Keyword">open</a> <a id="3354" class="Keyword">import</a> <a id="3361" href="/FLRP/Enforceable/" class="Module">FLRP.Enforceable</a> <a id="3378" class="Keyword">public</a>
-<a id="3385" class="Keyword">open</a> <a id="3390" class="Keyword">import</a> <a id="3397" href="/FLRP/Bridge/" class="Module">FLRP.Bridge</a> <a id="3409" class="Keyword">public</a>
-<a id="3416" class="Keyword">open</a> <a id="3421" class="Keyword">import</a> <a id="3428" href="/FLRP/Representable/" class="Module">FLRP.Representable</a> <a id="3447" class="Keyword">public</a>
+<a id="3818" class="Keyword">open</a> <a id="3823" class="Keyword">import</a> <a id="3830" href="/FLRP/Problem/" class="Module">FLRP.Problem</a> <a id="3843" class="Keyword">public</a>
+<a id="3850" class="Keyword">open</a> <a id="3855" class="Keyword">import</a> <a id="3862" href="/FLRP/Enforceable/" class="Module">FLRP.Enforceable</a> <a id="3879" class="Keyword">public</a>
+<a id="3886" class="Keyword">open</a> <a id="3891" class="Keyword">import</a> <a id="3898" href="/FLRP/Bridge/" class="Module">FLRP.Bridge</a> <a id="3910" class="Keyword">public</a>
+<a id="3917" class="Keyword">open</a> <a id="3922" class="Keyword">import</a> <a id="3929" href="/FLRP/Representable/" class="Module">FLRP.Representable</a> <a id="3948" class="Keyword">public</a>
+<a id="3955" class="Keyword">open</a> <a id="3960" class="Keyword">import</a> <a id="3967" href="/FLRP/Assumptions/" class="Module">FLRP.Assumptions</a> <a id="3984" class="Keyword">public</a>
+<a id="3991" class="Keyword">open</a> <a id="3996" class="Keyword">import</a> <a id="4003" href="/FLRP/LayerBridge/" class="Module">FLRP.LayerBridge</a> <a id="4020" class="Keyword">public</a>
 </pre>
 
 <!-- File: docs/_links.md -->
@@ -13069,13 +13138,13 @@ way (group actions, subgroup lattices, closure combinatorics) lands in the <code
         
         
           
-          <a href="Bridge/" class="md-footer__link md-footer__link--next" aria-label="Next: Bridge">
+          <a href="Assumptions/" class="md-footer__link md-footer__link--next" aria-label="Next: Assumptions">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Bridge
+                Assumptions
               </div>
             </div>
             <div class="md-footer__button md-icon">

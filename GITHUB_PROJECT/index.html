@@ -11993,6 +11993,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -12050,6 +12054,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../FLRP/Assumptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assumptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../FLRP/Bridge/" class="md-nav__link">
         
   
@@ -12086,6 +12118,34 @@
     
   
     Enforceable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FLRP/LayerBridge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LayerBridge
   
 
     
@@ -18070,9 +18130,16 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> any changes in style conventions are reflected in (updates to) the STYLE_GUIDE</li>
 </ul>
 <hr />
-<h3 id="issue-m4-18-move-demos-under-examples-436">Issue M4-18: Move Demos under Examples (#436)<a class="headerlink" href="#issue-m4-18-move-demos-under-examples-436" title="Anchor link to this section">&para;</a></h3>
+<h3 id="issue-m4-18-move-demos-under-examples-436-closed">Issue M4-18: Move Demos under Examples (#436, closed)<a class="headerlink" href="#issue-m4-18-move-demos-under-examples-436-closed" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>milestone-4-style</code></p>
 <p><em>(no description on GitHub)</em></p>
+<hr />
+<h3 id="issue-m4-19-clean-up-imports-post-sweep-477-closed">Issue M4-19: Clean up imports post-sweep (#477, closed)<a class="headerlink" href="#issue-m4-19-clean-up-imports-post-sweep-477-closed" title="Anchor link to this section">&para;</a></h3>
+<p><strong>Labels</strong>: </p>
+<p>After the sweep that removed the signature parameter from many module definitions, the line</p>
+<div class="highlight"><pre><span></span><code><span class="kr">open</span><span class="w"> </span><span class="kr">import</span><span class="w"> </span><span class="n">Overture</span><span class="w"> </span><span class="kr">using</span><span class="w"> </span><span class="o">(</span>𝓞<span class="w"> </span>;<span class="w"> </span>𝓥<span class="w"> </span>;<span class="w"> </span>Signature<span class="w"> </span>;<span class="w"> </span>𝑆<span class="w"> </span><span class="o">)</span>
+</code></pre></div>
+<p>still appears outside the start of the module, which is unnecessary when there's no top-level module parameter.  We can now move the import of Overture inside with the other imports, consistent with the repo-wide style convention.</p>
 <!-- END GENERATED: milestone-4 -->
 
 <h2 id="-_4">---<a class="headerlink" href="#-_4" title="Anchor link to this section">&para;</a></h2>
@@ -18600,7 +18667,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Type-checks under <code>--safe</code> with no classical assumptions; each direction of the correspondence is its own lemma; every public definition carries prose.</li>
 </ul>
 <hr />
-<h3 id="issue-m6-13d-flrp-wp-4-flrpenforceable-ie-cf-ie-min-ie-and-the-no-go-lemmas-455">Issue M6-13d: FLRP WP-4: FLRP.Enforceable — IE, cf-IE, min-IE, and the no-go lemmas (#455)<a class="headerlink" href="#issue-m6-13d-flrp-wp-4-flrpenforceable-ie-cf-ie-min-ie-and-the-no-go-lemmas-455" title="Anchor link to this section">&para;</a></h3>
+<h3 id="issue-m6-13d-flrp-wp-4-flrpenforceable-ie-cf-ie-min-ie-and-the-no-go-lemmas-455-closed">Issue M6-13d: FLRP WP-4: FLRP.Enforceable — IE, cf-IE, min-IE, and the no-go lemmas (#455, closed)<a class="headerlink" href="#issue-m6-13d-flrp-wp-4-flrpenforceable-ie-cf-ie-min-ie-and-the-no-go-lemmas-455-closed" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>research-exploratory</code>, <code>flrp-research</code></p>
 <h2 id="description_63">Description<a class="headerlink" href="#description_63" title="Anchor link to this section">&para;</a></h2>
 <p>Formalize § 2 of the vendored note (<code>docs/papers/flrp/ieprops/</code>): the definitions of <em>interval enforceable</em> (IE), <em>core-free interval enforceable</em> (cf-IE), <em>min-IE</em>, and <em>group representable</em>, with the vacuity subtlety handled by tracking group representability of the enforcing lattice explicitly.  Then the first structural results of its § 3: Lemma 3.1 (if the complementary class is closed under homomorphic images, cf-IE upgrades to IE), the fattening remark (<code>[H × K, G × K] ≅ [H, G]</code>, so solvability is not IE), and Lemma 3.2 (a property and its negation cannot both be IE via group-representable lattices).  This machine-checks why the program lives at the core-free level (roadmap § 4).</p>
@@ -18715,15 +18782,28 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <p>Part of #451.</p>
 <h2 id="tasks-three-pr-sized-slices">Tasks (three PR-sized slices)<a class="headerlink" href="#tasks-three-pr-sized-slices" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Slice (i) — L1 + L2: <code>Cg</code> of a finite pair list on a finite finitary algebra has decidable membership (congruence-closure computation), and every <code>DecCon</code> is <code>≑</code> to <code>Cg</code> of its related-pairs list; includes fixing the Agda packaging of finite finitary signatures (audit A3).</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Slice (ii) — L3 + audits: constructive completeness for <code>DecCon</code> via enumeration of Bool-valued tables; the <code>FiniteCongruencesᵈ</code> interface; audit A1 (which m6-8 consumers, in particular finite Birkhoff, survive on <code>FiniteAlgebra</code> + <code>FiniteCongruencesᵈ</code> alone) and audit A2 (WP-2 group modules are Layer-D ready).</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Slice (iii) — L4 + L5: the <code>FLRP.Assumptions</code> registry with the classical bridge (<code>complete</code> of <code>FiniteCongruences</code>) as its first entry, strength documented (between WLEM and LEM at the working level); the <code>DecCon</code> poset as a finite lattice with decidable order; <code>Representableᵈ</code> and <code>FLRP-Statementᵈ</code>; the constructive <code>chain₂</code> instance; and, under the bridge, <code>Representable 𝑳 ↔ Representableᵈ 𝑳</code>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Slice (i) — L1 + L2: <code>Cg</code> of a finite pair list on a finite finitary algebra has decidable membership (congruence-closure computation), and every <code>DecCon</code> is <code>≑</code> to <code>Cg</code> of its related-pairs list; includes fixing the Agda packaging of finite finitary signatures (audit A3).  <em>(merged #467)</em></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Slice (ii) — L3 + audits: constructive completeness for <code>DecCon</code> via enumeration of Bool-valued tables; the <code>FiniteCongruencesᵈ</code> interface; audit A1 (which m6-8 consumers, in particular finite Birkhoff, survive on <code>FiniteAlgebra</code> + <code>FiniteCongruencesᵈ</code> alone) and audit A2 (WP-2 group modules are Layer-D ready).  <em>(merged #468)</em></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Slice (iii) — L4 + L5.  <strong>Constructive core merged in #479; the classical-bridge parts remain</strong> — see the status update below.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <code>Representableᵈ</code>, <code>FLRP-Statementᵈ</code>, the decidable-congruence poset order (<code>_⊆ᵈ_</code>, <code>_≑ᵈ_</code>, <code>ConIsoᵈ</code>), and the constructive <code>chain₂</code> instance <code>chain₂-Representableᵈ</code>, all <code>--safe</code> with no postulates (<code>src/FLRP/Representable.lagda.md</code>, #479).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>FLRP.Assumptions</code> registry with the classical bridge (<code>complete</code> of <code>FiniteCongruences</code>) as its first entry, strength documented (between WLEM and LEM at the working level).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Under that bridge, <code>Representable 𝑳 ↔ Representableᵈ 𝑳</code>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The <code>DecCon</code> poset as a finite lattice with decidable order (meets, joins) — deferred to WP-6 (#457) certificate tooling; #479 provides only the <code>OrderIso</code> target that representability needs.</li>
 </ul>
+<h2 id="status-update-2026-07-20-slice-iii-core-merged">Status update — 2026-07-20 (slice iii core merged)<a class="headerlink" href="#status-update-2026-07-20-slice-iii-core-merged" title="Anchor link to this section">&para;</a></h2>
+<p>Slices (i) and (ii) merged in #467 and #468.  The <strong>constructive core of slice (iii)</strong> merged in #479 (<code>src/FLRP/Representable.lagda.md</code>): <code>Representableᵈ</code>, <code>FLRP-Statementᵈ</code>, the decidable-congruence poset order (<code>ConIsoᵈ</code>), and the postulate-free two-element-chain representation <code>chain₂-Representableᵈ</code> — the object the WP-1 no-go theorem forbids at Layer S, now attained constructively at Layer D.</p>
+<p>Remaining to close this issue (narrowed scope):</p>
+<ul>
+<li><code>src/FLRP/Assumptions.lagda.md</code> — the <code>--safe</code> registry naming the classical bridge (<code>FiniteCongruences.complete : ∀ φ → Σ[ d ∈ DecCon 𝑨 _ ] (d ∈ cons) × (φ ≑ proj₁ d)</code>) as an explicit hypothesis, never a postulate; strength documented between WLEM and LEM (ADR-008 L4).</li>
+<li>Under that bridge, the cross-layer equivalence <code>Representable 𝑳 ↔ Representableᵈ 𝑳</code> — the <code>Con</code> and <code>DecCon</code> posets of a finite finitary algebra coincide once <code>complete</code> holds; <code>Representable</code>/<code>Representableᵈ</code> differ exactly by <code>ConIso</code> vs <code>ConIsoᵈ</code> plus the <code>finsig</code> field.</li>
+<li>Wiring the now-unblocked Layer-D corollary of WP-3 (#454): <code>FLRP.Bridge.interval-Con-representable</code> can target <code>Representableᵈ</code> (may land here or as a sibling PR).</li>
+</ul>
+<p>Coordination: WP-5 (#456) also plans <code>FLRP.Assumptions</code> with the Kurzweil–Netter duality as "its first entry."  This issue <strong>creates</strong> the module with the classical <code>complete</code> bridge as entry 1; WP-5 appends the duality entry.</p>
 <h2 id="acceptance-criteria_75">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_75" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> All new modules type-check under <code>--cubical-compatible --exact-split --safe</code>; no postulates; the bridge appears only as an explicit hypothesis.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>Representableᵈ (toLattice chain₂)</code> is inhabited with no classical assumptions.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The m6-8 note gains an addendum recording the A1 audit outcome.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> All new modules type-check under <code>--cubical-compatible --exact-split --safe</code>; no postulates; the bridge appears only as an explicit hypothesis.  <em>(FLRP.Representable satisfies this in #479; completes when FLRP.Assumptions lands.)</em></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <code>Representableᵈ (toLattice chain₂)</code> is inhabited with no classical assumptions.  <em>(<code>chain₂-Representableᵈ</code>, #479.)</em></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> The m6-8 note gains an addendum recording the A1 audit outcome.  <em>(<code>docs/notes/m6-8-finite-birkhoff.md</code> § "Update (WP-7 A1)"; full findings in <code>docs/notes/flrp-wp7-audits.md</code>.)</em></li>
 </ul>
 <!-- END GENERATED: milestone-6 -->
 
