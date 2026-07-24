@@ -14273,7 +14273,7 @@ X α ρ = Σ[ 𝑨 ∈ Algebra α ρ ] 𝑨 ⊨ Eₓ
 The Σ formulation is natural and robust under the eventual cubical port: no theorem
 in this subtree depends on setoid-specific machinery, so substituting the path-type
 equivalence for the setoid equivalence is a search-and-replace operation rather than
-a rewrite.  The full rationale is recorded in <a href="https://github.com/ualib/agda-algebras/blob/master/docs/adr/002-classical-layer-design.md">ADR-002</a>.</p>
+a rewrite.  The full rationale is recorded in <a href="/adr/002-classical-layer-design/">ADR-002</a>.</p>
 <p>Each per-structure file <code>Classical/Structures/X.lagda.md</code> also ships named
 convenience accessors (<code>Domain</code>, <code>Signature</code>, <code>equations</code>) that offset the use-site
 ergonomic cost of Σ-projection against the named-field projection a record would have
@@ -14305,12 +14305,14 @@ submodules are the initial, pattern-setting structures.</p>
 <!-- pymdownx.snippets auto-appends this file to every page so reference-style -->
 <!-- links resolve site-wide without a per-page include directive.  Internal -->
 <!-- targets are ROOT-RELATIVE so cross-references work under `mkdocs serve` -->
-<!-- and at the deployed site alike.  The module sections are GENERATED from -->
-<!-- the src/ tree by scripts/python/gen_links.py; re-run it rather than -->
-<!-- editing those entries by hand. -->
+<!-- and at the deployed site alike.  The module and ADR sections are GENERATED -->
+<!-- from the src/ and docs/adr/ trees by scripts/python/gen_links.py; re-run it -->
+<!-- rather than editing those entries by hand (CI runs it with --check).  New -->
+<!-- external links may be added by hand to the External-links section. -->
 
 <!-- ===== Rendered module pages ===== -->
 <!-- ===== Module sources on GitHub ===== -->
+<!-- ===== Architecture Decision Records ===== -->
 <!-- ===== External links ===== -->
 
 

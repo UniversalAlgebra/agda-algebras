@@ -14442,7 +14442,7 @@
 
 <h1 id="setoidcongruencescertificatesschema">Setoid.Congruences.Certificates.Schema<a class="headerlink" href="#setoidcongruencescertificatesschema" title="Anchor link to this section">&para;</a></h1>
 <h3 id="the-congruence-certificate-schema-freese-traces">The congruence-certificate schema (Freese traces)<a class="headerlink" href="#the-congruence-certificate-schema-freese-traces" title="Anchor link to this section">&para;</a></h3>
-<p>This is the [Setoid.Congruences.Certificates.Schema][] module of the <a href="/">Agda Universal Algebra Library</a>.</p>
+<p>This is the <a href="/Setoid/Congruences/Certificates/Schema/">Setoid.Congruences.Certificates.Schema</a> module of the <a href="/">Agda Universal Algebra Library</a>.</p>
 <p>External engines (GAP, UACalc, SAT and model finders) compute congruence lattices
 of finite algebras far faster than any in-Agda decision procedure, but nothing they
 report is believed until Agda has re-checked it.</p>
@@ -14453,8 +14453,8 @@ report is believed until Agda has re-checked it.</p>
 <p>This module defines the witness <em>data types</em> — the schema — and nothing else: every
 type below is plain finite index data (<code class="AgdaDatatype">Fin</code>, <code class="AgdaDatatype">Vec</code>,
 <code class="AgdaDatatype">List</code>), with no algebra, setoid, or congruence in sight.</p>
-<p>The checker modules ([Setoid.Congruences.Certificates.Congruence][] and
-[Setoid.Congruences.Certificates.Lattice][]) connect these data to a concrete
+<p>The checker modules (<a href="/Setoid/Congruences/Certificates/Congruence/">Setoid.Congruences.Certificates.Congruence</a> and
+<a href="/Setoid/Congruences/Certificates/Lattice/">Setoid.Congruences.Certificates.Lattice</a>) connect these data to a concrete
 finite finitary algebra and prove the soundness theorems.</p>
 <p>The schema follows two short works of R. Freese, the algorithms underlying his
 Universal Algebra Calculator.</p>
@@ -14606,7 +14606,7 @@ data:<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
 </ul>
 <p>The three checker obligations C1 (trace soundness), C2 (claimed ⊆ generated), and C3
 (generated ⊆ claimed) are discharged against exactly these data by
-[Setoid.Congruences.Certificates.Congruence][].</p>
+<a href="/Setoid/Congruences/Certificates/Congruence/">Setoid.Congruences.Certificates.Congruence</a>.</p>
 <pre class="Agda"><a id="9415" class="Keyword">record</a> <a id="CgCert"></a><a id="9422" href="/Setoid/Congruences/Certificates/Schema/#9422" class="Record">CgCert</a> <a id="9429" class="Symbol">(</a><a id="9430" href="/Setoid/Congruences/Certificates/Schema/#9430" class="Bound">n</a> <a id="9432" href="/Setoid/Congruences/Certificates/Schema/#9432" class="Bound">ops</a> <a id="9436" class="Symbol">:</a> <a id="9438" href="/classic/Agda.Builtin.Nat.html#203" class="Datatype">ℕ</a><a id="9439" class="Symbol">)</a> <a id="9441" class="Symbol">(</a><a id="9442" href="/Setoid/Congruences/Certificates/Schema/#9442" class="Bound">ar</a> <a id="9445" class="Symbol">:</a> <a id="9447" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="9451" href="/Setoid/Congruences/Certificates/Schema/#9432" class="Bound">ops</a> <a id="9455" class="Symbol">→</a> <a id="9457" href="/classic/Agda.Builtin.Nat.html#203" class="Datatype">ℕ</a><a id="9458" class="Symbol">)</a> <a id="9460" class="Symbol">:</a> <a id="9462" href="/Setoid/Congruences/Certificates/Schema/#2903" class="Primitive">Type</a> <a id="9467" class="Keyword">where</a>
   <a id="9475" class="Keyword">constructor</a> <a id="mkCgCert"></a><a id="9487" href="/Setoid/Congruences/Certificates/Schema/#9487" class="InductiveConstructor">mkCgCert</a>
   <a id="9498" class="Keyword">field</a>
@@ -14682,12 +14682,14 @@ verification is definitional and per-entry.</p>
 <!-- pymdownx.snippets auto-appends this file to every page so reference-style -->
 <!-- links resolve site-wide without a per-page include directive.  Internal -->
 <!-- targets are ROOT-RELATIVE so cross-references work under `mkdocs serve` -->
-<!-- and at the deployed site alike.  The module sections are GENERATED from -->
-<!-- the src/ tree by scripts/python/gen_links.py; re-run it rather than -->
-<!-- editing those entries by hand. -->
+<!-- and at the deployed site alike.  The module and ADR sections are GENERATED -->
+<!-- from the src/ and docs/adr/ trees by scripts/python/gen_links.py; re-run it -->
+<!-- rather than editing those entries by hand (CI runs it with --check).  New -->
+<!-- external links may be added by hand to the External-links section. -->
 
 <!-- ===== Rendered module pages ===== -->
 <!-- ===== Module sources on GitHub ===== -->
+<!-- ===== Architecture Decision Records ===== -->
 <!-- ===== External links ===== -->
 <div class="footnote">
 <hr />

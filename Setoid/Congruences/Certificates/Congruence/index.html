@@ -14530,11 +14530,11 @@
 
 <h1 id="setoidcongruencescertificatescongruence">Setoid.Congruences.Certificates.Congruence<a class="headerlink" href="#setoidcongruencescertificatescongruence" title="Anchor link to this section">&para;</a></h1>
 <h3 id="the-per-congruence-certificate-checker-obligations-c1c3">The per-congruence certificate checker (obligations C1–C3)<a class="headerlink" href="#the-per-congruence-certificate-checker-obligations-c1c3" title="Anchor link to this section">&para;</a></h3>
-<p>This is the [Setoid.Congruences.Certificates.Congruence][] module of the <a href="/">Agda Universal Algebra Library</a>.</p>
+<p>This is the <a href="/Setoid/Congruences/Certificates/Congruence/">Setoid.Congruences.Certificates.Congruence</a> module of the <a href="/">Agda Universal Algebra Library</a>.</p>
 <p>Fix a finite finitary algebra — an algebra <code>𝑨</code> with carrier-finiteness data
 <code>𝑭</code> (<a href="/Setoid/Algebras/Finite/">Setoid.Algebras.Finite</a>) and signature-finiteness data <code>𝑺</code>
 (<a href="/Setoid/Signatures/Finite/">Setoid.Signatures.Finite</a>).  A per-congruence certificate
-(<code class="AgdaRecord">CgCert</code> of [Setoid.Congruences.Certificates.Schema][]) claims</p>
+(<code class="AgdaRecord">CgCert</code> of <a href="/Setoid/Congruences/Certificates/Schema/">Setoid.Congruences.Certificates.Schema</a>) claims</p>
 <blockquote>
 <p>the partition presented by the parent vector  <code>≑  Cg (fromPairs P)</code></p>
 </blockquote>
@@ -14584,7 +14584,7 @@ the vector's own forest edges, used for whole-lattice congruence lists) deliver
 the claim as an honest <code class="AgdaFunction">_≑_</code> at the working congruence level.</p>
 <p>Every hypothesis is decidable, and each decider is a bounded sweep of
 <code class="AgdaDatatype">Fin</code> comparisons; the whole-lattice checker
-([Setoid.Congruences.Certificates.Lattice][]) instantiates them wholesale.</p>
+(<a href="/Setoid/Congruences/Certificates/Lattice/">Setoid.Congruences.Certificates.Lattice</a>) instantiates them wholesale.</p>
 <pre class="Agda hidden-source"><a id="3959" class="Symbol">{-#</a> <a id="3963" class="Keyword">OPTIONS</a> <a id="3971" class="Pragma">--cubical-compatible</a> <a id="3992" class="Pragma">--exact-split</a> <a id="4006" class="Pragma">--safe</a> <a id="4013" class="Symbol">#-}</a>
 
 <a id="4018" class="Keyword">module</a> <a id="4025" href="/Setoid/Congruences/Certificates/Congruence/" class="Module">Setoid.Congruences.Certificates.Congruence</a> <a id="4068" class="Keyword">where</a>
@@ -15361,12 +15361,14 @@ certificate), and the soundness theorem consuming it.</p>
 <!-- pymdownx.snippets auto-appends this file to every page so reference-style -->
 <!-- links resolve site-wide without a per-page include directive.  Internal -->
 <!-- targets are ROOT-RELATIVE so cross-references work under `mkdocs serve` -->
-<!-- and at the deployed site alike.  The module sections are GENERATED from -->
-<!-- the src/ tree by scripts/python/gen_links.py; re-run it rather than -->
-<!-- editing those entries by hand. -->
+<!-- and at the deployed site alike.  The module and ADR sections are GENERATED -->
+<!-- from the src/ and docs/adr/ trees by scripts/python/gen_links.py; re-run it -->
+<!-- rather than editing those entries by hand (CI runs it with --check).  New -->
+<!-- external links may be added by hand to the External-links section. -->
 
 <!-- ===== Rendered module pages ===== -->
 <!-- ===== Module sources on GitHub ===== -->
+<!-- ===== Architecture Decision Records ===== -->
 <!-- ===== External links ===== -->
 <div class="footnote">
 <hr />

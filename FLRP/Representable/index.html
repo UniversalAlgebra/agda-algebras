@@ -14484,7 +14484,7 @@
 <h3 id="the-decidable-layer-reformulation-of-the-flrp-and-the-constructive-two-element-chain">The decidable-layer reformulation of the FLRP, and the constructive two-element chain<a class="headerlink" href="#the-decidable-layer-reformulation-of-the-flrp-and-the-constructive-two-element-chain" title="Anchor link to this section">&para;</a></h3>
 <p>This is the <a href="/FLRP/Representable/">FLRP.Representable</a> module of the <a href="/">Agda Universal Algebra Library</a>.</p>
 <p><a href="/FLRP/Problem/">FLRP.Problem</a> states the Finite Lattice Representation Problem at the <em>semantic</em>
-congruence layer (Layer S of [ADR-008][]) and proves the constructivity no-go
+congruence layer (Layer S of <a href="/adr/008-two-layer-congruence-discipline/">ADR-008</a>) and proves the constructivity no-go
 theorem: any order isomorphism <code class="AgdaFunction">Con 𝑨 ≅ chain₂-lattice</code> yields weak
 excluded middle, so <code class="AgdaRecord">Representable chain₂-lattice</code> has no inhabitant
 under <code>--safe</code>.  The obstruction is that <code class="AgdaFunction">Con 𝑨</code> contains an oracle
@@ -14493,7 +14493,7 @@ decides that proposition.</p>
 <p>This module supplies the <strong>Layer-D reformulation</strong> (L5 of the two-layer discipline,
 <code>docs/notes/flrp-two-layer-congruences.md</code> § 3), which quantifies not over all
 semantic congruences but over the <em>decidable</em> congruences <code class="AgdaFunction">DecCon</code> of
-[Setoid.Congruences.Finite.Basic][].  A decidable congruence carries its own decision
+<a href="/Setoid/Congruences/Finite/Basic/">Setoid.Congruences.Finite.Basic</a>.  A decidable congruence carries its own decision
 procedure, so it <em>can</em> be asked where it lands in a two-element chain — constructively,
 with no axiom.  Concretely, this module provides:</p>
 <ul>
@@ -14584,7 +14584,7 @@ left implicit in exactly this order-isomorphism target: the honest minimum neede
 state representability and to inhabit it for <code class="AgdaFunction">chain₂</code> is the
 <code class="AgdaRecord">OrderIso</code> below, and the independent construction of the full finite
 lattice bundle on <code class="AgdaFunction">DecCon 𝑨</code> (a decidable order with meets and joins,
-whose completeness on the enumerated list of [Setoid.Congruences.Finite.Decidable][]
+whose completeness on the enumerated list of <a href="/Setoid/Congruences/Finite/Decidable/">Setoid.Congruences.Finite.Decidable</a>
 is decidable) is deferred to the certificate tooling of a later work package.</p>
 <pre class="Agda"><a id="ConIsoᵈ"></a><a id="6720" href="/FLRP/Representable/#6720" class="Function">ConIsoᵈ</a> <a id="6728" class="Symbol">:</a> <a id="6730" class="Symbol">{</a><a id="6731" href="/FLRP/Representable/#6731" class="Bound">𝑆</a> <a id="6733" class="Symbol">:</a> <a id="6735" href="/Overture/Signatures/#3218" class="Function">Signature</a> <a id="6745" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="6748" href="/classic/Level.html#521" class="Function">0ℓ</a><a id="6750" class="Symbol">}</a> <a id="6752" class="Symbol">→</a> <a id="6754" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="6762" class="Symbol">{</a><a id="6763" class="Argument">𝑆</a> <a id="6765" class="Symbol">=</a> <a id="6767" href="/FLRP/Representable/#6731" class="Bound">𝑆</a><a id="6768" class="Symbol">}</a> <a id="6770" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="6773" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="6776" class="Symbol">→</a> <a id="6778" href="/Classical/Small/Structures/Lattice/#1038" class="Function">Lattice</a> <a id="6786" class="Symbol">→</a> <a id="6788" href="/FLRP/Representable/#2653" class="Primitive">Type</a> <a id="6793" class="Symbol">(</a><a id="6794" href="/FLRP/Representable/#3117" class="Primitive">lsuc</a> <a id="6799" href="/classic/Level.html#521" class="Function">0ℓ</a><a id="6801" class="Symbol">)</a>
 <a id="6803" href="/FLRP/Representable/#6720" class="Function">ConIsoᵈ</a> <a id="6811" href="/FLRP/Representable/#6811" class="Bound">𝑨</a> <a id="6813" href="/FLRP/Representable/#6813" class="Bound">𝑳</a> <a id="6815" class="Symbol">=</a> <a id="6817" href="/FLRP/Problem/#5175" class="Record">OrderIso</a>  <a id="6827" class="Symbol">(</a><a id="6828" href="/FLRP/Representable/#5477" class="Function Operator">_≑ᵈ_</a> <a id="6833" class="Symbol">{</a><a id="6834" class="Argument">𝑨</a> <a id="6836" class="Symbol">=</a> <a id="6838" href="/FLRP/Representable/#6811" class="Bound">𝑨</a><a id="6839" class="Symbol">}</a> <a id="6841" class="Symbol">{</a><a id="6842" class="Argument">ℓ</a> <a id="6844" class="Symbol">=</a> <a id="6846" href="/classic/Level.html#521" class="Function">0ℓ</a><a id="6848" class="Symbol">})</a> <a id="6851" class="Symbol">(</a><a id="6852" href="/FLRP/Representable/#5298" class="Function Operator">_⊆ᵈ_</a> <a id="6857" class="Symbol">{</a><a id="6858" class="Argument">𝑨</a> <a id="6860" class="Symbol">=</a> <a id="6862" href="/FLRP/Representable/#6811" class="Bound">𝑨</a><a id="6863" class="Symbol">}</a> <a id="6865" class="Symbol">{</a><a id="6866" class="Argument">ℓ</a> <a id="6868" class="Symbol">=</a> <a id="6870" href="/classic/Level.html#521" class="Function">0ℓ</a><a id="6872" class="Symbol">})</a>
@@ -14598,7 +14598,7 @@ a signature, an algebra over it, a witness that the carrier is finite
 (<code class="AgdaRecord">FiniteSignature</code>), and the order isomorphism <code class="AgdaFunction">ConIsoᵈ</code>.
 It mirrors <code class="AgdaRecord">Representable</code> of <a href="/FLRP/Problem/">FLRP.Problem</a> with two differences: the
 finiteness datum is the finite finitary pair <code>(FiniteAlgebra, FiniteSignature)</code> — the
-exact input from which [Setoid.Congruences.Finite.Decidable][] builds a complete list
+exact input from which <a href="/Setoid/Congruences/Finite/Decidable/">Setoid.Congruences.Finite.Decidable</a> builds a complete list
 of decidable congruences — and the isomorphism is over <code class="AgdaFunction">DecCon</code> rather
 than semantic <code class="AgdaFunction">Con</code>.</p>
 <p>A note on the field superscripts.  The <code class="AgdaBound">ᵈ</code> on <code class="AgdaField">sigᵈ</code>,
@@ -14664,7 +14664,7 @@ per-symbol obligation (<code class="AgdaField">opEnum</code>, <code class="AgdaF
 </pre>
 <p>Hence, via <code class="AgdaFunction">FiniteAlgebra→FiniteCongruencesᵈ</code>, <code class="AgdaFunction">𝟚</code> has a
 constructively complete list of its decidable congruences — the Layer-D interface
-<code class="AgdaRecord">FiniteCongruencesᵈ</code> of [Setoid.Congruences.Finite.Decidable][], with no
+<code class="AgdaRecord">FiniteCongruencesᵈ</code> of <a href="/Setoid/Congruences/Finite/Decidable/">Setoid.Congruences.Finite.Decidable</a>, with no
 classical assumption.  (The order isomorphism below does not route through this list;
 it is recorded to exhibit that the L3 machinery applies to <code class="AgdaFunction">𝟚</code>.)</p>
 <pre class="Agda"><a id="𝟚-FiniteCongruencesᵈ"></a><a id="11500" href="/FLRP/Representable/#11500" class="Function">𝟚-FiniteCongruencesᵈ</a> <a id="11521" class="Symbol">:</a> <a id="11523" href="/Setoid/Congruences/Finite/Decidable/#9006" class="Record">FiniteCongruencesᵈ</a> <a id="11542" href="/FLRP/Representable/#10139" class="Function">𝟚</a>
@@ -14856,12 +14856,14 @@ unattainable at Layer S is thus attained, constructively, at Layer D.</p>
 <!-- pymdownx.snippets auto-appends this file to every page so reference-style -->
 <!-- links resolve site-wide without a per-page include directive.  Internal -->
 <!-- targets are ROOT-RELATIVE so cross-references work under `mkdocs serve` -->
-<!-- and at the deployed site alike.  The module sections are GENERATED from -->
-<!-- the src/ tree by scripts/python/gen_links.py; re-run it rather than -->
-<!-- editing those entries by hand. -->
+<!-- and at the deployed site alike.  The module and ADR sections are GENERATED -->
+<!-- from the src/ and docs/adr/ trees by scripts/python/gen_links.py; re-run it -->
+<!-- rather than editing those entries by hand (CI runs it with --check).  New -->
+<!-- external links may be added by hand to the External-links section. -->
 
 <!-- ===== Rendered module pages ===== -->
 <!-- ===== Module sources on GitHub ===== -->
+<!-- ===== Architecture Decision Records ===== -->
 <!-- ===== External links ===== -->
 
 

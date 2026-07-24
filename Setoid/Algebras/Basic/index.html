@@ -14465,7 +14465,7 @@ interpretation in an algebra.<sup id="fnref:1"><a class="footnote-ref" href="#fn
 </pre>
 <p>We previously used a unicode symbol for this purpose; the definition is preserved for
 backward compatibility, but its use is deprecated in favor of the ascii version
-above.  See <a href="https://github.com/ualib/agda-algebras/blob/master/docs/adr/002-classical-layer-design.md">ADR-002</a> §7 for the rationale.</p>
+above.  See <a href="/adr/002-classical-layer-design/">ADR-002</a> §7 for the rationale.</p>
 <pre class="Agda"><a id="_̂_"></a><a id="4381" href="/Setoid/Algebras/Basic/#4381" class="Function Operator">_̂_</a> <a id="4385" class="Symbol">:</a> <a id="4387" class="Symbol">(</a><a id="4388" href="/Setoid/Algebras/Basic/#4388" class="Bound">f</a> <a id="4390" class="Symbol">:</a> <a id="4392" href="/Overture/Signatures/#4961" class="Function">OperationSymbolsOf</a> <a id="4411" href="/Overture/Signatures/#3990" class="Generalizable">𝑆</a><a id="4412" class="Symbol">)(</a><a id="4414" href="/Setoid/Algebras/Basic/#4414" class="Bound">𝑨</a> <a id="4416" class="Symbol">:</a> <a id="4418" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="4426" class="Symbol">{</a><a id="4427" class="Argument">𝑆</a> <a id="4429" class="Symbol">=</a> <a id="4431" href="/Overture/Signatures/#3990" class="Generalizable">𝑆</a><a id="4432" class="Symbol">}</a> <a id="4434" href="/Setoid/Algebras/Basic/#1105" class="Generalizable">α</a> <a id="4436" href="/Setoid/Algebras/Basic/#1107" class="Generalizable">ρ</a><a id="4437" class="Symbol">)</a> <a id="4439" class="Symbol">→</a> <a id="4441" href="/Overture/Operations/#1488" class="Function">Op</a> <a id="4444" class="Symbol">(</a><a id="4445" href="/Overture/Signatures/#5037" class="Function">ArityOf</a> <a id="4453" href="/Overture/Signatures/#3990" class="Generalizable">𝑆</a> <a id="4455" href="/Setoid/Algebras/Basic/#4388" class="Bound">f</a><a id="4456" class="Symbol">)</a> <a id="4458" href="/Setoid/Algebras/Basic/#3785" class="Function Operator">𝕌[</a> <a id="4461" href="/Setoid/Algebras/Basic/#4414" class="Bound">𝑨</a> <a id="4463" href="/Setoid/Algebras/Basic/#3785" class="Function Operator">]</a>
 <a id="4465" href="/Setoid/Algebras/Basic/#4465" class="Bound">f</a> <a id="4467" href="/Setoid/Algebras/Basic/#4381" class="Function Operator">̂</a> <a id="4469" href="/Setoid/Algebras/Basic/#4469" class="Bound">𝑨</a> <a id="4471" class="Symbol">=</a> <a id="4473" class="Symbol">λ</a> <a id="4475" href="/Setoid/Algebras/Basic/#4475" class="Bound">a</a> <a id="4477" class="Symbol">→</a> <a id="4479" class="Symbol">(</a><a id="4480" href="/Setoid/Algebras/Basic/#3022" class="Field">Interp</a> <a id="4487" href="/Setoid/Algebras/Basic/#4469" class="Bound">𝑨</a><a id="4488" class="Symbol">)</a> <a id="4490" href="/Setoid/Algebras/Basic/#2614" class="Field Operator">⟨$⟩</a> <a id="4494" class="Symbol">(</a><a id="4495" href="/Setoid/Algebras/Basic/#4465" class="Bound">f</a> <a id="4497" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="4499" href="/Setoid/Algebras/Basic/#4475" class="Bound">a</a><a id="4500" class="Symbol">)</a>
 <a id="4502" class="Symbol">{-#</a> <a id="4506" class="Keyword">WARNING_ON_USAGE</a> <a id="4523" class="Pragma">_̂_</a>
@@ -14561,12 +14561,14 @@ The following functions provide that information.</p>
 <!-- pymdownx.snippets auto-appends this file to every page so reference-style -->
 <!-- links resolve site-wide without a per-page include directive.  Internal -->
 <!-- targets are ROOT-RELATIVE so cross-references work under `mkdocs serve` -->
-<!-- and at the deployed site alike.  The module sections are GENERATED from -->
-<!-- the src/ tree by scripts/python/gen_links.py; re-run it rather than -->
-<!-- editing those entries by hand. -->
+<!-- and at the deployed site alike.  The module and ADR sections are GENERATED -->
+<!-- from the src/ and docs/adr/ trees by scripts/python/gen_links.py; re-run it -->
+<!-- rather than editing those entries by hand (CI runs it with --check).  New -->
+<!-- external links may be added by hand to the External-links section. -->
 
 <!-- ===== Rendered module pages ===== -->
 <!-- ===== Module sources on GitHub ===== -->
+<!-- ===== Architecture Decision Records ===== -->
 <!-- ===== External links ===== -->
 <div class="footnote">
 <hr />

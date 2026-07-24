@@ -14442,7 +14442,7 @@
 
 <h1 id="flrpcertificatespilotv4regularm3">FLRP.Certificates.Pilot.V4RegularM3<a class="headerlink" href="#flrpcertificatespilotv4regularm3" title="Anchor link to this section">&para;</a></h1>
 <h3 id="a-machine-checked-representation-conthe-klein-four-group-acting-on-itself-m3">A machine-checked representation: Con(the Klein four-group acting on itself) ≅ M3<a class="headerlink" href="#a-machine-checked-representation-conthe-klein-four-group-acting-on-itself-m3" title="Anchor link to this section">&para;</a></h3>
-<p>This is the [FLRP.Certificates.Pilot.V4RegularM3][] module of the <a href="/">Agda Universal Algebra Library</a>.</p>
+<p>This is the <a href="/FLRP/Certificates/Pilot/V4RegularM3/">FLRP.Certificates.Pilot.V4RegularM3</a> module of the <a href="/">Agda Universal Algebra Library</a>.</p>
 <p><strong>This module was emitted by <code>scripts/python/flrp/emit_agda.py</code> from
 <code>scripts/python/flrp/inputs/v4_regular_m3.json</code>.  Do not edit it by hand; rerun the emitter instead.</strong></p>
 <p>It re-verifies, end-to-end through the WP-6 certificate pipeline (#457), the
@@ -14450,8 +14450,8 @@ claim that the congruence lattice of the algebra "the Klein four-group acting on
 4, unary operations <code>e</code>, <code>a</code>, <code>b</code>, <code>ab</code> — is isomorphic to the lattice
 "M3" (5 elements).  The engine's output below (normal-form
 parent vectors, Freese traces, and pointer tables) is certificate data only:
-the search-free checkers of [Setoid.Congruences.Certificates][] re-verify all
-of it during type-checking, and the [FLRP.Certificates][] assembly turns the
+the search-free checkers of <a href="/Setoid/Congruences/Certificates/">Setoid.Congruences.Certificates</a> re-verify all
+of it during type-checking, and the <a href="/FLRP/Certificates/">FLRP.Certificates</a> assembly turns the
 checked certificate into the headline theorems — a
 <code class="AgdaRecord">Representableᵈ</code> witness for the target lattice and a
 <code class="AgdaRecord">FiniteCongruencesᵈ</code> instance for the algebra.  Nothing is
@@ -14499,7 +14499,7 @@ compilation.</p>
 
 <h4 id="the-algebra-from-its-operation-tables">The algebra, from its operation tables<a class="headerlink" href="#the-algebra-from-its-operation-tables" title="Anchor link to this section">&para;</a></h4>
 <p>Row <code>f</code> of <code class="AgdaFunction">opTables</code> is the value table of the <code>f</code>-th unary
-operation; [Classical.Structures.Unary][] turns the table into the algebra
+operation; <a href="/Classical/Structures/Unary/">Classical.Structures.Unary</a> turns the table into the algebra
 and its finiteness witnesses.</p>
 <pre class="Agda"><a id="opTables"></a><a id="4007" href="/FLRP/Certificates/Pilot/V4RegularM3/#4007" class="Function">opTables</a> <a id="4016" class="Symbol">:</a> <a id="4018" href="/classic/Data.Vec.Base.html#1119" class="Datatype">Vec</a> <a id="4022" class="Symbol">(</a><a id="4023" href="/classic/Data.Vec.Base.html#1119" class="Datatype">Vec</a> <a id="4027" class="Symbol">(</a><a id="4028" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="4032" class="Number">4</a><a id="4033" class="Symbol">)</a> <a id="4035" class="Number">4</a><a id="4036" class="Symbol">)</a> <a id="4038" class="Number">4</a>
 <a id="4040" href="/FLRP/Certificates/Pilot/V4RegularM3/#4007" class="Function">opTables</a> <a id="4049" class="Symbol">=</a> <a id="4051" class="Symbol">(</a><a id="4052" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="4055" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="4057" href="/classic/Data.Fin.Patterns.html#440" class="InductiveConstructor">1F</a> <a id="4060" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="4062" href="/classic/Data.Fin.Patterns.html#460" class="InductiveConstructor">2F</a> <a id="4065" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="4067" href="/classic/Data.Fin.Patterns.html#480" class="InductiveConstructor">3F</a> <a id="4070" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="4072" href="/classic/Data.Vec.Base.html#1155" class="InductiveConstructor">[]</a><a id="4074" class="Symbol">)</a>
@@ -14748,12 +14748,14 @@ the algebra's decidable congruences.</p>
 <!-- pymdownx.snippets auto-appends this file to every page so reference-style -->
 <!-- links resolve site-wide without a per-page include directive.  Internal -->
 <!-- targets are ROOT-RELATIVE so cross-references work under `mkdocs serve` -->
-<!-- and at the deployed site alike.  The module sections are GENERATED from -->
-<!-- the src/ tree by scripts/python/gen_links.py; re-run it rather than -->
-<!-- editing those entries by hand. -->
+<!-- and at the deployed site alike.  The module and ADR sections are GENERATED -->
+<!-- from the src/ and docs/adr/ trees by scripts/python/gen_links.py; re-run it -->
+<!-- rather than editing those entries by hand (CI runs it with --check).  New -->
+<!-- external links may be added by hand to the External-links section. -->
 
 <!-- ===== Rendered module pages ===== -->
 <!-- ===== Module sources on GitHub ===== -->
+<!-- ===== Architecture Decision Records ===== -->
 <!-- ===== External links ===== -->
 
 

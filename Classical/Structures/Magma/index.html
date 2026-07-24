@@ -14475,7 +14475,7 @@ no Σ-wrapping; the alias makes use sites read <code>Magma α ρ</code> rather t
 <pre class="Agda"><a id="Magma"></a><a id="3385" href="/Classical/Structures/Magma/#3385" class="Function">Magma</a> <a id="3391" class="Symbol">:</a> <a id="3393" class="Symbol">(</a><a id="3394" href="/Classical/Structures/Magma/#3394" class="Bound">α</a> <a id="3396" href="/Classical/Structures/Magma/#3396" class="Bound">ρ</a> <a id="3398" class="Symbol">:</a> <a id="3400" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a><a id="3405" class="Symbol">)</a> <a id="3407" class="Symbol">→</a> <a id="3409" href="/Classical/Structures/Magma/#2067" class="Primitive">Type</a> <a id="3414" class="Symbol">(</a><a id="3415" href="/classic/Agda.Primitive.html#931" class="Primitive">suc</a> <a id="3419" href="/Classical/Structures/Magma/#3394" class="Bound">α</a> <a id="3421" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="3423" href="/classic/Agda.Primitive.html#931" class="Primitive">suc</a> <a id="3427" href="/Classical/Structures/Magma/#3396" class="Bound">ρ</a><a id="3428" class="Symbol">)</a>
 <a id="3430" href="/Classical/Structures/Magma/#3385" class="Function">Magma</a> <a id="3436" href="/Classical/Structures/Magma/#3436" class="Bound">α</a> <a id="3438" href="/Classical/Structures/Magma/#3438" class="Bound">ρ</a> <a id="3440" class="Symbol">=</a> <a id="3442" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="3450" class="Symbol">{</a><a id="3451" class="Argument">𝑆</a> <a id="3453" class="Symbol">=</a> <a id="3455" href="/Classical/Signatures/Magma/#3774" class="Function">Sig-Magma</a><a id="3464" class="Symbol">}</a> <a id="3466" href="/Classical/Structures/Magma/#3436" class="Bound">α</a> <a id="3468" href="/Classical/Structures/Magma/#3438" class="Bound">ρ</a>
 </pre>
-<p>(The signature is pinned explicitly at <code>𝑆 = Sig-Magma</code>: per [ADR-009][] the generic
+<p>(The signature is pinned explicitly at <code>𝑆 = Sig-Magma</code>: per <a href="/adr/009-signature-genericity-generalized-variables/">ADR-009</a> the generic
 <code>Setoid.Algebras.Basic</code> module generalizes over <code>𝑆</code>, and the <code>Classical/</code> layer fixes
 the concrete signature at the point of use.)</p>
 <h4 id="the-magma-op-module-named-accessors-for-a-fixed-magma">The <code>Magma-Op</code> module: named accessors for a fixed magma<a class="headerlink" href="#the-magma-op-module-named-accessors-for-a-fixed-magma" title="Anchor link to this section">&para;</a></h4>
@@ -14528,7 +14528,7 @@ empty-theory edge case of the <code>opsTo&lt;family&gt;</code> constructor patte
   <a id="6661" href="/classic/Function.Bundles.html#2111" class="Field">cong</a> <a id="6666" href="/Classical/Structures/Magma/#6578" class="Function">interp</a> <a id="6673" class="Symbol">{</a><a id="6674" href="/Classical/Signatures/Magma/#3310" class="InductiveConstructor">∙-Op</a> <a id="6679" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="6681" class="Symbol">_}</a> <a id="6684" class="Symbol">{</a><a id="6685" class="DottedPattern Symbol">.</a><a id="6686" href="/Classical/Signatures/Magma/#3310" class="DottedPattern InductiveConstructor">∙-Op</a> <a id="6691" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="6693" class="Symbol">_}</a> <a id="6696" class="Symbol">(</a><a id="6697" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">≡.refl</a> <a id="6704" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="6706" href="/Classical/Structures/Magma/#6706" class="Bound">args≡</a><a id="6711" class="Symbol">)</a> <a id="6713" class="Symbol">=</a> <a id="6715" href="/classic/Relation.Binary.PropositionalEquality.Core.html#1718" class="Function">≡.cong₂</a> <a id="6723" href="/Classical/Structures/Magma/#6513" class="Bound Operator">_·_</a> <a id="6727" class="Symbol">(</a><a id="6728" href="/Classical/Structures/Magma/#6706" class="Bound">args≡</a> <a id="6734" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a><a id="6736" class="Symbol">)</a> <a id="6738" class="Symbol">(</a><a id="6739" href="/Classical/Structures/Magma/#6706" class="Bound">args≡</a> <a id="6745" href="/classic/Data.Fin.Patterns.html#440" class="InductiveConstructor">1F</a><a id="6747" class="Symbol">)</a>
 </pre>
 <h4 id="a-note-on-morphisms">A note on morphisms<a class="headerlink" href="#a-note-on-morphisms" title="Anchor link to this section">&para;</a></h4>
-<p>A magma morphism is, by <a href="https://github.com/ualib/agda-algebras/blob/master/docs/adr/002-classical-layer-design.md">ADR-002</a> §5, definitionally a homomorphism of the
+<p>A magma morphism is, by <a href="/adr/002-classical-layer-design/">ADR-002</a> §5, definitionally a homomorphism of the
 underlying <code>Sig-Magma</code>-algebras.  No per-structure morphism record is introduced; we
 inherit <a href="/Setoid/Homomorphisms/"><code>Setoid.Homomorphisms</code></a> wholesale, instantiated at <code>𝑆 = Sig-Magma</code>.  This
 is uniformly the policy across the classical hierarchy: each structure inherits
@@ -14560,12 +14560,14 @@ once, via <a href="/Classical/Structures/Interpret/"><code>interp-cong</code></a
 <!-- pymdownx.snippets auto-appends this file to every page so reference-style -->
 <!-- links resolve site-wide without a per-page include directive.  Internal -->
 <!-- targets are ROOT-RELATIVE so cross-references work under `mkdocs serve` -->
-<!-- and at the deployed site alike.  The module sections are GENERATED from -->
-<!-- the src/ tree by scripts/python/gen_links.py; re-run it rather than -->
-<!-- editing those entries by hand. -->
+<!-- and at the deployed site alike.  The module and ADR sections are GENERATED -->
+<!-- from the src/ and docs/adr/ trees by scripts/python/gen_links.py; re-run it -->
+<!-- rather than editing those entries by hand (CI runs it with --check).  New -->
+<!-- external links may be added by hand to the External-links section. -->
 
 <!-- ===== Rendered module pages ===== -->
 <!-- ===== Module sources on GitHub ===== -->
+<!-- ===== Architecture Decision Records ===== -->
 <!-- ===== External links ===== -->
 
 

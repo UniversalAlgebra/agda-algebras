@@ -14442,7 +14442,7 @@
 
 <h1 id="flrpcertificatessmalllatticerepsslr33">FLRP.Certificates.SmallLatticeReps.SLR33<a class="headerlink" href="#flrpcertificatessmalllatticerepsslr33" title="Anchor link to this section">&para;</a></h1>
 <h3 id="a-machine-checked-representation-conb33-manuscript-l33-m5">A machine-checked representation: Con(B33) ≅ manuscript L33 (M5)<a class="headerlink" href="#a-machine-checked-representation-conb33-manuscript-l33-m5" title="Anchor link to this section">&para;</a></h3>
-<p>This is the [FLRP.Certificates.SmallLatticeReps.SLR33][] module of the <a href="/">Agda Universal Algebra Library</a>.</p>
+<p>This is the <a href="/FLRP/Certificates/SmallLatticeReps/SLR33/">FLRP.Certificates.SmallLatticeReps.SLR33</a> module of the <a href="/">Agda Universal Algebra Library</a>.</p>
 <p><strong>This module was emitted by <code>scripts/python/flrp/emit_agda.py</code> from
 <code>scripts/python/flrp/inputs/slr/slr33.json</code>.  Do not edit it by hand; rerun the emitter instead.</strong></p>
 <p><code>B33</code>/<code>L33</code> in the numbering of the DeMeo–Freese–Jipsen manuscript <em>Representing Finite Lattices as Congruence Lattices of Finite Algebras</em> (§ 6 of the 2016-06-10 draft, <code>docs/papers/fin-lat-rep/SmallLatticeReps.tex</code>).  The dictionary between the manuscript's lattice numbering and this library's names is <code>docs/notes/flrp-slr-naming.md</code>.</p>
@@ -14451,8 +14451,8 @@ claim that the congruence lattice of the algebra "B33" — carrier size
 16, unary operations <code>f</code>, <code>g</code>, <code>h</code> — is isomorphic to the lattice
 "manuscript L33 (M5)" (7 elements).  The engine's output below (normal-form
 parent vectors, Freese traces, and pointer tables) is certificate data only:
-the search-free checkers of [Setoid.Congruences.Certificates][] re-verify all
-of it during type-checking, and the [FLRP.Certificates][] assembly turns the
+the search-free checkers of <a href="/Setoid/Congruences/Certificates/">Setoid.Congruences.Certificates</a> re-verify all
+of it during type-checking, and the <a href="/FLRP/Certificates/">FLRP.Certificates</a> assembly turns the
 checked certificate into the headline theorems — a
 <code class="AgdaRecord">Representableᵈ</code> witness for the target lattice and a
 <code class="AgdaRecord">FiniteCongruencesᵈ</code> instance for the algebra.  Nothing is
@@ -14509,7 +14509,7 @@ compilation.</p>
 
 <h4 id="the-algebra-from-its-operation-tables">The algebra, from its operation tables<a class="headerlink" href="#the-algebra-from-its-operation-tables" title="Anchor link to this section">&para;</a></h4>
 <p>Row <code>f</code> of <code class="AgdaFunction">opTables</code> is the value table of the <code>f</code>-th unary
-operation; [Classical.Structures.Unary][] turns the table into the algebra
+operation; <a href="/Classical/Structures/Unary/">Classical.Structures.Unary</a> turns the table into the algebra
 and its finiteness witnesses.</p>
 <pre class="Agda"><a id="opTables"></a><a id="4602" href="/FLRP/Certificates/SmallLatticeReps/SLR33/#4602" class="Function">opTables</a> <a id="4611" class="Symbol">:</a> <a id="4613" href="/classic/Data.Vec.Base.html#1119" class="Datatype">Vec</a> <a id="4617" class="Symbol">(</a><a id="4618" href="/classic/Data.Vec.Base.html#1119" class="Datatype">Vec</a> <a id="4622" class="Symbol">(</a><a id="4623" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="4627" class="Number">16</a><a id="4629" class="Symbol">)</a> <a id="4631" class="Number">16</a><a id="4633" class="Symbol">)</a> <a id="4635" class="Number">3</a>
 <a id="4637" href="/FLRP/Certificates/SmallLatticeReps/SLR33/#4602" class="Function">opTables</a> <a id="4646" class="Symbol">=</a> <a id="4648" class="Symbol">(</a><a id="4649" href="/classic/Data.Fin.Patterns.html#440" class="InductiveConstructor">1F</a> <a id="4652" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="4654" href="/classic/Data.Fin.Patterns.html#480" class="InductiveConstructor">3F</a> <a id="4657" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="4659" href="/classic/Data.Fin.Patterns.html#460" class="InductiveConstructor">2F</a> <a id="4662" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="4664" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="4667" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="4669" href="/classic/Data.Fin.Patterns.html#600" class="InductiveConstructor">9F</a> <a id="4672" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="4674" href="/FLRP/Certificates/SmallLatticeReps/SLR33/#4256" class="InductiveConstructor">11F</a> <a id="4678" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="4680" href="/FLRP/Certificates/SmallLatticeReps/SLR33/#4235" class="InductiveConstructor">10F</a> <a id="4684" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="4686" href="/classic/Data.Fin.Patterns.html#580" class="InductiveConstructor">8F</a> <a id="4689" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="4691" href="/FLRP/Certificates/SmallLatticeReps/SLR33/#4300" class="InductiveConstructor">13F</a> <a id="4695" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="4697" href="/FLRP/Certificates/SmallLatticeReps/SLR33/#4344" class="InductiveConstructor">15F</a> <a id="4701" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="4703" href="/FLRP/Certificates/SmallLatticeReps/SLR33/#4322" class="InductiveConstructor">14F</a> <a id="4707" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="4709" href="/FLRP/Certificates/SmallLatticeReps/SLR33/#4278" class="InductiveConstructor">12F</a> <a id="4713" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="4715" href="/classic/Data.Fin.Patterns.html#520" class="InductiveConstructor">5F</a> <a id="4718" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="4720" href="/classic/Data.Fin.Patterns.html#560" class="InductiveConstructor">7F</a> <a id="4723" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="4725" href="/classic/Data.Fin.Patterns.html#540" class="InductiveConstructor">6F</a> <a id="4728" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="4730" href="/classic/Data.Fin.Patterns.html#500" class="InductiveConstructor">4F</a> <a id="4733" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="4735" href="/classic/Data.Vec.Base.html#1155" class="InductiveConstructor">[]</a><a id="4737" class="Symbol">)</a>
@@ -18521,12 +18521,14 @@ the algebra's decidable congruences.</p>
 <!-- pymdownx.snippets auto-appends this file to every page so reference-style -->
 <!-- links resolve site-wide without a per-page include directive.  Internal -->
 <!-- targets are ROOT-RELATIVE so cross-references work under `mkdocs serve` -->
-<!-- and at the deployed site alike.  The module sections are GENERATED from -->
-<!-- the src/ tree by scripts/python/gen_links.py; re-run it rather than -->
-<!-- editing those entries by hand. -->
+<!-- and at the deployed site alike.  The module and ADR sections are GENERATED -->
+<!-- from the src/ and docs/adr/ trees by scripts/python/gen_links.py; re-run it -->
+<!-- rather than editing those entries by hand (CI runs it with --check).  New -->
+<!-- external links may be added by hand to the External-links section. -->
 
 <!-- ===== Rendered module pages ===== -->
 <!-- ===== Module sources on GitHub ===== -->
+<!-- ===== Architecture Decision Records ===== -->
 <!-- ===== External links ===== -->
 
 

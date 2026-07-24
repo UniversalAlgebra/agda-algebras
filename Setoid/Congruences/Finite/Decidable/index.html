@@ -14464,8 +14464,8 @@
 
 <h1 id="setoidcongruencesfinitedecidable">Setoid.Congruences.Finite.Decidable<a class="headerlink" href="#setoidcongruencesfinitedecidable" title="Anchor link to this section">&para;</a></h1>
 <h3 id="constructive-completeness-of-the-decidable-congruence-layer">Constructive completeness of the decidable congruence layer<a class="headerlink" href="#constructive-completeness-of-the-decidable-congruence-layer" title="Anchor link to this section">&para;</a></h3>
-<p>This is the [Setoid.Congruences.Finite.Decidable][] module of the <a href="/">Agda Universal Algebra Library</a>.</p>
-<p>[Setoid.Congruences.Finite.Basic][] defines the congruence-side finiteness interface
+<p>This is the <a href="/Setoid/Congruences/Finite/Decidable/">Setoid.Congruences.Finite.Decidable</a> module of the <a href="/">Agda Universal Algebra Library</a>.</p>
+<p><a href="/Setoid/Congruences/Finite/Basic/">Setoid.Congruences.Finite.Basic</a> defines the congruence-side finiteness interface
 <code class="AgdaRecord">FiniteCongruences</code>, whose <code class="AgdaField">complete</code> field asserts that a
 finite list of decidable congruences exhausts the <em>whole</em> congruence lattice up to <code>≑</code>.
 That field quantifies over <em>all</em> semantic congruences <code class="AgdaFunction">Con</code>, and the
@@ -14511,14 +14511,14 @@ a congruence, so decoding through <code class="AgdaFunction">Cg-DecCon</code> re
 soundness, completeness, and compatibility work as a black box instead of re-deriving
 operation-compatibility for an arbitrary matrix fixpoint.</p>
 <p>Completeness is then the reconstruction argument of L2
-([Setoid.Congruences.Presented.Basic][]), specialized to the matrix-derived list: for
+(<a href="/Setoid/Congruences/Presented/Basic/">Setoid.Congruences.Presented.Basic</a>), specialized to the matrix-derived list: for
 a <code class="AgdaFunction">DecCon</code> <code>d</code>, its own grid <code>gridOf d</code> is in <code class="AgdaFunction">allGrids</code>,
 and <code>proj₁ d ≑ proj₁ (decode (gridOf d))</code> holds because the pairs <code>gpairs (gridOf d)</code>
 keeps are exactly the <code>d</code>-related enumerated pairs.</p>
 <p>The two containments are the <code class="AgdaInductiveConstructor">base</code> rule of
 <code class="AgdaFunction">Cg</code> (<code>d</code> is contained in the generated congruence) and
 <code class="AgdaFunction">Cg-least</code> (the generated congruence is contained in <code>d</code>), assembled
-from <code class="AgdaFunction">con-resp-≈</code> of [Setoid.Congruences.Presented.Basic][] exactly as in
+from <code class="AgdaFunction">con-resp-≈</code> of <a href="/Setoid/Congruences/Presented/Basic/">Setoid.Congruences.Presented.Basic</a> exactly as in
 <code class="AgdaFunction">reconstruction</code> of L2 — matching <code>gpairs (gridOf d)</code> to <code>relatedPairs d</code>
 as lists would require filter/map-fusion lemmas, so we re-run the two-inclusion pattern
 of L2 on the matrix-derived list rather than transport its theorem.<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></p>
@@ -14577,7 +14577,7 @@ of L2 on the matrix-derived list rather than transport its theorem.<sup id="fnre
 <p><code class="AgdaRecord">FiniteCongruencesᵈ</code> <code>𝑨</code> bundles a finite list <code class="AgdaField">consᵈ</code> of
 decidable congruences with a proof <code class="AgdaField">completeᵈ</code> that the list exhausts the
 <em>decidable</em> congruences of <code>𝑨</code> up to <code>≑</code>.  Contrast with
-<code class="AgdaRecord">FiniteCongruences</code> of [Setoid.Congruences.Finite.Basic][]: that record's
+<code class="AgdaRecord">FiniteCongruences</code> of <a href="/Setoid/Congruences/Finite/Basic/">Setoid.Congruences.Finite.Basic</a>: that record's
 <code class="AgdaField">complete</code> field ranges over every <code class="AgdaFunction">Con</code> (Layer S, the
 classical bridge), whereas <code class="AgdaField">completeᵈ</code> ranges only over
 <code class="AgdaFunction">DecCon</code> (Layer D), which is what makes it constructively provable
@@ -14817,12 +14817,14 @@ here.</p>
 <!-- pymdownx.snippets auto-appends this file to every page so reference-style -->
 <!-- links resolve site-wide without a per-page include directive.  Internal -->
 <!-- targets are ROOT-RELATIVE so cross-references work under `mkdocs serve` -->
-<!-- and at the deployed site alike.  The module sections are GENERATED from -->
-<!-- the src/ tree by scripts/python/gen_links.py; re-run it rather than -->
-<!-- editing those entries by hand. -->
+<!-- and at the deployed site alike.  The module and ADR sections are GENERATED -->
+<!-- from the src/ and docs/adr/ trees by scripts/python/gen_links.py; re-run it -->
+<!-- rather than editing those entries by hand (CI runs it with --check).  New -->
+<!-- external links may be added by hand to the External-links section. -->
 
 <!-- ===== Rendered module pages ===== -->
 <!-- ===== Module sources on GitHub ===== -->
+<!-- ===== Architecture Decision Records ===== -->
 <!-- ===== External links ===== -->
 <div class="footnote">
 <hr />

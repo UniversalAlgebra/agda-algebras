@@ -14486,16 +14486,16 @@
 
 <h1 id="setoidcongruencescertificateslattice">Setoid.Congruences.Certificates.Lattice<a class="headerlink" href="#setoidcongruencescertificateslattice" title="Anchor link to this section">&para;</a></h1>
 <h3 id="the-whole-lattice-certificate-checker">The whole-lattice certificate checker<a class="headerlink" href="#the-whole-lattice-certificate-checker" title="Anchor link to this section">&para;</a></h3>
-<p>This is the [Setoid.Congruences.Certificates.Lattice][] module of the <a href="/">Agda Universal Algebra Library</a>.</p>
+<p>This is the <a href="/Setoid/Congruences/Certificates/Lattice/">Setoid.Congruences.Certificates.Lattice</a> module of the <a href="/">Agda Universal Algebra Library</a>.</p>
 <p>A whole-lattice certificate (<code class="AgdaRecord">LatticeCert</code> of
-[Setoid.Congruences.Certificates.Schema][]) claims the <em>entire</em> congruence
+<a href="/Setoid/Congruences/Certificates/Schema/">Setoid.Congruences.Certificates.Schema</a>) claims the <em>entire</em> congruence
 lattice of a finite finitary algebra: a list of congruences as normal-form
 parent vectors, a principal-congruence pointer for every carrier index pair, and
 meet and join tables.</p>
 <p>This module checks those claims — reusing the per-congruence machinery of
-[Setoid.Congruences.Certificates.Congruence][] wholesale — and delivers the Layer-D
+<a href="/Setoid/Congruences/Certificates/Congruence/">Setoid.Congruences.Certificates.Congruence</a> wholesale — and delivers the Layer-D
 payoff: a <code class="AgdaRecord">FiniteCongruencesᵈ</code> instance
-([Setoid.Congruences.Finite.Decidable][]) whose congruence list is the certificate's,
+(<a href="/Setoid/Congruences/Finite/Decidable/">Setoid.Congruences.Finite.Decidable</a>) whose congruence list is the certificate's,
 with <em>constructive</em> completeness and no <code class="AgdaFunction">Cg-dec</code> anywhere.</p>
 <p>The checked conditions (<code class="AgdaRecord">LatticeCertOK</code>, one decidable bundle):</p>
 <ul>
@@ -14516,8 +14516,8 @@ with <em>constructive</em> completeness and no <code class="AgdaFunction">Cg-dec
    blocks — meets of partitions are definitional, so no trace.</li>
 </ul>
 <p><strong>Constructive completeness</strong>.  For an arbitrary decidable congruence <code>d</code>, the
-reconstruction argument of [Setoid.Congruences.Presented.Basic][] (re-run on the
-index-pair list <code>relatedIdx d</code>, exactly as [Setoid.Congruences.Finite.Decidable][]
+reconstruction argument of <a href="/Setoid/Congruences/Presented/Basic/">Setoid.Congruences.Presented.Basic</a> (re-run on the
+index-pair list <code>relatedIdx d</code>, exactly as <a href="/Setoid/Congruences/Finite/Decidable/">Setoid.Congruences.Finite.Decidable</a>
 re-runs it on grid pairs) gives</p>
 <div class="highlight"><pre><span></span><code>proj₁ d ≑ Cg (fromPairs (carrierPairs (relatedIdx d)))
 </code></pre></div>
@@ -14622,7 +14622,7 @@ list length <code>m</code>.</p>
 whole-lattice certificate; <code class="AgdaFunction">latticeCertOK?</code> decides the whole
 bundle at once, so a concrete emitted certificate is discharged by a single
 <code class="AgdaFunction">from-yes</code>.  Each field is a bounded sweep built from the
-deciders of [Setoid.Congruences.Certificates.Congruence][] and Schema.</p>
+deciders of <a href="/Setoid/Congruences/Certificates/Congruence/">Setoid.Congruences.Certificates.Congruence</a> and Schema.</p>
 <pre class="Agda">  <a id="8483" class="Keyword">module</a> <a id="8490" href="/Setoid/Congruences/Certificates/Lattice/#8490" class="Module">_</a> <a id="8492" class="Symbol">{</a><a id="8493" href="/Setoid/Congruences/Certificates/Lattice/#8493" class="Bound">m</a> <a id="8495" class="Symbol">:</a> <a id="8497" href="/classic/Agda.Builtin.Nat.html#203" class="Datatype">ℕ</a><a id="8498" class="Symbol">}</a> <a id="8500" class="Symbol">(</a><a id="8501" href="/Setoid/Congruences/Certificates/Lattice/#8501" class="Bound">lc</a> <a id="8504" class="Symbol">:</a> <a id="8506" href="/Setoid/Congruences/Certificates/Schema/#10974" class="Record">LatticeCert</a> <a id="8518" href="/Setoid/Algebras/Finite/#3401" class="Function">card</a> <a id="8523" href="/Setoid/Signatures/Finite/#5344" class="Field">opCard</a> <a id="8530" href="/Setoid/Congruences/Certificates/Congruence/#11948" class="Function">arOf</a> <a id="8535" href="/Setoid/Congruences/Certificates/Lattice/#8493" class="Bound">m</a><a id="8536" class="Symbol">)</a> <a id="8538" class="Keyword">where</a>
     <a id="8548" class="Keyword">open</a> <a id="8553" href="/Setoid/Congruences/Certificates/Schema/#10974" class="Module">LatticeCert</a> <a id="8565" href="/Setoid/Congruences/Certificates/Lattice/#8501" class="Bound">lc</a>
 
@@ -14883,9 +14883,9 @@ coherence bridges.</p>
 <p>For an arbitrary decidable congruence <code>d</code>, the index pairs it relates
 reconstruct it: <code>proj₁ d ≑ Cg (fromPairs (carrierPairs (relatedIdx d)))</code>.
 This re-runs the two-containment argument of
-[Setoid.Congruences.Presented.Basic][] on the index-pair list — the same
+<a href="/Setoid/Congruences/Presented/Basic/">Setoid.Congruences.Presented.Basic</a> on the index-pair list — the same
 choice, for the same filter/map-fusion reason, as in
-[Setoid.Congruences.Finite.Decidable][].</p>
+<a href="/Setoid/Congruences/Finite/Decidable/">Setoid.Congruences.Finite.Decidable</a>.</p>
 <pre class="Agda">      <a id="22043" class="Comment">-- All index pairs, and those a decidable congruence relates.</a>
       <a id="22111" href="/Setoid/Congruences/Certificates/Lattice/#22111" class="Function">idxPairsAll</a> <a id="22123" class="Symbol">:</a> <a id="22125" href="/classic/Agda.Builtin.List.html#147" class="Datatype">List</a> <a id="22130" href="/Setoid/Congruences/Certificates/Congruence/#11843" class="Function">IdxPair</a>
       <a id="22144" href="/Setoid/Congruences/Certificates/Lattice/#22111" class="Function">idxPairsAll</a> <a id="22156" class="Symbol">=</a> <a id="22158" href="/classic/Data.List.Base.html#2295" class="Function">cartesianProduct</a> <a id="22175" class="Symbol">(</a><a id="22176" href="/classic/Data.List.Base.html#6481" class="Function">allFin</a> <a id="22183" href="/Setoid/Algebras/Finite/#3401" class="Function">card</a><a id="22187" class="Symbol">)</a> <a id="22189" class="Symbol">(</a><a id="22190" href="/classic/Data.List.Base.html#6481" class="Function">allFin</a> <a id="22197" href="/Setoid/Algebras/Finite/#3401" class="Function">card</a><a id="22201" class="Symbol">)</a>
@@ -15023,7 +15023,7 @@ their kept-pair lists, hence — through <code>Cg</code>-monotonicity and the fo
 <code class="AgdaRecord">FiniteCongruencesᵈ</code> instance: a finite list of decidable
 congruences exhausting the decidable congruences of <code>𝑨</code> up to <code>≑</code> — supplied
 by certificate, exactly as ADR-008 anticipated, rather than by the exponential
-enumeration of [Setoid.Congruences.Finite.Decidable][].</p>
+enumeration of <a href="/Setoid/Congruences/Finite/Decidable/">Setoid.Congruences.Finite.Decidable</a>.</p>
 <pre class="Agda">      <a id="28889" class="Keyword">open</a> <a id="28894" href="/Setoid/Congruences/Finite/Decidable/#9006" class="Module">FiniteCongruencesᵈ</a>
 
       <a id="28920" href="/Setoid/Congruences/Certificates/Lattice/#28920" class="Function">certFiniteCongruencesᵈ</a> <a id="28943" class="Symbol">:</a> <a id="28945" href="/Setoid/Congruences/Finite/Decidable/#9006" class="Record">FiniteCongruencesᵈ</a> <a id="28964" href="/Setoid/Congruences/Certificates/Lattice/#7523" class="Bound">𝑨</a>
@@ -15039,12 +15039,14 @@ enumeration of [Setoid.Congruences.Finite.Decidable][].</p>
 <!-- pymdownx.snippets auto-appends this file to every page so reference-style -->
 <!-- links resolve site-wide without a per-page include directive.  Internal -->
 <!-- targets are ROOT-RELATIVE so cross-references work under `mkdocs serve` -->
-<!-- and at the deployed site alike.  The module sections are GENERATED from -->
-<!-- the src/ tree by scripts/python/gen_links.py; re-run it rather than -->
-<!-- editing those entries by hand. -->
+<!-- and at the deployed site alike.  The module and ADR sections are GENERATED -->
+<!-- from the src/ and docs/adr/ trees by scripts/python/gen_links.py; re-run it -->
+<!-- rather than editing those entries by hand (CI runs it with --check).  New -->
+<!-- external links may be added by hand to the External-links section. -->
 
 <!-- ===== Rendered module pages ===== -->
 <!-- ===== Module sources on GitHub ===== -->
+<!-- ===== Architecture Decision Records ===== -->
 <!-- ===== External links ===== -->
 
 

@@ -14273,7 +14273,7 @@ setoid equivalence; the bundle view exists solely so that code typed against
 <p>The cost of the bundle view is bounded and predictable: per structure it is one
 record definition, two conversion functions, and a round-trip proof.  The design
 rationale — including why this is <em>not</em> a parallel implementation of the structure
-but rather a narrow interop view — is recorded in <a href="https://github.com/ualib/agda-algebras/blob/master/docs/adr/002-classical-layer-design.md">ADR-002</a>.</p>
+but rather a narrow interop view — is recorded in <a href="/adr/002-classical-layer-design/">ADR-002</a>.</p>
 <p>This file is the umbrella for the subtree.  Round-trip and acceptance-check lemma
 names carry a per-structure suffix (<code>-ma</code>, <code>-sg</code>, <code>-mn</code>, <code>-gr</code>, …), precisely so the
 umbrellas can <code>public</code>-export every structure's witnesses without collision.</p>
@@ -14300,12 +14300,14 @@ umbrellas can <code>public</code>-export every structure's witnesses without col
 <!-- pymdownx.snippets auto-appends this file to every page so reference-style -->
 <!-- links resolve site-wide without a per-page include directive.  Internal -->
 <!-- targets are ROOT-RELATIVE so cross-references work under `mkdocs serve` -->
-<!-- and at the deployed site alike.  The module sections are GENERATED from -->
-<!-- the src/ tree by scripts/python/gen_links.py; re-run it rather than -->
-<!-- editing those entries by hand. -->
+<!-- and at the deployed site alike.  The module and ADR sections are GENERATED -->
+<!-- from the src/ and docs/adr/ trees by scripts/python/gen_links.py; re-run it -->
+<!-- rather than editing those entries by hand (CI runs it with --check).  New -->
+<!-- external links may be added by hand to the External-links section. -->
 
 <!-- ===== Rendered module pages ===== -->
 <!-- ===== Module sources on GitHub ===== -->
+<!-- ===== Architecture Decision Records ===== -->
 <!-- ===== External links ===== -->
 
 

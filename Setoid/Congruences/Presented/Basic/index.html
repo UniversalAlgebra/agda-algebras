@@ -14398,7 +14398,7 @@
 
 <h1 id="setoidcongruencespresentedbasic">Setoid.Congruences.Presented.Basic<a class="headerlink" href="#setoidcongruencespresentedbasic" title="Anchor link to this section">&para;</a></h1>
 <h3 id="finitely-presented-congruences-reconstruction-from-generating-pairs">Finitely presented congruences: reconstruction from generating pairs<a class="headerlink" href="#finitely-presented-congruences-reconstruction-from-generating-pairs" title="Anchor link to this section">&para;</a></h3>
-<p>This is the [Setoid.Congruences.Presented.Basic][] module of the <a href="/">Agda Universal Algebra Library</a>.</p>
+<p>This is the <a href="/Setoid/Congruences/Presented/Basic/">Setoid.Congruences.Presented.Basic</a> module of the <a href="/">Agda Universal Algebra Library</a>.</p>
 <p>A congruence in this library is a <code>Type</code>-valued relation, and on that semantic
 layer even a two-element carrier has classically-loaded congruences.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
 <p>We adopt a two-layer congruence discipline that builds a <em>decidable</em> layer, whose
@@ -14407,7 +14407,7 @@ a decidable congruence on a finite carrier is determined by the finite list of
 enumerated pairs it relates; this module proves that property.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
 <p>Concretely, for an algebra <code>𝑨</code> with the carrier-finiteness data of
 <a href="/Setoid/Algebras/Finite/">Setoid.Algebras.Finite</a> and a decidable congruence <code>d : DecCon 𝑨 ℓ</code>
-([Setoid.Congruences.Finite.Basic][]) we define</p>
+(<a href="/Setoid/Congruences/Finite/Basic/">Setoid.Congruences.Finite.Basic</a>) we define</p>
 <ul>
 <li><code class="AgdaFunction">fromPairs ps</code> — the binary relation <em>presented</em> by a pair list
    <code>ps</code>: two elements are related when <code>ps</code> lists a pair to which they are
@@ -14575,12 +14575,14 @@ the generation closure absorbs the operation, arity, and carrier levels.</p>
 <!-- pymdownx.snippets auto-appends this file to every page so reference-style -->
 <!-- links resolve site-wide without a per-page include directive.  Internal -->
 <!-- targets are ROOT-RELATIVE so cross-references work under `mkdocs serve` -->
-<!-- and at the deployed site alike.  The module sections are GENERATED from -->
-<!-- the src/ tree by scripts/python/gen_links.py; re-run it rather than -->
-<!-- editing those entries by hand. -->
+<!-- and at the deployed site alike.  The module and ADR sections are GENERATED -->
+<!-- from the src/ and docs/adr/ trees by scripts/python/gen_links.py; re-run it -->
+<!-- rather than editing those entries by hand (CI runs it with --check).  New -->
+<!-- external links may be added by hand to the External-links section. -->
 
 <!-- ===== Rendered module pages ===== -->
 <!-- ===== Module sources on GitHub ===== -->
+<!-- ===== Architecture Decision Records ===== -->
 <!-- ===== External links ===== -->
 <div class="footnote">
 <hr />
@@ -14589,7 +14591,7 @@ the generation closure absorbs the operation, arity, and carrier levels.</p>
 <p>Recall the oracle congruences and the "no-go" theorem of <a href="/FLRP/Problem/">FLRP.Problem</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
-<p>See [ADR-008][] and Lemma L2 of <code>docs/notes/flrp-two-layer-congruences.md</code> § 3.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>See <a href="/adr/008-two-layer-congruence-discipline/">ADR-008</a> and Lemma L2 of <code>docs/notes/flrp-two-layer-congruences.md</code> § 3.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:3">
 <p>Two scope remarks.</p>

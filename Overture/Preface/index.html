@@ -14565,7 +14565,7 @@
 <a id="371" class="Keyword">module</a> <a id="378" href="/Overture/Preface/" class="Module">Overture.Preface</a> <a id="395" class="Keyword">where</a>
 </pre>
 
-<p>The <a href="/">Agda Universal Algebra Library</a> (<a href="https://github.com/ualib/agda-algebras">agda-algebras</a>, for short) is a formalization in <a href="https://wiki.portal.chalmers.se/agda/pmwiki.php">Agda</a> of the foundations of general algebra in the sense of Birkhoff, Grätzer, McKenzie–McNulty–Taylor, and Bergman: sets equipped with arbitrary-arity operations, the homomorphisms between them, the congruences on them, the term algebras they generate, the varieties they fall into, and the equational logic that organizes all of the above.  The library's current centrepiece is a fully constructive, machine-checked proof of Birkhoff's HSP theorem — every variety is an equational class — in a setoid-based reformulation that avoids function extensionality.</p>
+<p>The <a href="/">Agda Universal Algebra Library</a> (<a href="/agda-algebras/">agda-algebras</a>, for short) is a formalization in <a href="https://wiki.portal.chalmers.se/agda/pmwiki.php">Agda</a> of the foundations of general algebra in the sense of Birkhoff, Grätzer, McKenzie–McNulty–Taylor, and Bergman: sets equipped with arbitrary-arity operations, the homomorphisms between them, the congruences on them, the term algebras they generate, the varieties they fall into, and the equational logic that organizes all of the above.  The library's current centrepiece is a fully constructive, machine-checked proof of Birkhoff's HSP theorem — every variety is an equational class — in a setoid-based reformulation that avoids function extensionality.</p>
 <p>This Preface explains why a mathematician working in universal algebra or an adjacent area might care about this library, why it is written in Agda specifically, what the 3.0 reconstruction has changed, and where to go next.</p>
 <h4 id="why-formalize-universal-algebra-in-type-theory">Why formalize universal algebra in type theory?<a class="headerlink" href="#why-formalize-universal-algebra-in-type-theory" title="Anchor link to this section">&para;</a></h4>
 <p>Universal algebra has a native affinity for type theory that is stronger than first appearances suggest.  Signatures are indexed families of operation symbols; algebras are sets together with a family of operations indexed by the signature; terms are the initial algebra over a set of variables; subalgebras, homomorphic images, and products are each captured by a small collection of definitions each a few lines long.  These are exactly the constructions Martin-Löf type theory was designed to support — inductive types for terms and trees, Π- and Σ-types for universal and existential parameters, dependent records for structured objects — and the transcription between informal mathematical practice and formal type-theoretic statement turns out to be short.</p>
@@ -14603,7 +14603,7 @@
 </ul>
 <p>The remainder of the <code>Overture</code> chapter introduces the library's conventions and notation.  Readers familiar with both Agda and universal algebra can skim it; others may want to read it carefully before moving into the substantive material.</p>
 <h4 id="attributions">Attributions<a class="headerlink" href="#attributions" title="Anchor link to this section">&para;</a></h4>
-<p>The <a href="https://github.com/ualib/agda-algebras">agda-algebras</a> library is developed and maintained by the <em>agda-algebras development team</em>, led by <a href="https://williamdemeo.gitlab.io/">William DeMeo</a> with senior-advisor contributions from <a href="http://www.cas.mcmaster.ca/~carette/">Jacques Carette</a> (McMaster University).</p>
+<p>The <a href="/agda-algebras/">agda-algebras</a> library is developed and maintained by the <em>agda-algebras development team</em>, led by <a href="https://williamdemeo.gitlab.io/">William DeMeo</a> with senior-advisor contributions from <a href="http://www.cas.mcmaster.ca/~carette/">Jacques Carette</a> (McMaster University).</p>
 <h5 id="acknowledgements">Acknowledgements<a class="headerlink" href="#acknowledgements" title="Anchor link to this section">&para;</a></h5>
 <p>We thank <a href="http://www.cse.chalmers.se/~abela/">Andreas Abel</a>, <a href="http://www.andrew.cmu.edu/user/avigad/">Jeremy Avigad</a>, <a href="http://www.andrej.com/index.html">Andrej Bauer</a>, <a href="https://orion.math.iastate.edu/cbergman/">Clifford Bergman</a>, <a href="https://www.duplavis.com/venanzio/">Venanzio Capretta</a>, <a href="https://www.cs.bham.ac.uk/~mhe">Martín Escardó</a>, <a href="https://math.hawaii.edu/~ralph/">Ralph Freese</a>, <a href="https://hyeyoungshin.github.io/">Hyeyoung Shin</a>, and <a href="http://www.cs.cmu.edu/~ssomayya/">Siva Somayyajula</a> for helpful discussions, corrections, advice, inspiration, and encouragement over the life of the project.  Most of the mathematical content formalized in agda-algebras is well known; the novelty lies in the formalization itself, which is due to the contributors and acknowledgees listed above.</p>
 <h4 id="references">References<a class="headerlink" href="#references" title="Anchor link to this section">&para;</a></h4>
@@ -14625,12 +14625,14 @@
 <!-- pymdownx.snippets auto-appends this file to every page so reference-style -->
 <!-- links resolve site-wide without a per-page include directive.  Internal -->
 <!-- targets are ROOT-RELATIVE so cross-references work under `mkdocs serve` -->
-<!-- and at the deployed site alike.  The module sections are GENERATED from -->
-<!-- the src/ tree by scripts/python/gen_links.py; re-run it rather than -->
-<!-- editing those entries by hand. -->
+<!-- and at the deployed site alike.  The module and ADR sections are GENERATED -->
+<!-- from the src/ and docs/adr/ trees by scripts/python/gen_links.py; re-run it -->
+<!-- rather than editing those entries by hand (CI runs it with --check).  New -->
+<!-- external links may be added by hand to the External-links section. -->
 
 <!-- ===== Rendered module pages ===== -->
 <!-- ===== Module sources on GitHub ===== -->
+<!-- ===== Architecture Decision Records ===== -->
 <!-- ===== External links ===== -->
 
 

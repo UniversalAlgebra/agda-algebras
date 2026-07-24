@@ -14288,7 +14288,7 @@
 
 <h1 id="flrpcertificates">FLRP.Certificates<a class="headerlink" href="#flrpcertificates" title="Anchor link to this section">&para;</a></h1>
 <h3 id="machine-checked-representation-certificates">Machine-checked representation certificates<a class="headerlink" href="#machine-checked-representation-certificates" title="Anchor link to this section">&para;</a></h3>
-<p>This is the [FLRP.Certificates][] module of the <a href="/">Agda Universal Algebra Library</a>.</p>
+<p>This is the <a href="/FLRP/Certificates/">FLRP.Certificates</a> module of the <a href="/">Agda Universal Algebra Library</a>.</p>
 <p>The FLRP program's computational campaigns<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> produce claims of the form "<code>Con 𝑨 ≅
 𝑳</code> for this finite algebra <code>𝑨</code> and this finite lattice <code>𝑳</code>" from external engines —
 GAP, UACalc, SAT and model finders.</p>
@@ -14296,10 +14296,10 @@ GAP, UACalc, SAT and model finders.</p>
 § 6 and <a href="/notes/flrp-wp6-freese-certificates/">the WP-6 design note</a>, nothing
 enters the corpus on the authority of an external tool: the engine emits a
 whole-lattice certificate (normal-form parent vectors, Freese traces, and pointer
-tables — [Setoid.Congruences.Certificates.Schema][]), the generic checkers verify it
+tables — <a href="/Setoid/Congruences/Certificates/Schema/">Setoid.Congruences.Certificates.Schema</a>), the generic checkers verify it
 with no search and no <code class="AgdaFunction">Cg-dec</code>
-([Setoid.Congruences.Certificates.Congruence][],
-[Setoid.Congruences.Certificates.Lattice][]), and <em>this</em> module turns the
+(<a href="/Setoid/Congruences/Certificates/Congruence/">Setoid.Congruences.Certificates.Congruence</a>,
+<a href="/Setoid/Congruences/Certificates/Lattice/">Setoid.Congruences.Certificates.Lattice</a>), and <em>this</em> module turns the
 checked certificate into the FLRP-facing theorem: a
 <code class="AgdaRecord">Representableᵈ</code> witness (<a href="/FLRP/Representable/">FLRP.Representable</a>) for the target
 lattice.</p>
@@ -14442,12 +14442,14 @@ representation, on no authority but the checker's.</p>
 <!-- pymdownx.snippets auto-appends this file to every page so reference-style -->
 <!-- links resolve site-wide without a per-page include directive.  Internal -->
 <!-- targets are ROOT-RELATIVE so cross-references work under `mkdocs serve` -->
-<!-- and at the deployed site alike.  The module sections are GENERATED from -->
-<!-- the src/ tree by scripts/python/gen_links.py; re-run it rather than -->
-<!-- editing those entries by hand. -->
+<!-- and at the deployed site alike.  The module and ADR sections are GENERATED -->
+<!-- from the src/ and docs/adr/ trees by scripts/python/gen_links.py; re-run it -->
+<!-- rather than editing those entries by hand (CI runs it with --check).  New -->
+<!-- external links may be added by hand to the External-links section. -->
 
 <!-- ===== Rendered module pages ===== -->
 <!-- ===== Module sources on GitHub ===== -->
+<!-- ===== Architecture Decision Records ===== -->
 <!-- ===== External links ===== -->
 <div class="footnote">
 <hr />

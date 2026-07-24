@@ -16042,7 +16042,7 @@ date : &quot;2021-09-24&quot;
 <li><code>--exact-split</code> requires every clause matches the type of the function being defined, preventing definitional-equality surprises that trip up proof automation and the training-corpus consumers.</li>
 </ul>
 <p><strong>Exceptions</strong>.<br />
-+  <code>src/Legacy/Base/</code>, will retain its historical <code>--without-K</code> pragma; new contributions do not land in <code>Legacy/</code> (see [Milestone 2][<code>docs/GITHUB_PROJECT.md</code>]).
++  <code>src/Legacy/Base/</code>, will retain its historical <code>--without-K</code> pragma; new contributions do not land in <code>Legacy/</code> (see <a href="https://github.com/ualib/agda-algebras/blob/master/docs/GITHUB_PROJECT.md">Milestone 2</a>).
 +  Generated files (<code>src/Everything.agda</code>); the pragma is still required, but the file is written by the Makefile and should not be hand-edited.</p>
 <h3 id="module-header">Module header<a class="headerlink" href="#module-header" title="Anchor link to this section">&para;</a></h3>
 <p>Immediately after the pragma (possibly separated by imports required by the module header's own arguments), the module is declared.  The module name must match the filename under the <code>src/</code> include root, with <code>/</code> replaced by <code>.</code>; e.g.,</p>
@@ -16102,7 +16102,7 @@ date : &quot;2021-09-24&quot;
 <p>Because the core is uniformly generalized over <code>𝑆</code> (see <a href="../adr/009-signature-genericity-generalized-variables/">ADR-009</a>), the barrel neither parametrizes its own header nor threads <code>{𝑆 = 𝑆}</code> into each re-export; <code>open import Sub public</code> is uniform across the chain.</p>
 <p>Downstream modules <code>open import Setoid.Algebras</code> to get the whole theme and <code>open import Setoid.Algebras.Basic</code> to get a specific submodule, but we strongly <em>prefer modules that import precisely what they need</em> — see <a href="#imports">Imports</a> below. </p>
 <h3 id="classical-structures-quintuple">Classical structures quintuple<a class="headerlink" href="#classical-structures-quintuple" title="Anchor link to this section">&para;</a></h3>
-<p>In upcoming versions of agda-algebras (to land in [Milestone 3][<code>docs/GITHUB_PROJECT.md</code>]), each classical algebraic structure <code>X</code> will ship as a quintuple of modules under <code>src/Classical/</code>:</p>
+<p>In upcoming versions of agda-algebras (to land in <a href="https://github.com/ualib/agda-algebras/blob/master/docs/GITHUB_PROJECT.md">Milestone 3</a>), each classical algebraic structure <code>X</code> will ship as a quintuple of modules under <code>src/Classical/</code>:</p>
 <ul>
 <li><code>Classical/Signatures/X.agda</code>: the signature (operation symbols + arities).</li>
 <li><code>Classical/Theories/X.agda</code>: the equational theory (the axioms as <code>Theory 𝑆ₓ</code>).</li>
@@ -16110,7 +16110,7 @@ date : &quot;2021-09-24&quot;
 <li><code>Classical/Bundles/X.agda</code>: the record-typed "bundle view" matching stdlib's <code>Algebra.Bundles.X</code>.</li>
 <li><code>Classical/Small/Structures/X.agda</code>: a level-fixed veneer at <code>ℓ₀</code> for the common case.</li>
 </ul>
-<p>This pattern is to be ratified in ADR-002 (to land with [M3-1][<code>docs/GITHUB_PROJECT.md</code>]) and exemplified in <code>Classical/Structures/Semigroup.lagda.md</code> (M3-2) as the pattern-setting first structure.</p>
+<p>This pattern is to be ratified in ADR-002 (to land with <a href="https://github.com/ualib/agda-algebras/blob/master/docs/GITHUB_PROJECT.md">M3-1</a>) and exemplified in <code>Classical/Structures/Semigroup.lagda.md</code> (M3-2) as the pattern-setting first structure.</p>
 <h3 id="module-headers-have-comment-blocks">Module headers have comment blocks<a class="headerlink" href="#module-headers-have-comment-blocks" title="Anchor link to this section">&para;</a></h3>
 <p>Every non-trivial module should have a prose comment block near the top.  In a literate <code>.lagda.md</code> module that block is Markdown — the section heading and an introductory paragraph or two — and it <em>precedes</em> the opening code fence, rather than sitting in a <code>-- |</code> block inside it.  For example, <code>Setoid.Algebras.Basic</code> would open with prose like</p>
 <blockquote>
@@ -16250,7 +16250,7 @@ date : &quot;2021-09-24&quot;
 </tr>
 </tbody>
 </table>
-<p>The mechanical sweep replacing <code>∣_∣</code> / <code>∥_∥</code> with the standard <code>proj₁</code> / <code>proj₂</code> across the live trees is M4-1 (#367).  The vertical-bars convention was an <code>agda-algebras</code> idiom carried over from earlier <code>TypeTopology</code>-style developments; the bars read <em>less</em> clearly for mathematicians who reserve them for absolute value and norm, and the stdlib names bridge more cleanly to <code>Data.Product</code>.  Signature components use the self-documenting <code>OperationSymbolsOf</code> / <code>ArityOf</code> (definitionally <code>proj₁</code> / <code>proj₂</code> of the signature); see <a href="https://github.com/ualib/agda-algebras/blob/master/docs/adr/002-classical-layer-design.md">ADR-002</a> §1.</p>
+<p>The mechanical sweep replacing <code>∣_∣</code> / <code>∥_∥</code> with the standard <code>proj₁</code> / <code>proj₂</code> across the live trees is M4-1 (#367).  The vertical-bars convention was an <code>agda-algebras</code> idiom carried over from earlier <code>TypeTopology</code>-style developments; the bars read <em>less</em> clearly for mathematicians who reserve them for absolute value and norm, and the stdlib names bridge more cleanly to <code>Data.Product</code>.  Signature components use the self-documenting <code>OperationSymbolsOf</code> / <code>ArityOf</code> (definitionally <code>proj₁</code> / <code>proj₂</code> of the signature); see <a href="/adr/002-classical-layer-design/">ADR-002</a> §1.</p>
 <p><strong>Scope note</strong>.  Once #367 lands, the live trees (<code>Overture/</code>, <code>Setoid/</code>, <code>Classical/</code>, <code>Examples/Demos/ContraX</code>, <code>Examples/</code>) are on <code>proj₁</code> / <code>proj₂</code>, and the bracket definitions remain in <code>Overture.Basic</code> under a <code>WARNING_ON_USAGE</code> so <code>Legacy/</code> keeps compiling.  The <code>∣</code> glyph legitimately survives outside <code>Legacy/</code> in the <code>_∣≈_</code> / <code>_∥≈_</code> operators, the <code>∣_∣=∣_∣</code> / <code>∣_∣≈∣_∣</code> bijection operators (<code>Examples.FunctionTypeBijections</code>), the <code>∣A∣</code>-style Carrier-alias identifiers, and CSP math prose; and the self-contained <code>Examples/Demos/HSP</code> keeps its own bracket notation.</p>
 <h3 id="operations">Operations<a class="headerlink" href="#operations" title="Anchor link to this section">&para;</a></h3>
 <table>
@@ -16688,7 +16688,7 @@ hom<span class="w"> </span>𝑨<span class="w"> </span>𝑩<span class="w"> </sp
 <hr />
 <h2 id="references">References<a class="headerlink" href="#references" title="Anchor link to this section">&para;</a></h2>
 <ul>
-<li>Project roadmap: [<code>docs/GITHUB_PROJECT.md</code>][].</li>
+<li>Project roadmap: <a href="https://github.com/ualib/agda-algebras/blob/master/docs/GITHUB_PROJECT.md"><code>docs/GITHUB_PROJECT.md</code></a>.</li>
 <li>Architecture Decision Records: <a href="adr/"><code>docs/adr/</code></a> (scaffolding in M1-6).</li>
 <li>Contributing guide: <a href="/contributing/"><code>../CONTRIBUTING.md</code></a>.</li>
 <li>Related Agda-ecosystem style references:</li>
@@ -16703,12 +16703,14 @@ hom<span class="w"> </span>𝑨<span class="w"> </span>𝑩<span class="w"> </sp
 <!-- pymdownx.snippets auto-appends this file to every page so reference-style -->
 <!-- links resolve site-wide without a per-page include directive.  Internal -->
 <!-- targets are ROOT-RELATIVE so cross-references work under `mkdocs serve` -->
-<!-- and at the deployed site alike.  The module sections are GENERATED from -->
-<!-- the src/ tree by scripts/python/gen_links.py; re-run it rather than -->
-<!-- editing those entries by hand. -->
+<!-- and at the deployed site alike.  The module and ADR sections are GENERATED -->
+<!-- from the src/ and docs/adr/ trees by scripts/python/gen_links.py; re-run it -->
+<!-- rather than editing those entries by hand (CI runs it with --check).  New -->
+<!-- external links may be added by hand to the External-links section. -->
 
 <!-- ===== Rendered module pages ===== -->
 <!-- ===== Module sources on GitHub ===== -->
+<!-- ===== Architecture Decision Records ===== -->
 <!-- ===== External links ===== -->
 
 

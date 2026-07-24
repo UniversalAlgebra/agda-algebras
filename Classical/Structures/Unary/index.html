@@ -14374,14 +14374,14 @@
 
 <h1 id="classicalstructuresunary">Classical.Structures.Unary<a class="headerlink" href="#classicalstructuresunary" title="Anchor link to this section">&para;</a></h1>
 <h3 id="finite-unary-algebras-from-operation-tables">Finite unary algebras from operation tables<a class="headerlink" href="#finite-unary-algebras-from-operation-tables" title="Anchor link to this section">&para;</a></h3>
-<p>This is the [Classical.Structures.Unary][] module of the <a href="/">Agda Universal Algebra Library</a>.</p>
+<p>This is the <a href="/Classical/Structures/Unary/">Classical.Structures.Unary</a> module of the <a href="/">Agda Universal Algebra Library</a>.</p>
 <p>A finite unary algebra — a carrier <code class="AgdaDatatype">Fin</code><code>n</code> with one unary
 operation per symbol of <code class="AgdaDatatype">Fin</code><code>k</code> — is completely specified by a
 <code>k × n</code> table of values, in exactly the way a binary operation is specified by
 a Cayley table (<a href="/Overture/Cayley/">Overture.Cayley</a>).  This module fixes that presentation and
 its finiteness witnesses once, so that concrete unary algebras (G-sets given by
 their action tables, and the certificate pipeline's externally computed
-algebras — [Setoid.Congruences.Certificates][]) are literals plus one
+algebras — <a href="/Setoid/Congruences/Certificates/">Setoid.Congruences.Certificates</a>) are literals plus one
 constructor call, with no per-example boilerplate:</p>
 <ul>
 <li><code class="AgdaFunction">tablesToUnaryAlgebra</code> — the algebra over
@@ -14459,12 +14459,14 @@ surjective enumeration are the identity story; likewise for the symbol type
 <!-- pymdownx.snippets auto-appends this file to every page so reference-style -->
 <!-- links resolve site-wide without a per-page include directive.  Internal -->
 <!-- targets are ROOT-RELATIVE so cross-references work under `mkdocs serve` -->
-<!-- and at the deployed site alike.  The module sections are GENERATED from -->
-<!-- the src/ tree by scripts/python/gen_links.py; re-run it rather than -->
-<!-- editing those entries by hand. -->
+<!-- and at the deployed site alike.  The module and ADR sections are GENERATED -->
+<!-- from the src/ and docs/adr/ trees by scripts/python/gen_links.py; re-run it -->
+<!-- rather than editing those entries by hand (CI runs it with --check).  New -->
+<!-- external links may be added by hand to the External-links section. -->
 
 <!-- ===== Rendered module pages ===== -->
 <!-- ===== Module sources on GitHub ===== -->
+<!-- ===== Architecture Decision Records ===== -->
 <!-- ===== External links ===== -->
 
 

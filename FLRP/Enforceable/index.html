@@ -14714,7 +14714,7 @@ accessors, and the smart constructor <code class="AgdaFunction">mk</code>.</p>
   <a id="9297" class="Symbol">(</a><a id="9298" href="/FLRP/Enforceable/#9298" class="Bound">M</a> <a id="9300" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="9302" class="Symbol">_)</a> <a id="9305" href="/FLRP/Enforceable/#9256" class="Function Operator">≤ᵢ</a> <a id="9308" class="Symbol">(</a><a id="9309" href="/FLRP/Enforceable/#9309" class="Bound">N</a> <a id="9311" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="9313" class="Symbol">_)</a> <a id="9316" class="Symbol">=</a>  <a id="9319" href="/FLRP/Enforceable/#9298" class="Bound">M</a> <a id="9321" href="/FLRP/Enforceable/#7768" class="Function Operator">≤↑</a> <a id="9324" href="/FLRP/Enforceable/#9309" class="Bound">N</a>
 </pre>
 <h4 id="the-decidable-interval-layer-d">The decidable interval (Layer D)<a class="headerlink" href="#the-decidable-interval-layer-d" title="Anchor link to this section">&para;</a></h4>
-<p>The two-layer discipline of [ADR-008][] mandates a decision procedure <em>alongside</em>
+<p>The two-layer discipline of <a href="/adr/008-two-layer-congruence-discipline/">ADR-008</a> mandates a decision procedure <em>alongside</em>
 each semantic notion, never a restriction of the semantic notion itself.  On the
 congruence side that sibling is <code class="AgdaFunction">DecCon</code> next to <code class="AgdaFunction">Con</code>;
 here it is <code class="AgdaFunction">Intervalᵈ</code> next to <code class="AgdaFunction">Interval≈</code>: an interval
@@ -14860,7 +14860,7 @@ the upper interval over <code>H</code> in <code>Sub(𝒢)</code>; that is, <code
 <p>The two maps are restriction to the first coordinate, <code>M ↦ (λ g → M (g , ε))</code>, and
 pullback along the projection, <code>A ↦ (A ∘ proj₁)</code>.</p>
 <p>That they are well-defined, monotone, and mutually inverse is the content of the
-<code class="AgdaModule">Slice₁</code> toolkit of [Classical.Structures.Group.Product][] — the pivot
+<code class="AgdaModule">Slice₁</code> toolkit of <a href="/Classical/Structures/Group/Product/">Classical.Structures.Group.Product</a> — the pivot
 being that a respecting subgroup <code>M ⊇ H ×ᶠ 𝒦</code> satisfies <code>M (g , k) ⟺ M (g , ε)</code>,
 since <code>(g , k) ≈ (g , ε) ∙ (ε , k)</code> and <code>(ε , k)</code> lies in <code>H ×ᶠ 𝒦 ⊆ M</code>.</p>
 <p>One round trip is even definitional: restricting a pulled-back subgroup gives back
@@ -15170,12 +15170,14 @@ builds on top of the definitions of this module.</p>
 <!-- pymdownx.snippets auto-appends this file to every page so reference-style -->
 <!-- links resolve site-wide without a per-page include directive.  Internal -->
 <!-- targets are ROOT-RELATIVE so cross-references work under `mkdocs serve` -->
-<!-- and at the deployed site alike.  The module sections are GENERATED from -->
-<!-- the src/ tree by scripts/python/gen_links.py; re-run it rather than -->
-<!-- editing those entries by hand. -->
+<!-- and at the deployed site alike.  The module and ADR sections are GENERATED -->
+<!-- from the src/ and docs/adr/ trees by scripts/python/gen_links.py; re-run it -->
+<!-- rather than editing those entries by hand (CI runs it with --check).  New -->
+<!-- external links may be added by hand to the External-links section. -->
 
 <!-- ===== Rendered module pages ===== -->
 <!-- ===== Module sources on GitHub ===== -->
+<!-- ===== Architecture Decision Records ===== -->
 <!-- ===== External links ===== -->
 <div class="footnote">
 <hr />

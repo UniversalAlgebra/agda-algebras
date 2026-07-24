@@ -14353,7 +14353,7 @@
 <h1 id="classicalcategoriesforgetful">Classical.Categories.Forgetful<a class="headerlink" href="#classicalcategoriesforgetful" title="Anchor link to this section">&para;</a></h1>
 <h3 id="classical-forgetful-functors">Classical forgetful functors<a class="headerlink" href="#classical-forgetful-functors" title="Anchor link to this section">&para;</a></h3>
 <p>This is the <a href="/Classical/Categories/Forgetful/">Classical.Categories.Forgetful</a> module of the <a href="/">Agda Universal Algebra Library</a>.</p>
-<p>The classical forgetful <em>projections</em> (<a href="https://github.com/ualib/agda-algebras/blob/master/docs/adr/002-classical-layer-design.md">ADR-002</a> §5) become forgetful <em>functors</em> simply by
+<p>The classical forgetful <em>projections</em> (<a href="/adr/002-classical-layer-design/">ADR-002</a> §5) become forgetful <em>functors</em> simply by
 giving them the morphism action — and that action is already supplied, uniformly, by the
 reduct functor <a href="/Setoid/Categories/Reduct/"><code>reductF</code></a>.  Each forgetful is <code>reductF</code> of the
 relevant signature inclusion, reusing the per-structure inclusion data (<code>X-incl</code> / <code>X-κ</code>).</p>
@@ -14489,12 +14489,14 @@ import order between <code>Classical.Structures.Monoid</code> and the categorica
 <!-- pymdownx.snippets auto-appends this file to every page so reference-style -->
 <!-- links resolve site-wide without a per-page include directive.  Internal -->
 <!-- targets are ROOT-RELATIVE so cross-references work under `mkdocs serve` -->
-<!-- and at the deployed site alike.  The module sections are GENERATED from -->
-<!-- the src/ tree by scripts/python/gen_links.py; re-run it rather than -->
-<!-- editing those entries by hand. -->
+<!-- and at the deployed site alike.  The module and ADR sections are GENERATED -->
+<!-- from the src/ and docs/adr/ trees by scripts/python/gen_links.py; re-run it -->
+<!-- rather than editing those entries by hand (CI runs it with --check).  New -->
+<!-- external links may be added by hand to the External-links section. -->
 
 <!-- ===== Rendered module pages ===== -->
 <!-- ===== Module sources on GitHub ===== -->
+<!-- ===== Architecture Decision Records ===== -->
 <!-- ===== External links ===== -->
 
 

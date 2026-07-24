@@ -14371,7 +14371,7 @@ semantic congruence layer (Layer S, <code class="AgdaFunction">Con</code>) to th
 </li>
 <li>
 <p><strong>Source</strong>.  It is exactly the <code class="AgdaField">complete</code> field of
-   <code class="AgdaRecord">FiniteCongruences</code> of [Setoid.Congruences.Finite.Basic][], with the
+   <code class="AgdaRecord">FiniteCongruences</code> of <a href="/Setoid/Congruences/Finite/Basic/">Setoid.Congruences.Finite.Basic</a>, with the
    finite list and its membership proof forgotten (the list side is <em>constructive</em> —
    see below), so <code class="AgdaFunction">fromFiniteCongruences</code> extracts it from the canonical
    record.</p>
@@ -14387,7 +14387,7 @@ semantic congruence layer (Layer S, <code class="AgdaFunction">Con</code>) to th
 </ul>
 <p>The constructive <em>complement</em> of this assumption is already discharged with no axiom:
 the finite list of decidable congruences and its completeness <em>for the decidable layer</em>
-is <code class="AgdaRecord">FiniteCongruencesᵈ</code> of [Setoid.Congruences.Finite.Decidable][], built
+is <code class="AgdaRecord">FiniteCongruencesᵈ</code> of <a href="/Setoid/Congruences/Finite/Decidable/">Setoid.Congruences.Finite.Decidable</a>, built
 from carrier- and signature-finiteness alone.  <code class="AgdaFunction">toFiniteCongruences</code>
 below makes this precise: adjoining <code class="AgdaFunction">CongruenceCompleteness</code> to that
 free constructive data reconstitutes the full semantic
@@ -14430,8 +14430,8 @@ downstream results take whichever entry they need as an ordinary argument.<sup i
 <h4 id="entry-1-the-congruence-completeness-bridge">Entry 1: the congruence-completeness bridge<a class="headerlink" href="#entry-1-the-congruence-completeness-bridge" title="Anchor link to this section">&para;</a></h4>
 <p>Throughout we fix an algebra <code class="AgdaBound">𝑨</code> and work at its
 <strong>working congruence level</strong> <code>ℓ = 𝓞 ⊔ 𝓥 ⊔ α ⊔ ρ</code> — the absorbing level at which the
-decidable-layer machinery of [Setoid.Congruences.Finite.Basic][] and
-[Setoid.Congruences.Finite.Decidable][] lives, and the level at which the <code>complete</code>
+decidable-layer machinery of <a href="/Setoid/Congruences/Finite/Basic/">Setoid.Congruences.Finite.Basic</a> and
+<a href="/Setoid/Congruences/Finite/Decidable/">Setoid.Congruences.Finite.Decidable</a> lives, and the level at which the <code>complete</code>
 field of <code class="AgdaRecord">FiniteCongruences</code> quantifies.</p>
 <pre class="Agda"><a id="5284" class="Keyword">module</a> <a id="5291" href="/FLRP/Assumptions/#5291" class="Module">_</a> <a id="5293" class="Symbol">{</a><a id="5294" href="/FLRP/Assumptions/#5294" class="Bound">𝑆</a> <a id="5296" class="Symbol">:</a> <a id="5298" href="/Overture/Signatures/#3218" class="Function">Signature</a> <a id="5308" href="/Overture/Signatures/#683" class="Generalizable">𝓞</a> <a id="5310" href="/Overture/Signatures/#685" class="Generalizable">𝓥</a><a id="5311" class="Symbol">}(</a><a id="5313" href="/FLRP/Assumptions/#5313" class="Bound">𝑨</a> <a id="5315" class="Symbol">:</a> <a id="5317" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="5325" class="Symbol">{</a><a id="5326" class="Argument">𝑆</a> <a id="5328" class="Symbol">=</a> <a id="5330" href="/FLRP/Assumptions/#5294" class="Bound">𝑆</a><a id="5331" class="Symbol">}</a> <a id="5333" href="/FLRP/Assumptions/#4851" class="Generalizable">α</a> <a id="5335" href="/FLRP/Assumptions/#4853" class="Generalizable">ρ</a><a id="5336" class="Symbol">)</a> <a id="5338" class="Keyword">where</a>
   <a id="5346" class="Keyword">private</a>
@@ -14504,18 +14504,20 @@ transitivity.</p>
 <!-- pymdownx.snippets auto-appends this file to every page so reference-style -->
 <!-- links resolve site-wide without a per-page include directive.  Internal -->
 <!-- targets are ROOT-RELATIVE so cross-references work under `mkdocs serve` -->
-<!-- and at the deployed site alike.  The module sections are GENERATED from -->
-<!-- the src/ tree by scripts/python/gen_links.py; re-run it rather than -->
-<!-- editing those entries by hand. -->
+<!-- and at the deployed site alike.  The module and ADR sections are GENERATED -->
+<!-- from the src/ and docs/adr/ trees by scripts/python/gen_links.py; re-run it -->
+<!-- rather than editing those entries by hand (CI runs it with --check).  New -->
+<!-- external links may be added by hand to the External-links section. -->
 
 <!-- ===== Rendered module pages ===== -->
 <!-- ===== Module sources on GitHub ===== -->
+<!-- ===== Architecture Decision Records ===== -->
 <!-- ===== External links ===== -->
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:1">
-<p>This is the assumption-registry discipline of [ADR-008][] and the FLRP roadmap.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>This is the assumption-registry discipline of <a href="/adr/008-two-layer-congruence-discipline/">ADR-008</a> and the FLRP roadmap.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
 <p>Pinning the exact strength is a side question the program does not need

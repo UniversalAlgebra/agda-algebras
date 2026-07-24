@@ -9,25 +9,25 @@ author: &quot;the agda-algebras development team&quot;
 ## Setoid Types for General Algebra
 
 This module collects all submodule of that part of the library based on setoids,
-as opposed to &quot;bare&quot; types (see [Legacy.Base.lagda][]).
+as opposed to &quot;bare&quot; types (see [Legacy.Base][]).
 
 
-</a><a id="291" class="Markup">```agda
-</a><a id="299" class="Symbol">{-#</a> <a id="303" class="Keyword">OPTIONS</a> <a id="311" class="Pragma">--cubical-compatible</a> <a id="332" class="Pragma">--exact-split</a> <a id="346" class="Pragma">--safe</a> <a id="353" class="Symbol">#-}</a>
+</a><a id="285" class="Markup">```agda
+</a><a id="293" class="Symbol">{-#</a> <a id="297" class="Keyword">OPTIONS</a> <a id="305" class="Pragma">--cubical-compatible</a> <a id="326" class="Pragma">--exact-split</a> <a id="340" class="Pragma">--safe</a> <a id="347" class="Symbol">#-}</a>
 
-<a id="358" class="Keyword">module</a> <a id="365" href="Setoid.html" class="Module">Setoid</a> <a id="372" class="Keyword">where</a>
+<a id="352" class="Keyword">module</a> <a id="359" href="Setoid.html" class="Module">Setoid</a> <a id="366" class="Keyword">where</a>
 
-<a id="379" class="Keyword">open</a> <a id="384" class="Keyword">import</a> <a id="391" href="Setoid.Algebras.html" class="Module">Setoid.Algebras</a>       <a id="413" class="Keyword">public</a>
-<a id="420" class="Keyword">open</a> <a id="425" class="Keyword">import</a> <a id="432" href="Setoid.Categories.html" class="Module">Setoid.Categories</a>     <a id="454" class="Keyword">public</a>
-<a id="461" class="Keyword">open</a> <a id="466" class="Keyword">import</a> <a id="473" href="Setoid.Complexity.html" class="Module">Setoid.Complexity</a>     <a id="495" class="Keyword">public</a>
-<a id="502" class="Keyword">open</a> <a id="507" class="Keyword">import</a> <a id="514" href="Setoid.Congruences.html" class="Module">Setoid.Congruences</a>    <a id="536" class="Keyword">public</a>
-<a id="543" class="Keyword">open</a> <a id="548" class="Keyword">import</a> <a id="555" href="Setoid.Functions.html" class="Module">Setoid.Functions</a>      <a id="577" class="Keyword">public</a>
-<a id="584" class="Keyword">open</a> <a id="589" class="Keyword">import</a> <a id="596" href="Setoid.Homomorphisms.html" class="Module">Setoid.Homomorphisms</a>  <a id="618" class="Keyword">public</a>
-<a id="625" class="Keyword">open</a> <a id="630" class="Keyword">import</a> <a id="637" href="Setoid.Operations.html" class="Module">Setoid.Operations</a>     <a id="659" class="Keyword">public</a>
-<a id="666" class="Keyword">open</a> <a id="671" class="Keyword">import</a> <a id="678" href="Setoid.Relations.html" class="Module">Setoid.Relations</a>      <a id="700" class="Keyword">public</a>
-<a id="707" class="Keyword">open</a> <a id="712" class="Keyword">import</a> <a id="719" href="Setoid.Signatures.html" class="Module">Setoid.Signatures</a>     <a id="741" class="Keyword">public</a>
-<a id="748" class="Keyword">open</a> <a id="753" class="Keyword">import</a> <a id="760" href="Setoid.Subalgebras.html" class="Module">Setoid.Subalgebras</a>    <a id="782" class="Keyword">public</a>
-<a id="789" class="Keyword">open</a> <a id="794" class="Keyword">import</a> <a id="801" href="Setoid.Terms.html" class="Module">Setoid.Terms</a>          <a id="823" class="Keyword">public</a>
-<a id="830" class="Keyword">open</a> <a id="835" class="Keyword">import</a> <a id="842" href="Setoid.Varieties.html" class="Module">Setoid.Varieties</a>      <a id="864" class="Keyword">public</a>
-<a id="871" class="Markup">```
+<a id="373" class="Keyword">open</a> <a id="378" class="Keyword">import</a> <a id="385" href="Setoid.Algebras.html" class="Module">Setoid.Algebras</a>       <a id="407" class="Keyword">public</a>
+<a id="414" class="Keyword">open</a> <a id="419" class="Keyword">import</a> <a id="426" href="Setoid.Categories.html" class="Module">Setoid.Categories</a>     <a id="448" class="Keyword">public</a>
+<a id="455" class="Keyword">open</a> <a id="460" class="Keyword">import</a> <a id="467" href="Setoid.Complexity.html" class="Module">Setoid.Complexity</a>     <a id="489" class="Keyword">public</a>
+<a id="496" class="Keyword">open</a> <a id="501" class="Keyword">import</a> <a id="508" href="Setoid.Congruences.html" class="Module">Setoid.Congruences</a>    <a id="530" class="Keyword">public</a>
+<a id="537" class="Keyword">open</a> <a id="542" class="Keyword">import</a> <a id="549" href="Setoid.Functions.html" class="Module">Setoid.Functions</a>      <a id="571" class="Keyword">public</a>
+<a id="578" class="Keyword">open</a> <a id="583" class="Keyword">import</a> <a id="590" href="Setoid.Homomorphisms.html" class="Module">Setoid.Homomorphisms</a>  <a id="612" class="Keyword">public</a>
+<a id="619" class="Keyword">open</a> <a id="624" class="Keyword">import</a> <a id="631" href="Setoid.Operations.html" class="Module">Setoid.Operations</a>     <a id="653" class="Keyword">public</a>
+<a id="660" class="Keyword">open</a> <a id="665" class="Keyword">import</a> <a id="672" href="Setoid.Relations.html" class="Module">Setoid.Relations</a>      <a id="694" class="Keyword">public</a>
+<a id="701" class="Keyword">open</a> <a id="706" class="Keyword">import</a> <a id="713" href="Setoid.Signatures.html" class="Module">Setoid.Signatures</a>     <a id="735" class="Keyword">public</a>
+<a id="742" class="Keyword">open</a> <a id="747" class="Keyword">import</a> <a id="754" href="Setoid.Subalgebras.html" class="Module">Setoid.Subalgebras</a>    <a id="776" class="Keyword">public</a>
+<a id="783" class="Keyword">open</a> <a id="788" class="Keyword">import</a> <a id="795" href="Setoid.Terms.html" class="Module">Setoid.Terms</a>          <a id="817" class="Keyword">public</a>
+<a id="824" class="Keyword">open</a> <a id="829" class="Keyword">import</a> <a id="836" href="Setoid.Varieties.html" class="Module">Setoid.Varieties</a>      <a id="858" class="Keyword">public</a>
+<a id="865" class="Markup">```
 </a></pre></body></html>

@@ -14300,11 +14300,11 @@
 <p>This is the <a href="/Classical/">Classical</a> module of the <a href="/">Agda Universal Algebra Library</a>.</p>
 <p>The <code>Classical/</code> tree formalizes specific algebraic theories — semigroups, monoids,
 groups, lattices, rings, and so on — over the universal-algebra foundation laid down
-in <a href="/Setoid/"><code>Setoid/</code></a> (see <a href="https://github.com/ualib/agda-algebras/blob/master/docs/adr/001-setoid-as-canonical.md">ADR-001</a>).  The word <em>classical</em> names the
+in <a href="/Setoid/"><code>Setoid/</code></a> (see <a href="/adr/001-setoid-as-canonical/">ADR-001</a>).  The word <em>classical</em> names the
 long-standing tradition of concrete algebraic structures, as distinct from the
 universal-algebraic treatment of algebras-over-a-signature; it carries no commitment
 to classical logic, which the library does not assume.  The design of this tree is
-recorded in <a href="https://github.com/ualib/agda-algebras/blob/master/docs/adr/002-classical-layer-design.md">ADR-002</a>.</p>
+recorded in <a href="/adr/002-classical-layer-design/">ADR-002</a>.</p>
 <h3 id="quintuple-per-structure-organization">Quintuple-per-structure organization<a class="headerlink" href="#quintuple-per-structure-organization" title="Anchor link to this section">&para;</a></h3>
 <p>Each concrete structure <code>X</code> ships as a quintuple of files, organized into five parallel subtrees:</p>
 <ul>
@@ -14343,7 +14343,7 @@ structure under consideration.</p>
 <p>Equations in the Σ-typed core are stated purely in terms of the <code>Algebra.Domain</code>
 setoid equivalence — never in terms of propositional equality or any other
 setoid-specific feature.  This discipline makes the eventual port to cubical Agda
-(<a href="https://github.com/ualib/agda-algebras/blob/master/docs/adr/003-cubical-canonical-target.md">ADR-003</a>) substitutional rather than rewriting: replacing the setoid
+(<a href="/adr/003-cubical-canonical-target/">ADR-003</a>) substitutional rather than rewriting: replacing the setoid
 equivalence by the path type and rerunning the type-checker should be sufficient for
 most of the tree.</p>
 <h3 id="scaffold-status">Scaffold status<a class="headerlink" href="#scaffold-status" title="Anchor link to this section">&para;</a></h3>
@@ -14372,12 +14372,14 @@ derived-results modules.</p>
 <!-- pymdownx.snippets auto-appends this file to every page so reference-style -->
 <!-- links resolve site-wide without a per-page include directive.  Internal -->
 <!-- targets are ROOT-RELATIVE so cross-references work under `mkdocs serve` -->
-<!-- and at the deployed site alike.  The module sections are GENERATED from -->
-<!-- the src/ tree by scripts/python/gen_links.py; re-run it rather than -->
-<!-- editing those entries by hand. -->
+<!-- and at the deployed site alike.  The module and ADR sections are GENERATED -->
+<!-- from the src/ and docs/adr/ trees by scripts/python/gen_links.py; re-run it -->
+<!-- rather than editing those entries by hand (CI runs it with --check).  New -->
+<!-- external links may be added by hand to the External-links section. -->
 
 <!-- ===== Rendered module pages ===== -->
 <!-- ===== Module sources on GitHub ===== -->
+<!-- ===== Architecture Decision Records ===== -->
 <!-- ===== External links ===== -->
 
 
