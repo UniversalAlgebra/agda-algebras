@@ -57,8 +57,14 @@ Two standing warnings apply to everything under this namespace.
    attained here with no postulate).
 +  [FLRP.Assumptions][] — the registry of classical theorems imported as
    explicit hypotheses (never postulates), keeping the tree honest under
-   `--safe`; its first entry is the congruence-completeness bridge
-   `CongruenceCompleteness`, the single Layer-S→Layer-D assumption of ADR-008.
+   `--safe`; Entry 1 is the congruence-completeness bridge
+   `CongruenceCompleteness`, the single Layer-S→Layer-D assumption of ADR-008,
+   and Entry 2 is Kurzweil–Netter duality, consumed by the WP-5 closure
+   toolkit.
++  [FLRP.Closure][] — the WP-5 closure toolkit: product and ordinal-sum
+   closure of `Representableᵈ` (issue #456), the adjoin-a-new-extremum
+   corollaries at `chain₂`, and the duality corollary `dual-Representableᵈ`
+   conditional on the registry&#39;s Entry 2.
 +  [FLRP.LayerBridge][] — the cross-layer bridge: under the congruence-completeness
    assumption, the semantic and decidable congruence posets are order-isomorphic
    (`conDecIso`), whence `Representable 𝑳 ↔ Representableᵈ 𝑳`.
@@ -81,18 +87,19 @@ Two standing warnings apply to everything under this namespace.
 +  `FLRP.Intervals` (intervals in subgroup lattices and core-free normalization);
 +  `FLRP.Reductions` (the catalog of reduction theorems).
 
-</a><a id="4577" class="Markup">```agda
-</a><a id="4585" class="Symbol">{-#</a> <a id="4589" class="Keyword">OPTIONS</a> <a id="4597" class="Pragma">--cubical-compatible</a> <a id="4618" class="Pragma">--exact-split</a> <a id="4632" class="Pragma">--safe</a> <a id="4639" class="Symbol">#-}</a>
+</a><a id="4914" class="Markup">```agda
+</a><a id="4922" class="Symbol">{-#</a> <a id="4926" class="Keyword">OPTIONS</a> <a id="4934" class="Pragma">--cubical-compatible</a> <a id="4955" class="Pragma">--exact-split</a> <a id="4969" class="Pragma">--safe</a> <a id="4976" class="Symbol">#-}</a>
 
-<a id="4644" class="Keyword">module</a> <a id="4651" href="FLRP.html" class="Module">FLRP</a> <a id="4656" class="Keyword">where</a>
+<a id="4981" class="Keyword">module</a> <a id="4988" href="FLRP.html" class="Module">FLRP</a> <a id="4993" class="Keyword">where</a>
 
-<a id="4663" class="Keyword">open</a> <a id="4668" class="Keyword">import</a> <a id="4675" href="FLRP.Problem.html" class="Module">FLRP.Problem</a> <a id="4688" class="Keyword">public</a>
-<a id="4695" class="Keyword">open</a> <a id="4700" class="Keyword">import</a> <a id="4707" href="FLRP.Enforceable.html" class="Module">FLRP.Enforceable</a> <a id="4724" class="Keyword">public</a>
-<a id="4731" class="Keyword">open</a> <a id="4736" class="Keyword">import</a> <a id="4743" href="FLRP.Bridge.html" class="Module">FLRP.Bridge</a> <a id="4755" class="Keyword">public</a>
-<a id="4762" class="Keyword">open</a> <a id="4767" class="Keyword">import</a> <a id="4774" href="FLRP.Representable.html" class="Module">FLRP.Representable</a> <a id="4793" class="Keyword">public</a>
-<a id="4800" class="Keyword">open</a> <a id="4805" class="Keyword">import</a> <a id="4812" href="FLRP.Assumptions.html" class="Module">FLRP.Assumptions</a> <a id="4829" class="Keyword">public</a>
-<a id="4836" class="Keyword">open</a> <a id="4841" class="Keyword">import</a> <a id="4848" href="FLRP.LayerBridge.html" class="Module">FLRP.LayerBridge</a> <a id="4865" class="Keyword">public</a>
-<a id="4872" class="Keyword">open</a> <a id="4877" class="Keyword">import</a> <a id="4884" href="FLRP.Certificates.html" class="Module">FLRP.Certificates</a> <a id="4902" class="Keyword">public</a>
-<a id="4909" class="Keyword">open</a> <a id="4914" class="Keyword">import</a> <a id="4921" href="FLRP.L7EqSix.html" class="Module">FLRP.L7EqSix</a> <a id="4934" class="Keyword">public</a>
-<a id="4941" class="Markup">```
+<a id="5000" class="Keyword">open</a> <a id="5005" class="Keyword">import</a> <a id="5012" href="FLRP.Problem.html" class="Module">FLRP.Problem</a>        <a id="5032" class="Keyword">public</a>
+<a id="5039" class="Keyword">open</a> <a id="5044" class="Keyword">import</a> <a id="5051" href="FLRP.Enforceable.html" class="Module">FLRP.Enforceable</a>    <a id="5071" class="Keyword">public</a>
+<a id="5078" class="Keyword">open</a> <a id="5083" class="Keyword">import</a> <a id="5090" href="FLRP.Bridge.html" class="Module">FLRP.Bridge</a>         <a id="5110" class="Keyword">public</a>
+<a id="5117" class="Keyword">open</a> <a id="5122" class="Keyword">import</a> <a id="5129" href="FLRP.Representable.html" class="Module">FLRP.Representable</a>  <a id="5149" class="Keyword">public</a>
+<a id="5156" class="Keyword">open</a> <a id="5161" class="Keyword">import</a> <a id="5168" href="FLRP.Assumptions.html" class="Module">FLRP.Assumptions</a>    <a id="5188" class="Keyword">public</a>
+<a id="5195" class="Keyword">open</a> <a id="5200" class="Keyword">import</a> <a id="5207" href="FLRP.Closure.html" class="Module">FLRP.Closure</a>        <a id="5227" class="Keyword">public</a>
+<a id="5234" class="Keyword">open</a> <a id="5239" class="Keyword">import</a> <a id="5246" href="FLRP.LayerBridge.html" class="Module">FLRP.LayerBridge</a>    <a id="5266" class="Keyword">public</a>
+<a id="5273" class="Keyword">open</a> <a id="5278" class="Keyword">import</a> <a id="5285" href="FLRP.Certificates.html" class="Module">FLRP.Certificates</a>   <a id="5305" class="Keyword">public</a>
+<a id="5312" class="Keyword">open</a> <a id="5317" class="Keyword">import</a> <a id="5324" href="FLRP.L7EqSix.html" class="Module">FLRP.L7EqSix</a>        <a id="5344" class="Keyword">public</a>
+<a id="5351" class="Markup">```
 </a></pre></body></html>

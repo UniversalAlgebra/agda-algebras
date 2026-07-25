@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>Classical.Structures.Lattice.Dual</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">---
+layout: default
+file: &quot;src/Classical/Structures/Lattice/Dual.lagda.md&quot;
+title: &quot;Classical.Structures.Lattice.Dual module&quot;
+date: &quot;2026-07-24&quot;
+author: &quot;the agda-algebras development team&quot;
+---
+
+### The dual of a lattice {#classical-structures-lattice-dual}
+
+This is the [Classical.Structures.Lattice.Dual][] module of the [Agda Universal Algebra Library][].
+
+The **dual** (or *opposite*) of a lattice swaps meet and join, equivalently reverses
+the order.  Because the lattice theory `Th-Lattice` is self-dual, the construction is
+a matter of re-interpreting the two operation symbols of
+[`Sig-Lattice`][Classical.Signatures.Lattice] on the *same* carrier setoid: the
+dual&#39;s meet is `𝑳`{.AgdaBound}&#39;s join and vice versa, six of the eight equations
+transfer verbatim with the `∧`/`∨` roles exchanged, and the two absorption laws
+of the dual follow from those of `𝑳`{.AgdaBound} by one commutativity step each
+(`a ∨ (a ∧ b) ≈ a` is `absorbʳ`{.AgdaFunction} read backwards).
+
+The module also records how the dualization acts on the derived order-theoretic data
+of [Classical.Properties.Lattice][].
+
++  The meet order flips: `x ≤ y` in the dual iff `y ≤ x` in `𝑳`{.AgdaBound}
+   (`≤ᵈ-flip`{.AgdaFunction} / `≤ᵈ-unflip`{.AgdaFunction}).
++  Chosen extrema swap: a top of `𝑳`{.AgdaBound} is a bottom of the dual and
+   conversely (`dualBotOf`{.AgdaFunction} / `dualTopOf`{.AgdaFunction}).
+
+Dualization is involutive up to the evident isomorphism (the identity map on the
+carrier): applying `dualLattice`{.AgdaFunction} twice re-interprets each symbol by
+its original operation, pointwise.  We do not formalize the involution here — as a
+propositional equality of `Lattice`{.AgdaFunction} values it would need function
+extensionality — and no current consumer requires it; a consumer that dualizes
+twice should transport along the identity carrier map.
+
+The first consumer is the Kurzweil–Netter duality entry of the FLRP assumptions
+registry: the classical theorem that the
+class of representable lattices is closed under dualization is *stated* over
+`dualLattice`{.AgdaFunction} and imported as an explicit hypothesis.[^1]
+
+&lt;!--
+</a><a id="2124" class="Markup">```agda
+</a><a id="2132" class="Symbol">{-#</a> <a id="2136" class="Keyword">OPTIONS</a> <a id="2144" class="Pragma">--cubical-compatible</a> <a id="2165" class="Pragma">--exact-split</a> <a id="2179" class="Pragma">--safe</a> <a id="2186" class="Symbol">#-}</a>
+
+<a id="2191" class="Keyword">module</a> <a id="2198" href="Classical.Structures.Lattice.Dual.html" class="Module">Classical.Structures.Lattice.Dual</a> <a id="2232" class="Keyword">where</a>
+
+
+<a id="2240" class="Comment">-- Imports from the Agda Standard Library ---------------------------------------</a>
+<a id="2322" class="Keyword">open</a> <a id="2327" class="Keyword">import</a> <a id="2334" href="Data.Product.html" class="Module">Data.Product</a>          <a id="2356" class="Keyword">using</a> <a id="2362" class="Symbol">(</a> <a id="2364" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">_,_</a> <a id="2368" class="Symbol">;</a> <a id="2370" href="Data.Product.Base.html#636" class="Field">proj₁</a> <a id="2376" class="Symbol">)</a>
+<a id="2378" class="Keyword">open</a> <a id="2383" class="Keyword">import</a> <a id="2390" href="Level.html" class="Module">Level</a>                 <a id="2412" class="Keyword">using</a> <a id="2418" class="Symbol">(</a> <a id="2420" href="Agda.Primitive.html#742" class="Postulate">Level</a> <a id="2426" class="Symbol">)</a>
+<a id="2428" class="Keyword">open</a> <a id="2433" class="Keyword">import</a> <a id="2440" href="Relation.Binary.html" class="Module">Relation.Binary</a>       <a id="2462" class="Keyword">using</a> <a id="2468" class="Symbol">(</a> <a id="2470" href="Relation.Binary.Bundles.html#1235" class="Record">Setoid</a> <a id="2477" class="Symbol">)</a>
+
+<a id="2480" class="Comment">-- Imports from the Agda Universal Algebra Library ------------------------------</a>
+<a id="2562" class="Keyword">open</a> <a id="2567" class="Keyword">import</a> <a id="2574" href="Classical.Properties.Lattice.html" class="Module">Classical.Properties.Lattice</a>  <a id="2604" class="Keyword">using</a> <a id="2610" class="Symbol">(</a> <a id="2612" class="Keyword">module</a> <a id="2619" href="Classical.Properties.Lattice.html#2504" class="Module">Lattice-Order</a> <a id="2633" class="Symbol">;</a> <a id="2635" href="Classical.Properties.Lattice.html#7834" class="Function">TopOf</a> <a id="2641" class="Symbol">;</a> <a id="2643" href="Classical.Properties.Lattice.html#7926" class="Function">BotOf</a> <a id="2649" class="Symbol">)</a>
+<a id="2651" class="Keyword">open</a> <a id="2656" class="Keyword">import</a> <a id="2663" href="Classical.Structures.Lattice.html" class="Module">Classical.Structures.Lattice</a>  <a id="2693" class="Keyword">using</a> <a id="2699" class="Symbol">(</a> <a id="2701" href="Classical.Structures.Lattice.html#6028" class="Function">Lattice</a> <a id="2709" class="Symbol">;</a> <a id="2711" class="Keyword">module</a> <a id="2718" href="Classical.Structures.Lattice.html#12128" class="Module">Lattice-Op</a>
+                                                <a id="2777" class="Symbol">;</a> <a id="2779" href="Classical.Structures.Lattice.html#21524" class="Function">setoidEqsToLattice</a> <a id="2798" class="Symbol">)</a>
+<a id="2800" class="Keyword">open</a> <a id="2805" class="Keyword">import</a> <a id="2812" href="Setoid.Algebras.Basic.html" class="Module">Setoid.Algebras.Basic</a>         <a id="2842" class="Keyword">using</a> <a id="2848" class="Symbol">(</a> <a id="2850" href="Setoid.Algebras.Basic.html#3635" class="Function Operator">𝔻[_]</a> <a id="2855" class="Symbol">)</a>
+
+<a id="2858" class="Keyword">private</a> <a id="2866" class="Keyword">variable</a> <a id="2875" href="Classical.Structures.Lattice.Dual.html#2875" class="Generalizable">α</a> <a id="2877" href="Classical.Structures.Lattice.Dual.html#2877" class="Generalizable">ρ</a> <a id="2879" class="Symbol">:</a> <a id="2881" href="Agda.Primitive.html#742" class="Postulate">Level</a>
+<a id="2887" class="Markup">```
+</a><a id="2891" class="Background">--&gt;
+
+#### The dual construction
+
+`LatticeDual`{.AgdaModule} `𝑳` packages the construction and its order-theoretic
+companions for a fixed lattice.
+
+</a><a id="3038" class="Markup">```agda
+</a><a id="3046" class="Keyword">module</a> <a id="LatticeDual"></a><a id="3053" href="Classical.Structures.Lattice.Dual.html#3053" class="Module">LatticeDual</a> <a id="3065" class="Symbol">(</a><a id="3066" href="Classical.Structures.Lattice.Dual.html#3066" class="Bound">𝑳</a> <a id="3068" class="Symbol">:</a> <a id="3070" href="Classical.Structures.Lattice.html#6028" class="Function">Lattice</a> <a id="3078" href="Classical.Structures.Lattice.Dual.html#2875" class="Generalizable">α</a> <a id="3080" href="Classical.Structures.Lattice.Dual.html#2877" class="Generalizable">ρ</a><a id="3081" class="Symbol">)</a> <a id="3083" class="Keyword">where</a>
+  <a id="3091" class="Keyword">private</a> <a id="LatticeDual.𝑨"></a><a id="3099" href="Classical.Structures.Lattice.Dual.html#3099" class="Function">𝑨</a> <a id="3101" class="Symbol">=</a> <a id="3103" href="Data.Product.Base.html#636" class="Field">proj₁</a> <a id="3109" href="Classical.Structures.Lattice.Dual.html#3066" class="Bound">𝑳</a>
+
+  <a id="3114" class="Keyword">open</a> <a id="3119" href="Relation.Binary.Bundles.html#1235" class="Module">Setoid</a> <a id="3126" href="Setoid.Algebras.Basic.html#3635" class="Function Operator">𝔻[</a> <a id="3129" href="Classical.Structures.Lattice.Dual.html#3099" class="Function">𝑨</a> <a id="3131" href="Setoid.Algebras.Basic.html#3635" class="Function Operator">]</a> <a id="3133" class="Keyword">using</a> <a id="3139" class="Symbol">(</a> <a id="3141" href="Relation.Binary.Bundles.html#1324" class="Field Operator">_≈_</a> <a id="3145" class="Symbol">)</a>
+    <a id="3151" class="Keyword">renaming</a> <a id="3160" class="Symbol">(</a> <a id="3162" href="Relation.Binary.Structures.html#1271" class="Function">trans</a> <a id="3168" class="Symbol">to</a> <a id="3171" class="Function">≈trans</a> <a id="3178" class="Symbol">)</a>
+  <a id="3182" class="Keyword">open</a> <a id="3187" href="Classical.Structures.Lattice.html#12128" class="Module">Lattice-Op</a> <a id="3198" href="Classical.Structures.Lattice.Dual.html#3066" class="Bound">𝑳</a> <a id="3200" class="Keyword">using</a>
+    <a id="3210" class="Symbol">(</a> <a id="3212" href="Classical.Structures.Lattice.html#12326" class="Function Operator">_∧_</a> <a id="3216" class="Symbol">;</a> <a id="3218" href="Classical.Structures.Lattice.html#12386" class="Function Operator">_∨_</a> <a id="3222" class="Symbol">;</a> <a id="3224" href="Classical.Structures.Lattice.html#12500" class="Function">∧-cong</a> <a id="3231" class="Symbol">;</a> <a id="3233" href="Classical.Structures.Lattice.html#12620" class="Function">∨-cong</a>
+    <a id="3244" class="Symbol">;</a> <a id="3246" href="Classical.Structures.Lattice.html#13134" class="Function">∧-assoc-law</a> <a id="3258" class="Symbol">;</a> <a id="3260" href="Classical.Structures.Lattice.html#13218" class="Function">∧-comm-law</a> <a id="3271" class="Symbol">;</a> <a id="3273" href="Classical.Structures.Lattice.html#13285" class="Function">∧-idem-law</a>
+    <a id="3288" class="Symbol">;</a> <a id="3290" href="Classical.Structures.Lattice.html#13346" class="Function">∨-assoc-law</a> <a id="3302" class="Symbol">;</a> <a id="3304" href="Classical.Structures.Lattice.html#13430" class="Function">∨-comm-law</a> <a id="3315" class="Symbol">;</a> <a id="3317" href="Classical.Structures.Lattice.html#13497" class="Function">∨-idem-law</a>
+    <a id="3332" class="Symbol">;</a> <a id="3334" href="Classical.Structures.Lattice.html#13558" class="Function">absorbˡ-law</a> <a id="3346" class="Symbol">;</a> <a id="3348" href="Classical.Structures.Lattice.html#13630" class="Function">absorbʳ-law</a> <a id="3360" class="Symbol">)</a>
+<a id="3362" class="Markup">```
+</a><a id="3366" class="Background">
+The two absorption laws of the dual, derived from those of `𝑳` by one
+commutativity step each.
+
+</a><a id="3463" class="Markup">```agda
+</a>  <a id="3473" class="Comment">-- a ∨ (a ∧ b) ≈ a : the dual reading of absorption, from absorbʳ by ∨-commutativity.</a>
+  <a id="LatticeDual.dual-absorbˡ"></a><a id="3561" href="Classical.Structures.Lattice.Dual.html#3561" class="Function">dual-absorbˡ</a> <a id="3574" class="Symbol">:</a> <a id="3576" class="Symbol">∀</a> <a id="3578" class="Symbol">{</a><a id="3579" href="Classical.Structures.Lattice.Dual.html#3579" class="Bound">a</a> <a id="3581" href="Classical.Structures.Lattice.Dual.html#3581" class="Bound">b</a><a id="3582" class="Symbol">}</a> <a id="3584" class="Symbol">→</a> <a id="3586" href="Classical.Structures.Lattice.Dual.html#3579" class="Bound">a</a> <a id="3588" href="Classical.Structures.Lattice.html#12386" class="Function Operator">∨</a> <a id="3590" class="Symbol">(</a><a id="3591" href="Classical.Structures.Lattice.Dual.html#3579" class="Bound">a</a> <a id="3593" href="Classical.Structures.Lattice.html#12326" class="Function Operator">∧</a> <a id="3595" href="Classical.Structures.Lattice.Dual.html#3581" class="Bound">b</a><a id="3596" class="Symbol">)</a> <a id="3598" href="Relation.Binary.Bundles.html#1324" class="Function Operator">≈</a> <a id="3600" href="Classical.Structures.Lattice.Dual.html#3579" class="Bound">a</a>
+  <a id="3604" href="Classical.Structures.Lattice.Dual.html#3561" class="Function">dual-absorbˡ</a> <a id="3617" class="Symbol">=</a> <a id="3619" href="Classical.Structures.Lattice.Dual.html#3171" class="Function">≈trans</a> <a id="3626" href="Classical.Structures.Lattice.html#13430" class="Function">∨-comm-law</a> <a id="3637" href="Classical.Structures.Lattice.html#13630" class="Function">absorbʳ-law</a>
+
+  <a id="3652" class="Comment">-- (a ∨ b) ∧ a ≈ a : the other dual absorption, from absorbˡ by ∧-commutativity.</a>
+  <a id="LatticeDual.dual-absorbʳ"></a><a id="3735" href="Classical.Structures.Lattice.Dual.html#3735" class="Function">dual-absorbʳ</a> <a id="3748" class="Symbol">:</a> <a id="3750" class="Symbol">∀</a> <a id="3752" class="Symbol">{</a><a id="3753" href="Classical.Structures.Lattice.Dual.html#3753" class="Bound">a</a> <a id="3755" href="Classical.Structures.Lattice.Dual.html#3755" class="Bound">b</a><a id="3756" class="Symbol">}</a> <a id="3758" class="Symbol">→</a> <a id="3760" class="Symbol">(</a><a id="3761" href="Classical.Structures.Lattice.Dual.html#3753" class="Bound">a</a> <a id="3763" href="Classical.Structures.Lattice.html#12386" class="Function Operator">∨</a> <a id="3765" href="Classical.Structures.Lattice.Dual.html#3755" class="Bound">b</a><a id="3766" class="Symbol">)</a> <a id="3768" href="Classical.Structures.Lattice.html#12326" class="Function Operator">∧</a> <a id="3770" href="Classical.Structures.Lattice.Dual.html#3753" class="Bound">a</a> <a id="3772" href="Relation.Binary.Bundles.html#1324" class="Function Operator">≈</a> <a id="3774" href="Classical.Structures.Lattice.Dual.html#3753" class="Bound">a</a>
+  <a id="3778" href="Classical.Structures.Lattice.Dual.html#3735" class="Function">dual-absorbʳ</a> <a id="3791" class="Symbol">=</a> <a id="3793" href="Classical.Structures.Lattice.Dual.html#3171" class="Function">≈trans</a> <a id="3800" href="Classical.Structures.Lattice.html#13218" class="Function">∧-comm-law</a> <a id="3811" href="Classical.Structures.Lattice.html#13558" class="Function">absorbˡ-law</a>
+<a id="3823" class="Markup">```
+</a><a id="3827" class="Background">
+The dual lattice: same carrier setoid, meet interpreted by `_∨_` and join by
+`_∧_`, the six semilattice equations exchanged wholesale, and the two derived
+absorption laws.
+
+</a><a id="4001" class="Markup">```agda
+</a>  <a id="LatticeDual.dual-Lattice"></a><a id="4011" href="Classical.Structures.Lattice.Dual.html#4011" class="Function">dual-Lattice</a> <a id="4024" class="Symbol">:</a> <a id="4026" href="Classical.Structures.Lattice.html#6028" class="Function">Lattice</a> <a id="4034" href="Classical.Structures.Lattice.Dual.html#3078" class="Bound">α</a> <a id="4036" href="Classical.Structures.Lattice.Dual.html#3080" class="Bound">ρ</a>
+  <a id="4040" href="Classical.Structures.Lattice.Dual.html#4011" class="Function">dual-Lattice</a> <a id="4053" class="Symbol">=</a> <a id="4055" href="Classical.Structures.Lattice.html#21524" class="Function">setoidEqsToLattice</a> <a id="4074" href="Setoid.Algebras.Basic.html#3635" class="Function Operator">𝔻[</a> <a id="4077" href="Classical.Structures.Lattice.Dual.html#3099" class="Function">𝑨</a> <a id="4079" href="Setoid.Algebras.Basic.html#3635" class="Function Operator">]</a> <a id="4081" href="Classical.Structures.Lattice.html#12386" class="Function Operator">_∨_</a> <a id="4085" href="Classical.Structures.Lattice.html#12326" class="Function Operator">_∧_</a> <a id="4089" href="Classical.Structures.Lattice.html#12620" class="Function">∨-cong</a> <a id="4096" href="Classical.Structures.Lattice.html#12500" class="Function">∧-cong</a>
+    <a id="4107" href="Classical.Structures.Lattice.html#13346" class="Function">∨-assoc-law</a> <a id="4119" href="Classical.Structures.Lattice.html#13430" class="Function">∨-comm-law</a> <a id="4130" href="Classical.Structures.Lattice.html#13497" class="Function">∨-idem-law</a> <a id="4141" href="Classical.Structures.Lattice.html#13134" class="Function">∧-assoc-law</a> <a id="4153" href="Classical.Structures.Lattice.html#13218" class="Function">∧-comm-law</a> <a id="4164" href="Classical.Structures.Lattice.html#13285" class="Function">∧-idem-law</a>
+    <a id="4179" href="Classical.Structures.Lattice.Dual.html#3561" class="Function">dual-absorbˡ</a> <a id="4192" href="Classical.Structures.Lattice.Dual.html#3735" class="Function">dual-absorbʳ</a>
+<a id="4205" class="Markup">```
+</a><a id="4209" class="Background">
+#### The dual order is the reversed order
+
+The meet order of the dual unfolds definitionally to `x ∨ y ≈ x`, which is the
+join-form characterization of `y ≤ x` in `𝑳` ([Classical.Properties.Lattice][]&#39;s
+connecting lemmas); the two directions are one commutativity step each.
+
+</a><a id="4486" class="Markup">```agda
+</a>  <a id="4496" class="Keyword">open</a> <a id="4501" href="Classical.Properties.Lattice.html#2504" class="Module">Lattice-Order</a> <a id="4515" href="Classical.Structures.Lattice.Dual.html#3066" class="Bound">𝑳</a> <a id="4517" class="Keyword">using</a> <a id="4523" class="Symbol">(</a> <a id="4525" href="Classical.Properties.Lattice.html#3390" class="Function">≤-via-∨</a> <a id="4533" class="Symbol">;</a> <a id="4535" href="Classical.Properties.Lattice.html#3602" class="Function">≤-from-∨</a> <a id="4544" class="Symbol">)</a> <a id="4546" class="Keyword">renaming</a> <a id="4555" class="Symbol">(</a> <a id="4557" href="Classical.Properties.Lattice.html#2818" class="Function Operator">_≤_</a> <a id="4561" class="Symbol">to</a> <a id="4564" class="Function Operator">_≤₀_</a> <a id="4569" class="Symbol">)</a>
+  <a id="4573" class="Keyword">open</a> <a id="4578" href="Classical.Properties.Lattice.html#2504" class="Module">Lattice-Order</a> <a id="4592" href="Classical.Structures.Lattice.Dual.html#4011" class="Function">dual-Lattice</a> <a id="4605" class="Keyword">using</a> <a id="4611" class="Symbol">()</a> <a id="4614" class="Keyword">renaming</a> <a id="4623" class="Symbol">(</a> <a id="4625" href="Classical.Properties.Lattice.html#2818" class="Function Operator">_≤_</a> <a id="4629" class="Symbol">to</a> <a id="4632" class="Function Operator">_≤ᵈ_</a> <a id="4637" class="Symbol">)</a>
+
+  <a id="4642" class="Comment">-- An inequality in the dual reverses in 𝑳.</a>
+  <a id="LatticeDual.≤ᵈ-flip"></a><a id="4688" href="Classical.Structures.Lattice.Dual.html#4688" class="Function">≤ᵈ-flip</a> <a id="4696" class="Symbol">:</a> <a id="4698" class="Symbol">∀</a> <a id="4700" class="Symbol">{</a><a id="4701" href="Classical.Structures.Lattice.Dual.html#4701" class="Bound">x</a> <a id="4703" href="Classical.Structures.Lattice.Dual.html#4703" class="Bound">y</a><a id="4704" class="Symbol">}</a> <a id="4706" class="Symbol">→</a> <a id="4708" href="Classical.Structures.Lattice.Dual.html#4701" class="Bound">x</a> <a id="4710" href="Classical.Structures.Lattice.Dual.html#4632" class="Function Operator">≤ᵈ</a> <a id="4713" href="Classical.Structures.Lattice.Dual.html#4703" class="Bound">y</a> <a id="4715" class="Symbol">→</a> <a id="4717" href="Classical.Structures.Lattice.Dual.html#4703" class="Bound">y</a> <a id="4719" href="Classical.Structures.Lattice.Dual.html#4564" class="Function Operator">≤₀</a> <a id="4722" href="Classical.Structures.Lattice.Dual.html#4701" class="Bound">x</a>
+  <a id="4726" href="Classical.Structures.Lattice.Dual.html#4688" class="Function">≤ᵈ-flip</a> <a id="4734" href="Classical.Structures.Lattice.Dual.html#4734" class="Bound">x≤ᵈy</a> <a id="4739" class="Symbol">=</a> <a id="4741" href="Classical.Properties.Lattice.html#3602" class="Function">≤-from-∨</a> <a id="4750" class="Symbol">(</a><a id="4751" href="Classical.Structures.Lattice.Dual.html#3171" class="Function">≈trans</a> <a id="4758" href="Classical.Structures.Lattice.html#13430" class="Function">∨-comm-law</a> <a id="4769" href="Classical.Structures.Lattice.Dual.html#4734" class="Bound">x≤ᵈy</a><a id="4773" class="Symbol">)</a>
+
+  <a id="4778" class="Comment">-- An inequality in 𝑳 reverses in the dual.</a>
+  <a id="LatticeDual.≤ᵈ-unflip"></a><a id="4824" href="Classical.Structures.Lattice.Dual.html#4824" class="Function">≤ᵈ-unflip</a> <a id="4834" class="Symbol">:</a> <a id="4836" class="Symbol">∀</a> <a id="4838" class="Symbol">{</a><a id="4839" href="Classical.Structures.Lattice.Dual.html#4839" class="Bound">x</a> <a id="4841" href="Classical.Structures.Lattice.Dual.html#4841" class="Bound">y</a><a id="4842" class="Symbol">}</a> <a id="4844" class="Symbol">→</a> <a id="4846" href="Classical.Structures.Lattice.Dual.html#4841" class="Bound">y</a> <a id="4848" href="Classical.Structures.Lattice.Dual.html#4564" class="Function Operator">≤₀</a> <a id="4851" href="Classical.Structures.Lattice.Dual.html#4839" class="Bound">x</a> <a id="4853" class="Symbol">→</a> <a id="4855" href="Classical.Structures.Lattice.Dual.html#4839" class="Bound">x</a> <a id="4857" href="Classical.Structures.Lattice.Dual.html#4632" class="Function Operator">≤ᵈ</a> <a id="4860" href="Classical.Structures.Lattice.Dual.html#4841" class="Bound">y</a>
+  <a id="4864" href="Classical.Structures.Lattice.Dual.html#4824" class="Function">≤ᵈ-unflip</a> <a id="4874" href="Classical.Structures.Lattice.Dual.html#4874" class="Bound">y≤x</a> <a id="4878" class="Symbol">=</a> <a id="4880" href="Classical.Structures.Lattice.Dual.html#3171" class="Function">≈trans</a> <a id="4887" href="Classical.Structures.Lattice.html#13430" class="Function">∨-comm-law</a> <a id="4898" class="Symbol">(</a><a id="4899" href="Classical.Properties.Lattice.html#3390" class="Function">≤-via-∨</a> <a id="4907" href="Classical.Structures.Lattice.Dual.html#4874" class="Bound">y≤x</a><a id="4910" class="Symbol">)</a>
+<a id="4912" class="Markup">```
+</a><a id="4916" class="Background">
+#### Extrema swap under dualization
+
+A chosen top of `𝑳` is a chosen bottom of the dual, and conversely — the element
+is unchanged, and its universal property flips through
+`≤ᵈ-unflip`{.AgdaFunction}.
+
+</a><a id="5119" class="Markup">```agda
+</a>  <a id="LatticeDual.dualBotOf"></a><a id="5129" href="Classical.Structures.Lattice.Dual.html#5129" class="Function">dualBotOf</a> <a id="5139" class="Symbol">:</a> <a id="5141" href="Classical.Properties.Lattice.html#7834" class="Function">TopOf</a> <a id="5147" href="Classical.Structures.Lattice.Dual.html#3066" class="Bound">𝑳</a> <a id="5149" class="Symbol">→</a> <a id="5151" href="Classical.Properties.Lattice.html#7926" class="Function">BotOf</a> <a id="5157" href="Classical.Structures.Lattice.Dual.html#4011" class="Function">dual-Lattice</a>
+  <a id="5172" href="Classical.Structures.Lattice.Dual.html#5129" class="Function">dualBotOf</a> <a id="5182" class="Symbol">(</a><a id="5183" href="Classical.Structures.Lattice.Dual.html#5183" class="Bound">t</a> <a id="5185" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="5187" href="Classical.Structures.Lattice.Dual.html#5187" class="Bound">t-top</a><a id="5192" class="Symbol">)</a> <a id="5194" class="Symbol">=</a> <a id="5196" href="Classical.Structures.Lattice.Dual.html#5183" class="Bound">t</a> <a id="5198" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="5200" class="Symbol">λ</a> <a id="5202" href="Classical.Structures.Lattice.Dual.html#5202" class="Bound">x</a> <a id="5204" class="Symbol">→</a> <a id="5206" href="Classical.Structures.Lattice.Dual.html#4824" class="Function">≤ᵈ-unflip</a> <a id="5216" class="Symbol">(</a><a id="5217" href="Classical.Structures.Lattice.Dual.html#5187" class="Bound">t-top</a> <a id="5223" href="Classical.Structures.Lattice.Dual.html#5202" class="Bound">x</a><a id="5224" class="Symbol">)</a>
+
+  <a id="LatticeDual.dualTopOf"></a><a id="5229" href="Classical.Structures.Lattice.Dual.html#5229" class="Function">dualTopOf</a> <a id="5239" class="Symbol">:</a> <a id="5241" href="Classical.Properties.Lattice.html#7926" class="Function">BotOf</a> <a id="5247" href="Classical.Structures.Lattice.Dual.html#3066" class="Bound">𝑳</a> <a id="5249" class="Symbol">→</a> <a id="5251" href="Classical.Properties.Lattice.html#7834" class="Function">TopOf</a> <a id="5257" href="Classical.Structures.Lattice.Dual.html#4011" class="Function">dual-Lattice</a>
+  <a id="5272" href="Classical.Structures.Lattice.Dual.html#5229" class="Function">dualTopOf</a> <a id="5282" class="Symbol">(</a><a id="5283" href="Classical.Structures.Lattice.Dual.html#5283" class="Bound">b</a> <a id="5285" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="5287" href="Classical.Structures.Lattice.Dual.html#5287" class="Bound">b-bot</a><a id="5292" class="Symbol">)</a> <a id="5294" class="Symbol">=</a> <a id="5296" href="Classical.Structures.Lattice.Dual.html#5283" class="Bound">b</a> <a id="5298" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="5300" class="Symbol">λ</a> <a id="5302" href="Classical.Structures.Lattice.Dual.html#5302" class="Bound">x</a> <a id="5304" class="Symbol">→</a> <a id="5306" href="Classical.Structures.Lattice.Dual.html#4824" class="Function">≤ᵈ-unflip</a> <a id="5316" class="Symbol">(</a><a id="5317" href="Classical.Structures.Lattice.Dual.html#5287" class="Bound">b-bot</a> <a id="5323" href="Classical.Structures.Lattice.Dual.html#5302" class="Bound">x</a><a id="5324" class="Symbol">)</a>
+<a id="5326" class="Markup">```
+</a><a id="5330" class="Background">
+#### The dual operator
+
+The standalone operator, for consumers that need only the lattice.
+
+</a><a id="5423" class="Markup">```agda
+</a><a id="dualLattice"></a><a id="5431" href="Classical.Structures.Lattice.Dual.html#5431" class="Function">dualLattice</a> <a id="5443" class="Symbol">:</a> <a id="5445" href="Classical.Structures.Lattice.html#6028" class="Function">Lattice</a> <a id="5453" href="Classical.Structures.Lattice.Dual.html#2875" class="Generalizable">α</a> <a id="5455" href="Classical.Structures.Lattice.Dual.html#2877" class="Generalizable">ρ</a> <a id="5457" class="Symbol">→</a> <a id="5459" href="Classical.Structures.Lattice.html#6028" class="Function">Lattice</a> <a id="5467" href="Classical.Structures.Lattice.Dual.html#2875" class="Generalizable">α</a> <a id="5469" href="Classical.Structures.Lattice.Dual.html#2877" class="Generalizable">ρ</a>
+<a id="5471" href="Classical.Structures.Lattice.Dual.html#5431" class="Function">dualLattice</a> <a id="5483" href="Classical.Structures.Lattice.Dual.html#5483" class="Bound">𝑳</a> <a id="5485" class="Symbol">=</a> <a id="5487" href="Classical.Structures.Lattice.Dual.html#4011" class="Function">LatticeDual.dual-Lattice</a> <a id="5512" href="Classical.Structures.Lattice.Dual.html#5483" class="Bound">𝑳</a>
+<a id="5514" class="Markup">```
+</a><a id="5518" class="Background">
+--------------------------------------
+
+[^1]: See [FLRP.Assumptions][] and work package WP-5.
+</a></pre></body></html>
