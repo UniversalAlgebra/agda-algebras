@@ -265,10 +265,6 @@
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
-         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/DistributiveLattice/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
          <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
@@ -346,6 +342,14 @@
     </url>
     <url>
          <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/Subgroups/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Lattice/Basic/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Lattice/DistributiveLattice/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
