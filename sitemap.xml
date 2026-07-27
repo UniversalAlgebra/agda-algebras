@@ -309,6 +309,14 @@
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/Centralizer/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/Complements/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
          <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/Complexes/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
@@ -358,6 +366,10 @@
     </url>
     <url>
          <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Lattice/OrdinalSum/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Lattice/Parachute/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
@@ -605,6 +617,10 @@
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
+         <loc>https://agda-algebras.universalalgebra.org/FLRP/Parachute/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
          <loc>https://agda-algebras.universalalgebra.org/FLRP/Problem/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
@@ -738,6 +754,14 @@
     </url>
     <url>
          <loc>https://agda-algebras.universalalgebra.org/FLRP/Closure/Product/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/FLRP/Parachute/Representation/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/FLRP/Parachute/Theorems/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>

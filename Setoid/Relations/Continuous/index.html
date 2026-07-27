@@ -6781,6 +6781,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -6874,6 +6878,62 @@
     
   
     Basic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Classical/Structures/Group/Centralizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Centralizer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Classical/Structures/Group/Complements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Complements
   
 
     
@@ -7194,6 +7254,8 @@
       
         
       
+        
+      
     
     
     
@@ -7343,6 +7405,34 @@
     
   
     OrdinalSum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Classical/Structures/Lattice/Parachute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parachute
   
 
     
@@ -12479,6 +12569,8 @@
       
         
       
+        
+      
     
     
     
@@ -13955,6 +14047,133 @@
   
   
   
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../FLRP/Parachute/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parachute
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_8_8" id="__nav_2_8_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_8_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parachute
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../FLRP/Parachute/Representation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Representation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../FLRP/Parachute/Theorems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theorems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../../FLRP/Problem/" class="md-nav__link">
         
@@ -14854,13 +15073,13 @@
 <p>A <em>continuous relation</em> of arity <code>I</code> over a type <code>A</code> is a predicate on <code>I</code>-tuples drawn from <code>A</code>.  The arity <code>I : Type ι</code> is an arbitrary type — not a fixed natural number — so the API generalises uniformly over finite, countable, and uncountable arities.  This module is the canonical setoid-flavoured home for the continuous-relation API, ported from <code>Legacy.Base.Relations.Continuous</code> under <a href="https://github.com/ualib/agda-algebras/issues/308">#308</a>.  Three deliberate design choices distinguish it from the legacy:</p>
 <ul>
 <li>
-<p><strong>Π-setoid as the canonical <code>I</code>-tuple object.</strong>  The natural <code>I</code>-tuple type whose pointwise equivalence a relation may be required to respect is the carrier of the Π-setoid <code>⨅ˢ 𝒜</code>, defined below.  Its level signature <code>(α ⊔ ι, ρᵃ ⊔ ι)</code> matches that of <a href="/Setoid/Algebras/Products/"><code>Setoid.Algebras.Products.⨅</code></a> exactly; in fact the inlined <code>Domain</code> of <code>⨅</code> <em>is</em> <code>⨅ˢ</code> applied to the algebras' domain setoids, so <code>⨅ˢ</code> and <code>⨅</code> compose by definitional unfolding.  Lifting this construction to a named referent here means every downstream relational development can speak about "I-tuples up to pointwise equivalence" without re-rolling the Π-setoid inline.</p>
+<p><strong>Π-setoid as the canonical <code>I</code>-tuple object</strong>.  The natural <code>I</code>-tuple type whose pointwise equivalence a relation may be required to respect is the carrier of the Π-setoid <code>⨅ˢ 𝒜</code>, defined below.  Its level signature <code>(α ⊔ ι, ρᵃ ⊔ ι)</code> matches that of <a href="/Setoid/Algebras/Products/"><code>Setoid.Algebras.Products.⨅</code></a> exactly; in fact the inlined <code>Domain</code> of <code>⨅</code> <em>is</em> <code>⨅ˢ</code> applied to the algebras' domain setoids, so <code>⨅ˢ</code> and <code>⨅</code> compose by definitional unfolding.  Lifting this construction to a named referent here means every downstream relational development can speak about "I-tuples up to pointwise equivalence" without re-rolling the Π-setoid inline.</p>
 </li>
 <li>
-<p><strong>Bare carrier types in <code>Rel</code>/<code>REL</code>, with setoid-respect as an external overlay.</strong>  The relation types <code>Rel A I</code> and <code>REL I 𝒜</code> themselves take <em>bare</em> carrier types, exactly matching the legacy carrier shape.  Setoid structure is introduced through <code>⨅ˢ</code> and through the <code>Π-Respects-*</code> predicates, which name the property "respects pointwise equivalence" as a separate assertion.  This factorisation has three concrete payoffs.  (i) The consumer-side migration of existing call sites is purely an import-path change.  (ii) It mirrors how <code>Setoid.Relations.Quotients</code> uses bare <code>Pred</code> types throughout.  (iii) Agda's level inference works out cleanly: a setoid-parameterised <code>Rel</code> would force the user to disambiguate the unconstrained equivalence-level <code>ρᵃ</code> of every implicit setoid argument at every call site, since the projection <code>Carrier : Setoid α ρᵃ → Type α</code> is not injective in <code>ρᵃ</code>.</p>
+<p><strong>Bare carrier types in <code>Rel</code>/<code>REL</code>, with setoid-respect as an external overlay</strong>.  The relation types <code>Rel A I</code> and <code>REL I 𝒜</code> themselves take <em>bare</em> carrier types, exactly matching the legacy carrier shape.  Setoid structure is introduced through <code>⨅ˢ</code> and through the <code>Π-Respects-*</code> predicates, which name the property "respects pointwise equivalence" as a separate assertion.  This factorisation has three concrete payoffs.  (i) The consumer-side migration of existing call sites is purely an import-path change.  (ii) It mirrors how <code>Setoid.Relations.Quotients</code> uses bare <code>Pred</code> types throughout.  (iii) Agda's level inference works out cleanly: a setoid-parameterised <code>Rel</code> would force the user to disambiguate the unconstrained equivalence-level <code>ρᵃ</code> of every implicit setoid argument at every call site, since the projection <code>Carrier : Setoid α ρᵃ → Type α</code> is not injective in <code>ρᵃ</code>.</p>
 </li>
 <li>
-<p><strong>Cubical-friendly by construction.</strong>  <code>⨅ˢ</code> is defined against <code>Setoid</code>'s public interface (<code>Carrier</code>, <code>_≈_</code>, <code>isEquivalence</code>); a Cubical port replaces these with path equality, and the construction goes through with the equivalence-witness layer collapsing to triviality.  The bare-types <code>Rel</code>/<code>REL</code> are independent of the equivalence story and port with no change at all.</p>
+<p><strong>Cubical-friendly by construction</strong>.  <code>⨅ˢ</code> is defined against <code>Setoid</code>'s public interface (<code>Carrier</code>, <code>_≈_</code>, <code>isEquivalence</code>); a Cubical port replaces these with path equality, and the construction goes through with the equivalence-witness layer collapsing to triviality.  The bare-types <code>Rel</code>/<code>REL</code> are independent of the equivalence story and port with no change at all.</p>
 </li>
 </ul>
 <p>A note on <code>compatible-REL</code>. The legacy <code>Legacy.Base.Relations.Continuous.compatible-REL</code> reads <code>compatible-REL 𝑓 R = Π[ t ∈ … ] eval-REL R t</code>, which is unconditional in <code>t</code> and never references <code>𝑓</code> — a bug, since it makes the predicate independent of the operations.  The intended definition, mirroring the structure of the (correct) single-sorted <code>compatible-Rel</code>, is <code>∀ t → eval-REL R t → R (λ i → 𝑓 i (t i))</code>.  The canonical port below uses the corrected definition.</p>

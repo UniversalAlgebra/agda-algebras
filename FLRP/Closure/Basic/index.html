@@ -6658,6 +6658,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -6751,6 +6755,62 @@
     
   
     Basic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Classical/Structures/Group/Centralizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Centralizer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Classical/Structures/Group/Complements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Complements
   
 
     
@@ -7071,6 +7131,8 @@
       
         
       
+        
+      
     
     
     
@@ -7220,6 +7282,34 @@
     
   
     OrdinalSum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Classical/Structures/Lattice/Parachute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parachute
   
 
     
@@ -12358,6 +12448,8 @@
       
         
       
+        
+      
     
     
     
@@ -13922,6 +14014,133 @@
   
   
   
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Parachute/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parachute
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_8_8" id="__nav_2_8_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_8_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parachute
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Parachute/Representation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Representation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Parachute/Theorems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theorems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../Problem/" class="md-nav__link">
         
@@ -14822,27 +15041,27 @@ conditional certificates is issue #485's concern, not this module's.</p>
 <a id="2395" class="Keyword">open</a> <a id="2400" class="Keyword">import</a> <a id="2407" href="/classic/Relation.Binary.PropositionalEquality.html" class="Module">Relation.Binary.PropositionalEquality</a>  <a id="2446" class="Keyword">using</a>  <a id="2453" class="Symbol">(</a> <a id="2455" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="2460" class="Symbol">)</a>
 
 <a id="2463" class="Comment">-- Imports from the Agda Universal Algebra Library ------------------------------</a>
-<a id="2545" class="Keyword">open</a> <a id="2550" class="Keyword">import</a> <a id="2557" href="/Classical/Properties/Lattice/" class="Module">Classical.Properties.Lattice</a>              <a id="2599" class="Keyword">using</a>  <a id="2606" class="Symbol">(</a> <a id="2608" href="/Classical/Properties/Lattice/#7800" class="Function">TopOf</a> <a id="2614" class="Symbol">;</a> <a id="2616" href="/Classical/Properties/Lattice/#7892" class="Function">BotOf</a> <a id="2622" class="Symbol">)</a>
-<a id="2624" class="Keyword">open</a> <a id="2629" class="Keyword">import</a> <a id="2636" href="/Classical/Small/Structures/Lattice/" class="Module">Classical.Small.Structures.Lattice</a>        <a id="2678" class="Keyword">using</a>  <a id="2685" class="Symbol">(</a> <a id="2687" href="/Classical/Small/Structures/Lattice/#1038" class="Function">Lattice</a> <a id="2695" class="Symbol">)</a>
-<a id="2697" class="Keyword">open</a> <a id="2702" class="Keyword">import</a> <a id="2709" href="/Classical/Structures/Lattice/Dual/" class="Module">Classical.Structures.Lattice.Dual</a>         <a id="2751" class="Keyword">using</a>  <a id="2758" class="Symbol">(</a> <a id="2760" href="/Classical/Structures/Lattice/Dual/#5514" class="Function">dualLattice</a> <a id="2772" class="Symbol">)</a>
-<a id="2774" class="Keyword">open</a> <a id="2779" class="Keyword">import</a> <a id="2786" href="/Classical/Structures/Lattice/OrdinalSum/" class="Module">Classical.Structures.Lattice.OrdinalSum</a>   <a id="2828" class="Keyword">using</a>  <a id="2835" class="Symbol">(</a> <a id="2837" href="/Classical/Structures/Lattice/OrdinalSum/#21325" class="Function">ordinalSum</a> <a id="2848" class="Symbol">)</a>
-<a id="2850" class="Keyword">open</a> <a id="2855" class="Keyword">import</a> <a id="2862" href="/FLRP/Assumptions/" class="Module">FLRP.Assumptions</a>                          <a id="2904" class="Keyword">using</a>  <a id="2911" class="Symbol">(</a> <a id="2913" href="/FLRP/Assumptions/#11816" class="Function">KurzweilNetterDuality</a> <a id="2935" class="Symbol">)</a>
-<a id="2937" class="Keyword">open</a> <a id="2942" class="Keyword">import</a> <a id="2949" href="/FLRP/Problem/" class="Module">FLRP.Problem</a>                              <a id="2991" class="Keyword">using</a>  <a id="2998" class="Symbol">(</a> <a id="3000" href="/FLRP/Problem/#16443" class="Function">chain₂-lattice</a> <a id="3015" class="Symbol">)</a>
-<a id="3017" class="Keyword">open</a> <a id="3022" class="Keyword">import</a> <a id="3029" href="/FLRP/Representable/" class="Module">FLRP.Representable</a>                        <a id="3071" class="Keyword">using</a>  <a id="3078" class="Symbol">(</a> <a id="3080" href="/FLRP/Representable/#8976" class="Record">Representableᵈ</a>
-                                                             <a id="3156" class="Symbol">;</a> <a id="3158" href="/FLRP/Representable/#19798" class="Function">chain₂-Representableᵈ</a> <a id="3180" class="Symbol">)</a>
+<a id="2545" class="Keyword">open</a> <a id="2550" class="Keyword">import</a> <a id="2557" href="/Classical/Properties/Lattice/" class="Module">Classical.Properties.Lattice</a>              <a id="2599" class="Keyword">using</a>  <a id="2606" class="Symbol">(</a> <a id="2608" href="/Classical/Properties/Lattice/#7818" class="Function">TopOf</a> <a id="2614" class="Symbol">;</a> <a id="2616" href="/Classical/Properties/Lattice/#7910" class="Function">BottomOf</a> <a id="2625" class="Symbol">)</a>
+<a id="2627" class="Keyword">open</a> <a id="2632" class="Keyword">import</a> <a id="2639" href="/Classical/Small/Structures/Lattice/" class="Module">Classical.Small.Structures.Lattice</a>        <a id="2681" class="Keyword">using</a>  <a id="2688" class="Symbol">(</a> <a id="2690" href="/Classical/Small/Structures/Lattice/#1038" class="Function">Lattice</a> <a id="2698" class="Symbol">)</a>
+<a id="2700" class="Keyword">open</a> <a id="2705" class="Keyword">import</a> <a id="2712" href="/Classical/Structures/Lattice/Dual/" class="Module">Classical.Structures.Lattice.Dual</a>         <a id="2754" class="Keyword">using</a>  <a id="2761" class="Symbol">(</a> <a id="2763" href="/Classical/Structures/Lattice/Dual/#5532" class="Function">dualLattice</a> <a id="2775" class="Symbol">)</a>
+<a id="2777" class="Keyword">open</a> <a id="2782" class="Keyword">import</a> <a id="2789" href="/Classical/Structures/Lattice/OrdinalSum/" class="Module">Classical.Structures.Lattice.OrdinalSum</a>   <a id="2831" class="Keyword">using</a>  <a id="2838" class="Symbol">(</a> <a id="2840" href="/Classical/Structures/Lattice/OrdinalSum/#21326" class="Function">ordinalSum</a> <a id="2851" class="Symbol">)</a>
+<a id="2853" class="Keyword">open</a> <a id="2858" class="Keyword">import</a> <a id="2865" href="/FLRP/Assumptions/" class="Module">FLRP.Assumptions</a>                          <a id="2907" class="Keyword">using</a>  <a id="2914" class="Symbol">(</a> <a id="2916" href="/FLRP/Assumptions/#12477" class="Function">KurzweilNetterDuality</a> <a id="2938" class="Symbol">)</a>
+<a id="2940" class="Keyword">open</a> <a id="2945" class="Keyword">import</a> <a id="2952" href="/FLRP/Problem/" class="Module">FLRP.Problem</a>                              <a id="2994" class="Keyword">using</a>  <a id="3001" class="Symbol">(</a> <a id="3003" href="/FLRP/Problem/#16443" class="Function">chain₂-lattice</a> <a id="3018" class="Symbol">)</a>
+<a id="3020" class="Keyword">open</a> <a id="3025" class="Keyword">import</a> <a id="3032" href="/FLRP/Representable/" class="Module">FLRP.Representable</a>                        <a id="3074" class="Keyword">using</a>  <a id="3081" class="Symbol">(</a> <a id="3083" href="/FLRP/Representable/#8979" class="Record">Representableᵈ</a>
+                                                             <a id="3159" class="Symbol">;</a> <a id="3161" href="/FLRP/Representable/#19801" class="Function">chain₂-Representableᵈ</a> <a id="3183" class="Symbol">)</a>
 
-<a id="3183" class="Keyword">open</a> <a id="3188" class="Keyword">import</a> <a id="3195" href="/FLRP/Closure/Product/" class="Module">FLRP.Closure.Product</a>     <a id="3220" class="Keyword">public</a>
-<a id="3227" class="Keyword">open</a> <a id="3232" class="Keyword">import</a> <a id="3239" href="/FLRP/Closure/OrdinalSum/" class="Module">FLRP.Closure.OrdinalSum</a>  <a id="3264" class="Keyword">public</a>
+<a id="3186" class="Keyword">open</a> <a id="3191" class="Keyword">import</a> <a id="3198" href="/FLRP/Closure/Product/" class="Module">FLRP.Closure.Product</a>     <a id="3223" class="Keyword">public</a>
+<a id="3230" class="Keyword">open</a> <a id="3235" class="Keyword">import</a> <a id="3242" href="/FLRP/Closure/OrdinalSum/" class="Module">FLRP.Closure.OrdinalSum</a>  <a id="3267" class="Keyword">public</a>
 </pre>
 
 <h4 id="adjoining-a-new-bottom-or-top">Adjoining a new bottom or top<a class="headerlink" href="#adjoining-a-new-bottom-or-top" title="Anchor link to this section">&para;</a></h4>
 <p>The two-element chain carries concrete extremum data: its top is <code>1</code> and its
 bottom is <code>0</code>, each universal property decided by the four table entries.</p>
-<pre class="Agda"><a id="chain₂-top"></a><a id="3476" href="/FLRP/Closure/Basic/#3476" class="Function">chain₂-top</a> <a id="3487" class="Symbol">:</a> <a id="3489" href="/Classical/Properties/Lattice/#7800" class="Function">TopOf</a> <a id="3495" href="/FLRP/Problem/#16443" class="Function">chain₂-lattice</a>
-<a id="3510" href="/FLRP/Closure/Basic/#3476" class="Function">chain₂-top</a> <a id="3521" class="Symbol">=</a> <a id="3523" href="/classic/Data.Fin.Patterns.html#440" class="InductiveConstructor">1F</a> <a id="3526" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="3528" class="Symbol">λ</a> <a id="3530" class="Symbol">{</a> <a id="3532" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="3535" class="Symbol">→</a> <a id="3537" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="3542" class="Symbol">;</a> <a id="3544" href="/classic/Data.Fin.Patterns.html#440" class="InductiveConstructor">1F</a> <a id="3547" class="Symbol">→</a> <a id="3549" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="3554" class="Symbol">}</a>
+<pre class="Agda"><a id="chain₂-top"></a><a id="3479" href="/FLRP/Closure/Basic/#3479" class="Function">chain₂-top</a> <a id="3490" class="Symbol">:</a> <a id="3492" href="/Classical/Properties/Lattice/#7818" class="Function">TopOf</a> <a id="3498" href="/FLRP/Problem/#16443" class="Function">chain₂-lattice</a>
+<a id="3513" href="/FLRP/Closure/Basic/#3479" class="Function">chain₂-top</a> <a id="3524" class="Symbol">=</a> <a id="3526" href="/classic/Data.Fin.Patterns.html#440" class="InductiveConstructor">1F</a> <a id="3529" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="3531" class="Symbol">λ</a> <a id="3533" class="Symbol">{</a> <a id="3535" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="3538" class="Symbol">→</a> <a id="3540" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="3545" class="Symbol">;</a> <a id="3547" href="/classic/Data.Fin.Patterns.html#440" class="InductiveConstructor">1F</a> <a id="3550" class="Symbol">→</a> <a id="3552" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="3557" class="Symbol">}</a>
 
-<a id="chain₂-bot"></a><a id="3557" href="/FLRP/Closure/Basic/#3557" class="Function">chain₂-bot</a> <a id="3568" class="Symbol">:</a> <a id="3570" href="/Classical/Properties/Lattice/#7892" class="Function">BotOf</a> <a id="3576" href="/FLRP/Problem/#16443" class="Function">chain₂-lattice</a>
-<a id="3591" href="/FLRP/Closure/Basic/#3557" class="Function">chain₂-bot</a> <a id="3602" class="Symbol">=</a> <a id="3604" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="3607" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="3609" class="Symbol">λ</a> <a id="3611" class="Symbol">{</a> <a id="3613" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="3616" class="Symbol">→</a> <a id="3618" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="3623" class="Symbol">;</a> <a id="3625" href="/classic/Data.Fin.Patterns.html#440" class="InductiveConstructor">1F</a> <a id="3628" class="Symbol">→</a> <a id="3630" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="3635" class="Symbol">}</a>
+<a id="chain₂-bot"></a><a id="3560" href="/FLRP/Closure/Basic/#3560" class="Function">chain₂-bot</a> <a id="3571" class="Symbol">:</a> <a id="3573" href="/Classical/Properties/Lattice/#7910" class="Function">BottomOf</a> <a id="3582" href="/FLRP/Problem/#16443" class="Function">chain₂-lattice</a>
+<a id="3597" href="/FLRP/Closure/Basic/#3560" class="Function">chain₂-bot</a> <a id="3608" class="Symbol">=</a> <a id="3610" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="3613" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="3615" class="Symbol">λ</a> <a id="3617" class="Symbol">{</a> <a id="3619" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="3622" class="Symbol">→</a> <a id="3624" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="3629" class="Symbol">;</a> <a id="3631" href="/classic/Data.Fin.Patterns.html#440" class="InductiveConstructor">1F</a> <a id="3634" class="Symbol">→</a> <a id="3636" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="3641" class="Symbol">}</a>
 </pre>
 <p>Adjoining a fresh extremum to a lattice is the special case of the glued
 ordinal sum in which one summand is the two-element chain: gluing <code>chain₂</code>'s
@@ -14853,27 +15072,27 @@ of <code class="AgdaFunction">ordinalSum-Representableᵈ</code> at
 <code class="AgdaFunction">chain₂-Representableᵈ</code> — a deliberate design check that the
 ordinal-sum statement carries no hidden nontriviality assumptions on its
 summands.</p>
-<pre class="Agda"><a id="4232" class="Comment">-- Adjoin a new bottom: chain₂ glued below 𝑳, at 𝑳&#39;s chosen bottom.</a>
-<a id="adjoinBottom-Representableᵈ"></a><a id="4300" href="/FLRP/Closure/Basic/#4300" class="Function">adjoinBottom-Representableᵈ</a> <a id="4328" class="Symbol">:</a> <a id="4330" class="Symbol">{</a><a id="4331" href="/FLRP/Closure/Basic/#4331" class="Bound">𝑳</a> <a id="4333" class="Symbol">:</a> <a id="4335" href="/Classical/Small/Structures/Lattice/#1038" class="Function">Lattice</a><a id="4342" class="Symbol">}</a> <a id="4344" class="Symbol">(</a><a id="4345" href="/FLRP/Closure/Basic/#4345" class="Bound">b</a> <a id="4347" class="Symbol">:</a> <a id="4349" href="/Classical/Properties/Lattice/#7892" class="Function">BotOf</a> <a id="4355" href="/FLRP/Closure/Basic/#4331" class="Bound">𝑳</a><a id="4356" class="Symbol">)</a>
-  <a id="4360" class="Symbol">→</a> <a id="4362" href="/FLRP/Representable/#8976" class="Record">Representableᵈ</a> <a id="4377" href="/FLRP/Closure/Basic/#4331" class="Bound">𝑳</a> <a id="4379" class="Symbol">→</a> <a id="4381" href="/FLRP/Representable/#8976" class="Record">Representableᵈ</a> <a id="4396" class="Symbol">(</a><a id="4397" href="/Classical/Structures/Lattice/OrdinalSum/#21325" class="Function">ordinalSum</a> <a id="4408" href="/FLRP/Problem/#16443" class="Function">chain₂-lattice</a> <a id="4423" href="/FLRP/Closure/Basic/#3476" class="Function">chain₂-top</a> <a id="4434" href="/FLRP/Closure/Basic/#4331" class="Bound">𝑳</a> <a id="4436" href="/FLRP/Closure/Basic/#4345" class="Bound">b</a><a id="4437" class="Symbol">)</a>
-<a id="4439" href="/FLRP/Closure/Basic/#4300" class="Function">adjoinBottom-Representableᵈ</a> <a id="4467" href="/FLRP/Closure/Basic/#4467" class="Bound">b</a> <a id="4469" href="/FLRP/Closure/Basic/#4469" class="Bound">r</a> <a id="4471" class="Symbol">=</a>
-  <a id="4475" href="/FLRP/Closure/OrdinalSum/#40004" class="Function">ordinalSum-Representableᵈ</a> <a id="4501" href="/FLRP/Closure/Basic/#3476" class="Function">chain₂-top</a> <a id="4512" href="/FLRP/Closure/Basic/#4467" class="Bound">b</a> <a id="4514" href="/FLRP/Representable/#19798" class="Function">chain₂-Representableᵈ</a> <a id="4536" href="/FLRP/Closure/Basic/#4469" class="Bound">r</a>
+<pre class="Agda"><a id="4238" class="Comment">-- Adjoin a new bottom: chain₂ glued below 𝑳, at 𝑳&#39;s chosen bottom.</a>
+<a id="adjoinBottom-Representableᵈ"></a><a id="4306" href="/FLRP/Closure/Basic/#4306" class="Function">adjoinBottom-Representableᵈ</a> <a id="4334" class="Symbol">:</a> <a id="4336" class="Symbol">{</a><a id="4337" href="/FLRP/Closure/Basic/#4337" class="Bound">𝑳</a> <a id="4339" class="Symbol">:</a> <a id="4341" href="/Classical/Small/Structures/Lattice/#1038" class="Function">Lattice</a><a id="4348" class="Symbol">}</a> <a id="4350" class="Symbol">(</a><a id="4351" href="/FLRP/Closure/Basic/#4351" class="Bound">b</a> <a id="4353" class="Symbol">:</a> <a id="4355" href="/Classical/Properties/Lattice/#7910" class="Function">BottomOf</a> <a id="4364" href="/FLRP/Closure/Basic/#4337" class="Bound">𝑳</a><a id="4365" class="Symbol">)</a>
+  <a id="4369" class="Symbol">→</a> <a id="4371" href="/FLRP/Representable/#8979" class="Record">Representableᵈ</a> <a id="4386" href="/FLRP/Closure/Basic/#4337" class="Bound">𝑳</a> <a id="4388" class="Symbol">→</a> <a id="4390" href="/FLRP/Representable/#8979" class="Record">Representableᵈ</a> <a id="4405" class="Symbol">(</a><a id="4406" href="/Classical/Structures/Lattice/OrdinalSum/#21326" class="Function">ordinalSum</a> <a id="4417" href="/FLRP/Problem/#16443" class="Function">chain₂-lattice</a> <a id="4432" href="/FLRP/Closure/Basic/#3479" class="Function">chain₂-top</a> <a id="4443" href="/FLRP/Closure/Basic/#4337" class="Bound">𝑳</a> <a id="4445" href="/FLRP/Closure/Basic/#4351" class="Bound">b</a><a id="4446" class="Symbol">)</a>
+<a id="4448" href="/FLRP/Closure/Basic/#4306" class="Function">adjoinBottom-Representableᵈ</a> <a id="4476" href="/FLRP/Closure/Basic/#4476" class="Bound">b</a> <a id="4478" href="/FLRP/Closure/Basic/#4478" class="Bound">r</a> <a id="4480" class="Symbol">=</a>
+  <a id="4484" href="/FLRP/Closure/OrdinalSum/#40016" class="Function">ordinalSum-Representableᵈ</a> <a id="4510" href="/FLRP/Closure/Basic/#3479" class="Function">chain₂-top</a> <a id="4521" href="/FLRP/Closure/Basic/#4476" class="Bound">b</a> <a id="4523" href="/FLRP/Representable/#19801" class="Function">chain₂-Representableᵈ</a> <a id="4545" href="/FLRP/Closure/Basic/#4478" class="Bound">r</a>
 
-<a id="4539" class="Comment">-- Adjoin a new top: chain₂ glued above 𝑳, at 𝑳&#39;s chosen top.</a>
-<a id="adjoinTop-Representableᵈ"></a><a id="4601" href="/FLRP/Closure/Basic/#4601" class="Function">adjoinTop-Representableᵈ</a> <a id="4626" class="Symbol">:</a> <a id="4628" class="Symbol">{</a><a id="4629" href="/FLRP/Closure/Basic/#4629" class="Bound">𝑳</a> <a id="4631" class="Symbol">:</a> <a id="4633" href="/Classical/Small/Structures/Lattice/#1038" class="Function">Lattice</a><a id="4640" class="Symbol">}</a> <a id="4642" class="Symbol">(</a><a id="4643" href="/FLRP/Closure/Basic/#4643" class="Bound">t</a> <a id="4645" class="Symbol">:</a> <a id="4647" href="/Classical/Properties/Lattice/#7800" class="Function">TopOf</a> <a id="4653" href="/FLRP/Closure/Basic/#4629" class="Bound">𝑳</a><a id="4654" class="Symbol">)</a>
-  <a id="4658" class="Symbol">→</a> <a id="4660" href="/FLRP/Representable/#8976" class="Record">Representableᵈ</a> <a id="4675" href="/FLRP/Closure/Basic/#4629" class="Bound">𝑳</a> <a id="4677" class="Symbol">→</a> <a id="4679" href="/FLRP/Representable/#8976" class="Record">Representableᵈ</a> <a id="4694" class="Symbol">(</a><a id="4695" href="/Classical/Structures/Lattice/OrdinalSum/#21325" class="Function">ordinalSum</a> <a id="4706" href="/FLRP/Closure/Basic/#4629" class="Bound">𝑳</a> <a id="4708" href="/FLRP/Closure/Basic/#4643" class="Bound">t</a> <a id="4710" href="/FLRP/Problem/#16443" class="Function">chain₂-lattice</a> <a id="4725" href="/FLRP/Closure/Basic/#3557" class="Function">chain₂-bot</a><a id="4735" class="Symbol">)</a>
-<a id="4737" href="/FLRP/Closure/Basic/#4601" class="Function">adjoinTop-Representableᵈ</a> <a id="4762" href="/FLRP/Closure/Basic/#4762" class="Bound">t</a> <a id="4764" href="/FLRP/Closure/Basic/#4764" class="Bound">r</a> <a id="4766" class="Symbol">=</a>
-  <a id="4770" href="/FLRP/Closure/OrdinalSum/#40004" class="Function">ordinalSum-Representableᵈ</a> <a id="4796" href="/FLRP/Closure/Basic/#4762" class="Bound">t</a> <a id="4798" href="/FLRP/Closure/Basic/#3557" class="Function">chain₂-bot</a> <a id="4809" href="/FLRP/Closure/Basic/#4764" class="Bound">r</a> <a id="4811" href="/FLRP/Representable/#19798" class="Function">chain₂-Representableᵈ</a>
+<a id="4548" class="Comment">-- Adjoin a new top: chain₂ glued above 𝑳, at 𝑳&#39;s chosen top.</a>
+<a id="adjoinTop-Representableᵈ"></a><a id="4610" href="/FLRP/Closure/Basic/#4610" class="Function">adjoinTop-Representableᵈ</a> <a id="4635" class="Symbol">:</a> <a id="4637" class="Symbol">{</a><a id="4638" href="/FLRP/Closure/Basic/#4638" class="Bound">𝑳</a> <a id="4640" class="Symbol">:</a> <a id="4642" href="/Classical/Small/Structures/Lattice/#1038" class="Function">Lattice</a><a id="4649" class="Symbol">}</a> <a id="4651" class="Symbol">(</a><a id="4652" href="/FLRP/Closure/Basic/#4652" class="Bound">t</a> <a id="4654" class="Symbol">:</a> <a id="4656" href="/Classical/Properties/Lattice/#7818" class="Function">TopOf</a> <a id="4662" href="/FLRP/Closure/Basic/#4638" class="Bound">𝑳</a><a id="4663" class="Symbol">)</a>
+  <a id="4667" class="Symbol">→</a> <a id="4669" href="/FLRP/Representable/#8979" class="Record">Representableᵈ</a> <a id="4684" href="/FLRP/Closure/Basic/#4638" class="Bound">𝑳</a> <a id="4686" class="Symbol">→</a> <a id="4688" href="/FLRP/Representable/#8979" class="Record">Representableᵈ</a> <a id="4703" class="Symbol">(</a><a id="4704" href="/Classical/Structures/Lattice/OrdinalSum/#21326" class="Function">ordinalSum</a> <a id="4715" href="/FLRP/Closure/Basic/#4638" class="Bound">𝑳</a> <a id="4717" href="/FLRP/Closure/Basic/#4652" class="Bound">t</a> <a id="4719" href="/FLRP/Problem/#16443" class="Function">chain₂-lattice</a> <a id="4734" href="/FLRP/Closure/Basic/#3560" class="Function">chain₂-bot</a><a id="4744" class="Symbol">)</a>
+<a id="4746" href="/FLRP/Closure/Basic/#4610" class="Function">adjoinTop-Representableᵈ</a> <a id="4771" href="/FLRP/Closure/Basic/#4771" class="Bound">t</a> <a id="4773" href="/FLRP/Closure/Basic/#4773" class="Bound">r</a> <a id="4775" class="Symbol">=</a>
+  <a id="4779" href="/FLRP/Closure/OrdinalSum/#40016" class="Function">ordinalSum-Representableᵈ</a> <a id="4805" href="/FLRP/Closure/Basic/#4771" class="Bound">t</a> <a id="4807" href="/FLRP/Closure/Basic/#3560" class="Function">chain₂-bot</a> <a id="4818" href="/FLRP/Closure/Basic/#4773" class="Bound">r</a> <a id="4820" href="/FLRP/Representable/#19801" class="Function">chain₂-Representableᵈ</a>
 </pre>
 <h4 id="duality-conditionally">Duality, conditionally<a class="headerlink" href="#duality-conditionally" title="Anchor link to this section">&para;</a></h4>
 <p>Closure under dualization, threaded through the registry's Entry 2.  The body
 is instantiation — deliberately so: the mathematical content lives in the
 <em>named, cited</em> hypothesis, and every consumer of this corollary displays its
 classical debt in its own type.</p>
-<pre class="Agda"><a id="5137" class="Comment">-- The Kurzweil–Netter closure, conditional on the registered assumption.</a>
-<a id="dual-Representableᵈ"></a><a id="5211" href="/FLRP/Closure/Basic/#5211" class="Function">dual-Representableᵈ</a> <a id="5231" class="Symbol">:</a> <a id="5233" href="/FLRP/Assumptions/#11816" class="Function">KurzweilNetterDuality</a>
-  <a id="5257" class="Symbol">→</a> <a id="5259" class="Symbol">(</a><a id="5260" href="/FLRP/Closure/Basic/#5260" class="Bound">𝑳</a> <a id="5262" class="Symbol">:</a> <a id="5264" href="/Classical/Small/Structures/Lattice/#1038" class="Function">Lattice</a><a id="5271" class="Symbol">)</a> <a id="5273" class="Symbol">→</a> <a id="5275" href="/FLRP/Representable/#8976" class="Record">Representableᵈ</a> <a id="5290" href="/FLRP/Closure/Basic/#5260" class="Bound">𝑳</a> <a id="5292" class="Symbol">→</a> <a id="5294" href="/FLRP/Representable/#8976" class="Record">Representableᵈ</a> <a id="5309" class="Symbol">(</a><a id="5310" href="/Classical/Structures/Lattice/Dual/#5514" class="Function">dualLattice</a> <a id="5322" href="/FLRP/Closure/Basic/#5260" class="Bound">𝑳</a><a id="5323" class="Symbol">)</a>
-<a id="5325" href="/FLRP/Closure/Basic/#5211" class="Function">dual-Representableᵈ</a> <a id="5345" href="/FLRP/Closure/Basic/#5345" class="Bound">knd</a> <a id="5349" href="/FLRP/Closure/Basic/#5349" class="Bound">𝑳</a> <a id="5351" class="Symbol">=</a> <a id="5353" href="/FLRP/Closure/Basic/#5345" class="Bound">knd</a> <a id="5357" href="/FLRP/Closure/Basic/#5349" class="Bound">𝑳</a>
+<pre class="Agda"><a id="5146" class="Comment">-- The Kurzweil–Netter closure, conditional on the registered assumption.</a>
+<a id="dual-Representableᵈ"></a><a id="5220" href="/FLRP/Closure/Basic/#5220" class="Function">dual-Representableᵈ</a> <a id="5240" class="Symbol">:</a> <a id="5242" href="/FLRP/Assumptions/#12477" class="Function">KurzweilNetterDuality</a>
+  <a id="5266" class="Symbol">→</a> <a id="5268" class="Symbol">(</a><a id="5269" href="/FLRP/Closure/Basic/#5269" class="Bound">𝑳</a> <a id="5271" class="Symbol">:</a> <a id="5273" href="/Classical/Small/Structures/Lattice/#1038" class="Function">Lattice</a><a id="5280" class="Symbol">)</a> <a id="5282" class="Symbol">→</a> <a id="5284" href="/FLRP/Representable/#8979" class="Record">Representableᵈ</a> <a id="5299" href="/FLRP/Closure/Basic/#5269" class="Bound">𝑳</a> <a id="5301" class="Symbol">→</a> <a id="5303" href="/FLRP/Representable/#8979" class="Record">Representableᵈ</a> <a id="5318" class="Symbol">(</a><a id="5319" href="/Classical/Structures/Lattice/Dual/#5532" class="Function">dualLattice</a> <a id="5331" href="/FLRP/Closure/Basic/#5269" class="Bound">𝑳</a><a id="5332" class="Symbol">)</a>
+<a id="5334" href="/FLRP/Closure/Basic/#5220" class="Function">dual-Representableᵈ</a> <a id="5354" href="/FLRP/Closure/Basic/#5354" class="Bound">knd</a> <a id="5358" href="/FLRP/Closure/Basic/#5358" class="Bound">𝑳</a> <a id="5360" class="Symbol">=</a> <a id="5362" href="/FLRP/Closure/Basic/#5354" class="Bound">knd</a> <a id="5366" href="/FLRP/Closure/Basic/#5358" class="Bound">𝑳</a>
 </pre>
 <hr />
 <!-- File: docs/_links.md -->

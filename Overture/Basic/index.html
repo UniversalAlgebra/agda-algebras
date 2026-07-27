@@ -6823,6 +6823,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -6916,6 +6920,62 @@
     
   
     Basic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Classical/Structures/Group/Centralizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Centralizer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Classical/Structures/Group/Complements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Complements
   
 
     
@@ -7236,6 +7296,8 @@
       
         
       
+        
+      
     
     
     
@@ -7385,6 +7447,34 @@
     
   
     OrdinalSum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Classical/Structures/Lattice/Parachute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parachute
   
 
     
@@ -12521,6 +12611,8 @@
       
         
       
+        
+      
     
     
     
@@ -13997,6 +14089,133 @@
   
   
   
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../FLRP/Parachute/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parachute
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_8_8" id="__nav_2_8_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_8_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parachute
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FLRP/Parachute/Representation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Representation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FLRP/Parachute/Theorems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theorems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../FLRP/Problem/" class="md-nav__link">
         
@@ -15047,12 +15266,32 @@ sugar makes abundant appeals to transitivity easier to stomach.</p>
 </pre>
 
 <h4 id="sigma-types">Sigma types<a class="headerlink" href="#sigma-types" title="Anchor link to this section">&para;</a></h4>
-<pre class="Agda"><a id="6109" class="Keyword">infix</a> <a id="6115" class="Number">2</a> <a id="6117" href="/Overture/Basic/#6127" class="Function">∃-syntax</a>
+<p>The standard library's <code class="AgdaFunction">∃[ x ] B</code> leaves the domain of
+<code class="AgdaBound">x</code> to inference, which reads as vague where a mathematician would
+write <code>∃ x ∈ A, B</code>.  <code class="AgdaFunction">∃-syntax</code> is the alternative that displays
+it — <code class="AgdaFunction">∃[ x ∈ A ] B</code>, with <code class="AgdaBound">A</code> the <em>type</em> of
+<code class="AgdaBound">x</code> — so the domain is stated rather than left to the reader.  It
+denotes the same type as <code class="AgdaFunction">Σ[ x ∈ A ] B</code>, read "there exists an
+<code>x</code> in <code>A</code> such that <code>B</code>" rather than "the type of pairs"; write whichever says
+what is meant.</p>
+<p><code class="AgdaBound">A</code> is an <em>explicit argument</em>, which is what makes the notation
+honest: a <code>syntax</code> declaration's right-hand side may only mention names bound on
+its left, and anything else in it is a literal token.  Declaring this notation
+over the implicit-domain <code class="AgdaFunction">∃</code> would therefore turn <code>A</code> into a
+token every use site had to spell verbatim, whatever its domain was called.</p>
+<pre class="Agda"><a id="7050" class="Keyword">infix</a> <a id="7056" class="Number">2</a> <a id="7058" href="/Overture/Basic/#7068" class="Function">∃-syntax</a>
 
-<a id="∃-syntax"></a><a id="6127" href="/Overture/Basic/#6127" class="Function">∃-syntax</a> <a id="6136" class="Symbol">:</a> <a id="6138" class="Symbol">∀</a> <a id="6140" class="Symbol">{</a><a id="6141" href="/Overture/Basic/#6141" class="Bound">A</a> <a id="6143" class="Symbol">:</a> <a id="6145" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="6150" href="/Overture/Basic/#3940" class="Generalizable">a</a><a id="6151" class="Symbol">}</a> <a id="6153" class="Symbol">→</a> <a id="6155" class="Symbol">(</a><a id="6156" href="/Overture/Basic/#6141" class="Bound">A</a> <a id="6158" class="Symbol">→</a> <a id="6160" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="6165" href="/Overture/Basic/#3942" class="Generalizable">b</a><a id="6166" class="Symbol">)</a> <a id="6168" class="Symbol">→</a> <a id="6170" href="/classic/Agda.Primitive.html#388" class="Primitive">Set</a> <a id="6174" class="Symbol">(</a><a id="6175" href="/Overture/Basic/#3940" class="Generalizable">a</a> <a id="6177" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="6179" href="/Overture/Basic/#3942" class="Generalizable">b</a><a id="6180" class="Symbol">)</a>
-<a id="6182" href="/Overture/Basic/#6127" class="Function">∃-syntax</a> <a id="6191" class="Symbol">=</a> <a id="6193" href="/classic/Data.Product.Base.html#852" class="Function">∃</a>
+<a id="∃-syntax"></a><a id="7068" href="/Overture/Basic/#7068" class="Function">∃-syntax</a> <a id="7077" class="Symbol">:</a> <a id="7079" class="Symbol">(</a><a id="7080" href="/Overture/Basic/#7080" class="Bound">A</a> <a id="7082" class="Symbol">:</a> <a id="7084" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="7089" href="/Overture/Basic/#3940" class="Generalizable">a</a><a id="7090" class="Symbol">)</a> <a id="7092" class="Symbol">→</a> <a id="7094" class="Symbol">(</a><a id="7095" href="/Overture/Basic/#7080" class="Bound">A</a> <a id="7097" class="Symbol">→</a> <a id="7099" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="7104" href="/Overture/Basic/#3942" class="Generalizable">b</a><a id="7105" class="Symbol">)</a> <a id="7107" class="Symbol">→</a> <a id="7109" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="7114" class="Symbol">(</a><a id="7115" href="/Overture/Basic/#3940" class="Generalizable">a</a> <a id="7117" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="7119" href="/Overture/Basic/#3942" class="Generalizable">b</a><a id="7120" class="Symbol">)</a>
+<a id="7122" href="/Overture/Basic/#7068" class="Function">∃-syntax</a> <a id="7131" href="/Overture/Basic/#7131" class="Bound">A</a> <a id="7133" class="Symbol">=</a> <a id="7135" href="/classic/Data.Product.Base.html#852" class="Function">∃</a> <a id="7137" class="Symbol">{</a><a id="7138" class="Argument">A</a> <a id="7140" class="Symbol">=</a> <a id="7142" href="/Overture/Basic/#7131" class="Bound">A</a><a id="7143" class="Symbol">}</a>
 
-<a id="6196" class="Keyword">syntax</a> <a id="6203" href="/Overture/Basic/#6127" class="Function">∃-syntax</a> <a id="6212" class="Symbol">(λ</a> <a id="6215" class="Bound">x</a> <a id="6217" class="Symbol">→</a> <a id="6219" class="Bound">B</a><a id="6220" class="Symbol">)</a> <a id="6222" class="Symbol">=</a> <a id="6224" class="Function">∃[</a> <a id="6227" class="Bound">x</a> <a id="6229" class="Function">∈</a> <a id="6231" class="Function">A</a> <a id="6233" class="Function">]</a> <a id="6235" class="Bound">B</a>
+<a id="7146" class="Keyword">syntax</a> <a id="7153" href="/Overture/Basic/#7068" class="Function">∃-syntax</a> <a id="7162" class="Bound">A</a> <a id="7164" class="Symbol">(λ</a> <a id="7167" class="Bound">x</a> <a id="7169" class="Symbol">→</a> <a id="7171" class="Bound">B</a><a id="7172" class="Symbol">)</a> <a id="7174" class="Symbol">=</a> <a id="7176" class="Function">∃[</a> <a id="7179" class="Bound">x</a> <a id="7181" class="Function">∈</a> <a id="7183" class="Bound">A</a> <a id="7185" class="Function">]</a> <a id="7187" class="Bound">B</a>
+
+<a id="7190" class="Keyword">private</a>
+  <a id="7200" class="Comment">-- Canary: the domain is bound by the notation, so *any* type may stand to the</a>
+  <a id="7281" class="Comment">-- right of `∈` — the point of the declaration.  (Under a declaration that left</a>
+  <a id="7363" class="Comment">-- the domain implicit, `A` would be a literal token and this would not parse.)</a>
+  <a id="7445" href="/Overture/Basic/#7445" class="Function">_</a> <a id="7447" class="Symbol">:</a> <a id="7449" class="Symbol">{</a><a id="7450" href="/Overture/Basic/#7450" class="Bound">X</a> <a id="7452" class="Symbol">:</a> <a id="7454" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="7459" href="/Overture/Basic/#3940" class="Generalizable">a</a><a id="7460" class="Symbol">}</a> <a id="7462" class="Symbol">{</a><a id="7463" href="/Overture/Basic/#7463" class="Bound">P</a> <a id="7465" class="Symbol">:</a> <a id="7467" href="/Overture/Basic/#7450" class="Bound">X</a> <a id="7469" class="Symbol">→</a> <a id="7471" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="7476" href="/Overture/Basic/#3942" class="Generalizable">b</a><a id="7477" class="Symbol">}</a> <a id="7479" class="Symbol">→</a> <a id="7481" class="Symbol">(</a><a id="7482" href="/Overture/Basic/#7068" class="Function">∃[</a> <a id="7485" href="/Overture/Basic/#7485" class="Bound">x</a> <a id="7487" href="/Overture/Basic/#7068" class="Function">∈</a> <a id="7489" href="/Overture/Basic/#7450" class="Bound">X</a> <a id="7491" href="/Overture/Basic/#7068" class="Function">]</a> <a id="7493" href="/Overture/Basic/#7463" class="Bound">P</a> <a id="7495" href="/Overture/Basic/#7485" class="Bound">x</a><a id="7496" class="Symbol">)</a> <a id="7498" class="Symbol">→</a> <a id="7500" href="/classic/Data.Product.Base.html#1244" class="Function">Σ[</a> <a id="7503" href="/Overture/Basic/#7503" class="Bound">x</a> <a id="7505" href="/classic/Data.Product.Base.html#1244" class="Function">∈</a> <a id="7507" href="/Overture/Basic/#7450" class="Bound">X</a> <a id="7509" href="/classic/Data.Product.Base.html#1244" class="Function">]</a> <a id="7511" href="/Overture/Basic/#7463" class="Bound">P</a> <a id="7513" href="/Overture/Basic/#7503" class="Bound">x</a>
+  <a id="7517" class="Symbol">_</a> <a id="7519" class="Symbol">=</a> <a id="7521" class="Symbol">λ</a> <a id="7523" href="/Overture/Basic/#7523" class="Bound">z</a> <a id="7525" class="Symbol">→</a> <a id="7527" href="/Overture/Basic/#7523" class="Bound">z</a>
 </pre>
 
 <h4 id="pi-types">Pi types<a class="headerlink" href="#pi-types" title="Anchor link to this section">&para;</a></h4>
@@ -15060,14 +15299,14 @@ sugar makes abundant appeals to transitivity easier to stomach.</p>
 and typically expressed as <code>Π(x : A) B x</code>, or something similar.  In Agda syntax,
 one writes <code>(x : A) → B x</code> for this dependent function type, but we can define
 syntax that is closer to standard notation as follows.</p>
-<pre class="Agda"><a id="Π"></a><a id="6564" href="/Overture/Basic/#6564" class="Function">Π</a> <a id="6566" class="Symbol">:</a> <a id="6568" class="Symbol">{</a><a id="6569" href="/Overture/Basic/#6569" class="Bound">A</a> <a id="6571" class="Symbol">:</a> <a id="6573" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="6578" href="/Overture/Basic/#3940" class="Generalizable">a</a> <a id="6580" class="Symbol">}</a> <a id="6582" class="Symbol">(</a><a id="6583" href="/Overture/Basic/#6583" class="Bound">B</a> <a id="6585" class="Symbol">:</a> <a id="6587" href="/Overture/Basic/#6569" class="Bound">A</a> <a id="6589" class="Symbol">→</a> <a id="6591" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="6596" href="/Overture/Basic/#3942" class="Generalizable">b</a> <a id="6598" class="Symbol">)</a> <a id="6600" class="Symbol">→</a> <a id="6602" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="6607" class="Symbol">(</a><a id="6608" href="/Overture/Basic/#3940" class="Generalizable">a</a> <a id="6610" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="6612" href="/Overture/Basic/#3942" class="Generalizable">b</a><a id="6613" class="Symbol">)</a>
-<a id="6615" href="/Overture/Basic/#6564" class="Function">Π</a> <a id="6617" class="Symbol">{</a><a id="6618" class="Argument">A</a> <a id="6620" class="Symbol">=</a> <a id="6622" href="/Overture/Basic/#6622" class="Bound">A</a><a id="6623" class="Symbol">}</a> <a id="6625" href="/Overture/Basic/#6625" class="Bound">B</a> <a id="6627" class="Symbol">=</a> <a id="6629" class="Symbol">(</a><a id="6630" href="/Overture/Basic/#6630" class="Bound">x</a> <a id="6632" class="Symbol">:</a> <a id="6634" href="/Overture/Basic/#6622" class="Bound">A</a><a id="6635" class="Symbol">)</a> <a id="6637" class="Symbol">→</a> <a id="6639" href="/Overture/Basic/#6625" class="Bound">B</a> <a id="6641" href="/Overture/Basic/#6630" class="Bound">x</a>
+<pre class="Agda"><a id="Π"></a><a id="7856" href="/Overture/Basic/#7856" class="Function">Π</a> <a id="7858" class="Symbol">:</a> <a id="7860" class="Symbol">{</a><a id="7861" href="/Overture/Basic/#7861" class="Bound">A</a> <a id="7863" class="Symbol">:</a> <a id="7865" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="7870" href="/Overture/Basic/#3940" class="Generalizable">a</a> <a id="7872" class="Symbol">}</a> <a id="7874" class="Symbol">(</a><a id="7875" href="/Overture/Basic/#7875" class="Bound">B</a> <a id="7877" class="Symbol">:</a> <a id="7879" href="/Overture/Basic/#7861" class="Bound">A</a> <a id="7881" class="Symbol">→</a> <a id="7883" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="7888" href="/Overture/Basic/#3942" class="Generalizable">b</a> <a id="7890" class="Symbol">)</a> <a id="7892" class="Symbol">→</a> <a id="7894" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="7899" class="Symbol">(</a><a id="7900" href="/Overture/Basic/#3940" class="Generalizable">a</a> <a id="7902" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="7904" href="/Overture/Basic/#3942" class="Generalizable">b</a><a id="7905" class="Symbol">)</a>
+<a id="7907" href="/Overture/Basic/#7856" class="Function">Π</a> <a id="7909" class="Symbol">{</a><a id="7910" class="Argument">A</a> <a id="7912" class="Symbol">=</a> <a id="7914" href="/Overture/Basic/#7914" class="Bound">A</a><a id="7915" class="Symbol">}</a> <a id="7917" href="/Overture/Basic/#7917" class="Bound">B</a> <a id="7919" class="Symbol">=</a> <a id="7921" class="Symbol">(</a><a id="7922" href="/Overture/Basic/#7922" class="Bound">x</a> <a id="7924" class="Symbol">:</a> <a id="7926" href="/Overture/Basic/#7914" class="Bound">A</a><a id="7927" class="Symbol">)</a> <a id="7929" class="Symbol">→</a> <a id="7931" href="/Overture/Basic/#7917" class="Bound">B</a> <a id="7933" href="/Overture/Basic/#7922" class="Bound">x</a>
 
-<a id="Π-syntax"></a><a id="6644" href="/Overture/Basic/#6644" class="Function">Π-syntax</a> <a id="6653" class="Symbol">:</a> <a id="6655" class="Symbol">(</a><a id="6656" href="/Overture/Basic/#6656" class="Bound">A</a> <a id="6658" class="Symbol">:</a> <a id="6660" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="6665" href="/Overture/Basic/#3940" class="Generalizable">a</a><a id="6666" class="Symbol">)(</a><a id="6668" href="/Overture/Basic/#6668" class="Bound">B</a> <a id="6670" class="Symbol">:</a> <a id="6672" href="/Overture/Basic/#6656" class="Bound">A</a> <a id="6674" class="Symbol">→</a> <a id="6676" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="6681" href="/Overture/Basic/#3942" class="Generalizable">b</a><a id="6682" class="Symbol">)</a> <a id="6684" class="Symbol">→</a> <a id="6686" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="6691" class="Symbol">(</a><a id="6692" href="/Overture/Basic/#3940" class="Generalizable">a</a> <a id="6694" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="6696" href="/Overture/Basic/#3942" class="Generalizable">b</a><a id="6697" class="Symbol">)</a>
-<a id="6699" href="/Overture/Basic/#6644" class="Function">Π-syntax</a> <a id="6708" href="/Overture/Basic/#6708" class="Bound">A</a> <a id="6710" href="/Overture/Basic/#6710" class="Bound">B</a> <a id="6712" class="Symbol">=</a> <a id="6714" href="/Overture/Basic/#6564" class="Function">Π</a> <a id="6716" href="/Overture/Basic/#6710" class="Bound">B</a>
+<a id="Π-syntax"></a><a id="7936" href="/Overture/Basic/#7936" class="Function">Π-syntax</a> <a id="7945" class="Symbol">:</a> <a id="7947" class="Symbol">(</a><a id="7948" href="/Overture/Basic/#7948" class="Bound">A</a> <a id="7950" class="Symbol">:</a> <a id="7952" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="7957" href="/Overture/Basic/#3940" class="Generalizable">a</a><a id="7958" class="Symbol">)(</a><a id="7960" href="/Overture/Basic/#7960" class="Bound">B</a> <a id="7962" class="Symbol">:</a> <a id="7964" href="/Overture/Basic/#7948" class="Bound">A</a> <a id="7966" class="Symbol">→</a> <a id="7968" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="7973" href="/Overture/Basic/#3942" class="Generalizable">b</a><a id="7974" class="Symbol">)</a> <a id="7976" class="Symbol">→</a> <a id="7978" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="7983" class="Symbol">(</a><a id="7984" href="/Overture/Basic/#3940" class="Generalizable">a</a> <a id="7986" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="7988" href="/Overture/Basic/#3942" class="Generalizable">b</a><a id="7989" class="Symbol">)</a>
+<a id="7991" href="/Overture/Basic/#7936" class="Function">Π-syntax</a> <a id="8000" href="/Overture/Basic/#8000" class="Bound">A</a> <a id="8002" href="/Overture/Basic/#8002" class="Bound">B</a> <a id="8004" class="Symbol">=</a> <a id="8006" href="/Overture/Basic/#7856" class="Function">Π</a> <a id="8008" href="/Overture/Basic/#8002" class="Bound">B</a>
 
-<a id="6719" class="Keyword">syntax</a> <a id="6726" href="/Overture/Basic/#6644" class="Function">Π-syntax</a> <a id="6735" class="Bound">A</a> <a id="6737" class="Symbol">(λ</a> <a id="6740" class="Bound">x</a> <a id="6742" class="Symbol">→</a> <a id="6744" class="Bound">B</a><a id="6745" class="Symbol">)</a> <a id="6747" class="Symbol">=</a> <a id="6749" class="Function">Π[</a> <a id="6752" class="Bound">x</a> <a id="6754" class="Function">∈</a> <a id="6756" class="Bound">A</a> <a id="6758" class="Function">]</a> <a id="6760" class="Bound">B</a>
-<a id="6762" class="Keyword">infix</a> <a id="6768" class="Number">6</a> <a id="6770" href="/Overture/Basic/#6644" class="Function">Π-syntax</a>
+<a id="8011" class="Keyword">syntax</a> <a id="8018" href="/Overture/Basic/#7936" class="Function">Π-syntax</a> <a id="8027" class="Bound">A</a> <a id="8029" class="Symbol">(λ</a> <a id="8032" class="Bound">x</a> <a id="8034" class="Symbol">→</a> <a id="8036" class="Bound">B</a><a id="8037" class="Symbol">)</a> <a id="8039" class="Symbol">=</a> <a id="8041" class="Function">Π[</a> <a id="8044" class="Bound">x</a> <a id="8046" class="Function">∈</a> <a id="8048" class="Bound">A</a> <a id="8050" class="Function">]</a> <a id="8052" class="Bound">B</a>
+<a id="8054" class="Keyword">infix</a> <a id="8060" class="Number">6</a> <a id="8062" href="/Overture/Basic/#7936" class="Function">Π-syntax</a>
 </pre>
 <p>In the modules that follow, we will see many examples of this syntax in action.</p>
 <h4 id="agdas-universe-hierarchy">Agda's universe hierarchy<a class="headerlink" href="#agdas-universe-hierarchy" title="Anchor link to this section">&para;</a></h4>
@@ -15111,11 +15350,11 @@ that wasn't previously lifted.  However, we can prove that if an application of
 <code>lower</code> is immediately followed by an application of <code>lift</code>, then the result is
 the identity transformation. Similarly, <code>lift</code> followed by <code>lower</code> is the
 identity.</p>
-<pre class="Agda"><a id="lift∼lower"></a><a id="9374" href="/Overture/Basic/#9374" class="Function">lift∼lower</a> <a id="9385" class="Symbol">:</a> <a id="9387" class="Symbol">{</a><a id="9388" href="/Overture/Basic/#9388" class="Bound">A</a> <a id="9390" class="Symbol">:</a> <a id="9392" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="9397" href="/Overture/Basic/#3940" class="Generalizable">a</a><a id="9398" class="Symbol">}</a> <a id="9400" class="Symbol">→</a> <a id="9402" href="/classic/Level.html#466" class="InductiveConstructor">lift</a> <a id="9407" href="/classic/Function.Base.html#1134" class="Function Operator">∘</a> <a id="9409" href="/classic/Level.html#479" class="Field">lower</a> <a id="9415" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="9417" href="/Overture/Basic/#6021" class="Function">𝑖𝑑</a> <a id="9420" class="Symbol">(</a><a id="9421" href="/classic/Level.html#409" class="Record">Lift</a> <a id="9426" href="/Overture/Basic/#3942" class="Generalizable">b</a> <a id="9428" href="/Overture/Basic/#9388" class="Bound">A</a><a id="9429" class="Symbol">)</a>
-<a id="9431" href="/Overture/Basic/#9374" class="Function">lift∼lower</a> <a id="9442" class="Symbol">=</a> <a id="9444" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a>
+<pre class="Agda"><a id="lift∼lower"></a><a id="10666" href="/Overture/Basic/#10666" class="Function">lift∼lower</a> <a id="10677" class="Symbol">:</a> <a id="10679" class="Symbol">{</a><a id="10680" href="/Overture/Basic/#10680" class="Bound">A</a> <a id="10682" class="Symbol">:</a> <a id="10684" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="10689" href="/Overture/Basic/#3940" class="Generalizable">a</a><a id="10690" class="Symbol">}</a> <a id="10692" class="Symbol">→</a> <a id="10694" href="/classic/Level.html#466" class="InductiveConstructor">lift</a> <a id="10699" href="/classic/Function.Base.html#1134" class="Function Operator">∘</a> <a id="10701" href="/classic/Level.html#479" class="Field">lower</a> <a id="10707" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="10709" href="/Overture/Basic/#6021" class="Function">𝑖𝑑</a> <a id="10712" class="Symbol">(</a><a id="10713" href="/classic/Level.html#409" class="Record">Lift</a> <a id="10718" href="/Overture/Basic/#3942" class="Generalizable">b</a> <a id="10720" href="/Overture/Basic/#10680" class="Bound">A</a><a id="10721" class="Symbol">)</a>
+<a id="10723" href="/Overture/Basic/#10666" class="Function">lift∼lower</a> <a id="10734" class="Symbol">=</a> <a id="10736" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a>
 
-<a id="lower∼lift"></a><a id="9450" href="/Overture/Basic/#9450" class="Function">lower∼lift</a> <a id="9461" class="Symbol">:</a> <a id="9463" class="Symbol">{</a><a id="9464" href="/Overture/Basic/#9464" class="Bound">A</a> <a id="9466" class="Symbol">:</a> <a id="9468" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="9473" href="/Overture/Basic/#3940" class="Generalizable">a</a><a id="9474" class="Symbol">}</a> <a id="9476" class="Symbol">→</a> <a id="9478" class="Symbol">(</a><a id="9479" href="/classic/Level.html#479" class="Field">lower</a> <a id="9485" class="Symbol">{</a><a id="9486" href="/Overture/Basic/#3940" class="Generalizable">a</a><a id="9487" class="Symbol">}{</a><a id="9489" href="/Overture/Basic/#3942" class="Generalizable">b</a><a id="9490" class="Symbol">})</a> <a id="9493" href="/classic/Function.Base.html#1134" class="Function Operator">∘</a> <a id="9495" href="/classic/Level.html#466" class="InductiveConstructor">lift</a> <a id="9500" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="9502" href="/Overture/Basic/#6021" class="Function">𝑖𝑑</a> <a id="9505" href="/Overture/Basic/#9464" class="Bound">A</a>
-<a id="9507" href="/Overture/Basic/#9450" class="Function">lower∼lift</a> <a id="9518" class="Symbol">=</a> <a id="9520" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a>
+<a id="lower∼lift"></a><a id="10742" href="/Overture/Basic/#10742" class="Function">lower∼lift</a> <a id="10753" class="Symbol">:</a> <a id="10755" class="Symbol">{</a><a id="10756" href="/Overture/Basic/#10756" class="Bound">A</a> <a id="10758" class="Symbol">:</a> <a id="10760" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="10765" href="/Overture/Basic/#3940" class="Generalizable">a</a><a id="10766" class="Symbol">}</a> <a id="10768" class="Symbol">→</a> <a id="10770" class="Symbol">(</a><a id="10771" href="/classic/Level.html#479" class="Field">lower</a> <a id="10777" class="Symbol">{</a><a id="10778" href="/Overture/Basic/#3940" class="Generalizable">a</a><a id="10779" class="Symbol">}{</a><a id="10781" href="/Overture/Basic/#3942" class="Generalizable">b</a><a id="10782" class="Symbol">})</a> <a id="10785" href="/classic/Function.Base.html#1134" class="Function Operator">∘</a> <a id="10787" href="/classic/Level.html#466" class="InductiveConstructor">lift</a> <a id="10792" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="10794" href="/Overture/Basic/#6021" class="Function">𝑖𝑑</a> <a id="10797" href="/Overture/Basic/#10756" class="Bound">A</a>
+<a id="10799" href="/Overture/Basic/#10742" class="Function">lower∼lift</a> <a id="10810" class="Symbol">=</a> <a id="10812" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a>
 </pre>
 <p>The proofs are trivial. Nonetheless, we'll come across some holes these lemmas can fill.</p>
 <h4 id="pointwise-equality-of-dependent-functions">Pointwise equality of dependent functions<a class="headerlink" href="#pointwise-equality-of-dependent-functions" title="Anchor link to this section">&para;</a></h4>
@@ -15123,36 +15362,36 @@ identity.</p>
 that two functions are (extensionally) the same in the sense that they produce
 the same output when given the same input.  (We will have more to say about
 this notion of equality in the <a href="/Legacy/Base/Equality/Extensionality/">Legacy.Base.Equality.Extensionality</a> module.)</p>
-<pre class="Agda"><a id="9997" class="Keyword">module</a> <a id="10004" href="/Overture/Basic/#10004" class="Module">_</a> <a id="10006" class="Symbol">{</a><a id="10007" href="/Overture/Basic/#10007" class="Bound">A</a> <a id="10009" class="Symbol">:</a> <a id="10011" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="10016" href="/Overture/Basic/#3940" class="Generalizable">a</a><a id="10017" class="Symbol">}</a> <a id="10019" class="Symbol">{</a><a id="10020" href="/Overture/Basic/#10020" class="Bound">B</a> <a id="10022" class="Symbol">:</a> <a id="10024" href="/Overture/Basic/#10007" class="Bound">A</a> <a id="10026" class="Symbol">→</a> <a id="10028" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="10033" href="/Overture/Basic/#3942" class="Generalizable">b</a> <a id="10035" class="Symbol">}</a> <a id="10037" class="Keyword">where</a>
+<pre class="Agda"><a id="11289" class="Keyword">module</a> <a id="11296" href="/Overture/Basic/#11296" class="Module">_</a> <a id="11298" class="Symbol">{</a><a id="11299" href="/Overture/Basic/#11299" class="Bound">A</a> <a id="11301" class="Symbol">:</a> <a id="11303" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="11308" href="/Overture/Basic/#3940" class="Generalizable">a</a><a id="11309" class="Symbol">}</a> <a id="11311" class="Symbol">{</a><a id="11312" href="/Overture/Basic/#11312" class="Bound">B</a> <a id="11314" class="Symbol">:</a> <a id="11316" href="/Overture/Basic/#11299" class="Bound">A</a> <a id="11318" class="Symbol">→</a> <a id="11320" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="11325" href="/Overture/Basic/#3942" class="Generalizable">b</a> <a id="11327" class="Symbol">}</a> <a id="11329" class="Keyword">where</a>
 
-  <a id="10046" href="/Overture/Basic/#10046" class="Function Operator">_≈_</a> <a id="10050" class="Symbol">:</a> <a id="10052" href="/Overture/Basic/#6564" class="Function">Π</a> <a id="10054" href="/Overture/Basic/#10020" class="Bound">B</a> <a id="10056" class="Symbol">→</a> <a id="10058" href="/Overture/Basic/#6564" class="Function">Π</a> <a id="10060" href="/Overture/Basic/#10020" class="Bound">B</a> <a id="10062" class="Symbol">→</a> <a id="10064" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="10069" class="Symbol">(</a><a id="10070" href="/Overture/Basic/#10016" class="Bound">a</a> <a id="10072" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="10074" href="/Overture/Basic/#10033" class="Bound">b</a><a id="10075" class="Symbol">)</a>
-  <a id="10079" href="/Overture/Basic/#10079" class="Bound">f</a> <a id="10081" href="/Overture/Basic/#10046" class="Function Operator">≈</a> <a id="10083" href="/Overture/Basic/#10083" class="Bound">g</a> <a id="10085" class="Symbol">=</a> <a id="10087" class="Symbol">∀</a> <a id="10089" href="/Overture/Basic/#10089" class="Bound">x</a> <a id="10091" class="Symbol">→</a> <a id="10093" href="/Overture/Basic/#10079" class="Bound">f</a> <a id="10095" href="/Overture/Basic/#10089" class="Bound">x</a> <a id="10097" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="10099" href="/Overture/Basic/#10083" class="Bound">g</a> <a id="10101" href="/Overture/Basic/#10089" class="Bound">x</a>
+  <a id="11338" href="/Overture/Basic/#11338" class="Function Operator">_≈_</a> <a id="11342" class="Symbol">:</a> <a id="11344" href="/Overture/Basic/#7856" class="Function">Π</a> <a id="11346" href="/Overture/Basic/#11312" class="Bound">B</a> <a id="11348" class="Symbol">→</a> <a id="11350" href="/Overture/Basic/#7856" class="Function">Π</a> <a id="11352" href="/Overture/Basic/#11312" class="Bound">B</a> <a id="11354" class="Symbol">→</a> <a id="11356" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="11361" class="Symbol">(</a><a id="11362" href="/Overture/Basic/#11308" class="Bound">a</a> <a id="11364" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="11366" href="/Overture/Basic/#11325" class="Bound">b</a><a id="11367" class="Symbol">)</a>
+  <a id="11371" href="/Overture/Basic/#11371" class="Bound">f</a> <a id="11373" href="/Overture/Basic/#11338" class="Function Operator">≈</a> <a id="11375" href="/Overture/Basic/#11375" class="Bound">g</a> <a id="11377" class="Symbol">=</a> <a id="11379" class="Symbol">∀</a> <a id="11381" href="/Overture/Basic/#11381" class="Bound">x</a> <a id="11383" class="Symbol">→</a> <a id="11385" href="/Overture/Basic/#11371" class="Bound">f</a> <a id="11387" href="/Overture/Basic/#11381" class="Bound">x</a> <a id="11389" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="11391" href="/Overture/Basic/#11375" class="Bound">g</a> <a id="11393" href="/Overture/Basic/#11381" class="Bound">x</a>
 
-  <a id="10106" class="Keyword">infix</a> <a id="10112" class="Number">8</a> <a id="10114" href="/Overture/Basic/#10046" class="Function Operator">_≈_</a>
+  <a id="11398" class="Keyword">infix</a> <a id="11404" class="Number">8</a> <a id="11406" href="/Overture/Basic/#11338" class="Function Operator">_≈_</a>
 
-  <a id="10121" href="/Overture/Basic/#10121" class="Function">≈IsEquivalence</a> <a id="10136" class="Symbol">:</a> <a id="10138" href="/classic/Relation.Binary.Structures.html#1595" class="Record">IsEquivalence</a> <a id="10152" href="/Overture/Basic/#10046" class="Function Operator">_≈_</a>
-  <a id="10158" href="/classic/Relation.Binary.Structures.html#1641" class="Field">IsEquivalence.refl</a>   <a id="10179" href="/Overture/Basic/#10121" class="Function">≈IsEquivalence</a>          <a id="10203" class="Symbol">=</a> <a id="10205" class="Symbol">λ</a> <a id="10207" href="/Overture/Basic/#10207" class="Bound">_</a> <a id="10209" class="Symbol">→</a> <a id="10211" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a>
-  <a id="10218" href="/classic/Relation.Binary.Structures.html#1667" class="Field">IsEquivalence.sym</a>    <a id="10239" href="/Overture/Basic/#10121" class="Function">≈IsEquivalence</a> <a id="10254" href="/Overture/Basic/#10254" class="Bound">f≈g</a>      <a id="10263" class="Symbol">=</a> <a id="10265" href="/classic/Relation.Binary.PropositionalEquality.Core.html#2035" class="Function">sym</a> <a id="10269" href="/classic/Function.Base.html#1134" class="Function Operator">∘</a> <a id="10271" href="/Overture/Basic/#10254" class="Bound">f≈g</a>
-  <a id="10277" href="/classic/Relation.Binary.Structures.html#1693" class="Field">IsEquivalence.trans</a>  <a id="10298" href="/Overture/Basic/#10121" class="Function">≈IsEquivalence</a> <a id="10313" href="/Overture/Basic/#10313" class="Bound">f≈g</a> <a id="10317" href="/Overture/Basic/#10317" class="Bound">g≈h</a>  <a id="10322" class="Symbol">=</a> <a id="10324" class="Symbol">λ</a> <a id="10326" href="/Overture/Basic/#10326" class="Bound">x</a> <a id="10328" class="Symbol">→</a> <a id="10330" href="/classic/Relation.Binary.PropositionalEquality.Core.html#2080" class="Function">trans</a> <a id="10336" class="Symbol">(</a><a id="10337" href="/Overture/Basic/#10313" class="Bound">f≈g</a> <a id="10341" href="/Overture/Basic/#10326" class="Bound">x</a><a id="10342" class="Symbol">)</a> <a id="10344" class="Symbol">(</a><a id="10345" href="/Overture/Basic/#10317" class="Bound">g≈h</a> <a id="10349" href="/Overture/Basic/#10326" class="Bound">x</a><a id="10350" class="Symbol">)</a>
+  <a id="11413" href="/Overture/Basic/#11413" class="Function">≈IsEquivalence</a> <a id="11428" class="Symbol">:</a> <a id="11430" href="/classic/Relation.Binary.Structures.html#1595" class="Record">IsEquivalence</a> <a id="11444" href="/Overture/Basic/#11338" class="Function Operator">_≈_</a>
+  <a id="11450" href="/classic/Relation.Binary.Structures.html#1641" class="Field">IsEquivalence.refl</a>   <a id="11471" href="/Overture/Basic/#11413" class="Function">≈IsEquivalence</a>          <a id="11495" class="Symbol">=</a> <a id="11497" class="Symbol">λ</a> <a id="11499" href="/Overture/Basic/#11499" class="Bound">_</a> <a id="11501" class="Symbol">→</a> <a id="11503" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a>
+  <a id="11510" href="/classic/Relation.Binary.Structures.html#1667" class="Field">IsEquivalence.sym</a>    <a id="11531" href="/Overture/Basic/#11413" class="Function">≈IsEquivalence</a> <a id="11546" href="/Overture/Basic/#11546" class="Bound">f≈g</a>      <a id="11555" class="Symbol">=</a> <a id="11557" href="/classic/Relation.Binary.PropositionalEquality.Core.html#2035" class="Function">sym</a> <a id="11561" href="/classic/Function.Base.html#1134" class="Function Operator">∘</a> <a id="11563" href="/Overture/Basic/#11546" class="Bound">f≈g</a>
+  <a id="11569" href="/classic/Relation.Binary.Structures.html#1693" class="Field">IsEquivalence.trans</a>  <a id="11590" href="/Overture/Basic/#11413" class="Function">≈IsEquivalence</a> <a id="11605" href="/Overture/Basic/#11605" class="Bound">f≈g</a> <a id="11609" href="/Overture/Basic/#11609" class="Bound">g≈h</a>  <a id="11614" class="Symbol">=</a> <a id="11616" class="Symbol">λ</a> <a id="11618" href="/Overture/Basic/#11618" class="Bound">x</a> <a id="11620" class="Symbol">→</a> <a id="11622" href="/classic/Relation.Binary.PropositionalEquality.Core.html#2080" class="Function">trans</a> <a id="11628" class="Symbol">(</a><a id="11629" href="/Overture/Basic/#11605" class="Bound">f≈g</a> <a id="11633" href="/Overture/Basic/#11618" class="Bound">x</a><a id="11634" class="Symbol">)</a> <a id="11636" class="Symbol">(</a><a id="11637" href="/Overture/Basic/#11609" class="Bound">g≈h</a> <a id="11641" href="/Overture/Basic/#11618" class="Bound">x</a><a id="11642" class="Symbol">)</a>
 </pre>
 <p>The following is convenient for proving two pairs of a product type are equal
 using the fact that their respective components are equal.</p>
-<pre class="Agda"><a id="≡-by-parts"></a><a id="10503" href="/Overture/Basic/#10503" class="Function">≡-by-parts</a> <a id="10514" class="Symbol">:</a> <a id="10516" class="Symbol">{</a><a id="10517" href="/Overture/Basic/#10517" class="Bound">A</a> <a id="10519" class="Symbol">:</a> <a id="10521" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="10526" href="/Overture/Basic/#3940" class="Generalizable">a</a><a id="10527" class="Symbol">}</a> <a id="10529" class="Symbol">{</a><a id="10530" href="/Overture/Basic/#10530" class="Bound">B</a> <a id="10532" class="Symbol">:</a> <a id="10534" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="10539" href="/Overture/Basic/#3942" class="Generalizable">b</a><a id="10540" class="Symbol">}</a> <a id="10542" class="Symbol">{</a><a id="10543" href="/Overture/Basic/#10543" class="Bound">u</a> <a id="10545" href="/Overture/Basic/#10545" class="Bound">v</a> <a id="10547" class="Symbol">:</a> <a id="10549" href="/Overture/Basic/#10517" class="Bound">A</a> <a id="10551" href="/classic/Data.Product.Base.html#1618" class="Function Operator">×</a> <a id="10553" href="/Overture/Basic/#10530" class="Bound">B</a><a id="10554" class="Symbol">}</a>
-  <a id="10558" class="Symbol">→</a> <a id="10560" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="10566" href="/Overture/Basic/#10543" class="Bound">u</a> <a id="10568" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="10570" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="10576" href="/Overture/Basic/#10545" class="Bound">v</a> <a id="10578" class="Symbol">→</a> <a id="10580" href="/classic/Data.Product.Base.html#650" class="Field">proj₂</a> <a id="10586" href="/Overture/Basic/#10543" class="Bound">u</a> <a id="10588" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="10590" href="/classic/Data.Product.Base.html#650" class="Field">proj₂</a> <a id="10596" href="/Overture/Basic/#10545" class="Bound">v</a> <a id="10598" class="Symbol">→</a> <a id="10600" href="/Overture/Basic/#10543" class="Bound">u</a> <a id="10602" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="10604" href="/Overture/Basic/#10545" class="Bound">v</a>
+<pre class="Agda"><a id="≡-by-parts"></a><a id="11795" href="/Overture/Basic/#11795" class="Function">≡-by-parts</a> <a id="11806" class="Symbol">:</a> <a id="11808" class="Symbol">{</a><a id="11809" href="/Overture/Basic/#11809" class="Bound">A</a> <a id="11811" class="Symbol">:</a> <a id="11813" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="11818" href="/Overture/Basic/#3940" class="Generalizable">a</a><a id="11819" class="Symbol">}</a> <a id="11821" class="Symbol">{</a><a id="11822" href="/Overture/Basic/#11822" class="Bound">B</a> <a id="11824" class="Symbol">:</a> <a id="11826" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="11831" href="/Overture/Basic/#3942" class="Generalizable">b</a><a id="11832" class="Symbol">}</a> <a id="11834" class="Symbol">{</a><a id="11835" href="/Overture/Basic/#11835" class="Bound">u</a> <a id="11837" href="/Overture/Basic/#11837" class="Bound">v</a> <a id="11839" class="Symbol">:</a> <a id="11841" href="/Overture/Basic/#11809" class="Bound">A</a> <a id="11843" href="/classic/Data.Product.Base.html#1618" class="Function Operator">×</a> <a id="11845" href="/Overture/Basic/#11822" class="Bound">B</a><a id="11846" class="Symbol">}</a>
+  <a id="11850" class="Symbol">→</a> <a id="11852" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="11858" href="/Overture/Basic/#11835" class="Bound">u</a> <a id="11860" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="11862" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="11868" href="/Overture/Basic/#11837" class="Bound">v</a> <a id="11870" class="Symbol">→</a> <a id="11872" href="/classic/Data.Product.Base.html#650" class="Field">proj₂</a> <a id="11878" href="/Overture/Basic/#11835" class="Bound">u</a> <a id="11880" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="11882" href="/classic/Data.Product.Base.html#650" class="Field">proj₂</a> <a id="11888" href="/Overture/Basic/#11837" class="Bound">v</a> <a id="11890" class="Symbol">→</a> <a id="11892" href="/Overture/Basic/#11835" class="Bound">u</a> <a id="11894" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="11896" href="/Overture/Basic/#11837" class="Bound">v</a>
 
-<a id="10607" href="/Overture/Basic/#10503" class="Function">≡-by-parts</a> <a id="10618" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="10623" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="10628" class="Symbol">=</a> <a id="10630" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a>
+<a id="11899" href="/Overture/Basic/#11795" class="Function">≡-by-parts</a> <a id="11910" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="11915" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="11920" class="Symbol">=</a> <a id="11922" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a>
 </pre>
 <p>Lastly, we will use the following type (instead of <code>subst</code>) to transport equality
 proofs.</p>
-<pre class="Agda"><a id="transport"></a><a id="10739" href="/Overture/Basic/#10739" class="Function">transport</a> <a id="10749" class="Symbol">:</a> <a id="10751" class="Symbol">{</a><a id="10752" href="/Overture/Basic/#10752" class="Bound">A</a> <a id="10754" class="Symbol">:</a> <a id="10756" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="10761" href="/Overture/Basic/#3940" class="Generalizable">a</a> <a id="10763" class="Symbol">}</a> <a id="10765" class="Symbol">(</a><a id="10766" href="/Overture/Basic/#10766" class="Bound">B</a> <a id="10768" class="Symbol">:</a> <a id="10770" href="/Overture/Basic/#10752" class="Bound">A</a> <a id="10772" class="Symbol">→</a> <a id="10774" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="10779" href="/Overture/Basic/#3942" class="Generalizable">b</a><a id="10780" class="Symbol">)</a> <a id="10782" class="Symbol">{</a><a id="10783" href="/Overture/Basic/#10783" class="Bound">x</a> <a id="10785" href="/Overture/Basic/#10785" class="Bound">y</a> <a id="10787" class="Symbol">:</a> <a id="10789" href="/Overture/Basic/#10752" class="Bound">A</a><a id="10790" class="Symbol">}</a> <a id="10792" class="Symbol">→</a> <a id="10794" href="/Overture/Basic/#10783" class="Bound">x</a> <a id="10796" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="10798" href="/Overture/Basic/#10785" class="Bound">y</a> <a id="10800" class="Symbol">→</a> <a id="10802" href="/Overture/Basic/#10766" class="Bound">B</a> <a id="10804" href="/Overture/Basic/#10783" class="Bound">x</a> <a id="10806" class="Symbol">→</a> <a id="10808" href="/Overture/Basic/#10766" class="Bound">B</a> <a id="10810" href="/Overture/Basic/#10785" class="Bound">y</a>
-<a id="10812" href="/Overture/Basic/#10739" class="Function">transport</a> <a id="10822" href="/Overture/Basic/#10822" class="Bound">B</a> <a id="10824" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="10829" class="Symbol">=</a> <a id="10831" href="/classic/Function.Base.html#704" class="Function">id</a>
+<pre class="Agda"><a id="transport"></a><a id="12031" href="/Overture/Basic/#12031" class="Function">transport</a> <a id="12041" class="Symbol">:</a> <a id="12043" class="Symbol">{</a><a id="12044" href="/Overture/Basic/#12044" class="Bound">A</a> <a id="12046" class="Symbol">:</a> <a id="12048" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="12053" href="/Overture/Basic/#3940" class="Generalizable">a</a> <a id="12055" class="Symbol">}</a> <a id="12057" class="Symbol">(</a><a id="12058" href="/Overture/Basic/#12058" class="Bound">B</a> <a id="12060" class="Symbol">:</a> <a id="12062" href="/Overture/Basic/#12044" class="Bound">A</a> <a id="12064" class="Symbol">→</a> <a id="12066" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="12071" href="/Overture/Basic/#3942" class="Generalizable">b</a><a id="12072" class="Symbol">)</a> <a id="12074" class="Symbol">{</a><a id="12075" href="/Overture/Basic/#12075" class="Bound">x</a> <a id="12077" href="/Overture/Basic/#12077" class="Bound">y</a> <a id="12079" class="Symbol">:</a> <a id="12081" href="/Overture/Basic/#12044" class="Bound">A</a><a id="12082" class="Symbol">}</a> <a id="12084" class="Symbol">→</a> <a id="12086" href="/Overture/Basic/#12075" class="Bound">x</a> <a id="12088" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="12090" href="/Overture/Basic/#12077" class="Bound">y</a> <a id="12092" class="Symbol">→</a> <a id="12094" href="/Overture/Basic/#12058" class="Bound">B</a> <a id="12096" href="/Overture/Basic/#12075" class="Bound">x</a> <a id="12098" class="Symbol">→</a> <a id="12100" href="/Overture/Basic/#12058" class="Bound">B</a> <a id="12102" href="/Overture/Basic/#12077" class="Bound">y</a>
+<a id="12104" href="/Overture/Basic/#12031" class="Function">transport</a> <a id="12114" href="/Overture/Basic/#12114" class="Bound">B</a> <a id="12116" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="12121" class="Symbol">=</a> <a id="12123" href="/classic/Function.Base.html#704" class="Function">id</a>
 </pre>
 <h4 id="logical-equivalence-helper">Logical equivalence helper<a class="headerlink" href="#logical-equivalence-helper" title="Anchor link to this section">&para;</a></h4>
 <p>For simple logical equivalence of types, we define a small helper that
 packages the two implications into a single two-way implication.[^2]</p>
-<pre class="Agda"><a id="_⇔_"></a><a id="11021" href="/Overture/Basic/#11021" class="Function Operator">_⇔_</a> <a id="11025" class="Symbol">:</a> <a id="11027" class="Symbol">{</a><a id="11028" href="/Overture/Basic/#11028" class="Bound">a</a> <a id="11030" href="/Overture/Basic/#11030" class="Bound">b</a> <a id="11032" class="Symbol">:</a> <a id="11034" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a><a id="11039" class="Symbol">}</a> <a id="11041" class="Symbol">→</a> <a id="11043" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="11048" href="/Overture/Basic/#11028" class="Bound">a</a> <a id="11050" class="Symbol">→</a> <a id="11052" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="11057" href="/Overture/Basic/#11030" class="Bound">b</a> <a id="11059" class="Symbol">→</a> <a id="11061" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="11066" class="Symbol">(</a><a id="11067" href="/Overture/Basic/#11028" class="Bound">a</a> <a id="11069" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="11071" href="/Overture/Basic/#11030" class="Bound">b</a><a id="11072" class="Symbol">)</a>
-<a id="11074" href="/Overture/Basic/#11074" class="Bound">P</a> <a id="11076" href="/Overture/Basic/#11021" class="Function Operator">⇔</a> <a id="11078" href="/Overture/Basic/#11078" class="Bound">Q</a> <a id="11080" class="Symbol">=</a> <a id="11082" class="Symbol">(</a><a id="11083" href="/Overture/Basic/#11074" class="Bound">P</a> <a id="11085" class="Symbol">→</a> <a id="11087" href="/Overture/Basic/#11078" class="Bound">Q</a><a id="11088" class="Symbol">)</a> <a id="11090" href="/classic/Data.Product.Base.html#1618" class="Function Operator">×</a> <a id="11092" class="Symbol">(</a><a id="11093" href="/Overture/Basic/#11078" class="Bound">Q</a> <a id="11095" class="Symbol">→</a> <a id="11097" href="/Overture/Basic/#11074" class="Bound">P</a><a id="11098" class="Symbol">)</a>
-<a id="11100" class="Keyword">infix</a> <a id="11106" class="Number">1</a> <a id="11108" href="/Overture/Basic/#11021" class="Function Operator">_⇔_</a>
+<pre class="Agda"><a id="_⇔_"></a><a id="12313" href="/Overture/Basic/#12313" class="Function Operator">_⇔_</a> <a id="12317" class="Symbol">:</a> <a id="12319" class="Symbol">{</a><a id="12320" href="/Overture/Basic/#12320" class="Bound">a</a> <a id="12322" href="/Overture/Basic/#12322" class="Bound">b</a> <a id="12324" class="Symbol">:</a> <a id="12326" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a><a id="12331" class="Symbol">}</a> <a id="12333" class="Symbol">→</a> <a id="12335" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="12340" href="/Overture/Basic/#12320" class="Bound">a</a> <a id="12342" class="Symbol">→</a> <a id="12344" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="12349" href="/Overture/Basic/#12322" class="Bound">b</a> <a id="12351" class="Symbol">→</a> <a id="12353" href="/Overture/Basic/#3271" class="Primitive">Type</a> <a id="12358" class="Symbol">(</a><a id="12359" href="/Overture/Basic/#12320" class="Bound">a</a> <a id="12361" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="12363" href="/Overture/Basic/#12322" class="Bound">b</a><a id="12364" class="Symbol">)</a>
+<a id="12366" href="/Overture/Basic/#12366" class="Bound">P</a> <a id="12368" href="/Overture/Basic/#12313" class="Function Operator">⇔</a> <a id="12370" href="/Overture/Basic/#12370" class="Bound">Q</a> <a id="12372" class="Symbol">=</a> <a id="12374" class="Symbol">(</a><a id="12375" href="/Overture/Basic/#12366" class="Bound">P</a> <a id="12377" class="Symbol">→</a> <a id="12379" href="/Overture/Basic/#12370" class="Bound">Q</a><a id="12380" class="Symbol">)</a> <a id="12382" href="/classic/Data.Product.Base.html#1618" class="Function Operator">×</a> <a id="12384" class="Symbol">(</a><a id="12385" href="/Overture/Basic/#12370" class="Bound">Q</a> <a id="12387" class="Symbol">→</a> <a id="12389" href="/Overture/Basic/#12366" class="Bound">P</a><a id="12390" class="Symbol">)</a>
+<a id="12392" class="Keyword">infix</a> <a id="12398" class="Number">1</a> <a id="12400" href="/Overture/Basic/#12313" class="Function Operator">_⇔_</a>
 </pre>
 <p>The standard library's <code>_⇔_</code> is the bundled <code>Function.Bundles.Equivalence</code> record,
 carrying congruence proofs; here the lighter logical equivalence — a pair of

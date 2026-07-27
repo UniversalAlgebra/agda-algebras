@@ -6662,6 +6662,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -6755,6 +6759,62 @@
     
   
     Basic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Group/Centralizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Centralizer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Group/Complements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Complements
   
 
     
@@ -7077,6 +7137,8 @@
       
         
       
+        
+      
     
     
     
@@ -7378,6 +7440,34 @@
     
   
     OrdinalSum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Parachute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parachute
   
 
     
@@ -12514,6 +12604,8 @@
       
         
       
+        
+      
     
     
     
@@ -13990,6 +14082,133 @@
   
   
   
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../FLRP/Parachute/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parachute
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_8_8" id="__nav_2_8_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_8_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parachute
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../FLRP/Parachute/Representation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Representation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../FLRP/Parachute/Theorems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theorems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../../../FLRP/Problem/" class="md-nav__link">
         
@@ -14934,25 +15153,25 @@ signature is parallel to <code>Sig-Magma</code>, not an extension of it, and so 
 two-binary-symbols-with-eight-equations case beyond the
 <a href="/Classical/Structures/Monoid/">Monoid</a> template:</p>
 <ul>
-<li><strong>Two reducts, one per operation.</strong>  <code>lattice→meetMagma</code> and
+<li><strong>Two reducts, one per operation</strong>.  <code>lattice→meetMagma</code> and
    <code>lattice→joinMagma</code> are the two container-morphism reducts
    <code>Sig-Magma ↪ Sig-Lattice</code> that send <code>∙-Op</code> to <code>∧-Op</code> and <code>∨-Op</code> respectively,
    with identity position maps.  Both are pure reducts (no laws needed); the
    downstream <code>lattice→meetSemilattice</code> and <code>lattice→joinSemilattice</code> add
    <code>Th-Semilattice</code> satisfaction on top via the curried-law pivot, exactly as
    <code>monoid→semigroup</code> does for the single-operation case.</li>
-<li><strong>Eight standalone curried laws.</strong>  Each of the eight equations in
+<li><strong>Eight standalone curried laws</strong>.  Each of the eight equations in
    <code>Th-Lattice</code> is exposed as a standalone curried-form lemma
    (<code>lt-∧-assoc</code> through <code>lt-absorbʳ</code>) defined once in a
    <code>module _ (𝑳 : Lattice α ρ)</code> block above the forgetfuls, so that both
    <code>Lattice-Op</code> and each <code>lattice→&lt;X&gt;Semilattice</code> consume the same proof.</li>
-<li><strong>Direct curried accessors.</strong>  <code>Lattice-Op</code> defines <code>_∧_</code> and <code>_∨_</code> directly
+<li><strong>Direct curried accessors</strong>.  <code>Lattice-Op</code> defines <code>_∧_</code> and <code>_∨_</code> directly
    via <code>Curry₂ (∧-Op ^ 𝑨)</code> / <code>Curry₂ (∨-Op ^ 𝑨)</code> rather than inheriting through
    either semilattice reduct, for the same reason Monoid does: the reduct's
    position map re-indexes definitionally to the identity in both cases, but
    keeping the accessors direct keeps every downstream <code>refl</code> independent of
    that reduction.</li>
-<li><strong>No two-symbol bridge primitive.</strong>  The absorption laws involve terms
+<li><strong>No two-symbol bridge primitive</strong>.  The absorption laws involve terms
    nesting two operation symbols (e.g. <code>node ∧-Op (pair (ℊ 0F)
    (node ∨-Op (pair (ℊ 0F) (ℊ 1F))))</code>), but the term-to-curried bridge is two
    compositions of single-symbol <code>interp-cong</code> calls — one per operation —
