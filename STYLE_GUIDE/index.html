@@ -17139,7 +17139,7 @@ for local conventions before picking a new symbol.</p>
 <p><code>𝓞</code> and <code>𝓥</code> always denote the universe levels of <em>operation-symbol</em> types and <em>arity</em> types, respectively.  They are declared once, in <code>Overture.Signatures</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="kr">variable</span><span class="w"> </span>𝓞<span class="w"> </span>𝓥<span class="w"> </span><span class="ow">:</span><span class="w"> </span>Level
 </code></pre></div>
-<p><strong>Using <code>𝓞</code> or <code>𝓥</code> for anything else is a bug.</strong></p>
+<p><strong>Using <code>𝓞</code> or <code>𝓥</code> for anything else is a bug</strong>.</p>
 <p>Every signature-parametrized module imports these by name from <code>Overture</code>.  Never re-declare them as <code>variable</code> in a downstream module.</p>
 <p>This convention is settled by <a href="../adr/005-universe-level-variable-scope/">ADR-005</a>: <code>𝓞</code> and <code>𝓥</code> remain public <code>variable</code>s in <code>Overture.Signatures</code>, co-located with the <code>Signature</code> type whose levels they name, and downstream modules import them by name.  Options 2 (<code>private</code> + re-declare downstream) and 3 (a dedicated <code>Overture.UniverseLevels</code> module) were weighed and rejected there.</p>
 <h3 id="other-level-variables">Other level variables<a class="headerlink" href="#other-level-variables" title="Anchor link to this section">&para;</a></h3>
