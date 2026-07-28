@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>Order.Iso</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">---
+layout: default
+file: &quot;src/Order/Iso.lagda.md&quot;
+title : &quot;Order.Iso module (The Agda Universal Algebra Library)&quot;
+date : &quot;2026-07-26&quot;
+author: &quot;agda-algebras development team&quot;
+---
+
+### Order isomorphisms
+
+This is the [Order.Iso][] module of the [Agda Universal Algebra Library][].
+
+An **order isomorphism** between two ordered objects is a pair of monotone maps that
+are mutually inverse up to the respective equivalences.  Because both maps are
+monotone and the round trips are the identity up to the equivalence, an order
+isomorphism transports every existing infimum and supremum, so isomorphic posets
+carry the same lattice (indeed, complete-lattice) structure; this is why no separate
+preservation clauses for meet and join are needed.
+
+`OrderIso`{.AgdaRecord} states this for *raw relations* rather than for a bundle, so
+it applies uniformly to setoid-valued and propositionally-valued orders.  That
+generality is what the library&#39;s two motivating instances need: the congruence poset
+`(Con 𝑨 , ≑ , ⊆)` of [Setoid.Congruences.Lattice][] carries an equivalence of *mutual
+containment* rather than propositional equality, while a classical lattice carries
+its meet order from [Classical.Properties.Lattice][].
+
+(The standard library&#39;s `IsOrderIsomorphism`{.AgdaRecord} packages one map with
+surjectivity instead of an explicit inverse; the two presentations are
+interconvertible, and the inverse-pair form is the convenient one for transporting
+structure.)
+
+The record was introduced in [FLRP.Problem][], next to its first use, with a note
+that it should migrate here once the group-theoretic side of the library needed it.
+[Classical.Structures.Group.Congruences][] is that consumer — the correspondence
+between normal subgroups and congruences is ordinary group theory, below the FLRP
+tree — so the record now lives in `Order/` and [FLRP.Problem][] re-exports it.
+
+&lt;!--
+</a><a id="1877" class="Markup">```agda
+</a><a id="1885" class="Symbol">{-#</a> <a id="1889" class="Keyword">OPTIONS</a> <a id="1897" class="Pragma">--cubical-compatible</a> <a id="1918" class="Pragma">--exact-split</a> <a id="1932" class="Pragma">--safe</a> <a id="1939" class="Symbol">#-}</a>
+
+<a id="1944" class="Keyword">module</a> <a id="1951" href="Order.Iso.html" class="Module">Order.Iso</a> <a id="1961" class="Keyword">where</a>
+
+<a id="1968" class="Keyword">open</a> <a id="1973" class="Keyword">import</a> <a id="1980" href="Agda.Primitive.html" class="Module">Agda.Primitive</a> <a id="1995" class="Keyword">using</a> <a id="2001" class="Symbol">()</a> <a id="2004" class="Keyword">renaming</a> <a id="2013" class="Symbol">(</a> <a id="2015" href="Agda.Primitive.html#388" class="Primitive">Set</a> <a id="2019" class="Symbol">to</a> <a id="2022" class="Primitive">Type</a> <a id="2027" class="Symbol">)</a>
+
+<a id="2030" class="Comment">-- Imports from the Agda Standard Library ---------------------------------------</a>
+<a id="2112" class="Keyword">open</a> <a id="2117" class="Keyword">import</a> <a id="2124" href="Level.html" class="Module">Level</a>            <a id="2141" class="Keyword">using</a> <a id="2147" class="Symbol">(</a> <a id="2149" href="Agda.Primitive.html#742" class="Postulate">Level</a> <a id="2155" class="Symbol">;</a> <a id="2157" href="Agda.Primitive.html#961" class="Primitive Operator">_⊔_</a> <a id="2161" class="Symbol">)</a>
+<a id="2163" class="Keyword">open</a> <a id="2168" class="Keyword">import</a> <a id="2175" href="Relation.Binary.html" class="Module">Relation.Binary</a>  <a id="2192" class="Keyword">using</a> <a id="2198" class="Symbol">()</a> <a id="2201" class="Keyword">renaming</a> <a id="2210" class="Symbol">(</a> <a id="2212" href="Relation.Binary.Core.html#896" class="Function">Rel</a> <a id="2216" class="Symbol">to</a> <a id="2219" class="Function">BinaryRel</a> <a id="2229" class="Symbol">)</a>
+<a id="2231" class="Markup">```
+</a><a id="2235" class="Background">--&gt;
+
+#### The record
+
+</a><a id="2257" class="Markup">```agda
+</a><a id="2265" class="Keyword">record</a> <a id="OrderIso"></a><a id="2272" href="Order.Iso.html#2272" class="Record">OrderIso</a>
+  <a id="2283" class="Symbol">{</a><a id="2284" href="Order.Iso.html#2284" class="Bound">a</a> <a id="2286" href="Order.Iso.html#2286" class="Bound">b</a> <a id="2288" href="Order.Iso.html#2288" class="Bound">ℓ₁</a> <a id="2291" href="Order.Iso.html#2291" class="Bound">ℓ₂</a> <a id="2294" href="Order.Iso.html#2294" class="Bound">m₁</a> <a id="2297" href="Order.Iso.html#2297" class="Bound">m₂</a> <a id="2300" class="Symbol">:</a> <a id="2302" href="Agda.Primitive.html#742" class="Postulate">Level</a><a id="2307" class="Symbol">}</a>
+  <a id="2311" class="Symbol">{</a><a id="2312" href="Order.Iso.html#2312" class="Bound">A</a> <a id="2314" class="Symbol">:</a> <a id="2316" href="Order.Iso.html#2022" class="Primitive">Type</a> <a id="2321" href="Order.Iso.html#2284" class="Bound">a</a><a id="2322" class="Symbol">}</a> <a id="2324" class="Symbol">{</a><a id="2325" href="Order.Iso.html#2325" class="Bound">B</a> <a id="2327" class="Symbol">:</a> <a id="2329" href="Order.Iso.html#2022" class="Primitive">Type</a> <a id="2334" href="Order.Iso.html#2286" class="Bound">b</a><a id="2335" class="Symbol">}</a>
+  <a id="2339" class="Symbol">(</a><a id="2340" href="Order.Iso.html#2340" class="Bound Operator">_≈₁_</a> <a id="2345" class="Symbol">:</a> <a id="2347" href="Order.Iso.html#2219" class="Function">BinaryRel</a> <a id="2357" href="Order.Iso.html#2312" class="Bound">A</a> <a id="2359" href="Order.Iso.html#2288" class="Bound">ℓ₁</a><a id="2361" class="Symbol">)</a> <a id="2363" class="Symbol">(</a><a id="2364" href="Order.Iso.html#2364" class="Bound Operator">_≤₁_</a> <a id="2369" class="Symbol">:</a> <a id="2371" href="Order.Iso.html#2219" class="Function">BinaryRel</a> <a id="2381" href="Order.Iso.html#2312" class="Bound">A</a> <a id="2383" href="Order.Iso.html#2291" class="Bound">ℓ₂</a><a id="2385" class="Symbol">)</a>
+  <a id="2389" class="Symbol">(</a><a id="2390" href="Order.Iso.html#2390" class="Bound Operator">_≈₂_</a> <a id="2395" class="Symbol">:</a> <a id="2397" href="Order.Iso.html#2219" class="Function">BinaryRel</a> <a id="2407" href="Order.Iso.html#2325" class="Bound">B</a> <a id="2409" href="Order.Iso.html#2294" class="Bound">m₁</a><a id="2411" class="Symbol">)</a> <a id="2413" class="Symbol">(</a><a id="2414" href="Order.Iso.html#2414" class="Bound Operator">_≤₂_</a> <a id="2419" class="Symbol">:</a> <a id="2421" href="Order.Iso.html#2219" class="Function">BinaryRel</a> <a id="2431" href="Order.Iso.html#2325" class="Bound">B</a> <a id="2433" href="Order.Iso.html#2297" class="Bound">m₂</a><a id="2435" class="Symbol">)</a> <a id="2437" class="Symbol">:</a> <a id="2439" href="Order.Iso.html#2022" class="Primitive">Type</a> <a id="2444" class="Symbol">(</a><a id="2445" href="Order.Iso.html#2284" class="Bound">a</a> <a id="2447" href="Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="2449" href="Order.Iso.html#2286" class="Bound">b</a> <a id="2451" href="Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="2453" href="Order.Iso.html#2288" class="Bound">ℓ₁</a> <a id="2456" href="Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="2458" href="Order.Iso.html#2291" class="Bound">ℓ₂</a> <a id="2461" href="Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="2463" href="Order.Iso.html#2294" class="Bound">m₁</a> <a id="2466" href="Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="2468" href="Order.Iso.html#2297" class="Bound">m₂</a><a id="2470" class="Symbol">)</a> <a id="2472" class="Keyword">where</a>
+  <a id="2480" class="Keyword">field</a>
+    <a id="OrderIso.to"></a><a id="2490" href="Order.Iso.html#2490" class="Field">to</a>         <a id="2501" class="Symbol">:</a> <a id="2503" href="Order.Iso.html#2312" class="Bound">A</a> <a id="2505" class="Symbol">→</a> <a id="2507" href="Order.Iso.html#2325" class="Bound">B</a>
+    <a id="OrderIso.from"></a><a id="2513" href="Order.Iso.html#2513" class="Field">from</a>       <a id="2524" class="Symbol">:</a> <a id="2526" href="Order.Iso.html#2325" class="Bound">B</a> <a id="2528" class="Symbol">→</a> <a id="2530" href="Order.Iso.html#2312" class="Bound">A</a>
+    <a id="OrderIso.to-mono"></a><a id="2536" href="Order.Iso.html#2536" class="Field">to-mono</a>    <a id="2547" class="Symbol">:</a> <a id="2549" class="Symbol">∀</a> <a id="2551" class="Symbol">{</a><a id="2552" href="Order.Iso.html#2552" class="Bound">x</a> <a id="2554" href="Order.Iso.html#2554" class="Bound">y</a><a id="2555" class="Symbol">}</a> <a id="2557" class="Symbol">→</a> <a id="2559" href="Order.Iso.html#2552" class="Bound">x</a> <a id="2561" href="Order.Iso.html#2364" class="Bound Operator">≤₁</a> <a id="2564" href="Order.Iso.html#2554" class="Bound">y</a> <a id="2566" class="Symbol">→</a> <a id="2568" href="Order.Iso.html#2490" class="Field">to</a> <a id="2571" href="Order.Iso.html#2552" class="Bound">x</a> <a id="2573" href="Order.Iso.html#2414" class="Bound Operator">≤₂</a> <a id="2576" href="Order.Iso.html#2490" class="Field">to</a> <a id="2579" href="Order.Iso.html#2554" class="Bound">y</a>
+    <a id="OrderIso.from-mono"></a><a id="2585" href="Order.Iso.html#2585" class="Field">from-mono</a>  <a id="2596" class="Symbol">:</a> <a id="2598" class="Symbol">∀</a> <a id="2600" class="Symbol">{</a><a id="2601" href="Order.Iso.html#2601" class="Bound">u</a> <a id="2603" href="Order.Iso.html#2603" class="Bound">v</a><a id="2604" class="Symbol">}</a> <a id="2606" class="Symbol">→</a> <a id="2608" href="Order.Iso.html#2601" class="Bound">u</a> <a id="2610" href="Order.Iso.html#2414" class="Bound Operator">≤₂</a> <a id="2613" href="Order.Iso.html#2603" class="Bound">v</a> <a id="2615" class="Symbol">→</a> <a id="2617" href="Order.Iso.html#2513" class="Field">from</a> <a id="2622" href="Order.Iso.html#2601" class="Bound">u</a> <a id="2624" href="Order.Iso.html#2364" class="Bound Operator">≤₁</a> <a id="2627" href="Order.Iso.html#2513" class="Field">from</a> <a id="2632" href="Order.Iso.html#2603" class="Bound">v</a>
+    <a id="OrderIso.to∘from"></a><a id="2638" href="Order.Iso.html#2638" class="Field">to∘from</a>    <a id="2649" class="Symbol">:</a> <a id="2651" class="Symbol">∀</a> <a id="2653" href="Order.Iso.html#2653" class="Bound">u</a> <a id="2655" class="Symbol">→</a> <a id="2657" href="Order.Iso.html#2490" class="Field">to</a> <a id="2660" class="Symbol">(</a><a id="2661" href="Order.Iso.html#2513" class="Field">from</a> <a id="2666" href="Order.Iso.html#2653" class="Bound">u</a><a id="2667" class="Symbol">)</a> <a id="2669" href="Order.Iso.html#2390" class="Bound Operator">≈₂</a> <a id="2672" href="Order.Iso.html#2653" class="Bound">u</a>
+    <a id="OrderIso.from∘to"></a><a id="2678" href="Order.Iso.html#2678" class="Field">from∘to</a>    <a id="2689" class="Symbol">:</a> <a id="2691" class="Symbol">∀</a> <a id="2693" href="Order.Iso.html#2693" class="Bound">x</a> <a id="2695" class="Symbol">→</a> <a id="2697" href="Order.Iso.html#2513" class="Field">from</a> <a id="2702" class="Symbol">(</a><a id="2703" href="Order.Iso.html#2490" class="Field">to</a> <a id="2706" href="Order.Iso.html#2693" class="Bound">x</a><a id="2707" class="Symbol">)</a> <a id="2709" href="Order.Iso.html#2340" class="Bound Operator">≈₁</a> <a id="2712" href="Order.Iso.html#2693" class="Bound">x</a>
+<a id="2714" class="Markup">```
+</a></pre></body></html>

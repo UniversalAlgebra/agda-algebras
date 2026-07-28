@@ -6662,6 +6662,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
     
@@ -6859,6 +6865,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../Classical/Structures/Group/Congruences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Congruences
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Classical/Structures/Group/Conjugation/" class="md-nav__link">
         
   
@@ -6971,6 +7005,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../Classical/Structures/Group/MinimalNormal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MinimalNormal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Classical/Structures/Group/NormalCore/" class="md-nav__link">
         
   
@@ -6979,6 +7041,34 @@
     
   
     NormalCore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Classical/Structures/Group/NormalSubgroupLattice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NormalSubgroupLattice
   
 
     
@@ -7953,6 +8043,8 @@
       
         
       
+        
+      
     
     
     
@@ -8046,6 +8138,34 @@
     
   
     Interval
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Order/Iso/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Iso
   
 
     
@@ -12450,6 +12570,8 @@
       
         
       
+        
+      
     
     
     
@@ -14082,6 +14204,34 @@
   
   
     <li class="md-nav__item">
+      <a href="Reductions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reductions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="Representable/" class="md-nav__link">
         
   
@@ -14948,35 +15098,48 @@ combinatorics) lives in the <code>Setoid/</code>, <code>Classical/</code>, and <
    <code>Setoid.Congruences.Certificates</code> checkers) into a <code>Representableᵈ</code> witness
    for the target lattice, so external searches (GAP, UACalc, SAT) enter the
    corpus only through the checker.</li>
-<li><a href="/FLRP/L7EqSix/">FLRP.L7EqSix</a> — the explicit Pudlák–Tůma witness for the distinguished
+<li>
+<p><a href="/FLRP/L7EqSix/">FLRP.L7EqSix</a> — the explicit Pudlák–Tůma witness for the distinguished
    open instance: seven partitions of a six-element set (the minimum possible)
    forming a sublattice of <code>Eq(6)</code> isomorphic to <code>L7</code>, with meets, join upper
    bounds, injectivity, and normal forms decided over the finite carrier and
    join least-ness proved against arbitrary equivalence relations via bounded
-   alternating chains (issue #484; session note <code>docs/notes/flrp-l7-eq6.md</code>).</li>
+   alternating chains (issue #484; session note <code>docs/notes/flrp-l7-eq6.md</code>).</p>
+</li>
+<li>
+<p><a href="/FLRP/Reductions/">FLRP.Reductions</a> — the RP-2 <strong>enforcement catalog</strong>: the literature's
+   "an interval of this shape forces a group of this kind" theorems, each recast
+   as a precise (cf-/min-)IE statement, with the vacuity discipline tracked
+   entry by entry.  Entries 1–3 (the note's classes <code>𝒢₂</code>, <code>𝒢₃</code>, <code>𝒢₄</code>) are
+   <em>derived</em> from the parachute theorems; Entries 4–8 import their sources'
+   theorems as named hypotheses (Pálfy–Pudlák, Feit, Köhler, Basile, DeMeo's
+   <code>L7</code> analysis, Lucchini–Moscatiello–Palcoux–Spiga).  The module also proves
+   the note's Lemma 3.1, exposes the vacuity theorem
+   <code>not-representable→IE</code>, and repairs <code>minIE</code> as <code>MinimallyIE</code>; the survey note
+   is <code>docs/notes/flrp-rp2-catalog.md</code>.</p>
+</li>
 </ul>
 <p><strong>Planned submodules</strong> (per § 6 of the roadmap).</p>
 <ul>
-<li><code>FLRP.Closure</code> (closure properties of the representable class);</li>
-<li><code>FLRP.Intervals</code> (intervals in subgroup lattices and core-free normalization);</li>
-<li><code>FLRP.Reductions</code> (the catalog of reduction theorems).</li>
+<li><code>FLRP.Intervals</code> (intervals in subgroup lattices and core-free normalization).</li>
 </ul>
-<pre class="Agda"><a id="4922" class="Symbol">{-#</a> <a id="4926" class="Keyword">OPTIONS</a> <a id="4934" class="Pragma">--cubical-compatible</a> <a id="4955" class="Pragma">--exact-split</a> <a id="4969" class="Pragma">--safe</a> <a id="4976" class="Symbol">#-}</a>
+<pre class="Agda"><a id="5511" class="Symbol">{-#</a> <a id="5515" class="Keyword">OPTIONS</a> <a id="5523" class="Pragma">--cubical-compatible</a> <a id="5544" class="Pragma">--exact-split</a> <a id="5558" class="Pragma">--safe</a> <a id="5565" class="Symbol">#-}</a>
 
-<a id="4981" class="Keyword">module</a> <a id="4988" href="/FLRP/" class="Module">FLRP</a> <a id="4993" class="Keyword">where</a>
+<a id="5570" class="Keyword">module</a> <a id="5577" href="/FLRP/" class="Module">FLRP</a> <a id="5582" class="Keyword">where</a>
 
-<a id="5000" class="Keyword">open</a> <a id="5005" class="Keyword">import</a> <a id="5012" href="/FLRP/Problem/" class="Module">FLRP.Problem</a>        <a id="5032" class="Keyword">public</a>
-<a id="5039" class="Keyword">open</a> <a id="5044" class="Keyword">import</a> <a id="5051" href="/FLRP/Enforceable/" class="Module">FLRP.Enforceable</a>    <a id="5071" class="Keyword">public</a>
-<a id="5078" class="Keyword">open</a> <a id="5083" class="Keyword">import</a> <a id="5090" href="/FLRP/Parachute/" class="Module">FLRP.Parachute</a>      <a id="5110" class="Keyword">public</a>
-<a id="5117" class="Keyword">open</a> <a id="5122" class="Keyword">import</a> <a id="5129" href="/FLRP/Parachute/Representation/" class="Module">FLRP.Parachute.Representation</a> <a id="5159" class="Keyword">public</a>
-<a id="5166" class="Keyword">open</a> <a id="5171" class="Keyword">import</a> <a id="5178" href="/FLRP/Parachute/Theorems/" class="Module">FLRP.Parachute.Theorems</a>       <a id="5208" class="Keyword">public</a>
-<a id="5215" class="Keyword">open</a> <a id="5220" class="Keyword">import</a> <a id="5227" href="/FLRP/Bridge/" class="Module">FLRP.Bridge</a>         <a id="5247" class="Keyword">public</a>
-<a id="5254" class="Keyword">open</a> <a id="5259" class="Keyword">import</a> <a id="5266" href="/FLRP/Representable/" class="Module">FLRP.Representable</a>  <a id="5286" class="Keyword">public</a>
-<a id="5293" class="Keyword">open</a> <a id="5298" class="Keyword">import</a> <a id="5305" href="/FLRP/Assumptions/" class="Module">FLRP.Assumptions</a>    <a id="5325" class="Keyword">public</a>
-<a id="5332" class="Keyword">open</a> <a id="5337" class="Keyword">import</a> <a id="5344" href="/FLRP/Closure/" class="Module">FLRP.Closure</a>        <a id="5364" class="Keyword">public</a>
-<a id="5371" class="Keyword">open</a> <a id="5376" class="Keyword">import</a> <a id="5383" href="/FLRP/LayerBridge/" class="Module">FLRP.LayerBridge</a>    <a id="5403" class="Keyword">public</a>
-<a id="5410" class="Keyword">open</a> <a id="5415" class="Keyword">import</a> <a id="5422" href="/FLRP/Certificates/" class="Module">FLRP.Certificates</a>   <a id="5442" class="Keyword">public</a>
-<a id="5449" class="Keyword">open</a> <a id="5454" class="Keyword">import</a> <a id="5461" href="/FLRP/L7EqSix/" class="Module">FLRP.L7EqSix</a>        <a id="5481" class="Keyword">public</a>
+<a id="5589" class="Keyword">open</a> <a id="5594" class="Keyword">import</a> <a id="5601" href="/FLRP/Problem/" class="Module">FLRP.Problem</a>        <a id="5621" class="Keyword">public</a>
+<a id="5628" class="Keyword">open</a> <a id="5633" class="Keyword">import</a> <a id="5640" href="/FLRP/Enforceable/" class="Module">FLRP.Enforceable</a>    <a id="5660" class="Keyword">public</a>
+<a id="5667" class="Keyword">open</a> <a id="5672" class="Keyword">import</a> <a id="5679" href="/FLRP/Parachute/" class="Module">FLRP.Parachute</a>      <a id="5699" class="Keyword">public</a>
+<a id="5706" class="Keyword">open</a> <a id="5711" class="Keyword">import</a> <a id="5718" href="/FLRP/Parachute/Representation/" class="Module">FLRP.Parachute.Representation</a> <a id="5748" class="Keyword">public</a>
+<a id="5755" class="Keyword">open</a> <a id="5760" class="Keyword">import</a> <a id="5767" href="/FLRP/Parachute/Theorems/" class="Module">FLRP.Parachute.Theorems</a>       <a id="5797" class="Keyword">public</a>
+<a id="5804" class="Keyword">open</a> <a id="5809" class="Keyword">import</a> <a id="5816" href="/FLRP/Reductions/" class="Module">FLRP.Reductions</a>     <a id="5836" class="Keyword">public</a>
+<a id="5843" class="Keyword">open</a> <a id="5848" class="Keyword">import</a> <a id="5855" href="/FLRP/Bridge/" class="Module">FLRP.Bridge</a>         <a id="5875" class="Keyword">public</a>
+<a id="5882" class="Keyword">open</a> <a id="5887" class="Keyword">import</a> <a id="5894" href="/FLRP/Representable/" class="Module">FLRP.Representable</a>  <a id="5914" class="Keyword">public</a>
+<a id="5921" class="Keyword">open</a> <a id="5926" class="Keyword">import</a> <a id="5933" href="/FLRP/Assumptions/" class="Module">FLRP.Assumptions</a>    <a id="5953" class="Keyword">public</a>
+<a id="5960" class="Keyword">open</a> <a id="5965" class="Keyword">import</a> <a id="5972" href="/FLRP/Closure/" class="Module">FLRP.Closure</a>        <a id="5992" class="Keyword">public</a>
+<a id="5999" class="Keyword">open</a> <a id="6004" class="Keyword">import</a> <a id="6011" href="/FLRP/LayerBridge/" class="Module">FLRP.LayerBridge</a>    <a id="6031" class="Keyword">public</a>
+<a id="6038" class="Keyword">open</a> <a id="6043" class="Keyword">import</a> <a id="6050" href="/FLRP/Certificates/" class="Module">FLRP.Certificates</a>   <a id="6070" class="Keyword">public</a>
+<a id="6077" class="Keyword">open</a> <a id="6082" class="Keyword">import</a> <a id="6089" href="/FLRP/L7EqSix/" class="Module">FLRP.L7EqSix</a>        <a id="6109" class="Keyword">public</a>
 </pre>
 
 <!-- File: docs/_links.md -->

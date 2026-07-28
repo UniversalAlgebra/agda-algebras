@@ -321,6 +321,10 @@
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/Congruences/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
          <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/Conjugation/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
@@ -337,7 +341,15 @@
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/MinimalNormal/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
          <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/NormalCore/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/NormalSubgroupLattice/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
@@ -622,6 +634,10 @@
     </url>
     <url>
          <loc>https://agda-algebras.universalalgebra.org/FLRP/Problem/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/FLRP/Reductions/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
@@ -1042,6 +1058,10 @@
     </url>
     <url>
          <loc>https://agda-algebras.universalalgebra.org/Order/Interval/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Order/Iso/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
