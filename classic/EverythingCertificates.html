@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>EverythingCertificates</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Symbol">{-#</a> <a id="5" class="Keyword">OPTIONS</a> <a id="13" class="Pragma">--cubical-compatible</a> <a id="34" class="Pragma">--safe</a> <a id="41" class="Symbol">#-}</a>
+
+<a id="46" class="Comment">-- This file exists to gate CI on the small-lattice certificate census.</a>
+<a id="118" class="Comment">-- It is NOT part of the canonical library aggregator; see issue #515.</a>
+
+<a id="190" class="Keyword">module</a> <a id="197" href="EverythingCertificates.html" class="Module">EverythingCertificates</a> <a id="220" class="Keyword">where</a>
+
+<a id="227" class="Keyword">import</a> <a id="234" href="FLRP.Certificates.SmallLatticeReps.SLR01.html" class="Module">FLRP.Certificates.SmallLatticeReps.SLR01</a>
+<a id="275" class="Keyword">import</a> <a id="282" href="FLRP.Certificates.SmallLatticeReps.SLR02.html" class="Module">FLRP.Certificates.SmallLatticeReps.SLR02</a>
+<a id="323" class="Keyword">import</a> <a id="330" href="FLRP.Certificates.SmallLatticeReps.SLR03.html" class="Module">FLRP.Certificates.SmallLatticeReps.SLR03</a>
+<a id="371" class="Keyword">import</a> <a id="378" href="FLRP.Certificates.SmallLatticeReps.SLR04.html" class="Module">FLRP.Certificates.SmallLatticeReps.SLR04</a>
+<a id="419" class="Keyword">import</a> <a id="426" href="FLRP.Certificates.SmallLatticeReps.SLR05.html" class="Module">FLRP.Certificates.SmallLatticeReps.SLR05</a>
+<a id="467" class="Keyword">import</a> <a id="474" href="FLRP.Certificates.SmallLatticeReps.SLR06.html" class="Module">FLRP.Certificates.SmallLatticeReps.SLR06</a>
+<a id="515" class="Keyword">import</a> <a id="522" href="FLRP.Certificates.SmallLatticeReps.SLR07.html" class="Module">FLRP.Certificates.SmallLatticeReps.SLR07</a>
+<a id="563" class="Keyword">import</a> <a id="570" href="FLRP.Certificates.SmallLatticeReps.SLR08.html" class="Module">FLRP.Certificates.SmallLatticeReps.SLR08</a>
+<a id="611" class="Keyword">import</a> <a id="618" href="FLRP.Certificates.SmallLatticeReps.SLR09.html" class="Module">FLRP.Certificates.SmallLatticeReps.SLR09</a>
+<a id="659" class="Keyword">import</a> <a id="666" href="FLRP.Certificates.SmallLatticeReps.SLR12.html" class="Module">FLRP.Certificates.SmallLatticeReps.SLR12</a>
+<a id="707" class="Keyword">import</a> <a id="714" href="FLRP.Certificates.SmallLatticeReps.SLR13.html" class="Module">FLRP.Certificates.SmallLatticeReps.SLR13</a>
+<a id="755" class="Keyword">import</a> <a id="762" href="FLRP.Certificates.SmallLatticeReps.SLR15.html" class="Module">FLRP.Certificates.SmallLatticeReps.SLR15</a>
+<a id="803" class="Keyword">import</a> <a id="810" href="FLRP.Certificates.SmallLatticeReps.SLR17.html" class="Module">FLRP.Certificates.SmallLatticeReps.SLR17</a>
+<a id="851" class="Keyword">import</a> <a id="858" href="FLRP.Certificates.SmallLatticeReps.SLR19.html" class="Module">FLRP.Certificates.SmallLatticeReps.SLR19</a>
+<a id="899" class="Keyword">import</a> <a id="906" href="FLRP.Certificates.SmallLatticeReps.SLR21.html" class="Module">FLRP.Certificates.SmallLatticeReps.SLR21</a>
+<a id="947" class="Keyword">import</a> <a id="954" href="FLRP.Certificates.SmallLatticeReps.SLR23.html" class="Module">FLRP.Certificates.SmallLatticeReps.SLR23</a>
+<a id="995" class="Keyword">import</a> <a id="1002" href="FLRP.Certificates.SmallLatticeReps.SLR24.html" class="Module">FLRP.Certificates.SmallLatticeReps.SLR24</a>
+<a id="1043" class="Keyword">import</a> <a id="1050" href="FLRP.Certificates.SmallLatticeReps.SLR25.html" class="Module">FLRP.Certificates.SmallLatticeReps.SLR25</a>
+<a id="1091" class="Keyword">import</a> <a id="1098" href="FLRP.Certificates.SmallLatticeReps.SLR26.html" class="Module">FLRP.Certificates.SmallLatticeReps.SLR26</a>
+<a id="1139" class="Keyword">import</a> <a id="1146" href="FLRP.Certificates.SmallLatticeReps.SLR27.html" class="Module">FLRP.Certificates.SmallLatticeReps.SLR27</a>
+<a id="1187" class="Keyword">import</a> <a id="1194" href="FLRP.Certificates.SmallLatticeReps.SLR29.html" class="Module">FLRP.Certificates.SmallLatticeReps.SLR29</a>
+<a id="1235" class="Keyword">import</a> <a id="1242" href="FLRP.Certificates.SmallLatticeReps.SLR30.html" class="Module">FLRP.Certificates.SmallLatticeReps.SLR30</a>
+<a id="1283" class="Keyword">import</a> <a id="1290" href="FLRP.Certificates.SmallLatticeReps.SLR31.html" class="Module">FLRP.Certificates.SmallLatticeReps.SLR31</a>
+<a id="1331" class="Keyword">import</a> <a id="1338" href="FLRP.Certificates.SmallLatticeReps.SLR32.html" class="Module">FLRP.Certificates.SmallLatticeReps.SLR32</a>
+<a id="1379" class="Keyword">import</a> <a id="1386" href="FLRP.Certificates.SmallLatticeReps.SLR33.html" class="Module">FLRP.Certificates.SmallLatticeReps.SLR33</a>
+<a id="1427" class="Keyword">import</a> <a id="1434" href="FLRP.Certificates.SmallLatticeReps.SLR34.html" class="Module">FLRP.Certificates.SmallLatticeReps.SLR34</a>
+<a id="1475" class="Keyword">import</a> <a id="1482" href="FLRP.Certificates.SmallLatticeReps.SLR35.html" class="Module">FLRP.Certificates.SmallLatticeReps.SLR35</a>
+</pre></body></html>

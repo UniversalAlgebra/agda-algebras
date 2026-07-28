@@ -15326,7 +15326,8 @@
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ualib/agda-algebras.git
 <span class="nb">cd</span><span class="w"> </span>agda-algebras
 nix<span class="w"> </span>develop
-make<span class="w"> </span>check
+make<span class="w"> </span>check<span class="w">        </span><span class="c1"># the library and the frozen Legacy tree</span>
+make<span class="w"> </span>check-all<span class="w">    </span><span class="c1"># ... plus the FLRP certificate census (slower)</span>
 </code></pre></div>
 <p>This pins Agda 2.8.0 and standard-library 2.3 automatically via the repository's flake.  See <a href="/install/"><code>INSTALL.md</code></a> for a walkthrough and non-Nix alternatives.</p>
 <h3 id="editor">Editor<a class="headerlink" href="#editor" title="Anchor link to this section">&para;</a></h3>
@@ -15338,7 +15339,7 @@ make<span class="w"> </span>check
 <li>Fork the repository to your GitHub account.</li>
 <li>Clone your fork and create a topic branch: <code>git checkout -b NNN-short-description</code>, where <code>NNN</code> is the issue number you're addressing.</li>
 <li>Make commits that each do one coherent thing.  Each commit message should have a single-line summary followed by an explanatory paragraph when the change is non-trivial.  Reference the issue in the commit message with <code>Part of #NNN</code>.</li>
-<li>Run <code>make check</code> locally.  Your PR must type-check.</li>
+<li>Run <code>make check</code> locally.  Your PR must type-check.  If you touched anything under <code>src/FLRP/Certificates/</code> or the certificate checkers it uses (<code>FLRP.Certificates</code>, <code>Setoid.Congruences.Certificates</code>), run <code>make check-all</code> — the certificate census is a separate tier with its own CI job, so <code>make check</code> alone will not catch breakage there.</li>
 <li>Open a pull request against <code>master</code>.  The PR title should match the issue title (e.g. <code>[M1-3] Add community-health files</code>).</li>
 <li>Be prepared to iterate based on review feedback.</li>
 </ol>
