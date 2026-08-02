@@ -15485,10 +15485,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#issue-m1-13-tier-the-type-check-the-paper-specific-certificates-are-44-of-a-clean-build-515" class="md-nav__link">
+  <a href="#issue-m1-13-tier-the-type-check-the-paper-specific-certificates-are-44-of-a-clean-build-515-closed" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Issue M1-13: Tier the type-check: the paper-specific certificates are 44% of a clean build (#515)
+        Issue M1-13: Tier the type-check: the paper-specific certificates are 44% of a clean build (#515, closed)
       
     </span>
   </a>
@@ -17514,10 +17514,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#issue-m1-13-tier-the-type-check-the-paper-specific-certificates-are-44-of-a-clean-build-515" class="md-nav__link">
+  <a href="#issue-m1-13-tier-the-type-check-the-paper-specific-certificates-are-44-of-a-clean-build-515-closed" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Issue M1-13: Tier the type-check: the paper-specific certificates are 44% of a clean build (#515)
+        Issue M1-13: Tier the type-check: the paper-specific certificates are 44% of a clean build (#515, closed)
       
     </span>
   </a>
@@ -18539,7 +18539,7 @@ edits to those regions will be overwritten on the next render.
 <h2 id="labeling">Labeling<a class="headerlink" href="#labeling" title="Anchor link to this section">&para;</a></h2>
 <p>This is repo-infrastructure and docs-governance hygiene, so it belongs in milestone <strong>M1</strong> (home of CI, the STYLE_GUIDE, <code>docs/adr/</code>, and the GITHUB_PROJECT tooling), as <strong>M1-12</strong> — the next free M1 number (M1-11 / #349 is the highest used).</p>
 <hr />
-<h3 id="issue-m1-13-tier-the-type-check-the-paper-specific-certificates-are-44-of-a-clean-build-515">Issue M1-13: Tier the type-check: the paper-specific certificates are 44% of a clean build (#515)<a class="headerlink" href="#issue-m1-13-tier-the-type-check-the-paper-specific-certificates-are-44-of-a-clean-build-515" title="Anchor link to this section">&para;</a></h3>
+<h3 id="issue-m1-13-tier-the-type-check-the-paper-specific-certificates-are-44-of-a-clean-build-515-closed">Issue M1-13: Tier the type-check: the paper-specific certificates are 44% of a clean build (#515, closed)<a class="headerlink" href="#issue-m1-13-tier-the-type-check-the-paper-specific-certificates-are-44-of-a-clean-build-515-closed" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>enhancement</code>, <code>milestone-1-infra</code>, <code>ci</code>, <code>flrp-research</code></p>
 <h2 id="description_8">Description<a class="headerlink" href="#description_8" title="Anchor link to this section">&para;</a></h2>
 <p>Type-checking the whole library has roughly doubled in wall-clock time, and a large share of the new cost is modules that matter only to the FLRP research track and to the <code>fin-lat-rep</code> manuscript — above all the generated representation certificates under <code>src/FLRP/Certificates/SmallLatticeReps/</code>.  A user of the algebra library who does not care about the finite lattice representation problem should not pay for them on every build, and a contributor waiting on <code>make check</code> should not either.</p>
@@ -21002,7 +21002,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> A short design note in <code>docs/notes/</code> records the formalization decisions and any divergences from the note's paper proofs.</li>
 </ul>
 <hr />
-<h3 id="issue-m6-13h-flrp-rp-2-the-enforcement-catalog-459">Issue M6-13h: FLRP RP-2: the enforcement catalog (#459)<a class="headerlink" href="#issue-m6-13h-flrp-rp-2-the-enforcement-catalog-459" title="Anchor link to this section">&para;</a></h3>
+<h3 id="issue-m6-13h-flrp-rp-2-the-enforcement-catalog-459-closed">Issue M6-13h: FLRP RP-2: the enforcement catalog (#459, closed)<a class="headerlink" href="#issue-m6-13h-flrp-rp-2-the-enforcement-catalog-459-closed" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>milestone-6-flrp</code>, <code>research-exploratory</code>, <code>flrp-research</code></p>
 <h2 id="description_68">Description<a class="headerlink" href="#description_68" title="Anchor link to this section">&para;</a></h2>
 <p>Build the machine-readable catalog of "interval shape forces group structure" theorems, each recast as a precise (cf-/min-)IE statement with an Agda statement — assumption-parameterized wherever the proof stays on paper.  Seed entries, per roadmap § 4: the note's classes <code>𝒢₀</code> (nonsolvable; IE), <code>𝒢₁</code> (neither alternating nor symmetric; IE), <code>𝒢₂</code> (subdirectly irreducible), <code>𝒢₃</code> (no nontrivial abelian normal subgroup), <code>𝒢₄</code> (<code>C_G(M) = 1</code> for all nontrivial normal <code>M</code>) — the last three cf-IE via parachutes.  External entries: Pálfy's solvable-exclusion lattices; Köhler/Feit <code>M₇</code> and Pálfy's minimality analysis of Feit's examples (min-IE); Baddeley–Lucchini reductions; Börner; Aschbacher's <code>D∆</code>/signalizer theorems specialized to parachutes (whose interiors are disconnected); Lucchini–Moscatiello–Palcoux–Spiga Boolean overgroup lattices.</p>
@@ -21204,11 +21204,11 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <p>Build GAP scripts that hunt for a given finite lattice as an upper interval <code>[H, G]</code> in subgroup lattices across the GAP group libraries — SmallGroups first, then the perfect- and primitive-groups libraries per roadmap § 5.A.1 — using A. Hulpke's intermediate-subgroup machinery (<code>IntermediateSubgroups</code> and his latest interval routines).  The SmallLatticeReps manuscript already ran such searches by hand (<code>SmallGroup(216,153)</code> for the minimal pentagonal upper interval and for the <code>L11</code>/<code>L20</code> constructions); this issue makes them systematic, scripted, and repo-resident, with outputs both the certificate pipeline and the manuscript can consume.  Part of #483.</p>
 <h2 id="tasks_67">Tasks<a class="headerlink" href="#tasks_67" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Scripted search: given a target lattice (JSON format shared with #486), scan a configurable slice of the SmallGroups library for upper intervals <code>[H, G]</code> isomorphic to it, with core-free normalization of <code>H</code> and lattice-isomorphism testing on the interval; record <code>(G, H, interval, isomorphism witness)</code> as JSON artifacts under the <code>scripts/flrp/</code> conventions, raw logs outside <code>src/</code> per roadmap § 6.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Transitive-degree scan for <code>L7</code> (with #484): for each <code>TransitiveGroup(n, k)</code> with point stabilizer <code>H</code>, starting at degree <code>n = 8</code>, test <code>[H, G] ≅ L7</code>; by the manuscript's § 5 transitivity theorem, a degree-by-degree exhaustion settles existence of minimal representations of that size.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Reproduce and script the manuscript's concrete claims: <code>SmallGroup(216,153)</code> as the smallest group with a pentagonal upper interval (the manuscript's TODO appendix), the <code>L11</code> filter-ideal construction, and the interval data behind <code>L14</code>, <code>L16</code>, <code>L20</code> for #485.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Import route into Agda: coordinate with the WP-3 bridge (#454) so a found interval becomes <code>Representableᵈ</code> via <code>Con(G ↷ G/H) ≅ [H, G]</code>; for small indices, alternatively dump the coset algebra's operation tables into <code>cg2.py</code> for a direct certificate.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Environment: GAP is not in the flake; document a pinned GAP setup, and provide it by specifying a new nix devshell in flake.nix that provides GAP and the SmallGroups library, so runs are reproducible; note the library versions in every emitted artifact.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Scripted search: given a target lattice (JSON format shared with #486), scan a configurable slice of the SmallGroups library for upper intervals <code>[H, G]</code> isomorphic to it, with core-free normalization of <code>H</code> and lattice-isomorphism testing on the interval; record <code>(G, H, interval, isomorphism witness)</code> as JSON artifacts under the <code>scripts/flrp/</code> conventions, raw logs outside <code>src/</code> per roadmap § 6.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Transitive-degree scan for <code>L7</code> (with #484): for each <code>TransitiveGroup(n, k)</code> with point stabilizer <code>H</code>, starting at degree <code>n = 8</code>, test <code>[H, G] ≅ L7</code>; by the manuscript's § 5 transitivity theorem, a degree-by-degree exhaustion settles existence of minimal representations of that size.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Reproduce and script the manuscript's concrete claims: <code>SmallGroup(216,153)</code> as the smallest group with a pentagonal upper interval (the manuscript's TODO appendix), the <code>L11</code> filter-ideal construction, and the interval data behind <code>L14</code>, <code>L16</code>, <code>L20</code> for #485.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Import route into Agda: coordinate with the WP-3 bridge (#454) so a found interval becomes <code>Representableᵈ</code> via <code>Con(G ↷ G/H) ≅ [H, G]</code>; for small indices, alternatively dump the coset algebra's operation tables into <code>cg2.py</code> for a direct certificate.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Environment: GAP is not in the flake; document a pinned GAP setup, and provide it by specifying a new nix devshell in flake.nix that provides GAP and the SmallGroups library, so runs are reproducible; note the library versions in every emitted artifact.</li>
 </ul>
 <h2 id="acceptance-criteria_81">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_81" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
@@ -21502,7 +21502,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 </ul>
 <p>Follow-up to #459 / #507.  Part of #451; roadmap avenue B.</p>
 <hr />
-<h3 id="issue-m6-22-normal-subgroups-and-congruences-of-a-group-the-missing-correspondence-508">Issue M6-22: Normal subgroups and congruences of a group: the missing correspondence (#508)<a class="headerlink" href="#issue-m6-22-normal-subgroups-and-congruences-of-a-group-the-missing-correspondence-508" title="Anchor link to this section">&para;</a></h3>
+<h3 id="issue-m6-22-normal-subgroups-and-congruences-of-a-group-the-missing-correspondence-508-closed">Issue M6-22: Normal subgroups and congruences of a group: the missing correspondence (#508, closed)<a class="headerlink" href="#issue-m6-22-normal-subgroups-and-congruences-of-a-group-the-missing-correspondence-508-closed" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>enhancement</code>, <code>milestone-6-flrp</code>, <code>flrp-research</code></p>
 <h2 id="description_86">Description<a class="headerlink" href="#description_86" title="Anchor link to this section">&para;</a></h2>
 <p>Formalize the correspondence between <strong>normal subgroups of a group and congruences of it</strong>, and use it to identify the group-side monolith notion with the library's congruence-side one.</p>
@@ -21522,6 +21522,203 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>𝒢₂</code> of <code>FLRP.Reductions</code> is stated with the library's <code>IsSubdirectlyIrreducible</code>, and the survey note's § 4.1 divergence is replaced by a pointer to the bridge.</li>
 </ul>
 <p>Follow-up to #459 / #507.  Part of #451.</p>
+<hr />
+<h3 id="issue-m6-23-powers-diagonals-and-the-interval-d-sn-521">Issue M6-23: Powers, diagonals, and the interval <code>[D , Sⁿ]</code> (#521)<a class="headerlink" href="#issue-m6-23-powers-diagonals-and-the-interval-d-sn-521" title="Anchor link to this section">&para;</a></h3>
+<p><strong>Labels</strong>: <code>enhancement</code>, <code>milestone-6-flrp</code>, <code>flrp-research</code></p>
+<h2 id="description_87">Description<a class="headerlink" href="#description_87" title="Anchor link to this section">&para;</a></h2>
+<p>Build the group infrastructure that Kurzweil's construction needs — the power <code>Sⁿ</code> of a group, its diagonal subgroup <code>D</code>, and the interval <code>[D , Sⁿ]</code> — once, in <code>Classical/</code>, so that both FLRP consumers import the same definitions: RP-4's wreath no-go (#461, Lemma 3.3 of the vendored note <code>docs/papers/flrp/ieprops/</code>) and the Kurzweil–Netter duality proof (#502, WP-5 stretch).  Reusable mathematics lands in the <code>Classical/</code> tree per roadmap § 6; the FLRP-facing interval packaging composes with <code>FLRP.Enforceable</code>'s <code>UpperInterval</code> / <code>IntervalIso</code>, the interval presentation everything downstream expects.</p>
+<p>The mathematical target is Kurzweil's lemma (<code>lem:latt-duals</code> of <code>docs/papers/fin-lat-rep/SmallLatticeReps.tex</code>, discussed in DeMeo's thesis § 2.2): for <code>S</code> a finite nonabelian simple group, the interval <code>[D , Sⁿ]</code> in <code>Sub(Sⁿ)</code> is isomorphic to <code>Eq(n)′</code>, the dual of the partition lattice of an <code>n</code>-element set.  Both written sources prove only the order-reversing embedding <code>π ↦ K_π = { y ∣ ker π ≤ ker y }</code>; the surjectivity half — every subgroup between <code>D</code> and <code>Sⁿ</code> is such a <code>K_π</code>, the step where nonabelian simplicity enters — is cited to Kurzweil's 1985 article and not reproved.  The formal treatment mirrors that split honestly:</p>
+<ul>
+<li>everything the sources actually prove is formalized unconditionally — the power, the diagonal, the partition subgroups with their membership characterizations, the partition lattice <code>Eq(n)</code> itself as a level-0 equational <code>Lattice</code> (on the Freese normal-form parent vectors of <code>Setoid.Congruences.Certificates.Schema</code>, which are exactly the idempotent decreasing maps <code>IC(n)</code> the sources use), and the dual order-embedding <code>Eq(n) → [D , Sⁿ]</code>;</li>
+<li>surjectivity is registered as <code>FLRP.Assumptions</code> Entry 4 in the established per-entry style (statement, source and citation, status, layer, retirement path), stated so that it hands the consumer the partition witness; the assembled <code>IntervalIso [D , Sⁿ] ≅ Eq(n)′</code> is then a proved theorem conditional on the entry, and retiring the entry (a follow-up issue: the normal-subgroup structure of powers of a nonabelian simple group, plus the induction over blocks) upgrades it with no change to consumers.</li>
+</ul>
+<h2 id="tasks_76">Tasks<a class="headerlink" href="#tasks_76" title="Anchor link to this section">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The indexed product <code>⨅ᵍ</code> of groups and the power <code>_^ᵍ_</code> (carrier <code>Fin n → S</code>, pointwise operations), generalizing the binary <code>_×ᵍ_</code> of <code>Classical.Structures.Group.Product</code> rather than duplicating it; satisfaction transfers by <code>⊧-P-invar</code> of <code>Setoid.Varieties.Properties</code>.  Coordinate projections and pointwise descriptions of the curried operations.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The diagonal <code>D = { (s , … , s) }</code> as an equality-respecting subgroup of <code>Sⁿ</code>, with its membership characterization.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The partition lattice <code>Eq(n)</code> as a <code>Classical.Small.Structures.Lattice</code>, order-first on normal-form parent vectors: kernel-inclusion order, computable meet and join, lattice laws derived from the order, and the <code>dualLattice</code> instance.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Partition subgroups <code>K_π</code> with <code>D ≤ K_π ≤ Sⁿ</code>, the membership characterization <code>y ∈ K_π ⟺ ker π ⊆ ker y</code>, and the dual order-embedding (order-reversal in both directions; the reflection direction consumes nontriviality of <code>S</code>).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The interval <code>[D , Sⁿ]</code> as an <code>UpperInterval</code> instance, and the conditional theorem assembling <code>IntervalIso (Sⁿ) D (dualLattice (Eq n))</code> from Entry 4.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>FLRP.Assumptions</code> Entry 4: Kurzweil interval surjectivity, per-entry documentation and retirement path.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Consumer interface sanity check: state (as type definitions, not proofs) the signatures RP-4 (#461) and Kurzweil–Netter (#502) will call, and confirm they typecheck against what was built.</li>
+</ul>
+<h2 id="acceptance-criteria_92">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_92" title="Anchor link to this section">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Type-checks under <code>--cubical-compatible --exact-split --safe</code> with no postulates; classical inputs enter only through the named Entry 4 hypothesis.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>make check</code>, <code>make unused-imports</code>, and <code>make check-links</code> (after <code>make gen-links</code>) are green.</li>
+</ul>
+<p>Consumers: #461, #502.  Part of #451; roadmap §§ 2, 6.</p>
+<hr />
+<h3 id="issue-m6-24-kurzweil-surjectivity-every-subgroup-in-d-sn-is-a-partition-subgroup-retire-assumptions-entry-4-522">Issue M6-24: Kurzweil surjectivity: every subgroup in <code>[D , Sⁿ]</code> is a partition subgroup (retire Assumptions Entry 4) (#522)<a class="headerlink" href="#issue-m6-24-kurzweil-surjectivity-every-subgroup-in-d-sn-is-a-partition-subgroup-retire-assumptions-entry-4-522" title="Anchor link to this section">&para;</a></h3>
+<p><strong>Labels</strong>: <code>enhancement</code>, <code>milestone-6-flrp</code>, <code>flrp-research</code></p>
+<h2 id="description_88">Description<a class="headerlink" href="#description_88" title="Anchor link to this section">&para;</a></h2>
+<p>Prove <strong>Kurzweil surjectivity</strong> — for a finite nonabelian simple group <code>S</code>, every subgroup of <code>Sⁿ</code> containing the diagonal <code>D</code> is a partition subgroup <code>K_π</code> — and retire Entry 4 of <code>FLRP.Assumptions</code> per its documented retirement path.  This is the <em>onto</em> half of Kurzweil's lemma <code>[D , Sⁿ] ≅ Eq(n)′</code>; the dual order embedding and the conditional isomorphism <code>kurzweilIntervalIso</code> landed with #521, so discharging this entry upgrades the isomorphism to an unconditional theorem at simple instantiations, with no change to consumers (#461, #502).</p>
+<p>The missing mathematics is the normal-subgroup structure theory of powers of a nonabelian simple group.  The classical argument (Kurzweil 1985; Pálfy's 2009 lectures): the kernel meet <code>π</code> of a subgroup <code>U ∈ [D , Sⁿ]</code> satisfies <code>U = K_π</code>, by showing each block column <code>{ c_B(s) ∣ s ∈ S }</code> lies in <code>U</code> — the set <code>N_B = { s ∣ c_B(s) ∈ U }</code> is normal in <code>S</code> by conjugating with diagonal elements, so by simplicity it is trivial or everything, and nontriviality of <code>N_B</code> is where nonabelianness enters (normal subgroups of <code>Sᵐ</code> are partial products, so a surjection <code>Sᵐ → S</code> is a coordinate followed by an automorphism, which the diagonal forces to be the identity).</p>
+<h2 id="prerequisites_1">Prerequisites<a class="headerlink" href="#prerequisites_1" title="Anchor link to this section">&para;</a></h2>
+<ul>
+<li>A simplicity predicate for groups (issue #512 owns the alternating/symmetric and solvability predicates; simplicity in the "every normal subgroup is trivial or full" form can land there or here).</li>
+<li><code>Classical.Structures.Group.{Power, Diagonal, PartitionSubgroup}</code> and <code>FLRP.KurzweilInterval</code> from #521.</li>
+</ul>
+<h2 id="tasks_77">Tasks<a class="headerlink" href="#tasks_77" title="Anchor link to this section">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Normal subgroups of a finite power <code>Sⁿ</code> of a nonabelian simple group are the partial products (the commutator argument: a normal subgroup with a nontrivial <code>i</code>-th coordinate contains the full <code>i</code>-th factor).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> A subgroup of <code>Sⁿ</code> containing the diagonal collapses blockwise: with <code>π</code> its kernel meet, each block column lies in it.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Assemble <code>KurzweilSurjectivityAt 𝒮 n</code> for <code>𝒮</code> simple nonabelian, at Layer S; derive the Layer-D reading over decidable interval elements.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Retire Entry 4: deprecate <code>KurzweilSurjectivityAt</code> as a hypothesis, rewire <code>kurzweilIntervalIso</code> and <code>eqDual-groupRepresentable</code>, and update the registry documentation.</li>
+</ul>
+<h2 id="acceptance-criteria_93">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_93" title="Anchor link to this section">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Type-checks under <code>--cubical-compatible --exact-split --safe</code> with no postulates; the nonabelian-simple side condition of Entry 4 becomes a formal hypothesis rather than prose.</li>
+</ul>
+<p>Follow-up to #521.  Feeds #461 and #502; part of #451.</p>
+<hr />
+<h3 id="issue-m6-25-l16-erratum-the-printed-subc2a6-interval-does-not-reproduce-and-three-parked-census-entries-are-duals-of-certified-ones-529">Issue M6-25: L16 erratum: the printed Sub(C2.A6) interval does not reproduce — and three parked census entries are duals of certified ones (#529)<a class="headerlink" href="#issue-m6-25-l16-erratum-the-printed-subc2a6-interval-does-not-reproduce-and-three-parked-census-entries-are-duals-of-certified-ones-529" title="Anchor link to this section">&para;</a></h3>
+<p><strong>Labels</strong>: <code>milestone-6-flrp</code>, <code>research-exploratory</code>, <code>flrp-research</code></p>
+<h2 id="description_89">Description<a class="headerlink" href="#description_89" title="Anchor link to this section">&para;</a></h2>
+<p>Two findings about the <code>L16</code> entry of the SmallLatticeReps § 6 catalog, one negative and one positive.  The negative one extends erratum E2 of <code>docs/notes/flrp-slr-census.md</code>; the positive one settles <code>L16</code>'s census status outright and, in passing, two other parked entries.  All numbering is the <strong>manuscript's</strong> (<code>docs/papers/fin-lat-rep/SmallLatticeReps.tex</code>, 2016-06-10 draft); the dictionary is <code>docs/notes/flrp-slr-naming.md</code>.</p>
+<h2 id="1-the-printed-group-representation-does-not-reproduce-e2-extended">1. The printed group representation does not reproduce (E2, extended)<a class="headerlink" href="#1-the-printed-group-representation-does-not-reproduce-e2-extended" title="Anchor link to this section">&para;</a></h2>
+<p>The manuscript prints, for <code>L16</code> (covers <code>0 ≺ 1, 2</code>; <code>1 ≺ 3, 4, 5</code>; <code>2, 3, 4, 5 ≺ 6</code>):</p>
+<blockquote>
+<p>Upper interval in Sub(<code>C_2.A_6</code>), algebra of size 180</p>
+</blockquote>
+<p>That asserts a subgroup <code>H ≤ C2.A6</code> of index 180 — so <code>|H| = 4</code> in a group of order 720 — with <code>[H, C2.A6] ≅ L16</code>.  Both readings of <code>C2.A6</code> fail, and the failure is not a near miss:</p>
+<ul>
+<li><strong><code>C2.A6 = 2.A6 = SL(2,9)</code></strong> (the ATLAS double cover, the reading of E2).  A single conjugacy class of index-180 subgroups; its interval has <strong>38</strong> elements.</li>
+<li><strong><code>C2 × A6</code></strong> (the split reading, checked here for the first time).  Index-180 classes give intervals of sizes <strong>16, 28, 38</strong> — no seven-element interval at all.</li>
+</ul>
+<p>Stronger, and independent of which group was meant: <strong>no finite group has an upper interval <code>≅ L16</code> of index ≤ 16.</strong>  The transitive-groups scan settles every index it covers, because a counterexample of index <code>n</code> can be taken core-free (if <code>N = Core_G(H) ≠ 1</code> then <code>[H/N, G/N] ≅ [H, G]</code> at the same index), hence is a faithful transitive action of degree <code>n</code>; degrees 4, 6, 8, 9, 10, 12, 14, 15, 16 were scanned exhaustively — 2340 transitive groups, 1954 of them at degree 16 — and every prime degree is a free negative (transitive of prime degree ⇒ primitive ⇒ two-element interval).  The <code>Eq(n)</code> uniform-partition filter (#494) agrees independently: <code>L16</code> has <strong>no</strong> uniform copy in <code>Eq(n)</code> for <code>n ≤ 10</code>, so no transitive G-set of those degrees can have it as a congruence lattice.</p>
+<p>Either the group or the index is wrong in the printed entry; this issue does not guess which.</p>
+<h2 id="2-l16-is-the-dual-of-l17-and-so-are-two-other-parked-entries">2. <code>L16</code> is the dual of <code>L17</code> — and so are two other parked entries<a class="headerlink" href="#2-l16-is-the-dual-of-l17-and-so-are-two-other-parked-entries" title="Anchor link to this section">&para;</a></h2>
+<p><code>L16 ≅ dual(L17)</code>, verified by exhaustive order-isomorphism search over the committed stanzas (<code>L16</code> is not self-dual).  <code>L17</code> is <strong>certified</strong> in this library (<code>FLRP.Certificates.SmallLatticeReps.SLR17</code>, from the manuscript's own 12-element algebra <code>B17</code>), so <code>L16</code> is representable through <code>dual-Representableᵈ</code> of <code>FLRP.Closure.Basic</code>, conditional on <code>FLRP.Assumptions</code> Entry 2 (Kurzweil–Netter) — exactly the route the census already uses for <code>L18</code> and <code>L22</code>.  <strong><code>L16</code> therefore needs no group representation at all</strong> to leave the parked list; the erratum above concerns only the manuscript's stated construction.</p>
+<p>Sweeping the same test across every parked entry turns up two more:</p>
+<table>
+<thead>
+<tr>
+<th>parked entry</th>
+<th>dual is</th>
+<th>census status today</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>L14</code></td>
+<td><code>L15</code> (certified, <code>SLR15</code>)</td>
+<td>group representation, <code>Sub(A6)</code> index 90 — reproduced, but parked on the WP-3 bridge</td>
+</tr>
+<tr>
+<td><code>L16</code></td>
+<td><code>L17</code> (certified, <code>SLR17</code>)</td>
+<td>group representation, <code>Sub(C2.A6)</code> — <strong>does not reproduce</strong></td>
+</tr>
+<tr>
+<td><code>L20</code></td>
+<td><code>L21</code> (certified, <code>SLR21</code>)</td>
+<td>filter-ideal in <code>SmallGroup(216,153)</code>; the draft prints no explicit construction</td>
+</tr>
+<tr>
+<td><code>L18</code></td>
+<td><code>L19</code> (certified)</td>
+<td>already recorded as a dual</td>
+</tr>
+<tr>
+<td><code>L22</code></td>
+<td><code>L23</code> (certified)</td>
+<td>already recorded as a dual</td>
+</tr>
+<tr>
+<td><code>L10</code>, <code>L11</code>, <code>L28</code></td>
+<td>self-dual</td>
+<td>duality gives nothing new</td>
+</tr>
+</tbody>
+</table>
+<p>The manuscript lists dual pairs adjacently (14/15, 16/17, 18/19, 20/21, 22/23), so the pairing looks deliberate; the census and <code>FLRP.Closure.Basic</code> simply track it for only two of the five pairs.</p>
+<h2 id="tasks_78">Tasks<a class="headerlink" href="#tasks_78" title="Anchor link to this section">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Extend erratum E2 in <code>docs/notes/flrp-slr-census.md</code> with the <code>C2 × A6</code> result, the index-≤-16 non-existence, and the <code>Eq(n)</code> uniform-filter cross-check; commit the GAP artifacts under <code>scripts/gap/flrp/out/</code>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Record the duality finding in the census: reclassify <code>L14</code>, <code>L16</code>, <code>L20</code> as assumption-conditional duals of <code>SLR15</code>, <code>SLR17</code>, <code>SLR21</code>, keeping the group-representation notes as the (independent) second route for <code>L14</code>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Update the payoff prose in <code>src/FLRP/Closure/Basic.lagda.md</code>, which names only <code>L18</code> and <code>L22</code> as the census's dual entries — five of the seven parked entries are duals of certified ones.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Consider a <code>bin/sweep_smallgroups.g</code> driver: <code>FLRP_ScanSmallGroups</code> exists in <code>lib/search.g</code> with no command-line front end, which is why the searches above had to go through <code>find_interval.g</code> and <code>scan_transitive.g</code>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Optional, if cheap: push the transitive scan past degree 16 to sharpen the non-existence bound (degree 18 has 983 groups, 20 has 1117, 24 has 25000 — the last is likely out of reach), and note that <code>scan_transitive.g</code> hard-codes <code>L7</code> naming and output paths while its prescreen (interval size 7) serves any seven-element target — worth parameterizing.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Report the erratum upstream to https://github.com/UniversalAlgebra/fin-lat-rep alongside E1, with the suggested repair: cite duality with <code>L17</code> (as the draft already does for <code>L18</code> and <code>L22</code>), or supply a corrected group and index.</li>
+</ul>
+<h2 id="acceptance-criteria_94">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_94" title="Anchor link to this section">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The census records <code>L16</code>'s status as settled-by-duality, with the failed group representation logged as an erratum rather than a pending search.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Every claim above is reproducible from committed artifacts and documented commands.</li>
+</ul>
+<p>Part of #483; follows up the census of #485 and the GAP engine of #487.  The duality route retires unconditionally when #502 discharges Entry 2.</p>
+<hr />
+<h3 id="issue-m6-25-instantiate-kurzweilnetter-duality-at-a-concrete-simple-group-a5-527">Issue M6-25: Instantiate Kurzweil–Netter duality at a concrete simple group (A₅) (#527)<a class="headerlink" href="#issue-m6-25-instantiate-kurzweilnetter-duality-at-a-concrete-simple-group-a5-527" title="Anchor link to this section">&para;</a></h3>
+<p><strong>Labels</strong>: </p>
+<h2 id="description_90">Description<a class="headerlink" href="#description_90" title="Anchor link to this section">&para;</a></h2>
+<p>The formal Kurzweil–Netter duality proof of #502 (<code>FLRP.KurzweilNetter.Duality</code>) is deliberately <em>parameterized</em> by the base group rather than instantiated: <code>KurzweilNetterProof</code> takes a group <code>𝒮</code> together with exactly the properties the argument uses — a <code>FiniteAlgebra</code> witness (finite carrier, decidable equality), a nontriviality witness <code>s₀</code> with <code>¬ (s₀ ≈ ε)</code>, and the Kurzweil-surjectivity family <code>(n : ℕ) → KurzweilSurjectivityAt 𝒮 n</code> (Assumptions Entry 4).  Nonabelianness and simplicity of <code>𝒮</code> enter the mathematics only through Entry 4, so no simplicity predicate occurs in the formal development.</p>
+<p>This issue tracks the instantiation at a concrete finite nonabelian simple group, canonically <code>A₅</code>, so that <code>kurzweilNetterDuality</code> (and <code>dual-Representableᵈ</code> of <code>FLRP.Closure</code>) can be consumed with no group-shaped parameter at all.</p>
+<h2 id="tasks_79">Tasks<a class="headerlink" href="#tasks_79" title="Anchor link to this section">&para;</a></h2>
+<ul>
+<li>Construct <code>A₅</code> as a <code>Group 0ℓ 0ℓ</code> with a <code>FiniteAlgebra</code> witness (a Cayley-table presentation on <code>Fin 60</code>, or the even permutations of <code>Fin 5</code>), and exhibit a nontrivial element.</li>
+<li>Either supply Entry 4 for <code>A₅</code> — blocked on #522 in general form, or provable directly for the specific group — or thread the per-group hypothesis to the census consumers explicitly.</li>
+<li>Provide the specialized corollary <code>kurzweilNetterDuality-A₅ : ((n : ℕ) → KurzweilSurjectivityAt A₅ n) → KurzweilNetterDuality</code>, collapsing to the unconditional theorem once #522 lands.</li>
+</ul>
+<h2 id="relations">Relations<a class="headerlink" href="#relations" title="Anchor link to this section">&para;</a></h2>
+<ul>
+<li>
+<h1 id="502-provides-the-parameterized-theorem-this-issue-instantiates">502 provides the parameterized theorem this issue instantiates.<a class="headerlink" href="#502-provides-the-parameterized-theorem-this-issue-instantiates" title="Anchor link to this section">&para;</a></h1>
+</li>
+<li>
+<h1 id="522-retires-entry-4-the-surjectivity-family-the-instantiation-must-supply">522 retires Entry 4, the surjectivity family the instantiation must supply.<a class="headerlink" href="#522-retires-entry-4-the-surjectivity-family-the-instantiation-must-supply" title="Anchor link to this section">&para;</a></h1>
+</li>
+<li>
+<h1 id="512-owns-the-solvability-and-alternatingsymmetric-predicates-simplicity-of-a5-as-a-stated-property-belongs-there-but-is-not-needed-for-this-instantiation-only-entry-4-is">512 owns the solvability and alternating/symmetric predicates; simplicity of <code>A₅</code> as a <em>stated property</em> belongs there, but is not needed for this instantiation — only Entry 4 is.<a class="headerlink" href="#512-owns-the-solvability-and-alternatingsymmetric-predicates-simplicity-of-a5-as-a-stated-property-belongs-there-but-is-not-needed-for-this-instantiation-only-entry-4-is" title="Anchor link to this section">&para;</a></h1>
+</li>
+</ul>
+<h2 id="acceptance-criteria_95">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_95" title="Anchor link to this section">&para;</a></h2>
+<ul>
+<li>A concrete group value instantiates <code>KurzweilNetterProof</code> under <code>--safe</code> with no postulate, with any remaining hypothesis being exactly Entry 4 at that group.</li>
+</ul>
+<hr />
+<h3 id="issue-m6-26-formalize-snows-filter-ideal-lemma-and-use-it-to-represent-l11-and-l16-unconditionally-530">Issue M6-26: Formalize Snow's filter-ideal lemma, and use it to represent L11 and L16 unconditionally (#530)<a class="headerlink" href="#issue-m6-26-formalize-snows-filter-ideal-lemma-and-use-it-to-represent-l11-and-l16-unconditionally-530" title="Anchor link to this section">&para;</a></h3>
+<p><strong>Labels</strong>: <code>enhancement</code>, <code>milestone-6-flrp</code>, <code>research-exploratory</code>, <code>flrp-research</code></p>
+<h2 id="description_91">Description<a class="headerlink" href="#description_91" title="Anchor link to this section">&para;</a></h2>
+<p>Formalize the <strong>union-of-a-filter-and-an-ideal</strong> closure lemma — Snow's theorem, in the direct form the manuscript proves — and apply it to the two census entries whose manuscript representations are filter-ideal constructions.  The payoff is that <code>L11</code> and <code>L16</code> become representable <strong>unconditionally</strong>: no Kurzweil–Netter assumption (Entry 2, needed for the duality route of #529) and no emitted certificate at carrier 60 or 216.</p>
+<p>The lemma (<code>lemma:union-filter-ideal</code> of <code>docs/papers/fin-lat-rep/SmallLatticeReps.tex</code> § "Union of a filter and ideal"; Snow, Algebra Universalis 43 (2000), reproved there directly rather than via primitive positive formulas):</p>
+<blockquote>
+<p>Let <code>X</code> be a finite set.  If <code>L ≤ Eq(X)</code> is representable and <code>L₀ ≤ L</code> is a sublattice with universe <code>α↑ ∪ β↓</code>, then <code>L₀</code> is representable.</p>
+</blockquote>
+<p>Its proof is four lines and entirely constructive, which is what makes this worth formalizing.  Writing <code>λ(L) = { f ∈ Xˣ ∣ f respects every θ ∈ L }</code>, representability of <code>L</code> means <code>L = Con ⟨X , λ(L)⟩</code>.  Given <code>θ ∈ L \ L₀</code>, pick <code>(a,b) ∈ α \ θ</code> and <code>(u,v) ∈ θ \ β</code>, and define the <strong>two-valued</strong> map <code>h(x) = a</code> if <code>x ∈ u/β</code>, else <code>b</code>.  Then <code>β ≤ ker h</code>, so <code>h</code> respects everything below <code>β</code>; and <code>(a,b) ∈ γ</code> for every <code>γ ≥ α</code>, so <code>h</code> respects everything above <code>α</code>.  Hence <code>h ∈ λ(L₀)</code> violates <code>θ</code>.  Since <code>λ(L) ⊆ λ(L₀)</code>, every <code>θ ∉ L₀</code> is violated by something in <code>λ(L₀)</code>, i.e. <code>L₀ = Con ⟨X , λ(L₀)⟩</code>.</p>
+<p>No search, no enumeration, no fixpoint — the same "witness, not decision" shape as the WP-6 checkers, and a good fit for <code>--safe</code> Agda.</p>
+<h2 id="the-concrete-witnesses">The concrete witnesses<a class="headerlink" href="#the-concrete-witnesses" title="Anchor link to this section">&para;</a></h2>
+<ul>
+<li><strong><code>L16</code></strong> — found by a search over all groups of order ≤ 100 (the <em>only</em> configuration in that range).  In <code>Sub(A5)</code> take <code>H = C3</code> (index 20):</li>
+</ul>
+<div class="highlight"><pre><span></span><code>[C3 , A5]  =  { C3 , S3 , A4 , A4′ , A5 }  ≅  M3
+</code></pre></div>
+<p>(the two <code>A4</code>s are the alternating subgroups containing that <code>C3</code>, the <code>S3</code> is its normalizer; GAP's <code>IntermediateSubgroups</code> reports exactly three middles with no containments among them).  Take <code>K = C5</code>: it lies in none of the three middles, meets each trivially, and joins each to <code>A5</code>.  So</p>
+<div class="highlight"><pre><span></span><code>L16  ≅  [C3 , A5]  ∪  [1 , C5]        inside Sub(A5),
+</code></pre></div>
+<p>a filter-ideal union, with ambient set <code>X = A5</code> — an algebra of size <strong>60</strong>, against the erroneous 180 of the printed entry (#529).
++  <strong><code>L11</code></strong> — the manuscript's own construction, already reproduced by the #487 engine (<code>scripts/gap/flrp/out/l11_filter_ideal_216_153.json</code>): the pentagon filter <code>[H , G] ≅ N5</code> in <code>SmallGroup(216,153)</code> together with the order-3 minimal subgroup <code>K</code> below <code>β</code> but below neither <code>α</code> nor <code>γ</code>.  Ambient set of size 216.</p>
+<h2 id="why-the-ambient-lattice-is-closed-without-waiting-on-501">Why the ambient lattice is closed, without waiting on #501<a class="headerlink" href="#why-the-ambient-lattice-is-closed-without-waiting-on-501" title="Anchor link to this section">&para;</a></h2>
+<p>The lemma needs the ambient <code>L ≤ Eq(X)</code> to satisfy <code>L = Con ⟨X , λ(L)⟩</code>.  In general that follows from the unary-reduction theorem (#501, open), but <strong>both instances here avoid it</strong>: the ambient is <code>Sub(G)</code> presented as the left-coset partitions of <code>X = G</code>, and <code>Con ⟨G , right translations⟩ ≅ Sub(G)</code> is the WP-3 bridge (#454, merged) at <code>H = 1</code>.  So <code>Inv(λ(L)) ⊆ Inv({right translations}) = Sub(G) = L</code>, and closedness is immediate.  Recording this because it decides the dependency order: this issue does <strong>not</strong> block on #501.</p>
+<h2 id="tasks_80">Tasks<a class="headerlink" href="#tasks_80" title="Anchor link to this section">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The <code>λ</code> operator and the concrete representability predicate for a set of equivalence relations on a finite set — the "closed" notion <code>L = Con ⟨X , λ(L)⟩</code> (this is exactly what <code>eqsearch.py</code>'s closure test computes engine-side, so the naming should match the tooling's).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Filters and ideals of a lattice, and the fact that <code>α↑ ∪ β↓</code> is always a sublattice (one line each way: <code>x ∧ y ≤ y ≤ β</code> and <code>x ∨ y ≥ x ≥ α</code>).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The lemma itself, following the manuscript's proof; the <code>h</code> construction is a two-valued map defined by a decidable <code>β</code>-class membership test, so it should be smooth over a finite carrier.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Bridge to <code>Representableᵈ</code>: a closed <code>L₀ ≤ Eq(X)</code> yields the unary algebra <code>⟨X , λ(L₀)⟩</code> with <code>Con ≅ L₀</code>.  Check whether <code>Classical.Structures.Unary</code> (from the WP-6 pilot) already provides the algebra side.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The <code>Sub(G)</code> ambient: instantiate the WP-3 bridge at <code>H = 1</code> to get <code>Sub(G)</code> as a closed sublattice of <code>Eq(G)</code>; state it as a reusable lemma in <code>Classical/</code>, not under <code>FLRP/</code>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Apply to <code>L16</code> (the <code>A5</code> data above) and <code>L11</code> (the committed <code>SmallGroup(216,153)</code> data), producing <code>Representableᵈ</code> witnesses; update <code>docs/notes/flrp-slr-census.md</code> and the tally.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> GAP side: promote the ad-hoc probe into <code>bin/find_filter_ideal.g</code> — given a target filter shape and an ideal length, hunt for <code>(G, H, K)</code> — and commit the <code>A5</code> artifact in the <code>flrp-gap-filter-ideal v1</code> format that <code>bin/filter_ideal_216.g</code> already uses.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Cross-check with the manuscript's derivation: it obtains <strong>adjoined ordinal sums</strong> as a corollary of this lemma (<code>α = β = 1_{L₁} × 0_{L₂}</code> inside <code>L₁ × L₂</code>).  <code>FLRP.Closure</code> proves ordinal-sum closure directly (#456), so deriving it a second way is a free consistency check on both.</li>
+</ul>
+<h2 id="scope-note">Scope note<a class="headerlink" href="#scope-note" title="Anchor link to this section">&para;</a></h2>
+<p>An alternative route is to emit a 60-element certificate for <code>⟨A5 , λ(L₀)⟩</code> through the WP-6 pipeline, but that needs the renderer's <code>Fin</code>-literal cap lifted past 31 and the type-check cost at carrier 60 is untested (27.9 s at carrier 19, growing with the <code>n²</code> trace tables).  The abstract route above avoids both, and is the reason to prefer formalizing the lemma over brute-forcing the instance.</p>
+<h2 id="acceptance-criteria_96">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_96" title="Anchor link to this section">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The lemma type-checks under <code>--cubical-compatible --exact-split --safe</code> with no postulates and no registry assumption.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>L11</code> and <code>L16</code> are <code>Representableᵈ</code> in the library without Entry 2, and the census records them as certified by the filter-ideal route.</li>
+</ul>
+<p>Part of #483; relates to #529 (which currently parks <code>L16</code> on the conditional duality route) and to the manuscript's <code>L17</code>/<code>L20</code> entries, which use the same method.</p>
 <!-- END GENERATED: milestone-6 -->
 
 <h3 id="milestone-6-dependencies">Milestone 6 Dependencies<a class="headerlink" href="#milestone-6-dependencies" title="Anchor link to this section">&para;</a></h3>
@@ -21542,10 +21739,10 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 
 <h3 id="issue-m7-1-extend-complexity-module-beyond-basic-and-csp-274">Issue M7-1: Extend Complexity module beyond Basic and CSP (#274)<a class="headerlink" href="#issue-m7-1-extend-complexity-module-beyond-basic-and-csp-274" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>milestone-7-csp</code>, <code>design-discussion</code></p>
-<h2 id="description_87">Description<a class="headerlink" href="#description_87" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_92">Description<a class="headerlink" href="#description_92" title="Anchor link to this section">&para;</a></h2>
 <p>The current <code>Base.Complexity</code> module has only two submodules (<code>Basic</code> and <code>CSP</code>).  The CSP module is little more than a bare definition with no theorems.  This is a separate research track from the FLRP (M6): the FLRP is about which lattices arise as congruence lattices of finite algebras, while finite-template algebraic CSP is about the complexity of constraint satisfaction problems as a function of the polymorphism clone of the underlying finite relational structure.  Both use universal algebra, but they are different questions.  Infinite-template extensions (ω-categorical, Bodirsky–Pinsker) are covered separately under M9-2.</p>
 <p>This issue is research-flavored and best decomposed after discussion.</p>
-<h2 id="tasks_76">Tasks<a class="headerlink" href="#tasks_76" title="Anchor link to this section">&para;</a></h2>
+<h2 id="tasks_81">Tasks<a class="headerlink" href="#tasks_81" title="Anchor link to this section">&para;</a></h2>
 <p>Candidate content, to be prioritized:</p>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Polymorphism clones: <code>Pol(A, Γ)</code> as a first-class type.</li>
@@ -21554,7 +21751,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Specific CSP tractability classes as worked examples (Horn-SAT, 2-SAT, linear systems over finite fields).</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Statement (not necessarily proof) of the Bulatov–Zhuk algebraic dichotomy.</li>
 </ul>
-<h2 id="acceptance-criteria_92">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_92" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_97">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_97" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Polymorphism clones available as a type with basic operations.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Jeavons Galois connection is proved for a fixed finite domain, OR a clear research-plan issue is filed continuing the work.</li>
@@ -21569,9 +21766,9 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 
 <h3 id="issue-m8-1-publish-theorem-proof-corpus-for-llm-training-275">Issue M8-1: Publish (theorem, proof) corpus for LLM training (#275)<a class="headerlink" href="#issue-m8-1-publish-theorem-proof-corpus-for-llm-training-275" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>documentation</code>, <code>milestone-8-llm</code></p>
-<h2 id="description_88">Description<a class="headerlink" href="#description_88" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_93">Description<a class="headerlink" href="#description_93" title="Anchor link to this section">&para;</a></h2>
 <p>Once <code>Setoid/</code> and <code>Classical/</code> are stable post-M4, publish a training and retrieval corpus for language models.</p>
-<h2 id="tasks_77">Tasks<a class="headerlink" href="#tasks_77" title="Anchor link to this section">&para;</a></h2>
+<h2 id="tasks_82">Tasks<a class="headerlink" href="#tasks_82" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Design a schema for corpus records: module path, theorem statement, proof term, dependencies, prose summary, keywords.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Implement an extractor that walks the library and emits records.</li>
@@ -21579,7 +21776,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add a CI job that regenerates the corpus on each release.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Write a short paper or blog post describing the dataset.</li>
 </ul>
-<h2 id="acceptance-criteria_93">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_93" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_98">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_98" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Dataset published with ≥ 500 (theorem, proof) records.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> CI regenerates on release.</li>
@@ -21588,15 +21785,15 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <hr />
 <h3 id="issue-m8-2-explore-integration-with-agda-native-air-276">Issue M8-2: Explore integration with agda-native-air (#276)<a class="headerlink" href="#issue-m8-2-explore-integration-with-agda-native-air-276" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>milestone-8-llm</code>, <code>design-discussion</code></p>
-<h2 id="description_89">Description<a class="headerlink" href="#description_89" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_94">Description<a class="headerlink" href="#description_94" title="Anchor link to this section">&para;</a></h2>
 <p><code>agda-native-air</code> (a parallel project on AI-assisted formal proof) is a natural consumer of the agda-algebras corpus.  This issue tracks the integration.  Exploratory; low-priority until <code>agda-native-air</code> stabilizes.</p>
-<h2 id="tasks_78">Tasks<a class="headerlink" href="#tasks_78" title="Anchor link to this section">&para;</a></h2>
+<h2 id="tasks_83">Tasks<a class="headerlink" href="#tasks_83" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Document what API / metadata / annotations agda-native-air needs from agda-algebras.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Identify any agda-algebras design choices that help or hinder agda-native-air consumption.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Write an integration report.</li>
 </ul>
-<h2 id="acceptance-criteria_94">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_94" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_99">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_99" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Integration report exists in <code>docs/integration-agda-native-air.md</code>.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Any design changes required are filed as separate issues.</li>
@@ -21609,11 +21806,11 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 
 <h3 id="issue-m9-1-scott-continuous-relations-on-dcpos-using-relationscontinuous-282">Issue M9-1: Scott-continuous relations on DCPOs using <code>Relations.Continuous</code> (#282)<a class="headerlink" href="#issue-m9-1-scott-continuous-relations-on-dcpos-using-relationscontinuous-282" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>design-discussion</code>, <code>milestone-9-apps</code></p>
-<h2 id="description_90">Description<a class="headerlink" href="#description_90" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_95">Description<a class="headerlink" href="#description_95" title="Anchor link to this section">&para;</a></h2>
 <p>The <code>Base.Relations.Continuous</code> formalization generalizes classical relations: the arity is an arbitrary type rather than a natural number, and compatibility with an operation is stated pointwise over that arity.  That shape turns out to be the right one for a notion with a distinguished mathematical pedigree: <strong>Scott-continuous relations on directed-complete partial orders (DCPOs)</strong>.</p>
 <p>A relation <code>R ⊆ X × Y</code> between DCPOs is <em>Scott-continuous</em> when, for every directed family <code>{(xᵢ, yᵢ)}ᵢ∈I</code> in <code>R</code>, the supremum <code>(⊔ xᵢ, ⊔ yᵢ)</code> is again in <code>R</code>.  This is a statement about arbitrary-arity suprema — the index set <code>I</code> is genuinely arbitrary — and factors through the continuous-relation API naturally.</p>
 <p>The broader context is <em>domain theory</em> in the Scott sense, which underlies the denotational semantics of typed lambda calculi, topologically-enriched model theory and partial-function spaces, and constructive analysis via Escardó's work on exhaustively searchable sets.  The Escardó connection is worth flagging: his LICS 2007 result "Infinite sets that admit fast exhaustive search" characterizes searchable sets via a topological continuity condition on their decision procedures, and provides a computability-flavored reason to care about Scott-continuous relations on specific DCPOs such as the Cantor space.</p>
-<h2 id="tasks_79">Tasks<a class="headerlink" href="#tasks_79" title="Anchor link to this section">&para;</a></h2>
+<h2 id="tasks_84">Tasks<a class="headerlink" href="#tasks_84" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>Classical/Order/DCPO.agda</code> (or <code>Setoid/Order/DCPO.agda</code> if it will be adapted for Cubical later): DCPO as a record bundle — a poset with directed suprema.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>Classical/Order/ScottContinuous.agda</code>: a <code>ScottContinuous</code> predicate on pairs of a <code>Continuous</code> relation and a DCPO structure on its carriers.</li>
@@ -21621,7 +21818,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> At least one non-trivial example: the graph of a Scott-continuous function is Scott-continuous as a relation; conversely, a single-valued Scott-continuous relation is the graph of a Scott-continuous function.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Optional stretch goal: a path to Escardó's characterization of searchable sets, formalized as far as tractable.  If <code>TypeTopology</code> is the cleanest source, import from there rather than re-derive.</li>
 </ul>
-<h2 id="acceptance-criteria_95">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_95" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_100">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_100" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> DCPO record and ScottContinuous predicate type-check.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The graph-of-continuous-function ↔ single-valued-continuous-relation characterization is proved.</li>
@@ -21639,7 +21836,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <hr />
 <h3 id="issue-m9-2-infinitary-csp-over-categorical-templates-via-continuous-relations-281">Issue M9-2: Infinitary CSP over ω-categorical templates via continuous relations (#281)<a class="headerlink" href="#issue-m9-2-infinitary-csp-over-categorical-templates-via-continuous-relations-281" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>design-discussion</code>, <code>milestone-9-apps</code></p>
-<h2 id="description_91">Description<a class="headerlink" href="#description_91" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_96">Description<a class="headerlink" href="#description_96" title="Anchor link to this section">&para;</a></h2>
 <p>The CSP module under M7 targets finite-template CSPs with finite-arity relations.  A rich body of contemporary work — most visibly the Bodirsky–Pinsker program — studies CSPs whose template is an ω-categorical structure with a countable domain and potentially infinitary relations.  The central tools there include:</p>
 <ul>
 <li><strong>Polymorphism clones of ω-categorical structures</strong>, which control CSP complexity via a topological-dynamical analog of the finite-domain algebraic approach.</li>
@@ -21648,7 +21845,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 </ul>
 <p>The <code>Base.Relations.Continuous</code> formalization in agda-algebras happens to be exactly the right abstraction for this setting.  An ω-categorical template has relations whose natural arity is a countable index set; a continuous-in-our-sense relation drops in unchanged.</p>
 <p>This is a design-discussion issue, not an implementation plan.</p>
-<h2 id="tasks_80">Tasks<a class="headerlink" href="#tasks_80" title="Anchor link to this section">&para;</a></h2>
+<h2 id="tasks_85">Tasks<a class="headerlink" href="#tasks_85" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Which definitions port over unchanged from <code>Setoid/Complexity/CSP</code> (post M7-1), and which need generalization?</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> What is the minimal API for a "template" in the ω-categorical setting (base structure, automorphism group, topological structure)?</li>
@@ -21676,12 +21873,12 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <hr />
 <h3 id="issue-m9-3-exploratory-coalgebraic-bisimulation-as-a-continuous-relation-283">Issue M9-3: Exploratory: coalgebraic bisimulation as a continuous relation (#283)<a class="headerlink" href="#issue-m9-3-exploratory-coalgebraic-bisimulation-as-a-continuous-relation-283" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>design-discussion</code>, <code>milestone-9-apps</code></p>
-<h2 id="description_92">Description<a class="headerlink" href="#description_92" title="Anchor link to this section">&para;</a></h2>
+<h2 id="description_97">Description<a class="headerlink" href="#description_97" title="Anchor link to this section">&para;</a></h2>
 <p>An exploratory issue, not a deliverable.  The goal is to read, think, and write up findings about whether the <code>Continuous</code> relation API has novel applications in coalgebra, particularly for bisimulation of non-finitary coalgebras.</p>
 <p>A bisimulation between F-coalgebras <code>(c : A → F A, d : B → F B)</code> is classically a relation <code>R ⊆ A × B</code> that lifts along <code>F</code>: if <code>(a, b) ∈ R</code> then there is a witness <code>(F R) (c a) (d b)</code>.  When <code>F</code> is a finitary polynomial functor (e.g. finite-branching trees), <code>R</code> is naturally a finite-arity relation.  When <code>F</code> is continuous — for example, the stream functor <code>F X = X × A</code>, or the unbounded-branching tree functor <code>F X = X ^ ℕ</code> — the natural witness type for a bisimilarity step is an arbitrary-arity relation.  This is where the <code>Continuous</code> API might fit.</p>
 <p>The intersection of coalgebra and classical universal algebra has many smart people (Rutten, Jacobs, Kurz, Adámek, Pattinson, et al.), but most of that work targets theoretical-CS applications (automata, regular languages, process calculi).  It is much less developed on the universal-algebra-in-the-Birkhoff-sense side.  It is plausible that low-hanging fruit remains at the intersection, but finding it requires sustained reading, not speculation.</p>
 <p>Progress on this issue is measured in paragraphs written, not in type-checked Agda.</p>
-<h2 id="tasks_81">Tasks<a class="headerlink" href="#tasks_81" title="Anchor link to this section">&para;</a></h2>
+<h2 id="tasks_86">Tasks<a class="headerlink" href="#tasks_86" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Read Rutten, "Universal coalgebra: a theory of systems," TCS 2000 (the standard introduction).</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Read one or two recent survey articles on coalgebraic bisimulation for continuous functors.</li>
@@ -21689,7 +21886,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Identify at least one concrete formalization candidate, even if small (e.g. a bisimulation characterization of stream equality using the <code>Continuous</code> API).  If no such candidate emerges, document why.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Optional: formalize the candidate, or file a follow-up M9-3a issue.</li>
 </ul>
-<h2 id="acceptance-criteria_96">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_96" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_101">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_101" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>docs/exploration/coalgebra.md</code> exists and is at least 2000 words.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The document contains a concrete verdict: either "there is a formalization project worth pursuing" (in which case a follow-up issue is filed) or "the area is saturated / the fit is not natural" (in which case this issue is closed).</li>
@@ -21786,7 +21983,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Delete <code>_layouts/</code>, <code>_config.yml</code>, and any other Jekyll-only files at the repo root or under <code>docs/</code>.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Remove the <code>make html</code> target and replace it with <code>make site</code>; update <code>Makefile</code>, <code>README.md</code>, and <code>INSTALL.md</code> accordingly.</li>
 </ul>
-<h2 id="acceptance-criteria_97">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_97" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_102">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_102" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>make site</code> builds the full library at <code>site/</code> (or wherever MkDocs writes output) without errors.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Spot-checked rendered pages match the pre-migration archive in content; minor styling differences are acceptable.</li>
@@ -21833,7 +22030,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <h2 id="process">Process<a class="headerlink" href="#process" title="Anchor link to this section">&para;</a></h2>
 <p>GitHub's "Transfer ownership" feature (Settings → General → Danger zone → Transfer) preserves stars, forks, watchers, issues, PRs, releases, and — critically — installs HTTP redirects from the old <code>ualib/agda-algebras</code> URLs to the new <code>agda/agda-algebras</code> URLs at the GitHub level.  External links don't need to be rewritten on day one.</p>
 <hr />
-<h2 id="tasks_82">Tasks<a class="headerlink" href="#tasks_82" title="Anchor link to this section">&para;</a></h2>
+<h2 id="tasks_87">Tasks<a class="headerlink" href="#tasks_87" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Approach the agda-org maintainers (Andreas Abel, Nils Anders Danielsson, etc.) informally first.  Confirm they're amenable to hosting the library and what their org-level expectations are (CI, code of conduct, license, responsiveness on issues).</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> File a tracking issue in <code>agda/agda-algebras</code> (or wherever the discussion lives) for cross-referencing.</li>
@@ -21891,7 +22088,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <h2 id="motivation_2">Motivation<a class="headerlink" href="#motivation_2" title="Anchor link to this section">&para;</a></h2>
 <p>The repo's <code>flake.nix</code> provides a <em>development</em> environment — <code>nix develop</code> gives a contributor a pinned Agda + stdlib shell.  It does not provide a <em>consumer</em> Nix package: a downstream Nix user who wants to depend on agda-algebras as a library has to vendor a flake input or rebuild the package themselves.  Promoting agda-algebras to a first-class entry under <code>nixpkgs.agdaPackages</code> solves this and tracks how the rest of the Agda ecosystem is distributed (<code>agdaPackages.standard-library</code>, <code>agdaPackages.agda-categories</code>, <code>agdaPackages.cubical</code>, etc.).</p>
 <hr />
-<h2 id="tasks_83">Tasks<a class="headerlink" href="#tasks_83" title="Anchor link to this section">&para;</a></h2>
+<h2 id="tasks_88">Tasks<a class="headerlink" href="#tasks_88" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Audit <code>nixpkgs/pkgs/build-support/agda</code> and the existing <code>agdaPackages.*</code> entries to confirm the packaging contract (build inputs, <code>everythingFile</code>, library-name conventions, version pinning).</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add a <code>pkgs/agda-modules/agda-algebras.nix</code> (or whatever the current nixpkgs path is) defining the package: source from a tagged release on <code>master</code>, depend on <code>standard-library</code> ≥ 2.3, build <code>Everything.agda</code>.</li>
@@ -21901,7 +22098,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Coordinate with each subsequent agda-algebras release: tag, update the nixpkgs entry's source hash, bump the package version.</li>
 </ul>
 <hr />
-<h2 id="acceptance-criteria_98">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_98" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_103">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_103" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>nix-shell -p 'agdaPackages.agda-algebras'</code> produces a working environment in which <code>agda --library agda-algebras</code> resolves correctly.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The flake also exposes the library derivation: <code>nix build github:ualib/agda-algebras#lib</code> (or the post-transfer <code>agda/agda-algebras</code> URL).</li>
@@ -21948,7 +22145,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Confirm HTTPS (GitHub-provisioned certificate) is active on the apex and <code>www</code>.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Confirm a sample of legacy <code>….html</code> URLs resolve — <strong>directly</strong> now (parked at <code>ualib.org</code>), rather than via a redirect.</li>
 </ul>
-<h2 id="acceptance-criteria_99">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_99" title="Anchor link to this section">&para;</a></h2>
+<h2 id="acceptance-criteria_104">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_104" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <code>https://agda-algebras.universalalgebra.org</code> serves the new MkDocs site over HTTPS.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> The old site is parked at its original URL (<code>ualib.org</code>) and shows a dated deprecation banner linking to the new site.</li>
@@ -22180,7 +22377,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <hr />
 <h2 id="how-to-create-this-project-on-github">How to Create This Project on GitHub<a class="headerlink" href="#how-to-create-this-project-on-github" title="Anchor link to this section">&para;</a></h2>
 <p>Use the companion script <code>gh_project_populate.py</code> (patched as described in the project planning notes to read labels from the <code>## Labels</code> section above).</p>
-<h3 id="prerequisites_1">Prerequisites<a class="headerlink" href="#prerequisites_1" title="Anchor link to this section">&para;</a></h3>
+<h3 id="prerequisites_2">Prerequisites<a class="headerlink" href="#prerequisites_2" title="Anchor link to this section">&para;</a></h3>
 <ul>
 <li>Python 3.8+.</li>
 <li><code>gh</code> CLI installed and authenticated.</li>
