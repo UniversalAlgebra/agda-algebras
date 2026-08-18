@@ -6668,6 +6668,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
     
@@ -6977,6 +6983,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../Classical/Structures/Group/Diagonal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagonal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../Classical/Structures/Group/GSet/" class="md-nav__link">
         
   
@@ -7069,6 +7103,62 @@
     
   
     NormalSubgroupLattice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Classical/Structures/Group/PartitionSubgroup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PartitionSubgroup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Classical/Structures/Group/Power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Power
   
 
     
@@ -7210,6 +7300,8 @@
   
     
     
+      
+        
       
         
       
@@ -7400,6 +7492,34 @@
     
   
     Parachute
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Classical/Structures/Lattice/Partitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Partitions
   
 
     
@@ -12572,6 +12692,8 @@
       
         
       
+        
+      
     
     
     
@@ -12727,6 +12849,17 @@
     <span class="md-ellipsis">
       
         Entry 3: the Pálfy–Pudlák theorem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entry-4-kurzweil-interval-surjectivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entry 4: Kurzweil interval surjectivity
       
     </span>
   </a>
@@ -14090,6 +14223,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../KurzweilInterval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KurzweilInterval
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../L7EqSix/" class="md-nav__link">
         
   
@@ -14163,7 +14324,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8_9" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -14185,14 +14346,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2_8_8" id="__nav_2_8_8_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2_8_9" id="__nav_2_8_9_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_8_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_8_8">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_8_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -15133,6 +15294,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#entry-4-kurzweil-interval-surjectivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entry 4: Kurzweil interval surjectivity
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -15230,41 +15402,51 @@ it, and only at the level of the two <em>statements</em>, which is exactly how t
 is used: exhibiting a finite lattice that is no interval refutes the group-side
 statement, hence the algebra-side one.  It is registered as
 <code class="AgdaFunction">PalfyPudlak</code>.<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></p>
+<p><strong>Entry 4</strong>: Kurzweil interval surjectivity.  For a finite <em>nonabelian simple</em>
+group <code>S</code>, every subgroup between the diagonal <code>D</code> and the full power <code>Sⁿ</code> is a
+partition subgroup <code>K_π</code> — the surjectivity half of Kurzweil's lemma
+<code>[D , Sⁿ] ≅ Eq(n)′</code>, whose dual-embedding half is proved outright in
+<a href="/Classical/Structures/Group/PartitionSubgroup/">Classical.Structures.Group.PartitionSubgroup</a>.  It is registered as
+<code class="AgdaFunction">KurzweilSurjectivityAt</code>, in the witness-producing form defined
+by <a href="/FLRP/KurzweilInterval/">FLRP.KurzweilInterval</a>.</p>
 <p>The module is structured as <em>per-assumption statement definitions</em> (rather than one
 monolithic record) precisely so that entries can be appended without disturbing one
 another, and downstream results take whichever entry they need as an ordinary
 argument.</p>
-<pre class="Agda hidden-source"><a id="4166" class="Symbol">{-#</a> <a id="4170" class="Keyword">OPTIONS</a> <a id="4178" class="Pragma">--cubical-compatible</a> <a id="4199" class="Pragma">--exact-split</a> <a id="4213" class="Pragma">--safe</a> <a id="4220" class="Symbol">#-}</a>
+<pre class="Agda hidden-source"><a id="4644" class="Symbol">{-#</a> <a id="4648" class="Keyword">OPTIONS</a> <a id="4656" class="Pragma">--cubical-compatible</a> <a id="4677" class="Pragma">--exact-split</a> <a id="4691" class="Pragma">--safe</a> <a id="4698" class="Symbol">#-}</a>
 
-<a id="4225" class="Keyword">module</a> <a id="4232" href="/FLRP/Assumptions/" class="Module">FLRP.Assumptions</a> <a id="4249" class="Keyword">where</a>
+<a id="4703" class="Keyword">module</a> <a id="4710" href="/FLRP/Assumptions/" class="Module">FLRP.Assumptions</a> <a id="4727" class="Keyword">where</a>
 
-<a id="4256" class="Keyword">open</a> <a id="4261" class="Keyword">import</a> <a id="4268" href="/classic/Agda.Primitive.html" class="Module">Agda.Primitive</a> <a id="4283" class="Keyword">using</a> <a id="4289" class="Symbol">()</a> <a id="4292" class="Keyword">renaming</a> <a id="4301" class="Symbol">(</a> <a id="4303" href="/classic/Agda.Primitive.html#388" class="Primitive">Set</a> <a id="4307" class="Symbol">to</a> <a id="4310" class="Primitive">Type</a> <a id="4315" class="Symbol">)</a>
+<a id="4734" class="Keyword">open</a> <a id="4739" class="Keyword">import</a> <a id="4746" href="/classic/Agda.Primitive.html" class="Module">Agda.Primitive</a> <a id="4761" class="Keyword">using</a> <a id="4767" class="Symbol">()</a> <a id="4770" class="Keyword">renaming</a> <a id="4779" class="Symbol">(</a> <a id="4781" href="/classic/Agda.Primitive.html#388" class="Primitive">Set</a> <a id="4785" class="Symbol">to</a> <a id="4788" class="Primitive">Type</a> <a id="4793" class="Symbol">)</a>
 
-<a id="4318" class="Comment">-- Imports from the Agda Standard Library ---------------------------------------</a>
-<a id="4400" class="Keyword">open</a> <a id="4405" class="Keyword">import</a> <a id="4412" href="/classic/Data.List.Membership.Propositional.html" class="Module">Data.List.Membership.Propositional</a>    <a id="4450" class="Keyword">using</a>  <a id="4457" class="Symbol">(</a> <a id="4459" href="/classic/Data.List.Membership.Setoid.html#925" class="Function Operator">_∈_</a> <a id="4463" class="Symbol">)</a>
-<a id="4465" class="Keyword">open</a> <a id="4470" class="Keyword">import</a> <a id="4477" href="/classic/Data.Product.html" class="Module">Data.Product</a>                          <a id="4515" class="Keyword">using</a>  <a id="4522" class="Symbol">(</a> <a id="4524" href="/classic/Data.Product.Base.html#1618" class="Function Operator">_×_</a> <a id="4528" class="Symbol">;</a> <a id="4530" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">_,_</a> <a id="4534" class="Symbol">;</a> <a id="4536" href="/classic/Data.Product.Base.html#1244" class="Function">Σ-syntax</a>
-                                                         <a id="4602" class="Symbol">;</a> <a id="4604" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="4610" class="Symbol">;</a> <a id="4612" href="/classic/Data.Product.Base.html#650" class="Field">proj₂</a> <a id="4618" class="Symbol">)</a>
-<a id="4620" class="Keyword">open</a> <a id="4625" class="Keyword">import</a> <a id="4632" href="/classic/Function.html" class="Module">Function</a>                              <a id="4670" class="Keyword">using</a>  <a id="4677" class="Symbol">(</a><a id="4678" href="/classic/Function.Base.html#1134" class="Function Operator">_∘_</a><a id="4681" class="Symbol">)</a>
-<a id="4683" class="Keyword">open</a> <a id="4688" class="Keyword">import</a> <a id="4695" href="/classic/Level.html" class="Module">Level</a>                                 <a id="4733" class="Keyword">using</a>  <a id="4740" class="Symbol">(</a> <a id="4742" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a> <a id="4748" class="Symbol">;</a> <a id="4750" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">_⊔_</a> <a id="4754" class="Symbol">;</a> <a id="4756" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="4759" class="Symbol">)</a>
-                                                  <a id="4811" class="Keyword">renaming</a> <a id="4820" class="Symbol">(</a> <a id="4822" href="/classic/Agda.Primitive.html#931" class="Primitive">suc</a> <a id="4826" class="Symbol">to</a> <a id="4829" class="Primitive">lsuc</a> <a id="4834" class="Symbol">)</a>
+<a id="4796" class="Comment">-- Imports from the Agda Standard Library ---------------------------------------</a>
+<a id="4878" class="Keyword">open</a> <a id="4883" class="Keyword">import</a> <a id="4890" href="/classic/Data.List.Membership.Propositional.html" class="Module">Data.List.Membership.Propositional</a>    <a id="4928" class="Keyword">using</a>  <a id="4935" class="Symbol">(</a> <a id="4937" href="/classic/Data.List.Membership.Setoid.html#925" class="Function Operator">_∈_</a> <a id="4941" class="Symbol">)</a>
+<a id="4943" class="Keyword">open</a> <a id="4948" class="Keyword">import</a> <a id="4955" href="/classic/Data.Nat.Base.html" class="Module">Data.Nat.Base</a>                         <a id="4993" class="Keyword">using</a>  <a id="5000" class="Symbol">(</a> <a id="5002" href="/classic/Agda.Builtin.Nat.html#203" class="Datatype">ℕ</a> <a id="5004" class="Symbol">)</a>
+<a id="5006" class="Keyword">open</a> <a id="5011" class="Keyword">import</a> <a id="5018" href="/classic/Data.Product.html" class="Module">Data.Product</a>                          <a id="5056" class="Keyword">using</a>  <a id="5063" class="Symbol">(</a> <a id="5065" href="/classic/Data.Product.Base.html#1618" class="Function Operator">_×_</a> <a id="5069" class="Symbol">;</a> <a id="5071" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">_,_</a> <a id="5075" class="Symbol">;</a> <a id="5077" href="/classic/Data.Product.Base.html#1244" class="Function">Σ-syntax</a>
+                                                         <a id="5143" class="Symbol">;</a> <a id="5145" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="5151" class="Symbol">;</a> <a id="5153" href="/classic/Data.Product.Base.html#650" class="Field">proj₂</a> <a id="5159" class="Symbol">)</a>
+<a id="5161" class="Keyword">open</a> <a id="5166" class="Keyword">import</a> <a id="5173" href="/classic/Function.html" class="Module">Function</a>                              <a id="5211" class="Keyword">using</a>  <a id="5218" class="Symbol">(</a><a id="5219" href="/classic/Function.Base.html#1134" class="Function Operator">_∘_</a><a id="5222" class="Symbol">)</a>
+<a id="5224" class="Keyword">open</a> <a id="5229" class="Keyword">import</a> <a id="5236" href="/classic/Level.html" class="Module">Level</a>                                 <a id="5274" class="Keyword">using</a>  <a id="5281" class="Symbol">(</a> <a id="5283" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a> <a id="5289" class="Symbol">;</a> <a id="5291" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">_⊔_</a> <a id="5295" class="Symbol">;</a> <a id="5297" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="5300" class="Symbol">)</a>
+                                                  <a id="5352" class="Keyword">renaming</a> <a id="5361" class="Symbol">(</a> <a id="5363" href="/classic/Agda.Primitive.html#931" class="Primitive">suc</a> <a id="5367" class="Symbol">to</a> <a id="5370" class="Primitive">lsuc</a> <a id="5375" class="Symbol">)</a>
 
-<a id="4837" class="Comment">-- Imports from the Agda Universal Algebra Library ------------------------------</a>
-<a id="4919" class="Keyword">open</a> <a id="4924" class="Keyword">import</a> <a id="4931" href="/Classical/Small/Structures/Lattice/" class="Module">Classical.Small.Structures.Lattice</a>    <a id="4969" class="Keyword">using</a>  <a id="4976" class="Symbol">(</a> <a id="4978" href="/Classical/Small/Structures/Lattice/#1038" class="Function">Lattice</a> <a id="4986" class="Symbol">)</a>
-<a id="4988" class="Keyword">open</a> <a id="4993" class="Keyword">import</a> <a id="5000" href="/Classical/Structures/Lattice/Dual/" class="Module">Classical.Structures.Lattice.Dual</a>     <a id="5038" class="Keyword">using</a>  <a id="5045" class="Symbol">(</a> <a id="5047" href="/Classical/Structures/Lattice/Dual/#5532" class="Function">dualLattice</a> <a id="5059" class="Symbol">)</a>
-<a id="5061" class="Keyword">open</a> <a id="5066" class="Keyword">import</a> <a id="5073" href="/FLRP/Enforceable/" class="Module">FLRP.Enforceable</a>                      <a id="5111" class="Keyword">using</a>  <a id="5118" class="Symbol">(</a> <a id="5120" href="/FLRP/Enforceable/#28712" class="Function">GroupFLRP-Statement</a> <a id="5140" class="Symbol">)</a>
-<a id="5142" class="Keyword">open</a> <a id="5147" class="Keyword">import</a> <a id="5154" href="/FLRP/Problem/" class="Module">FLRP.Problem</a>                          <a id="5192" class="Keyword">using</a>  <a id="5199" class="Symbol">(</a> <a id="5201" href="/FLRP/Problem/#10055" class="Function">FLRP-Statement</a> <a id="5216" class="Symbol">)</a>
-<a id="5218" class="Keyword">open</a> <a id="5223" class="Keyword">import</a> <a id="5230" href="/FLRP/Representable/" class="Module">FLRP.Representable</a>                    <a id="5268" class="Keyword">using</a>  <a id="5275" class="Symbol">(</a> <a id="5277" href="/FLRP/Representable/#8979" class="Record">Representableᵈ</a> <a id="5292" class="Symbol">)</a>
-<a id="5294" class="Keyword">open</a> <a id="5299" class="Keyword">import</a> <a id="5306" href="/Overture/" class="Module">Overture</a>                              <a id="5344" class="Keyword">using</a>  <a id="5351" class="Symbol">(</a> <a id="5353" href="/Overture/Signatures/#683" class="Generalizable">𝓞</a> <a id="5355" class="Symbol">;</a> <a id="5357" href="/Overture/Signatures/#685" class="Generalizable">𝓥</a> <a id="5359" class="Symbol">;</a> <a id="5361" href="/Overture/Signatures/#3218" class="Function">Signature</a> <a id="5371" class="Symbol">)</a>
-<a id="5373" class="Keyword">open</a> <a id="5378" class="Keyword">import</a> <a id="5385" href="/Setoid/Algebras/Basic/" class="Module">Setoid.Algebras.Basic</a>                 <a id="5423" class="Keyword">using</a>  <a id="5430" class="Symbol">(</a> <a id="5432" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="5440" class="Symbol">)</a>
-<a id="5442" class="Keyword">open</a> <a id="5447" class="Keyword">import</a> <a id="5454" href="/Setoid/Algebras/Finite/" class="Module">Setoid.Algebras.Finite</a>                <a id="5492" class="Keyword">using</a>  <a id="5499" class="Symbol">(</a> <a id="5501" href="/Setoid/Algebras/Finite/#3202" class="Record">FiniteAlgebra</a> <a id="5515" class="Symbol">)</a>
-<a id="5517" class="Keyword">open</a> <a id="5522" class="Keyword">import</a> <a id="5529" href="/Setoid/Signatures/Finite/" class="Module">Setoid.Signatures.Finite</a>              <a id="5567" class="Keyword">using</a>  <a id="5574" class="Symbol">(</a> <a id="5576" href="/Setoid/Signatures/Finite/#5275" class="Record">FiniteSignature</a> <a id="5592" class="Symbol">)</a>
-<a id="5594" class="Keyword">open</a> <a id="5599" class="Keyword">import</a> <a id="5606" href="/Setoid/Congruences/Basic/" class="Module">Setoid.Congruences.Basic</a>              <a id="5644" class="Keyword">using</a>  <a id="5651" class="Symbol">(</a> <a id="5653" href="/Setoid/Congruences/Basic/#3122" class="Function">Con</a> <a id="5657" class="Symbol">)</a>
-<a id="5659" class="Keyword">open</a> <a id="5664" class="Keyword">import</a> <a id="5671" href="/Setoid/Congruences/Lattice/" class="Module">Setoid.Congruences.Lattice</a>            <a id="5709" class="Keyword">using</a>  <a id="5716" class="Symbol">(</a> <a id="5718" href="/Setoid/Congruences/Lattice/#3679" class="Function Operator">_≑_</a> <a id="5722" class="Symbol">)</a>
-<a id="5724" class="Keyword">open</a> <a id="5729" class="Keyword">import</a> <a id="5736" href="/Setoid/Congruences/Finite/Basic/" class="Module">Setoid.Congruences.Finite.Basic</a>       <a id="5774" class="Keyword">using</a>  <a id="5781" class="Symbol">(</a> <a id="5783" href="/Setoid/Congruences/Finite/Basic/#5072" class="Function">DecCon</a> <a id="5790" class="Symbol">;</a> <a id="5792" href="/Setoid/Congruences/Finite/Basic/#5776" class="Record">FiniteCongruences</a> <a id="5810" class="Symbol">)</a>
-<a id="5812" class="Keyword">open</a> <a id="5817" class="Keyword">import</a> <a id="5824" href="/Setoid/Congruences/Finite/Decidable/" class="Module">Setoid.Congruences.Finite.Decidable</a>   <a id="5862" class="Keyword">using</a>  <a id="5869" class="Symbol">(</a> <a id="5871" href="/Setoid/Congruences/Finite/Decidable/#9006" class="Record">FiniteCongruencesᵈ</a>
-                                                         <a id="5947" class="Symbol">;</a> <a id="5949" href="/Setoid/Congruences/Finite/Decidable/#20080" class="Function">FiniteAlgebra→FiniteCongruencesᵈ</a> <a id="5982" class="Symbol">)</a>
+<a id="5378" class="Comment">-- Imports from the Agda Universal Algebra Library ------------------------------</a>
+<a id="5460" class="Keyword">open</a> <a id="5465" class="Keyword">import</a> <a id="5472" href="/Classical/Small/Structures/Lattice/" class="Module">Classical.Small.Structures.Lattice</a>    <a id="5510" class="Keyword">using</a>  <a id="5517" class="Symbol">(</a> <a id="5519" href="/Classical/Small/Structures/Lattice/#1038" class="Function">Lattice</a> <a id="5527" class="Symbol">)</a>
+<a id="5529" class="Keyword">open</a> <a id="5534" class="Keyword">import</a> <a id="5541" href="/Classical/Structures/Group/Basic/" class="Module">Classical.Structures.Group.Basic</a>      <a id="5579" class="Keyword">using</a>  <a id="5586" class="Symbol">(</a> <a id="5588" href="/Classical/Structures/Group/Basic/#4497" class="Function">Group</a> <a id="5594" class="Symbol">)</a>
+<a id="5596" class="Keyword">open</a> <a id="5601" class="Keyword">import</a> <a id="5608" href="/Classical/Structures/Lattice/Dual/" class="Module">Classical.Structures.Lattice.Dual</a>     <a id="5646" class="Keyword">using</a>  <a id="5653" class="Symbol">(</a> <a id="5655" href="/Classical/Structures/Lattice/Dual/#5532" class="Function">dualLattice</a> <a id="5667" class="Symbol">)</a>
+<a id="5669" class="Keyword">open</a> <a id="5674" class="Keyword">import</a> <a id="5681" href="/FLRP/Enforceable/" class="Module">FLRP.Enforceable</a>                      <a id="5719" class="Keyword">using</a>  <a id="5726" class="Symbol">(</a> <a id="5728" href="/FLRP/Enforceable/#28712" class="Function">GroupFLRP-Statement</a> <a id="5748" class="Symbol">)</a>
+<a id="5750" class="Keyword">open</a> <a id="5755" class="Keyword">import</a> <a id="5762" href="/FLRP/KurzweilInterval/" class="Module">FLRP.KurzweilInterval</a>                 <a id="5800" class="Keyword">using</a>  <a id="5807" class="Symbol">(</a> <a id="5809" class="Keyword">module</a> <a id="5816" href="/FLRP/KurzweilInterval/#4998" class="Module">KurzweilInterval</a> <a id="5833" class="Symbol">)</a>
+<a id="5835" class="Keyword">open</a> <a id="5840" class="Keyword">import</a> <a id="5847" href="/FLRP/Problem/" class="Module">FLRP.Problem</a>                          <a id="5885" class="Keyword">using</a>  <a id="5892" class="Symbol">(</a> <a id="5894" href="/FLRP/Problem/#10055" class="Function">FLRP-Statement</a> <a id="5909" class="Symbol">)</a>
+<a id="5911" class="Keyword">open</a> <a id="5916" class="Keyword">import</a> <a id="5923" href="/FLRP/Representable/" class="Module">FLRP.Representable</a>                    <a id="5961" class="Keyword">using</a>  <a id="5968" class="Symbol">(</a> <a id="5970" href="/FLRP/Representable/#8979" class="Record">Representableᵈ</a> <a id="5985" class="Symbol">)</a>
+<a id="5987" class="Keyword">open</a> <a id="5992" class="Keyword">import</a> <a id="5999" href="/Overture/" class="Module">Overture</a>                              <a id="6037" class="Keyword">using</a>  <a id="6044" class="Symbol">(</a> <a id="6046" href="/Overture/Signatures/#683" class="Generalizable">𝓞</a> <a id="6048" class="Symbol">;</a> <a id="6050" href="/Overture/Signatures/#685" class="Generalizable">𝓥</a> <a id="6052" class="Symbol">;</a> <a id="6054" href="/Overture/Signatures/#3218" class="Function">Signature</a> <a id="6064" class="Symbol">)</a>
+<a id="6066" class="Keyword">open</a> <a id="6071" class="Keyword">import</a> <a id="6078" href="/Setoid/Algebras/Basic/" class="Module">Setoid.Algebras.Basic</a>                 <a id="6116" class="Keyword">using</a>  <a id="6123" class="Symbol">(</a> <a id="6125" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="6133" class="Symbol">)</a>
+<a id="6135" class="Keyword">open</a> <a id="6140" class="Keyword">import</a> <a id="6147" href="/Setoid/Algebras/Finite/" class="Module">Setoid.Algebras.Finite</a>                <a id="6185" class="Keyword">using</a>  <a id="6192" class="Symbol">(</a> <a id="6194" href="/Setoid/Algebras/Finite/#3202" class="Record">FiniteAlgebra</a> <a id="6208" class="Symbol">)</a>
+<a id="6210" class="Keyword">open</a> <a id="6215" class="Keyword">import</a> <a id="6222" href="/Setoid/Signatures/Finite/" class="Module">Setoid.Signatures.Finite</a>              <a id="6260" class="Keyword">using</a>  <a id="6267" class="Symbol">(</a> <a id="6269" href="/Setoid/Signatures/Finite/#5275" class="Record">FiniteSignature</a> <a id="6285" class="Symbol">)</a>
+<a id="6287" class="Keyword">open</a> <a id="6292" class="Keyword">import</a> <a id="6299" href="/Setoid/Congruences/Basic/" class="Module">Setoid.Congruences.Basic</a>              <a id="6337" class="Keyword">using</a>  <a id="6344" class="Symbol">(</a> <a id="6346" href="/Setoid/Congruences/Basic/#3122" class="Function">Con</a> <a id="6350" class="Symbol">)</a>
+<a id="6352" class="Keyword">open</a> <a id="6357" class="Keyword">import</a> <a id="6364" href="/Setoid/Congruences/Lattice/" class="Module">Setoid.Congruences.Lattice</a>            <a id="6402" class="Keyword">using</a>  <a id="6409" class="Symbol">(</a> <a id="6411" href="/Setoid/Congruences/Lattice/#3679" class="Function Operator">_≑_</a> <a id="6415" class="Symbol">)</a>
+<a id="6417" class="Keyword">open</a> <a id="6422" class="Keyword">import</a> <a id="6429" href="/Setoid/Congruences/Finite/Basic/" class="Module">Setoid.Congruences.Finite.Basic</a>       <a id="6467" class="Keyword">using</a>  <a id="6474" class="Symbol">(</a> <a id="6476" href="/Setoid/Congruences/Finite/Basic/#5072" class="Function">DecCon</a> <a id="6483" class="Symbol">;</a> <a id="6485" href="/Setoid/Congruences/Finite/Basic/#5776" class="Record">FiniteCongruences</a> <a id="6503" class="Symbol">)</a>
+<a id="6505" class="Keyword">open</a> <a id="6510" class="Keyword">import</a> <a id="6517" href="/Setoid/Congruences/Finite/Decidable/" class="Module">Setoid.Congruences.Finite.Decidable</a>   <a id="6555" class="Keyword">using</a>  <a id="6562" class="Symbol">(</a> <a id="6564" href="/Setoid/Congruences/Finite/Decidable/#9006" class="Record">FiniteCongruencesᵈ</a>
+                                                         <a id="6640" class="Symbol">;</a> <a id="6642" href="/Setoid/Congruences/Finite/Decidable/#20080" class="Function">FiniteAlgebra→FiniteCongruencesᵈ</a> <a id="6675" class="Symbol">)</a>
 
-<a id="5985" class="Keyword">private</a> <a id="5993" class="Keyword">variable</a> <a id="6002" href="/FLRP/Assumptions/#6002" class="Generalizable">α</a> <a id="6004" href="/FLRP/Assumptions/#6004" class="Generalizable">ρ</a> <a id="6006" class="Symbol">:</a> <a id="6008" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a>
+<a id="6678" class="Keyword">private</a> <a id="6686" class="Keyword">variable</a> <a id="6695" href="/FLRP/Assumptions/#6695" class="Generalizable">α</a> <a id="6697" href="/FLRP/Assumptions/#6697" class="Generalizable">ρ</a> <a id="6699" class="Symbol">:</a> <a id="6701" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a>
 </pre>
 
 <h4 id="entry-1-the-congruence-completeness-bridge">Entry 1: the congruence-completeness bridge<a class="headerlink" href="#entry-1-the-congruence-completeness-bridge" title="Anchor link to this section">&para;</a></h4>
@@ -15273,10 +15455,10 @@ argument.</p>
 decidable-layer machinery of <a href="/Setoid/Congruences/Finite/Basic/">Setoid.Congruences.Finite.Basic</a> and
 <a href="/Setoid/Congruences/Finite/Decidable/">Setoid.Congruences.Finite.Decidable</a> lives, and the level at which the <code>complete</code>
 field of <code class="AgdaRecord">FiniteCongruences</code> quantifies.</p>
-<pre class="Agda"><a id="6435" class="Keyword">module</a> <a id="6442" href="/FLRP/Assumptions/#6442" class="Module">_</a> <a id="6444" class="Symbol">{</a><a id="6445" href="/FLRP/Assumptions/#6445" class="Bound">𝑆</a> <a id="6447" class="Symbol">:</a> <a id="6449" href="/Overture/Signatures/#3218" class="Function">Signature</a> <a id="6459" href="/Overture/Signatures/#683" class="Generalizable">𝓞</a> <a id="6461" href="/Overture/Signatures/#685" class="Generalizable">𝓥</a><a id="6462" class="Symbol">}(</a><a id="6464" href="/FLRP/Assumptions/#6464" class="Bound">𝑨</a> <a id="6466" class="Symbol">:</a> <a id="6468" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="6476" class="Symbol">{</a><a id="6477" class="Argument">𝑆</a> <a id="6479" class="Symbol">=</a> <a id="6481" href="/FLRP/Assumptions/#6445" class="Bound">𝑆</a><a id="6482" class="Symbol">}</a> <a id="6484" href="/FLRP/Assumptions/#6002" class="Generalizable">α</a> <a id="6486" href="/FLRP/Assumptions/#6004" class="Generalizable">ρ</a><a id="6487" class="Symbol">)</a> <a id="6489" class="Keyword">where</a>
-  <a id="6497" class="Keyword">private</a>
-    <a id="6509" href="/FLRP/Assumptions/#6509" class="Function">ℓ</a> <a id="6511" class="Symbol">:</a> <a id="6513" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a>
-    <a id="6523" href="/FLRP/Assumptions/#6509" class="Function">ℓ</a> <a id="6525" class="Symbol">=</a> <a id="6527" href="/FLRP/Assumptions/#6459" class="Bound">𝓞</a> <a id="6529" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="6531" href="/FLRP/Assumptions/#6461" class="Bound">𝓥</a> <a id="6533" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="6535" href="/FLRP/Assumptions/#6484" class="Bound">α</a> <a id="6537" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="6539" href="/FLRP/Assumptions/#6486" class="Bound">ρ</a>
+<pre class="Agda"><a id="7128" class="Keyword">module</a> <a id="7135" href="/FLRP/Assumptions/#7135" class="Module">_</a> <a id="7137" class="Symbol">{</a><a id="7138" href="/FLRP/Assumptions/#7138" class="Bound">𝑆</a> <a id="7140" class="Symbol">:</a> <a id="7142" href="/Overture/Signatures/#3218" class="Function">Signature</a> <a id="7152" href="/Overture/Signatures/#683" class="Generalizable">𝓞</a> <a id="7154" href="/Overture/Signatures/#685" class="Generalizable">𝓥</a><a id="7155" class="Symbol">}(</a><a id="7157" href="/FLRP/Assumptions/#7157" class="Bound">𝑨</a> <a id="7159" class="Symbol">:</a> <a id="7161" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="7169" class="Symbol">{</a><a id="7170" class="Argument">𝑆</a> <a id="7172" class="Symbol">=</a> <a id="7174" href="/FLRP/Assumptions/#7138" class="Bound">𝑆</a><a id="7175" class="Symbol">}</a> <a id="7177" href="/FLRP/Assumptions/#6695" class="Generalizable">α</a> <a id="7179" href="/FLRP/Assumptions/#6697" class="Generalizable">ρ</a><a id="7180" class="Symbol">)</a> <a id="7182" class="Keyword">where</a>
+  <a id="7190" class="Keyword">private</a>
+    <a id="7202" href="/FLRP/Assumptions/#7202" class="Function">ℓ</a> <a id="7204" class="Symbol">:</a> <a id="7206" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a>
+    <a id="7216" href="/FLRP/Assumptions/#7202" class="Function">ℓ</a> <a id="7218" class="Symbol">=</a> <a id="7220" href="/FLRP/Assumptions/#7152" class="Bound">𝓞</a> <a id="7222" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="7224" href="/FLRP/Assumptions/#7154" class="Bound">𝓥</a> <a id="7226" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="7228" href="/FLRP/Assumptions/#7177" class="Bound">α</a> <a id="7230" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="7232" href="/FLRP/Assumptions/#7179" class="Bound">ρ</a>
 </pre>
 <p><code class="AgdaFunction">CongruenceCompleteness</code> <code>𝑨</code> is the assumption itself; it is a
 function that, given <em>any</em> semantic congruence <code class="AgdaBound">φ</code>, produces a decidable
@@ -15287,18 +15469,18 @@ those record the <em>finiteness</em> of the collection of decidable congruences,
 constructive (<code class="AgdaRecord">FiniteCongruencesᵈ</code>), whereas the classical content is
 precisely the existence of a decidable <code>≑</code>-representative for a congruence that need
 carry no decision procedure of its own.</p>
-<pre class="Agda">  <a id="7219" class="Comment">-- For each semantic congruence φ, there exists a decidable congruence d such that φ ≑ d.</a>
-  <a id="7311" href="/FLRP/Assumptions/#7311" class="Function">CongruenceCompleteness</a> <a id="7334" class="Symbol">:</a> <a id="7336" href="/FLRP/Assumptions/#4310" class="Primitive">Type</a> <a id="7341" class="Symbol">(</a><a id="7342" href="/FLRP/Assumptions/#4829" class="Primitive">lsuc</a> <a id="7347" href="/FLRP/Assumptions/#6509" class="Function">ℓ</a><a id="7348" class="Symbol">)</a>
-  <a id="7352" href="/FLRP/Assumptions/#7311" class="Function">CongruenceCompleteness</a> <a id="7375" class="Symbol">=</a> <a id="7377" class="Symbol">(</a><a id="7378" href="/FLRP/Assumptions/#7378" class="Bound">φ</a> <a id="7380" class="Symbol">:</a> <a id="7382" href="/Setoid/Congruences/Basic/#3122" class="Function">Con</a> <a id="7386" href="/FLRP/Assumptions/#6464" class="Bound">𝑨</a> <a id="7388" href="/FLRP/Assumptions/#6509" class="Function">ℓ</a><a id="7389" class="Symbol">)</a> <a id="7391" class="Symbol">→</a> <a id="7393" href="/classic/Data.Product.Base.html#1244" class="Function">Σ[</a> <a id="7396" href="/FLRP/Assumptions/#7396" class="Bound">(</a><a id="7397" href="/FLRP/Assumptions/#7397" class="Bound">d</a> <a id="7399" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="7401" href="/FLRP/Assumptions/#7396" class="Bound">_)</a> <a id="7404" href="/classic/Data.Product.Base.html#1244" class="Function">∈</a> <a id="7406" href="/Setoid/Congruences/Finite/Basic/#5072" class="Function">DecCon</a> <a id="7413" href="/FLRP/Assumptions/#6464" class="Bound">𝑨</a> <a id="7415" href="/FLRP/Assumptions/#6509" class="Function">ℓ</a> <a id="7417" href="/classic/Data.Product.Base.html#1244" class="Function">]</a> <a id="7419" href="/FLRP/Assumptions/#7378" class="Bound">φ</a> <a id="7421" href="/Setoid/Congruences/Lattice/#3679" class="Function Operator">≑</a> <a id="7423" href="/FLRP/Assumptions/#7397" class="Bound">d</a>
+<pre class="Agda">  <a id="7912" class="Comment">-- For each semantic congruence φ, there exists a decidable congruence d such that φ ≑ d.</a>
+  <a id="8004" href="/FLRP/Assumptions/#8004" class="Function">CongruenceCompleteness</a> <a id="8027" class="Symbol">:</a> <a id="8029" href="/FLRP/Assumptions/#4788" class="Primitive">Type</a> <a id="8034" class="Symbol">(</a><a id="8035" href="/FLRP/Assumptions/#5370" class="Primitive">lsuc</a> <a id="8040" href="/FLRP/Assumptions/#7202" class="Function">ℓ</a><a id="8041" class="Symbol">)</a>
+  <a id="8045" href="/FLRP/Assumptions/#8004" class="Function">CongruenceCompleteness</a> <a id="8068" class="Symbol">=</a> <a id="8070" class="Symbol">(</a><a id="8071" href="/FLRP/Assumptions/#8071" class="Bound">φ</a> <a id="8073" class="Symbol">:</a> <a id="8075" href="/Setoid/Congruences/Basic/#3122" class="Function">Con</a> <a id="8079" href="/FLRP/Assumptions/#7157" class="Bound">𝑨</a> <a id="8081" href="/FLRP/Assumptions/#7202" class="Function">ℓ</a><a id="8082" class="Symbol">)</a> <a id="8084" class="Symbol">→</a> <a id="8086" href="/classic/Data.Product.Base.html#1244" class="Function">Σ[</a> <a id="8089" href="/FLRP/Assumptions/#8089" class="Bound">(</a><a id="8090" href="/FLRP/Assumptions/#8090" class="Bound">d</a> <a id="8092" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="8094" href="/FLRP/Assumptions/#8089" class="Bound">_)</a> <a id="8097" href="/classic/Data.Product.Base.html#1244" class="Function">∈</a> <a id="8099" href="/Setoid/Congruences/Finite/Basic/#5072" class="Function">DecCon</a> <a id="8106" href="/FLRP/Assumptions/#7157" class="Bound">𝑨</a> <a id="8108" href="/FLRP/Assumptions/#7202" class="Function">ℓ</a> <a id="8110" href="/classic/Data.Product.Base.html#1244" class="Function">]</a> <a id="8112" href="/FLRP/Assumptions/#8071" class="Bound">φ</a> <a id="8114" href="/Setoid/Congruences/Lattice/#3679" class="Function Operator">≑</a> <a id="8116" href="/FLRP/Assumptions/#8090" class="Bound">d</a>
 </pre>
 <p><strong>The source</strong>.  A <code class="AgdaRecord">FiniteCongruences</code> witness — the canonical form of
 the assumption in the library — yields the bridge by forgetting the list and its
 membership proof.  This is the direction a consumer already in posession of the full
 record would use.</p>
-<pre class="Agda">  <a id="7709" href="/FLRP/Assumptions/#7709" class="Function">fromFiniteCongruences</a> <a id="7731" class="Symbol">:</a> <a id="7733" href="/Setoid/Congruences/Finite/Basic/#5776" class="Record">FiniteCongruences</a> <a id="7751" href="/FLRP/Assumptions/#6464" class="Bound">𝑨</a> <a id="7753" class="Symbol">→</a> <a id="7755" href="/FLRP/Assumptions/#7311" class="Function">CongruenceCompleteness</a>
-  <a id="7780" href="/FLRP/Assumptions/#7709" class="Function">fromFiniteCongruences</a> <a id="7802" href="/FLRP/Assumptions/#7802" class="Bound">𝑪</a> <a id="7804" href="/FLRP/Assumptions/#7804" class="Bound">φ</a> <a id="7806" class="Symbol">=</a> <a id="7808" href="/Setoid/Congruences/Finite/Basic/#6113" class="Function">witness</a> <a id="7816" href="/FLRP/Assumptions/#7804" class="Bound">φ</a> <a id="7818" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="7820" href="/Setoid/Congruences/Finite/Basic/#6261" class="Function">witness≑</a> <a id="7829" href="/FLRP/Assumptions/#7804" class="Bound">φ</a>
-    <a id="7835" class="Keyword">where</a> <a id="7841" class="Keyword">open</a> <a id="7846" href="/Setoid/Congruences/Finite/Basic/#5776" class="Module">FiniteCongruences</a> <a id="7864" href="/FLRP/Assumptions/#7802" class="Bound">𝑪</a> <a id="7866" class="Keyword">using</a> <a id="7872" class="Symbol">(</a> <a id="7874" href="/Setoid/Congruences/Finite/Basic/#6113" class="Function">witness</a> <a id="7882" class="Symbol">;</a> <a id="7884" href="/Setoid/Congruences/Finite/Basic/#6261" class="Function">witness≑</a> <a id="7893" class="Symbol">)</a>
-  <a id="7897" class="Comment">-- Recall, `witness φ` is d and `witness≑ φ` is the proof of `φ ≑ proj₁ d`</a>
+<pre class="Agda">  <a id="8402" href="/FLRP/Assumptions/#8402" class="Function">fromFiniteCongruences</a> <a id="8424" class="Symbol">:</a> <a id="8426" href="/Setoid/Congruences/Finite/Basic/#5776" class="Record">FiniteCongruences</a> <a id="8444" href="/FLRP/Assumptions/#7157" class="Bound">𝑨</a> <a id="8446" class="Symbol">→</a> <a id="8448" href="/FLRP/Assumptions/#8004" class="Function">CongruenceCompleteness</a>
+  <a id="8473" href="/FLRP/Assumptions/#8402" class="Function">fromFiniteCongruences</a> <a id="8495" href="/FLRP/Assumptions/#8495" class="Bound">𝑪</a> <a id="8497" href="/FLRP/Assumptions/#8497" class="Bound">φ</a> <a id="8499" class="Symbol">=</a> <a id="8501" href="/Setoid/Congruences/Finite/Basic/#6113" class="Function">witness</a> <a id="8509" href="/FLRP/Assumptions/#8497" class="Bound">φ</a> <a id="8511" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="8513" href="/Setoid/Congruences/Finite/Basic/#6261" class="Function">witness≑</a> <a id="8522" href="/FLRP/Assumptions/#8497" class="Bound">φ</a>
+    <a id="8528" class="Keyword">where</a> <a id="8534" class="Keyword">open</a> <a id="8539" href="/Setoid/Congruences/Finite/Basic/#5776" class="Module">FiniteCongruences</a> <a id="8557" href="/FLRP/Assumptions/#8495" class="Bound">𝑪</a> <a id="8559" class="Keyword">using</a> <a id="8565" class="Symbol">(</a> <a id="8567" href="/Setoid/Congruences/Finite/Basic/#6113" class="Function">witness</a> <a id="8575" class="Symbol">;</a> <a id="8577" href="/Setoid/Congruences/Finite/Basic/#6261" class="Function">witness≑</a> <a id="8586" class="Symbol">)</a>
+  <a id="8590" class="Comment">-- Recall, `witness φ` is d and `witness≑ φ` is the proof of `φ ≑ proj₁ d`</a>
 
 </pre>
 <p><strong>The classical delta</strong>.  Conversely, adjoining the bridge to the <em>free constructive</em>
@@ -15313,30 +15495,30 @@ between Layer D and Layer S, and nothing else.</p>
 <p>The list is the constructive <code class="AgdaField">consᵈ</code>; completeness chains the bridge's
 <code class="AgdaFunction">≑</code> into the decidable-layer completeness <code class="AgdaField">completeᵈ</code> by
 transitivity.</p>
-<pre class="Agda">  <a id="8801" href="/FLRP/Assumptions/#8801" class="Function">toFiniteCongruences</a> <a id="8821" class="Symbol">:</a> <a id="8823" href="/FLRP/Assumptions/#7311" class="Function">CongruenceCompleteness</a>
-    <a id="8850" class="Symbol">→</a> <a id="8852" href="/Setoid/Algebras/Finite/#3202" class="Record">FiniteAlgebra</a> <a id="8866" href="/FLRP/Assumptions/#6464" class="Bound">𝑨</a> <a id="8868" class="Symbol">→</a> <a id="8870" href="/Setoid/Signatures/Finite/#5275" class="Record">FiniteSignature</a> <a id="8886" href="/FLRP/Assumptions/#6445" class="Bound">𝑆</a> <a id="8888" class="Symbol">→</a> <a id="8890" href="/Setoid/Congruences/Finite/Basic/#5776" class="Record">FiniteCongruences</a> <a id="8908" href="/FLRP/Assumptions/#6464" class="Bound">𝑨</a>
-  <a id="8912" href="/FLRP/Assumptions/#8801" class="Function">toFiniteCongruences</a> <a id="8932" href="/FLRP/Assumptions/#8932" class="Bound">cc</a> <a id="8935" href="/FLRP/Assumptions/#8935" class="Bound">𝑭</a> <a id="8937" href="/FLRP/Assumptions/#8937" class="Bound">𝑺</a> <a id="8939" class="Symbol">=</a> <a id="8941" class="Keyword">record</a> <a id="8948" class="Symbol">{</a> <a id="8950" href="/Setoid/Congruences/Finite/Basic/#5942" class="Field">cons</a> <a id="8955" class="Symbol">=</a> <a id="8957" href="/Setoid/Congruences/Finite/Decidable/#9173" class="Function">consᵈ</a> <a id="8963" class="Symbol">;</a> <a id="8965" href="/Setoid/Congruences/Finite/Basic/#6049" class="Field">complete</a> <a id="8974" class="Symbol">=</a> <a id="8976" href="/FLRP/Assumptions/#9122" class="Function">comp</a> <a id="8981" class="Symbol">}</a>
-    <a id="8987" class="Keyword">where</a>
-    <a id="8997" class="Keyword">open</a> <a id="9002" href="/Setoid/Congruences/Finite/Decidable/#9006" class="Module">FiniteCongruencesᵈ</a> <a id="9021" class="Symbol">(</a><a id="9022" href="/Setoid/Congruences/Finite/Decidable/#20080" class="Function">FiniteAlgebra→FiniteCongruencesᵈ</a> <a id="9055" href="/FLRP/Assumptions/#8935" class="Bound">𝑭</a> <a id="9057" href="/FLRP/Assumptions/#8937" class="Bound">𝑺</a><a id="9058" class="Symbol">)</a>
-      <a id="9066" class="Keyword">using</a> <a id="9072" class="Symbol">(</a> <a id="9074" href="/Setoid/Congruences/Finite/Decidable/#9173" class="Field">consᵈ</a> <a id="9080" class="Symbol">;</a> <a id="9082" href="/Setoid/Congruences/Finite/Decidable/#9374" class="Function">witnessᵈ</a> <a id="9091" class="Symbol">;</a> <a id="9093" href="/Setoid/Congruences/Finite/Decidable/#9471" class="Function">witnessᵈ∈</a> <a id="9103" class="Symbol">;</a> <a id="9105" href="/Setoid/Congruences/Finite/Decidable/#9551" class="Function">witnessᵈ≑</a> <a id="9115" class="Symbol">)</a>
+<pre class="Agda">  <a id="9494" href="/FLRP/Assumptions/#9494" class="Function">toFiniteCongruences</a> <a id="9514" class="Symbol">:</a> <a id="9516" href="/FLRP/Assumptions/#8004" class="Function">CongruenceCompleteness</a>
+    <a id="9543" class="Symbol">→</a> <a id="9545" href="/Setoid/Algebras/Finite/#3202" class="Record">FiniteAlgebra</a> <a id="9559" href="/FLRP/Assumptions/#7157" class="Bound">𝑨</a> <a id="9561" class="Symbol">→</a> <a id="9563" href="/Setoid/Signatures/Finite/#5275" class="Record">FiniteSignature</a> <a id="9579" href="/FLRP/Assumptions/#7138" class="Bound">𝑆</a> <a id="9581" class="Symbol">→</a> <a id="9583" href="/Setoid/Congruences/Finite/Basic/#5776" class="Record">FiniteCongruences</a> <a id="9601" href="/FLRP/Assumptions/#7157" class="Bound">𝑨</a>
+  <a id="9605" href="/FLRP/Assumptions/#9494" class="Function">toFiniteCongruences</a> <a id="9625" href="/FLRP/Assumptions/#9625" class="Bound">cc</a> <a id="9628" href="/FLRP/Assumptions/#9628" class="Bound">𝑭</a> <a id="9630" href="/FLRP/Assumptions/#9630" class="Bound">𝑺</a> <a id="9632" class="Symbol">=</a> <a id="9634" class="Keyword">record</a> <a id="9641" class="Symbol">{</a> <a id="9643" href="/Setoid/Congruences/Finite/Basic/#5942" class="Field">cons</a> <a id="9648" class="Symbol">=</a> <a id="9650" href="/Setoid/Congruences/Finite/Decidable/#9173" class="Function">consᵈ</a> <a id="9656" class="Symbol">;</a> <a id="9658" href="/Setoid/Congruences/Finite/Basic/#6049" class="Field">complete</a> <a id="9667" class="Symbol">=</a> <a id="9669" href="/FLRP/Assumptions/#9815" class="Function">comp</a> <a id="9674" class="Symbol">}</a>
+    <a id="9680" class="Keyword">where</a>
+    <a id="9690" class="Keyword">open</a> <a id="9695" href="/Setoid/Congruences/Finite/Decidable/#9006" class="Module">FiniteCongruencesᵈ</a> <a id="9714" class="Symbol">(</a><a id="9715" href="/Setoid/Congruences/Finite/Decidable/#20080" class="Function">FiniteAlgebra→FiniteCongruencesᵈ</a> <a id="9748" href="/FLRP/Assumptions/#9628" class="Bound">𝑭</a> <a id="9750" href="/FLRP/Assumptions/#9630" class="Bound">𝑺</a><a id="9751" class="Symbol">)</a>
+      <a id="9759" class="Keyword">using</a> <a id="9765" class="Symbol">(</a> <a id="9767" href="/Setoid/Congruences/Finite/Decidable/#9173" class="Field">consᵈ</a> <a id="9773" class="Symbol">;</a> <a id="9775" href="/Setoid/Congruences/Finite/Decidable/#9374" class="Function">witnessᵈ</a> <a id="9784" class="Symbol">;</a> <a id="9786" href="/Setoid/Congruences/Finite/Decidable/#9471" class="Function">witnessᵈ∈</a> <a id="9796" class="Symbol">;</a> <a id="9798" href="/Setoid/Congruences/Finite/Decidable/#9551" class="Function">witnessᵈ≑</a> <a id="9808" class="Symbol">)</a>
 
-    <a id="9122" href="/FLRP/Assumptions/#9122" class="Function">comp</a> <a id="9127" class="Symbol">:</a> <a id="9129" class="Symbol">(</a><a id="9130" href="/FLRP/Assumptions/#9130" class="Bound">φ</a> <a id="9132" class="Symbol">:</a> <a id="9134" href="/Setoid/Congruences/Basic/#3122" class="Function">Con</a> <a id="9138" href="/FLRP/Assumptions/#6464" class="Bound">𝑨</a> <a id="9140" href="/FLRP/Assumptions/#6509" class="Function">ℓ</a><a id="9141" class="Symbol">)</a> <a id="9143" class="Symbol">→</a> <a id="9145" href="/classic/Data.Product.Base.html#1244" class="Function">Σ[</a> <a id="9148" href="/FLRP/Assumptions/#9148" class="Bound">e</a> <a id="9150" href="/classic/Data.Product.Base.html#1244" class="Function">∈</a> <a id="9152" href="/Setoid/Congruences/Finite/Basic/#5072" class="Function">DecCon</a> <a id="9159" href="/FLRP/Assumptions/#6464" class="Bound">𝑨</a> <a id="9161" href="/FLRP/Assumptions/#6509" class="Function">ℓ</a> <a id="9163" href="/classic/Data.Product.Base.html#1244" class="Function">]</a> <a id="9165" href="/FLRP/Assumptions/#9148" class="Bound">e</a> <a id="9167" href="/classic/Data.List.Membership.Setoid.html#925" class="Function Operator">∈</a> <a id="9169" href="/Setoid/Congruences/Finite/Decidable/#9173" class="Function">consᵈ</a> <a id="9175" href="/classic/Data.Product.Base.html#1618" class="Function Operator">×</a> <a id="9177" href="/FLRP/Assumptions/#9130" class="Bound">φ</a> <a id="9179" href="/Setoid/Congruences/Lattice/#3679" class="Function Operator">≑</a> <a id="9181" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="9187" href="/FLRP/Assumptions/#9148" class="Bound">e</a>
-    <a id="9193" href="/FLRP/Assumptions/#9122" class="Function">comp</a> <a id="9198" href="/FLRP/Assumptions/#9198" class="Bound">φ</a> <a id="9200" class="Symbol">=</a> <a id="9202" href="/FLRP/Assumptions/#9336" class="Function">e</a> <a id="9204" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="9206" href="/Setoid/Congruences/Finite/Decidable/#9471" class="Function">witnessᵈ∈</a> <a id="9216" href="/FLRP/Assumptions/#9242" class="Function">d</a> <a id="9218" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="9220" href="/FLRP/Assumptions/#9436" class="Function">φ≑e</a>
-      <a id="9230" class="Keyword">where</a>
-      <a id="9242" href="/FLRP/Assumptions/#9242" class="Function">d</a> <a id="9244" class="Symbol">:</a> <a id="9246" href="/Setoid/Congruences/Finite/Basic/#5072" class="Function">DecCon</a> <a id="9253" href="/FLRP/Assumptions/#6464" class="Bound">𝑨</a> <a id="9255" href="/FLRP/Assumptions/#6509" class="Function">ℓ</a>
-      <a id="9263" href="/FLRP/Assumptions/#9242" class="Function">d</a> <a id="9265" class="Symbol">=</a> <a id="9267" href="/FLRP/Assumptions/#8932" class="Bound">cc</a> <a id="9270" href="/FLRP/Assumptions/#9198" class="Bound">φ</a> <a id="9272" class="Symbol">.</a><a id="9273" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a>
+    <a id="9815" href="/FLRP/Assumptions/#9815" class="Function">comp</a> <a id="9820" class="Symbol">:</a> <a id="9822" class="Symbol">(</a><a id="9823" href="/FLRP/Assumptions/#9823" class="Bound">φ</a> <a id="9825" class="Symbol">:</a> <a id="9827" href="/Setoid/Congruences/Basic/#3122" class="Function">Con</a> <a id="9831" href="/FLRP/Assumptions/#7157" class="Bound">𝑨</a> <a id="9833" href="/FLRP/Assumptions/#7202" class="Function">ℓ</a><a id="9834" class="Symbol">)</a> <a id="9836" class="Symbol">→</a> <a id="9838" href="/classic/Data.Product.Base.html#1244" class="Function">Σ[</a> <a id="9841" href="/FLRP/Assumptions/#9841" class="Bound">e</a> <a id="9843" href="/classic/Data.Product.Base.html#1244" class="Function">∈</a> <a id="9845" href="/Setoid/Congruences/Finite/Basic/#5072" class="Function">DecCon</a> <a id="9852" href="/FLRP/Assumptions/#7157" class="Bound">𝑨</a> <a id="9854" href="/FLRP/Assumptions/#7202" class="Function">ℓ</a> <a id="9856" href="/classic/Data.Product.Base.html#1244" class="Function">]</a> <a id="9858" href="/FLRP/Assumptions/#9841" class="Bound">e</a> <a id="9860" href="/classic/Data.List.Membership.Setoid.html#925" class="Function Operator">∈</a> <a id="9862" href="/Setoid/Congruences/Finite/Decidable/#9173" class="Function">consᵈ</a> <a id="9868" href="/classic/Data.Product.Base.html#1618" class="Function Operator">×</a> <a id="9870" href="/FLRP/Assumptions/#9823" class="Bound">φ</a> <a id="9872" href="/Setoid/Congruences/Lattice/#3679" class="Function Operator">≑</a> <a id="9874" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="9880" href="/FLRP/Assumptions/#9841" class="Bound">e</a>
+    <a id="9886" href="/FLRP/Assumptions/#9815" class="Function">comp</a> <a id="9891" href="/FLRP/Assumptions/#9891" class="Bound">φ</a> <a id="9893" class="Symbol">=</a> <a id="9895" href="/FLRP/Assumptions/#10029" class="Function">e</a> <a id="9897" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="9899" href="/Setoid/Congruences/Finite/Decidable/#9471" class="Function">witnessᵈ∈</a> <a id="9909" href="/FLRP/Assumptions/#9935" class="Function">d</a> <a id="9911" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="9913" href="/FLRP/Assumptions/#10129" class="Function">φ≑e</a>
+      <a id="9923" class="Keyword">where</a>
+      <a id="9935" href="/FLRP/Assumptions/#9935" class="Function">d</a> <a id="9937" class="Symbol">:</a> <a id="9939" href="/Setoid/Congruences/Finite/Basic/#5072" class="Function">DecCon</a> <a id="9946" href="/FLRP/Assumptions/#7157" class="Bound">𝑨</a> <a id="9948" href="/FLRP/Assumptions/#7202" class="Function">ℓ</a>
+      <a id="9956" href="/FLRP/Assumptions/#9935" class="Function">d</a> <a id="9958" class="Symbol">=</a> <a id="9960" href="/FLRP/Assumptions/#9625" class="Bound">cc</a> <a id="9963" href="/FLRP/Assumptions/#9891" class="Bound">φ</a> <a id="9965" class="Symbol">.</a><a id="9966" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a>
 
-      <a id="9286" href="/FLRP/Assumptions/#9286" class="Function">φ≑d</a> <a id="9290" class="Symbol">:</a> <a id="9292" href="/FLRP/Assumptions/#9198" class="Bound">φ</a> <a id="9294" href="/Setoid/Congruences/Lattice/#3679" class="Function Operator">≑</a> <a id="9296" href="/FLRP/Assumptions/#9242" class="Function">d</a> <a id="9298" class="Symbol">.</a><a id="9299" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a>
-      <a id="9311" href="/FLRP/Assumptions/#9286" class="Function">φ≑d</a> <a id="9315" class="Symbol">=</a> <a id="9317" href="/FLRP/Assumptions/#8932" class="Bound">cc</a> <a id="9320" href="/FLRP/Assumptions/#9198" class="Bound">φ</a> <a id="9322" class="Symbol">.</a><a id="9323" href="/classic/Data.Product.Base.html#650" class="Field">proj₂</a>
+      <a id="9979" href="/FLRP/Assumptions/#9979" class="Function">φ≑d</a> <a id="9983" class="Symbol">:</a> <a id="9985" href="/FLRP/Assumptions/#9891" class="Bound">φ</a> <a id="9987" href="/Setoid/Congruences/Lattice/#3679" class="Function Operator">≑</a> <a id="9989" href="/FLRP/Assumptions/#9935" class="Function">d</a> <a id="9991" class="Symbol">.</a><a id="9992" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a>
+      <a id="10004" href="/FLRP/Assumptions/#9979" class="Function">φ≑d</a> <a id="10008" class="Symbol">=</a> <a id="10010" href="/FLRP/Assumptions/#9625" class="Bound">cc</a> <a id="10013" href="/FLRP/Assumptions/#9891" class="Bound">φ</a> <a id="10015" class="Symbol">.</a><a id="10016" href="/classic/Data.Product.Base.html#650" class="Field">proj₂</a>
 
-      <a id="9336" href="/FLRP/Assumptions/#9336" class="Function">e</a> <a id="9338" class="Symbol">:</a> <a id="9340" href="/Setoid/Congruences/Finite/Basic/#5072" class="Function">DecCon</a> <a id="9347" href="/FLRP/Assumptions/#6464" class="Bound">𝑨</a> <a id="9349" href="/FLRP/Assumptions/#6509" class="Function">ℓ</a>
-      <a id="9357" href="/FLRP/Assumptions/#9336" class="Function">e</a> <a id="9359" class="Symbol">=</a> <a id="9361" href="/Setoid/Congruences/Finite/Decidable/#9374" class="Function">witnessᵈ</a> <a id="9370" href="/FLRP/Assumptions/#9242" class="Function">d</a>
+      <a id="10029" href="/FLRP/Assumptions/#10029" class="Function">e</a> <a id="10031" class="Symbol">:</a> <a id="10033" href="/Setoid/Congruences/Finite/Basic/#5072" class="Function">DecCon</a> <a id="10040" href="/FLRP/Assumptions/#7157" class="Bound">𝑨</a> <a id="10042" href="/FLRP/Assumptions/#7202" class="Function">ℓ</a>
+      <a id="10050" href="/FLRP/Assumptions/#10029" class="Function">e</a> <a id="10052" class="Symbol">=</a> <a id="10054" href="/Setoid/Congruences/Finite/Decidable/#9374" class="Function">witnessᵈ</a> <a id="10063" href="/FLRP/Assumptions/#9935" class="Function">d</a>
 
-      <a id="9379" href="/FLRP/Assumptions/#9379" class="Function">d≑e</a> <a id="9383" class="Symbol">:</a> <a id="9385" href="/FLRP/Assumptions/#9242" class="Function">d</a> <a id="9387" class="Symbol">.</a><a id="9388" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="9394" href="/Setoid/Congruences/Lattice/#3679" class="Function Operator">≑</a> <a id="9396" href="/FLRP/Assumptions/#9336" class="Function">e</a> <a id="9398" class="Symbol">.</a><a id="9399" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a>
-      <a id="9411" href="/FLRP/Assumptions/#9379" class="Function">d≑e</a> <a id="9415" class="Symbol">=</a> <a id="9417" href="/Setoid/Congruences/Finite/Decidable/#9551" class="Function">witnessᵈ≑</a> <a id="9427" href="/FLRP/Assumptions/#9242" class="Function">d</a>
+      <a id="10072" href="/FLRP/Assumptions/#10072" class="Function">d≑e</a> <a id="10076" class="Symbol">:</a> <a id="10078" href="/FLRP/Assumptions/#9935" class="Function">d</a> <a id="10080" class="Symbol">.</a><a id="10081" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="10087" href="/Setoid/Congruences/Lattice/#3679" class="Function Operator">≑</a> <a id="10089" href="/FLRP/Assumptions/#10029" class="Function">e</a> <a id="10091" class="Symbol">.</a><a id="10092" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a>
+      <a id="10104" href="/FLRP/Assumptions/#10072" class="Function">d≑e</a> <a id="10108" class="Symbol">=</a> <a id="10110" href="/Setoid/Congruences/Finite/Decidable/#9551" class="Function">witnessᵈ≑</a> <a id="10120" href="/FLRP/Assumptions/#9935" class="Function">d</a>
 
-      <a id="9436" href="/FLRP/Assumptions/#9436" class="Function">φ≑e</a> <a id="9440" class="Symbol">:</a> <a id="9442" href="/FLRP/Assumptions/#9198" class="Bound">φ</a> <a id="9444" href="/Setoid/Congruences/Lattice/#3679" class="Function Operator">≑</a> <a id="9446" href="/FLRP/Assumptions/#9336" class="Function">e</a> <a id="9448" class="Symbol">.</a><a id="9449" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a>
-      <a id="9461" href="/FLRP/Assumptions/#9436" class="Function">φ≑e</a> <a id="9465" class="Symbol">=</a> <a id="9467" href="/FLRP/Assumptions/#9379" class="Function">d≑e</a> <a id="9471" class="Symbol">.</a><a id="9472" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="9478" href="/classic/Function.Base.html#1134" class="Function Operator">∘</a> <a id="9480" href="/FLRP/Assumptions/#9286" class="Function">φ≑d</a> <a id="9484" class="Symbol">.</a><a id="9485" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="9491" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="9493" href="/FLRP/Assumptions/#9286" class="Function">φ≑d</a> <a id="9497" class="Symbol">.</a><a id="9498" href="/classic/Data.Product.Base.html#650" class="Field">proj₂</a> <a id="9504" href="/classic/Function.Base.html#1134" class="Function Operator">∘</a> <a id="9506" href="/FLRP/Assumptions/#9379" class="Function">d≑e</a> <a id="9510" class="Symbol">.</a><a id="9511" href="/classic/Data.Product.Base.html#650" class="Field">proj₂</a>
+      <a id="10129" href="/FLRP/Assumptions/#10129" class="Function">φ≑e</a> <a id="10133" class="Symbol">:</a> <a id="10135" href="/FLRP/Assumptions/#9891" class="Bound">φ</a> <a id="10137" href="/Setoid/Congruences/Lattice/#3679" class="Function Operator">≑</a> <a id="10139" href="/FLRP/Assumptions/#10029" class="Function">e</a> <a id="10141" class="Symbol">.</a><a id="10142" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a>
+      <a id="10154" href="/FLRP/Assumptions/#10129" class="Function">φ≑e</a> <a id="10158" class="Symbol">=</a> <a id="10160" href="/FLRP/Assumptions/#10072" class="Function">d≑e</a> <a id="10164" class="Symbol">.</a><a id="10165" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="10171" href="/classic/Function.Base.html#1134" class="Function Operator">∘</a> <a id="10173" href="/FLRP/Assumptions/#9979" class="Function">φ≑d</a> <a id="10177" class="Symbol">.</a><a id="10178" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="10184" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="10186" href="/FLRP/Assumptions/#9979" class="Function">φ≑d</a> <a id="10190" class="Symbol">.</a><a id="10191" href="/classic/Data.Product.Base.html#650" class="Field">proj₂</a> <a id="10197" href="/classic/Function.Base.html#1134" class="Function Operator">∘</a> <a id="10199" href="/FLRP/Assumptions/#10072" class="Function">d≑e</a> <a id="10203" class="Symbol">.</a><a id="10204" href="/classic/Data.Product.Base.html#650" class="Field">proj₂</a>
 </pre>
 <h4 id="entry-2-kurzweilnetter-duality">Entry 2: Kurzweil–Netter duality<a class="headerlink" href="#entry-2-kurzweilnetter-duality" title="Anchor link to this section">&para;</a></h4>
 <p>The <strong>theorem of Kurzweil and Netter</strong>: if a finite lattice is representable as
@@ -15385,13 +15567,13 @@ algebra with lifted operations.</p>
    concrete certificate algebras.</p>
 </li>
 </ul>
-<pre class="Agda"><a id="12176" class="Comment">-- Entry 2, per-lattice form: a decidable representation of 𝑳 yields one of its dual.</a>
-<a id="KurzweilNetterDualityAt"></a><a id="12262" href="/FLRP/Assumptions/#12262" class="Function">KurzweilNetterDualityAt</a> <a id="12286" class="Symbol">:</a> <a id="12288" href="/Classical/Small/Structures/Lattice/#1038" class="Function">Lattice</a> <a id="12296" class="Symbol">→</a> <a id="12298" href="/FLRP/Assumptions/#4310" class="Primitive">Type</a> <a id="12303" class="Symbol">(</a><a id="12304" href="/FLRP/Assumptions/#4829" class="Primitive">lsuc</a> <a id="12309" href="/classic/Level.html#521" class="Function">0ℓ</a><a id="12311" class="Symbol">)</a>
-<a id="12313" href="/FLRP/Assumptions/#12262" class="Function">KurzweilNetterDualityAt</a> <a id="12337" href="/FLRP/Assumptions/#12337" class="Bound">𝑳</a> <a id="12339" class="Symbol">=</a> <a id="12341" href="/FLRP/Representable/#8979" class="Record">Representableᵈ</a> <a id="12356" href="/FLRP/Assumptions/#12337" class="Bound">𝑳</a> <a id="12358" class="Symbol">→</a> <a id="12360" href="/FLRP/Representable/#8979" class="Record">Representableᵈ</a> <a id="12375" class="Symbol">(</a><a id="12376" href="/Classical/Structures/Lattice/Dual/#5532" class="Function">dualLattice</a> <a id="12388" href="/FLRP/Assumptions/#12337" class="Bound">𝑳</a><a id="12389" class="Symbol">)</a>
+<pre class="Agda"><a id="12869" class="Comment">-- Entry 2, per-lattice form: a decidable representation of 𝑳 yields one of its dual.</a>
+<a id="KurzweilNetterDualityAt"></a><a id="12955" href="/FLRP/Assumptions/#12955" class="Function">KurzweilNetterDualityAt</a> <a id="12979" class="Symbol">:</a> <a id="12981" href="/Classical/Small/Structures/Lattice/#1038" class="Function">Lattice</a> <a id="12989" class="Symbol">→</a> <a id="12991" href="/FLRP/Assumptions/#4788" class="Primitive">Type</a> <a id="12996" class="Symbol">(</a><a id="12997" href="/FLRP/Assumptions/#5370" class="Primitive">lsuc</a> <a id="13002" href="/classic/Level.html#521" class="Function">0ℓ</a><a id="13004" class="Symbol">)</a>
+<a id="13006" href="/FLRP/Assumptions/#12955" class="Function">KurzweilNetterDualityAt</a> <a id="13030" href="/FLRP/Assumptions/#13030" class="Bound">𝑳</a> <a id="13032" class="Symbol">=</a> <a id="13034" href="/FLRP/Representable/#8979" class="Record">Representableᵈ</a> <a id="13049" href="/FLRP/Assumptions/#13030" class="Bound">𝑳</a> <a id="13051" class="Symbol">→</a> <a id="13053" href="/FLRP/Representable/#8979" class="Record">Representableᵈ</a> <a id="13068" class="Symbol">(</a><a id="13069" href="/Classical/Structures/Lattice/Dual/#5532" class="Function">dualLattice</a> <a id="13081" href="/FLRP/Assumptions/#13030" class="Bound">𝑳</a><a id="13082" class="Symbol">)</a>
 
-<a id="12392" class="Comment">-- The full theorem of Kurzweil (1985) and Netter (1986), as an explicit hypothesis.</a>
-<a id="KurzweilNetterDuality"></a><a id="12477" href="/FLRP/Assumptions/#12477" class="Function">KurzweilNetterDuality</a> <a id="12499" class="Symbol">:</a> <a id="12501" href="/FLRP/Assumptions/#4310" class="Primitive">Type</a> <a id="12506" class="Symbol">(</a><a id="12507" href="/FLRP/Assumptions/#4829" class="Primitive">lsuc</a> <a id="12512" href="/classic/Level.html#521" class="Function">0ℓ</a><a id="12514" class="Symbol">)</a>
-<a id="12516" href="/FLRP/Assumptions/#12477" class="Function">KurzweilNetterDuality</a> <a id="12538" class="Symbol">=</a> <a id="12540" class="Symbol">(</a><a id="12541" href="/FLRP/Assumptions/#12541" class="Bound">𝑳</a> <a id="12543" class="Symbol">:</a> <a id="12545" href="/Classical/Small/Structures/Lattice/#1038" class="Function">Lattice</a><a id="12552" class="Symbol">)</a> <a id="12554" class="Symbol">→</a> <a id="12556" href="/FLRP/Assumptions/#12262" class="Function">KurzweilNetterDualityAt</a> <a id="12580" href="/FLRP/Assumptions/#12541" class="Bound">𝑳</a>
+<a id="13085" class="Comment">-- The full theorem of Kurzweil (1985) and Netter (1986), as an explicit hypothesis.</a>
+<a id="KurzweilNetterDuality"></a><a id="13170" href="/FLRP/Assumptions/#13170" class="Function">KurzweilNetterDuality</a> <a id="13192" class="Symbol">:</a> <a id="13194" href="/FLRP/Assumptions/#4788" class="Primitive">Type</a> <a id="13199" class="Symbol">(</a><a id="13200" href="/FLRP/Assumptions/#5370" class="Primitive">lsuc</a> <a id="13205" href="/classic/Level.html#521" class="Function">0ℓ</a><a id="13207" class="Symbol">)</a>
+<a id="13209" href="/FLRP/Assumptions/#13170" class="Function">KurzweilNetterDuality</a> <a id="13231" class="Symbol">=</a> <a id="13233" class="Symbol">(</a><a id="13234" href="/FLRP/Assumptions/#13234" class="Bound">𝑳</a> <a id="13236" class="Symbol">:</a> <a id="13238" href="/Classical/Small/Structures/Lattice/#1038" class="Function">Lattice</a><a id="13245" class="Symbol">)</a> <a id="13247" class="Symbol">→</a> <a id="13249" href="/FLRP/Assumptions/#12955" class="Function">KurzweilNetterDualityAt</a> <a id="13273" href="/FLRP/Assumptions/#13234" class="Bound">𝑳</a>
 </pre>
 <h4 id="entry-3-the-palfypudlak-theorem">Entry 3: the Pálfy–Pudlák theorem<a class="headerlink" href="#entry-3-the-palfypudlak-theorem" title="Anchor link to this section">&para;</a></h4>
 <p>The <strong>theorem of Pálfy and Pudlák</strong> (P. P. Pálfy and P. Pudlák, <em>Congruence
@@ -15433,9 +15615,64 @@ Algebra Universalis 11 (1980) 22–27) states the equivalence of</p>
    Entry 1 where a consumer needs it.</p>
 </li>
 </ul>
-<pre class="Agda"><a id="14630" class="Comment">-- Entry 3: statement (A) of Pálfy–Pudlák implies statement (B).</a>
-<a id="PalfyPudlak"></a><a id="14695" href="/FLRP/Assumptions/#14695" class="Function">PalfyPudlak</a> <a id="14707" class="Symbol">:</a> <a id="14709" href="/FLRP/Assumptions/#4310" class="Primitive">Type</a> <a id="14714" class="Symbol">(</a><a id="14715" href="/FLRP/Assumptions/#4829" class="Primitive">lsuc</a> <a id="14720" href="/classic/Level.html#521" class="Function">0ℓ</a><a id="14722" class="Symbol">)</a>
-<a id="14724" href="/FLRP/Assumptions/#14695" class="Function">PalfyPudlak</a> <a id="14736" class="Symbol">=</a> <a id="14738" href="/FLRP/Problem/#10055" class="Function">FLRP-Statement</a> <a id="14753" class="Symbol">→</a> <a id="14755" href="/FLRP/Enforceable/#28712" class="Function">GroupFLRP-Statement</a>
+<pre class="Agda"><a id="15323" class="Comment">-- Entry 3: statement (A) of Pálfy–Pudlák implies statement (B).</a>
+<a id="PalfyPudlak"></a><a id="15388" href="/FLRP/Assumptions/#15388" class="Function">PalfyPudlak</a> <a id="15400" class="Symbol">:</a> <a id="15402" href="/FLRP/Assumptions/#4788" class="Primitive">Type</a> <a id="15407" class="Symbol">(</a><a id="15408" href="/FLRP/Assumptions/#5370" class="Primitive">lsuc</a> <a id="15413" href="/classic/Level.html#521" class="Function">0ℓ</a><a id="15415" class="Symbol">)</a>
+<a id="15417" href="/FLRP/Assumptions/#15388" class="Function">PalfyPudlak</a> <a id="15429" class="Symbol">=</a> <a id="15431" href="/FLRP/Problem/#10055" class="Function">FLRP-Statement</a> <a id="15446" class="Symbol">→</a> <a id="15448" href="/FLRP/Enforceable/#28712" class="Function">GroupFLRP-Statement</a>
+</pre>
+<h4 id="entry-4-kurzweil-interval-surjectivity">Entry 4: Kurzweil interval surjectivity<a class="headerlink" href="#entry-4-kurzweil-interval-surjectivity" title="Anchor link to this section">&para;</a></h4>
+<p><strong>Kurzweil's surjectivity lemma</strong>: if <code>S</code> is a finite nonabelian simple group,
+then every subgroup of <code>Sⁿ</code> containing the diagonal <code>D</code> is a partition subgroup
+<code>K_π = { y ∣ ker π ≤ ker y }</code>.  This is the <em>onto</em> half of the isomorphism
+<code>[D , Sⁿ] ≅ Eq(n)′</code> (H. Kurzweil, <em>Endliche Gruppen mit vielen Untergruppen</em>,
+J. reine angew. Math. 356 (1985) 140–160 — the same article behind Entry 2's
+group-interval case); the write-ups this library follows
+(<code>docs/papers/fin-lat-rep/SmallLatticeReps.tex</code> § "Lattice duals", Lemma
+<code>lem:latt-duals</code>, and DeMeo's thesis § 2.2) prove the dual order embedding and
+cite the surjectivity without reproof.  The embedding half is <em>proved</em> in
+<a href="/Classical/Structures/Group/PartitionSubgroup/">Classical.Structures.Group.PartitionSubgroup</a>; this entry is exactly the
+remaining classical delta.</p>
+<ul>
+<li>
+<p><strong>Meaning</strong>.  <code class="AgdaFunction">KurzweilSurjectivityAt</code> <code>𝒮</code> <code>n</code> says: every
+   element of the respecting upper interval <code>[D , Sⁿ]</code> (an
+   <code class="AgdaFunction">Interval≈</code> of the <code class="AgdaModule">UpperInterval</code> at the
+   diagonal) is extensionally <code>K_π</code> for a <em>produced</em> partition <code>π</code> — the Σ-form
+   defined in <a href="/FLRP/KurzweilInterval/">FLRP.KurzweilInterval</a>, which is precisely what the inverse map
+   of <code class="AgdaFunction">kurzweilIntervalIso</code> consumes.</p>
+</li>
+<li>
+<p><strong>Side condition</strong>.  The statement type is defined for an arbitrary
+   <code>𝒮 : Group 0ℓ 0ℓ</code> — and for arbitrary <code>𝒮</code> it is <em>false</em> (for <code>S = ℤ₃</code> and
+   <code>n = 3</code> the tuples with <code>x₀ x₂ = x₁²</code> form a non-partition subgroup above the
+   diagonal).  The classical theorem asserts the instances where <code>𝒮</code> is finite
+   nonabelian simple, and consumers must instantiate it there; the side
+   condition stays in prose because the library does not yet define simplicity
+   predicates (issue #512 owns them), and making it formal is part of this
+   entry's retirement.</p>
+</li>
+<li>
+<p><strong>Status and retirement path</strong>.  A classically proven theorem imported
+   pending formalization.  The missing mathematics is the normal-subgroup
+   structure theory of powers of a nonabelian simple group (normal subgroups of
+   <code>Sⁿ</code> are partial products; subdirect subgroups containing the diagonal
+   collapse blockwise), a follow-up flagged in issue #521.  On completion this
+   entry retires, <code class="AgdaFunction">kurzweilIntervalIso</code> holds outright at simple
+   instantiations, and the Kurzweil–Netter route of issue #502 loses one of its
+   two imported steps toward retiring Entry 2.</p>
+</li>
+<li>
+<p><strong>Layer</strong>.  Layer S, on the respecting interval <code class="AgdaFunction">Interval≈</code>.
+   Over a decidable interval element (<code class="AgdaFunction">Intervalᵈ</code>) with a finite
+   base group the partition is computable as the kernel meet of the member
+   tuples, so a formal proof is expected to produce the Layer-D reading
+   directly, mirroring Entry 2's layer note.</p>
+</li>
+</ul>
+<pre class="Agda"><a id="18226" class="Comment">-- Entry 4, per-instance form: every subgroup in [D , Sⁿ] is a partition</a>
+<a id="18299" class="Comment">-- subgroup, with the partition produced as data.  Classically true for 𝒮 a</a>
+<a id="18375" class="Comment">-- finite nonabelian simple group; consumers instantiate it there.</a>
+<a id="KurzweilSurjectivityAt"></a><a id="18442" href="/FLRP/Assumptions/#18442" class="Function">KurzweilSurjectivityAt</a> <a id="18465" class="Symbol">:</a> <a id="18467" href="/Classical/Structures/Group/Basic/#4497" class="Function">Group</a> <a id="18473" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="18476" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="18479" class="Symbol">→</a> <a id="18481" href="/classic/Agda.Builtin.Nat.html#203" class="Datatype">ℕ</a> <a id="18483" class="Symbol">→</a> <a id="18485" href="/FLRP/Assumptions/#4788" class="Primitive">Type</a> <a id="18490" class="Symbol">(</a><a id="18491" href="/FLRP/Assumptions/#5370" class="Primitive">lsuc</a> <a id="18496" href="/classic/Level.html#521" class="Function">0ℓ</a><a id="18498" class="Symbol">)</a>
+<a id="18500" href="/FLRP/Assumptions/#18442" class="Function">KurzweilSurjectivityAt</a> <a id="18523" href="/FLRP/Assumptions/#18523" class="Bound">𝒮</a> <a id="18525" href="/FLRP/Assumptions/#18525" class="Bound">n</a> <a id="18527" class="Symbol">=</a> <a id="18529" href="/FLRP/KurzweilInterval/#5851" class="Function">KurzweilInterval.KurzweilSurjectivity</a> <a id="18567" href="/FLRP/Assumptions/#18523" class="Bound">𝒮</a> <a id="18569" href="/FLRP/Assumptions/#18525" class="Bound">n</a>
 </pre>
 <hr />
 <!-- File: docs/_links.md -->

@@ -337,6 +337,10 @@
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/Diagonal/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
          <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/GSet/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
@@ -350,6 +354,14 @@
     </url>
     <url>
          <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/NormalSubgroupLattice/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/PartitionSubgroup/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/Power/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
@@ -382,6 +394,10 @@
     </url>
     <url>
          <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Lattice/Parachute/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Lattice/Partitions/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
@@ -618,6 +634,10 @@
     </url>
     <url>
          <loc>https://agda-algebras.universalalgebra.org/FLRP/Enforceable/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/FLRP/KurzweilInterval/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
