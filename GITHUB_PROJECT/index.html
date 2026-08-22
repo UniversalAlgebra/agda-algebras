@@ -19932,7 +19932,7 @@ edits to those regions will be overwritten on the next render.
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Notation: residual <code>∣_∣</code> / <code>∥_∥</code> / <code>_̂_</code> outside <code>Legacy/</code>.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Imports: bare <code>open import</code> without <code>using</code>; cosmetic <code>renaming</code>; non-alphabetical groups.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Headers: modules whose header is only YAML + the one-line "This is the … module" (feeds M4-2).</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Anchors: <code>&lt;a id=…&gt;</code> occurrences (feeds M4-2; ≈ 90 across <code>Setoid/</code>).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Anchors: <code>&lt;a id=…&gt;</code> occurrences (feeds M4-1g; ≈ 90 across <code>Setoid/</code>).</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Naming: any <code>is-x</code> predicate forms or synonym pairs (expected: none in <code>Setoid/</code>).</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Emit <code>docs/audits/M4-style-audit.md</code> with per-file findings.</li>
 </ul>
@@ -19983,10 +19983,10 @@ edits to those regions will be overwritten on the next render.
 </ul>
 <p>Part of the M4-1 umbrella (#267).</p>
 <hr />
-<h3 id="issue-m4-2-remove-html-heading-anchors-rely-on-kramdown-auto-slugs-387-closed">Issue M4-2: Remove HTML <a id> heading anchors (rely on kramdown auto-slugs) (#387, closed)<a class="headerlink" href="#issue-m4-2-remove-html-heading-anchors-rely-on-kramdown-auto-slugs-387-closed" title="Anchor link to this section">&para;</a></h3>
+<h3 id="issue-m4-1g-remove-html-heading-anchors-rely-on-kramdown-auto-slugs-387-closed">Issue M4-1g: Remove HTML <a id> heading anchors (rely on kramdown auto-slugs) (#387, closed)<a class="headerlink" href="#issue-m4-1g-remove-html-heading-anchors-rely-on-kramdown-auto-slugs-387-closed" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: </p>
 <h2 id="description_42">Description<a class="headerlink" href="#description_42" title="Anchor link to this section">&para;</a></h2>
-<p>Split out of the M4 style audit (<code>docs/audits/M4-style-audit.md</code>, finding 4) — the docstring pass #268 is a <em>different</em> M4-2 task.  The <code>docs/STYLE_GUIDE.md</code> § Section headings rule says headings should be plain ATX, not wrapped in <code>&lt;a id="…"&gt;…&lt;/a&gt;</code>; the renderer (Jekyll + kramdown) auto-generates a slug id from each heading.  The audit found <strong>~300 such anchors across 111 files</strong>.  Pursue per-subtree, starting with <code>Setoid/</code> (~93 anchors / 43 files).</p>
+<p>Split out of the M4 style audit (<code>docs/audits/M4-style-audit.md</code>, finding 4).  The <code>docs/STYLE_GUIDE.md</code> § Section headings rule says headings should be plain ATX, not wrapped in <code>&lt;a id="…"&gt;…&lt;/a&gt;</code>; the renderer (Jekyll + kramdown) auto-generates a slug id from each heading.  The audit found <strong>~300 such anchors across 111 files</strong>.  Pursue per-subtree, starting with <code>Setoid/</code> (~93 anchors / 43 files).</p>
 <h2 id="algorithm-per-anchor-level-a-idtagtexta">Algorithm (per anchor <code>&lt;level&gt; &lt;a id="TAG"&gt;TEXT&lt;/a&gt;</code>)<a class="headerlink" href="#algorithm-per-anchor-level-a-idtagtexta" title="Anchor link to this section">&para;</a></h2>
 <ul>
 <li>Compute <code>slug = kramdown_generate_id(TEXT)</code>.</li>
@@ -20013,17 +20013,499 @@ edits to those regions will be overwritten on the next render.
 <h3 id="issue-m4-2-docstring-pass-for-all-user-facing-definitions-268">Issue M4-2: Docstring pass for all user-facing definitions (#268)<a class="headerlink" href="#issue-m4-2-docstring-pass-for-all-user-facing-definitions-268" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>documentation</code>, <code>milestone-4-style</code>, <code>help-wanted</code></p>
 <h2 id="description_43">Description<a class="headerlink" href="#description_43" title="Anchor link to this section">&para;</a></h2>
-<p>Every record, type family, and top-level function in the public API should have a prose comment block explaining what it is, when to use it, and cross-references to related definitions.  Long-tail task; pursue in small per-module PRs.</p>
+<p>Every record, type family, and top-level function in the public API should have a prose comment block explaining what it is, when to use it, and cross-references to related definitions.  Long-tail task; pursued as the per-subtree sub-issues below.</p>
+<h2 id="where-it-stands">Where it stands<a class="headerlink" href="#where-it-stands" title="Anchor link to this section">&para;</a></h2>
+<p>Measured by <code>make docstrings</code> (#537) over the live trees: <strong>3247 public definitions in 307 modules</strong>, of which <strong>201</strong> sit under a fence carrying no real prose, and <strong>50</strong> modules open with nothing beyond the boilerplate "This is the [X][] module of the …" sentence.</p>
+<p><code>make docstrings</code> is a ratchet pinned at <code>DOCSTRING_MAX_GAPS</code>, so the count can only fall.  Each sub-issue lowers it.</p>
 <h2 id="tasks_42">Tasks<a class="headerlink" href="#tasks_42" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Walk every public module in <code>Setoid/</code> and add missing docstrings.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Walk every public module in <code>Classical/</code> and add missing docstrings.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Enforce via a linter or review checklist.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> #539 — Setoid/Algebras and Setoid/Homomorphisms (25 gaps, 10 headers)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> #540 — Setoid/Subalgebras (23, 5)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> #541 — Setoid/Varieties, Congruences, Terms, Categories (11, 9)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> #542 — Setoid/Functions, Setoid/Relations, Setoid barrels (6, 5)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> #543 — Classical/Structures, root and Lattice (34, 1)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> #544 — Classical/Structures/Group (31, 1)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> #545 — Classical/Bundles, Signatures, rest of Classical (37, 1)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> #546 — Examples (30, 8)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> #547 — Overture, FLRP, Exercises, top-level barrels (4, 10)</li>
 </ul>
+<p>Done: #537 (the audit tool, the baseline, the CI ratchet) · #538 (exemplar: <code>Setoid.Algebras.Basic</code>) · #387 (the <code>&lt;a id&gt;</code> anchor sweep).</p>
 <h2 id="acceptance-criteria_44">Acceptance criteria<a class="headerlink" href="#acceptance-criteria_44" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>grep</code>-based audit finds zero public definitions without a preceding comment block.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>make docstrings</code> reports <strong>0</strong> definitions without a prose block, with <code>DOCSTRING_MAX_GAPS</code> at 0.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> No module opens with only the boilerplate sentence.</li>
 </ul>
+<p>The original criterion said a "<code>grep</code>-based audit".  A grep cannot do this — the corpus has no <code>-- |</code> docstrings, prose lives in Markdown outside the fences, and almost every definition is indented inside an anonymous <code>module _ … where</code>.  <code>scripts/python/docstring_audit.py</code> parses literate structure and Agda's layout rule instead; it is validated against Agda's own scope checker.</p>
+<h2 id="open-decision-which-bar">Open decision: which bar<a class="headerlink" href="#open-decision-which-bar" title="Anchor link to this section">&para;</a></h2>
+<ul>
+<li><strong>Lenient</strong> (the ratchet's measure, and the recommendation): every fence carries a real paragraph.  201 to clear.</li>
+<li><strong>Strict</strong> (<code>--strict</code>): the style guide's literal "immediately above" — one definition per fence.  1969 to clear, and it fragments indented module bodies, which works against reading the library as a narrative.</li>
+<li><strong>Named coverage</strong> (a third measure, proposed): every public definition is <em>mentioned by name</em> in the prose attached to its fence.  Currently 19% repo-wide; #538 hits 11/13 without having aimed at it, because prose that describes a definition tends to name it.</li>
+</ul>
+<p>Recommendation: gate on lenient, track named coverage as the quality target, reject strict.  Rationale is that strict enforces <em>layout</em> rather than content — 1969 paragraphs each restating a type signature would satisfy it — whereas named coverage is what makes per-definition prose extractable for #275 while leaving the page readable as prose.</p>
+<h2 id="conventions-for-a-docstring-pr">Conventions for a docstring PR<a class="headerlink" href="#conventions-for-a-docstring-pr" title="Anchor link to this section">&para;</a></h2>
+<p>Every sub-issue follows these; they are recorded once here rather than repeated nine times.</p>
+<ul>
+<li><strong>The rule</strong> is <code>docs/STYLE_GUIDE.md</code> § "Every public definition has a prose comment block" and § "Module headers have comment blocks".  Prose is <strong>Markdown before the code fence</strong>, never <code>-- |</code> inside it.  A comment that only restates the type signature fails the bar.</li>
+<li><strong>The tool</strong>: <code>make docstrings-list</code> names every gap; <code>python3 scripts/python/docstring_audit.py &lt;path&gt; --list --exit-zero</code> scopes it to a subtree; <code>--strict</code> shows the other reading.</li>
+<li><strong>The exemplar</strong> is #538.  Copy its shape: what the definition is mathematically, when a reader reaches for it, two or three cross-references.</li>
+<li><strong>Module headers</strong>: keep the <code>This is the [X][] module of the …</code> line and add paragraphs after it, as <code>Setoid.Terms.Monad</code> and <code>Classical.Structures.Lattice.OrdinalSum</code> do.</li>
+<li><strong>Ground the prose or mark it TODO.</strong>  Write only what is supported by the definition itself, by prose the library already contains, or by a source actually read.  Where the mathematics needs the author, leave <code>&lt;!-- TODO(#268): … --&gt;</code> saying what would be needed.  In the PR, name the paragraphs that are the agent's and the ones it is least sure of.  A short list of "I could not write this one, and here is why" is a better deliverable than plausible-sounding filler.</li>
+<li><strong>Cross-references</strong> are reference-style (<code>[Setoid.Algebras.Products][]</code>); the label must already exist in <code>docs/_links.md</code> or <code>make check-links</code> fails.</li>
+<li><strong>Style</strong>: <code>+</code> bullets, two spaces after a sentence-ending period, one paragraph per source line, kramdown attribute spans for Agda names.  Do not reflow pre-existing wrapped paragraphs.</li>
+<li><strong>Verify, do not assert</strong>: the Agda extracted from the fences must be byte-identical to <code>master</code> for every file touched; type-check each modified module; <code>make check-links</code> and <code>make docstrings</code> green.  If a prose edit changes compiled code, something is wrong.</li>
+<li><strong>Out of scope</strong>: <code>src/Legacy/**</code>, any change to Agda code, reformatting, and editing <code>docs/STYLE_GUIDE.md</code>.</li>
+</ul>
+<hr />
+<h3 id="issue-m4-2a-docstrings-setoidalgebras-and-setoidhomomorphisms-539">Issue M4-2a: Docstrings: Setoid/Algebras and Setoid/Homomorphisms (#539)<a class="headerlink" href="#issue-m4-2a-docstrings-setoidalgebras-and-setoidhomomorphisms-539" title="Anchor link to this section">&para;</a></h3>
+<p><strong>Labels</strong>: <code>documentation</code>, <code>milestone-4-style</code>, <code>help-wanted</code></p>
+<h2 id="scope_1">Scope<a class="headerlink" href="#scope_1" title="Anchor link to this section">&para;</a></h2>
+<p><code>src/Setoid/Algebras/ src/Setoid/Homomorphisms/</code></p>
+<p>The heart of the Setoid tree and the first thing a new reader meets.  <code>Setoid.Algebras.Basic</code> is already done by #538 and is the pattern to follow.</p>
+<table>
+<thead>
+<tr>
+<th>measure</th>
+<th>count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>modules</td>
+<td>14</td>
+</tr>
+<tr>
+<td>public definitions</td>
+<td>116</td>
+</tr>
+<tr>
+<td><strong>definitions with no prose on their fence</strong></td>
+<td><strong>25</strong></td>
+</tr>
+<tr>
+<td>modules with a boilerplate-only or heading-only header</td>
+<td>10</td>
+</tr>
+<tr>
+<td>(reference) definitions failing the strict reading</td>
+<td>73</td>
+</tr>
+</tbody>
+</table>
+<p>Sized for one PR.</p>
+<h2 id="done-when">Done when<a class="headerlink" href="#done-when" title="Anchor link to this section">&para;</a></h2>
+<ul>
+<li><code>python3 scripts/python/docstring_audit.py src/Setoid/Algebras/ --exit-zero</code> reports <strong>0</strong> gaps in scope.</li>
+<li>Every module in scope opens with prose beyond the boilerplate sentence.</li>
+<li><code>DOCSTRING_MAX_GAPS</code> in the <code>Makefile</code> is lowered by the number cleared.</li>
+</ul>
+<h2 id="how">How<a class="headerlink" href="#how" title="Anchor link to this section">&para;</a></h2>
+<p><strong>Conventions, tooling, grounding discipline and the verification checklist are in #268</strong> — read that first; they are not repeated here.  Exemplar: #538.</p>
+<blockquote>
+<p>Counts assume the lenient bar (every fence carries real prose), the recommendation on #268.  If the strict bar is adopted instead, this issue grows from 25 to 73 and should be re-split.</p>
+</blockquote>
+<hr />
+<p>Sub-issue of #268.  Tooling: #537.</p>
+<hr />
+<h3 id="issue-m4-2b-docstrings-setoidsubalgebras-540">Issue M4-2b: Docstrings: Setoid/Subalgebras (#540)<a class="headerlink" href="#issue-m4-2b-docstrings-setoidsubalgebras-540" title="Anchor link to this section">&para;</a></h3>
+<p><strong>Labels</strong>: <code>documentation</code>, <code>milestone-4-style</code>, <code>help-wanted</code></p>
+<h2 id="scope_2">Scope<a class="headerlink" href="#scope_2" title="Anchor link to this section">&para;</a></h2>
+<p><code>src/Setoid/Subalgebras/</code></p>
+<p>Self-contained and gap-dense: subuniverses, generation, subdirect products.  A good second subtree, once the convention from #538 has settled.</p>
+<table>
+<thead>
+<tr>
+<th>measure</th>
+<th>count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>modules</td>
+<td>10</td>
+</tr>
+<tr>
+<td>public definitions</td>
+<td>145</td>
+</tr>
+<tr>
+<td><strong>definitions with no prose on their fence</strong></td>
+<td><strong>23</strong></td>
+</tr>
+<tr>
+<td>modules with a boilerplate-only or heading-only header</td>
+<td>5</td>
+</tr>
+<tr>
+<td>(reference) definitions failing the strict reading</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+<p>Sized for one PR.</p>
+<h2 id="done-when_1">Done when<a class="headerlink" href="#done-when_1" title="Anchor link to this section">&para;</a></h2>
+<ul>
+<li><code>python3 scripts/python/docstring_audit.py src/Setoid/Subalgebras/ --exit-zero</code> reports <strong>0</strong> gaps in scope.</li>
+<li>Every module in scope opens with prose beyond the boilerplate sentence.</li>
+<li><code>DOCSTRING_MAX_GAPS</code> in the <code>Makefile</code> is lowered by the number cleared.</li>
+</ul>
+<h2 id="how_1">How<a class="headerlink" href="#how_1" title="Anchor link to this section">&para;</a></h2>
+<p><strong>Conventions, tooling, grounding discipline and the verification checklist are in #268</strong> — read that first; they are not repeated here.  Exemplar: #538.</p>
+<blockquote>
+<p>Counts assume the lenient bar (every fence carries real prose), the recommendation on #268.  If the strict bar is adopted instead, this issue grows from 23 to 100 and should be re-split.</p>
+</blockquote>
+<hr />
+<p>Sub-issue of #268.  Tooling: #537.</p>
+<hr />
+<h3 id="issue-m4-2c-docstrings-setoidvarieties-congruences-terms-categories-541">Issue M4-2c: Docstrings: Setoid/Varieties, Congruences, Terms, Categories (#541)<a class="headerlink" href="#issue-m4-2c-docstrings-setoidvarieties-congruences-terms-categories-541" title="Anchor link to this section">&para;</a></h3>
+<p><strong>Labels</strong>: <code>documentation</code>, <code>milestone-4-style</code>, <code>help-wanted</code></p>
+<h2 id="scope_3">Scope<a class="headerlink" href="#scope_3" title="Anchor link to this section">&para;</a></h2>
+<p><code>src/Setoid/Varieties/ src/Setoid/Congruences/ src/Setoid/Terms/ src/Setoid/Categories/</code></p>
+<p>Few gaps for their size, because the HSP-adjacent modules already carry good prose.  Mostly header work plus a scattering of undocumented fences.  <code>Examples/Demos/HSP.lagda.md</code> is a rich source of grounded prose for the Varieties material.</p>
+<table>
+<thead>
+<tr>
+<th>measure</th>
+<th>count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>modules</td>
+<td>53</td>
+</tr>
+<tr>
+<td>public definitions</td>
+<td>632</td>
+</tr>
+<tr>
+<td><strong>definitions with no prose on their fence</strong></td>
+<td><strong>11</strong></td>
+</tr>
+<tr>
+<td>modules with a boilerplate-only or heading-only header</td>
+<td>9</td>
+</tr>
+<tr>
+<td>(reference) definitions failing the strict reading</td>
+<td>370</td>
+</tr>
+</tbody>
+</table>
+<p>Sized for one PR.</p>
+<h2 id="done-when_2">Done when<a class="headerlink" href="#done-when_2" title="Anchor link to this section">&para;</a></h2>
+<ul>
+<li><code>python3 scripts/python/docstring_audit.py src/Setoid/Varieties/ --exit-zero</code> reports <strong>0</strong> gaps in scope.</li>
+<li>Every module in scope opens with prose beyond the boilerplate sentence.</li>
+<li><code>DOCSTRING_MAX_GAPS</code> in the <code>Makefile</code> is lowered by the number cleared.</li>
+</ul>
+<h2 id="how_2">How<a class="headerlink" href="#how_2" title="Anchor link to this section">&para;</a></h2>
+<p><strong>Conventions, tooling, grounding discipline and the verification checklist are in #268</strong> — read that first; they are not repeated here.  Exemplar: #538.</p>
+<blockquote>
+<p>Counts assume the lenient bar (every fence carries real prose), the recommendation on #268.  If the strict bar is adopted instead, this issue grows from 11 to 370 and should be re-split.</p>
+</blockquote>
+<hr />
+<p>Sub-issue of #268.  Tooling: #537.</p>
+<hr />
+<h3 id="issue-m4-2d-docstrings-setoidfunctions-setoidrelations-and-the-setoid-barrels-542">Issue M4-2d: Docstrings: Setoid/Functions, Setoid/Relations, and the Setoid barrels (#542)<a class="headerlink" href="#issue-m4-2d-docstrings-setoidfunctions-setoidrelations-and-the-setoid-barrels-542" title="Anchor link to this section">&para;</a></h3>
+<p><strong>Labels</strong>: <code>documentation</code>, <code>milestone-4-style</code>, <code>help-wanted</code></p>
+<h2 id="scope_4">Scope<a class="headerlink" href="#scope_4" title="Anchor link to this section">&para;</a></h2>
+<p><code>src/Setoid/Functions/ src/Setoid/Relations/ src/Setoid.lagda.md</code></p>
+<p>Small, and mostly header work.  The barrel modules hold no definitions but several open with boilerplate; a barrel's header is the natural place to say what the theme is and which submodule to reach for.</p>
+<table>
+<thead>
+<tr>
+<th>measure</th>
+<th>count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>modules</td>
+<td>20</td>
+</tr>
+<tr>
+<td>public definitions</td>
+<td>123</td>
+</tr>
+<tr>
+<td><strong>definitions with no prose on their fence</strong></td>
+<td><strong>6</strong></td>
+</tr>
+<tr>
+<td>modules with a boilerplate-only or heading-only header</td>
+<td>5</td>
+</tr>
+<tr>
+<td>(reference) definitions failing the strict reading</td>
+<td>82</td>
+</tr>
+</tbody>
+</table>
+<p>Sized for one PR.</p>
+<h2 id="done-when_3">Done when<a class="headerlink" href="#done-when_3" title="Anchor link to this section">&para;</a></h2>
+<ul>
+<li><code>python3 scripts/python/docstring_audit.py src/Setoid/Functions/ --exit-zero</code> reports <strong>0</strong> gaps in scope.</li>
+<li>Every module in scope opens with prose beyond the boilerplate sentence.</li>
+<li><code>DOCSTRING_MAX_GAPS</code> in the <code>Makefile</code> is lowered by the number cleared.</li>
+</ul>
+<h2 id="how_3">How<a class="headerlink" href="#how_3" title="Anchor link to this section">&para;</a></h2>
+<p><strong>Conventions, tooling, grounding discipline and the verification checklist are in #268</strong> — read that first; they are not repeated here.  Exemplar: #538.</p>
+<blockquote>
+<p>Counts assume the lenient bar (every fence carries real prose), the recommendation on #268.  If the strict bar is adopted instead, this issue grows from 6 to 82 and should be re-split.</p>
+</blockquote>
+<hr />
+<p>Sub-issue of #268.  Tooling: #537.</p>
+<hr />
+<h3 id="issue-m4-2e-docstrings-classicalstructures-root-and-lattice-543">Issue M4-2e: Docstrings: Classical/Structures (root and Lattice) (#543)<a class="headerlink" href="#issue-m4-2e-docstrings-classicalstructures-root-and-lattice-543" title="Anchor link to this section">&para;</a></h3>
+<p><strong>Labels</strong>: <code>documentation</code>, <code>milestone-4-style</code>, <code>help-wanted</code></p>
+<h2 id="scope_5">Scope<a class="headerlink" href="#scope_5" title="Anchor link to this section">&para;</a></h2>
+<p><code>src/Classical/Structures/ (excluding Group/, which is #544)</code></p>
+<p>The quintuple pattern (ADR-002) makes these highly repetitive, so one well-written structure can be adapted across the rest.  Do that deliberately: adapt, do not paste.</p>
+<table>
+<thead>
+<tr>
+<th>measure</th>
+<th>count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>modules</td>
+<td>19</td>
+</tr>
+<tr>
+<td>public definitions</td>
+<td>337</td>
+</tr>
+<tr>
+<td><strong>definitions with no prose on their fence</strong></td>
+<td><strong>34</strong></td>
+</tr>
+<tr>
+<td>modules with a boilerplate-only or heading-only header</td>
+<td>1</td>
+</tr>
+<tr>
+<td>(reference) definitions failing the strict reading</td>
+<td>240</td>
+</tr>
+</tbody>
+</table>
+<p>Sized for one or two PRs; split by directory if the diff runs long.</p>
+<h2 id="done-when_4">Done when<a class="headerlink" href="#done-when_4" title="Anchor link to this section">&para;</a></h2>
+<ul>
+<li><code>python3 scripts/python/docstring_audit.py src/Classical/Structures/ --exit-zero</code> reports <strong>0</strong> gaps in scope.</li>
+<li>Every module in scope opens with prose beyond the boilerplate sentence.</li>
+<li><code>DOCSTRING_MAX_GAPS</code> in the <code>Makefile</code> is lowered by the number cleared.</li>
+</ul>
+<h2 id="how_4">How<a class="headerlink" href="#how_4" title="Anchor link to this section">&para;</a></h2>
+<p><strong>Conventions, tooling, grounding discipline and the verification checklist are in #268</strong> — read that first; they are not repeated here.  Exemplar: #538.</p>
+<blockquote>
+<p>Counts assume the lenient bar (every fence carries real prose), the recommendation on #268.  If the strict bar is adopted instead, this issue grows from 34 to 240 and should be re-split.</p>
+</blockquote>
+<hr />
+<p>Sub-issue of #268.  Tooling: #537.</p>
+<hr />
+<h3 id="issue-m4-2f-docstrings-classicalstructuresgroup-544">Issue M4-2f: Docstrings: Classical/Structures/Group (#544)<a class="headerlink" href="#issue-m4-2f-docstrings-classicalstructuresgroup-544" title="Anchor link to this section">&para;</a></h3>
+<p><strong>Labels</strong>: <code>documentation</code>, <code>milestone-4-style</code>, <code>help-wanted</code></p>
+<h2 id="scope_6">Scope<a class="headerlink" href="#scope_6" title="Anchor link to this section">&para;</a></h2>
+<p><code>src/Classical/Structures/Group/</code></p>
+<p>Split from the rest of <code>Classical/Structures</code> purely on size.  The group-theoretic material feeds the FLRP research track, so cross-references into <code>FLRP/</code> are worth getting right.</p>
+<table>
+<thead>
+<tr>
+<th>measure</th>
+<th>count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>modules</td>
+<td>20</td>
+</tr>
+<tr>
+<td>public definitions</td>
+<td>310</td>
+</tr>
+<tr>
+<td><strong>definitions with no prose on their fence</strong></td>
+<td><strong>31</strong></td>
+</tr>
+<tr>
+<td>modules with a boilerplate-only or heading-only header</td>
+<td>1</td>
+</tr>
+<tr>
+<td>(reference) definitions failing the strict reading</td>
+<td>202</td>
+</tr>
+</tbody>
+</table>
+<p>Sized for one or two PRs; split by directory if the diff runs long.</p>
+<h2 id="done-when_5">Done when<a class="headerlink" href="#done-when_5" title="Anchor link to this section">&para;</a></h2>
+<ul>
+<li><code>python3 scripts/python/docstring_audit.py src/Classical/Structures/Group/ --exit-zero</code> reports <strong>0</strong> gaps in scope.</li>
+<li>Every module in scope opens with prose beyond the boilerplate sentence.</li>
+<li><code>DOCSTRING_MAX_GAPS</code> in the <code>Makefile</code> is lowered by the number cleared.</li>
+</ul>
+<h2 id="how_5">How<a class="headerlink" href="#how_5" title="Anchor link to this section">&para;</a></h2>
+<p><strong>Conventions, tooling, grounding discipline and the verification checklist are in #268</strong> — read that first; they are not repeated here.  Exemplar: #538.</p>
+<blockquote>
+<p>Counts assume the lenient bar (every fence carries real prose), the recommendation on #268.  If the strict bar is adopted instead, this issue grows from 31 to 202 and should be re-split.</p>
+</blockquote>
+<hr />
+<p>Sub-issue of #268.  Tooling: #537.</p>
+<hr />
+<h3 id="issue-m4-2g-docstrings-classicalbundles-signatures-and-the-rest-of-classical-545">Issue M4-2g: Docstrings: Classical/Bundles, Signatures, and the rest of Classical (#545)<a class="headerlink" href="#issue-m4-2g-docstrings-classicalbundles-signatures-and-the-rest-of-classical-545" title="Anchor link to this section">&para;</a></h3>
+<p><strong>Labels</strong>: <code>documentation</code>, <code>milestone-4-style</code>, <code>help-wanted</code></p>
+<h2 id="scope_7">Scope<a class="headerlink" href="#scope_7" title="Anchor link to this section">&para;</a></h2>
+<p><code>src/Classical/Bundles/ src/Classical/Signatures/ src/Classical/Theories/ src/Classical/Small/ src/Classical/Categories/ src/Classical/Properties/ src/Classical/Interpretations/ src/Classical.lagda.md</code></p>
+<p>Gap-dense but shallow.  Each bundle module is a stdlib-interop view and wants a short paragraph naming the <code>Algebra.Bundles</code> record it matches and why the view exists.  <code>Classical/Categories/</code> is the exception — the categorical framing needs real intent, so mark it TODO rather than guessing.</p>
+<table>
+<thead>
+<tr>
+<th>measure</th>
+<th>count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>modules</td>
+<td>57</td>
+</tr>
+<tr>
+<td>public definitions</td>
+<td>242</td>
+</tr>
+<tr>
+<td><strong>definitions with no prose on their fence</strong></td>
+<td><strong>37</strong></td>
+</tr>
+<tr>
+<td>modules with a boilerplate-only or heading-only header</td>
+<td>1</td>
+</tr>
+<tr>
+<td>(reference) definitions failing the strict reading</td>
+<td>154</td>
+</tr>
+</tbody>
+</table>
+<p>Sized for one or two PRs; split by directory if the diff runs long.</p>
+<h2 id="done-when_6">Done when<a class="headerlink" href="#done-when_6" title="Anchor link to this section">&para;</a></h2>
+<ul>
+<li><code>python3 scripts/python/docstring_audit.py src/Classical/Bundles/ --exit-zero</code> reports <strong>0</strong> gaps in scope.</li>
+<li>Every module in scope opens with prose beyond the boilerplate sentence.</li>
+<li><code>DOCSTRING_MAX_GAPS</code> in the <code>Makefile</code> is lowered by the number cleared.</li>
+</ul>
+<h2 id="how_6">How<a class="headerlink" href="#how_6" title="Anchor link to this section">&para;</a></h2>
+<p><strong>Conventions, tooling, grounding discipline and the verification checklist are in #268</strong> — read that first; they are not repeated here.  Exemplar: #538.</p>
+<blockquote>
+<p>Counts assume the lenient bar (every fence carries real prose), the recommendation on #268.  If the strict bar is adopted instead, this issue grows from 37 to 154 and should be re-split.</p>
+</blockquote>
+<hr />
+<p>Sub-issue of #268.  Tooling: #537.</p>
+<hr />
+<h3 id="issue-m4-2h-docstrings-examples-546">Issue M4-2h: Docstrings: Examples (#546)<a class="headerlink" href="#issue-m4-2h-docstrings-examples-546" title="Anchor link to this section">&para;</a></h3>
+<p><strong>Labels</strong>: <code>documentation</code>, <code>milestone-4-style</code>, <code>help-wanted</code></p>
+<h2 id="scope_8">Scope<a class="headerlink" href="#scope_8" title="Anchor link to this section">&para;</a></h2>
+<p><code>src/Examples/</code></p>
+<p>Demonstration modules.  Prose should say what the example demonstrates and which theorem or definition it exercises, not re-describe the construction.  <code>Examples/Demos/HSP.lagda.md</code> is the frozen TYPES 2021 artifact — leave its prose and its <code>&lt;a id&gt;</code> anchors alone (see #387).</p>
+<table>
+<thead>
+<tr>
+<th>measure</th>
+<th>count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>modules</td>
+<td>41</td>
+</tr>
+<tr>
+<td>public definitions</td>
+<td>442</td>
+</tr>
+<tr>
+<td><strong>definitions with no prose on their fence</strong></td>
+<td><strong>30</strong></td>
+</tr>
+<tr>
+<td>modules with a boilerplate-only or heading-only header</td>
+<td>8</td>
+</tr>
+<tr>
+<td>(reference) definitions failing the strict reading</td>
+<td>272</td>
+</tr>
+</tbody>
+</table>
+<p>Sized for one or two PRs; split by directory if the diff runs long.</p>
+<h2 id="done-when_7">Done when<a class="headerlink" href="#done-when_7" title="Anchor link to this section">&para;</a></h2>
+<ul>
+<li><code>python3 scripts/python/docstring_audit.py src/Examples/ --exit-zero</code> reports <strong>0</strong> gaps in scope.</li>
+<li>Every module in scope opens with prose beyond the boilerplate sentence.</li>
+<li><code>DOCSTRING_MAX_GAPS</code> in the <code>Makefile</code> is lowered by the number cleared.</li>
+</ul>
+<h2 id="how_7">How<a class="headerlink" href="#how_7" title="Anchor link to this section">&para;</a></h2>
+<p><strong>Conventions, tooling, grounding discipline and the verification checklist are in #268</strong> — read that first; they are not repeated here.  Exemplar: #538.</p>
+<blockquote>
+<p>Counts assume the lenient bar (every fence carries real prose), the recommendation on #268.  If the strict bar is adopted instead, this issue grows from 30 to 272 and should be re-split.</p>
+</blockquote>
+<hr />
+<p>Sub-issue of #268.  Tooling: #537.</p>
+<hr />
+<h3 id="issue-m4-2i-docstrings-overture-flrp-exercises-and-the-top-level-barrels-547">Issue M4-2i: Docstrings: Overture, FLRP, Exercises, and the top-level barrels (#547)<a class="headerlink" href="#issue-m4-2i-docstrings-overture-flrp-exercises-and-the-top-level-barrels-547" title="Anchor link to this section">&para;</a></h3>
+<p><strong>Labels</strong>: <code>documentation</code>, <code>milestone-4-style</code>, <code>help-wanted</code></p>
+<h2 id="scope_9">Scope<a class="headerlink" href="#scope_9" title="Anchor link to this section">&para;</a></h2>
+<p><code>src/Overture/ src/FLRP/ src/Exercises/ src/agda-algebras.lagda.md</code></p>
+<p>Only 4 gaps but 10 weak headers, so almost entirely module-header work.  <strong><code>FLRP/</code> needs William's research context</strong> — the parachute, Kurzweil–Netter and Snow material encodes a live research programme that cannot be reconstructed from the types.  Prefer deferring the FLRP headers to a follow-up over guessing.</p>
+<table>
+<thead>
+<tr>
+<th>measure</th>
+<th>count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>modules</td>
+<td>73</td>
+</tr>
+<tr>
+<td>public definitions</td>
+<td>900</td>
+</tr>
+<tr>
+<td><strong>definitions with no prose on their fence</strong></td>
+<td><strong>4</strong></td>
+</tr>
+<tr>
+<td>modules with a boilerplate-only or heading-only header</td>
+<td>10</td>
+</tr>
+<tr>
+<td>(reference) definitions failing the strict reading</td>
+<td>476</td>
+</tr>
+</tbody>
+</table>
+<p>Sized for one PR.</p>
+<h2 id="done-when_8">Done when<a class="headerlink" href="#done-when_8" title="Anchor link to this section">&para;</a></h2>
+<ul>
+<li><code>python3 scripts/python/docstring_audit.py src/Overture/ --exit-zero</code> reports <strong>0</strong> gaps in scope.</li>
+<li>Every module in scope opens with prose beyond the boilerplate sentence.</li>
+<li><code>DOCSTRING_MAX_GAPS</code> in the <code>Makefile</code> is lowered by the number cleared.</li>
+</ul>
+<h2 id="how_8">How<a class="headerlink" href="#how_8" title="Anchor link to this section">&para;</a></h2>
+<p><strong>Conventions, tooling, grounding discipline and the verification checklist are in #268</strong> — read that first; they are not repeated here.  Exemplar: #538.</p>
+<blockquote>
+<p>Counts assume the lenient bar (every fence carries real prose), the recommendation on #268.  If the strict bar is adopted instead, this issue grows from 4 to 476 and should be re-split.</p>
+</blockquote>
+<hr />
+<p>Sub-issue of #268.  Tooling: #537.</p>
 <hr />
 <h3 id="issue-m4-3-design-discussion-scope-of-o-and-v-universe-variables-269-closed">Issue M4-3: Design discussion — scope of 𝓞 and 𝓥 universe variables (#269, closed)<a class="headerlink" href="#issue-m4-3-design-discussion-scope-of-o-and-v-universe-variables-269-closed" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>milestone-4-style</code>, <code>design-discussion</code></p>
@@ -20504,7 +20986,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <p>Follow-up from the review of #402 (M4-5g).  The notion of <em>reduct</em> — and the variety-level results built on it — is universal algebra: it quantifies over arbitrary signatures and signature morphisms.  It is not classical algebra, where each theory studies one fixed kind of structure (groups, rings, fields) and reducts play little role.  So the development belongs in <code>Setoid/</code> (the universal-algebra foundation), not <code>Classical/</code>.</p>
 <p>The current placement under <code>Classical/</code> is genealogical, not principled.  <code>reduct</code> was introduced in ADR-002 §5 as the engine for the classical forgetful projections (<code>monoid→semigroup</code>, <code>group→monoid</code>), so it was born in <code>Classical.Structures</code>; ADR-006 then kept it there ("stays in its current home") and rationalized a "<code>Setoid.* → Classical.*</code> would be a cycle" rule around it.</p>
 <p>That rule is circular: the cycle exists <em>only because</em> <code>reduct</code> sits in <code>Classical/</code>.  <code>reduct</code> imports only <code>Overture.*</code> and <code>Setoid.Algebras.Basic</code> — nothing from <code>Classical/</code> — so the whole reduct chain can move down to <code>Setoid/</code> with no cycle.  Doing so also reunifies the M4-5 functorial layer, most of which (<code>Overture.Signatures.Morphisms</code>, <code>Setoid.Signatures.Functor</code>, the <code>Setoid.Categories.*</code> vocabulary, <code>Overture.Terms.Translation</code>, <code>Setoid.Terms.*</code>) already lives in <code>Setoid/</code> / <code>Overture/</code>; only the reduct-touching modules were stranded in <code>Classical/</code>.</p>
-<h2 id="scope_1">Scope<a class="headerlink" href="#scope_1" title="Anchor link to this section">&para;</a></h2>
+<h2 id="scope_10">Scope<a class="headerlink" href="#scope_10" title="Anchor link to this section">&para;</a></h2>
 <ul>
 <li><code>Classical.Structures.Reduct</code> → <code>Setoid.Algebras.Reduct</code> (<code>reduct</code>, <code>reductBy</code>, <code>reduct-id</code>, <code>reduct-∘</code>).</li>
 <li><code>Classical.Categories.Reduct</code> → <code>Setoid.Categories.Reduct</code> (<code>reductF</code>).</li>
@@ -21673,7 +22155,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 </ul>
 <p>Follow-up to #459 / #507.  Part of #451.</p>
 <hr />
-<h3 id="issue-m6-23-powers-diagonals-and-the-interval-d-sn-521">Issue M6-23: Powers, diagonals, and the interval <code>[D , Sⁿ]</code> (#521)<a class="headerlink" href="#issue-m6-23-powers-diagonals-and-the-interval-d-sn-521" title="Anchor link to this section">&para;</a></h3>
+<h3 id="issue-m6-23-powers-diagonals-and-the-interval-d-sn-521-closed">Issue M6-23: Powers, diagonals, and the interval <code>[D , Sⁿ]</code> (#521, closed)<a class="headerlink" href="#issue-m6-23-powers-diagonals-and-the-interval-d-sn-521-closed" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>enhancement</code>, <code>milestone-6-flrp</code>, <code>flrp-research</code></p>
 <h2 id="description_87">Description<a class="headerlink" href="#description_87" title="Anchor link to this section">&para;</a></h2>
 <p>Build the group infrastructure that Kurzweil's construction needs — the power <code>Sⁿ</code> of a group, its diagonal subgroup <code>D</code>, and the interval <code>[D , Sⁿ]</code> — once, in <code>Classical/</code>, so that both FLRP consumers import the same definitions: RP-4's wreath no-go (#461, Lemma 3.3 of the vendored note <code>docs/papers/flrp/ieprops/</code>) and the Kurzweil–Netter duality proof (#502, WP-5 stretch).  Reusable mathematics lands in the <code>Classical/</code> tree per roadmap § 6; the FLRP-facing interval packaging composes with <code>FLRP.Enforceable</code>'s <code>UpperInterval</code> / <code>IntervalIso</code>, the interval presentation everything downstream expects.</p>
@@ -22214,7 +22696,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li>A small script under <code>docs/javascripts/</code> attaches a popover on hover over any linked token, looking up the target anchor in the index (cross-page lookups resolve because the index is global).</li>
 <li>A header button toggles a <code>localStorage</code> flag that shows/hides the popovers (a Material header/<code>announce</code> override or a tiny custom element).</li>
 </ul>
-<h2 id="scope_2">Scope<a class="headerlink" href="#scope_2" title="Anchor link to this section">&para;</a></h2>
+<h2 id="scope_11">Scope<a class="headerlink" href="#scope_11" title="Anchor link to this section">&para;</a></h2>
 <ul>
 <li><strong>MVP (this issue).</strong>  Signature-on-hover from the existing <code>agda --html</code> output + the toggle.  No new tooling beyond a JSON-index build step and a small JS/CSS bundle.</li>
 <li><strong>Stretch (separate issue if pursued).</strong>  Fully <em>normalised</em> types / docstrings as 1Lab renders them — this needs the Agda API (a Shake/Haskell-style extractor), a materially larger effort.</li>
@@ -22386,6 +22868,135 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li>The module constellation (<code>docs/constellation.md</code>), PR #427, ADR-007.</li>
 <li><a href="https://github.com/omelkonian/agda-dependencies">omelkonian/agda-dependencies</a>.</li>
 </ul>
+<hr />
+<h3 id="issue-m10-7-self-host-the-remaining-webfonts-and-three-colour-tokens-that-miss-wcag-aa-531">Issue M10-7: Self-host the remaining webfonts, and three colour tokens that miss WCAG AA (#531)<a class="headerlink" href="#issue-m10-7-self-host-the-remaining-webfonts-and-three-colour-tokens-that-miss-wcag-aa-531" title="Anchor link to this section">&para;</a></h3>
+<p><strong>Labels</strong>: <code>documentation</code>, <code>milestone-10-polish</code></p>
+<p>Two findings from reading <code>stylesheets/custom.css</code> and the page source, while choosing a visual system for williamdemeo.github.io. That site is also MkDocs Material, so the fixes are the same shape in both places. Happy to open PRs for either.</p>
+<h2 id="1-three-external-font-requests-two-of-which-the-sites-own-css-overrides">1. Three external font requests, two of which the site's own CSS overrides<a class="headerlink" href="#1-three-external-font-requests-two-of-which-the-sites-own-css-overrides" title="Anchor link to this section">&para;</a></h2>
+<p>Every page currently emits, from Material's default <code>theme.font</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;preconnect&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://fonts.gstatic.com&quot;</span> <span class="na">crossorigin</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;:</span><span class="nd">root</span><span class="p">{</span><span class="nv">--md-text-font</span><span class="p">:</span><span class="s2">&quot;Inter&quot;</span><span class="p">;</span><span class="nv">--md-code-font</span><span class="p">:</span><span class="s2">&quot;Roboto Mono&quot;</span><span class="p">}&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>and <code>custom.css</code> line 31:</p>
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">import</span><span class="w"> </span><span class="nt">url</span><span class="o">(</span><span class="s2">&quot;https://cdn.jsdelivr.net/gh/cormullion/juliamono/webfonts/juliamono.css&quot;</span><span class="o">)</span><span class="p">;</span>
+</code></pre></div>
+<p>But <code>custom.css</code> then overrides both variables (lines 73–75):</p>
+<div class="highlight"><pre><span></span><code><span class="nt">--md-code-font</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;JuliaMono&quot;</span><span class="o">,</span><span class="w"> </span><span class="s2">&quot;JetBrains Mono&quot;</span><span class="o">,</span><span class="w"> </span><span class="s2">&quot;Fira Code&quot;</span><span class="o">,</span><span class="w"> </span><span class="s2">&quot;Cascadia Code&quot;</span><span class="o">,</span><span class="w"> </span><span class="err">…</span>
+<span class="nt">--md-text-font</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;InterVar&quot;</span><span class="o">,</span><span class="w"> </span><span class="s2">&quot;Inter&quot;</span><span class="o">,</span><span class="w"> </span><span class="nt">-apple-system</span><span class="o">,</span><span class="w"> </span><span class="nt">BlinkMacSystemFont</span><span class="o">,</span><span class="w"> </span><span class="err">…</span>
+</code></pre></div>
+<p>So Roboto Mono is never selected, and Inter is served from Google while <code>inter-latin-wght-normal.woff2</code> is already self-hosted under <code>assets/fonts/</code>.  Space Grotesk, Geist (four weights) and Sora are self-hosted too — the site is most of the way there. What is left is:</p>
+<ul>
+<li><code>theme.font: false</code> in <code>mkdocs.yml</code>, which removes the preconnect and the Google Fonts stylesheet. The <code>--md-text-font</code> / <code>--md-code-font</code> values in <code>custom.css</code> already cover what those lines were providing.</li>
+<li>Self-host JuliaMono rather than <code>@import</code>-ing it from jsDelivr.</li>
+</ul>
+<p>JuliaMono is the one that matters.  It is the only face in that stack with the Mathematical Alphanumeric Symbols block, so it is the only one that can render <code>𝑨 𝓤 𝑆 𝔸 𝕏 𝒦 𝓞 𝓥</code>.  Measured against the 1,952 non-ASCII characters <code>agda-input.el</code> names, and a 44-character probe drawn from real Agda:</p>
+<table>
+<thead>
+<tr>
+<th>Face</th>
+<th>Glyphs</th>
+<th>agda-input</th>
+<th>Probe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>JuliaMono v0.63.2</strong></td>
+<td>11,191</td>
+<td>92.8%</td>
+<td><strong>44/44</strong></td>
+</tr>
+<tr>
+<td>Cascadia Code</td>
+<td>2,426</td>
+<td>17.0%</td>
+<td>14/44</td>
+</tr>
+<tr>
+<td>Fira Code</td>
+<td>1,551</td>
+<td>19.3%</td>
+<td>24/44</td>
+</tr>
+<tr>
+<td>JetBrains Mono</td>
+<td>976</td>
+<td>14.7%</td>
+<td>21/44</td>
+</tr>
+</tbody>
+</table>
+<p>If jsDelivr is unreachable — blocked network, corporate proxy, or the CDN simply going away — the fallbacks silently take over and every universe level and bold-script letter on the site renders in a substitute face, mid-line.  The precedent is uncomfortably close to hand: williamdemeo.org loads Fira Code from <code>cdn.rawgit.com</code>, which shut down in 2019, so its intended monospace font has not rendered for years and nobody noticed, because nothing fails loudly.</p>
+<p>If it is useful, <code>scripts/python/build_fonts.py</code> in <a href="https://github.com/williamdemeo/williamdemeo.github.io/pull/70">williamdemeo/williamdemeo.github.io#70</a> does exactly this job and would port over nearly unchanged.  It pins sources by SHA-256, subsets by Unicode block rather than by an enumerated character list, splits JuliaMono three ways by <code>unicode-range</code> (56 KB text / 253 KB symbols / 154 KB mathematical alphanumerics, so a page pays only for the notation it shows), and emits deterministic WOFF2.</p>
+<p>One warning from writing it, since it would bite anyone doing this by hand: subsetting against the characters <code>agda-input-translations</code> names is not enough.  The Agda input method <em>inherits</em> from Emacs' TeX method for everything it does not redefine, so <code>ℓ</code>, <code>Π</code> and the subscript digits are absent from that list and fall back mid-line.  Only a browser catches it — <code>CSS.getPlatformFontsForNode</code> reports which face actually rasterised each run of text.</p>
+<h2 id="2-three-colour-tokens-do-not-clear-wcag-aa-as-text">2. Three colour tokens do not clear WCAG AA as text<a class="headerlink" href="#2-three-colour-tokens-do-not-clear-wcag-aa-as-text" title="Anchor link to this section">&para;</a></h2>
+<p>Contrast ratios computed from <code>custom.css</code>'s own values:</p>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Value</th>
+<th>Ratio</th>
+<th>Against</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--md-default-fg-color--lighter</code> (light)</td>
+<td><code>#818bab</code></td>
+<td><strong>3.29:1</strong></td>
+<td><code>#fbfcff</code></td>
+</tr>
+<tr>
+<td><code>--md-default-fg-color--lighter</code> (dark)</td>
+<td><code>#6a7197</code></td>
+<td><strong>3.70:1</strong></td>
+<td><code>#15172e</code></td>
+</tr>
+<tr>
+<td><code>--md-accent-fg-color</code> (light)</td>
+<td><code>#fb6a00</code></td>
+<td><strong>2.86:1</strong></td>
+<td><code>#fbfcff</code></td>
+</tr>
+</tbody>
+</table>
+<p>AA is 4.5:1 for body text and 3:1 for large text. Material uses <code>--md-default-fg-color--lighter</code> for real text in several places — the footer copyright line and search-result metadata among them — and <code>--md-accent-fg-color</code> is the link hover colour, so it carries link text at the moment a reader is looking straight at it.</p>
+<p>The coral needs no change in dark, where it is 7.34:1 on <code>#0c0e1d</code>.  It is only on paper that a saturated orange cannot carry text.</p>
+<p>Values that keep the hue and clear AA:</p>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Now</th>
+<th>Suggested</th>
+<th>After</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--md-default-fg-color--lighter</code> light</td>
+<td><code>#818bab</code></td>
+<td><code>#626b88</code></td>
+<td>5.15:1</td>
+</tr>
+<tr>
+<td><code>--md-default-fg-color--lighter</code> dark</td>
+<td><code>#6a7197</code></td>
+<td><code>#8189af</code></td>
+<td>5.14:1</td>
+</tr>
+<tr>
+<td><code>--md-accent-fg-color</code> light</td>
+<td><code>#fb6a00</code></td>
+<td><code>#b34b00</code></td>
+<td>5.22:1</td>
+</tr>
+</tbody>
+</table>
+<p>These are the values that palette is running under on williamdemeo.github.io, where it is kept as a switchable alternative system — so the adjusted set is already checked on every build by an audit that walks every text element in both themes and composites the background up the ancestor chain.</p>
+<p>Everything above comes from <code>stylesheets/custom.css</code> and the served HTML as of 2026-08-02; I was not able to run a network trace against the live site from my environment, so the request-level claims are read from the source rather than measured.</p>
 <!-- END GENERATED: milestone-10 -->
 
 <h3 id="milestone-10-dependencies">Milestone 10 Dependencies<a class="headerlink" href="#milestone-10-dependencies" title="Anchor link to this section">&para;</a></h3>
