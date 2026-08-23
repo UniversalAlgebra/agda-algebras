@@ -15182,6 +15182,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Setoid Representation of Algebras">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#submodule-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Submodule guide
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -15219,14 +15236,31 @@
 
 <h1 id="setoidalgebras">Setoid.Algebras<a class="headerlink" href="#setoidalgebras" title="Anchor link to this section">&para;</a></h1>
 <h3 id="setoid-representation-of-algebras">Setoid Representation of Algebras<a class="headerlink" href="#setoid-representation-of-algebras" title="Anchor link to this section">&para;</a></h3>
-<pre class="Agda"><a id="201" class="Symbol">{-#</a> <a id="205" class="Keyword">OPTIONS</a> <a id="213" class="Pragma">--cubical-compatible</a> <a id="234" class="Pragma">--exact-split</a> <a id="248" class="Pragma">--safe</a> <a id="255" class="Symbol">#-}</a>
+<p>This is the <a href="/Setoid/Algebras/">Setoid.Algebras</a> module of the <a href="/">Agda Universal Algebra Library</a>.</p>
+<p>This is a barrel module: it declares nothing of its own and re-exports the four
+modules that define algebras over setoids.  An algebra here is a setoid together
+with an interpretation of every operation symbol as a setoid function on it, so
+that each operation respects the carrier's equivalence; <a href="/adr/001-setoid-as-canonical/">ADR-001</a> records why
+that, rather than a bare type under propositional equality, is the canonical
+representation.</p>
+<h4 id="submodule-guide">Submodule guide<a class="headerlink" href="#submodule-guide" title="Anchor link to this section">&para;</a></h4>
+<ul>
+<li><a href="/Setoid/Algebras/Basic/">Setoid.Algebras.Basic</a>: the <code class="AgdaRecord">Algebra</code> record, the smart
+   constructors <code class="AgdaFunction">mkAlgebra</code> and <code class="AgdaFunction">mkAlgebraₚ</code>, the
+   interpretation operator <code class="AgdaFunction">_^_</code>, the domain and carrier projections
+   <code class="AgdaFunction">𝔻[_]</code> and <code class="AgdaFunction">𝕌[_]</code>, and universe lifting;</li>
+<li><a href="/Setoid/Algebras/Products/">Setoid.Algebras.Products</a>: products of indexed families and of classes;</li>
+<li><a href="/Setoid/Algebras/Finite/">Setoid.Algebras.Finite</a>: the <code class="AgdaRecord">FiniteAlgebra</code> interface;</li>
+<li><a href="/Setoid/Algebras/Reduct/">Setoid.Algebras.Reduct</a>: reducts along a signature morphism, and their functoriality.</li>
+</ul>
+<pre class="Agda"><a id="1279" class="Symbol">{-#</a> <a id="1283" class="Keyword">OPTIONS</a> <a id="1291" class="Pragma">--cubical-compatible</a> <a id="1312" class="Pragma">--exact-split</a> <a id="1326" class="Pragma">--safe</a> <a id="1333" class="Symbol">#-}</a>
 
-<a id="260" class="Keyword">module</a> <a id="267" href="/Setoid/Algebras/" class="Module">Setoid.Algebras</a> <a id="283" class="Keyword">where</a>
+<a id="1338" class="Keyword">module</a> <a id="1345" href="/Setoid/Algebras/" class="Module">Setoid.Algebras</a> <a id="1361" class="Keyword">where</a>
 
-<a id="290" class="Keyword">open</a> <a id="295" class="Keyword">import</a> <a id="302" href="/Setoid/Algebras/Basic/" class="Module">Setoid.Algebras.Basic</a> <a id="324" class="Keyword">public</a>
-<a id="331" class="Keyword">open</a> <a id="336" class="Keyword">import</a> <a id="343" href="/Setoid/Algebras/Finite/" class="Module">Setoid.Algebras.Finite</a>  <a id="367" class="Keyword">public</a>
-<a id="374" class="Keyword">open</a> <a id="379" class="Keyword">import</a> <a id="386" href="/Setoid/Algebras/Products/" class="Module">Setoid.Algebras.Products</a> <a id="411" class="Keyword">public</a>
-<a id="418" class="Keyword">open</a> <a id="423" class="Keyword">import</a> <a id="430" href="/Setoid/Algebras/Reduct/" class="Module">Setoid.Algebras.Reduct</a> <a id="453" class="Keyword">public</a>
+<a id="1368" class="Keyword">open</a> <a id="1373" class="Keyword">import</a> <a id="1380" href="/Setoid/Algebras/Basic/" class="Module">Setoid.Algebras.Basic</a>     <a id="1406" class="Keyword">public</a>
+<a id="1413" class="Keyword">open</a> <a id="1418" class="Keyword">import</a> <a id="1425" href="/Setoid/Algebras/Finite/" class="Module">Setoid.Algebras.Finite</a>    <a id="1451" class="Keyword">public</a>
+<a id="1458" class="Keyword">open</a> <a id="1463" class="Keyword">import</a> <a id="1470" href="/Setoid/Algebras/Products/" class="Module">Setoid.Algebras.Products</a>  <a id="1496" class="Keyword">public</a>
+<a id="1503" class="Keyword">open</a> <a id="1508" class="Keyword">import</a> <a id="1515" href="/Setoid/Algebras/Reduct/" class="Module">Setoid.Algebras.Reduct</a>    <a id="1541" class="Keyword">public</a>
 </pre>
 
 <!-- File: docs/_links.md -->

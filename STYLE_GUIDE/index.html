@@ -15375,10 +15375,38 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dont-hard-wrap-prose" class="md-nav__link">
+  <a href="#wrapping-prose" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Don't hard-wrap prose
+        Wrapping prose
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Wrapping prose">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#where-a-wrap-does-damage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where a wrap does damage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hard-wrapping-is-still-wrong-in-github-bodies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hard-wrapping is still wrong in GitHub bodies
       
     </span>
   </a>
@@ -16740,10 +16768,38 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dont-hard-wrap-prose" class="md-nav__link">
+  <a href="#wrapping-prose" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Don't hard-wrap prose
+        Wrapping prose
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Wrapping prose">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#where-a-wrap-does-damage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where a wrap does damage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hard-wrapping-is-still-wrong-in-github-bodies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hard-wrapping is still wrong in GitHub bodies
       
     </span>
   </a>
@@ -17584,9 +17640,20 @@ hom<span class="w"> </span>𝑨<span class="w"> </span>𝑩<span class="w"> </sp
 <p>Every module under <code>src/</code> is a literate-Agda file (<code>.lagda.md</code>); see <a href="#file-format">File format</a> above.  The in-source-comment rules above apply to the Agda content inside fenced <code>```agda</code> blocks; the surrounding Markdown prose can be more expansive and is the primary vehicle for tutorial-style documentation.  Tutorial-style chapters that historically lived under <code>docs/lagda/</code> are now ordinary modules under <code>src/</code> (typically under <code>Examples/Demos/</code> or <code>Overture/</code>).</p>
 <h3 id="prose-belongs-in-markdown">Prose belongs in Markdown<a class="headerlink" href="#prose-belongs-in-markdown" title="Anchor link to this section">&para;</a></h3>
 <p><code>.lagda.md</code> files give us first-class natural-language sections; use them.  Reserve in-code comments for syntax-adjacent annotations: argument-level type clarifications, termination justifications, naming choices a reader needs while reading that line.  Module-level framing, definition-level exposition, and motivating discussion all belong in the surrounding Markdown prose, not in <code>-- |</code> blocks inside code fences.  The corpus serves both human readers and downstream ML training; prose-as-Markdown serves both better than prose-as-line-comments.</p>
-<h3 id="dont-hard-wrap-prose">Don't hard-wrap prose<a class="headerlink" href="#dont-hard-wrap-prose" title="Anchor link to this section">&para;</a></h3>
-<p>Markdown paragraphs are written without artificial line breaks: one paragraph is one line in the source.  Editors and viewers (GitHub diff view, Jekyll-rendered HTML, modern terminals) soft-wrap to viewport width.  Hard-wrapping at a fixed column turns one-word edits into multi-line diffs as the wrap has to be redone, and competes badly with the long inline code spans common in this library (e.g., <code>Π[ t ∈ ((i : I) → J → 𝒜 i) ] eval-REL R t</code>).</p>
-<p>The convention applies to paragraph prose only.  Bullet items and numbered list items get one line each (the line break is structural, not cosmetic).  YAML front matter and link-reference blocks follow their own per-entry-per-line conventions.</p>
+<h3 id="wrapping-prose">Wrapping prose<a class="headerlink" href="#wrapping-prose" title="Anchor link to this section">&para;</a></h3>
+<p>Either form is acceptable.  A paragraph may be a single source line, left to soft-wrap to the viewport, or hard-wrapped at a fixed column; most of the corpus wraps at roughly 80.  What is <em>not</em> acceptable is mixing the two inside one file: the choice is per file, so match what the file already does, and leave an unwrapped file unwrapped.</p>
+<p>Neither form is mandated because the trade-off is real in both directions.  An unwrapped paragraph keeps a one-word edit to a one-line diff, and never collides with the long inline code spans common in this library (e.g., <code>Π[ t ∈ ((i : I) → J → 𝒜 i) ] eval-REL R t</code>).  A wrapped paragraph is legible in a narrow editor and reviewable in a side-by-side diff, which is why most of the library reads that way.</p>
+<p><strong>Do not reflow a paragraph you are not otherwise changing</strong>, in either direction.  Rewrapping turns an unrelated edit into a whole-paragraph diff and buries the substantive change.</p>
+<p>Bullet items and numbered list items may wrap as well; indent the continuation lines to align with the item's text, so that the list structure survives in the source.  YAML front matter and link-reference blocks keep their own per-entry-per-line conventions.</p>
+<h4 id="where-a-wrap-does-damage">Where a wrap does damage<a class="headerlink" href="#where-a-wrap-does-damage" title="Anchor link to this section">&para;</a></h4>
+<p>Pages render through Python-Markdown under MkDocs (see <a href="../adr/007-mkdocs-rendering-pipeline/">ADR-007</a>), which does not treat a single newline as a line break, so wrapping is safe in general.  Three breaks are not, and the first two fail silently in the source while being obvious on the page.  They are the following:</p>
+<ul>
+<li><strong>Never break between an inline code span and its attribute list</strong>.  <code>attr_list</code> requires them adjacent, so <code>`Algebra`</code> followed by a newline and then <code>{.AgdaRecord}</code> emits <code>&lt;code&gt;Algebra&lt;/code&gt;</code> with the braces as literal text.  Since attribute spans are how every Agda name in the corpus is marked up, this is the costliest of the three.</li>
+<li><strong>Never break inside a reference-style link's label at a point where the label has no space</strong>.  Wrapping <code>[Setoid.Algebras.Products][]</code> mid-name yields the label <code>Setoid.Algebras. Products</code>, which matches no definition in <code>docs/_links.md</code> and renders literally.  Breaking at a space the label already contains is fine: <code>[Agda Universal Algebra Library][]</code> may be wrapped between any two of its words.</li>
+<li><strong>Avoid breaking inside an inline code span</strong>.  It does render, because the newline collapses to a space, but it leaves the span unfindable by <code>grep</code> and by the tooling that reads these spans, including the corpus extractor of <a href="https://github.com/ualib/agda-algebras/issues/275">#275</a>.</li>
+</ul>
+<h3 id="hard-wrapping-is-still-wrong-in-github-bodies">Hard-wrapping is still wrong in GitHub bodies<a class="headerlink" href="#hard-wrapping-is-still-wrong-in-github-bodies" title="Anchor link to this section">&para;</a></h3>
+<p>The section above governs files in the repository.  Pull request descriptions, issue descriptions, and review comments are a different renderer: GitHub enables hard line breaks in those fields, so every newline in the source becomes a <code>&lt;br&gt;</code> and wrapped text displays ragged.  Write one line per paragraph and per bullet item there, and let GitHub do the wrapping.</p>
 <h3 id="the-docs-tree-notes-versus-papers">The <code>docs/</code> tree: notes versus papers<a class="headerlink" href="#the-docs-tree-notes-versus-papers" title="Anchor link to this section">&para;</a></h3>
 <p>The <code>docs/</code> tree sorts its contents by kind, and the sort is by directory.  Markdown working notes, design notes, and session handoffs live in <code>docs/notes/</code> (lowercase); LaTeX papers and their build assets — <code>.tex</code> sources, conference and arXiv submissions, <code>.cls</code>/<code>.sty</code>/<code>.bib</code> files, and figure PDFs — live under <code>docs/papers/</code>, one subdirectory per paper.  Architecture Decision Records (ADRs) keep their own <code>docs/adr/</code> home, and style and quality audits live in <code>docs/audits/</code>.</p>
 <p>Two rules keep this stable.  Never create two <code>docs/</code> directories whose names differ only in case: the <code>docs/notes/</code> versus <code>docs/Notes/</code> pair that motivated this section collides on case-insensitive filesystems, where a checkout folds the two into one directory and can silently clobber files.  And never file a paper under a "notes" name: if it has a <code>.tex</code> source and a document class it is a paper, and it belongs in <code>docs/papers/&lt;paper-name&gt;/</code> alongside the arXiv source and <code>TYPES2021/</code>.</p>

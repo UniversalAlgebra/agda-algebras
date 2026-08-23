@@ -15196,6 +15196,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#changed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#changed-breaking" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -15325,6 +15336,17 @@
     <span class="md-ellipsis">
       
         Added
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changed
       
     </span>
   </a>
@@ -15478,6 +15500,10 @@
 <li><strong><code>Classical.Operations</code> and <code>Classical.Equations</code> infrastructure</strong> (M3-2, #330).  Two new shared-infrastructure modules that every concrete <code>Classical/X</code> structure will depend on.  <a href="/Classical/Operations/"><code>src/Classical/Operations.lagda.md</code></a> provides the per-arity <code>Curry</code>/<code>Uncurry</code> helpers that bridge the foundational tuple-indexed operation form <code>(I → A) → A</code> (used in <code>Setoid.Algebras</code> and the universal-algebra meta-theory) with the curried user-facing form <code>A → A → A</code> (used at every classical-structure use site).  The Fin 2 η-failure under <code>--cubical-compatible</code> is contained here in <code>Uncurry₂</code> / <code>Curry₂</code>; per-structure files do not write <code>pair</code>-style argument wrappers inline.  <a href="/Classical/Equations/"><code>src/Classical/Equations.lagda.md</code></a> provides generic equation builders parametric in a signature and operation symbols within it (<code>Associative</code>, <code>Commutative</code>, <code>Idempotent</code>, <code>LeftIdentity</code>, <code>RightIdentity</code>, <code>LeftInverse</code>, <code>RightInverse</code>, <code>DistributesOverˡ</code>, <code>DistributesOverʳ</code>, <code>AbsorbsLeft</code>, <code>AbsorbsRight</code>).  This module is the <em>syntactic dual</em> of stdlib's <code>Algebra.Definitions</code>, which provides the same inventory at the evaluated level; together with <code>Classical.Operations</code>, this is the concrete answer — beyond pedagogy — for why <code>Classical/</code> exists as a parallel hierarchy rather than as a stdlib shim.  Per-structure <code>Classical/Theories/X.lagda.md</code> files consume these builders in one-line compositions rather than re-deriving each equation.  See <a href="/adr/002-classical-layer-design/">ADR-002 §1, §3</a> for the rationale.</li>
 <li><strong>Self-documenting <code>OperationSymbolsOf</code> and <code>ArityOf</code> aliases</strong> (M3-2, #330).  Added to <a href="/Overture/Signatures/"><code>src/Overture/Signatures.lagda.md</code></a>, definitionally identical to the existing bracket notation <code>∣_∣</code> and <code>∥_∥</code>.  Per <a href="/adr/002-classical-layer-design/">ADR-002 v2 §1</a>, the long forms are preferred in new <code>Classical/</code> code; the bracket forms remain available everywhere and are retained in <code>Setoid/</code>-tree code.</li>
 <li><strong>Operation-symbol-interpretation notation rename <code>̂</code> → <code>^</code></strong> (M3-2, #330).  The ASCII <code>_^_</code> is introduced as the new canonical infix; the existing <code>_̂_</code> is retained with a <code>WARNING_ON_USAGE</code> pragma and scheduled for removal in v3.1.  See <a href="/adr/002-classical-layer-design/">ADR-002 v2 §7</a>.</li>
+</ul>
+<h3 id="changed">Changed<a class="headerlink" href="#changed" title="Anchor link to this section">&para;</a></h3>
+<ul>
+<li><strong>Hard-wrapping prose is now allowed</strong> (<code>docs/STYLE_GUIDE.md</code> § "Wrapping prose", formerly § "Don't hard-wrap prose").  The guide previously required one paragraph per source line; both the wrapped and the unwrapped form are now acceptable, chosen per file and never mixed within one file.  The reversal ratifies what the corpus already does — the <code>Setoid.Algebras.Basic</code> exemplar of #538 and most of the library are wrapped — and the section now also records the three wraps that damage the rendered page (between a code span and its <code>attr_list</code> braces, inside a reference-link label at a point with no space, and inside an inline code span), together with the standing exception that GitHub pull request, issue, and comment bodies must <em>not</em> be wrapped, since GitHub renders every newline there as a line break.</li>
 </ul>
 <h3 id="changed-breaking">Changed (BREAKING)<a class="headerlink" href="#changed-breaking" title="Anchor link to this section">&para;</a></h3>
 <ul>

@@ -8,15 +8,33 @@ author: &quot;agda-algebras development team&quot;
 
 ### Setoid Representation of Algebras
 
+This is the [Setoid.Algebras][] module of the [Agda Universal Algebra Library][].
 
-</a><a id="193" class="Markup">```agda
-</a><a id="201" class="Symbol">{-#</a> <a id="205" class="Keyword">OPTIONS</a> <a id="213" class="Pragma">--cubical-compatible</a> <a id="234" class="Pragma">--exact-split</a> <a id="248" class="Pragma">--safe</a> <a id="255" class="Symbol">#-}</a>
+This is a barrel module: it declares nothing of its own and re-exports the four
+modules that define algebras over setoids.  An algebra here is a setoid together
+with an interpretation of every operation symbol as a setoid function on it, so
+that each operation respects the carrier&#39;s equivalence; [ADR-001][] records why
+that, rather than a bare type under propositional equality, is the canonical
+representation.
 
-<a id="260" class="Keyword">module</a> <a id="267" href="Setoid.Algebras.html" class="Module">Setoid.Algebras</a> <a id="283" class="Keyword">where</a>
+#### Submodule guide
 
-<a id="290" class="Keyword">open</a> <a id="295" class="Keyword">import</a> <a id="302" href="Setoid.Algebras.Basic.html" class="Module">Setoid.Algebras.Basic</a> <a id="324" class="Keyword">public</a>
-<a id="331" class="Keyword">open</a> <a id="336" class="Keyword">import</a> <a id="343" href="Setoid.Algebras.Finite.html" class="Module">Setoid.Algebras.Finite</a>  <a id="367" class="Keyword">public</a>
-<a id="374" class="Keyword">open</a> <a id="379" class="Keyword">import</a> <a id="386" href="Setoid.Algebras.Products.html" class="Module">Setoid.Algebras.Products</a> <a id="411" class="Keyword">public</a>
-<a id="418" class="Keyword">open</a> <a id="423" class="Keyword">import</a> <a id="430" href="Setoid.Algebras.Reduct.html" class="Module">Setoid.Algebras.Reduct</a> <a id="453" class="Keyword">public</a>
-<a id="460" class="Markup">```
++  [Setoid.Algebras.Basic][]: the `Algebra`{.AgdaRecord} record, the smart
+   constructors `mkAlgebra`{.AgdaFunction} and `mkAlgebraₚ`{.AgdaFunction}, the
+   interpretation operator `_^_`{.AgdaFunction}, the domain and carrier projections
+   `𝔻[_]`{.AgdaFunction} and `𝕌[_]`{.AgdaFunction}, and universe lifting;
++  [Setoid.Algebras.Products][]: products of indexed families and of classes;
++  [Setoid.Algebras.Finite][]: the `FiniteAlgebra`{.AgdaRecord} interface;
++  [Setoid.Algebras.Reduct][]: reducts along a signature morphism, and their functoriality.
+
+</a><a id="1271" class="Markup">```agda
+</a><a id="1279" class="Symbol">{-#</a> <a id="1283" class="Keyword">OPTIONS</a> <a id="1291" class="Pragma">--cubical-compatible</a> <a id="1312" class="Pragma">--exact-split</a> <a id="1326" class="Pragma">--safe</a> <a id="1333" class="Symbol">#-}</a>
+
+<a id="1338" class="Keyword">module</a> <a id="1345" href="Setoid.Algebras.html" class="Module">Setoid.Algebras</a> <a id="1361" class="Keyword">where</a>
+
+<a id="1368" class="Keyword">open</a> <a id="1373" class="Keyword">import</a> <a id="1380" href="Setoid.Algebras.Basic.html" class="Module">Setoid.Algebras.Basic</a>     <a id="1406" class="Keyword">public</a>
+<a id="1413" class="Keyword">open</a> <a id="1418" class="Keyword">import</a> <a id="1425" href="Setoid.Algebras.Finite.html" class="Module">Setoid.Algebras.Finite</a>    <a id="1451" class="Keyword">public</a>
+<a id="1458" class="Keyword">open</a> <a id="1463" class="Keyword">import</a> <a id="1470" href="Setoid.Algebras.Products.html" class="Module">Setoid.Algebras.Products</a>  <a id="1496" class="Keyword">public</a>
+<a id="1503" class="Keyword">open</a> <a id="1508" class="Keyword">import</a> <a id="1515" href="Setoid.Algebras.Reduct.html" class="Module">Setoid.Algebras.Reduct</a>    <a id="1541" class="Keyword">public</a>
+<a id="1548" class="Markup">```
 </a></pre></body></html>

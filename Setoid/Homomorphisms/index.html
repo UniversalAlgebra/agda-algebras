@@ -15182,6 +15182,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Types for Homomorphism of Setoid Algebras">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#submodule-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Submodule guide
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -15220,18 +15237,40 @@
 <h1 id="setoidhomomorphisms">Setoid.Homomorphisms<a class="headerlink" href="#setoidhomomorphisms" title="Anchor link to this section">&para;</a></h1>
 <h3 id="types-for-homomorphism-of-setoid-algebras">Types for Homomorphism of Setoid Algebras<a class="headerlink" href="#types-for-homomorphism-of-setoid-algebras" title="Anchor link to this section">&para;</a></h3>
 <p>This is the <a href="/Setoid/Homomorphisms/">Setoid.Homomorphisms</a> module of the <a href="/">Agda Universal Algebra Library</a>.</p>
-<pre class="Agda"><a id="305" class="Symbol">{-#</a> <a id="309" class="Keyword">OPTIONS</a> <a id="317" class="Pragma">--cubical-compatible</a> <a id="338" class="Pragma">--exact-split</a> <a id="352" class="Pragma">--safe</a> <a id="359" class="Symbol">#-}</a>
+<p>This is a barrel module: it declares nothing of its own and re-exports the eight
+modules that make up the theory of structure-preserving maps between setoid
+algebras.</p>
+<h4 id="submodule-guide">Submodule guide<a class="headerlink" href="#submodule-guide" title="Anchor link to this section">&para;</a></h4>
+<ul>
+<li><a href="/Setoid/Homomorphisms/Basic/">Setoid.Homomorphisms.Basic</a>: <code class="AgdaFunction">hom</code>, <code class="AgdaFunction">mon</code>,
+   <code class="AgdaFunction">epi</code>, their predicate forms, and the identity homomorphism;</li>
+<li><a href="/Setoid/Homomorphisms/Properties/">Setoid.Homomorphisms.Properties</a>: composition, and the homomorphisms
+   that witness universe lifting;</li>
+<li><a href="/Setoid/Homomorphisms/Kernels/">Setoid.Homomorphisms.Kernels</a>: the kernel congruence
+   <code class="AgdaFunction">kercon</code>, the quotient <code class="AgdaFunction">kerquo</code>, and the
+   canonical projection <code class="AgdaFunction">πepi</code>;</li>
+<li><a href="/Setoid/Homomorphisms/Products/">Setoid.Homomorphisms.Products</a>: the homomorphism into a product induced by a
+   family of homomorphisms, and the coordinate projections out of one;</li>
+<li><a href="/Setoid/Homomorphisms/Noether/">Setoid.Homomorphisms.Noether</a>: the first homomorphism theorem;</li>
+<li><a href="/Setoid/Homomorphisms/Factor/">Setoid.Homomorphisms.Factor</a>: <code class="AgdaFunction">HomFactor</code> (a homomorphism
+   factors through any surjective homomorphism whose kernel is contained in its own);</li>
+<li><a href="/Setoid/Homomorphisms/Isomorphisms/">Setoid.Homomorphisms.Isomorphisms</a>: <code class="AgdaRecord">_≅_</code> and its interaction
+   with products and with universe lifting;</li>
+<li><a href="/Setoid/Homomorphisms/HomomorphicImages/">Setoid.Homomorphisms.HomomorphicImages</a>: <code class="AgdaFunction">_IsHomImageOf_</code> and
+   the image algebra of a homomorphism.</li>
+</ul>
+<pre class="Agda"><a id="1579" class="Symbol">{-#</a> <a id="1583" class="Keyword">OPTIONS</a> <a id="1591" class="Pragma">--cubical-compatible</a> <a id="1612" class="Pragma">--exact-split</a> <a id="1626" class="Pragma">--safe</a> <a id="1633" class="Symbol">#-}</a>
 
-<a id="364" class="Keyword">module</a> <a id="371" href="/Setoid/Homomorphisms/" class="Module">Setoid.Homomorphisms</a> <a id="392" class="Keyword">where</a>
+<a id="1638" class="Keyword">module</a> <a id="1645" href="/Setoid/Homomorphisms/" class="Module">Setoid.Homomorphisms</a> <a id="1666" class="Keyword">where</a>
 
-<a id="399" class="Keyword">open</a> <a id="404" class="Keyword">import</a> <a id="411" href="/Setoid/Homomorphisms/Basic/" class="Module">Setoid.Homomorphisms.Basic</a>                       <a id="460" class="Keyword">public</a>
-<a id="467" class="Keyword">open</a> <a id="472" class="Keyword">import</a> <a id="479" href="/Setoid/Homomorphisms/Kernels/" class="Module">Setoid.Homomorphisms.Kernels</a>                     <a id="528" class="Keyword">public</a>
-<a id="535" class="Keyword">open</a> <a id="540" class="Keyword">import</a> <a id="547" href="/Setoid/Homomorphisms/Products/" class="Module">Setoid.Homomorphisms.Products</a>                    <a id="596" class="Keyword">public</a>
-<a id="603" class="Keyword">open</a> <a id="608" class="Keyword">import</a> <a id="615" href="/Setoid/Homomorphisms/Noether/" class="Module">Setoid.Homomorphisms.Noether</a>                     <a id="664" class="Keyword">public</a>
-<a id="671" class="Keyword">open</a> <a id="676" class="Keyword">import</a> <a id="683" href="/Setoid/Homomorphisms/Factor/" class="Module">Setoid.Homomorphisms.Factor</a>                      <a id="732" class="Keyword">public</a>
-<a id="739" class="Keyword">open</a> <a id="744" class="Keyword">import</a> <a id="751" href="/Setoid/Homomorphisms/Isomorphisms/" class="Module">Setoid.Homomorphisms.Isomorphisms</a>  <a id="786" class="Keyword">public</a>
-<a id="793" class="Keyword">open</a> <a id="798" class="Keyword">import</a> <a id="805" href="/Setoid/Homomorphisms/HomomorphicImages/" class="Module">Setoid.Homomorphisms.HomomorphicImages</a>  <a id="845" class="Keyword">public</a>
-<a id="852" class="Keyword">open</a> <a id="857" class="Keyword">import</a> <a id="864" href="/Setoid/Homomorphisms/Properties/" class="Module">Setoid.Homomorphisms.Properties</a>                  <a id="913" class="Keyword">public</a>
+<a id="1673" class="Keyword">open</a> <a id="1678" class="Keyword">import</a> <a id="1685" href="/Setoid/Homomorphisms/Basic/" class="Module">Setoid.Homomorphisms.Basic</a>              <a id="1725" class="Keyword">public</a>
+<a id="1732" class="Keyword">open</a> <a id="1737" class="Keyword">import</a> <a id="1744" href="/Setoid/Homomorphisms/Kernels/" class="Module">Setoid.Homomorphisms.Kernels</a>            <a id="1784" class="Keyword">public</a>
+<a id="1791" class="Keyword">open</a> <a id="1796" class="Keyword">import</a> <a id="1803" href="/Setoid/Homomorphisms/Products/" class="Module">Setoid.Homomorphisms.Products</a>           <a id="1843" class="Keyword">public</a>
+<a id="1850" class="Keyword">open</a> <a id="1855" class="Keyword">import</a> <a id="1862" href="/Setoid/Homomorphisms/Noether/" class="Module">Setoid.Homomorphisms.Noether</a>            <a id="1902" class="Keyword">public</a>
+<a id="1909" class="Keyword">open</a> <a id="1914" class="Keyword">import</a> <a id="1921" href="/Setoid/Homomorphisms/Factor/" class="Module">Setoid.Homomorphisms.Factor</a>             <a id="1961" class="Keyword">public</a>
+<a id="1968" class="Keyword">open</a> <a id="1973" class="Keyword">import</a> <a id="1980" href="/Setoid/Homomorphisms/Isomorphisms/" class="Module">Setoid.Homomorphisms.Isomorphisms</a>       <a id="2020" class="Keyword">public</a>
+<a id="2027" class="Keyword">open</a> <a id="2032" class="Keyword">import</a> <a id="2039" href="/Setoid/Homomorphisms/HomomorphicImages/" class="Module">Setoid.Homomorphisms.HomomorphicImages</a>  <a id="2079" class="Keyword">public</a>
+<a id="2086" class="Keyword">open</a> <a id="2091" class="Keyword">import</a> <a id="2098" href="/Setoid/Homomorphisms/Properties/" class="Module">Setoid.Homomorphisms.Properties</a>         <a id="2138" class="Keyword">public</a>
 </pre>
 
 <!-- File: docs/_links.md -->
