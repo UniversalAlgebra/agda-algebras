@@ -14783,6 +14783,8 @@
       
         
       
+        
+      
     
     
     
@@ -15115,6 +15117,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../adr/010-documentation-coverage-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-010: Documentation coverage policy for public definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -15360,12 +15390,12 @@ contained in the empty one).</p>
 <pre class="Agda"><a id="𝑆₀"></a><a id="1976" href="/Examples/Setoid/SubalgebraLattice/#1976" class="Function">𝑆₀</a> <a id="1979" class="Symbol">:</a> <a id="1981" href="/Overture/Signatures/#3218" class="Function">Signature</a> <a id="1991" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="1994" href="/classic/Level.html#521" class="Function">0ℓ</a>
 <a id="1997" href="/Examples/Setoid/SubalgebraLattice/#1976" class="Function">𝑆₀</a> <a id="2000" class="Symbol">=</a> <a id="2002" href="/classic/Data.Empty.html#914" class="Function">⊥</a> <a id="2004" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="2006" class="Symbol">λ</a> <a id="2008" class="Symbol">()</a>
 
-<a id="2012" class="Keyword">open</a> <a id="2017" class="Keyword">import</a> <a id="2024" href="/Setoid/Algebras/" class="Module">Setoid.Algebras</a>  <a id="2041" class="Keyword">using</a> <a id="2047" class="Symbol">(</a> <a id="2049" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="2057" class="Symbol">)</a>
+<a id="2012" class="Keyword">open</a> <a id="2017" class="Keyword">import</a> <a id="2024" href="/Setoid/Algebras/" class="Module">Setoid.Algebras</a>  <a id="2041" class="Keyword">using</a> <a id="2047" class="Symbol">(</a> <a id="2049" href="/Setoid/Algebras/Basic/#4342" class="Record">Algebra</a> <a id="2057" class="Symbol">)</a>
 <a id="2059" class="Keyword">open</a> <a id="2064" class="Keyword">import</a> <a id="2071" href="/Setoid/Signatures/" class="Module">Setoid.Signatures</a>         <a id="2097" class="Keyword">using</a> <a id="2103" class="Symbol">(</a> <a id="2105" href="/Setoid/Signatures/#3355" class="Function Operator">⟨_⟩</a> <a id="2109" class="Symbol">)</a>
 
 <a id="2112" class="Comment">-- The two-element algebra: carrier Bool with ≡, and no operations to interpret.</a>
-<a id="𝟚"></a><a id="2193" href="/Examples/Setoid/SubalgebraLattice/#2193" class="Function">𝟚</a> <a id="2195" class="Symbol">:</a> <a id="2197" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="2205" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="2208" href="/classic/Level.html#521" class="Function">0ℓ</a>
-<a id="2211" href="/Examples/Setoid/SubalgebraLattice/#2193" class="Function">𝟚</a> <a id="2213" class="Symbol">=</a> <a id="2215" class="Keyword">record</a> <a id="2222" class="Symbol">{</a> <a id="2224" href="/Setoid/Algebras/Basic/#2998" class="Field">Domain</a> <a id="2231" class="Symbol">=</a> <a id="2233" href="/classic/Relation.Binary.PropositionalEquality.Properties.html#5806" class="Function">≡.setoid</a> <a id="2242" href="/classic/Agda.Builtin.Bool.html#173" class="Datatype">Bool</a> <a id="2247" class="Symbol">;</a> <a id="2249" href="/Setoid/Algebras/Basic/#3022" class="Field">Interp</a> <a id="2256" class="Symbol">=</a> <a id="2258" href="/Examples/Setoid/SubalgebraLattice/#2277" class="Function">interp</a> <a id="2265" class="Symbol">}</a>
+<a id="𝟚"></a><a id="2193" href="/Examples/Setoid/SubalgebraLattice/#2193" class="Function">𝟚</a> <a id="2195" class="Symbol">:</a> <a id="2197" href="/Setoid/Algebras/Basic/#4342" class="Record">Algebra</a> <a id="2205" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="2208" href="/classic/Level.html#521" class="Function">0ℓ</a>
+<a id="2211" href="/Examples/Setoid/SubalgebraLattice/#2193" class="Function">𝟚</a> <a id="2213" class="Symbol">=</a> <a id="2215" class="Keyword">record</a> <a id="2222" class="Symbol">{</a> <a id="2224" href="/Setoid/Algebras/Basic/#4422" class="Field">Domain</a> <a id="2231" class="Symbol">=</a> <a id="2233" href="/classic/Relation.Binary.PropositionalEquality.Properties.html#5806" class="Function">≡.setoid</a> <a id="2242" href="/classic/Agda.Builtin.Bool.html#173" class="Datatype">Bool</a> <a id="2247" class="Symbol">;</a> <a id="2249" href="/Setoid/Algebras/Basic/#4446" class="Field">Interp</a> <a id="2256" class="Symbol">=</a> <a id="2258" href="/Examples/Setoid/SubalgebraLattice/#2277" class="Function">interp</a> <a id="2265" class="Symbol">}</a>
   <a id="2269" class="Keyword">where</a>
   <a id="2277" href="/Examples/Setoid/SubalgebraLattice/#2277" class="Function">interp</a> <a id="2284" class="Symbol">:</a> <a id="2286" href="/classic/Function.Bundles.html#2041" class="Record">Func</a> <a id="2291" class="Symbol">(</a><a id="2292" href="/Setoid/Signatures/#3355" class="Function Operator">⟨</a> <a id="2294" href="/Examples/Setoid/SubalgebraLattice/#1976" class="Function">𝑆₀</a> <a id="2297" href="/Setoid/Signatures/#3355" class="Function Operator">⟩</a> <a id="2299" class="Symbol">(</a><a id="2300" href="/classic/Relation.Binary.PropositionalEquality.Properties.html#5806" class="Function">≡.setoid</a> <a id="2309" href="/classic/Agda.Builtin.Bool.html#173" class="Datatype">Bool</a><a id="2313" class="Symbol">))</a> <a id="2316" class="Symbol">(</a><a id="2317" href="/classic/Relation.Binary.PropositionalEquality.Properties.html#5806" class="Function">≡.setoid</a> <a id="2326" href="/classic/Agda.Builtin.Bool.html#173" class="Datatype">Bool</a><a id="2330" class="Symbol">)</a>
   <a id="2334" href="/Examples/Setoid/SubalgebraLattice/#2277" class="Function">interp</a> <a id="2341" href="/Examples/Setoid/SubalgebraLattice/#1878" class="Field Operator">⟨$⟩</a> <a id="2345" class="Symbol">(()</a> <a id="2349" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="2351" class="Symbol">_)</a>

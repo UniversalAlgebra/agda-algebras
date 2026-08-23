@@ -14816,6 +14816,8 @@
       
         
       
+        
+      
     
     
     
@@ -15148,6 +15150,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../adr/010-documentation-coverage-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-010: Documentation coverage policy for public definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -15430,7 +15460,7 @@ five are the only subgroups.</p>
 
 <a id="2855" class="Comment">-- Imports from the Agda Universal Algebra Library ------------------------------</a>
 <a id="2937" class="Keyword">open</a> <a id="2942" class="Keyword">import</a> <a id="2949" href="/Classical/Signatures/Group/" class="Module">Classical.Signatures.Group</a>             <a id="2988" class="Keyword">using</a> <a id="2994" class="Symbol">(</a> <a id="2996" href="/Classical/Signatures/Group/#1718" class="Function">Sig-Group</a> <a id="3006" class="Symbol">;</a> <a id="3008" href="/Classical/Signatures/Group/#1593" class="InductiveConstructor">∙-Op</a> <a id="3013" class="Symbol">;</a> <a id="3015" href="/Classical/Signatures/Group/#1598" class="InductiveConstructor">ε-Op</a> <a id="3020" class="Symbol">;</a> <a id="3022" href="/Classical/Signatures/Group/#1603" class="InductiveConstructor">⁻¹-Op</a> <a id="3028" class="Symbol">)</a>
-<a id="3030" class="Keyword">open</a> <a id="3035" class="Keyword">import</a> <a id="3042" href="/Setoid/Algebras/" class="Module">Setoid.Algebras</a>        <a id="3065" class="Keyword">using</a> <a id="3071" class="Symbol">(</a> <a id="3073" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="3081" class="Symbol">)</a>
+<a id="3030" class="Keyword">open</a> <a id="3035" class="Keyword">import</a> <a id="3042" href="/Setoid/Algebras/" class="Module">Setoid.Algebras</a>        <a id="3065" class="Keyword">using</a> <a id="3071" class="Symbol">(</a> <a id="3073" href="/Setoid/Algebras/Basic/#4342" class="Record">Algebra</a> <a id="3081" class="Symbol">)</a>
 <a id="3083" class="Keyword">open</a> <a id="3088" class="Keyword">import</a> <a id="3095" href="/Setoid/Signatures/" class="Module">Setoid.Signatures</a>                      <a id="3134" class="Keyword">using</a>  <a id="3141" class="Symbol">(</a> <a id="3143" href="/Setoid/Signatures/#3355" class="Function Operator">⟨_⟩</a> <a id="3147" class="Symbol">)</a>
 
 <a id="3150" class="Keyword">open</a> <a id="3155" href="/classic/Function.Bundles.html#2041" class="Module">Func</a> <a id="3160" class="Keyword">renaming</a> <a id="3169" class="Symbol">(</a> <a id="3171" href="/classic/Function.Bundles.html#2092" class="Field">to</a> <a id="3174" class="Symbol">to</a> <a id="3177" class="Field">_⟨$⟩_</a> <a id="3183" class="Symbol">)</a>
@@ -15446,8 +15476,8 @@ definitional.</p>
 <a id="_⊕_"></a><a id="3593" href="/Examples/Setoid/SubgroupLattice/#3593" class="Function Operator">_⊕_</a> <a id="3597" class="Symbol">:</a> <a id="3599" href="/classic/Agda.Builtin.Bool.html#173" class="Datatype">Bool</a> <a id="3604" href="/classic/Data.Product.Base.html#1618" class="Function Operator">×</a> <a id="3606" href="/classic/Agda.Builtin.Bool.html#173" class="Datatype">Bool</a> <a id="3611" class="Symbol">→</a> <a id="3613" href="/classic/Agda.Builtin.Bool.html#173" class="Datatype">Bool</a> <a id="3618" href="/classic/Data.Product.Base.html#1618" class="Function Operator">×</a> <a id="3620" href="/classic/Agda.Builtin.Bool.html#173" class="Datatype">Bool</a> <a id="3625" class="Symbol">→</a> <a id="3627" href="/classic/Agda.Builtin.Bool.html#173" class="Datatype">Bool</a> <a id="3632" href="/classic/Data.Product.Base.html#1618" class="Function Operator">×</a> <a id="3634" href="/classic/Agda.Builtin.Bool.html#173" class="Datatype">Bool</a>
 <a id="3639" href="/Examples/Setoid/SubgroupLattice/#3639" class="Bound">x</a> <a id="3641" href="/Examples/Setoid/SubgroupLattice/#3593" class="Function Operator">⊕</a> <a id="3643" href="/Examples/Setoid/SubgroupLattice/#3643" class="Bound">y</a> <a id="3645" class="Symbol">=</a> <a id="3647" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="3653" href="/Examples/Setoid/SubgroupLattice/#3639" class="Bound">x</a> <a id="3655" href="/classic/Data.Bool.Base.html#1120" class="Function Operator">xor</a> <a id="3659" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="3665" href="/Examples/Setoid/SubgroupLattice/#3643" class="Bound">y</a> <a id="3667" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="3669" href="/classic/Data.Product.Base.html#650" class="Field">proj₂</a> <a id="3675" href="/Examples/Setoid/SubgroupLattice/#3639" class="Bound">x</a> <a id="3677" href="/classic/Data.Bool.Base.html#1120" class="Function Operator">xor</a> <a id="3681" href="/classic/Data.Product.Base.html#650" class="Field">proj₂</a> <a id="3687" href="/Examples/Setoid/SubgroupLattice/#3643" class="Bound">y</a>
 
-<a id="V₄"></a><a id="3690" href="/Examples/Setoid/SubgroupLattice/#3690" class="Function">V₄</a> <a id="3693" class="Symbol">:</a> <a id="3695" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="3703" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="3706" href="/classic/Level.html#521" class="Function">0ℓ</a>
-<a id="3709" href="/Examples/Setoid/SubgroupLattice/#3690" class="Function">V₄</a> <a id="3712" class="Symbol">=</a> <a id="3714" class="Keyword">record</a> <a id="3721" class="Symbol">{</a> <a id="3723" href="/Setoid/Algebras/Basic/#2998" class="Field">Domain</a> <a id="3730" class="Symbol">=</a> <a id="3732" href="/classic/Relation.Binary.PropositionalEquality.Properties.html#5806" class="Function">setoid</a> <a id="3739" class="Symbol">(</a><a id="3740" href="/classic/Agda.Builtin.Bool.html#173" class="Datatype">Bool</a> <a id="3745" href="/classic/Data.Product.Base.html#1618" class="Function Operator">×</a> <a id="3747" href="/classic/Agda.Builtin.Bool.html#173" class="Datatype">Bool</a><a id="3751" class="Symbol">)</a> <a id="3753" class="Symbol">;</a> <a id="3755" href="/Setoid/Algebras/Basic/#3022" class="Field">Interp</a> <a id="3762" class="Symbol">=</a> <a id="3764" href="/Examples/Setoid/SubgroupLattice/#3783" class="Function">interp</a> <a id="3771" class="Symbol">}</a>
+<a id="V₄"></a><a id="3690" href="/Examples/Setoid/SubgroupLattice/#3690" class="Function">V₄</a> <a id="3693" class="Symbol">:</a> <a id="3695" href="/Setoid/Algebras/Basic/#4342" class="Record">Algebra</a> <a id="3703" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="3706" href="/classic/Level.html#521" class="Function">0ℓ</a>
+<a id="3709" href="/Examples/Setoid/SubgroupLattice/#3690" class="Function">V₄</a> <a id="3712" class="Symbol">=</a> <a id="3714" class="Keyword">record</a> <a id="3721" class="Symbol">{</a> <a id="3723" href="/Setoid/Algebras/Basic/#4422" class="Field">Domain</a> <a id="3730" class="Symbol">=</a> <a id="3732" href="/classic/Relation.Binary.PropositionalEquality.Properties.html#5806" class="Function">setoid</a> <a id="3739" class="Symbol">(</a><a id="3740" href="/classic/Agda.Builtin.Bool.html#173" class="Datatype">Bool</a> <a id="3745" href="/classic/Data.Product.Base.html#1618" class="Function Operator">×</a> <a id="3747" href="/classic/Agda.Builtin.Bool.html#173" class="Datatype">Bool</a><a id="3751" class="Symbol">)</a> <a id="3753" class="Symbol">;</a> <a id="3755" href="/Setoid/Algebras/Basic/#4446" class="Field">Interp</a> <a id="3762" class="Symbol">=</a> <a id="3764" href="/Examples/Setoid/SubgroupLattice/#3783" class="Function">interp</a> <a id="3771" class="Symbol">}</a>
   <a id="3775" class="Keyword">where</a>
   <a id="3783" href="/Examples/Setoid/SubgroupLattice/#3783" class="Function">interp</a> <a id="3790" class="Symbol">:</a> <a id="3792" href="/classic/Function.Bundles.html#2041" class="Record">Func</a> <a id="3797" class="Symbol">(</a><a id="3798" href="/Setoid/Signatures/#3355" class="Function Operator">⟨</a> <a id="3800" href="/Classical/Signatures/Group/#1718" class="Function">Sig-Group</a> <a id="3810" href="/Setoid/Signatures/#3355" class="Function Operator">⟩</a> <a id="3812" class="Symbol">(</a><a id="3813" href="/classic/Relation.Binary.PropositionalEquality.Properties.html#5806" class="Function">setoid</a> <a id="3820" class="Symbol">(</a><a id="3821" href="/classic/Agda.Builtin.Bool.html#173" class="Datatype">Bool</a> <a id="3826" href="/classic/Data.Product.Base.html#1618" class="Function Operator">×</a> <a id="3828" href="/classic/Agda.Builtin.Bool.html#173" class="Datatype">Bool</a><a id="3832" class="Symbol">)))</a> <a id="3836" class="Symbol">(</a><a id="3837" href="/classic/Relation.Binary.PropositionalEquality.Properties.html#5806" class="Function">setoid</a> <a id="3844" class="Symbol">(</a><a id="3845" href="/classic/Agda.Builtin.Bool.html#173" class="Datatype">Bool</a> <a id="3850" href="/classic/Data.Product.Base.html#1618" class="Function Operator">×</a> <a id="3852" href="/classic/Agda.Builtin.Bool.html#173" class="Datatype">Bool</a><a id="3856" class="Symbol">))</a>
   <a id="3861" href="/Examples/Setoid/SubgroupLattice/#3783" class="Function">interp</a> <a id="3868" href="/Examples/Setoid/SubgroupLattice/#3177" class="Field Operator">⟨$⟩</a> <a id="3872" class="Symbol">(</a><a id="3873" href="/Classical/Signatures/Group/#1593" class="InductiveConstructor">∙-Op</a> <a id="3878" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="3880" href="/Examples/Setoid/SubgroupLattice/#3880" class="Bound">args</a><a id="3884" class="Symbol">)</a> <a id="3886" class="Symbol">=</a> <a id="3888" href="/Examples/Setoid/SubgroupLattice/#3880" class="Bound">args</a> <a id="3893" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="3896" href="/Examples/Setoid/SubgroupLattice/#3593" class="Function Operator">⊕</a> <a id="3898" href="/Examples/Setoid/SubgroupLattice/#3880" class="Bound">args</a> <a id="3903" href="/classic/Data.Fin.Patterns.html#440" class="InductiveConstructor">1F</a>

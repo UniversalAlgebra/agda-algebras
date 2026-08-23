@@ -14829,6 +14829,8 @@
       
         
       
+        
+      
     
     
     
@@ -15148,6 +15150,34 @@
     
   
     ADR-009: Signature genericity via generalized variables in the core; module parameters at the Classical layer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../adr/010-documentation-coverage-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-010: Documentation coverage policy for public definitions
   
 
     
@@ -15502,7 +15532,7 @@ order will consume.</p>
 
 <a id="5504" class="Comment">-- Imports from the Agda Universal Algebra Library ----------------------------</a>
 <a id="5584" class="Keyword">open</a> <a id="5589" class="Keyword">import</a> <a id="5596" href="/Overture/" class="Module">Overture</a>                                    <a id="5640" class="Keyword">using</a>  <a id="5647" class="Symbol">(</a> <a id="5649" href="/Overture/Signatures/#683" class="Generalizable">𝓞</a> <a id="5651" class="Symbol">;</a> <a id="5653" href="/Overture/Signatures/#685" class="Generalizable">𝓥</a> <a id="5655" class="Symbol">;</a> <a id="5657" href="/Overture/Signatures/#3218" class="Function">Signature</a> <a id="5667" class="Symbol">)</a>
-<a id="5669" class="Keyword">open</a> <a id="5674" class="Keyword">import</a> <a id="5681" href="/Setoid/Algebras/Basic/" class="Module">Setoid.Algebras.Basic</a>                       <a id="5725" class="Keyword">using</a>  <a id="5732" class="Symbol">(</a> <a id="5734" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="5742" class="Symbol">;</a> <a id="5744" href="/Setoid/Algebras/Basic/#3785" class="Function Operator">𝕌[_]</a> <a id="5749" class="Symbol">;</a> <a id="5751" href="/Setoid/Algebras/Basic/#3635" class="Function Operator">𝔻[_]</a> <a id="5756" class="Symbol">)</a>
+<a id="5669" class="Keyword">open</a> <a id="5674" class="Keyword">import</a> <a id="5681" href="/Setoid/Algebras/Basic/" class="Module">Setoid.Algebras.Basic</a>                       <a id="5725" class="Keyword">using</a>  <a id="5732" class="Symbol">(</a> <a id="5734" href="/Setoid/Algebras/Basic/#4342" class="Record">Algebra</a> <a id="5742" class="Symbol">;</a> <a id="5744" href="/Setoid/Algebras/Basic/#5875" class="Function Operator">𝕌[_]</a> <a id="5749" class="Symbol">;</a> <a id="5751" href="/Setoid/Algebras/Basic/#5431" class="Function Operator">𝔻[_]</a> <a id="5756" class="Symbol">)</a>
 <a id="5758" class="Keyword">open</a> <a id="5763" class="Keyword">import</a> <a id="5770" href="/Setoid/Algebras/Finite/" class="Module">Setoid.Algebras.Finite</a>                      <a id="5814" class="Keyword">using</a>  <a id="5821" class="Symbol">(</a> <a id="5823" href="/Setoid/Algebras/Finite/#3202" class="Record">FiniteAlgebra</a> <a id="5837" class="Symbol">)</a>
 <a id="5839" class="Keyword">open</a> <a id="5844" class="Keyword">import</a> <a id="5851" href="/Setoid/Congruences/Basic/" class="Module">Setoid.Congruences.Basic</a>                    <a id="5895" class="Keyword">using</a>  <a id="5902" class="Symbol">(</a> <a id="5904" href="/Setoid/Congruences/Basic/#3122" class="Function">Con</a> <a id="5908" class="Symbol">)</a>
 <a id="5910" class="Keyword">open</a> <a id="5915" class="Keyword">import</a> <a id="5922" href="/Setoid/Congruences/Finite/Basic/" class="Module">Setoid.Congruences.Finite.Basic</a>             <a id="5966" class="Keyword">using</a>  <a id="5973" class="Symbol">(</a> <a id="5975" href="/Setoid/Congruences/Finite/Basic/#5072" class="Function">DecCon</a> <a id="5982" class="Symbol">;</a> <a id="5984" href="/Setoid/Congruences/Finite/Basic/#5282" class="Function">ConRel</a> <a id="5991" class="Symbol">)</a>
@@ -15529,21 +15559,21 @@ order will consume.</p>
 <p>Fix the finite finitary algebra, open the per-congruence checker
 <code class="AgdaModule">CertCheck 𝑭 𝑺</code>, and fix a whole-lattice certificate <code>lc</code> of any
 list length <code>m</code>.</p>
-<pre class="Agda"><a id="7430" class="Keyword">module</a> <a id="LatticeCheck"></a><a id="7437" href="/Setoid/Congruences/Certificates/Lattice/#7437" class="Module">LatticeCheck</a> <a id="7450" class="Symbol">{</a><a id="7451" href="/Setoid/Congruences/Certificates/Lattice/#7451" class="Bound">𝑆</a> <a id="7453" class="Symbol">:</a> <a id="7455" href="/Overture/Signatures/#3218" class="Function">Signature</a> <a id="7465" href="/Overture/Signatures/#683" class="Generalizable">𝓞</a> <a id="7467" href="/Overture/Signatures/#685" class="Generalizable">𝓥</a><a id="7468" class="Symbol">}</a> <a id="7470" class="Symbol">{</a><a id="7471" href="/Setoid/Congruences/Certificates/Lattice/#7471" class="Bound">𝑨</a> <a id="7473" class="Symbol">:</a> <a id="7475" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="7483" class="Symbol">{</a><a id="7484" class="Argument">𝑆</a> <a id="7486" class="Symbol">=</a> <a id="7488" href="/Setoid/Congruences/Certificates/Lattice/#7451" class="Bound">𝑆</a><a id="7489" class="Symbol">}</a> <a id="7491" href="/Setoid/Congruences/Certificates/Lattice/#7198" class="Generalizable">α</a> <a id="7493" href="/Setoid/Congruences/Certificates/Lattice/#7200" class="Generalizable">ρ</a><a id="7494" class="Symbol">}</a>
+<pre class="Agda"><a id="7430" class="Keyword">module</a> <a id="LatticeCheck"></a><a id="7437" href="/Setoid/Congruences/Certificates/Lattice/#7437" class="Module">LatticeCheck</a> <a id="7450" class="Symbol">{</a><a id="7451" href="/Setoid/Congruences/Certificates/Lattice/#7451" class="Bound">𝑆</a> <a id="7453" class="Symbol">:</a> <a id="7455" href="/Overture/Signatures/#3218" class="Function">Signature</a> <a id="7465" href="/Overture/Signatures/#683" class="Generalizable">𝓞</a> <a id="7467" href="/Overture/Signatures/#685" class="Generalizable">𝓥</a><a id="7468" class="Symbol">}</a> <a id="7470" class="Symbol">{</a><a id="7471" href="/Setoid/Congruences/Certificates/Lattice/#7471" class="Bound">𝑨</a> <a id="7473" class="Symbol">:</a> <a id="7475" href="/Setoid/Algebras/Basic/#4342" class="Record">Algebra</a> <a id="7483" class="Symbol">{</a><a id="7484" class="Argument">𝑆</a> <a id="7486" class="Symbol">=</a> <a id="7488" href="/Setoid/Congruences/Certificates/Lattice/#7451" class="Bound">𝑆</a><a id="7489" class="Symbol">}</a> <a id="7491" href="/Setoid/Congruences/Certificates/Lattice/#7198" class="Generalizable">α</a> <a id="7493" href="/Setoid/Congruences/Certificates/Lattice/#7200" class="Generalizable">ρ</a><a id="7494" class="Symbol">}</a>
                     <a id="7516" class="Symbol">(</a><a id="7517" href="/Setoid/Congruences/Certificates/Lattice/#7517" class="Bound">𝑭</a> <a id="7519" class="Symbol">:</a> <a id="7521" href="/Setoid/Algebras/Finite/#3202" class="Record">FiniteAlgebra</a> <a id="7535" href="/Setoid/Congruences/Certificates/Lattice/#7471" class="Bound">𝑨</a><a id="7536" class="Symbol">)</a> <a id="7538" class="Symbol">(</a><a id="7539" href="/Setoid/Congruences/Certificates/Lattice/#7539" class="Bound">𝑺</a> <a id="7541" class="Symbol">:</a> <a id="7543" href="/Setoid/Signatures/Finite/#5275" class="Record">FiniteSignature</a> <a id="7559" href="/Setoid/Congruences/Certificates/Lattice/#7451" class="Bound">𝑆</a><a id="7560" class="Symbol">)</a> <a id="7562" class="Keyword">where</a>
 
   <a id="7571" class="Keyword">open</a> <a id="7576" href="/Setoid/Congruences/Certificates/Congruence/#11006" class="Module">CertCheck</a> <a id="7586" href="/Setoid/Congruences/Certificates/Lattice/#7517" class="Bound">𝑭</a> <a id="7588" href="/Setoid/Congruences/Certificates/Lattice/#7539" class="Bound">𝑺</a>
   <a id="7592" class="Keyword">open</a> <a id="7597" href="/Setoid/Algebras/Finite/#3202" class="Module">FiniteAlgebra</a> <a id="7611" href="/Setoid/Congruences/Certificates/Lattice/#7517" class="Bound">𝑭</a> <a id="7613" class="Keyword">using</a> <a id="7619" class="Symbol">(</a> <a id="7621" href="/Setoid/Algebras/Finite/#3316" class="Field Operator">_≟_</a> <a id="7625" class="Symbol">;</a> <a id="7627" href="/Setoid/Algebras/Finite/#3401" class="Field">card</a> <a id="7632" class="Symbol">;</a> <a id="7634" href="/Setoid/Algebras/Finite/#3421" class="Field">enum</a> <a id="7639" class="Symbol">;</a> <a id="7641" href="/Setoid/Algebras/Finite/#3500" class="Field">enum-sur</a> <a id="7650" class="Symbol">)</a>
   <a id="7654" class="Keyword">open</a> <a id="7659" href="/Setoid/Signatures/Finite/#5275" class="Module">FiniteSignature</a> <a id="7675" href="/Setoid/Congruences/Certificates/Lattice/#7539" class="Bound">𝑺</a> <a id="7677" class="Keyword">using</a> <a id="7683" class="Symbol">(</a> <a id="7685" href="/Setoid/Signatures/Finite/#5344" class="Field">opCard</a> <a id="7692" class="Symbol">)</a>
-  <a id="7696" class="Keyword">open</a> <a id="7701" href="/classic/Relation.Binary.Bundles.html#1235" class="Module">Setoid</a> <a id="7708" href="/Setoid/Algebras/Basic/#3635" class="Function Operator">𝔻[</a> <a id="7711" href="/Setoid/Congruences/Certificates/Lattice/#7471" class="Bound">𝑨</a> <a id="7713" href="/Setoid/Algebras/Basic/#3635" class="Function Operator">]</a> <a id="7715" class="Keyword">using</a> <a id="7721" class="Symbol">(</a> <a id="7723" href="/classic/Relation.Binary.Bundles.html#1324" class="Field Operator">_≈_</a> <a id="7727" class="Symbol">)</a>
+  <a id="7696" class="Keyword">open</a> <a id="7701" href="/classic/Relation.Binary.Bundles.html#1235" class="Module">Setoid</a> <a id="7708" href="/Setoid/Algebras/Basic/#5431" class="Function Operator">𝔻[</a> <a id="7711" href="/Setoid/Congruences/Certificates/Lattice/#7471" class="Bound">𝑨</a> <a id="7713" href="/Setoid/Algebras/Basic/#5431" class="Function Operator">]</a> <a id="7715" class="Keyword">using</a> <a id="7721" class="Symbol">(</a> <a id="7723" href="/classic/Relation.Binary.Bundles.html#1324" class="Field Operator">_≈_</a> <a id="7727" class="Symbol">)</a>
     <a id="7733" class="Keyword">renaming</a> <a id="7742" class="Symbol">(</a> <a id="7744" href="/classic/Relation.Binary.Structures.html#1245" class="Function">sym</a> <a id="7748" class="Symbol">to</a> <a id="7751" class="Function">≈sym</a> <a id="7756" class="Symbol">;</a> <a id="7758" href="/classic/Relation.Binary.Structures.html#1271" class="Function">trans</a> <a id="7764" class="Symbol">to</a> <a id="7767" class="Function">≈trans</a> <a id="7774" class="Symbol">)</a>
 
   <a id="7779" class="Keyword">private</a>
     <a id="7791" class="Comment">-- A chosen enumeration index for each carrier element, and its correctness.</a>
-    <a id="LatticeCheck.idx"></a><a id="7872" href="/Setoid/Congruences/Certificates/Lattice/#7872" class="Function">idx</a> <a id="7876" class="Symbol">:</a> <a id="7878" href="/Setoid/Algebras/Basic/#3785" class="Function Operator">𝕌[</a> <a id="7881" href="/Setoid/Congruences/Certificates/Lattice/#7471" class="Bound">𝑨</a> <a id="7883" href="/Setoid/Algebras/Basic/#3785" class="Function Operator">]</a> <a id="7885" class="Symbol">→</a> <a id="7887" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="7891" href="/Setoid/Algebras/Finite/#3401" class="Function">card</a>
+    <a id="LatticeCheck.idx"></a><a id="7872" href="/Setoid/Congruences/Certificates/Lattice/#7872" class="Function">idx</a> <a id="7876" class="Symbol">:</a> <a id="7878" href="/Setoid/Algebras/Basic/#5875" class="Function Operator">𝕌[</a> <a id="7881" href="/Setoid/Congruences/Certificates/Lattice/#7471" class="Bound">𝑨</a> <a id="7883" href="/Setoid/Algebras/Basic/#5875" class="Function Operator">]</a> <a id="7885" class="Symbol">→</a> <a id="7887" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="7891" href="/Setoid/Algebras/Finite/#3401" class="Function">card</a>
     <a id="7900" href="/Setoid/Congruences/Certificates/Lattice/#7872" class="Function">idx</a> <a id="7904" href="/Setoid/Congruences/Certificates/Lattice/#7904" class="Bound">x</a> <a id="7906" class="Symbol">=</a> <a id="7908" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="7914" class="Symbol">(</a><a id="7915" href="/Setoid/Algebras/Finite/#3500" class="Function">enum-sur</a> <a id="7924" href="/Setoid/Congruences/Certificates/Lattice/#7904" class="Bound">x</a><a id="7925" class="Symbol">)</a>
 
-    <a id="LatticeCheck.idx-≈"></a><a id="7932" href="/Setoid/Congruences/Certificates/Lattice/#7932" class="Function">idx-≈</a> <a id="7938" class="Symbol">:</a> <a id="7940" class="Symbol">(</a><a id="7941" href="/Setoid/Congruences/Certificates/Lattice/#7941" class="Bound">x</a> <a id="7943" class="Symbol">:</a> <a id="7945" href="/Setoid/Algebras/Basic/#3785" class="Function Operator">𝕌[</a> <a id="7948" href="/Setoid/Congruences/Certificates/Lattice/#7471" class="Bound">𝑨</a> <a id="7950" href="/Setoid/Algebras/Basic/#3785" class="Function Operator">]</a><a id="7951" class="Symbol">)</a> <a id="7953" class="Symbol">→</a> <a id="7955" href="/Setoid/Algebras/Finite/#3421" class="Function">enum</a> <a id="7960" class="Symbol">(</a><a id="7961" href="/Setoid/Congruences/Certificates/Lattice/#7872" class="Function">idx</a> <a id="7965" href="/Setoid/Congruences/Certificates/Lattice/#7941" class="Bound">x</a><a id="7966" class="Symbol">)</a> <a id="7968" href="/classic/Relation.Binary.Bundles.html#1324" class="Function Operator">≈</a> <a id="7970" href="/Setoid/Congruences/Certificates/Lattice/#7941" class="Bound">x</a>
+    <a id="LatticeCheck.idx-≈"></a><a id="7932" href="/Setoid/Congruences/Certificates/Lattice/#7932" class="Function">idx-≈</a> <a id="7938" class="Symbol">:</a> <a id="7940" class="Symbol">(</a><a id="7941" href="/Setoid/Congruences/Certificates/Lattice/#7941" class="Bound">x</a> <a id="7943" class="Symbol">:</a> <a id="7945" href="/Setoid/Algebras/Basic/#5875" class="Function Operator">𝕌[</a> <a id="7948" href="/Setoid/Congruences/Certificates/Lattice/#7471" class="Bound">𝑨</a> <a id="7950" href="/Setoid/Algebras/Basic/#5875" class="Function Operator">]</a><a id="7951" class="Symbol">)</a> <a id="7953" class="Symbol">→</a> <a id="7955" href="/Setoid/Algebras/Finite/#3421" class="Function">enum</a> <a id="7960" class="Symbol">(</a><a id="7961" href="/Setoid/Congruences/Certificates/Lattice/#7872" class="Function">idx</a> <a id="7965" href="/Setoid/Congruences/Certificates/Lattice/#7941" class="Bound">x</a><a id="7966" class="Symbol">)</a> <a id="7968" href="/classic/Relation.Binary.Bundles.html#1324" class="Function Operator">≈</a> <a id="7970" href="/Setoid/Congruences/Certificates/Lattice/#7941" class="Bound">x</a>
     <a id="7976" href="/Setoid/Congruences/Certificates/Lattice/#7932" class="Function">idx-≈</a> <a id="7982" href="/Setoid/Congruences/Certificates/Lattice/#7982" class="Bound">x</a> <a id="7984" class="Symbol">=</a> <a id="7986" href="/classic/Data.Product.Base.html#650" class="Field">proj₂</a> <a id="7992" class="Symbol">(</a><a id="7993" href="/Setoid/Algebras/Finite/#3500" class="Function">enum-sur</a> <a id="8002" href="/Setoid/Congruences/Certificates/Lattice/#7982" class="Bound">x</a><a id="8003" class="Symbol">)</a>
 </pre>
 <h4 id="the-checked-conditions">The checked conditions<a class="headerlink" href="#the-checked-conditions" title="Anchor link to this section">&para;</a></h4>

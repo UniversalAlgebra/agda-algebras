@@ -14873,6 +14873,8 @@
       
         
       
+        
+      
     
     
     
@@ -15192,6 +15194,34 @@
     
   
     ADR-009: Signature genericity via generalized variables in the core; module parameters at the Classical layer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../adr/010-documentation-coverage-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-010: Documentation coverage policy for public definitions
   
 
     
@@ -15640,7 +15670,7 @@ transport will need beyond the isomorphism itself.</p>
                                                            <a id="8873" class="Symbol">;</a> <a id="8875" href="/Classical/Structures/Group/Subgroups/#4735" class="Function">interp-tuple-ε</a>
                                                            <a id="8949" class="Symbol">;</a> <a id="8951" href="/Classical/Structures/Group/Subgroups/#4922" class="Function">interp-tuple-⁻¹</a> <a id="8967" class="Symbol">)</a>
 <a id="8969" class="Keyword">open</a> <a id="8974" class="Keyword">import</a> <a id="8981" href="/Order/Iso/" class="Module">Order.Iso</a>                               <a id="9021" class="Keyword">using</a>  <a id="9028" class="Symbol">(</a> <a id="9030" href="/Order/Iso/#2272" class="Record">OrderIso</a> <a id="9039" class="Symbol">)</a>
-<a id="9041" class="Keyword">open</a> <a id="9046" class="Keyword">import</a> <a id="9053" href="/Setoid/Algebras/Basic/" class="Module">Setoid.Algebras.Basic</a>                   <a id="9093" class="Keyword">using</a>  <a id="9100" class="Symbol">(</a> <a id="9102" href="/Setoid/Algebras/Basic/#3785" class="Function Operator">𝕌[_]</a> <a id="9107" class="Symbol">;</a> <a id="9109" href="/Setoid/Algebras/Basic/#3635" class="Function Operator">𝔻[_]</a> <a id="9114" class="Symbol">)</a>
+<a id="9041" class="Keyword">open</a> <a id="9046" class="Keyword">import</a> <a id="9053" href="/Setoid/Algebras/Basic/" class="Module">Setoid.Algebras.Basic</a>                   <a id="9093" class="Keyword">using</a>  <a id="9100" class="Symbol">(</a> <a id="9102" href="/Setoid/Algebras/Basic/#5875" class="Function Operator">𝕌[_]</a> <a id="9107" class="Symbol">;</a> <a id="9109" href="/Setoid/Algebras/Basic/#5431" class="Function Operator">𝔻[_]</a> <a id="9114" class="Symbol">)</a>
 <a id="9116" class="Keyword">open</a> <a id="9121" class="Keyword">import</a> <a id="9128" href="/Setoid/Congruences/Basic/" class="Module">Setoid.Congruences.Basic</a>                <a id="9168" class="Keyword">using</a>  <a id="9175" class="Symbol">(</a> <a id="9177" href="/Setoid/Congruences/Basic/#3122" class="Function">Con</a> <a id="9181" class="Symbol">;</a> <a id="9183" href="/Setoid/Congruences/Basic/#2807" class="Record">IsCongruence</a> <a id="9196" class="Symbol">;</a> <a id="9198" href="/Setoid/Congruences/Basic/#2895" class="InductiveConstructor">mkcon</a>
                                                            <a id="9263" class="Symbol">;</a> <a id="9265" href="/Setoid/Congruences/Basic/#1720" class="Function Operator">_∣≈_</a> <a id="9270" class="Symbol">;</a> <a id="9272" href="/Setoid/Congruences/Basic/#3004" class="Field">is-compatible</a>
                                                            <a id="9345" class="Symbol">;</a> <a id="9347" href="/Setoid/Congruences/Basic/#2965" class="Field">is-equivalence</a> <a id="9362" class="Symbol">;</a> <a id="9364" href="/Setoid/Congruences/Basic/#2917" class="Field">reflexive</a> <a id="9374" class="Symbol">)</a>
@@ -15657,11 +15687,11 @@ carrier, its curried operations, and the conjugation vocabulary are fixed once.<
 <pre class="Agda"><a id="9846" class="Keyword">module</a> <a id="GroupCongruences"></a><a id="9853" href="/Classical/Structures/Group/Congruences/#9853" class="Module">GroupCongruences</a> <a id="9870" class="Symbol">{</a><a id="9871" href="/Classical/Structures/Group/Congruences/#9871" class="Bound">α</a> <a id="9873" href="/Classical/Structures/Group/Congruences/#9873" class="Bound">ρ</a> <a id="9875" class="Symbol">:</a> <a id="9877" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a><a id="9882" class="Symbol">}</a> <a id="9884" class="Symbol">(</a><a id="9885" href="/Classical/Structures/Group/Congruences/#9885" class="Bound">𝒢</a> <a id="9887" class="Symbol">:</a> <a id="9889" href="/Classical/Structures/Group/Basic/#4497" class="Function">Group</a> <a id="9895" href="/Classical/Structures/Group/Congruences/#9871" class="Bound">α</a> <a id="9897" href="/Classical/Structures/Group/Congruences/#9873" class="Bound">ρ</a><a id="9898" class="Symbol">)</a> <a id="9900" class="Keyword">where</a>
   <a id="9908" class="Keyword">private</a>
     <a id="GroupCongruences.𝑮"></a><a id="9920" href="/Classical/Structures/Group/Congruences/#9920" class="Function">𝑮</a> <a id="9922" class="Symbol">=</a> <a id="9924" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="9930" href="/Classical/Structures/Group/Congruences/#9885" class="Bound">𝒢</a>
-    <a id="GroupCongruences.G"></a><a id="9936" href="/Classical/Structures/Group/Congruences/#9936" class="Function">G</a> <a id="9938" class="Symbol">=</a> <a id="9940" href="/Setoid/Algebras/Basic/#3785" class="Function Operator">𝕌[</a> <a id="9943" href="/Classical/Structures/Group/Congruences/#9920" class="Function">𝑮</a> <a id="9945" href="/Setoid/Algebras/Basic/#3785" class="Function Operator">]</a>
+    <a id="GroupCongruences.G"></a><a id="9936" href="/Classical/Structures/Group/Congruences/#9936" class="Function">G</a> <a id="9938" class="Symbol">=</a> <a id="9940" href="/Setoid/Algebras/Basic/#5875" class="Function Operator">𝕌[</a> <a id="9943" href="/Classical/Structures/Group/Congruences/#9920" class="Function">𝑮</a> <a id="9945" href="/Setoid/Algebras/Basic/#5875" class="Function Operator">]</a>
 
-  <a id="9950" class="Keyword">open</a> <a id="9955" href="/classic/Relation.Binary.Bundles.html#1235" class="Module">Setoid</a> <a id="9962" href="/Setoid/Algebras/Basic/#3635" class="Function Operator">𝔻[</a> <a id="9965" href="/Classical/Structures/Group/Congruences/#9920" class="Function">𝑮</a> <a id="9967" href="/Setoid/Algebras/Basic/#3635" class="Function Operator">]</a>            <a id="9980" class="Keyword">using</a>  <a id="9987" class="Symbol">(</a> <a id="9989" href="/classic/Relation.Binary.Bundles.html#1324" class="Field Operator">_≈_</a> <a id="9993" class="Symbol">)</a>
+  <a id="9950" class="Keyword">open</a> <a id="9955" href="/classic/Relation.Binary.Bundles.html#1235" class="Module">Setoid</a> <a id="9962" href="/Setoid/Algebras/Basic/#5431" class="Function Operator">𝔻[</a> <a id="9965" href="/Classical/Structures/Group/Congruences/#9920" class="Function">𝑮</a> <a id="9967" href="/Setoid/Algebras/Basic/#5431" class="Function Operator">]</a>            <a id="9980" class="Keyword">using</a>  <a id="9987" class="Symbol">(</a> <a id="9989" href="/classic/Relation.Binary.Bundles.html#1324" class="Field Operator">_≈_</a> <a id="9993" class="Symbol">)</a>
                                 <a id="10027" class="Keyword">renaming</a> <a id="10036" class="Symbol">(</a> <a id="10038" href="/classic/Relation.Binary.Structures.html#1641" class="Function">refl</a> <a id="10043" class="Symbol">to</a> <a id="10046" class="Function">≈refl</a> <a id="10052" class="Symbol">;</a> <a id="10054" href="/classic/Relation.Binary.Structures.html#1245" class="Function">sym</a> <a id="10058" class="Symbol">to</a> <a id="10061" class="Function">≈sym</a> <a id="10066" class="Symbol">;</a> <a id="10068" href="/classic/Relation.Binary.Structures.html#1271" class="Function">trans</a> <a id="10074" class="Symbol">to</a> <a id="10077" class="Function">≈trans</a> <a id="10084" class="Symbol">)</a>
-  <a id="10088" class="Keyword">open</a> <a id="10093" href="/classic/Relation.Binary.Reasoning.Setoid.html" class="Module">SetoidReasoning</a> <a id="10109" href="/Setoid/Algebras/Basic/#3635" class="Function Operator">𝔻[</a> <a id="10112" href="/Classical/Structures/Group/Congruences/#9920" class="Function">𝑮</a> <a id="10114" href="/Setoid/Algebras/Basic/#3635" class="Function Operator">]</a>
+  <a id="10088" class="Keyword">open</a> <a id="10093" href="/classic/Relation.Binary.Reasoning.Setoid.html" class="Module">SetoidReasoning</a> <a id="10109" href="/Setoid/Algebras/Basic/#5431" class="Function Operator">𝔻[</a> <a id="10112" href="/Classical/Structures/Group/Congruences/#9920" class="Function">𝑮</a> <a id="10114" href="/Setoid/Algebras/Basic/#5431" class="Function Operator">]</a>
   <a id="10118" class="Keyword">open</a> <a id="10123" href="/Classical/Structures/Group/Basic/#6775" class="Module">Group-Op</a> <a id="10132" href="/Classical/Structures/Group/Congruences/#9885" class="Bound">𝒢</a>               <a id="10148" class="Keyword">using</a>  <a id="10155" class="Symbol">(</a> <a id="10157" href="/Classical/Structures/Group/Basic/#7013" class="Function Operator">_∙_</a> <a id="10161" class="Symbol">;</a> <a id="10163" href="/Classical/Structures/Group/Basic/#7073" class="Function">ε</a> <a id="10165" class="Symbol">;</a> <a id="10167" href="/Classical/Structures/Group/Basic/#7125" class="Function Operator">_⁻¹</a> <a id="10171" class="Symbol">;</a> <a id="10173" href="/Classical/Structures/Group/Basic/#7229" class="Function">∙-cong</a> <a id="10180" class="Symbol">;</a> <a id="10182" href="/Classical/Structures/Group/Basic/#7937" class="Function">assoc-law</a>
                                        <a id="10231" class="Symbol">;</a> <a id="10233" href="/Classical/Structures/Group/Basic/#8011" class="Function">idˡ-law</a> <a id="10241" class="Symbol">;</a> <a id="10243" href="/Classical/Structures/Group/Basic/#8471" class="Function">idʳ-law</a> <a id="10251" class="Symbol">;</a> <a id="10253" href="/Classical/Structures/Group/Basic/#8931" class="Function">invˡ-law</a> <a id="10262" class="Symbol">;</a> <a id="10264" href="/Classical/Structures/Group/Basic/#9492" class="Function">invʳ-law</a> <a id="10273" class="Symbol">)</a>
   <a id="10277" class="Keyword">open</a> <a id="10282" href="/classic/Algebra.Properties.Group.html" class="Module">GroupProperties</a> <a id="10298" href="/Classical/Bundles/Group/#2101" class="Function Operator">⟨</a> <a id="10300" href="/Classical/Structures/Group/Congruences/#9885" class="Bound">𝒢</a> <a id="10302" href="/Classical/Bundles/Group/#2101" class="Function Operator">⟩ᵍᵖ</a>  <a id="10307" class="Keyword">using</a>  <a id="10314" class="Symbol">(</a> <a id="10316" href="/classic/Algebra.Properties.Group.html#3147" class="Function">ε⁻¹≈ε</a> <a id="10322" class="Symbol">;</a> <a id="10324" href="/classic/Algebra.Properties.Group.html#3377" class="Function">⁻¹-involutive</a> <a id="10338" class="Symbol">;</a> <a id="10340" href="/classic/Algebra.Properties.Group.html#3876" class="Function">⁻¹-anti-homo-∙</a>

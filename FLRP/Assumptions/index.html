@@ -14792,6 +14792,8 @@
       
         
       
+        
+      
     
     
     
@@ -15124,6 +15126,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adr/010-documentation-coverage-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-010: Documentation coverage policy for public definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -15437,7 +15467,7 @@ argument.</p>
 <a id="5835" class="Keyword">open</a> <a id="5840" class="Keyword">import</a> <a id="5847" href="/FLRP/Problem/" class="Module">FLRP.Problem</a>                          <a id="5885" class="Keyword">using</a>  <a id="5892" class="Symbol">(</a> <a id="5894" href="/FLRP/Problem/#10055" class="Function">FLRP-Statement</a> <a id="5909" class="Symbol">)</a>
 <a id="5911" class="Keyword">open</a> <a id="5916" class="Keyword">import</a> <a id="5923" href="/FLRP/Representable/" class="Module">FLRP.Representable</a>                    <a id="5961" class="Keyword">using</a>  <a id="5968" class="Symbol">(</a> <a id="5970" href="/FLRP/Representable/#8979" class="Record">Representableᵈ</a> <a id="5985" class="Symbol">)</a>
 <a id="5987" class="Keyword">open</a> <a id="5992" class="Keyword">import</a> <a id="5999" href="/Overture/" class="Module">Overture</a>                              <a id="6037" class="Keyword">using</a>  <a id="6044" class="Symbol">(</a> <a id="6046" href="/Overture/Signatures/#683" class="Generalizable">𝓞</a> <a id="6048" class="Symbol">;</a> <a id="6050" href="/Overture/Signatures/#685" class="Generalizable">𝓥</a> <a id="6052" class="Symbol">;</a> <a id="6054" href="/Overture/Signatures/#3218" class="Function">Signature</a> <a id="6064" class="Symbol">)</a>
-<a id="6066" class="Keyword">open</a> <a id="6071" class="Keyword">import</a> <a id="6078" href="/Setoid/Algebras/Basic/" class="Module">Setoid.Algebras.Basic</a>                 <a id="6116" class="Keyword">using</a>  <a id="6123" class="Symbol">(</a> <a id="6125" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="6133" class="Symbol">)</a>
+<a id="6066" class="Keyword">open</a> <a id="6071" class="Keyword">import</a> <a id="6078" href="/Setoid/Algebras/Basic/" class="Module">Setoid.Algebras.Basic</a>                 <a id="6116" class="Keyword">using</a>  <a id="6123" class="Symbol">(</a> <a id="6125" href="/Setoid/Algebras/Basic/#4342" class="Record">Algebra</a> <a id="6133" class="Symbol">)</a>
 <a id="6135" class="Keyword">open</a> <a id="6140" class="Keyword">import</a> <a id="6147" href="/Setoid/Algebras/Finite/" class="Module">Setoid.Algebras.Finite</a>                <a id="6185" class="Keyword">using</a>  <a id="6192" class="Symbol">(</a> <a id="6194" href="/Setoid/Algebras/Finite/#3202" class="Record">FiniteAlgebra</a> <a id="6208" class="Symbol">)</a>
 <a id="6210" class="Keyword">open</a> <a id="6215" class="Keyword">import</a> <a id="6222" href="/Setoid/Signatures/Finite/" class="Module">Setoid.Signatures.Finite</a>              <a id="6260" class="Keyword">using</a>  <a id="6267" class="Symbol">(</a> <a id="6269" href="/Setoid/Signatures/Finite/#5275" class="Record">FiniteSignature</a> <a id="6285" class="Symbol">)</a>
 <a id="6287" class="Keyword">open</a> <a id="6292" class="Keyword">import</a> <a id="6299" href="/Setoid/Congruences/Basic/" class="Module">Setoid.Congruences.Basic</a>              <a id="6337" class="Keyword">using</a>  <a id="6344" class="Symbol">(</a> <a id="6346" href="/Setoid/Congruences/Basic/#3122" class="Function">Con</a> <a id="6350" class="Symbol">)</a>
@@ -15455,7 +15485,7 @@ argument.</p>
 decidable-layer machinery of <a href="/Setoid/Congruences/Finite/Basic/">Setoid.Congruences.Finite.Basic</a> and
 <a href="/Setoid/Congruences/Finite/Decidable/">Setoid.Congruences.Finite.Decidable</a> lives, and the level at which the <code>complete</code>
 field of <code class="AgdaRecord">FiniteCongruences</code> quantifies.</p>
-<pre class="Agda"><a id="7128" class="Keyword">module</a> <a id="7135" href="/FLRP/Assumptions/#7135" class="Module">_</a> <a id="7137" class="Symbol">{</a><a id="7138" href="/FLRP/Assumptions/#7138" class="Bound">𝑆</a> <a id="7140" class="Symbol">:</a> <a id="7142" href="/Overture/Signatures/#3218" class="Function">Signature</a> <a id="7152" href="/Overture/Signatures/#683" class="Generalizable">𝓞</a> <a id="7154" href="/Overture/Signatures/#685" class="Generalizable">𝓥</a><a id="7155" class="Symbol">}(</a><a id="7157" href="/FLRP/Assumptions/#7157" class="Bound">𝑨</a> <a id="7159" class="Symbol">:</a> <a id="7161" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="7169" class="Symbol">{</a><a id="7170" class="Argument">𝑆</a> <a id="7172" class="Symbol">=</a> <a id="7174" href="/FLRP/Assumptions/#7138" class="Bound">𝑆</a><a id="7175" class="Symbol">}</a> <a id="7177" href="/FLRP/Assumptions/#6695" class="Generalizable">α</a> <a id="7179" href="/FLRP/Assumptions/#6697" class="Generalizable">ρ</a><a id="7180" class="Symbol">)</a> <a id="7182" class="Keyword">where</a>
+<pre class="Agda"><a id="7128" class="Keyword">module</a> <a id="7135" href="/FLRP/Assumptions/#7135" class="Module">_</a> <a id="7137" class="Symbol">{</a><a id="7138" href="/FLRP/Assumptions/#7138" class="Bound">𝑆</a> <a id="7140" class="Symbol">:</a> <a id="7142" href="/Overture/Signatures/#3218" class="Function">Signature</a> <a id="7152" href="/Overture/Signatures/#683" class="Generalizable">𝓞</a> <a id="7154" href="/Overture/Signatures/#685" class="Generalizable">𝓥</a><a id="7155" class="Symbol">}(</a><a id="7157" href="/FLRP/Assumptions/#7157" class="Bound">𝑨</a> <a id="7159" class="Symbol">:</a> <a id="7161" href="/Setoid/Algebras/Basic/#4342" class="Record">Algebra</a> <a id="7169" class="Symbol">{</a><a id="7170" class="Argument">𝑆</a> <a id="7172" class="Symbol">=</a> <a id="7174" href="/FLRP/Assumptions/#7138" class="Bound">𝑆</a><a id="7175" class="Symbol">}</a> <a id="7177" href="/FLRP/Assumptions/#6695" class="Generalizable">α</a> <a id="7179" href="/FLRP/Assumptions/#6697" class="Generalizable">ρ</a><a id="7180" class="Symbol">)</a> <a id="7182" class="Keyword">where</a>
   <a id="7190" class="Keyword">private</a>
     <a id="7202" href="/FLRP/Assumptions/#7202" class="Function">ℓ</a> <a id="7204" class="Symbol">:</a> <a id="7206" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a>
     <a id="7216" href="/FLRP/Assumptions/#7202" class="Function">ℓ</a> <a id="7218" class="Symbol">=</a> <a id="7220" href="/FLRP/Assumptions/#7152" class="Bound">𝓞</a> <a id="7222" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="7224" href="/FLRP/Assumptions/#7154" class="Bound">𝓥</a> <a id="7226" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="7228" href="/FLRP/Assumptions/#7177" class="Bound">α</a> <a id="7230" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="7232" href="/FLRP/Assumptions/#7179" class="Bound">ρ</a>

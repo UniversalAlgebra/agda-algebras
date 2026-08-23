@@ -14807,6 +14807,8 @@
       
         
       
+        
+      
     
     
     
@@ -15139,6 +15141,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../adr/010-documentation-coverage-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-010: Documentation coverage policy for public definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -15406,22 +15436,22 @@ translation by any group element preserves the coset equality
 <a id="2047" class="Keyword">open</a> <a id="2052" class="Keyword">import</a> <a id="2059" href="/Classical/Bundles/Group/" class="Module">Classical.Bundles.Group</a>               <a id="2097" class="Keyword">using</a> <a id="2103" class="Symbol">(</a> <a id="2105" href="/Classical/Bundles/Group/#2101" class="Function Operator">⟨_⟩ᵍᵖ</a> <a id="2111" class="Symbol">)</a>
 <a id="2113" class="Keyword">open</a> <a id="2118" class="Keyword">import</a> <a id="2125" href="/Classical/Structures/Group/Basic/" class="Module">Classical.Structures.Group.Basic</a>      <a id="2163" class="Keyword">using</a> <a id="2169" class="Symbol">(</a> <a id="2171" href="/Classical/Structures/Group/Basic/#4497" class="Function">Group</a> <a id="2177" class="Symbol">;</a> <a id="2179" class="Keyword">module</a> <a id="2186" href="/Classical/Structures/Group/Basic/#6775" class="Module">Group-Op</a> <a id="2195" class="Symbol">)</a>
 <a id="2197" class="Keyword">open</a> <a id="2202" class="Keyword">import</a> <a id="2209" href="/Classical/Structures/Group/Subgroups/" class="Module">Classical.Structures.Group.Subgroups</a>  <a id="2247" class="Keyword">using</a> <a id="2253" class="Symbol">(</a> <a id="2255" href="/Classical/Structures/Group/Subgroups/#6460" class="Record">IsSubgroup</a> <a id="2266" class="Symbol">)</a>
-<a id="2268" class="Keyword">open</a> <a id="2273" class="Keyword">import</a> <a id="2280" href="/Setoid/Algebras/Basic/" class="Module">Setoid.Algebras.Basic</a>                 <a id="2318" class="Keyword">using</a> <a id="2324" class="Symbol">(</a> <a id="2326" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="2334" class="Symbol">;</a> <a id="2336" href="/Setoid/Algebras/Basic/#3785" class="Function Operator">𝕌[_]</a> <a id="2341" class="Symbol">;</a> <a id="2343" href="/Setoid/Algebras/Basic/#3635" class="Function Operator">𝔻[_]</a> <a id="2348" class="Symbol">)</a>
+<a id="2268" class="Keyword">open</a> <a id="2273" class="Keyword">import</a> <a id="2280" href="/Setoid/Algebras/Basic/" class="Module">Setoid.Algebras.Basic</a>                 <a id="2318" class="Keyword">using</a> <a id="2324" class="Symbol">(</a> <a id="2326" href="/Setoid/Algebras/Basic/#4342" class="Record">Algebra</a> <a id="2334" class="Symbol">;</a> <a id="2336" href="/Setoid/Algebras/Basic/#5875" class="Function Operator">𝕌[_]</a> <a id="2341" class="Symbol">;</a> <a id="2343" href="/Setoid/Algebras/Basic/#5431" class="Function Operator">𝔻[_]</a> <a id="2348" class="Symbol">)</a>
 <a id="2350" class="Keyword">open</a> <a id="2355" class="Keyword">import</a> <a id="2362" href="/Setoid/Relations/Quotients/" class="Module">Setoid.Relations.Quotients</a>            <a id="2400" class="Keyword">using</a> <a id="2406" class="Symbol">(</a> <a id="2408" href="/Setoid/Relations/Quotients/#2331" class="Function Operator">_/_</a> <a id="2412" class="Symbol">)</a>
 </pre>
 
 <h4 id="the-coset-relation">The coset relation<a class="headerlink" href="#the-coset-relation" title="Anchor link to this section">&para;</a></h4>
 <pre class="Agda"><a id="2456" class="Keyword">module</a> <a id="Coset"></a><a id="2463" href="/Classical/Structures/Group/Cosets/#2463" class="Module">Coset</a> <a id="2469" class="Symbol">{</a><a id="2470" href="/Classical/Structures/Group/Cosets/#2470" class="Bound">α</a> <a id="2472" href="/Classical/Structures/Group/Cosets/#2472" class="Bound">ρ</a> <a id="2474" class="Symbol">:</a> <a id="2476" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a><a id="2481" class="Symbol">}</a> <a id="2483" class="Symbol">(</a><a id="2484" href="/Classical/Structures/Group/Cosets/#2484" class="Bound">𝒢</a> <a id="2486" class="Symbol">:</a> <a id="2488" href="/Classical/Structures/Group/Basic/#4497" class="Function">Group</a> <a id="2494" href="/Classical/Structures/Group/Cosets/#2470" class="Bound">α</a> <a id="2496" href="/Classical/Structures/Group/Cosets/#2472" class="Bound">ρ</a><a id="2497" class="Symbol">)</a> <a id="2499" class="Symbol">{</a><a id="2500" href="/Classical/Structures/Group/Cosets/#2500" class="Bound">ℓ</a> <a id="2502" class="Symbol">:</a> <a id="2504" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a><a id="2509" class="Symbol">}</a>
-  <a id="2513" class="Symbol">(</a><a id="2514" href="/Classical/Structures/Group/Cosets/#2514" class="Bound">H</a> <a id="2516" class="Symbol">:</a> <a id="2518" href="/classic/Relation.Unary.html#1178" class="Function">Pred</a> <a id="2523" href="/Setoid/Algebras/Basic/#3785" class="Function Operator">𝕌[</a> <a id="2526" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="2532" href="/Classical/Structures/Group/Cosets/#2484" class="Bound">𝒢</a> <a id="2534" href="/Setoid/Algebras/Basic/#3785" class="Function Operator">]</a> <a id="2536" href="/Classical/Structures/Group/Cosets/#2500" class="Bound">ℓ</a><a id="2537" class="Symbol">)</a> <a id="2539" class="Symbol">(</a><a id="2540" href="/Classical/Structures/Group/Cosets/#2540" class="Bound">H-isSubgroup</a> <a id="2553" class="Symbol">:</a> <a id="2555" href="/Classical/Structures/Group/Subgroups/#6460" class="Record">IsSubgroup</a> <a id="2566" href="/Classical/Structures/Group/Cosets/#2484" class="Bound">𝒢</a> <a id="2568" href="/Classical/Structures/Group/Cosets/#2514" class="Bound">H</a><a id="2569" class="Symbol">)</a>
+  <a id="2513" class="Symbol">(</a><a id="2514" href="/Classical/Structures/Group/Cosets/#2514" class="Bound">H</a> <a id="2516" class="Symbol">:</a> <a id="2518" href="/classic/Relation.Unary.html#1178" class="Function">Pred</a> <a id="2523" href="/Setoid/Algebras/Basic/#5875" class="Function Operator">𝕌[</a> <a id="2526" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="2532" href="/Classical/Structures/Group/Cosets/#2484" class="Bound">𝒢</a> <a id="2534" href="/Setoid/Algebras/Basic/#5875" class="Function Operator">]</a> <a id="2536" href="/Classical/Structures/Group/Cosets/#2500" class="Bound">ℓ</a><a id="2537" class="Symbol">)</a> <a id="2539" class="Symbol">(</a><a id="2540" href="/Classical/Structures/Group/Cosets/#2540" class="Bound">H-isSubgroup</a> <a id="2553" class="Symbol">:</a> <a id="2555" href="/Classical/Structures/Group/Subgroups/#6460" class="Record">IsSubgroup</a> <a id="2566" href="/Classical/Structures/Group/Cosets/#2484" class="Bound">𝒢</a> <a id="2568" href="/Classical/Structures/Group/Cosets/#2514" class="Bound">H</a><a id="2569" class="Symbol">)</a>
   <a id="2573" class="Keyword">where</a>
 
   <a id="2582" class="Keyword">private</a>
     <a id="Coset.𝑮"></a><a id="2594" href="/Classical/Structures/Group/Cosets/#2594" class="Function">𝑮</a> <a id="2596" class="Symbol">=</a> <a id="2598" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="2604" href="/Classical/Structures/Group/Cosets/#2484" class="Bound">𝒢</a>
-    <a id="Coset.G"></a><a id="2610" href="/Classical/Structures/Group/Cosets/#2610" class="Function">G</a> <a id="2612" class="Symbol">=</a> <a id="2614" href="/Setoid/Algebras/Basic/#3785" class="Function Operator">𝕌[</a> <a id="2617" href="/Classical/Structures/Group/Cosets/#2594" class="Function">𝑮</a> <a id="2619" href="/Setoid/Algebras/Basic/#3785" class="Function Operator">]</a>
+    <a id="Coset.G"></a><a id="2610" href="/Classical/Structures/Group/Cosets/#2610" class="Function">G</a> <a id="2612" class="Symbol">=</a> <a id="2614" href="/Setoid/Algebras/Basic/#5875" class="Function Operator">𝕌[</a> <a id="2617" href="/Classical/Structures/Group/Cosets/#2594" class="Function">𝑮</a> <a id="2619" href="/Setoid/Algebras/Basic/#5875" class="Function Operator">]</a>
 
-  <a id="2624" class="Keyword">open</a> <a id="2629" href="/classic/Relation.Binary.Bundles.html#1235" class="Module">Setoid</a> <a id="2636" href="/Setoid/Algebras/Basic/#3635" class="Function Operator">𝔻[</a> <a id="2639" href="/Classical/Structures/Group/Cosets/#2594" class="Function">𝑮</a> <a id="2641" href="/Setoid/Algebras/Basic/#3635" class="Function Operator">]</a>            <a id="2654" class="Keyword">using</a> <a id="2660" class="Symbol">(</a> <a id="2662" href="/classic/Relation.Binary.Bundles.html#1324" class="Field Operator">_≈_</a> <a id="2666" class="Symbol">)</a>
+  <a id="2624" class="Keyword">open</a> <a id="2629" href="/classic/Relation.Binary.Bundles.html#1235" class="Module">Setoid</a> <a id="2636" href="/Setoid/Algebras/Basic/#5431" class="Function Operator">𝔻[</a> <a id="2639" href="/Classical/Structures/Group/Cosets/#2594" class="Function">𝑮</a> <a id="2641" href="/Setoid/Algebras/Basic/#5431" class="Function Operator">]</a>            <a id="2654" class="Keyword">using</a> <a id="2660" class="Symbol">(</a> <a id="2662" href="/classic/Relation.Binary.Bundles.html#1324" class="Field Operator">_≈_</a> <a id="2666" class="Symbol">)</a>
                                 <a id="2700" class="Keyword">renaming</a> <a id="2709" class="Symbol">(</a> <a id="2711" href="/classic/Relation.Binary.Structures.html#1641" class="Function">refl</a> <a id="2716" class="Symbol">to</a> <a id="2719" class="Function">≈refl</a> <a id="2725" class="Symbol">;</a> <a id="2727" href="/classic/Relation.Binary.Structures.html#1245" class="Function">sym</a> <a id="2731" class="Symbol">to</a> <a id="2734" class="Function">≈sym</a> <a id="2739" class="Symbol">;</a> <a id="2741" href="/classic/Relation.Binary.Structures.html#1271" class="Function">trans</a> <a id="2747" class="Symbol">to</a> <a id="2750" class="Function">≈trans</a> <a id="2757" class="Symbol">)</a>
-  <a id="2761" class="Keyword">open</a> <a id="2766" href="/classic/Relation.Binary.Reasoning.Setoid.html" class="Module">SetoidReasoning</a> <a id="2782" href="/Setoid/Algebras/Basic/#3635" class="Function Operator">𝔻[</a> <a id="2785" href="/Classical/Structures/Group/Cosets/#2594" class="Function">𝑮</a> <a id="2787" href="/Setoid/Algebras/Basic/#3635" class="Function Operator">]</a>
+  <a id="2761" class="Keyword">open</a> <a id="2766" href="/classic/Relation.Binary.Reasoning.Setoid.html" class="Module">SetoidReasoning</a> <a id="2782" href="/Setoid/Algebras/Basic/#5431" class="Function Operator">𝔻[</a> <a id="2785" href="/Classical/Structures/Group/Cosets/#2594" class="Function">𝑮</a> <a id="2787" href="/Setoid/Algebras/Basic/#5431" class="Function Operator">]</a>
   <a id="2791" class="Keyword">open</a> <a id="2796" href="/Classical/Structures/Group/Basic/#6775" class="Module">Group-Op</a> <a id="2805" href="/Classical/Structures/Group/Cosets/#2484" class="Bound">𝒢</a>               <a id="2821" class="Keyword">using</a>  <a id="2828" class="Symbol">(</a> <a id="2830" href="/Classical/Structures/Group/Basic/#7013" class="Function Operator">_∙_</a> <a id="2834" class="Symbol">;</a> <a id="2836" href="/Classical/Structures/Group/Basic/#7073" class="Function">ε</a> <a id="2838" class="Symbol">;</a> <a id="2840" href="/Classical/Structures/Group/Basic/#7125" class="Function Operator">_⁻¹</a> <a id="2844" class="Symbol">;</a> <a id="2846" href="/Classical/Structures/Group/Basic/#7229" class="Function">∙-cong</a> <a id="2853" class="Symbol">;</a> <a id="2855" href="/Classical/Structures/Group/Basic/#7351" class="Function">⁻¹-cong</a>
                                        <a id="2902" class="Symbol">;</a> <a id="2904" href="/Classical/Structures/Group/Basic/#7937" class="Function">assoc-law</a> <a id="2914" class="Symbol">;</a> <a id="2916" href="/Classical/Structures/Group/Basic/#8931" class="Function">invˡ-law</a> <a id="2925" class="Symbol">)</a>
   <a id="2929" class="Keyword">open</a> <a id="2934" href="/classic/Algebra.Properties.Group.html" class="Module">GroupProperties</a> <a id="2950" href="/Classical/Bundles/Group/#2101" class="Function Operator">⟨</a> <a id="2952" href="/Classical/Structures/Group/Cosets/#2484" class="Bound">𝒢</a> <a id="2954" href="/Classical/Bundles/Group/#2101" class="Function Operator">⟩ᵍᵖ</a>  <a id="2959" class="Keyword">using</a>  <a id="2966" class="Symbol">(</a> <a id="2968" href="/classic/Algebra.Properties.Group.html#3377" class="Function">⁻¹-involutive</a> <a id="2982" class="Symbol">;</a> <a id="2984" href="/classic/Algebra.Properties.Group.html#3876" class="Function">⁻¹-anti-homo-∙</a>

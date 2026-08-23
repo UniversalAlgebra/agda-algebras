@@ -14772,6 +14772,8 @@
       
         
       
+        
+      
     
     
     
@@ -15104,6 +15106,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../adr/010-documentation-coverage-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-010: Documentation coverage policy for public definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -15328,7 +15358,7 @@ single defining relation.</p>
 <a id="1559" class="Comment">-- Imports from the Agda Universal Algebra Library -----------------------------</a>
 <a id="1640" class="Keyword">open</a> <a id="1645" class="Keyword">import</a> <a id="1652" href="/Classical/Signatures/Magma/" class="Module">Classical.Signatures.Magma</a>           <a id="1689" class="Keyword">using</a> <a id="1695" class="Symbol">(</a> <a id="1697" href="/Classical/Signatures/Magma/#3774" class="Function">Sig-Magma</a> <a id="1707" class="Symbol">;</a> <a id="1709" href="/Classical/Signatures/Magma/#3310" class="InductiveConstructor">∙-Op</a> <a id="1714" class="Symbol">)</a>
 <a id="1716" class="Keyword">open</a> <a id="1721" class="Keyword">import</a> <a id="1728" href="/Overture/Terms/" class="Module">Overture.Terms</a>       <a id="1749" class="Symbol">{</a><a id="1750" class="Argument">𝑆</a> <a id="1752" class="Symbol">=</a> <a id="1754" href="/Classical/Signatures/Magma/#3774" class="Function">Sig-Magma</a><a id="1763" class="Symbol">}</a> <a id="1765" class="Keyword">using</a> <a id="1771" class="Symbol">(</a> <a id="1773" href="/Overture/Terms/Basic/#3256" class="Datatype">Term</a> <a id="1778" class="Symbol">;</a> <a id="1780" href="/Overture/Terms/Basic/#3296" class="InductiveConstructor">ℊ</a> <a id="1782" class="Symbol">;</a> <a id="1784" href="/Overture/Terms/Basic/#3368" class="InductiveConstructor">node</a> <a id="1789" class="Symbol">)</a>
-<a id="1791" class="Keyword">open</a> <a id="1796" class="Keyword">import</a> <a id="1803" href="/Setoid/Algebras/" class="Module">Setoid.Algebras</a> <a id="1819" class="Keyword">using</a> <a id="1825" class="Symbol">(</a> <a id="1827" href="/Setoid/Algebras/Basic/#3635" class="Function Operator">𝔻[_]</a> <a id="1832" class="Symbol">)</a>
+<a id="1791" class="Keyword">open</a> <a id="1796" class="Keyword">import</a> <a id="1803" href="/Setoid/Algebras/" class="Module">Setoid.Algebras</a> <a id="1819" class="Keyword">using</a> <a id="1825" class="Symbol">(</a> <a id="1827" href="/Setoid/Algebras/Basic/#5431" class="Function Operator">𝔻[_]</a> <a id="1832" class="Symbol">)</a>
 <a id="1834" class="Keyword">open</a> <a id="1839" class="Keyword">import</a> <a id="1846" href="/Setoid/Varieties/SoundAndComplete/" class="Module">Setoid.Varieties.SoundAndComplete</a>
   <a id="1882" class="Keyword">using</a> <a id="1888" class="Symbol">(</a> <a id="1890" href="/Setoid/Varieties/SoundAndComplete/#1894" class="Record">Eq</a> <a id="1893" class="Symbol">;</a> <a id="1895" href="/Setoid/Varieties/SoundAndComplete/#1951" class="InductiveConstructor Operator">_≈̇_</a> <a id="1900" class="Symbol">;</a> <a id="1902" href="/Setoid/Varieties/SoundAndComplete/#4108" class="Function Operator">_⊨_</a> <a id="1906" class="Symbol">;</a> <a id="1908" href="/Setoid/Varieties/SoundAndComplete/#5511" class="Datatype Operator">_⊢_▹_≈_</a> <a id="1916" class="Symbol">;</a> <a id="1918" class="Keyword">module</a> <a id="1925" href="/Setoid/Varieties/SoundAndComplete/#8504" class="Module">FreeAlgebra</a> <a id="1937" class="Symbol">)</a>
 
@@ -15367,7 +15397,7 @@ defining relation is available as <code class="AgdaInductiveConstructor">hyp</co
 the redex <code>a · a</code> with congruence (<code class="AgdaInductiveConstructor">app</code>)
 and then once more at the top collapses the two three-fold products to
 <code>a</code>.</p>
-<pre class="Agda"><a id="3076" class="Keyword">open</a> <a id="3081" href="/classic/Relation.Binary.Bundles.html#1235" class="Module">Setoid</a> <a id="3088" href="/Setoid/Algebras/Basic/#3635" class="Function Operator">𝔻[</a> <a id="3091" href="/Setoid/Varieties/SoundAndComplete/#9177" class="Function Operator">𝔽[</a> <a id="3094" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="3098" class="Number">1</a> <a id="3100" href="/Setoid/Varieties/SoundAndComplete/#9177" class="Function Operator">]</a> <a id="3102" href="/Setoid/Algebras/Basic/#3635" class="Function Operator">]</a> <a id="3104" class="Keyword">using</a> <a id="3110" class="Symbol">(</a> <a id="3112" href="/classic/Relation.Binary.Bundles.html#1324" class="Field Operator">_≈_</a> <a id="3116" class="Symbol">)</a>
+<pre class="Agda"><a id="3076" class="Keyword">open</a> <a id="3081" href="/classic/Relation.Binary.Bundles.html#1235" class="Module">Setoid</a> <a id="3088" href="/Setoid/Algebras/Basic/#5431" class="Function Operator">𝔻[</a> <a id="3091" href="/Setoid/Varieties/SoundAndComplete/#9177" class="Function Operator">𝔽[</a> <a id="3094" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="3098" class="Number">1</a> <a id="3100" href="/Setoid/Varieties/SoundAndComplete/#9177" class="Function Operator">]</a> <a id="3102" href="/Setoid/Algebras/Basic/#5431" class="Function Operator">]</a> <a id="3104" class="Keyword">using</a> <a id="3110" class="Symbol">(</a> <a id="3112" href="/classic/Relation.Binary.Bundles.html#1324" class="Field Operator">_≈_</a> <a id="3116" class="Symbol">)</a>
 
 <a id="3119" class="Comment">-- the defining relation itself</a>
 <a id="idem"></a><a id="3151" href="/Examples/Setoid/Presentation/#3151" class="Function">idem</a> <a id="3156" class="Symbol">:</a> <a id="3158" class="Symbol">(</a><a id="3159" href="/Examples/Setoid/Presentation/#2345" class="Function">a</a> <a id="3161" href="/Examples/Setoid/Presentation/#2238" class="Function Operator">·</a> <a id="3163" href="/Examples/Setoid/Presentation/#2345" class="Function">a</a><a id="3164" class="Symbol">)</a> <a id="3166" href="/classic/Relation.Binary.Bundles.html#1324" class="Function Operator">≈</a> <a id="3168" href="/Examples/Setoid/Presentation/#2345" class="Function">a</a>

@@ -16203,6 +16203,8 @@
       
         
       
+        
+      
     
     
     
@@ -16522,6 +16524,34 @@
     
   
     ADR-009: Signature genericity via generalized variables in the core; module parameters at the Classical layer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adr/010-documentation-coverage-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-010: Documentation coverage policy for public definitions
   
 
     
@@ -20015,8 +20045,8 @@ edits to those regions will be overwritten on the next render.
 <h2 id="description_43">Description<a class="headerlink" href="#description_43" title="Anchor link to this section">&para;</a></h2>
 <p>Every record, type family, and top-level function in the public API should have a prose comment block explaining what it is, when to use it, and cross-references to related definitions.  Long-tail task; pursued as the per-subtree sub-issues below.</p>
 <h2 id="where-it-stands">Where it stands<a class="headerlink" href="#where-it-stands" title="Anchor link to this section">&para;</a></h2>
-<p>Measured by <code>make docstrings</code> (#537) over the live trees: <strong>3247 public definitions in 307 modules</strong>, of which <strong>201</strong> sit under a fence carrying no real prose, and <strong>50</strong> modules open with nothing beyond the boilerplate "This is the [X][] module of the …" sentence.</p>
-<p><code>make docstrings</code> is a ratchet pinned at <code>DOCSTRING_MAX_GAPS</code>, so the count can only fall.  Each sub-issue lowers it.</p>
+<p>Measured by <code>make docstrings</code> (#537) over the live trees: <strong>3226 public definitions in 307 modules</strong>, of which <strong>201</strong> sit under a fence carrying no real prose, and <strong>50</strong> modules open with nothing beyond the boilerplate "This is the [X][] module of the …" sentence.</p>
+<p><code>make docstrings</code> is a ratchet pinned at <code>DOCSTRING_MAX_GAPS</code> (201) and <code>DOCSTRING_MAX_WEAK_HEADERS</code> (50), so both counts can only fall.  The policy and its reasoning are recorded in ADR-010.  Each sub-issue lowers it.</p>
 <h2 id="tasks_42">Tasks<a class="headerlink" href="#tasks_42" title="Anchor link to this section">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> #539 — Setoid/Algebras and Setoid/Homomorphisms (25 gaps, 10 headers)</li>
@@ -20036,13 +20066,13 @@ edits to those regions will be overwritten on the next render.
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> No module opens with only the boilerplate sentence.</li>
 </ul>
 <p>The original criterion said a "<code>grep</code>-based audit".  A grep cannot do this — the corpus has no <code>-- |</code> docstrings, prose lives in Markdown outside the fences, and almost every definition is indented inside an anonymous <code>module _ … where</code>.  <code>scripts/python/docstring_audit.py</code> parses literate structure and Agda's layout rule instead; it is validated against Agda's own scope checker.</p>
-<h2 id="open-decision-which-bar">Open decision: which bar<a class="headerlink" href="#open-decision-which-bar" title="Anchor link to this section">&para;</a></h2>
+<h2 id="the-bar-decided">The bar (decided)<a class="headerlink" href="#the-bar-decided" title="Anchor link to this section">&para;</a></h2>
+<p>Settled in <a href="https://github.com/ualib/agda-algebras/blob/master/docs/adr/010-documentation-coverage-policy.md">ADR-010</a>, and reflected in <code>docs/STYLE_GUIDE.md</code>:</p>
 <ul>
-<li><strong>Lenient</strong> (the ratchet's measure, and the recommendation): every fence carries a real paragraph.  201 to clear.</li>
-<li><strong>Strict</strong> (<code>--strict</code>): the style guide's literal "immediately above" — one definition per fence.  1969 to clear, and it fragments indented module bodies, which works against reading the library as a narrative.</li>
-<li><strong>Named coverage</strong> (a third measure, proposed): every public definition is <em>mentioned by name</em> in the prose attached to its fence.  Currently 19% repo-wide; #538 hits 11/13 without having aimed at it, because prose that describes a definition tends to name it.</li>
+<li><strong>The bar is per code fence.</strong>  Every fence is preceded by a real paragraph, and every module opens with prose beyond the boilerplate sentence.  201 definitions and 50 module headers to clear; <code>make docstrings</code> enforces both, ratcheted.</li>
+<li><strong>One definition per fence is rejected</strong> as a repository-wide rule.  It would enforce layout rather than content — 1952 paragraphs each restating a type signature would satisfy it — and it fragments pages that are meant to read as an exposition of universal algebra.  <code>--strict</code> stays in the tool as a diagnostic for sizing, never as a gate.</li>
+<li><strong>A block covering several definitions should name each of them</strong>, so a reader, and the corpus extractor of #275, can tell which sentence belongs to which definition.  Reported as the <code>named</code> column (19% today); tracked, deliberately not gated.</li>
 </ul>
-<p>Recommendation: gate on lenient, track named coverage as the quality target, reject strict.  Rationale is that strict enforces <em>layout</em> rather than content — 1969 paragraphs each restating a type signature would satisfy it — whereas named coverage is what makes per-definition prose extractable for #275 while leaving the page readable as prose.</p>
 <h2 id="conventions-for-a-docstring-pr">Conventions for a docstring PR<a class="headerlink" href="#conventions-for-a-docstring-pr" title="Anchor link to this section">&para;</a></h2>
 <p>Every sub-issue follows these; they are recorded once here rather than repeated nine times.</p>
 <ul>
@@ -20086,10 +20116,6 @@ edits to those regions will be overwritten on the next render.
 <td>modules with a boilerplate-only or heading-only header</td>
 <td>10</td>
 </tr>
-<tr>
-<td>(reference) definitions failing the strict reading</td>
-<td>73</td>
-</tr>
 </tbody>
 </table>
 <p>Sized for one PR.</p>
@@ -20102,7 +20128,7 @@ edits to those regions will be overwritten on the next render.
 <h2 id="how">How<a class="headerlink" href="#how" title="Anchor link to this section">&para;</a></h2>
 <p><strong>Conventions, tooling, grounding discipline and the verification checklist are in #268</strong> — read that first; they are not repeated here.  Exemplar: #538.</p>
 <blockquote>
-<p>Counts assume the lenient bar (every fence carries real prose), the recommendation on #268.  If the strict bar is adopted instead, this issue grows from 25 to 73 and should be re-split.</p>
+<p>The bar is per code fence, settled in ADR-010: every fence carries a real paragraph, and every module opens with more than the boilerplate sentence.  One definition per fence was considered and <strong>rejected</strong>, so the <code>--strict</code> figure for this subtree (73) sizes a road not taken and is not a backlog.</p>
 </blockquote>
 <hr />
 <p>Sub-issue of #268.  Tooling: #537.</p>
@@ -20126,7 +20152,7 @@ edits to those regions will be overwritten on the next render.
 </tr>
 <tr>
 <td>public definitions</td>
-<td>145</td>
+<td>144</td>
 </tr>
 <tr>
 <td><strong>definitions with no prose on their fence</strong></td>
@@ -20135,10 +20161,6 @@ edits to those regions will be overwritten on the next render.
 <tr>
 <td>modules with a boilerplate-only or heading-only header</td>
 <td>5</td>
-</tr>
-<tr>
-<td>(reference) definitions failing the strict reading</td>
-<td>100</td>
 </tr>
 </tbody>
 </table>
@@ -20152,7 +20174,7 @@ edits to those regions will be overwritten on the next render.
 <h2 id="how_1">How<a class="headerlink" href="#how_1" title="Anchor link to this section">&para;</a></h2>
 <p><strong>Conventions, tooling, grounding discipline and the verification checklist are in #268</strong> — read that first; they are not repeated here.  Exemplar: #538.</p>
 <blockquote>
-<p>Counts assume the lenient bar (every fence carries real prose), the recommendation on #268.  If the strict bar is adopted instead, this issue grows from 23 to 100 and should be re-split.</p>
+<p>The bar is per code fence, settled in ADR-010: every fence carries a real paragraph, and every module opens with more than the boilerplate sentence.  One definition per fence was considered and <strong>rejected</strong>, so the <code>--strict</code> figure for this subtree (99) sizes a road not taken and is not a backlog.</p>
 </blockquote>
 <hr />
 <p>Sub-issue of #268.  Tooling: #537.</p>
@@ -20186,10 +20208,6 @@ edits to those regions will be overwritten on the next render.
 <td>modules with a boilerplate-only or heading-only header</td>
 <td>9</td>
 </tr>
-<tr>
-<td>(reference) definitions failing the strict reading</td>
-<td>370</td>
-</tr>
 </tbody>
 </table>
 <p>Sized for one PR.</p>
@@ -20202,7 +20220,7 @@ edits to those regions will be overwritten on the next render.
 <h2 id="how_2">How<a class="headerlink" href="#how_2" title="Anchor link to this section">&para;</a></h2>
 <p><strong>Conventions, tooling, grounding discipline and the verification checklist are in #268</strong> — read that first; they are not repeated here.  Exemplar: #538.</p>
 <blockquote>
-<p>Counts assume the lenient bar (every fence carries real prose), the recommendation on #268.  If the strict bar is adopted instead, this issue grows from 11 to 370 and should be re-split.</p>
+<p>The bar is per code fence, settled in ADR-010: every fence carries a real paragraph, and every module opens with more than the boilerplate sentence.  One definition per fence was considered and <strong>rejected</strong>, so the <code>--strict</code> figure for this subtree (370) sizes a road not taken and is not a backlog.</p>
 </blockquote>
 <hr />
 <p>Sub-issue of #268.  Tooling: #537.</p>
@@ -20226,7 +20244,7 @@ edits to those regions will be overwritten on the next render.
 </tr>
 <tr>
 <td>public definitions</td>
-<td>123</td>
+<td>104</td>
 </tr>
 <tr>
 <td><strong>definitions with no prose on their fence</strong></td>
@@ -20235,10 +20253,6 @@ edits to those regions will be overwritten on the next render.
 <tr>
 <td>modules with a boilerplate-only or heading-only header</td>
 <td>5</td>
-</tr>
-<tr>
-<td>(reference) definitions failing the strict reading</td>
-<td>82</td>
 </tr>
 </tbody>
 </table>
@@ -20252,7 +20266,7 @@ edits to those regions will be overwritten on the next render.
 <h2 id="how_3">How<a class="headerlink" href="#how_3" title="Anchor link to this section">&para;</a></h2>
 <p><strong>Conventions, tooling, grounding discipline and the verification checklist are in #268</strong> — read that first; they are not repeated here.  Exemplar: #538.</p>
 <blockquote>
-<p>Counts assume the lenient bar (every fence carries real prose), the recommendation on #268.  If the strict bar is adopted instead, this issue grows from 6 to 82 and should be re-split.</p>
+<p>The bar is per code fence, settled in ADR-010: every fence carries a real paragraph, and every module opens with more than the boilerplate sentence.  One definition per fence was considered and <strong>rejected</strong>, so the <code>--strict</code> figure for this subtree (66) sizes a road not taken and is not a backlog.</p>
 </blockquote>
 <hr />
 <p>Sub-issue of #268.  Tooling: #537.</p>
@@ -20276,7 +20290,7 @@ edits to those regions will be overwritten on the next render.
 </tr>
 <tr>
 <td>public definitions</td>
-<td>337</td>
+<td>336</td>
 </tr>
 <tr>
 <td><strong>definitions with no prose on their fence</strong></td>
@@ -20285,10 +20299,6 @@ edits to those regions will be overwritten on the next render.
 <tr>
 <td>modules with a boilerplate-only or heading-only header</td>
 <td>1</td>
-</tr>
-<tr>
-<td>(reference) definitions failing the strict reading</td>
-<td>240</td>
 </tr>
 </tbody>
 </table>
@@ -20302,7 +20312,7 @@ edits to those regions will be overwritten on the next render.
 <h2 id="how_4">How<a class="headerlink" href="#how_4" title="Anchor link to this section">&para;</a></h2>
 <p><strong>Conventions, tooling, grounding discipline and the verification checklist are in #268</strong> — read that first; they are not repeated here.  Exemplar: #538.</p>
 <blockquote>
-<p>Counts assume the lenient bar (every fence carries real prose), the recommendation on #268.  If the strict bar is adopted instead, this issue grows from 34 to 240 and should be re-split.</p>
+<p>The bar is per code fence, settled in ADR-010: every fence carries a real paragraph, and every module opens with more than the boilerplate sentence.  One definition per fence was considered and <strong>rejected</strong>, so the <code>--strict</code> figure for this subtree (240) sizes a road not taken and is not a backlog.</p>
 </blockquote>
 <hr />
 <p>Sub-issue of #268.  Tooling: #537.</p>
@@ -20336,10 +20346,6 @@ edits to those regions will be overwritten on the next render.
 <td>modules with a boilerplate-only or heading-only header</td>
 <td>1</td>
 </tr>
-<tr>
-<td>(reference) definitions failing the strict reading</td>
-<td>202</td>
-</tr>
 </tbody>
 </table>
 <p>Sized for one or two PRs; split by directory if the diff runs long.</p>
@@ -20352,7 +20358,7 @@ edits to those regions will be overwritten on the next render.
 <h2 id="how_5">How<a class="headerlink" href="#how_5" title="Anchor link to this section">&para;</a></h2>
 <p><strong>Conventions, tooling, grounding discipline and the verification checklist are in #268</strong> — read that first; they are not repeated here.  Exemplar: #538.</p>
 <blockquote>
-<p>Counts assume the lenient bar (every fence carries real prose), the recommendation on #268.  If the strict bar is adopted instead, this issue grows from 31 to 202 and should be re-split.</p>
+<p>The bar is per code fence, settled in ADR-010: every fence carries a real paragraph, and every module opens with more than the boilerplate sentence.  One definition per fence was considered and <strong>rejected</strong>, so the <code>--strict</code> figure for this subtree (202) sizes a road not taken and is not a backlog.</p>
 </blockquote>
 <hr />
 <p>Sub-issue of #268.  Tooling: #537.</p>
@@ -20386,10 +20392,6 @@ edits to those regions will be overwritten on the next render.
 <td>modules with a boilerplate-only or heading-only header</td>
 <td>1</td>
 </tr>
-<tr>
-<td>(reference) definitions failing the strict reading</td>
-<td>154</td>
-</tr>
 </tbody>
 </table>
 <p>Sized for one or two PRs; split by directory if the diff runs long.</p>
@@ -20402,7 +20404,7 @@ edits to those regions will be overwritten on the next render.
 <h2 id="how_6">How<a class="headerlink" href="#how_6" title="Anchor link to this section">&para;</a></h2>
 <p><strong>Conventions, tooling, grounding discipline and the verification checklist are in #268</strong> — read that first; they are not repeated here.  Exemplar: #538.</p>
 <blockquote>
-<p>Counts assume the lenient bar (every fence carries real prose), the recommendation on #268.  If the strict bar is adopted instead, this issue grows from 37 to 154 and should be re-split.</p>
+<p>The bar is per code fence, settled in ADR-010: every fence carries a real paragraph, and every module opens with more than the boilerplate sentence.  One definition per fence was considered and <strong>rejected</strong>, so the <code>--strict</code> figure for this subtree (154) sizes a road not taken and is not a backlog.</p>
 </blockquote>
 <hr />
 <p>Sub-issue of #268.  Tooling: #537.</p>
@@ -20436,10 +20438,6 @@ edits to those regions will be overwritten on the next render.
 <td>modules with a boilerplate-only or heading-only header</td>
 <td>8</td>
 </tr>
-<tr>
-<td>(reference) definitions failing the strict reading</td>
-<td>272</td>
-</tr>
 </tbody>
 </table>
 <p>Sized for one or two PRs; split by directory if the diff runs long.</p>
@@ -20452,7 +20450,7 @@ edits to those regions will be overwritten on the next render.
 <h2 id="how_7">How<a class="headerlink" href="#how_7" title="Anchor link to this section">&para;</a></h2>
 <p><strong>Conventions, tooling, grounding discipline and the verification checklist are in #268</strong> — read that first; they are not repeated here.  Exemplar: #538.</p>
 <blockquote>
-<p>Counts assume the lenient bar (every fence carries real prose), the recommendation on #268.  If the strict bar is adopted instead, this issue grows from 30 to 272 and should be re-split.</p>
+<p>The bar is per code fence, settled in ADR-010: every fence carries a real paragraph, and every module opens with more than the boilerplate sentence.  One definition per fence was considered and <strong>rejected</strong>, so the <code>--strict</code> figure for this subtree (272) sizes a road not taken and is not a backlog.</p>
 </blockquote>
 <hr />
 <p>Sub-issue of #268.  Tooling: #537.</p>
@@ -20486,10 +20484,6 @@ edits to those regions will be overwritten on the next render.
 <td>modules with a boilerplate-only or heading-only header</td>
 <td>10</td>
 </tr>
-<tr>
-<td>(reference) definitions failing the strict reading</td>
-<td>476</td>
-</tr>
 </tbody>
 </table>
 <p>Sized for one PR.</p>
@@ -20502,7 +20496,7 @@ edits to those regions will be overwritten on the next render.
 <h2 id="how_8">How<a class="headerlink" href="#how_8" title="Anchor link to this section">&para;</a></h2>
 <p><strong>Conventions, tooling, grounding discipline and the verification checklist are in #268</strong> — read that first; they are not repeated here.  Exemplar: #538.</p>
 <blockquote>
-<p>Counts assume the lenient bar (every fence carries real prose), the recommendation on #268.  If the strict bar is adopted instead, this issue grows from 4 to 476 and should be re-split.</p>
+<p>The bar is per code fence, settled in ADR-010: every fence carries a real paragraph, and every module opens with more than the boilerplate sentence.  One definition per fence was considered and <strong>rejected</strong>, so the <code>--strict</code> figure for this subtree (476) sizes a road not taken and is not a backlog.</p>
 </blockquote>
 <hr />
 <p>Sub-issue of #268.  Tooling: #537.</p>

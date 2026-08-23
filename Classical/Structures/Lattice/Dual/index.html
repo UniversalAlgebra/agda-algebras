@@ -14796,6 +14796,8 @@
       
         
       
+        
+      
     
     
     
@@ -15128,6 +15130,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../adr/010-documentation-coverage-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-010: Documentation coverage policy for public definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -15391,7 +15421,7 @@ class of representable lattices is closed under dualization is <em>stated</em> o
                                                        <a id="2698" class="Symbol">;</a> <a id="2700" href="/Classical/Properties/Lattice/#7818" class="Function">TopOf</a> <a id="2706" class="Symbol">;</a> <a id="2708" href="/Classical/Properties/Lattice/#7910" class="Function">BottomOf</a> <a id="2717" class="Symbol">)</a>
 <a id="2719" class="Keyword">open</a> <a id="2724" class="Keyword">import</a> <a id="2731" href="/Classical/Structures/Lattice/Basic/" class="Module">Classical.Structures.Lattice.Basic</a>  <a id="2767" class="Keyword">using</a>  <a id="2774" class="Symbol">(</a> <a id="2776" href="/Classical/Structures/Lattice/Basic/#6053" class="Function">Lattice</a> <a id="2784" class="Symbol">;</a> <a id="2786" class="Keyword">module</a> <a id="2793" href="/Classical/Structures/Lattice/Basic/#12153" class="Module">Lattice-Op</a>
                                                        <a id="2859" class="Symbol">;</a> <a id="2861" href="/Classical/Structures/Lattice/Basic/#21549" class="Function">setoidEqsToLattice</a> <a id="2880" class="Symbol">)</a>
-<a id="2882" class="Keyword">open</a> <a id="2887" class="Keyword">import</a> <a id="2894" href="/Setoid/Algebras/Basic/" class="Module">Setoid.Algebras.Basic</a>               <a id="2930" class="Keyword">using</a>  <a id="2937" class="Symbol">(</a> <a id="2939" href="/Setoid/Algebras/Basic/#3635" class="Function Operator">𝔻[_]</a> <a id="2944" class="Symbol">)</a>
+<a id="2882" class="Keyword">open</a> <a id="2887" class="Keyword">import</a> <a id="2894" href="/Setoid/Algebras/Basic/" class="Module">Setoid.Algebras.Basic</a>               <a id="2930" class="Keyword">using</a>  <a id="2937" class="Symbol">(</a> <a id="2939" href="/Setoid/Algebras/Basic/#5431" class="Function Operator">𝔻[_]</a> <a id="2944" class="Symbol">)</a>
 
 <a id="2947" class="Keyword">private</a> <a id="2955" class="Keyword">variable</a> <a id="2964" href="/Classical/Structures/Lattice/Dual/#2964" class="Generalizable">α</a> <a id="2966" href="/Classical/Structures/Lattice/Dual/#2966" class="Generalizable">ρ</a> <a id="2968" class="Symbol">:</a> <a id="2970" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a>
 </pre>
@@ -15402,7 +15432,7 @@ companions for a fixed lattice.</p>
 <pre class="Agda"><a id="3135" class="Keyword">module</a> <a id="LatticeDual"></a><a id="3142" href="/Classical/Structures/Lattice/Dual/#3142" class="Module">LatticeDual</a> <a id="3154" class="Symbol">(</a><a id="3155" href="/Classical/Structures/Lattice/Dual/#3155" class="Bound">𝑳</a> <a id="3157" class="Symbol">:</a> <a id="3159" href="/Classical/Structures/Lattice/Basic/#6053" class="Function">Lattice</a> <a id="3167" href="/Classical/Structures/Lattice/Dual/#2964" class="Generalizable">α</a> <a id="3169" href="/Classical/Structures/Lattice/Dual/#2966" class="Generalizable">ρ</a><a id="3170" class="Symbol">)</a> <a id="3172" class="Keyword">where</a>
   <a id="3180" class="Keyword">private</a> <a id="LatticeDual.𝑨"></a><a id="3188" href="/Classical/Structures/Lattice/Dual/#3188" class="Function">𝑨</a> <a id="3190" class="Symbol">=</a> <a id="3192" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="3198" href="/Classical/Structures/Lattice/Dual/#3155" class="Bound">𝑳</a>
 
-  <a id="3203" class="Keyword">open</a> <a id="3208" href="/classic/Relation.Binary.Bundles.html#1235" class="Module">Setoid</a> <a id="3215" href="/Setoid/Algebras/Basic/#3635" class="Function Operator">𝔻[</a> <a id="3218" href="/Classical/Structures/Lattice/Dual/#3188" class="Function">𝑨</a> <a id="3220" href="/Setoid/Algebras/Basic/#3635" class="Function Operator">]</a> <a id="3222" class="Keyword">using</a> <a id="3228" class="Symbol">(</a> <a id="3230" href="/classic/Relation.Binary.Bundles.html#1324" class="Field Operator">_≈_</a> <a id="3234" class="Symbol">)</a>
+  <a id="3203" class="Keyword">open</a> <a id="3208" href="/classic/Relation.Binary.Bundles.html#1235" class="Module">Setoid</a> <a id="3215" href="/Setoid/Algebras/Basic/#5431" class="Function Operator">𝔻[</a> <a id="3218" href="/Classical/Structures/Lattice/Dual/#3188" class="Function">𝑨</a> <a id="3220" href="/Setoid/Algebras/Basic/#5431" class="Function Operator">]</a> <a id="3222" class="Keyword">using</a> <a id="3228" class="Symbol">(</a> <a id="3230" href="/classic/Relation.Binary.Bundles.html#1324" class="Field Operator">_≈_</a> <a id="3234" class="Symbol">)</a>
     <a id="3240" class="Keyword">renaming</a> <a id="3249" class="Symbol">(</a> <a id="3251" href="/classic/Relation.Binary.Structures.html#1271" class="Function">trans</a> <a id="3257" class="Symbol">to</a> <a id="3260" class="Function">≈trans</a> <a id="3267" class="Symbol">)</a>
   <a id="3271" class="Keyword">open</a> <a id="3276" href="/Classical/Structures/Lattice/Basic/#12153" class="Module">Lattice-Op</a> <a id="3287" href="/Classical/Structures/Lattice/Dual/#3155" class="Bound">𝑳</a> <a id="3289" class="Keyword">using</a>
     <a id="3299" class="Symbol">(</a> <a id="3301" href="/Classical/Structures/Lattice/Basic/#12351" class="Function Operator">_∧_</a> <a id="3305" class="Symbol">;</a> <a id="3307" href="/Classical/Structures/Lattice/Basic/#12411" class="Function Operator">_∨_</a> <a id="3311" class="Symbol">;</a> <a id="3313" href="/Classical/Structures/Lattice/Basic/#12525" class="Function">∧-cong</a> <a id="3320" class="Symbol">;</a> <a id="3322" href="/Classical/Structures/Lattice/Basic/#12645" class="Function">∨-cong</a>
@@ -15424,7 +15454,7 @@ commutativity step each.</p>
 <code>_∧_</code>, the six semilattice equations exchanged wholesale, and the two derived
 absorption laws.</p>
 <pre class="Agda">  <a id="LatticeDual.dual-Lattice"></a><a id="4100" href="/Classical/Structures/Lattice/Dual/#4100" class="Function">dual-Lattice</a> <a id="4113" class="Symbol">:</a> <a id="4115" href="/Classical/Structures/Lattice/Basic/#6053" class="Function">Lattice</a> <a id="4123" href="/Classical/Structures/Lattice/Dual/#3167" class="Bound">α</a> <a id="4125" href="/Classical/Structures/Lattice/Dual/#3169" class="Bound">ρ</a>
-  <a id="4129" href="/Classical/Structures/Lattice/Dual/#4100" class="Function">dual-Lattice</a> <a id="4142" class="Symbol">=</a> <a id="4144" href="/Classical/Structures/Lattice/Basic/#21549" class="Function">setoidEqsToLattice</a> <a id="4163" href="/Setoid/Algebras/Basic/#3635" class="Function Operator">𝔻[</a> <a id="4166" href="/Classical/Structures/Lattice/Dual/#3188" class="Function">𝑨</a> <a id="4168" href="/Setoid/Algebras/Basic/#3635" class="Function Operator">]</a> <a id="4170" href="/Classical/Structures/Lattice/Basic/#12411" class="Function Operator">_∨_</a> <a id="4174" href="/Classical/Structures/Lattice/Basic/#12351" class="Function Operator">_∧_</a> <a id="4178" href="/Classical/Structures/Lattice/Basic/#12645" class="Function">∨-cong</a> <a id="4185" href="/Classical/Structures/Lattice/Basic/#12525" class="Function">∧-cong</a>
+  <a id="4129" href="/Classical/Structures/Lattice/Dual/#4100" class="Function">dual-Lattice</a> <a id="4142" class="Symbol">=</a> <a id="4144" href="/Classical/Structures/Lattice/Basic/#21549" class="Function">setoidEqsToLattice</a> <a id="4163" href="/Setoid/Algebras/Basic/#5431" class="Function Operator">𝔻[</a> <a id="4166" href="/Classical/Structures/Lattice/Dual/#3188" class="Function">𝑨</a> <a id="4168" href="/Setoid/Algebras/Basic/#5431" class="Function Operator">]</a> <a id="4170" href="/Classical/Structures/Lattice/Basic/#12411" class="Function Operator">_∨_</a> <a id="4174" href="/Classical/Structures/Lattice/Basic/#12351" class="Function Operator">_∧_</a> <a id="4178" href="/Classical/Structures/Lattice/Basic/#12645" class="Function">∨-cong</a> <a id="4185" href="/Classical/Structures/Lattice/Basic/#12525" class="Function">∧-cong</a>
     <a id="4196" href="/Classical/Structures/Lattice/Basic/#13371" class="Function">∨-assoc-law</a> <a id="4208" href="/Classical/Structures/Lattice/Basic/#13455" class="Function">∨-comm-law</a> <a id="4219" href="/Classical/Structures/Lattice/Basic/#13522" class="Function">∨-idem-law</a> <a id="4230" href="/Classical/Structures/Lattice/Basic/#13159" class="Function">∧-assoc-law</a> <a id="4242" href="/Classical/Structures/Lattice/Basic/#13243" class="Function">∧-comm-law</a> <a id="4253" href="/Classical/Structures/Lattice/Basic/#13310" class="Function">∧-idem-law</a>
     <a id="4268" href="/Classical/Structures/Lattice/Dual/#3650" class="Function">dual-absorbˡ</a> <a id="4281" href="/Classical/Structures/Lattice/Dual/#3824" class="Function">dual-absorbʳ</a>
 </pre>

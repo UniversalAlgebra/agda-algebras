@@ -14794,6 +14794,8 @@
       
         
       
+        
+      
     
     
     
@@ -15126,6 +15128,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../adr/010-documentation-coverage-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-010: Documentation coverage policy for public definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -15381,13 +15411,13 @@ two-element chain <code>⊥ &lt; ⊤</code>, where <code>⊥</code> is the diago
 <pre class="Agda"><a id="𝑆₀"></a><a id="1965" href="/Examples/Setoid/CongruenceLattice/#1965" class="Function">𝑆₀</a> <a id="1968" class="Symbol">:</a> <a id="1970" href="/Overture/Signatures/#3218" class="Function">Signature</a> <a id="1980" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="1983" href="/classic/Level.html#521" class="Function">0ℓ</a>
 <a id="1986" href="/Examples/Setoid/CongruenceLattice/#1965" class="Function">𝑆₀</a> <a id="1989" class="Symbol">=</a> <a id="1991" href="/classic/Data.Empty.html#914" class="Function">⊥</a> <a id="1993" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="1995" class="Symbol">λ</a> <a id="1997" class="Symbol">()</a>
 
-<a id="2001" class="Keyword">open</a> <a id="2006" class="Keyword">import</a> <a id="2013" href="/Setoid/Algebras/" class="Module">Setoid.Algebras</a>     <a id="2033" class="Keyword">using</a> <a id="2039" class="Symbol">(</a> <a id="2041" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="2049" class="Symbol">)</a>
+<a id="2001" class="Keyword">open</a> <a id="2006" class="Keyword">import</a> <a id="2013" href="/Setoid/Algebras/" class="Module">Setoid.Algebras</a>     <a id="2033" class="Keyword">using</a> <a id="2039" class="Symbol">(</a> <a id="2041" href="/Setoid/Algebras/Basic/#4342" class="Record">Algebra</a> <a id="2049" class="Symbol">)</a>
 <a id="2051" class="Keyword">open</a> <a id="2056" class="Keyword">import</a> <a id="2063" href="/Setoid/Congruences/" class="Module">Setoid.Congruences</a>  <a id="2083" class="Keyword">using</a> <a id="2089" class="Symbol">(</a> <a id="2091" href="/Setoid/Congruences/Basic/#3122" class="Function">Con</a> <a id="2095" class="Symbol">;</a> <a id="2097" href="/Setoid/Congruences/Basic/#2895" class="InductiveConstructor">mkcon</a> <a id="2103" class="Symbol">)</a>
 <a id="2105" class="Keyword">open</a> <a id="2110" class="Keyword">import</a> <a id="2117" href="/Setoid/Signatures/" class="Module">Setoid.Signatures</a>            <a id="2146" class="Keyword">using</a> <a id="2152" class="Symbol">(</a> <a id="2154" href="/Setoid/Signatures/#3355" class="Function Operator">⟨_⟩</a> <a id="2158" class="Symbol">)</a>
 
 <a id="2161" class="Comment">-- The two-element algebra: carrier Bool with ≡, and no operations to interpret.</a>
-<a id="𝟚"></a><a id="2242" href="/Examples/Setoid/CongruenceLattice/#2242" class="Function">𝟚</a> <a id="2244" class="Symbol">:</a> <a id="2246" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="2254" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="2257" href="/classic/Level.html#521" class="Function">0ℓ</a>
-<a id="2260" href="/Examples/Setoid/CongruenceLattice/#2242" class="Function">𝟚</a> <a id="2262" class="Symbol">=</a> <a id="2264" class="Keyword">record</a> <a id="2271" class="Symbol">{</a> <a id="2273" href="/Setoid/Algebras/Basic/#2998" class="Field">Domain</a> <a id="2280" class="Symbol">=</a> <a id="2282" href="/classic/Relation.Binary.PropositionalEquality.Properties.html#5806" class="Function">≡.setoid</a> <a id="2291" href="/classic/Agda.Builtin.Bool.html#173" class="Datatype">Bool</a> <a id="2296" class="Symbol">;</a> <a id="2298" href="/Setoid/Algebras/Basic/#3022" class="Field">Interp</a> <a id="2305" class="Symbol">=</a> <a id="2307" href="/Examples/Setoid/CongruenceLattice/#2326" class="Function">interp</a> <a id="2314" class="Symbol">}</a>
+<a id="𝟚"></a><a id="2242" href="/Examples/Setoid/CongruenceLattice/#2242" class="Function">𝟚</a> <a id="2244" class="Symbol">:</a> <a id="2246" href="/Setoid/Algebras/Basic/#4342" class="Record">Algebra</a> <a id="2254" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="2257" href="/classic/Level.html#521" class="Function">0ℓ</a>
+<a id="2260" href="/Examples/Setoid/CongruenceLattice/#2242" class="Function">𝟚</a> <a id="2262" class="Symbol">=</a> <a id="2264" class="Keyword">record</a> <a id="2271" class="Symbol">{</a> <a id="2273" href="/Setoid/Algebras/Basic/#4422" class="Field">Domain</a> <a id="2280" class="Symbol">=</a> <a id="2282" href="/classic/Relation.Binary.PropositionalEquality.Properties.html#5806" class="Function">≡.setoid</a> <a id="2291" href="/classic/Agda.Builtin.Bool.html#173" class="Datatype">Bool</a> <a id="2296" class="Symbol">;</a> <a id="2298" href="/Setoid/Algebras/Basic/#4446" class="Field">Interp</a> <a id="2305" class="Symbol">=</a> <a id="2307" href="/Examples/Setoid/CongruenceLattice/#2326" class="Function">interp</a> <a id="2314" class="Symbol">}</a>
   <a id="2318" class="Keyword">where</a>
   <a id="2326" href="/Examples/Setoid/CongruenceLattice/#2326" class="Function">interp</a> <a id="2333" class="Symbol">:</a> <a id="2335" href="/classic/Function.Bundles.html#2041" class="Record">Func</a> <a id="2340" class="Symbol">(</a><a id="2341" href="/Setoid/Signatures/#3355" class="Function Operator">⟨</a> <a id="2343" href="/Examples/Setoid/CongruenceLattice/#1965" class="Function">𝑆₀</a> <a id="2346" href="/Setoid/Signatures/#3355" class="Function Operator">⟩</a> <a id="2348" class="Symbol">(</a><a id="2349" href="/classic/Relation.Binary.PropositionalEquality.Properties.html#5806" class="Function">≡.setoid</a> <a id="2358" href="/classic/Agda.Builtin.Bool.html#173" class="Datatype">Bool</a><a id="2362" class="Symbol">))</a> <a id="2365" class="Symbol">(</a><a id="2366" href="/classic/Relation.Binary.PropositionalEquality.Properties.html#5806" class="Function">≡.setoid</a> <a id="2375" href="/classic/Agda.Builtin.Bool.html#173" class="Datatype">Bool</a><a id="2379" class="Symbol">)</a>
   <a id="2383" href="/Examples/Setoid/CongruenceLattice/#2326" class="Function">interp</a> <a id="2390" href="/Examples/Setoid/CongruenceLattice/#1796" class="Field Operator">⟨$⟩</a> <a id="2394" class="Symbol">(()</a> <a id="2398" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="2400" class="Symbol">_)</a>

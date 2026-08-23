@@ -15565,6 +15565,8 @@
       
         
       
+        
+      
     
     
     
@@ -15884,6 +15886,34 @@
     
   
     ADR-009: Signature genericity via generalized variables in the core; module parameters at the Classical layer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adr/010-documentation-coverage-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-010: Documentation coverage policy for public definitions
   
 
     
@@ -17529,11 +17559,13 @@ proof<span class="w"> </span><span class="ow">=</span><span class="w"> </span>be
 <hr />
 <h2 id="comments-and-documentation">Comments and documentation<a class="headerlink" href="#comments-and-documentation" title="Anchor link to this section">&para;</a></h2>
 <h3 id="every-public-definition-has-a-prose-comment-block">Every public definition has a prose comment block<a class="headerlink" href="#every-public-definition-has-a-prose-comment-block" title="Anchor link to this section">&para;</a></h3>
-<p>This is non-negotiable for public API.  A public definition — anything re-exported from a barrel module, anything documented in the user-facing literate-Agda files — has a prose comment block immediately above it.  In a literate <code>.lagda.md</code> module that prose is Markdown preceding the code fence (not <code>-- |</code> comments inside it); e.g.,</p>
+<p>This is non-negotiable for public API.  A public definition — anything re-exported from a barrel module, anything documented in the user-facing literate-Agda files — is introduced by a prose comment block.  In a literate <code>.lagda.md</code> module that prose is Markdown preceding the code fence (not <code>-- |</code> comments inside it); e.g.,</p>
 <p><code>hom 𝑨 𝑩</code> is the type of homomorphisms from <code>𝑨</code> to <code>𝑩</code>.  A homomorphism is a setoid function on carriers that respects every operation of the signature: for every operation symbol <code>𝑓</code>, the map commutes with <code>𝑓 ^ 𝑨</code> and <code>𝑓 ^ 𝑩</code>.  See also <code>IsHom</code> for the predicate form, <code>∘-hom</code> for composition, and <code>Setoid.Homomorphisms.Isomorphisms</code> for the isomorphism variant.</p>
 <div class="highlight"><pre><span></span><code><span class="nf">hom</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="o">(</span>𝑨<span class="w"> </span><span class="ow">:</span><span class="w"> </span>Algebra<span class="w"> </span>α<span class="w"> </span>ρᵃ<span class="o">)</span><span class="w"> </span><span class="o">(</span>𝑩<span class="w"> </span><span class="ow">:</span><span class="w"> </span>Algebra<span class="w"> </span>β<span class="w"> </span>ρᵇ<span class="o">)</span><span class="w"> </span><span class="ow">→</span><span class="w"> </span>Type<span class="w"> </span>_
 hom<span class="w"> </span>𝑨<span class="w"> </span>𝑩<span class="w"> </span><span class="ow">=</span><span class="w"> </span>Σ<span class="w"> </span><span class="o">(</span>Domain<span class="w"> </span>𝑨<span class="w"> </span>⟶<span class="w"> </span>Domain<span class="w"> </span>𝑩<span class="o">)</span><span class="w"> </span><span class="o">(</span>IsHom<span class="w"> </span>𝑨<span class="w"> </span>𝑩<span class="o">)</span>
 </code></pre></div>
+<p>The unit the rule attaches to is the <strong>code fence</strong>, not the individual definition: every fence is preceded by a real paragraph, and a fence may introduce a family of related definitions under one block.  One definition per fence is <em>not</em> required, and is deliberately not the repository-wide rule — see <a href="../adr/010-documentation-coverage-policy/">ADR-010</a>, which weighs it and rejects it, because that reading enforces layout rather than content and fragments pages that are meant to read as an exposition.  Where a block does cover several definitions it should mention each of them by name, so that a reader — and the corpus extractor of the training set — can tell which sentence belongs to which definition.</p>
+<p><code>make docstrings</code> enforces this, and holds the count of undocumented definitions and boilerplate-only module headers at a ceiling that only ever falls.</p>
 <h3 id="what-a-good-comment-block-contains">What a good comment block contains<a class="headerlink" href="#what-a-good-comment-block-contains" title="Anchor link to this section">&para;</a></h3>
 <ol>
 <li><strong>What the definition is</strong>, stated in the language a mathematician would use; e.g., "a homomorphism from <code>𝑨</code> to <code>𝑩</code>"; <strong>not</strong> "a Σ-type whose first projection is ...".</li>

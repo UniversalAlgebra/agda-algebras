@@ -14785,6 +14785,8 @@
       
         
       
+        
+      
     
     
     
@@ -15117,6 +15119,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../adr/010-documentation-coverage-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-010: Documentation coverage policy for public definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -15370,7 +15400,7 @@ are stated by comparing values of <code>x</code> at indices, with no tuple bookk
 <a id="2543" class="Keyword">open</a> <a id="2548" class="Keyword">import</a> <a id="2555" href="/Classical/Structures/Group/Basic/" class="Module">Classical.Structures.Group.Basic</a>  <a id="2589" class="Keyword">using</a>  <a id="2596" class="Symbol">(</a> <a id="2598" href="/Classical/Structures/Group/Basic/#4497" class="Function">Group</a> <a id="2604" class="Symbol">;</a> <a id="2606" class="Keyword">module</a> <a id="2613" href="/Classical/Structures/Group/Basic/#6775" class="Module">Group-Op</a> <a id="2622" class="Symbol">;</a> <a id="2624" href="/Classical/Structures/Group/Basic/#4311" class="Function Operator">_⊨ᵍᵖ_</a> <a id="2630" class="Symbol">)</a>
 <a id="2632" class="Keyword">open</a> <a id="2637" class="Keyword">import</a> <a id="2644" href="/Classical/Structures/Interpret/" class="Module">Classical.Structures.Interpret</a>    <a id="2678" class="Keyword">using</a>  <a id="2685" class="Symbol">(</a> <a id="2687" href="/Classical/Structures/Interpret/#3434" class="Function">interp-cong</a> <a id="2699" class="Symbol">)</a>
 <a id="2701" class="Keyword">open</a> <a id="2706" class="Keyword">import</a> <a id="2713" href="/Classical/Theories/Group/" class="Module">Classical.Theories.Group</a>          <a id="2747" class="Keyword">using</a>  <a id="2754" class="Symbol">(</a> <a id="2756" href="/Classical/Theories/Group/#2135" class="Function">Th-Group</a> <a id="2765" class="Symbol">)</a>
-<a id="2767" class="Keyword">open</a> <a id="2772" class="Keyword">import</a> <a id="2779" href="/Setoid/Algebras/Basic/" class="Module">Setoid.Algebras.Basic</a>             <a id="2813" class="Keyword">using</a>  <a id="2820" class="Symbol">(</a> <a id="2822" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="2830" class="Symbol">;</a> <a id="2832" href="/Setoid/Algebras/Basic/#3785" class="Function Operator">𝕌[_]</a> <a id="2837" class="Symbol">;</a> <a id="2839" href="/Setoid/Algebras/Basic/#3635" class="Function Operator">𝔻[_]</a> <a id="2844" class="Symbol">)</a>
+<a id="2767" class="Keyword">open</a> <a id="2772" class="Keyword">import</a> <a id="2779" href="/Setoid/Algebras/Basic/" class="Module">Setoid.Algebras.Basic</a>             <a id="2813" class="Keyword">using</a>  <a id="2820" class="Symbol">(</a> <a id="2822" href="/Setoid/Algebras/Basic/#4342" class="Record">Algebra</a> <a id="2830" class="Symbol">;</a> <a id="2832" href="/Setoid/Algebras/Basic/#5875" class="Function Operator">𝕌[_]</a> <a id="2837" class="Symbol">;</a> <a id="2839" href="/Setoid/Algebras/Basic/#5431" class="Function Operator">𝔻[_]</a> <a id="2844" class="Symbol">)</a>
 <a id="2846" class="Keyword">open</a> <a id="2851" class="Keyword">import</a> <a id="2858" href="/Setoid/Algebras/Products/" class="Module">Setoid.Algebras.Products</a>          <a id="2892" class="Keyword">using</a>  <a id="2899" class="Symbol">(</a> <a id="2901" href="/Setoid/Algebras/Products/#1525" class="Function">⨅</a> <a id="2903" class="Symbol">)</a>
 <a id="2905" class="Keyword">open</a> <a id="2910" class="Keyword">import</a> <a id="2917" href="/Setoid/Homomorphisms/Basic/" class="Module">Setoid.Homomorphisms.Basic</a>        <a id="2951" class="Keyword">using</a>  <a id="2958" class="Symbol">(</a> <a id="2960" href="/Setoid/Homomorphisms/Basic/#1951" class="Function">hom</a> <a id="2964" class="Symbol">)</a>
 <a id="2966" class="Keyword">open</a> <a id="2971" class="Keyword">import</a> <a id="2978" href="/Setoid/Homomorphisms/Products/" class="Module">Setoid.Homomorphisms.Products</a>     <a id="3012" class="Keyword">using</a>  <a id="3019" class="Symbol">(</a> <a id="3021" href="/Setoid/Homomorphisms/Products/#3400" class="Function">⨅-proj</a> <a id="3028" class="Symbol">)</a>
@@ -15388,7 +15418,7 @@ application per equation of <code class="AgdaFunction">Th-Group</code>.</p>
 <pre class="Agda"><a id="3585" class="Keyword">module</a> <a id="GroupFamilyProduct"></a><a id="3592" href="/Classical/Structures/Group/Power/#3592" class="Module">GroupFamilyProduct</a> <a id="3611" class="Symbol">{</a><a id="3612" href="/Classical/Structures/Group/Power/#3612" class="Bound">I</a> <a id="3614" class="Symbol">:</a> <a id="3616" href="/Classical/Structures/Group/Power/#1930" class="Primitive">Type</a> <a id="3621" href="/Classical/Structures/Group/Power/#3115" class="Generalizable">ι</a><a id="3622" class="Symbol">}</a> <a id="3624" class="Symbol">(</a><a id="3625" href="/Classical/Structures/Group/Power/#3625" class="Bound">𝒢</a> <a id="3627" class="Symbol">:</a> <a id="3629" href="/Classical/Structures/Group/Power/#3612" class="Bound">I</a> <a id="3631" class="Symbol">→</a> <a id="3633" href="/Classical/Structures/Group/Basic/#4497" class="Function">Group</a> <a id="3639" href="/Classical/Structures/Group/Power/#3117" class="Generalizable">α</a> <a id="3641" href="/Classical/Structures/Group/Power/#3119" class="Generalizable">ρ</a><a id="3642" class="Symbol">)</a> <a id="3644" class="Keyword">where</a>
 
   <a id="3653" class="Keyword">private</a>
-    <a id="GroupFamilyProduct.𝑮"></a><a id="3665" href="/Classical/Structures/Group/Power/#3665" class="Function">𝑮</a> <a id="3667" class="Symbol">:</a> <a id="3669" href="/Classical/Structures/Group/Power/#3612" class="Bound">I</a> <a id="3671" class="Symbol">→</a> <a id="3673" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="3681" class="Symbol">{</a><a id="3682" class="Argument">𝑆</a> <a id="3684" class="Symbol">=</a> <a id="3686" href="/Classical/Signatures/Group/#1718" class="Function">Sig-Group</a><a id="3695" class="Symbol">}</a> <a id="3697" href="/Classical/Structures/Group/Power/#3639" class="Bound">α</a> <a id="3699" href="/Classical/Structures/Group/Power/#3641" class="Bound">ρ</a>
+    <a id="GroupFamilyProduct.𝑮"></a><a id="3665" href="/Classical/Structures/Group/Power/#3665" class="Function">𝑮</a> <a id="3667" class="Symbol">:</a> <a id="3669" href="/Classical/Structures/Group/Power/#3612" class="Bound">I</a> <a id="3671" class="Symbol">→</a> <a id="3673" href="/Setoid/Algebras/Basic/#4342" class="Record">Algebra</a> <a id="3681" class="Symbol">{</a><a id="3682" class="Argument">𝑆</a> <a id="3684" class="Symbol">=</a> <a id="3686" href="/Classical/Signatures/Group/#1718" class="Function">Sig-Group</a><a id="3695" class="Symbol">}</a> <a id="3697" href="/Classical/Structures/Group/Power/#3639" class="Bound">α</a> <a id="3699" href="/Classical/Structures/Group/Power/#3641" class="Bound">ρ</a>
     <a id="3705" href="/Classical/Structures/Group/Power/#3665" class="Function">𝑮</a> <a id="3707" class="Symbol">=</a> <a id="3709" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="3715" href="/classic/Function.Base.html#1134" class="Function Operator">∘</a> <a id="3717" href="/Classical/Structures/Group/Power/#3625" class="Bound">𝒢</a>
 
   <a id="3722" class="Comment">-- Every group equation transfers to the product, coordinatewise.</a>
@@ -15418,7 +15448,7 @@ family, so <code class="AgdaFunction">⨅ᵍ-Group</code> names the power group 
     <a id="GroupPower.𝑮"></a><a id="4726" href="/Classical/Structures/Group/Power/#4726" class="Function">𝑮</a> <a id="4728" class="Symbol">=</a> <a id="4730" href="/Classical/Structures/Group/Power/#4640" class="Bound">𝒢</a> <a id="4732" class="Symbol">.</a><a id="4733" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a>
     <a id="GroupPower.𝑮ᴵ"></a><a id="4743" href="/Classical/Structures/Group/Power/#4743" class="Function">𝑮ᴵ</a> <a id="4746" class="Symbol">=</a> <a id="4748" href="/Classical/Structures/Group/Power/#3964" class="Function">⨅ᵍ-Group</a> <a id="4757" class="Symbol">.</a><a id="4758" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a>
 
-  <a id="4767" class="Keyword">open</a> <a id="4772" href="/classic/Relation.Binary.Bundles.html#1235" class="Module">Setoid</a> <a id="4779" href="/Setoid/Algebras/Basic/#3635" class="Function Operator">𝔻[</a> <a id="4782" href="/Classical/Structures/Group/Power/#4726" class="Function">𝑮</a> <a id="4784" href="/Setoid/Algebras/Basic/#3635" class="Function Operator">]</a> <a id="4786" class="Keyword">using</a> <a id="4792" class="Symbol">(</a> <a id="4794" href="/classic/Relation.Binary.Bundles.html#1324" class="Field Operator">_≈_</a> <a id="4798" class="Symbol">;</a> <a id="4800" href="/classic/Relation.Binary.Structures.html#1641" class="Function">refl</a> <a id="4805" class="Symbol">)</a>
+  <a id="4767" class="Keyword">open</a> <a id="4772" href="/classic/Relation.Binary.Bundles.html#1235" class="Module">Setoid</a> <a id="4779" href="/Setoid/Algebras/Basic/#5431" class="Function Operator">𝔻[</a> <a id="4782" href="/Classical/Structures/Group/Power/#4726" class="Function">𝑮</a> <a id="4784" href="/Setoid/Algebras/Basic/#5431" class="Function Operator">]</a> <a id="4786" class="Keyword">using</a> <a id="4792" class="Symbol">(</a> <a id="4794" href="/classic/Relation.Binary.Bundles.html#1324" class="Field Operator">_≈_</a> <a id="4798" class="Symbol">;</a> <a id="4800" href="/classic/Relation.Binary.Structures.html#1641" class="Function">refl</a> <a id="4805" class="Symbol">)</a>
 </pre>
 <p>The curried accessors of <code class="AgdaModule">Group-Op</code> applied to the power agree, at
 each coordinate, with the accessors of the base group applied to the coordinate

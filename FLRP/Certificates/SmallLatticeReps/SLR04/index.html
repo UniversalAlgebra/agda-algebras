@@ -14807,6 +14807,8 @@
       
         
       
+        
+      
     
     
     
@@ -15139,6 +15141,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../adr/010-documentation-coverage-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-010: Documentation coverage policy for public definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -15412,7 +15442,7 @@ compilation.</p>
 <a id="3028" class="Keyword">open</a> <a id="3033" class="Keyword">import</a> <a id="3040" href="/Overture/Operations/Properties/" class="Module">Overture.Operations.Properties</a>
                                          <a id="3112" class="Keyword">using</a> <a id="3118" class="Symbol">(</a> <a id="3120" href="/Overture/Operations/Properties/#2575" class="Function">Associative?</a> <a id="3133" class="Symbol">;</a> <a id="3135" href="/Overture/Operations/Properties/#2418" class="Function">Commutative?</a>
                                                <a id="3195" class="Symbol">;</a> <a id="3197" href="/Overture/Operations/Properties/#2303" class="Function">Idempotent?</a> <a id="3209" class="Symbol">;</a> <a id="3211" href="/Overture/Operations/Properties/#3654" class="Function">Absorbsˡ?</a> <a id="3221" class="Symbol">;</a> <a id="3223" href="/Overture/Operations/Properties/#3778" class="Function">Absorbsʳ?</a> <a id="3233" class="Symbol">)</a>
-<a id="3235" class="Keyword">open</a> <a id="3240" class="Keyword">import</a> <a id="3247" href="/Setoid/Algebras/Basic/" class="Module">Setoid.Algebras.Basic</a>        <a id="3276" class="Keyword">using</a> <a id="3282" class="Symbol">(</a> <a id="3284" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="3292" class="Symbol">)</a>
+<a id="3235" class="Keyword">open</a> <a id="3240" class="Keyword">import</a> <a id="3247" href="/Setoid/Algebras/Basic/" class="Module">Setoid.Algebras.Basic</a>        <a id="3276" class="Keyword">using</a> <a id="3282" class="Symbol">(</a> <a id="3284" href="/Setoid/Algebras/Basic/#4342" class="Record">Algebra</a> <a id="3292" class="Symbol">)</a>
 <a id="3294" class="Keyword">open</a> <a id="3299" class="Keyword">import</a> <a id="3306" href="/Setoid/Algebras/Finite/" class="Module">Setoid.Algebras.Finite</a>       <a id="3335" class="Keyword">using</a> <a id="3341" class="Symbol">(</a> <a id="3343" href="/Setoid/Algebras/Finite/#3202" class="Record">FiniteAlgebra</a> <a id="3357" class="Symbol">)</a>
 <a id="3359" class="Keyword">open</a> <a id="3364" class="Keyword">import</a> <a id="3371" href="/Setoid/Congruences/Certificates/Schema/" class="Module">Setoid.Congruences.Certificates.Schema</a>
                                          <a id="3451" class="Keyword">using</a> <a id="3457" class="Symbol">(</a> <a id="3459" href="/Setoid/Congruences/Certificates/Schema/#4023" class="Function">ParentVec</a> <a id="3469" class="Symbol">;</a> <a id="3471" href="/Setoid/Congruences/Certificates/Schema/#8757" class="Function">Trace</a> <a id="3477" class="Symbol">;</a> <a id="3479" href="/Setoid/Congruences/Certificates/Schema/#10905" class="Record">LatticeCert</a>
@@ -15436,7 +15466,7 @@ and its finiteness witnesses.</p>
          <a id="4385" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="4387" class="Symbol">(</a><a id="4388" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="4391" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="4393" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="4396" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="4398" href="/classic/Data.Fin.Patterns.html#460" class="InductiveConstructor">2F</a> <a id="4401" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="4403" href="/classic/Data.Fin.Patterns.html#460" class="InductiveConstructor">2F</a> <a id="4406" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="4408" href="/classic/Data.Vec.Base.html#1155" class="InductiveConstructor">[]</a><a id="4410" class="Symbol">)</a>
          <a id="4421" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="4423" href="/classic/Data.Vec.Base.html#1155" class="InductiveConstructor">[]</a>
 
-<a id="𝑨"></a><a id="4427" href="/FLRP/Certificates/SmallLatticeReps/SLR04/#4427" class="Function">𝑨</a> <a id="4429" class="Symbol">:</a> <a id="4431" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="4439" class="Symbol">{</a><a id="4440" class="Argument">𝑆</a> <a id="4442" class="Symbol">=</a> <a id="4444" href="/Classical/Signatures/Unary/#2341" class="Function">Sig-Unary</a> <a id="4454" class="Symbol">(</a><a id="4455" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="4459" class="Number">2</a><a id="4460" class="Symbol">)}</a> <a id="4463" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="4466" href="/classic/Level.html#521" class="Function">0ℓ</a>
+<a id="𝑨"></a><a id="4427" href="/FLRP/Certificates/SmallLatticeReps/SLR04/#4427" class="Function">𝑨</a> <a id="4429" class="Symbol">:</a> <a id="4431" href="/Setoid/Algebras/Basic/#4342" class="Record">Algebra</a> <a id="4439" class="Symbol">{</a><a id="4440" class="Argument">𝑆</a> <a id="4442" class="Symbol">=</a> <a id="4444" href="/Classical/Signatures/Unary/#2341" class="Function">Sig-Unary</a> <a id="4454" class="Symbol">(</a><a id="4455" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="4459" class="Number">2</a><a id="4460" class="Symbol">)}</a> <a id="4463" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="4466" href="/classic/Level.html#521" class="Function">0ℓ</a>
 <a id="4469" href="/FLRP/Certificates/SmallLatticeReps/SLR04/#4427" class="Function">𝑨</a> <a id="4471" class="Symbol">=</a> <a id="4473" href="/Classical/Structures/Unary/#3319" class="Function">tablesToUnaryAlgebra</a> <a id="4494" class="Number">4</a> <a id="4496" class="Number">2</a> <a id="4498" href="/FLRP/Certificates/SmallLatticeReps/SLR04/#4307" class="Function">opTables</a>
 
 <a id="𝑭"></a><a id="4508" href="/FLRP/Certificates/SmallLatticeReps/SLR04/#4508" class="Function">𝑭</a> <a id="4510" class="Symbol">:</a> <a id="4512" href="/Setoid/Algebras/Finite/#3202" class="Record">FiniteAlgebra</a> <a id="4526" href="/FLRP/Certificates/SmallLatticeReps/SLR04/#4427" class="Function">𝑨</a>

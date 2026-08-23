@@ -14816,6 +14816,8 @@
       
         
       
+        
+      
     
     
     
@@ -15148,6 +15150,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../adr/010-documentation-coverage-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-010: Documentation coverage policy for public definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -15417,7 +15447,7 @@ inside a larger term via congruence.</p>
 <a id="1755" class="Comment">-- Imports from the Agda Universal Algebra Library -----------------------------</a>
 <a id="1836" class="Keyword">open</a> <a id="1841" class="Keyword">import</a> <a id="1848" href="/Classical/Signatures/Magma/" class="Module">Classical.Signatures.Magma</a>          <a id="1884" class="Keyword">using</a> <a id="1890" class="Symbol">(</a> <a id="1892" href="/Classical/Signatures/Magma/#3774" class="Function">Sig-Magma</a> <a id="1902" class="Symbol">;</a> <a id="1904" href="/Classical/Signatures/Magma/#3310" class="InductiveConstructor">∙-Op</a> <a id="1909" class="Symbol">)</a>
 <a id="1911" class="Keyword">open</a> <a id="1916" class="Keyword">import</a> <a id="1923" href="/Overture/Terms/" class="Module">Overture.Terms</a> <a id="1938" class="Symbol">{</a><a id="1939" class="Argument">𝑆</a> <a id="1941" class="Symbol">=</a> <a id="1943" href="/Classical/Signatures/Magma/#3774" class="Function">Sig-Magma</a><a id="1952" class="Symbol">}</a>      <a id="1959" class="Keyword">using</a> <a id="1965" class="Symbol">(</a> <a id="1967" href="/Overture/Terms/Basic/#3256" class="Datatype">Term</a> <a id="1972" class="Symbol">;</a> <a id="1974" href="/Overture/Terms/Basic/#3296" class="InductiveConstructor">ℊ</a> <a id="1976" class="Symbol">;</a> <a id="1978" href="/Overture/Terms/Basic/#3368" class="InductiveConstructor">node</a> <a id="1983" class="Symbol">)</a>
-<a id="1985" class="Keyword">open</a> <a id="1990" class="Keyword">import</a> <a id="1997" href="/Setoid/Algebras/" class="Module">Setoid.Algebras</a>     <a id="2017" class="Keyword">using</a> <a id="2023" class="Symbol">(</a> <a id="2025" href="/Setoid/Algebras/Basic/#3635" class="Function Operator">𝔻[_]</a> <a id="2030" class="Symbol">)</a>
+<a id="1985" class="Keyword">open</a> <a id="1990" class="Keyword">import</a> <a id="1997" href="/Setoid/Algebras/" class="Module">Setoid.Algebras</a>     <a id="2017" class="Keyword">using</a> <a id="2023" class="Symbol">(</a> <a id="2025" href="/Setoid/Algebras/Basic/#5431" class="Function Operator">𝔻[_]</a> <a id="2030" class="Symbol">)</a>
 <a id="2032" class="Keyword">open</a> <a id="2037" class="Keyword">import</a> <a id="2044" href="/Setoid/Terms/Basic/" class="Module">Setoid.Terms.Basic</a>  <a id="2064" class="Keyword">using</a> <a id="2070" class="Symbol">(</a> <a id="2072" href="/Setoid/Terms/Basic/#1827" class="Datatype Operator">_≐_</a> <a id="2076" class="Symbol">;</a> <a id="2078" href="/Setoid/Terms/Basic/#2129" class="Function">≐-isRefl</a> <a id="2087" class="Symbol">;</a> <a id="2089" href="/Setoid/Terms/Basic/#3389" class="Function">Sub</a> <a id="2093" class="Symbol">;</a> <a id="2095" href="/Setoid/Terms/Basic/#3533" class="Function Operator">_[_]</a> <a id="2100" class="Symbol">)</a>
 <a id="2102" class="Keyword">open</a> <a id="2107" class="Keyword">import</a> <a id="2114" href="/Setoid/Varieties/SoundAndComplete/" class="Module">Setoid.Varieties.SoundAndComplete</a>
   <a id="2150" class="Keyword">using</a> <a id="2156" class="Symbol">(</a> <a id="2158" href="/Setoid/Varieties/SoundAndComplete/#1894" class="Record">Eq</a> <a id="2161" class="Symbol">;</a> <a id="2163" href="/Setoid/Varieties/SoundAndComplete/#1951" class="InductiveConstructor Operator">_≈̇_</a> <a id="2168" class="Symbol">;</a> <a id="2170" href="/Setoid/Varieties/SoundAndComplete/#4108" class="Function Operator">_⊨_</a> <a id="2174" class="Symbol">;</a> <a id="2176" href="/Setoid/Varieties/SoundAndComplete/#5511" class="Datatype Operator">_⊢_▹_≈_</a> <a id="2184" class="Symbol">;</a> <a id="2186" class="Keyword">module</a> <a id="2193" href="/Setoid/Varieties/SoundAndComplete/#8504" class="Module">FreeAlgebra</a> <a id="2205" class="Symbol">)</a>
@@ -15461,7 +15491,7 @@ the theory, so the free semigroup is, as expected, a semigroup.</p>
 associativity rule <code class="AgdaInductiveConstructor">hyp</code> <code>0F</code> witnesses, on the nose,
 that the two parenthesisations of <code>x · y · z</code> are equal elements of the free
 semigroup — exactly the identification that the free magma withholds.</p>
-<pre class="Agda"><a id="3636" class="Keyword">open</a> <a id="3641" href="/classic/Relation.Binary.Bundles.html#1235" class="Module">Setoid</a> <a id="3648" href="/Setoid/Algebras/Basic/#3635" class="Function Operator">𝔻[</a> <a id="3651" href="/Setoid/Varieties/SoundAndComplete/#9177" class="Function Operator">𝔽[</a> <a id="3654" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="3658" class="Number">3</a> <a id="3660" href="/Setoid/Varieties/SoundAndComplete/#9177" class="Function Operator">]</a> <a id="3662" href="/Setoid/Algebras/Basic/#3635" class="Function Operator">]</a> <a id="3664" class="Keyword">using</a> <a id="3670" class="Symbol">(</a> <a id="3672" href="/classic/Relation.Binary.Bundles.html#1324" class="Field Operator">_≈_</a> <a id="3676" class="Symbol">)</a>
+<pre class="Agda"><a id="3636" class="Keyword">open</a> <a id="3641" href="/classic/Relation.Binary.Bundles.html#1235" class="Module">Setoid</a> <a id="3648" href="/Setoid/Algebras/Basic/#5431" class="Function Operator">𝔻[</a> <a id="3651" href="/Setoid/Varieties/SoundAndComplete/#9177" class="Function Operator">𝔽[</a> <a id="3654" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="3658" class="Number">3</a> <a id="3660" href="/Setoid/Varieties/SoundAndComplete/#9177" class="Function Operator">]</a> <a id="3662" href="/Setoid/Algebras/Basic/#5431" class="Function Operator">]</a> <a id="3664" class="Keyword">using</a> <a id="3670" class="Symbol">(</a> <a id="3672" href="/classic/Relation.Binary.Bundles.html#1324" class="Field Operator">_≈_</a> <a id="3676" class="Symbol">)</a>
 
 <a id="assoc≈"></a><a id="3679" href="/Examples/Setoid/FreeSemigroup/#3679" class="Function">assoc≈</a> <a id="3686" class="Symbol">:</a> <a id="3688" class="Symbol">(</a><a id="3689" href="/Examples/Setoid/FreeSemigroup/#2755" class="Function">x</a> <a id="3691" href="/Examples/Setoid/FreeSemigroup/#2605" class="Function Operator">·</a> <a id="3693" href="/Examples/Setoid/FreeSemigroup/#2757" class="Function">y</a><a id="3694" class="Symbol">)</a> <a id="3696" href="/Examples/Setoid/FreeSemigroup/#2605" class="Function Operator">·</a> <a id="3698" href="/Examples/Setoid/FreeSemigroup/#2759" class="Function">z</a> <a id="3700" href="/classic/Relation.Binary.Bundles.html#1324" class="Function Operator">≈</a> <a id="3702" href="/Examples/Setoid/FreeSemigroup/#2755" class="Function">x</a> <a id="3704" href="/Examples/Setoid/FreeSemigroup/#2605" class="Function Operator">·</a> <a id="3706" class="Symbol">(</a><a id="3707" href="/Examples/Setoid/FreeSemigroup/#2757" class="Function">y</a> <a id="3709" href="/Examples/Setoid/FreeSemigroup/#2605" class="Function Operator">·</a> <a id="3711" href="/Examples/Setoid/FreeSemigroup/#2759" class="Function">z</a><a id="3712" class="Symbol">)</a>
 <a id="3714" href="/Examples/Setoid/FreeSemigroup/#3679" class="Function">assoc≈</a> <a id="3721" class="Symbol">=</a> <a id="3723" href="/Setoid/Varieties/SoundAndComplete/#5617" class="InductiveConstructor">hyp</a> <a id="3727" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a>

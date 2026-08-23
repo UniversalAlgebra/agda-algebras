@@ -14772,6 +14772,8 @@
       
         
       
+        
+      
     
     
     
@@ -15104,6 +15106,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../adr/010-documentation-coverage-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-010: Documentation coverage policy for public definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -15342,7 +15372,7 @@ constructor call, with no per-example boilerplate:</p>
 <a id="2411" class="Comment">-- Imports from the Agda Universal Algebra Library ----------------------------</a>
 <a id="2491" class="Keyword">open</a> <a id="2496" class="Keyword">import</a> <a id="2503" href="/Classical/Signatures/Finite/" class="Module">Classical.Signatures.Finite</a>  <a id="2532" class="Keyword">using</a>  <a id="2539" class="Symbol">(</a> <a id="2541" href="/Classical/Signatures/Finite/#4408" class="Function">Sig-Unary-FiniteSignature</a> <a id="2567" class="Symbol">)</a>
 <a id="2569" class="Keyword">open</a> <a id="2574" class="Keyword">import</a> <a id="2581" href="/Classical/Signatures/Unary/" class="Module">Classical.Signatures.Unary</a>   <a id="2610" class="Keyword">using</a>  <a id="2617" class="Symbol">(</a> <a id="2619" href="/Classical/Signatures/Unary/#2341" class="Function">Sig-Unary</a> <a id="2629" class="Symbol">)</a>
-<a id="2631" class="Keyword">open</a> <a id="2636" class="Keyword">import</a> <a id="2643" href="/Setoid/Algebras/Basic/" class="Module">Setoid.Algebras.Basic</a>        <a id="2672" class="Keyword">using</a>  <a id="2679" class="Symbol">(</a> <a id="2681" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="2689" class="Symbol">;</a> <a id="2691" href="/Setoid/Algebras/Basic/#6876" class="Function">mkAlgebraₚ</a> <a id="2702" class="Symbol">)</a>
+<a id="2631" class="Keyword">open</a> <a id="2636" class="Keyword">import</a> <a id="2643" href="/Setoid/Algebras/Basic/" class="Module">Setoid.Algebras.Basic</a>        <a id="2672" class="Keyword">using</a>  <a id="2679" class="Symbol">(</a> <a id="2681" href="/Setoid/Algebras/Basic/#4342" class="Record">Algebra</a> <a id="2689" class="Symbol">;</a> <a id="2691" href="/Setoid/Algebras/Basic/#8966" class="Function">mkAlgebraₚ</a> <a id="2702" class="Symbol">)</a>
 <a id="2704" class="Keyword">open</a> <a id="2709" class="Keyword">import</a> <a id="2716" href="/Setoid/Algebras/Finite/" class="Module">Setoid.Algebras.Finite</a>       <a id="2745" class="Keyword">using</a>  <a id="2752" class="Symbol">(</a> <a id="2754" href="/Setoid/Algebras/Finite/#3202" class="Record">FiniteAlgebra</a> <a id="2768" class="Symbol">)</a>
 <a id="2770" class="Keyword">open</a> <a id="2775" class="Keyword">import</a> <a id="2782" href="/Setoid/Signatures/Finite/" class="Module">Setoid.Signatures.Finite</a>     <a id="2811" class="Keyword">using</a>  <a id="2818" class="Symbol">(</a> <a id="2820" href="/Setoid/Signatures/Finite/#5275" class="Record">FiniteSignature</a> <a id="2836" class="Symbol">)</a>
 </pre>
@@ -15358,9 +15388,9 @@ The congruence obligation of <code class="AgdaFunction">mkAlgebraₚ</code> is o
   <a id="3228" href="/Classical/Structures/Unary/#3194" class="Function">unaryOp</a> <a id="3236" href="/Classical/Structures/Unary/#3236" class="Bound">f</a> <a id="3238" href="/Classical/Structures/Unary/#3238" class="Bound">i</a> <a id="3240" class="Symbol">=</a> <a id="3242" href="/classic/Data.Vec.Base.html#1676" class="Function">lookup</a> <a id="3249" class="Symbol">(</a><a id="3250" href="/classic/Data.Vec.Base.html#1676" class="Function">lookup</a> <a id="3257" href="/Classical/Structures/Unary/#3102" class="Bound">tables</a> <a id="3264" href="/Classical/Structures/Unary/#3236" class="Bound">f</a><a id="3265" class="Symbol">)</a> <a id="3267" href="/Classical/Structures/Unary/#3238" class="Bound">i</a>
 
   <a id="3272" class="Comment">-- The unary algebra presented by the table.</a>
-  <a id="3319" href="/Classical/Structures/Unary/#3319" class="Function">tablesToUnaryAlgebra</a> <a id="3340" class="Symbol">:</a> <a id="3342" href="/Setoid/Algebras/Basic/#2918" class="Record">Algebra</a> <a id="3350" class="Symbol">{</a><a id="3351" class="Argument">𝑆</a> <a id="3353" class="Symbol">=</a> <a id="3355" href="/Classical/Signatures/Unary/#2341" class="Function">Sig-Unary</a> <a id="3365" class="Symbol">(</a><a id="3366" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="3370" href="/Classical/Structures/Unary/#3094" class="Bound">k</a><a id="3371" class="Symbol">)}</a> <a id="3374" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="3377" href="/classic/Level.html#521" class="Function">0ℓ</a>
+  <a id="3319" href="/Classical/Structures/Unary/#3319" class="Function">tablesToUnaryAlgebra</a> <a id="3340" class="Symbol">:</a> <a id="3342" href="/Setoid/Algebras/Basic/#4342" class="Record">Algebra</a> <a id="3350" class="Symbol">{</a><a id="3351" class="Argument">𝑆</a> <a id="3353" class="Symbol">=</a> <a id="3355" href="/Classical/Signatures/Unary/#2341" class="Function">Sig-Unary</a> <a id="3365" class="Symbol">(</a><a id="3366" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="3370" href="/Classical/Structures/Unary/#3094" class="Bound">k</a><a id="3371" class="Symbol">)}</a> <a id="3374" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="3377" href="/classic/Level.html#521" class="Function">0ℓ</a>
   <a id="3382" href="/Classical/Structures/Unary/#3319" class="Function">tablesToUnaryAlgebra</a> <a id="3403" class="Symbol">=</a>
-    <a id="3409" href="/Setoid/Algebras/Basic/#6876" class="Function">mkAlgebraₚ</a> <a id="3420" class="Symbol">(</a><a id="3421" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="3425" href="/Classical/Structures/Unary/#3092" class="Bound">n</a><a id="3426" class="Symbol">)</a>
+    <a id="3409" href="/Setoid/Algebras/Basic/#8966" class="Function">mkAlgebraₚ</a> <a id="3420" class="Symbol">(</a><a id="3421" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="3425" href="/Classical/Structures/Unary/#3092" class="Bound">n</a><a id="3426" class="Symbol">)</a>
                <a id="3443" class="Symbol">(λ</a> <a id="3446" href="/Classical/Structures/Unary/#3446" class="Bound">f</a> <a id="3448" href="/Classical/Structures/Unary/#3448" class="Bound">args</a> <a id="3453" class="Symbol">→</a> <a id="3455" href="/Classical/Structures/Unary/#3194" class="Function">unaryOp</a> <a id="3463" href="/Classical/Structures/Unary/#3446" class="Bound">f</a> <a id="3465" class="Symbol">(</a><a id="3466" href="/Classical/Structures/Unary/#3448" class="Bound">args</a> <a id="3471" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a><a id="3473" class="Symbol">))</a>
                <a id="3491" class="Symbol">(λ</a> <a id="3494" href="/Classical/Structures/Unary/#3494" class="Bound">f</a> <a id="3496" href="/Classical/Structures/Unary/#3496" class="Bound">h</a> <a id="3498" class="Symbol">→</a> <a id="3500" href="/classic/Relation.Binary.PropositionalEquality.Core.html#1481" class="Function">cong</a> <a id="3505" class="Symbol">(</a><a id="3506" href="/Classical/Structures/Unary/#3194" class="Function">unaryOp</a> <a id="3514" href="/Classical/Structures/Unary/#3494" class="Bound">f</a><a id="3515" class="Symbol">)</a> <a id="3517" class="Symbol">(</a><a id="3518" href="/Classical/Structures/Unary/#3496" class="Bound">h</a> <a id="3520" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a><a id="3522" class="Symbol">))</a>
 </pre>
