@@ -10,14 +10,37 @@ author: &quot;the agda-algebras development team&quot;
 
 This is the [Setoid.Relations][] module of the [Agda Universal Algebra Library][].
 
-</a><a id="271" class="Markup">```agda
-</a><a id="279" class="Symbol">{-#</a> <a id="283" class="Keyword">OPTIONS</a> <a id="291" class="Pragma">--cubical-compatible</a> <a id="312" class="Pragma">--exact-split</a> <a id="326" class="Pragma">--safe</a> <a id="333" class="Symbol">#-}</a>
+This is a barrel module: it declares nothing of its own and re-exports the four
+modules on relations over setoids.  The distinction this tree turns on is between
+a relation on a setoid&#39;s *carrier* and one that respects the setoid&#39;s equality.
+Both are wanted, and neither subsumes the other, so the relation types take bare
+carriers and &quot;respects the equality&quot; is stated separately as needed.  A congruence,
+for instance, is required to contain the setoid equality exactly so that
+quotienting by it is well defined.
 
-<a id="338" class="Keyword">module</a> <a id="345" href="Setoid.Relations.html" class="Module">Setoid.Relations</a> <a id="362" class="Keyword">where</a>
+### Guide to the submodules of &lt;span class=&quot;AgdaModule&quot;&gt;Setoid.Relations&lt;/span&gt;
 
-<a id="369" class="Keyword">open</a> <a id="374" class="Keyword">import</a> <a id="381" href="Setoid.Relations.Discrete.html" class="Module">Setoid.Relations.Discrete</a>    <a id="410" class="Keyword">public</a>
-<a id="417" class="Keyword">open</a> <a id="422" class="Keyword">import</a> <a id="429" href="Setoid.Relations.Quotients.html" class="Module">Setoid.Relations.Quotients</a>   <a id="458" class="Keyword">public</a>
-<a id="465" class="Keyword">open</a> <a id="470" class="Keyword">import</a> <a id="477" href="Setoid.Relations.Continuous.html" class="Module">Setoid.Relations.Continuous</a>  <a id="506" class="Keyword">public</a>
-<a id="513" class="Keyword">open</a> <a id="518" class="Keyword">import</a> <a id="525" href="Setoid.Relations.Properties.html" class="Module">Setoid.Relations.Properties</a>  <a id="554" class="Keyword">public</a>
-<a id="561" class="Markup">```
++  [Setoid.Relations.Discrete][]: binary relations, pointwise equality of setoid
+   functions, image containment, and the kernel of a setoid function;
++  [Setoid.Relations.Quotients][]: equivalence classes, the quotient setoid
+   `_/_`{.AgdaFunction}, and that a kernel is an equivalence relation;
++  [Setoid.Relations.Continuous][]: relations of arbitrary arity, where the arity
+   is an arbitrary type rather than a natural number, so that finite, countable
+   and uncountable arities are handled uniformly;
++  [Setoid.Relations.Properties][]: no results of its own, but a public
+   re-export of the standard library&#39;s `Relation.Binary.Definitions`, so that
+   `Reflexive`{.AgdaFunction}, `Symmetric`{.AgdaFunction},
+   `Transitive`{.AgdaFunction} and their companions are in scope for anything
+   that opens the barrel.
+
+</a><a id="1692" class="Markup">```agda
+</a><a id="1700" class="Symbol">{-#</a> <a id="1704" class="Keyword">OPTIONS</a> <a id="1712" class="Pragma">--cubical-compatible</a> <a id="1733" class="Pragma">--exact-split</a> <a id="1747" class="Pragma">--safe</a> <a id="1754" class="Symbol">#-}</a>
+
+<a id="1759" class="Keyword">module</a> <a id="1766" href="Setoid.Relations.html" class="Module">Setoid.Relations</a> <a id="1783" class="Keyword">where</a>
+
+<a id="1790" class="Keyword">open</a> <a id="1795" class="Keyword">import</a> <a id="1802" href="Setoid.Relations.Discrete.html" class="Module">Setoid.Relations.Discrete</a>    <a id="1831" class="Keyword">public</a>
+<a id="1838" class="Keyword">open</a> <a id="1843" class="Keyword">import</a> <a id="1850" href="Setoid.Relations.Quotients.html" class="Module">Setoid.Relations.Quotients</a>   <a id="1879" class="Keyword">public</a>
+<a id="1886" class="Keyword">open</a> <a id="1891" class="Keyword">import</a> <a id="1898" href="Setoid.Relations.Continuous.html" class="Module">Setoid.Relations.Continuous</a>  <a id="1927" class="Keyword">public</a>
+<a id="1934" class="Keyword">open</a> <a id="1939" class="Keyword">import</a> <a id="1946" href="Setoid.Relations.Properties.html" class="Module">Setoid.Relations.Properties</a>  <a id="1975" class="Keyword">public</a>
+<a id="1982" class="Markup">```
 </a></pre></body></html>

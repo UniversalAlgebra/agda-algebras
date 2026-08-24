@@ -15182,6 +15182,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Setoid Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#guide-to-the-submodules-of-setoidfunctions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Guide to the submodules of Setoid.Functions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -15220,15 +15237,42 @@
 <h1 id="setoidfunctions">Setoid.Functions<a class="headerlink" href="#setoidfunctions" title="Anchor link to this section">&para;</a></h1>
 <h2 id="setoid-functions">Setoid Functions<a class="headerlink" href="#setoid-functions" title="Anchor link to this section">&para;</a></h2>
 <p>This is the <a href="/Setoid/Functions/">Setoid.Functions</a> module of the <a href="/">Agda Universal Algebra Library</a>.</p>
-<pre class="Agda"><a id="272" class="Symbol">{-#</a> <a id="276" class="Keyword">OPTIONS</a> <a id="284" class="Pragma">--cubical-compatible</a> <a id="305" class="Pragma">--exact-split</a> <a id="319" class="Pragma">--safe</a> <a id="326" class="Symbol">#-}</a>
+<p>This is a barrel module: it declares nothing of its own and re-exports the five
+modules that develop functions between setoids.  A setoid function is a map
+bundled with a proof that it respects the two equalities.  That proof is about a
+single map, so it is only half of how the library does without function
+extensionality; the other half is that wherever two functions must be compared,
+an explicitly pointwise relation is used rather than propositional equality of
+functions.  See <code class="AgdaFunction">function-equality</code> of
+<a href="/Setoid/Relations/Discrete/">Setoid.Relations.Discrete</a> and, for homomorphisms, <code class="AgdaFunction">_≋_</code> of
+<a href="/Setoid/Categories/Algebra/">Setoid.Categories.Algebra</a>.</p>
+<h3 id="guide-to-the-submodules-of-setoidfunctions">Guide to the submodules of <span class="AgdaModule">Setoid.Functions</span><a class="headerlink" href="#guide-to-the-submodules-of-setoidfunctions" title="Anchor link to this section">&para;</a></h3>
+<ul>
+<li><a href="/Setoid/Functions/Basic/">Setoid.Functions.Basic</a>: the identity, composition, and universe lifting of
+   a setoid;</li>
+<li><a href="/Setoid/Functions/Injective/">Setoid.Functions.Injective</a>: <code class="AgdaFunction">IsInjective</code> and its
+   composition law;</li>
+<li><a href="/Setoid/Functions/Surjective/">Setoid.Functions.Surjective</a>: <code class="AgdaFunction">IsSurjective</code>, its
+   composition law <code class="AgdaFunction">⊙-IsSurjective</code>, the right inverse
+   <code class="AgdaFunction">SurjInv</code> of a surjection, and <code class="AgdaFunction">epic-factor</code>.
+   The decidable-index projections <code class="AgdaFunction">proj</code> and
+   <code class="AgdaFunction">projIsOnto</code> that <code class="AgdaFunction">ProjAlgIsOnto</code> of
+   <a href="/Setoid/Algebras/Products/">Setoid.Algebras.Products</a> consumes are <em>not</em> here; they are bare-types
+   results in <a href="/Overture/Functions/">Overture.Functions</a>;</li>
+<li><a href="/Setoid/Functions/Inverses/">Setoid.Functions.Inverses</a>: images and ranges, <code class="AgdaDatatype">Image_∋_</code>
+   and <code class="AgdaFunction">IsInRange</code>;</li>
+<li><a href="/Setoid/Functions/Bijective/">Setoid.Functions.Bijective</a>: <code class="AgdaFunction">IsBijective</code> as
+   injective-and-surjective, with the inverse <code class="AgdaFunction">BijInv</code>.</li>
+</ul>
+<pre class="Agda"><a id="1890" class="Symbol">{-#</a> <a id="1894" class="Keyword">OPTIONS</a> <a id="1902" class="Pragma">--cubical-compatible</a> <a id="1923" class="Pragma">--exact-split</a> <a id="1937" class="Pragma">--safe</a> <a id="1944" class="Symbol">#-}</a>
 
-<a id="331" class="Keyword">module</a> <a id="338" href="/Setoid/Functions/" class="Module">Setoid.Functions</a> <a id="355" class="Keyword">where</a>
+<a id="1949" class="Keyword">module</a> <a id="1956" href="/Setoid/Functions/" class="Module">Setoid.Functions</a> <a id="1973" class="Keyword">where</a>
 
-<a id="362" class="Keyword">open</a> <a id="367" class="Keyword">import</a> <a id="374" href="/Setoid/Functions/Basic/" class="Module">Setoid.Functions.Basic</a>       <a id="403" class="Keyword">public</a>
-<a id="410" class="Keyword">open</a> <a id="415" class="Keyword">import</a> <a id="422" href="/Setoid/Functions/Bijective/" class="Module">Setoid.Functions.Bijective</a>   <a id="451" class="Keyword">public</a>
-<a id="458" class="Keyword">open</a> <a id="463" class="Keyword">import</a> <a id="470" href="/Setoid/Functions/Injective/" class="Module">Setoid.Functions.Injective</a>   <a id="499" class="Keyword">public</a>
-<a id="506" class="Keyword">open</a> <a id="511" class="Keyword">import</a> <a id="518" href="/Setoid/Functions/Inverses/" class="Module">Setoid.Functions.Inverses</a>    <a id="547" class="Keyword">public</a>
-<a id="554" class="Keyword">open</a> <a id="559" class="Keyword">import</a> <a id="566" href="/Setoid/Functions/Surjective/" class="Module">Setoid.Functions.Surjective</a>  <a id="595" class="Keyword">public</a>
+<a id="1980" class="Keyword">open</a> <a id="1985" class="Keyword">import</a> <a id="1992" href="/Setoid/Functions/Basic/" class="Module">Setoid.Functions.Basic</a>       <a id="2021" class="Keyword">public</a>
+<a id="2028" class="Keyword">open</a> <a id="2033" class="Keyword">import</a> <a id="2040" href="/Setoid/Functions/Bijective/" class="Module">Setoid.Functions.Bijective</a>   <a id="2069" class="Keyword">public</a>
+<a id="2076" class="Keyword">open</a> <a id="2081" class="Keyword">import</a> <a id="2088" href="/Setoid/Functions/Injective/" class="Module">Setoid.Functions.Injective</a>   <a id="2117" class="Keyword">public</a>
+<a id="2124" class="Keyword">open</a> <a id="2129" class="Keyword">import</a> <a id="2136" href="/Setoid/Functions/Inverses/" class="Module">Setoid.Functions.Inverses</a>    <a id="2165" class="Keyword">public</a>
+<a id="2172" class="Keyword">open</a> <a id="2177" class="Keyword">import</a> <a id="2184" href="/Setoid/Functions/Surjective/" class="Module">Setoid.Functions.Surjective</a>  <a id="2213" class="Keyword">public</a>
 </pre>
 
 <!-- File: docs/_links.md -->
