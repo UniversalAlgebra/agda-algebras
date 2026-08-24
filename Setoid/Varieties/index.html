@@ -15220,23 +15220,49 @@
 <h1 id="setoidvarieties">Setoid.Varieties<a class="headerlink" href="#setoidvarieties" title="Anchor link to this section">&para;</a></h1>
 <h3 id="equations-and-varieties-for-setoids">Equations and Varieties for Setoids<a class="headerlink" href="#equations-and-varieties-for-setoids" title="Anchor link to this section">&para;</a></h3>
 <p>This is the <a href="/Setoid/Varieties/">Setoid.Varieties</a> module of the <a href="/">Agda Universal Algebra Library</a>.</p>
-<pre class="Agda"><a id="288" class="Symbol">{-#</a> <a id="292" class="Keyword">OPTIONS</a> <a id="300" class="Pragma">--cubical-compatible</a> <a id="321" class="Pragma">--exact-split</a> <a id="335" class="Pragma">--safe</a> <a id="342" class="Symbol">#-}</a>
+<p>A <strong>variety</strong> is a class of <code>𝑆</code>-algebras closed under homomorphic images,
+subalgebras and arbitrary products.  Writing <code>H</code>, <code>S</code> and <code>P</code> for those three
+closure operators and <code>V</code> for the composite <code>H ∘ S ∘ P</code>, a class <code>𝒦</code> is a variety
+exactly when <code>V 𝒦 ⊆ 𝒦</code>.  Birkhoff's HSP theorem identifies the varieties with the
+<em>equationally definable</em> classes, and proving it constructively is what this
+subtree exists for.</p>
+<p>This is a barrel module: it declares nothing of its own and re-exports the
+following:</p>
+<ul>
+<li><a href="/Setoid/Varieties/Closure/">Setoid.Varieties.Closure</a>: the operators <code>H</code>, <code>S</code>, <code>P</code> and <code>V</code> themselves;</li>
+<li><a href="/Setoid/Varieties/EquationalLogic/">Setoid.Varieties.EquationalLogic</a> and <a href="/Setoid/Varieties/Interpretation/">Setoid.Varieties.Interpretation</a>:
+   equations, the satisfaction relation, and <code class="AgdaFunction">Mod</code> and
+   <code class="AgdaFunction">Th</code>;</li>
+<li><a href="/Setoid/Varieties/SoundAndComplete/">Setoid.Varieties.SoundAndComplete</a>: the derivation rules of equational
+   logic, with soundness and Birkhoff's completeness theorem;</li>
+<li><a href="/Setoid/Varieties/Preservation/">Setoid.Varieties.Preservation</a> and <a href="/Setoid/Varieties/Invariance/">Setoid.Varieties.Invariance</a>: that
+   each closure operator preserves identities, and that satisfaction is invariant
+   under the algebraic constructions;</li>
+<li><a href="/Setoid/Varieties/FreeAlgebras/">Setoid.Varieties.FreeAlgebras</a> and <a href="/Setoid/Varieties/FreeSubstitution/">Setoid.Varieties.FreeSubstitution</a>:
+   the relatively free algebra of a class;</li>
+<li><a href="/Setoid/Varieties/HSP/">Setoid.Varieties.HSP</a>: Birkhoff's variety theorem;</li>
+<li><a href="/Setoid/Varieties/Maltsev/">Setoid.Varieties.Maltsev</a>: Maltsev conditions, the equational
+   characterisations of congruence-lattice properties;</li>
+<li><a href="/Setoid/Varieties/Invariants/">Setoid.Varieties.Invariants</a>, <a href="/Setoid/Varieties/Properties/">Setoid.Varieties.Properties</a> and
+   <a href="/Setoid/Varieties/Reducts/">Setoid.Varieties.Reducts</a>: the remaining supporting results.</li>
+</ul>
+<pre class="Agda"><a id="1826" class="Symbol">{-#</a> <a id="1830" class="Keyword">OPTIONS</a> <a id="1838" class="Pragma">--cubical-compatible</a> <a id="1859" class="Pragma">--exact-split</a> <a id="1873" class="Pragma">--safe</a> <a id="1880" class="Symbol">#-}</a>
 
-<a id="347" class="Keyword">module</a> <a id="354" href="/Setoid/Varieties/" class="Module">Setoid.Varieties</a> <a id="371" class="Keyword">where</a>
+<a id="1885" class="Keyword">module</a> <a id="1892" href="/Setoid/Varieties/" class="Module">Setoid.Varieties</a> <a id="1909" class="Keyword">where</a>
 
-<a id="378" class="Keyword">open</a> <a id="383" class="Keyword">import</a> <a id="390" href="/Setoid/Varieties/Closure/" class="Module">Setoid.Varieties.Closure</a>  <a id="416" class="Keyword">public</a>
-<a id="423" class="Keyword">open</a> <a id="428" class="Keyword">import</a> <a id="435" href="/Setoid/Varieties/EquationalLogic/" class="Module">Setoid.Varieties.EquationalLogic</a>  <a id="469" class="Keyword">public</a>
-<a id="476" class="Keyword">open</a> <a id="481" class="Keyword">import</a> <a id="488" href="/Setoid/Varieties/FreeAlgebras/" class="Module">Setoid.Varieties.FreeAlgebras</a>  <a id="519" class="Keyword">public</a>
-<a id="526" class="Keyword">open</a> <a id="531" class="Keyword">import</a> <a id="538" href="/Setoid/Varieties/FreeSubstitution/" class="Module">Setoid.Varieties.FreeSubstitution</a>  <a id="573" class="Keyword">public</a>
-<a id="580" class="Keyword">open</a> <a id="585" class="Keyword">import</a> <a id="592" href="/Setoid/Varieties/HSP/" class="Module">Setoid.Varieties.HSP</a>  <a id="614" class="Keyword">public</a>
-<a id="621" class="Keyword">open</a> <a id="626" class="Keyword">import</a> <a id="633" href="/Setoid/Varieties/Interpretation/" class="Module">Setoid.Varieties.Interpretation</a>             <a id="677" class="Keyword">public</a>
-<a id="684" class="Keyword">open</a> <a id="689" class="Keyword">import</a> <a id="696" href="/Setoid/Varieties/Invariance/" class="Module">Setoid.Varieties.Invariance</a>                 <a id="740" class="Keyword">public</a>
-<a id="747" class="Keyword">open</a> <a id="752" class="Keyword">import</a> <a id="759" href="/Setoid/Varieties/Invariants/" class="Module">Setoid.Varieties.Invariants</a>  <a id="788" class="Keyword">public</a>
-<a id="795" class="Keyword">open</a> <a id="800" class="Keyword">import</a> <a id="807" href="/Setoid/Varieties/Maltsev/" class="Module">Setoid.Varieties.Maltsev</a>                    <a id="851" class="Keyword">public</a>
-<a id="858" class="Keyword">open</a> <a id="863" class="Keyword">import</a> <a id="870" href="/Setoid/Varieties/Preservation/" class="Module">Setoid.Varieties.Preservation</a>  <a id="901" class="Keyword">public</a>
-<a id="908" class="Keyword">open</a> <a id="913" class="Keyword">import</a> <a id="920" href="/Setoid/Varieties/Properties/" class="Module">Setoid.Varieties.Properties</a>  <a id="949" class="Keyword">public</a>
-<a id="956" class="Keyword">open</a> <a id="961" class="Keyword">import</a> <a id="968" href="/Setoid/Varieties/Reducts/" class="Module">Setoid.Varieties.Reducts</a>                    <a id="1012" class="Keyword">public</a>
-<a id="1019" class="Keyword">open</a> <a id="1024" class="Keyword">import</a> <a id="1031" href="/Setoid/Varieties/SoundAndComplete/" class="Module">Setoid.Varieties.SoundAndComplete</a>  <a id="1066" class="Keyword">public</a>
+<a id="1916" class="Keyword">open</a> <a id="1921" class="Keyword">import</a> <a id="1928" href="/Setoid/Varieties/Closure/" class="Module">Setoid.Varieties.Closure</a>  <a id="1954" class="Keyword">public</a>
+<a id="1961" class="Keyword">open</a> <a id="1966" class="Keyword">import</a> <a id="1973" href="/Setoid/Varieties/EquationalLogic/" class="Module">Setoid.Varieties.EquationalLogic</a>  <a id="2007" class="Keyword">public</a>
+<a id="2014" class="Keyword">open</a> <a id="2019" class="Keyword">import</a> <a id="2026" href="/Setoid/Varieties/FreeAlgebras/" class="Module">Setoid.Varieties.FreeAlgebras</a>  <a id="2057" class="Keyword">public</a>
+<a id="2064" class="Keyword">open</a> <a id="2069" class="Keyword">import</a> <a id="2076" href="/Setoid/Varieties/FreeSubstitution/" class="Module">Setoid.Varieties.FreeSubstitution</a>  <a id="2111" class="Keyword">public</a>
+<a id="2118" class="Keyword">open</a> <a id="2123" class="Keyword">import</a> <a id="2130" href="/Setoid/Varieties/HSP/" class="Module">Setoid.Varieties.HSP</a>  <a id="2152" class="Keyword">public</a>
+<a id="2159" class="Keyword">open</a> <a id="2164" class="Keyword">import</a> <a id="2171" href="/Setoid/Varieties/Interpretation/" class="Module">Setoid.Varieties.Interpretation</a>             <a id="2215" class="Keyword">public</a>
+<a id="2222" class="Keyword">open</a> <a id="2227" class="Keyword">import</a> <a id="2234" href="/Setoid/Varieties/Invariance/" class="Module">Setoid.Varieties.Invariance</a>                 <a id="2278" class="Keyword">public</a>
+<a id="2285" class="Keyword">open</a> <a id="2290" class="Keyword">import</a> <a id="2297" href="/Setoid/Varieties/Invariants/" class="Module">Setoid.Varieties.Invariants</a>  <a id="2326" class="Keyword">public</a>
+<a id="2333" class="Keyword">open</a> <a id="2338" class="Keyword">import</a> <a id="2345" href="/Setoid/Varieties/Maltsev/" class="Module">Setoid.Varieties.Maltsev</a>                    <a id="2389" class="Keyword">public</a>
+<a id="2396" class="Keyword">open</a> <a id="2401" class="Keyword">import</a> <a id="2408" href="/Setoid/Varieties/Preservation/" class="Module">Setoid.Varieties.Preservation</a>  <a id="2439" class="Keyword">public</a>
+<a id="2446" class="Keyword">open</a> <a id="2451" class="Keyword">import</a> <a id="2458" href="/Setoid/Varieties/Properties/" class="Module">Setoid.Varieties.Properties</a>  <a id="2487" class="Keyword">public</a>
+<a id="2494" class="Keyword">open</a> <a id="2499" class="Keyword">import</a> <a id="2506" href="/Setoid/Varieties/Reducts/" class="Module">Setoid.Varieties.Reducts</a>                    <a id="2550" class="Keyword">public</a>
+<a id="2557" class="Keyword">open</a> <a id="2562" class="Keyword">import</a> <a id="2569" href="/Setoid/Varieties/SoundAndComplete/" class="Module">Setoid.Varieties.SoundAndComplete</a>  <a id="2604" class="Keyword">public</a>
 </pre>
 
 <!-- File: docs/_links.md -->

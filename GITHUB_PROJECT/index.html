@@ -20087,7 +20087,7 @@ edits to those regions will be overwritten on the next render.
 <li><strong>Out of scope</strong>: <code>src/Legacy/**</code>, any change to Agda code, reformatting, and editing <code>docs/STYLE_GUIDE.md</code>.</li>
 </ul>
 <hr />
-<h3 id="issue-m4-2a-docstrings-setoidalgebras-and-setoidhomomorphisms-539">Issue M4-2a: Docstrings: Setoid/Algebras and Setoid/Homomorphisms (#539)<a class="headerlink" href="#issue-m4-2a-docstrings-setoidalgebras-and-setoidhomomorphisms-539" title="Anchor link to this section">&para;</a></h3>
+<h3 id="issue-m4-2a-docstrings-setoidalgebras-and-setoidhomomorphisms-539-closed">Issue M4-2a: Docstrings: Setoid/Algebras and Setoid/Homomorphisms (#539, closed)<a class="headerlink" href="#issue-m4-2a-docstrings-setoidalgebras-and-setoidhomomorphisms-539-closed" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>documentation</code>, <code>milestone-4-style</code>, <code>help-wanted</code></p>
 <h2 id="scope_1">Scope<a class="headerlink" href="#scope_1" title="Anchor link to this section">&para;</a></h2>
 <p><code>src/Setoid/Algebras/ src/Setoid/Homomorphisms/</code></p>
@@ -20133,7 +20133,7 @@ edits to those regions will be overwritten on the next render.
 <hr />
 <p>Sub-issue of #268.  Tooling: #537.</p>
 <hr />
-<h3 id="issue-m4-2b-docstrings-setoidsubalgebras-540">Issue M4-2b: Docstrings: Setoid/Subalgebras (#540)<a class="headerlink" href="#issue-m4-2b-docstrings-setoidsubalgebras-540" title="Anchor link to this section">&para;</a></h3>
+<h3 id="issue-m4-2b-docstrings-setoidsubalgebras-540-closed">Issue M4-2b: Docstrings: Setoid/Subalgebras (#540, closed)<a class="headerlink" href="#issue-m4-2b-docstrings-setoidsubalgebras-540-closed" title="Anchor link to this section">&para;</a></h3>
 <p><strong>Labels</strong>: <code>documentation</code>, <code>milestone-4-style</code>, <code>help-wanted</code></p>
 <h2 id="scope_2">Scope<a class="headerlink" href="#scope_2" title="Anchor link to this section">&para;</a></h2>
 <p><code>src/Setoid/Subalgebras/</code></p>
@@ -21028,6 +21028,75 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <div class="highlight"><pre><span></span><code><span class="kr">open</span><span class="w"> </span><span class="kr">import</span><span class="w"> </span><span class="n">Overture</span><span class="w"> </span><span class="kr">using</span><span class="w"> </span><span class="o">(</span>𝓞<span class="w"> </span>;<span class="w"> </span>𝓥<span class="w"> </span>;<span class="w"> </span>Signature<span class="w"> </span>;<span class="w"> </span>𝑆<span class="w"> </span><span class="o">)</span>
 </code></pre></div>
 <p>still appears outside the start of the module, which is unnecessary when there's no top-level module parameter.  We can now move the import of Overture inside with the other imports, consistent with the repo-wide style convention.</p>
+<hr />
+<h3 id="issue-m4-20-validate-kramdown-attribute-span-classes-against-agdas-own-classification-553">Issue M4-20: Validate kramdown attribute-span classes against Agda's own classification (#553)<a class="headerlink" href="#issue-m4-20-validate-kramdown-attribute-span-classes-against-agdas-own-classification-553" title="Anchor link to this section">&para;</a></h3>
+<p><strong>Labels</strong>: <code>documentation</code>, <code>milestone-4-style</code>, <code>ci</code></p>
+<h2 id="the-gap">The gap<a class="headerlink" href="#the-gap" title="Anchor link to this section">&para;</a></h2>
+<p>Every Agda name in the rendered corpus is marked up with a kramdown attribute span, <code>`Algebra`{.AgdaRecord}</code>, and <code>attr_list</code> turns the class into the CSS class that colours it.  <code>mkdocs.yml</code> calls <code>attr_list</code> "THE load-bearing one" for exactly this reason.</p>
+<p><strong>Nothing checks that the class is the right one.</strong>  <code>check_links.py</code> validates reference-style links, <code>docstring_audit.py</code> validates prose coverage, and neither looks at span classes.  A span whose class disagrees with what Agda thinks the name is renders with the wrong highlighting, and no gate notices.</p>
+<p>This surfaced in review on #552, where Copilot caught <code>`Equivalence`{.AgdaRecord}</code> — <code>Equivalence A {ρ} = Σ[ r ∈ BinaryRel A ρ ] IsEquivalence r</code> is a Σ-type alias, so a function, not a record.  Looking for siblings found four more.</p>
+<h2 id="four-confirmed-defects-on-master">Four confirmed defects on master<a class="headerlink" href="#four-confirmed-defects-on-master" title="Anchor link to this section">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>file</th>
+<th>span</th>
+<th>actually</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Classical/Structures/Lattice/Parachute.lagda.md</code> (4 occurrences: 42, 65, 272, 594)</td>
+<td><code>`_≤ᵖ_`{.AgdaFunction}</code></td>
+<td><code>data _≤ᵖ_ : P → P → Type (α ⊔ ρ)</code> at <code>:261</code></td>
+</tr>
+<tr>
+<td><code>Examples/Setoid/HSPCommutativeMonoid.lagda.md:101</code></td>
+<td><code>`𝒦₀`{.AgdaFunction}</code></td>
+<td><code>data 𝒦₀ : Pred (Algebra 0ℓ 0ℓ) 1ℓ</code> at <code>:78</code></td>
+</tr>
+<tr>
+<td><code>FLRP/Problem.lagda.md:121</code></td>
+<td><code>`Lattice-Order`{.AgdaRecord}</code></td>
+<td><code>module Lattice-Order …</code> at <code>Classical/Properties/Lattice.lagda.md:58</code></td>
+</tr>
+<tr>
+<td><code>FLRP/Representable.lagda.md:149</code></td>
+<td><code>`Signature`{.AgdaRecord}</code></td>
+<td><code>Signature 𝓞 𝓥 = Σ[ F ∈ Type 𝓞 ] (F → Type 𝓥)</code> at <code>Overture/Signatures.lagda.md:91</code></td>
+</tr>
+</tbody>
+</table>
+<p>The last is the same error class as the <code>Equivalence</code> one: a Σ-bundle type alias read as a record because it behaves like one.</p>
+<h2 id="scale">Scale<a class="headerlink" href="#scale" title="Anchor link to this section">&para;</a></h2>
+<p>Measured over <code>src/**/*.lagda.md</code>: <strong>2198 span occurrences</strong>, <strong>990 distinct (name, class) pairs</strong>, across 11 classes.  The distribution is <code>AgdaFunction</code> 1404, <code>AgdaRecord</code> 257, <code>AgdaBound</code> 156, <code>AgdaInductiveConstructor</code> 112, <code>AgdaField</code> 110, <code>AgdaDatatype</code> 79, <code>AgdaModule</code> 73, and single digits of <code>AgdaGeneralizable</code>, <code>AgdaKeyword</code>, <code>AgdaPrimitiveType</code>, <code>AgdaSymbol</code>.</p>
+<p><code>docstring_audit.py --json</code> already emits a <code>kind</code> per public definition — <code>signature</code> (3060), <code>module</code> (72), <code>record</code> (61), <code>data</code> (50), <code>pattern</code> (31) — so ground truth for a large fraction of spans is already computed and needs no new parser.</p>
+<h2 id="the-naive-design-does-not-work-and-this-is-the-main-finding">The naive design does not work, and this is the main finding<a class="headerlink" href="#the-naive-design-does-not-work-and-this-is-the-main-finding" title="Anchor link to this section">&para;</a></h2>
+<p>Matching a span's name against the audit's <code>kind</code> <strong>by name alone</strong> produces 126 hits, of which only the 4 above are real.  The 122 false positives come in two shapes, and both are legitimate markup:</p>
+<ul>
+<li><strong><code>AgdaBound</code>, 94 hits.</strong>  <code>`N`{.AgdaBound}</code> inside a paragraph refers to a <em>locally bound</em> variable.  That a top-level definition named <code>N</code> exists elsewhere is irrelevant, and marking the bound occurrence <code>.AgdaBound</code> is correct.</li>
+<li><strong><code>AgdaField</code>, 16 hits.</strong>  <code>`to∘from`{.AgdaField}</code> names a record field, which is not a top-level definition at all — ADR-010 deliberately excludes fields, members and constructors from the audit's inventory — so the audit has no entry to compare against and a same-named function elsewhere produces a spurious hit.</li>
+</ul>
+<p>The rest are cross-module name collisions: <code>`Lattice`{.AgdaRecord}</code> in <code>Setoid/Subalgebras/CompleteLattice.lagda.md</code> is stdlib's <code>Relation.Binary.Lattice.Lattice</code>, a genuine record, while <code>Classical/Small/Structures/Lattice</code> defines an unrelated <code>Lattice</code> alias.  Same for <code>Group</code>, <code>List</code>, and the generalizable <code>𝑨</code>.</p>
+<p>So a useful checker needs <strong>name resolution in the scope of the file the span sits in</strong>, not a global name table.  A checker without it would emit 30 false positives for every real one and be switched off within a week — which is the outcome ADR-010 already warns about for un-ratcheted gates.</p>
+<h2 id="two-designs-that-could-work">Two designs that could work<a class="headerlink" href="#two-designs-that-could-work" title="Anchor link to this section">&para;</a></h2>
+<ol>
+<li><strong>Ask Agda.</strong>  <code>agda --html</code> emits <code>&lt;a class="Agda…"&gt;</code> spans with Agda's own classification, per file and per occurrence.  Rendering the corpus once and diffing our span classes against the highlighter's is the only approach that is right by construction, including for fields, constructors and bound variables.  Cost: an HTML build in CI, and a mapping from source positions to the generated anchors.</li>
+<li><strong>Ask <code>agda-mcp</code>.</strong>  <code>resolve_name</code> answers "what does this name resolve to <em>here</em>", scoped to a file, with provenance.  That is exactly the missing ingredient, and it handles the collisions.  Cost: it is a live interaction lane, so a whole-corpus sweep is one load per file, and the server is currently single-worktree (a <code>rootMismatch</code> guard refuses files from any other checkout).</li>
+</ol>
+<p>Design 1 is the better fit for a gate; design 2 is the better fit for a one-off sweep to clear the existing backlog.  They are not exclusive.</p>
+<h2 id="done-when_9">Done when<a class="headerlink" href="#done-when_9" title="Anchor link to this section">&para;</a></h2>
+<ul>
+<li>A checker under <code>scripts/python/</code> reports spans whose class disagrees with Agda's classification, with <strong>zero false positives</strong> on current master.</li>
+<li>The four defects above are fixed, plus whatever the sweep adds.</li>
+<li>A <code>Makefile</code> target and a CI job, following <code>check_links</code> / <code>docstring_audit</code> (see the <code>writing-a-corpus-linter</code> conventions), ratcheted if the backlog cannot be cleared in one pass.</li>
+<li>Validated the way #537's audit was: against Agda's own answer, not against the checker's author's expectations.</li>
+</ul>
+<h2 id="notes_4">Notes<a class="headerlink" href="#notes_4" title="Anchor link to this section">&para;</a></h2>
+<ul>
+<li>Related: #537 (the docstring audit and its ratchet), ADR-010 (which fixes what counts as a public definition, and why fields and constructors are excluded), #275 (the corpus extractor, another consumer of correct span classification).</li>
+<li>There is a second, cheaper unchecked-markup gap worth folding in or splitting out: <strong>dangling footnote references</strong>.  <code>[^1]</code> with no <code>[^1]:</code> definition renders as literal text and passes every gate.  Two exist on master, in <code>Overture/Basic.lagda.md</code> and <code>Classical/Structures/Group/Complexes.lagda.md</code>.  That one is a few lines of regex and needs no Agda at all.</li>
+</ul>
 <!-- END GENERATED: milestone-4 -->
 
 <h2 id="-_4">---<a class="headerlink" href="#-_4" title="Anchor link to this section">&para;</a></h2>
@@ -21273,7 +21342,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li>Forward Jónsson type-checks under <code>--safe</code>; the term ⟹ CD direction of Jónsson's theorem is done, and the <strong>finitary</strong> version is unconditional.  ✅ (PR #428; <code>make check</code> passes.)</li>
 <li>Forward Day type-checks under <code>--safe</code>; the term ⟹ CM direction of Day's theorem is done, the <strong>finitary</strong> version is unconditional, and <code>Day-theorem</code> assembles the complete iff.  ✅ (PR #442; <code>make check</code> passes.)</li>
 </ul>
-<h2 id="notes_4">Notes<a class="headerlink" href="#notes_4" title="Anchor link to this section">&para;</a></h2>
+<h2 id="notes_5">Notes<a class="headerlink" href="#notes_5" title="Anchor link to this section">&para;</a></h2>
 <ul>
 <li>Difficulty: the Jónsson half was moderate as expected; the realized work surfaced two findings — the <code>Gen</code>-vs-chain (infinitary <code>comp</code>) obstruction, discharged for finitary signatures, and that Day is <strong>not</strong> a mechanical mirror of Jónsson.  The Day half then required the genuinely two-dimensional FM Lemma 2.3 ladder, with a ϕ-count measure whose decrease is a two-steps-into-one fusion.  All of this is recorded in <code>docs/notes/m6-6-forward-jonsson-day.md</code> ("Why Day is not a mirror — and the ladder that works").</li>
 </ul>
@@ -21332,7 +21401,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <ul>
 <li>Both converse implications type-check under <code>--safe</code>; Jónsson's and Day's theorems are complete iffs.  ✅ in full: Jónsson converse PR #438 with the complete iff <code>jonsson-theorem</code>; Day converse PR #440; and the once re-scoped clause — Day's full iff — discharged by PR #442 on #412, which landed the forward half and assembled <code>Day-theorem</code>.</li>
 </ul>
-<h2 id="notes_5">Notes<a class="headerlink" href="#notes_5" title="Anchor link to this section">&para;</a></h2>
+<h2 id="notes_6">Notes<a class="headerlink" href="#notes_6" title="Anchor link to this section">&para;</a></h2>
 <ul>
 <li>Difficulty: hard.  The derivation-length / chain extraction from an inductively-generated congruence is the crux; budget accordingly and consider landing CD ⟹ Jónsson first, with CM ⟹ Day mirroring it.  (Realized as planned: reverse Jónsson landed first; the crux decomposed into the M6-6 <code>finitary⇒JoinIsChain</code> plus the new parity normalization, and reverse Day was the predicted mechanical mirror.)</li>
 <li>Close-out: PR #446 reconciles the two M6-7 design notes with the post-#442 state (the <code>CM⇒Day</code> rename and the landed forward half) and closes this issue on merge.</li>
@@ -21454,7 +21523,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Bounds proved as <code>⊥</code>/<code>⊤</code>.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> At least one small worked example.</li>
 </ul>
-<h2 id="notes_6">Notes<a class="headerlink" href="#notes_6" title="Anchor link to this section">&para;</a></h2>
+<h2 id="notes_7">Notes<a class="headerlink" href="#notes_7" title="Anchor link to this section">&para;</a></h2>
 <ul>
 <li>Placement, mirroring the congruence case (<code>Setoid.Algebras.Congruences.CompleteLattice</code>): the instance goes in <code>Setoid.Subalgebras.CompleteLattice</code>, instantiating the general record in <code>Setoid.Algebras.Lattices.CompleteLattice</code>.</li>
 <li>A richer worked example — the <strong>subgroup lattice of a concrete finite group</strong> — is appealing but a sizeable undertaking (defining the group over a signature, classifying its subgroups); it is tracked as a separate follow-up so this PR can stay focused.</li>
@@ -21476,7 +21545,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Its subgroups exhibited as elements of <code>Sub 𝑨</code>, with the lattice order between them.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Prose identifying the resulting lattice (chain / diamond / <code>S₃</code> lattice).</li>
 </ul>
-<h2 id="notes_7">Notes<a class="headerlink" href="#notes_7" title="Anchor link to this section">&para;</a></h2>
+<h2 id="notes_8">Notes<a class="headerlink" href="#notes_8" title="Anchor link to this section">&para;</a></h2>
 <ul>
 <li>Subuniverses of a group algebra are exactly its subgroups precisely because the signature carries the unary inverse and the nullary identity, so closure under the operations forces the subgroup axioms — worth stating explicitly in the example.</li>
 </ul>
@@ -22786,7 +22855,7 @@ assoc▹<span class="w"> </span>p<span class="w"> </span>q<span class="w"> </spa
 <h1 id="295-m10-1-rendering-pipeline-modernization">295 — M10-1 rendering-pipeline modernization.<a class="headerlink" href="#295-m10-1-rendering-pipeline-modernization" title="Anchor link to this section">&para;</a></h1>
 </li>
 </ul>
-<h2 id="notes_8">Notes<a class="headerlink" href="#notes_8" title="Anchor link to this section">&para;</a></h2>
+<h2 id="notes_9">Notes<a class="headerlink" href="#notes_9" title="Anchor link to this section">&para;</a></h2>
 <ul>
 <li>This is the last remaining item from ADR-007's deferred-cutover checklist.  It is intentionally an <em>ops</em> issue (Pages config + DNS + a banner), not a code change, so it can land independently once PR #427 is merged.</li>
 <li>The "park + banner" step is what makes the transition safe: nothing about the old content is destroyed, and visitors to stale links are routed forward.</li>
@@ -23153,7 +23222,7 @@ python3<span class="w"> </span>scripts/python/gh_project_populate.py<span class=
 <span class="c1"># 4. Resume if interrupted (e.g. start from M3-2):</span>
 python3<span class="w"> </span>scripts/python/gh_project_populate.py<span class="w"> </span>docs/GITHUB_PROJECT.md<span class="w"> </span>--repo<span class="w"> </span>ualib/agda-algebras<span class="w"> </span>--issues-only<span class="w"> </span>--start-from<span class="w"> </span>M3-2
 </code></pre></div>
-<h3 id="notes_9">Notes<a class="headerlink" href="#notes_9" title="Anchor link to this section">&para;</a></h3>
+<h3 id="notes_10">Notes<a class="headerlink" href="#notes_10" title="Anchor link to this section">&para;</a></h3>
 <ul>
 <li>The patched <code>_parse_labels</code> reads from the <code>## Labels</code> section of this file.  See the companion patch file for the small diff.</li>
 <li>Labels and milestones are idempotent — re-running skips existing ones.</li>

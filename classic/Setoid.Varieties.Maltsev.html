@@ -10,14 +10,37 @@ author: &quot;agda-algebras development team&quot;
 
 This is the [Setoid.Varieties.Maltsev][] module of the [Agda Universal Algebra Library][].
 
-</a><a id="278" class="Markup">```agda
-</a><a id="286" class="Symbol">{-#</a> <a id="290" class="Keyword">OPTIONS</a> <a id="298" class="Pragma">--cubical-compatible</a> <a id="319" class="Pragma">--exact-split</a> <a id="333" class="Pragma">--safe</a> <a id="340" class="Symbol">#-}</a>
+A **Maltsev condition** is an identity, or set of identities, between terms of a
+variety of algebras, and the point of the notion is that, when such a condition
+holds, so do certain properties of the congruence lattice of every algebra in the
+variety.  Conditions of this shape are how lattice-theoretic facts about
+congruences become checkable by exhibiting terms.
 
-<a id="345" class="Keyword">module</a> <a id="352" href="Setoid.Varieties.Maltsev.html" class="Module">Setoid.Varieties.Maltsev</a> <a id="377" class="Keyword">where</a>
+The original example is Maltsev&#39;s own; it formalized in the library, along with a
+few others like it.  A *Maltsev term* is a ternary `m` satisfying `m x x y ≈ y`
+and `m x y y ≈ x`, and a variety with such a term is *congruence-permutable*.
+Following [Setoid.Varieties.Interpretation][], the condition is posed not as a
+bare term but as a *theory interpretation*: `Th-Maltsev` is the two-equation
+theory over the one-ternary-symbol signature `Sig-Maltsev`, and `HasMaltsevTerm ℰ`
+is `Th-Maltsev ≼ ℰ`, so &quot;`ℰ` admits a Maltsev term&quot; is literally &quot;the Maltsev theory
+interprets into `ℰ`&quot;.
 
-<a id="384" class="Keyword">open</a> <a id="389" class="Keyword">import</a> <a id="396" href="Setoid.Varieties.Maltsev.Basic.html" class="Module">Setoid.Varieties.Maltsev.Basic</a>           <a id="437" class="Keyword">public</a>
-<a id="444" class="Keyword">open</a> <a id="449" class="Keyword">import</a> <a id="456" href="Setoid.Varieties.Maltsev.Permutability.html" class="Module">Setoid.Varieties.Maltsev.Permutability</a>   <a id="497" class="Keyword">public</a>
-<a id="504" class="Keyword">open</a> <a id="509" class="Keyword">import</a> <a id="516" href="Setoid.Varieties.Maltsev.Distributivity.html" class="Module">Setoid.Varieties.Maltsev.Distributivity</a>  <a id="557" class="Keyword">public</a>
-<a id="564" class="Keyword">open</a> <a id="569" class="Keyword">import</a> <a id="576" href="Setoid.Varieties.Maltsev.Modularity.html" class="Module">Setoid.Varieties.Maltsev.Modularity</a>      <a id="617" class="Keyword">public</a>
-<a id="624" class="Markup">```
+This is a barrel module, re-exporting [Setoid.Varieties.Maltsev.Basic][] for the
+general setting, along with three modules proving classical theorems involving
+Maltsev conditions:
+
++  [Setoid.Varieties.Maltsev.Permutability][] (Maltsev&#39;s theorem),
++  [Setoid.Varieties.Maltsev.Distributivity][] (Jonsson&#39;s theorem),
++  [Setoid.Varieties.Maltsev.Modularity][] (Day&#39;s theorem).
+
+</a><a id="1609" class="Markup">```agda
+</a><a id="1617" class="Symbol">{-#</a> <a id="1621" class="Keyword">OPTIONS</a> <a id="1629" class="Pragma">--cubical-compatible</a> <a id="1650" class="Pragma">--exact-split</a> <a id="1664" class="Pragma">--safe</a> <a id="1671" class="Symbol">#-}</a>
+
+<a id="1676" class="Keyword">module</a> <a id="1683" href="Setoid.Varieties.Maltsev.html" class="Module">Setoid.Varieties.Maltsev</a> <a id="1708" class="Keyword">where</a>
+
+<a id="1715" class="Keyword">open</a> <a id="1720" class="Keyword">import</a> <a id="1727" href="Setoid.Varieties.Maltsev.Basic.html" class="Module">Setoid.Varieties.Maltsev.Basic</a>           <a id="1768" class="Keyword">public</a>
+<a id="1775" class="Keyword">open</a> <a id="1780" class="Keyword">import</a> <a id="1787" href="Setoid.Varieties.Maltsev.Permutability.html" class="Module">Setoid.Varieties.Maltsev.Permutability</a>   <a id="1828" class="Keyword">public</a>
+<a id="1835" class="Keyword">open</a> <a id="1840" class="Keyword">import</a> <a id="1847" href="Setoid.Varieties.Maltsev.Distributivity.html" class="Module">Setoid.Varieties.Maltsev.Distributivity</a>  <a id="1888" class="Keyword">public</a>
+<a id="1895" class="Keyword">open</a> <a id="1900" class="Keyword">import</a> <a id="1907" href="Setoid.Varieties.Maltsev.Modularity.html" class="Module">Setoid.Varieties.Maltsev.Modularity</a>      <a id="1948" class="Keyword">public</a>
+<a id="1955" class="Markup">```
 </a></pre></body></html>
