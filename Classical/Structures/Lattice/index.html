@@ -15186,6 +15186,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#guide-to-the-submodules-of-classicalstructureslattice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Guide to the submodules of Classical.Structures.Lattice
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -15222,17 +15233,46 @@
 <h1 id="classicalstructureslattice">Classical.Structures.Lattice<a class="headerlink" href="#classicalstructureslattice" title="Anchor link to this section">&para;</a></h1>
 <h3 id="classical-structures-lattices">Lattices<a class="headerlink" href="#classical-structures-lattices" title="Anchor link to this section">&para;</a></h3>
 <p>This is the <a href="/Classical/Structures/Lattice/">Classical.Structures.Lattice</a> module of the <a href="/">Agda Universal Algebra Library</a>.</p>
-<pre class="Agda"><a id="336" class="Symbol">{-#</a> <a id="340" class="Keyword">OPTIONS</a> <a id="348" class="Pragma">--cubical-compatible</a> <a id="369" class="Pragma">--exact-split</a> <a id="383" class="Pragma">--safe</a> <a id="390" class="Symbol">#-}</a>
+<p>This is a barrel module: it declares nothing of its own and re-exports the seven
+modules that develop lattices in the <code>Classical/</code> tree.  A lattice here is an
+algebra over <code class="AgdaFunction">Sig-Lattice</code> satisfying <code class="AgdaFunction">Th-Lattice</code>,
+that is, the <em>equational</em> presentation; the order-theoretic presentation, in which
+meet and join are recovered as the infimum and supremum of a partial order, is what
+<a href="/Setoid/Subalgebras/CompleteLattice/">Setoid.Subalgebras.CompleteLattice</a> and <a href="/Setoid/Congruences/CompleteLattice/">Setoid.Congruences.CompleteLattice</a>
+build instead.</p>
+<h3 id="guide-to-the-submodules-of-classicalstructureslattice">Guide to the submodules of <span class="AgdaModule">Classical.Structures.Lattice</span><a class="headerlink" href="#guide-to-the-submodules-of-classicalstructureslattice" title="Anchor link to this section">&para;</a></h3>
+<ul>
+<li><a href="/Classical/Structures/Lattice/Basic/">Classical.Structures.Lattice.Basic</a>: the type <code class="AgdaFunction">Lattice</code>
+   itself, the two magma reducts, and the named accessors;</li>
+<li><a href="/Classical/Structures/Lattice/DistributiveLattice/">Classical.Structures.Lattice.DistributiveLattice</a>: the same signature with
+   distributivity added to the theory;</li>
+<li><a href="/Classical/Structures/Lattice/Dual/">Classical.Structures.Lattice.Dual</a>: meet and join exchanged.  Since
+   <code class="AgdaFunction">Th-Lattice</code> is self-dual the construction needs no new equations.
+   Dualizing twice recovers each operation <em>pointwise</em>, but the involution is not
+   formalized there, because stating it as an equality of <code class="AgdaFunction">Lattice</code>
+   values would need function extensionality and no consumer has required it;</li>
+<li><a href="/Classical/Structures/Lattice/Product/">Classical.Structures.Lattice.Product</a>: the direct product of two lattices,
+   coordinatewise;</li>
+<li><a href="/Classical/Structures/Lattice/OrdinalSum/">Classical.Structures.Lattice.OrdinalSum</a>: one lattice stacked on another with
+   the top of the lower glued to the bottom of the upper, written <code>L ⊕ₐ M</code> in the
+   small-lattice-representations manuscript;</li>
+<li><a href="/Classical/Structures/Lattice/Parachute/">Classical.Structures.Lattice.Parachute</a>: a fresh bottom element beneath <code>n</code>
+   side-by-side canopies, the construction the FLRP work is built on;</li>
+<li><a href="/Classical/Structures/Lattice/Partitions/">Classical.Structures.Lattice.Partitions</a>: the partition lattice
+   <code class="AgdaFunction">Eq(n)</code>, the equivalence relations on an <code>n</code>-element set ordered
+   by refinement.</li>
+</ul>
+<pre class="Agda"><a id="2228" class="Symbol">{-#</a> <a id="2232" class="Keyword">OPTIONS</a> <a id="2240" class="Pragma">--cubical-compatible</a> <a id="2261" class="Pragma">--exact-split</a> <a id="2275" class="Pragma">--safe</a> <a id="2282" class="Symbol">#-}</a>
 
-<a id="395" class="Keyword">module</a> <a id="402" href="/Classical/Structures/Lattice/" class="Module">Classical.Structures.Lattice</a> <a id="431" class="Keyword">where</a>
+<a id="2287" class="Keyword">module</a> <a id="2294" href="/Classical/Structures/Lattice/" class="Module">Classical.Structures.Lattice</a> <a id="2323" class="Keyword">where</a>
 
-<a id="438" class="Keyword">open</a> <a id="443" class="Keyword">import</a> <a id="450" href="/Classical/Structures/Lattice/Basic/" class="Module">Classical.Structures.Lattice.Basic</a>                <a id="500" class="Keyword">public</a>
-<a id="507" class="Keyword">open</a> <a id="512" class="Keyword">import</a> <a id="519" href="/Classical/Structures/Lattice/DistributiveLattice/" class="Module">Classical.Structures.Lattice.DistributiveLattice</a>  <a id="569" class="Keyword">public</a>
-<a id="576" class="Keyword">open</a> <a id="581" class="Keyword">import</a> <a id="588" href="/Classical/Structures/Lattice/Dual/" class="Module">Classical.Structures.Lattice.Dual</a>                 <a id="638" class="Keyword">public</a>
-<a id="645" class="Keyword">open</a> <a id="650" class="Keyword">import</a> <a id="657" href="/Classical/Structures/Lattice/OrdinalSum/" class="Module">Classical.Structures.Lattice.OrdinalSum</a>           <a id="707" class="Keyword">public</a>
-<a id="714" class="Keyword">open</a> <a id="719" class="Keyword">import</a> <a id="726" href="/Classical/Structures/Lattice/Parachute/" class="Module">Classical.Structures.Lattice.Parachute</a>            <a id="776" class="Keyword">public</a>
-<a id="783" class="Keyword">open</a> <a id="788" class="Keyword">import</a> <a id="795" href="/Classical/Structures/Lattice/Partitions/" class="Module">Classical.Structures.Lattice.Partitions</a>           <a id="845" class="Keyword">public</a>
-<a id="852" class="Keyword">open</a> <a id="857" class="Keyword">import</a> <a id="864" href="/Classical/Structures/Lattice/Product/" class="Module">Classical.Structures.Lattice.Product</a>              <a id="914" class="Keyword">public</a>
+<a id="2330" class="Keyword">open</a> <a id="2335" class="Keyword">import</a> <a id="2342" href="/Classical/Structures/Lattice/Basic/" class="Module">Classical.Structures.Lattice.Basic</a>                <a id="2392" class="Keyword">public</a>
+<a id="2399" class="Keyword">open</a> <a id="2404" class="Keyword">import</a> <a id="2411" href="/Classical/Structures/Lattice/DistributiveLattice/" class="Module">Classical.Structures.Lattice.DistributiveLattice</a>  <a id="2461" class="Keyword">public</a>
+<a id="2468" class="Keyword">open</a> <a id="2473" class="Keyword">import</a> <a id="2480" href="/Classical/Structures/Lattice/Dual/" class="Module">Classical.Structures.Lattice.Dual</a>                 <a id="2530" class="Keyword">public</a>
+<a id="2537" class="Keyword">open</a> <a id="2542" class="Keyword">import</a> <a id="2549" href="/Classical/Structures/Lattice/OrdinalSum/" class="Module">Classical.Structures.Lattice.OrdinalSum</a>           <a id="2599" class="Keyword">public</a>
+<a id="2606" class="Keyword">open</a> <a id="2611" class="Keyword">import</a> <a id="2618" href="/Classical/Structures/Lattice/Parachute/" class="Module">Classical.Structures.Lattice.Parachute</a>            <a id="2668" class="Keyword">public</a>
+<a id="2675" class="Keyword">open</a> <a id="2680" class="Keyword">import</a> <a id="2687" href="/Classical/Structures/Lattice/Partitions/" class="Module">Classical.Structures.Lattice.Partitions</a>           <a id="2737" class="Keyword">public</a>
+<a id="2744" class="Keyword">open</a> <a id="2749" class="Keyword">import</a> <a id="2756" href="/Classical/Structures/Lattice/Product/" class="Module">Classical.Structures.Lattice.Product</a>              <a id="2806" class="Keyword">public</a>
 
 </pre>
 
