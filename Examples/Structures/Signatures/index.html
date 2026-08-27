@@ -9874,6 +9874,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#example-signatures-for-general-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example signatures for general structures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example signatures for general structures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#examples-of-finite-signatures" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -9881,6 +9893,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -15232,6 +15249,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#example-signatures-for-general-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example signatures for general structures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example signatures for general structures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#examples-of-finite-signatures" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -15239,6 +15268,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -15276,52 +15310,66 @@
 
 
 <h1 id="examplesstructuressignatures">Examples.Structures.Signatures<a class="headerlink" href="#examplesstructuressignatures" title="Anchor link to this section">&para;</a></h1>
-<pre class="Agda hidden-source"><a id="182" class="Symbol">{-#</a> <a id="186" class="Keyword">OPTIONS</a> <a id="194" class="Pragma">--cubical-compatible</a> <a id="215" class="Pragma">--exact-split</a> <a id="229" class="Pragma">--safe</a> <a id="236" class="Symbol">#-}</a>
+<h3 id="example-signatures-for-general-structures">Example signatures for general structures<a class="headerlink" href="#example-signatures-for-general-structures" title="Anchor link to this section">&para;</a></h3>
+<p>This is the <a href="/Examples/Structures/Signatures/">Examples.Structures.Signatures</a> module of the <a href="/">Agda Universal Algebra Library</a>.</p>
+<p>Eight tiny signatures for the general <code>structure</code> type of the frozen <code>Legacy.Base</code>
+tree, named by an arity-counting convention: position <code>k</code> of the digit string
+counts the symbols of arity <code>k</code>, so <code>S001</code> has one binary symbol and <code>S111</code> has one
+nullary, one unary, and one binary.  They give the structure examples of
+<a href="/Examples/Structures/Basic/">Examples.Structures.Basic</a> and the finite-CSP exercises of
+<a href="/Exercises/Complexity/FiniteCSP/">Exercises.Complexity.FiniteCSP</a> something concrete to instantiate.</p>
+<pre class="Agda hidden-source"><a id="777" class="Symbol">{-#</a> <a id="781" class="Keyword">OPTIONS</a> <a id="789" class="Pragma">--cubical-compatible</a> <a id="810" class="Pragma">--exact-split</a> <a id="824" class="Pragma">--safe</a> <a id="831" class="Symbol">#-}</a>
 
-<a id="241" class="Keyword">module</a> <a id="248" href="/Examples/Structures/Signatures/" class="Module">Examples.Structures.Signatures</a> <a id="279" class="Keyword">where</a>
+<a id="836" class="Keyword">module</a> <a id="843" href="/Examples/Structures/Signatures/" class="Module">Examples.Structures.Signatures</a> <a id="874" class="Keyword">where</a>
 
-<a id="286" class="Comment">-- Imports from the Agda Standard Library -------------------------------------</a>
-<a id="366" class="Keyword">open</a> <a id="371" class="Keyword">import</a> <a id="378" href="/classic/Data.Empty.html" class="Module">Data.Empty</a>                    <a id="408" class="Keyword">using</a> <a id="414" class="Symbol">()</a> <a id="417" class="Keyword">renaming</a> <a id="426" class="Symbol">(</a> <a id="428" href="/classic/Data.Empty.html#914" class="Function">⊥</a> <a id="430" class="Symbol">to</a> <a id="433" class="Function">𝟘</a> <a id="435" class="Symbol">)</a>
-<a id="437" class="Keyword">open</a> <a id="442" class="Keyword">import</a> <a id="449" href="/classic/Data.Unit.Base.html" class="Module">Data.Unit.Base</a>                <a id="479" class="Keyword">using</a> <a id="485" class="Symbol">()</a> <a id="488" class="Keyword">renaming</a> <a id="497" class="Symbol">(</a> <a id="499" href="/classic/Agda.Builtin.Unit.html#175" class="Record">⊤</a> <a id="501" class="Symbol">to</a> <a id="504" class="Record">𝟙</a> <a id="506" class="Symbol">;</a> <a id="508" href="/classic/Agda.Builtin.Unit.html#212" class="InductiveConstructor">tt</a> <a id="511" class="Symbol">to</a> <a id="514" class="InductiveConstructor">𝟎</a> <a id="516" class="Symbol">)</a>
-<a id="518" class="Keyword">open</a> <a id="523" class="Keyword">import</a> <a id="530" href="/classic/Level.html" class="Module">Level</a>                         <a id="560" class="Keyword">using</a> <a id="566" class="Symbol">()</a> <a id="569" class="Keyword">renaming</a> <a id="578" class="Symbol">(</a> <a id="580" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="583" class="Symbol">to</a> <a id="586" class="Function">ℓ₀</a> <a id="589" class="Symbol">)</a>
+<a id="881" class="Comment">-- Imports from the Agda Standard Library -------------------------------------</a>
+<a id="961" class="Keyword">open</a> <a id="966" class="Keyword">import</a> <a id="973" href="/classic/Data.Empty.html" class="Module">Data.Empty</a>                    <a id="1003" class="Keyword">using</a> <a id="1009" class="Symbol">()</a> <a id="1012" class="Keyword">renaming</a> <a id="1021" class="Symbol">(</a> <a id="1023" href="/classic/Data.Empty.html#914" class="Function">⊥</a> <a id="1025" class="Symbol">to</a> <a id="1028" class="Function">𝟘</a> <a id="1030" class="Symbol">)</a>
+<a id="1032" class="Keyword">open</a> <a id="1037" class="Keyword">import</a> <a id="1044" href="/classic/Data.Unit.Base.html" class="Module">Data.Unit.Base</a>                <a id="1074" class="Keyword">using</a> <a id="1080" class="Symbol">()</a> <a id="1083" class="Keyword">renaming</a> <a id="1092" class="Symbol">(</a> <a id="1094" href="/classic/Agda.Builtin.Unit.html#175" class="Record">⊤</a> <a id="1096" class="Symbol">to</a> <a id="1099" class="Record">𝟙</a> <a id="1101" class="Symbol">;</a> <a id="1103" href="/classic/Agda.Builtin.Unit.html#212" class="InductiveConstructor">tt</a> <a id="1106" class="Symbol">to</a> <a id="1109" class="InductiveConstructor">𝟎</a> <a id="1111" class="Symbol">)</a>
+<a id="1113" class="Keyword">open</a> <a id="1118" class="Keyword">import</a> <a id="1125" href="/classic/Level.html" class="Module">Level</a>                         <a id="1155" class="Keyword">using</a> <a id="1161" class="Symbol">()</a> <a id="1164" class="Keyword">renaming</a> <a id="1173" class="Symbol">(</a> <a id="1175" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="1178" class="Symbol">to</a> <a id="1181" class="Function">ℓ₀</a> <a id="1184" class="Symbol">)</a>
 
-<a id="592" class="Keyword">open</a> <a id="597" class="Keyword">import</a> <a id="604" href="/Overture/" class="Module">Overture</a>                      <a id="634" class="Keyword">using</a> <a id="640" class="Symbol">(</a> <a id="642" href="/Overture/Basic/#4006" class="Datatype">𝟚</a> <a id="644" class="Symbol">;</a> <a id="646" href="/Overture/Basic/#4071" class="Datatype">𝟛</a> <a id="648" class="Symbol">)</a>
-<a id="650" class="Keyword">open</a> <a id="655" class="Keyword">import</a> <a id="662" href="/Legacy/Base/Structures/Basic/" class="Module">Legacy.Base.Structures.Basic</a>  <a id="692" class="Keyword">using</a> <a id="698" class="Symbol">(</a> <a id="700" href="/Legacy/Base/Structures/Basic/#1267" class="Record">signature</a> <a id="710" class="Symbol">)</a>
+<a id="1187" class="Keyword">open</a> <a id="1192" class="Keyword">import</a> <a id="1199" href="/Overture/" class="Module">Overture</a>                      <a id="1229" class="Keyword">using</a> <a id="1235" class="Symbol">(</a> <a id="1237" href="/Overture/Basic/#4006" class="Datatype">𝟚</a> <a id="1239" class="Symbol">;</a> <a id="1241" href="/Overture/Basic/#4071" class="Datatype">𝟛</a> <a id="1243" class="Symbol">)</a>
+<a id="1245" class="Keyword">open</a> <a id="1250" class="Keyword">import</a> <a id="1257" href="/Legacy/Base/Structures/Basic/" class="Module">Legacy.Base.Structures.Basic</a>  <a id="1287" class="Keyword">using</a> <a id="1293" class="Symbol">(</a> <a id="1295" href="/Legacy/Base/Structures/Basic/#1267" class="Record">signature</a> <a id="1305" class="Symbol">)</a>
 </pre>
 
 <h4 id="examples-of-finite-signatures">Examples of finite signatures<a class="headerlink" href="#examples-of-finite-signatures" title="Anchor link to this section">&para;</a></h4>
-<pre class="Agda"><a id="767" class="Comment">-- The signature with...</a>
+<p>Each is a <code>signature</code> record whose <code>symbol</code> type is <code>𝟘</code>, <code>𝟙</code>, <code>𝟚</code>, or <code>𝟛</code> and
+whose arity map sends a symbol to the finite type of its argument positions: <code>S∅</code>
+(no symbols, so bare sets), <code>S1</code> (one constant, pointed sets), <code>S01</code> (one unary),
+<code>S001</code> (one binary, magmas and their kin), <code>S0001</code> (one ternary, the NAE-3-SAT
+relation), <code>S021</code> (two unary and one binary), <code>S101</code> (one constant and one binary,
+monoids), and <code>S111</code> (one constant, one unary, and one binary, groups).</p>
+<pre class="Agda"><a id="1838" class="Comment">-- The signature with...</a>
 
-<a id="793" class="Comment">-- ... no symbols  (e.g., sets)</a>
-<a id="S∅"></a><a id="825" href="/Examples/Structures/Signatures/#825" class="Function">S∅</a> <a id="828" class="Symbol">:</a> <a id="830" href="/Legacy/Base/Structures/Basic/#1267" class="Record">signature</a> <a id="840" href="/Examples/Structures/Signatures/#586" class="Function">ℓ₀</a> <a id="843" href="/Examples/Structures/Signatures/#586" class="Function">ℓ₀</a>
-<a id="846" href="/Examples/Structures/Signatures/#825" class="Function">S∅</a> <a id="849" class="Symbol">=</a> <a id="851" class="Keyword">record</a> <a id="858" class="Symbol">{</a> <a id="860" href="/Legacy/Base/Structures/Basic/#1327" class="Field">symbol</a> <a id="867" class="Symbol">=</a> <a id="869" href="/Examples/Structures/Signatures/#433" class="Function">𝟘</a> <a id="871" class="Symbol">;</a> <a id="873" href="/Legacy/Base/Structures/Basic/#1345" class="Field">arity</a> <a id="879" class="Symbol">=</a> <a id="881" class="Symbol">λ</a> <a id="883" class="Symbol">()</a> <a id="886" class="Symbol">}</a>
+<a id="1864" class="Comment">-- ... no symbols  (e.g., sets)</a>
+<a id="S∅"></a><a id="1896" href="/Examples/Structures/Signatures/#1896" class="Function">S∅</a> <a id="1899" class="Symbol">:</a> <a id="1901" href="/Legacy/Base/Structures/Basic/#1267" class="Record">signature</a> <a id="1911" href="/Examples/Structures/Signatures/#1181" class="Function">ℓ₀</a> <a id="1914" href="/Examples/Structures/Signatures/#1181" class="Function">ℓ₀</a>
+<a id="1917" href="/Examples/Structures/Signatures/#1896" class="Function">S∅</a> <a id="1920" class="Symbol">=</a> <a id="1922" class="Keyword">record</a> <a id="1929" class="Symbol">{</a> <a id="1931" href="/Legacy/Base/Structures/Basic/#1327" class="Field">symbol</a> <a id="1938" class="Symbol">=</a> <a id="1940" href="/Examples/Structures/Signatures/#1028" class="Function">𝟘</a> <a id="1942" class="Symbol">;</a> <a id="1944" href="/Legacy/Base/Structures/Basic/#1345" class="Field">arity</a> <a id="1950" class="Symbol">=</a> <a id="1952" class="Symbol">λ</a> <a id="1954" class="Symbol">()</a> <a id="1957" class="Symbol">}</a>
 
-<a id="889" class="Comment">-- ... one nullary symbol (e.g., pointed sets)</a>
-<a id="S1"></a><a id="936" href="/Examples/Structures/Signatures/#936" class="Function">S1</a> <a id="939" class="Symbol">:</a> <a id="941" href="/Legacy/Base/Structures/Basic/#1267" class="Record">signature</a> <a id="951" href="/Examples/Structures/Signatures/#586" class="Function">ℓ₀</a> <a id="954" href="/Examples/Structures/Signatures/#586" class="Function">ℓ₀</a>
-<a id="957" href="/Examples/Structures/Signatures/#936" class="Function">S1</a> <a id="960" class="Symbol">=</a> <a id="962" class="Keyword">record</a> <a id="969" class="Symbol">{</a> <a id="971" href="/Legacy/Base/Structures/Basic/#1327" class="Field">symbol</a> <a id="978" class="Symbol">=</a> <a id="980" href="/Examples/Structures/Signatures/#504" class="Record">𝟙</a> <a id="982" class="Symbol">;</a> <a id="984" href="/Legacy/Base/Structures/Basic/#1345" class="Field">arity</a> <a id="990" class="Symbol">=</a> <a id="992" class="Symbol">λ</a> <a id="994" href="/Examples/Structures/Signatures/#994" class="Bound">_</a> <a id="996" class="Symbol">→</a> <a id="998" href="/Examples/Structures/Signatures/#433" class="Function">𝟘</a> <a id="1000" class="Symbol">}</a>
+<a id="1960" class="Comment">-- ... one nullary symbol (e.g., pointed sets)</a>
+<a id="S1"></a><a id="2007" href="/Examples/Structures/Signatures/#2007" class="Function">S1</a> <a id="2010" class="Symbol">:</a> <a id="2012" href="/Legacy/Base/Structures/Basic/#1267" class="Record">signature</a> <a id="2022" href="/Examples/Structures/Signatures/#1181" class="Function">ℓ₀</a> <a id="2025" href="/Examples/Structures/Signatures/#1181" class="Function">ℓ₀</a>
+<a id="2028" href="/Examples/Structures/Signatures/#2007" class="Function">S1</a> <a id="2031" class="Symbol">=</a> <a id="2033" class="Keyword">record</a> <a id="2040" class="Symbol">{</a> <a id="2042" href="/Legacy/Base/Structures/Basic/#1327" class="Field">symbol</a> <a id="2049" class="Symbol">=</a> <a id="2051" href="/Examples/Structures/Signatures/#1099" class="Record">𝟙</a> <a id="2053" class="Symbol">;</a> <a id="2055" href="/Legacy/Base/Structures/Basic/#1345" class="Field">arity</a> <a id="2061" class="Symbol">=</a> <a id="2063" class="Symbol">λ</a> <a id="2065" href="/Examples/Structures/Signatures/#2065" class="Bound">_</a> <a id="2067" class="Symbol">→</a> <a id="2069" href="/Examples/Structures/Signatures/#1028" class="Function">𝟘</a> <a id="2071" class="Symbol">}</a>
 
-<a id="S01"></a><a id="1003" href="/Examples/Structures/Signatures/#1003" class="Function">S01</a> <a id="1007" class="Symbol">:</a> <a id="1009" href="/Legacy/Base/Structures/Basic/#1267" class="Record">signature</a> <a id="1019" href="/Examples/Structures/Signatures/#586" class="Function">ℓ₀</a> <a id="1022" href="/Examples/Structures/Signatures/#586" class="Function">ℓ₀</a> <a id="1025" class="Comment">-- ...one unary</a>
-<a id="1041" href="/Examples/Structures/Signatures/#1003" class="Function">S01</a> <a id="1045" class="Symbol">=</a> <a id="1047" class="Keyword">record</a> <a id="1054" class="Symbol">{</a> <a id="1056" href="/Legacy/Base/Structures/Basic/#1327" class="Field">symbol</a> <a id="1063" class="Symbol">=</a> <a id="1065" href="/Examples/Structures/Signatures/#504" class="Record">𝟙</a> <a id="1067" class="Symbol">;</a> <a id="1069" href="/Legacy/Base/Structures/Basic/#1345" class="Field">arity</a> <a id="1075" class="Symbol">=</a> <a id="1077" class="Symbol">λ</a> <a id="1079" href="/Examples/Structures/Signatures/#1079" class="Bound">_</a> <a id="1081" class="Symbol">→</a> <a id="1083" href="/Examples/Structures/Signatures/#504" class="Record">𝟙</a> <a id="1085" class="Symbol">}</a>
+<a id="S01"></a><a id="2074" href="/Examples/Structures/Signatures/#2074" class="Function">S01</a> <a id="2078" class="Symbol">:</a> <a id="2080" href="/Legacy/Base/Structures/Basic/#1267" class="Record">signature</a> <a id="2090" href="/Examples/Structures/Signatures/#1181" class="Function">ℓ₀</a> <a id="2093" href="/Examples/Structures/Signatures/#1181" class="Function">ℓ₀</a> <a id="2096" class="Comment">-- ...one unary</a>
+<a id="2112" href="/Examples/Structures/Signatures/#2074" class="Function">S01</a> <a id="2116" class="Symbol">=</a> <a id="2118" class="Keyword">record</a> <a id="2125" class="Symbol">{</a> <a id="2127" href="/Legacy/Base/Structures/Basic/#1327" class="Field">symbol</a> <a id="2134" class="Symbol">=</a> <a id="2136" href="/Examples/Structures/Signatures/#1099" class="Record">𝟙</a> <a id="2138" class="Symbol">;</a> <a id="2140" href="/Legacy/Base/Structures/Basic/#1345" class="Field">arity</a> <a id="2146" class="Symbol">=</a> <a id="2148" class="Symbol">λ</a> <a id="2150" href="/Examples/Structures/Signatures/#2150" class="Bound">_</a> <a id="2152" class="Symbol">→</a> <a id="2154" href="/Examples/Structures/Signatures/#1099" class="Record">𝟙</a> <a id="2156" class="Symbol">}</a>
 
-<a id="1088" class="Comment">-- ...one binary symbol (e.g., magmas, semigroups, semilattices)</a>
-<a id="S001"></a><a id="1153" href="/Examples/Structures/Signatures/#1153" class="Function">S001</a> <a id="1158" class="Symbol">:</a> <a id="1160" href="/Legacy/Base/Structures/Basic/#1267" class="Record">signature</a> <a id="1170" href="/Examples/Structures/Signatures/#586" class="Function">ℓ₀</a> <a id="1173" href="/Examples/Structures/Signatures/#586" class="Function">ℓ₀</a>
-<a id="1176" href="/Examples/Structures/Signatures/#1153" class="Function">S001</a> <a id="1181" class="Symbol">=</a> <a id="1183" class="Keyword">record</a> <a id="1190" class="Symbol">{</a> <a id="1192" href="/Legacy/Base/Structures/Basic/#1327" class="Field">symbol</a> <a id="1199" class="Symbol">=</a> <a id="1201" href="/Examples/Structures/Signatures/#504" class="Record">𝟙</a> <a id="1203" class="Symbol">;</a> <a id="1205" href="/Legacy/Base/Structures/Basic/#1345" class="Field">arity</a> <a id="1211" class="Symbol">=</a> <a id="1213" class="Symbol">λ</a> <a id="1215" href="/Examples/Structures/Signatures/#1215" class="Bound">_</a> <a id="1217" class="Symbol">→</a> <a id="1219" href="/Overture/Basic/#4006" class="Datatype">𝟚</a> <a id="1221" class="Symbol">}</a>
+<a id="2159" class="Comment">-- ...one binary symbol (e.g., magmas, semigroups, semilattices)</a>
+<a id="S001"></a><a id="2224" href="/Examples/Structures/Signatures/#2224" class="Function">S001</a> <a id="2229" class="Symbol">:</a> <a id="2231" href="/Legacy/Base/Structures/Basic/#1267" class="Record">signature</a> <a id="2241" href="/Examples/Structures/Signatures/#1181" class="Function">ℓ₀</a> <a id="2244" href="/Examples/Structures/Signatures/#1181" class="Function">ℓ₀</a>
+<a id="2247" href="/Examples/Structures/Signatures/#2224" class="Function">S001</a> <a id="2252" class="Symbol">=</a> <a id="2254" class="Keyword">record</a> <a id="2261" class="Symbol">{</a> <a id="2263" href="/Legacy/Base/Structures/Basic/#1327" class="Field">symbol</a> <a id="2270" class="Symbol">=</a> <a id="2272" href="/Examples/Structures/Signatures/#1099" class="Record">𝟙</a> <a id="2274" class="Symbol">;</a> <a id="2276" href="/Legacy/Base/Structures/Basic/#1345" class="Field">arity</a> <a id="2282" class="Symbol">=</a> <a id="2284" class="Symbol">λ</a> <a id="2286" href="/Examples/Structures/Signatures/#2286" class="Bound">_</a> <a id="2288" class="Symbol">→</a> <a id="2290" href="/Overture/Basic/#4006" class="Datatype">𝟚</a> <a id="2292" class="Symbol">}</a>
 
-<a id="1224" class="Comment">-- ...one ternary symbol (e.g., boolean NAE-3-SAT relational structure)</a>
-<a id="S0001"></a><a id="1296" href="/Examples/Structures/Signatures/#1296" class="Function">S0001</a> <a id="1302" class="Symbol">:</a> <a id="1304" href="/Legacy/Base/Structures/Basic/#1267" class="Record">signature</a> <a id="1314" href="/Examples/Structures/Signatures/#586" class="Function">ℓ₀</a> <a id="1317" href="/Examples/Structures/Signatures/#586" class="Function">ℓ₀</a>
-<a id="1320" href="/Examples/Structures/Signatures/#1296" class="Function">S0001</a> <a id="1326" class="Symbol">=</a> <a id="1328" class="Keyword">record</a> <a id="1335" class="Symbol">{</a> <a id="1337" href="/Legacy/Base/Structures/Basic/#1327" class="Field">symbol</a> <a id="1344" class="Symbol">=</a> <a id="1346" href="/Examples/Structures/Signatures/#504" class="Record">𝟙</a> <a id="1348" class="Symbol">;</a> <a id="1350" href="/Legacy/Base/Structures/Basic/#1345" class="Field">arity</a> <a id="1356" class="Symbol">=</a> <a id="1358" class="Symbol">λ</a> <a id="1360" href="/Examples/Structures/Signatures/#1360" class="Bound">_</a> <a id="1362" class="Symbol">→</a> <a id="1364" href="/Overture/Basic/#4071" class="Datatype">𝟛</a> <a id="1366" class="Symbol">}</a>
+<a id="2295" class="Comment">-- ...one ternary symbol (e.g., boolean NAE-3-SAT relational structure)</a>
+<a id="S0001"></a><a id="2367" href="/Examples/Structures/Signatures/#2367" class="Function">S0001</a> <a id="2373" class="Symbol">:</a> <a id="2375" href="/Legacy/Base/Structures/Basic/#1267" class="Record">signature</a> <a id="2385" href="/Examples/Structures/Signatures/#1181" class="Function">ℓ₀</a> <a id="2388" href="/Examples/Structures/Signatures/#1181" class="Function">ℓ₀</a>
+<a id="2391" href="/Examples/Structures/Signatures/#2367" class="Function">S0001</a> <a id="2397" class="Symbol">=</a> <a id="2399" class="Keyword">record</a> <a id="2406" class="Symbol">{</a> <a id="2408" href="/Legacy/Base/Structures/Basic/#1327" class="Field">symbol</a> <a id="2415" class="Symbol">=</a> <a id="2417" href="/Examples/Structures/Signatures/#1099" class="Record">𝟙</a> <a id="2419" class="Symbol">;</a> <a id="2421" href="/Legacy/Base/Structures/Basic/#1345" class="Field">arity</a> <a id="2427" class="Symbol">=</a> <a id="2429" class="Symbol">λ</a> <a id="2431" href="/Examples/Structures/Signatures/#2431" class="Bound">_</a> <a id="2433" class="Symbol">→</a> <a id="2435" href="/Overture/Basic/#4071" class="Datatype">𝟛</a> <a id="2437" class="Symbol">}</a>
 
-<a id="1369" class="Comment">-- ...0 nullary, 2 unary, and 1 binary</a>
-<a id="S021"></a><a id="1408" href="/Examples/Structures/Signatures/#1408" class="Function">S021</a> <a id="1413" class="Symbol">:</a> <a id="1415" href="/Legacy/Base/Structures/Basic/#1267" class="Record">signature</a> <a id="1425" href="/Examples/Structures/Signatures/#586" class="Function">ℓ₀</a> <a id="1428" href="/Examples/Structures/Signatures/#586" class="Function">ℓ₀</a>
-<a id="1431" href="/Examples/Structures/Signatures/#1408" class="Function">S021</a> <a id="1436" class="Symbol">=</a> <a id="1438" class="Keyword">record</a> <a id="1445" class="Symbol">{</a> <a id="1447" href="/Legacy/Base/Structures/Basic/#1327" class="Field">symbol</a> <a id="1454" class="Symbol">=</a> <a id="1456" href="/Overture/Basic/#4071" class="Datatype">𝟛</a> <a id="1458" class="Symbol">;</a> <a id="1460" href="/Legacy/Base/Structures/Basic/#1345" class="Field">arity</a> <a id="1466" class="Symbol">=</a> <a id="1468" class="Symbol">λ{</a> <a id="1471" href="/Overture/Basic/#4089" class="InductiveConstructor">𝟛.𝟎</a> <a id="1475" class="Symbol">→</a> <a id="1477" href="/Overture/Basic/#4006" class="Datatype">𝟚</a> <a id="1479" class="Symbol">;</a> <a id="1481" href="/Overture/Basic/#4098" class="InductiveConstructor">𝟛.𝟏</a> <a id="1485" class="Symbol">→</a> <a id="1487" href="/Examples/Structures/Signatures/#504" class="Record">𝟙</a> <a id="1489" class="Symbol">;</a> <a id="1491" href="/Overture/Basic/#4107" class="InductiveConstructor">𝟛.𝟐</a> <a id="1495" class="Symbol">→</a> <a id="1497" href="/Examples/Structures/Signatures/#504" class="Record">𝟙</a> <a id="1499" class="Symbol">}</a> <a id="1501" class="Symbol">}</a>
+<a id="2440" class="Comment">-- ...0 nullary, 2 unary, and 1 binary</a>
+<a id="S021"></a><a id="2479" href="/Examples/Structures/Signatures/#2479" class="Function">S021</a> <a id="2484" class="Symbol">:</a> <a id="2486" href="/Legacy/Base/Structures/Basic/#1267" class="Record">signature</a> <a id="2496" href="/Examples/Structures/Signatures/#1181" class="Function">ℓ₀</a> <a id="2499" href="/Examples/Structures/Signatures/#1181" class="Function">ℓ₀</a>
+<a id="2502" href="/Examples/Structures/Signatures/#2479" class="Function">S021</a> <a id="2507" class="Symbol">=</a> <a id="2509" class="Keyword">record</a> <a id="2516" class="Symbol">{</a> <a id="2518" href="/Legacy/Base/Structures/Basic/#1327" class="Field">symbol</a> <a id="2525" class="Symbol">=</a> <a id="2527" href="/Overture/Basic/#4071" class="Datatype">𝟛</a> <a id="2529" class="Symbol">;</a> <a id="2531" href="/Legacy/Base/Structures/Basic/#1345" class="Field">arity</a> <a id="2537" class="Symbol">=</a> <a id="2539" class="Symbol">λ{</a> <a id="2542" href="/Overture/Basic/#4089" class="InductiveConstructor">𝟛.𝟎</a> <a id="2546" class="Symbol">→</a> <a id="2548" href="/Overture/Basic/#4006" class="Datatype">𝟚</a> <a id="2550" class="Symbol">;</a> <a id="2552" href="/Overture/Basic/#4098" class="InductiveConstructor">𝟛.𝟏</a> <a id="2556" class="Symbol">→</a> <a id="2558" href="/Examples/Structures/Signatures/#1099" class="Record">𝟙</a> <a id="2560" class="Symbol">;</a> <a id="2562" href="/Overture/Basic/#4107" class="InductiveConstructor">𝟛.𝟐</a> <a id="2566" class="Symbol">→</a> <a id="2568" href="/Examples/Structures/Signatures/#1099" class="Record">𝟙</a> <a id="2570" class="Symbol">}</a> <a id="2572" class="Symbol">}</a>
 
-<a id="1504" class="Comment">-- ...one nullary and one binary (e.g., monoids)</a>
-<a id="S101"></a><a id="1553" href="/Examples/Structures/Signatures/#1553" class="Function">S101</a> <a id="1558" class="Symbol">:</a> <a id="1560" href="/Legacy/Base/Structures/Basic/#1267" class="Record">signature</a> <a id="1570" href="/Examples/Structures/Signatures/#586" class="Function">ℓ₀</a> <a id="1573" href="/Examples/Structures/Signatures/#586" class="Function">ℓ₀</a>
-<a id="1576" href="/Examples/Structures/Signatures/#1553" class="Function">S101</a> <a id="1581" class="Symbol">=</a> <a id="1583" class="Keyword">record</a> <a id="1590" class="Symbol">{</a> <a id="1592" href="/Legacy/Base/Structures/Basic/#1327" class="Field">symbol</a> <a id="1599" class="Symbol">=</a> <a id="1601" href="/Overture/Basic/#4006" class="Datatype">𝟚</a> <a id="1603" class="Symbol">;</a> <a id="1605" href="/Legacy/Base/Structures/Basic/#1345" class="Field">arity</a> <a id="1611" class="Symbol">=</a> <a id="1613" class="Symbol">λ{</a> <a id="1616" href="/Overture/Basic/#4024" class="InductiveConstructor">𝟚.𝟎</a> <a id="1620" class="Symbol">→</a> <a id="1622" href="/Examples/Structures/Signatures/#433" class="Function">𝟘</a> <a id="1624" class="Symbol">;</a> <a id="1626" href="/Overture/Basic/#4033" class="InductiveConstructor">𝟚.𝟏</a> <a id="1630" class="Symbol">→</a> <a id="1632" href="/Overture/Basic/#4006" class="Datatype">𝟚</a> <a id="1634" class="Symbol">}</a> <a id="1636" class="Symbol">}</a>
+<a id="2575" class="Comment">-- ...one nullary and one binary (e.g., monoids)</a>
+<a id="S101"></a><a id="2624" href="/Examples/Structures/Signatures/#2624" class="Function">S101</a> <a id="2629" class="Symbol">:</a> <a id="2631" href="/Legacy/Base/Structures/Basic/#1267" class="Record">signature</a> <a id="2641" href="/Examples/Structures/Signatures/#1181" class="Function">ℓ₀</a> <a id="2644" href="/Examples/Structures/Signatures/#1181" class="Function">ℓ₀</a>
+<a id="2647" href="/Examples/Structures/Signatures/#2624" class="Function">S101</a> <a id="2652" class="Symbol">=</a> <a id="2654" class="Keyword">record</a> <a id="2661" class="Symbol">{</a> <a id="2663" href="/Legacy/Base/Structures/Basic/#1327" class="Field">symbol</a> <a id="2670" class="Symbol">=</a> <a id="2672" href="/Overture/Basic/#4006" class="Datatype">𝟚</a> <a id="2674" class="Symbol">;</a> <a id="2676" href="/Legacy/Base/Structures/Basic/#1345" class="Field">arity</a> <a id="2682" class="Symbol">=</a> <a id="2684" class="Symbol">λ{</a> <a id="2687" href="/Overture/Basic/#4024" class="InductiveConstructor">𝟚.𝟎</a> <a id="2691" class="Symbol">→</a> <a id="2693" href="/Examples/Structures/Signatures/#1028" class="Function">𝟘</a> <a id="2695" class="Symbol">;</a> <a id="2697" href="/Overture/Basic/#4033" class="InductiveConstructor">𝟚.𝟏</a> <a id="2701" class="Symbol">→</a> <a id="2703" href="/Overture/Basic/#4006" class="Datatype">𝟚</a> <a id="2705" class="Symbol">}</a> <a id="2707" class="Symbol">}</a>
 
-<a id="1639" class="Comment">-- ...one nullary, one unary, and one binary (e.g., groups)</a>
-<a id="S111"></a><a id="1699" href="/Examples/Structures/Signatures/#1699" class="Function">S111</a> <a id="1704" class="Symbol">:</a> <a id="1706" href="/Legacy/Base/Structures/Basic/#1267" class="Record">signature</a> <a id="1716" href="/Examples/Structures/Signatures/#586" class="Function">ℓ₀</a> <a id="1719" href="/Examples/Structures/Signatures/#586" class="Function">ℓ₀</a>
-<a id="1722" href="/Examples/Structures/Signatures/#1699" class="Function">S111</a> <a id="1727" class="Symbol">=</a> <a id="1729" class="Keyword">record</a> <a id="1736" class="Symbol">{</a> <a id="1738" href="/Legacy/Base/Structures/Basic/#1327" class="Field">symbol</a> <a id="1745" class="Symbol">=</a> <a id="1747" href="/Overture/Basic/#4071" class="Datatype">𝟛</a> <a id="1749" class="Symbol">;</a> <a id="1751" href="/Legacy/Base/Structures/Basic/#1345" class="Field">arity</a> <a id="1757" class="Symbol">=</a> <a id="1759" class="Symbol">λ{</a> <a id="1762" href="/Overture/Basic/#4089" class="InductiveConstructor">𝟛.𝟎</a> <a id="1766" class="Symbol">→</a> <a id="1768" href="/Examples/Structures/Signatures/#433" class="Function">𝟘</a> <a id="1770" class="Symbol">;</a> <a id="1772" href="/Overture/Basic/#4098" class="InductiveConstructor">𝟛.𝟏</a> <a id="1776" class="Symbol">→</a> <a id="1778" href="/Examples/Structures/Signatures/#504" class="Record">𝟙</a> <a id="1780" class="Symbol">;</a> <a id="1782" href="/Overture/Basic/#4107" class="InductiveConstructor">𝟛.𝟐</a> <a id="1786" class="Symbol">→</a> <a id="1788" href="/Overture/Basic/#4006" class="Datatype">𝟚</a> <a id="1790" class="Symbol">}</a> <a id="1792" class="Symbol">}</a>
+<a id="2710" class="Comment">-- ...one nullary, one unary, and one binary (e.g., groups)</a>
+<a id="S111"></a><a id="2770" href="/Examples/Structures/Signatures/#2770" class="Function">S111</a> <a id="2775" class="Symbol">:</a> <a id="2777" href="/Legacy/Base/Structures/Basic/#1267" class="Record">signature</a> <a id="2787" href="/Examples/Structures/Signatures/#1181" class="Function">ℓ₀</a> <a id="2790" href="/Examples/Structures/Signatures/#1181" class="Function">ℓ₀</a>
+<a id="2793" href="/Examples/Structures/Signatures/#2770" class="Function">S111</a> <a id="2798" class="Symbol">=</a> <a id="2800" class="Keyword">record</a> <a id="2807" class="Symbol">{</a> <a id="2809" href="/Legacy/Base/Structures/Basic/#1327" class="Field">symbol</a> <a id="2816" class="Symbol">=</a> <a id="2818" href="/Overture/Basic/#4071" class="Datatype">𝟛</a> <a id="2820" class="Symbol">;</a> <a id="2822" href="/Legacy/Base/Structures/Basic/#1345" class="Field">arity</a> <a id="2828" class="Symbol">=</a> <a id="2830" class="Symbol">λ{</a> <a id="2833" href="/Overture/Basic/#4089" class="InductiveConstructor">𝟛.𝟎</a> <a id="2837" class="Symbol">→</a> <a id="2839" href="/Examples/Structures/Signatures/#1028" class="Function">𝟘</a> <a id="2841" class="Symbol">;</a> <a id="2843" href="/Overture/Basic/#4098" class="InductiveConstructor">𝟛.𝟏</a> <a id="2847" class="Symbol">→</a> <a id="2849" href="/Examples/Structures/Signatures/#1099" class="Record">𝟙</a> <a id="2851" class="Symbol">;</a> <a id="2853" href="/Overture/Basic/#4107" class="InductiveConstructor">𝟛.𝟐</a> <a id="2857" class="Symbol">→</a> <a id="2859" href="/Overture/Basic/#4006" class="Datatype">𝟚</a> <a id="2861" class="Symbol">}</a> <a id="2863" class="Symbol">}</a>
 </pre>
 
 <!-- File: docs/_links.md -->

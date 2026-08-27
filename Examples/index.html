@@ -15218,16 +15218,34 @@
 <h1 id="examples">Examples<a class="headerlink" href="#examples" title="Anchor link to this section">&para;</a></h1>
 <h3 id="examples_1">Examples<a class="headerlink" href="#examples_1" title="Anchor link to this section">&para;</a></h3>
 <p>This is the <a href="/Examples/">Examples</a> module of the <a href="/">Agda Universal Algebra Library</a>.</p>
-<pre class="Agda"><a id="216" class="Symbol">{-#</a> <a id="220" class="Keyword">OPTIONS</a> <a id="228" class="Pragma">--cubical-compatible</a> <a id="249" class="Pragma">--exact-split</a> <a id="263" class="Pragma">--safe</a> <a id="270" class="Symbol">#-}</a>
+<p>This is the aggregator for the example tree.  The submodules group the examples by
+flavour, as follows:</p>
+<ul>
+<li><a href="/Examples/Classical/">Examples.Classical</a> collects the worked instances of the classical
+   structures: canonical first examples, finite groups from Cayley tables, the
+   small lattices, and deliberate failure modes such as a magma that is not a
+   semigroup.</li>
+<li><a href="/Examples/Demos/">Examples.Demos</a> collects self-contained demonstrations, among them the
+   frozen literate artifact of the TYPES 2021 paper.</li>
+<li><a href="/Examples/FunctionTypeBijections/">Examples.FunctionTypeBijections</a> and <a href="/Examples/PolynomialFunctors/">Examples.PolynomialFunctors</a> are
+   illustrative studies relocated out of the Legacy tree: n-ary function encodings
+   and their η-obstructions, and polynomial functors with W-types.</li>
+<li><a href="/Examples/Setoid/">Examples.Setoid</a> exercises the generic <code>Setoid/</code> machinery directly: free
+   algebras, presentations, quotients, and Birkhoff's HSP theorem specialized to a
+   concrete algebra.</li>
+<li><a href="/Examples/Structures/">Examples.Structures</a> instantiates the general operations-and-relations
+   structures of the frozen Legacy tree.</li>
+</ul>
+<pre class="Agda"><a id="1226" class="Symbol">{-#</a> <a id="1230" class="Keyword">OPTIONS</a> <a id="1238" class="Pragma">--cubical-compatible</a> <a id="1259" class="Pragma">--exact-split</a> <a id="1273" class="Pragma">--safe</a> <a id="1280" class="Symbol">#-}</a>
 
-<a id="275" class="Keyword">module</a> <a id="282" href="/Examples/" class="Module">Examples</a> <a id="291" class="Keyword">where</a>
+<a id="1285" class="Keyword">module</a> <a id="1292" href="/Examples/" class="Module">Examples</a> <a id="1301" class="Keyword">where</a>
 
-<a id="298" class="Keyword">open</a> <a id="303" class="Keyword">import</a> <a id="310" href="/Examples/Classical/" class="Module">Examples.Classical</a>
-<a id="329" class="Keyword">open</a> <a id="334" class="Keyword">import</a> <a id="341" href="/Examples/Demos/" class="Module">Examples.Demos</a>
-<a id="356" class="Keyword">open</a> <a id="361" class="Keyword">import</a> <a id="368" href="/Examples/FunctionTypeBijections/" class="Module">Examples.FunctionTypeBijections</a>
-<a id="400" class="Keyword">open</a> <a id="405" class="Keyword">import</a> <a id="412" href="/Examples/PolynomialFunctors/" class="Module">Examples.PolynomialFunctors</a>
-<a id="440" class="Keyword">open</a> <a id="445" class="Keyword">import</a> <a id="452" href="/Examples/Setoid/" class="Module">Examples.Setoid</a>
-<a id="468" class="Keyword">open</a> <a id="473" class="Keyword">import</a> <a id="480" href="/Examples/Structures/" class="Module">Examples.Structures</a>
+<a id="1308" class="Keyword">open</a> <a id="1313" class="Keyword">import</a> <a id="1320" href="/Examples/Classical/" class="Module">Examples.Classical</a>
+<a id="1339" class="Keyword">open</a> <a id="1344" class="Keyword">import</a> <a id="1351" href="/Examples/Demos/" class="Module">Examples.Demos</a>
+<a id="1366" class="Keyword">open</a> <a id="1371" class="Keyword">import</a> <a id="1378" href="/Examples/FunctionTypeBijections/" class="Module">Examples.FunctionTypeBijections</a>
+<a id="1410" class="Keyword">open</a> <a id="1415" class="Keyword">import</a> <a id="1422" href="/Examples/PolynomialFunctors/" class="Module">Examples.PolynomialFunctors</a>
+<a id="1450" class="Keyword">open</a> <a id="1455" class="Keyword">import</a> <a id="1462" href="/Examples/Setoid/" class="Module">Examples.Setoid</a>
+<a id="1478" class="Keyword">open</a> <a id="1483" class="Keyword">import</a> <a id="1490" href="/Examples/Structures/" class="Module">Examples.Structures</a>
 </pre>
 
 <!-- File: docs/_links.md -->

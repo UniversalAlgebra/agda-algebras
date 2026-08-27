@@ -15220,12 +15220,27 @@
 <h1 id="classicalcategories">Classical.Categories<a class="headerlink" href="#classicalcategories" title="Anchor link to this section">&para;</a></h1>
 <h3 id="category-theory-of-classical-structures">Category theory of classical structures<a class="headerlink" href="#category-theory-of-classical-structures" title="Anchor link to this section">&para;</a></h3>
 <p>This is the <a href="/Classical/Categories/">Classical.Categories</a> module of the <a href="/">Agda Universal Algebra Library</a>.</p>
-<pre class="Agda"><a id="310" class="Symbol">{-#</a> <a id="314" class="Keyword">OPTIONS</a> <a id="322" class="Pragma">--cubical-compatible</a> <a id="343" class="Pragma">--exact-split</a> <a id="357" class="Pragma">--safe</a> <a id="364" class="Symbol">#-}</a>
+<p>This is a barrel module: it declares nothing of its own and re-exports the two
+modules that give the classical structures their categorical face.</p>
+<ul>
+<li><a href="/Classical/Categories/Forgetful/">Classical.Categories.Forgetful</a> upgrades a classical forgetful
+   <em>projection</em> to a forgetful <em>functor</em>, supplying the morphism action through
+   the reduct functor of <a href="/Setoid/Categories/Reduct/">Setoid.Categories.Reduct</a>.  The one instance so far
+   is <code>monoid→semigroupF</code>; the module closes by re-deriving that functor's
+   theory obligation from reduct-invariance of satisfaction, the general lemma
+   of which the bespoke per-structure pivots are instances.</li>
+<li><a href="/Classical/Categories/AdjoinUnit/">Classical.Categories.AdjoinUnit</a> proves the free-expansion adjunction:
+   freely adjoining a unit to a semigroup (the free monoid on a semigroup, with
+   carrier <code>Maybe 𝕌[ 𝑺 ]</code>) is left adjoint to the monoid-to-semigroup forgetful, with
+   unit, counit, both naturality squares, the triangle identities, and the
+   explicit universal property.</li>
+</ul>
+<pre class="Agda"><a id="1251" class="Symbol">{-#</a> <a id="1255" class="Keyword">OPTIONS</a> <a id="1263" class="Pragma">--cubical-compatible</a> <a id="1284" class="Pragma">--exact-split</a> <a id="1298" class="Pragma">--safe</a> <a id="1305" class="Symbol">#-}</a>
 
-<a id="369" class="Keyword">module</a> <a id="376" href="/Classical/Categories/" class="Module">Classical.Categories</a> <a id="397" class="Keyword">where</a>
+<a id="1310" class="Keyword">module</a> <a id="1317" href="/Classical/Categories/" class="Module">Classical.Categories</a> <a id="1338" class="Keyword">where</a>
 
-<a id="404" class="Keyword">open</a> <a id="409" class="Keyword">import</a> <a id="416" href="/Classical/Categories/AdjoinUnit/" class="Module">Classical.Categories.AdjoinUnit</a> <a id="448" class="Keyword">public</a>
-<a id="455" class="Keyword">open</a> <a id="460" class="Keyword">import</a> <a id="467" href="/Classical/Categories/Forgetful/" class="Module">Classical.Categories.Forgetful</a> <a id="498" class="Keyword">public</a>
+<a id="1345" class="Keyword">open</a> <a id="1350" class="Keyword">import</a> <a id="1357" href="/Classical/Categories/AdjoinUnit/" class="Module">Classical.Categories.AdjoinUnit</a> <a id="1389" class="Keyword">public</a>
+<a id="1396" class="Keyword">open</a> <a id="1401" class="Keyword">import</a> <a id="1408" href="/Classical/Categories/Forgetful/" class="Module">Classical.Categories.Forgetful</a> <a id="1439" class="Keyword">public</a>
 </pre>
 
 <!-- File: docs/_links.md -->

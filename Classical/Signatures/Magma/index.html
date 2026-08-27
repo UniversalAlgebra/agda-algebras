@@ -15356,24 +15356,23 @@
 <h1 id="classicalsignaturesmagma">Classical.Signatures.Magma<a class="headerlink" href="#classicalsignaturesmagma" title="Anchor link to this section">&para;</a></h1>
 <h3 id="the-signature-of-magmas">The signature of magmas<a class="headerlink" href="#the-signature-of-magmas" title="Anchor link to this section">&para;</a></h3>
 <p>This is the <a href="/Classical/Signatures/Magma/">Classical.Signatures.Magma</a> module of the <a href="/">Agda Universal Algebra Library</a>.</p>
-<p>A <em>magma</em> is, traditionally, a carrier equipped with a single binary operation —
-the most minimal of the classical algebraic structures, and the right starting
-point for the <a href="/Classical/"><code>Classical/</code></a> tree because its equational theory is
-empty.  This module fixes the signature of magmas as a one-symbol algebraic
-signature with that symbol assigned arity <code>Fin 2</code>.</p>
-<p>Per <a href="/adr/002-classical-layer-design/">ADR-002 v2 §5</a>, every concrete
-classical structure <code>X</code> is characterized by a pair <code>(Sig-X , Th-X)</code> — its own
-signature and its own complete equational theory in that signature.  For Magma the
-theory is empty; the signature carries the whole content.</p>
+<p>A <em>magma</em> is, traditionally, a carrier equipped with a single binary operation;
+this is the most minimal of the classical algebraic structures, and the right
+starting point for the <a href="/Classical/"><code>Classical/</code></a> tree because its equational
+theory is empty.  This module fixes the signature of magmas as a one-symbol
+algebraic signature with that symbol assigned arity <code>Fin 2</code>.</p>
+<p>Every concrete classical structure <code>X</code> is characterized by a pair
+<code>(Sig-X , Th-X)</code>, its own signature and its own complete equational theory in that
+signature.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>  For Magma the theory is empty; the signature carries the whole
+content.</p>
 <p>The conventions for naming established here are <em>normative</em> for every subsequent
-structure (Semigroup in M3-4, Monoid and Group in M3-6, Lattice in M3-7, Ring in
-M3-8); each follows the same <code>Op-X</code>/<code>&lt;symbol&gt;-Op</code>/<code>ar-X</code>/<code>Sig-X</code> pattern,
+structure; each follows the same <code>Op-X</code>/<code>&lt;symbol&gt;-Op</code>/<code>ar-X</code>/<code>Sig-X</code> pattern,
 extending or reusing as appropriate.</p>
 <ul>
 <li><strong>Operation symbols</strong> are introduced via a one-or-more-constructor data type
    <code>Op-&lt;Structure&gt;</code>, with each constructor named <code>&lt;symbol&gt;-Op</code> (hyphen-separated,
-   capital <code>O</code>).  Reserving the bare symbol — <code>∙</code>, <code>ε</code>, <code>⁻¹</code>, <code>+</code>, <code>0</code>, <code>·</code>, <code>1</code>,
-   <code>∧</code>, <code>∨</code> — for user-facing curried sugar avoids a name clash between the
+   capital <code>O</code>).  Reserving the bare symbol (<code>∙</code>, <code>ε</code>, <code>⁻¹</code>, <code>+</code>, <code>0</code>, <code>·</code>, <code>1</code>,
+   <code>∧</code>, <code>∨</code>) for user-facing curried sugar avoids a name clash between the
    syntactic operation-symbol-of-the-signature and the semantic curried operation
    on a fixed algebra.</li>
 <li><strong>Arity functions</strong> are named <code>ar-&lt;Structure&gt;</code> and defined by direct pattern
@@ -15383,45 +15382,48 @@ extending or reusing as appropriate.</p>
    sites, which fails for indirect definitions (table lookups, conditionals).</li>
 <li><strong>Signature values</strong> are named <code>Sig-&lt;Structure&gt;</code> and assembled as a Σ-pair of
    the operation-symbol type and the arity function.  The hyphenated long form is
-   preferred over subscripted alternatives (<code>𝑆ₘₐ</code>, <code>𝑆_Magma</code>) per
-   <a href="/adr/002-classical-layer-design/">ADR-002 v2 §7</a>; the long form
+   preferred over subscripted alternatives (<code>𝑆ₘₐ</code>, <code>𝑆_Magma</code>);<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> the long form
    survives grep, copy/paste, and rendering across plain-text channels.</li>
 </ul>
-<pre class="Agda hidden-source"><a id="2465" class="Symbol">{-#</a> <a id="2469" class="Keyword">OPTIONS</a> <a id="2477" class="Pragma">--cubical-compatible</a> <a id="2498" class="Pragma">--exact-split</a> <a id="2512" class="Pragma">--safe</a> <a id="2519" class="Symbol">#-}</a>
+<pre class="Agda hidden-source"><a id="2264" class="Symbol">{-#</a> <a id="2268" class="Keyword">OPTIONS</a> <a id="2276" class="Pragma">--cubical-compatible</a> <a id="2297" class="Pragma">--exact-split</a> <a id="2311" class="Pragma">--safe</a> <a id="2318" class="Symbol">#-}</a>
 
-<a id="2524" class="Keyword">module</a> <a id="2531" href="/Classical/Signatures/Magma/" class="Module">Classical.Signatures.Magma</a> <a id="2558" class="Keyword">where</a>
+<a id="2323" class="Keyword">module</a> <a id="2330" href="/Classical/Signatures/Magma/" class="Module">Classical.Signatures.Magma</a> <a id="2357" class="Keyword">where</a>
 
-<a id="2565" class="Comment">-- Imports from Agda and the Agda Standard Library ----------------------------</a>
-<a id="2645" class="Keyword">open</a> <a id="2650" class="Keyword">import</a> <a id="2657" href="/classic/Agda.Primitive.html" class="Module">Agda.Primitive</a> <a id="2672" class="Keyword">using</a> <a id="2678" class="Symbol">()</a>                <a id="2696" class="Keyword">renaming</a> <a id="2705" class="Symbol">(</a> <a id="2707" href="/classic/Agda.Primitive.html#388" class="Primitive">Set</a> <a id="2711" class="Symbol">to</a> <a id="2714" class="Primitive">Type</a> <a id="2719" class="Symbol">)</a>
-<a id="2721" class="Keyword">open</a> <a id="2726" class="Keyword">import</a> <a id="2733" href="/classic/Data.Fin.Base.html" class="Module">Data.Fin.Base</a>  <a id="2748" class="Keyword">using</a> <a id="2754" class="Symbol">(</a> <a id="2756" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="2760" class="Symbol">)</a>
-<a id="2762" class="Keyword">open</a> <a id="2767" class="Keyword">import</a> <a id="2774" href="/classic/Data.Product.html" class="Module">Data.Product</a>   <a id="2789" class="Keyword">using</a> <a id="2795" class="Symbol">(</a> <a id="2797" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">_,_</a> <a id="2801" class="Symbol">)</a>
-<a id="2803" class="Keyword">open</a> <a id="2808" class="Keyword">import</a> <a id="2815" href="/classic/Level.html" class="Module">Level</a>          <a id="2830" class="Keyword">using</a> <a id="2836" class="Symbol">(</a> <a id="2838" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="2841" class="Symbol">)</a>
+<a id="2364" class="Comment">-- Imports from Agda and the Agda Standard Library ----------------------------</a>
+<a id="2444" class="Keyword">open</a> <a id="2449" class="Keyword">import</a> <a id="2456" href="/classic/Agda.Primitive.html" class="Module">Agda.Primitive</a> <a id="2471" class="Keyword">using</a> <a id="2477" class="Symbol">()</a>                <a id="2495" class="Keyword">renaming</a> <a id="2504" class="Symbol">(</a> <a id="2506" href="/classic/Agda.Primitive.html#388" class="Primitive">Set</a> <a id="2510" class="Symbol">to</a> <a id="2513" class="Primitive">Type</a> <a id="2518" class="Symbol">)</a>
+<a id="2520" class="Keyword">open</a> <a id="2525" class="Keyword">import</a> <a id="2532" href="/classic/Data.Fin.Base.html" class="Module">Data.Fin.Base</a>  <a id="2547" class="Keyword">using</a> <a id="2553" class="Symbol">(</a> <a id="2555" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="2559" class="Symbol">)</a>
+<a id="2561" class="Keyword">open</a> <a id="2566" class="Keyword">import</a> <a id="2573" href="/classic/Data.Product.html" class="Module">Data.Product</a>   <a id="2588" class="Keyword">using</a> <a id="2594" class="Symbol">(</a> <a id="2596" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">_,_</a> <a id="2600" class="Symbol">)</a>
+<a id="2602" class="Keyword">open</a> <a id="2607" class="Keyword">import</a> <a id="2614" href="/classic/Level.html" class="Module">Level</a>          <a id="2629" class="Keyword">using</a> <a id="2635" class="Symbol">(</a> <a id="2637" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="2640" class="Symbol">)</a>
 
-<a id="2844" class="Comment">-- Imports from the Agda Universal Algebra Library ----------------------------</a>
-<a id="2924" class="Keyword">open</a> <a id="2929" class="Keyword">import</a> <a id="2936" href="/Overture/Signatures/" class="Module">Overture.Signatures</a> <a id="2956" class="Keyword">using</a> <a id="2962" class="Symbol">(</a> <a id="2964" href="/Overture/Signatures/#3218" class="Function">Signature</a> <a id="2974" class="Symbol">)</a>
+<a id="2643" class="Comment">-- Imports from the Agda Universal Algebra Library ----------------------------</a>
+<a id="2723" class="Keyword">open</a> <a id="2728" class="Keyword">import</a> <a id="2735" href="/Overture/Signatures/" class="Module">Overture.Signatures</a> <a id="2755" class="Keyword">using</a> <a id="2761" class="Symbol">(</a> <a id="2763" href="/Overture/Signatures/#3218" class="Function">Signature</a> <a id="2773" class="Symbol">)</a>
 </pre>
 
 <h4 id="the-operation-symbol-type">The operation-symbol type<a class="headerlink" href="#the-operation-symbol-type" title="Anchor link to this section">&para;</a></h4>
 <p>A magma has a single binary operation symbol.  The constructor is named <code>∙-Op</code>
 following the <code>&lt;symbol&gt;-Op</code> convention; the bare <code>∙</code> is reserved for the curried
 user-facing accessor introduced in <a href="/Classical/Structures/Magma/"><code>Classical.Structures.Magma</code></a>.</p>
-<pre class="Agda"><a id="3281" class="Keyword">data</a> <a id="Op-Magma"></a><a id="3286" href="/Classical/Signatures/Magma/#3286" class="Datatype">Op-Magma</a> <a id="3295" class="Symbol">:</a> <a id="3297" href="/Classical/Signatures/Magma/#2714" class="Primitive">Type</a> <a id="3302" class="Keyword">where</a>
-  <a id="Op-Magma.∙-Op"></a><a id="3310" href="/Classical/Signatures/Magma/#3310" class="InductiveConstructor">∙-Op</a> <a id="3315" class="Symbol">:</a> <a id="3317" href="/Classical/Signatures/Magma/#3286" class="Datatype">Op-Magma</a>
+<pre class="Agda"><a id="3080" class="Keyword">data</a> <a id="Op-Magma"></a><a id="3085" href="/Classical/Signatures/Magma/#3085" class="Datatype">Op-Magma</a> <a id="3094" class="Symbol">:</a> <a id="3096" href="/Classical/Signatures/Magma/#2513" class="Primitive">Type</a> <a id="3101" class="Keyword">where</a>
+  <a id="Op-Magma.∙-Op"></a><a id="3109" href="/Classical/Signatures/Magma/#3109" class="InductiveConstructor">∙-Op</a> <a id="3114" class="Symbol">:</a> <a id="3116" href="/Classical/Signatures/Magma/#3085" class="Datatype">Op-Magma</a>
 </pre>
 <h4 id="the-arity-function">The arity function<a class="headerlink" href="#the-arity-function" title="Anchor link to this section">&para;</a></h4>
 <p><code>∙-Op</code> is binary, so its arity is <code>Fin 2</code>.  Direct pattern matching on the single
-constructor lets <code>ArityOf Sig-Magma ∙-Op</code> reduce definitionally to <code>Fin 2</code> —
-this is what makes the arity-conformance evidence <code>refl</code> of type
-<code>ArityOf Sig-Magma ∙-Op ≡ Fin 2</code> typecheck in <code>Th-Semigroup</code> (M3-4) and every
-subsequent theory.</p>
-<pre class="Agda"><a id="ar-Magma"></a><a id="3686" href="/Classical/Signatures/Magma/#3686" class="Function">ar-Magma</a> <a id="3695" class="Symbol">:</a> <a id="3697" href="/Classical/Signatures/Magma/#3286" class="Datatype">Op-Magma</a> <a id="3706" class="Symbol">→</a> <a id="3708" href="/Classical/Signatures/Magma/#2714" class="Primitive">Type</a>
-<a id="3713" href="/Classical/Signatures/Magma/#3686" class="Function">ar-Magma</a> <a id="3722" href="/Classical/Signatures/Magma/#3310" class="InductiveConstructor">∙-Op</a> <a id="3727" class="Symbol">=</a> <a id="3729" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="3733" class="Number">2</a>
+constructor lets <code>ArityOf Sig-Magma ∙-Op</code> reduce definitionally to <code>Fin 2</code>; this
+is what makes the arity-conformance evidence <code>refl</code> of type
+<code>ArityOf Sig-Magma ∙-Op ≡ Fin 2</code> typecheck in <code>Th-Semigroup</code> and every subsequent
+theory.</p>
+<pre class="Agda"><a id="ar-Magma"></a><a id="3477" href="/Classical/Signatures/Magma/#3477" class="Function">ar-Magma</a> <a id="3486" class="Symbol">:</a> <a id="3488" href="/Classical/Signatures/Magma/#3085" class="Datatype">Op-Magma</a> <a id="3497" class="Symbol">→</a> <a id="3499" href="/Classical/Signatures/Magma/#2513" class="Primitive">Type</a>
+<a id="3504" href="/Classical/Signatures/Magma/#3477" class="Function">ar-Magma</a> <a id="3513" href="/Classical/Signatures/Magma/#3109" class="InductiveConstructor">∙-Op</a> <a id="3518" class="Symbol">=</a> <a id="3520" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="3524" class="Number">2</a>
 </pre>
 <h4 id="the-signature-value">The signature value<a class="headerlink" href="#the-signature-value" title="Anchor link to this section">&para;</a></h4>
-<pre class="Agda"><a id="Sig-Magma"></a><a id="3774" href="/Classical/Signatures/Magma/#3774" class="Function">Sig-Magma</a> <a id="3784" class="Symbol">:</a> <a id="3786" href="/Overture/Signatures/#3218" class="Function">Signature</a> <a id="3796" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="3799" href="/classic/Level.html#521" class="Function">0ℓ</a>
-<a id="3802" href="/Classical/Signatures/Magma/#3774" class="Function">Sig-Magma</a> <a id="3812" class="Symbol">=</a> <a id="3814" href="/Classical/Signatures/Magma/#3286" class="Datatype">Op-Magma</a> <a id="3823" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="3825" href="/Classical/Signatures/Magma/#3686" class="Function">ar-Magma</a>
+<p><code>Sig-Magma</code> pairs <code>Op-Magma</code> with <code>ar-Magma</code>, and is the signature every <code>∙</code>-based
+structure in the <code>Classical/</code> tree builds on: <code>Semigroup</code> and its equation-only
+extensions reuse it unchanged, and richer signatures such as <code>Sig-Monoid</code> embed it
+by the inclusion that the forgetful functors ride.</p>
+<pre class="Agda"><a id="Sig-Magma"></a><a id="3863" href="/Classical/Signatures/Magma/#3863" class="Function">Sig-Magma</a> <a id="3873" class="Symbol">:</a> <a id="3875" href="/Overture/Signatures/#3218" class="Function">Signature</a> <a id="3885" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="3888" href="/classic/Level.html#521" class="Function">0ℓ</a>
+<a id="3891" href="/Classical/Signatures/Magma/#3863" class="Function">Sig-Magma</a> <a id="3901" class="Symbol">=</a> <a id="3903" href="/Classical/Signatures/Magma/#3085" class="Datatype">Op-Magma</a> <a id="3912" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="3914" href="/Classical/Signatures/Magma/#3477" class="Function">ar-Magma</a>
 </pre>
-
+<hr />
 <!-- File: docs/_links.md -->
 <!-- agda-algebras shared reference-link library (ADR-007). -->
 <!-- pymdownx.snippets auto-appends this file to every page so reference-style -->
@@ -15436,6 +15438,17 @@ subsequent theory.</p>
 <!-- ===== Module sources on GitHub ===== -->
 <!-- ===== Architecture Decision Records ===== -->
 <!-- ===== External links ===== -->
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>per <a href="/adr/002-classical-layer-design/">ADR-002</a> v2 §5.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>per <a href="/adr/002-classical-layer-design/">ADR-002</a> v2 §7.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 
