@@ -7,15 +7,27 @@ date: &quot;2026-07-24&quot;
 author: &quot;the agda-algebras development team&quot;
 ---
 
+### Closure properties of representability
+
 This is the [FLRP.Closure][] module of the [Agda Universal Algebra Library][].
 
-</a><a id="270" class="Markup">```agda
-</a><a id="278" class="Symbol">{-#</a> <a id="282" class="Keyword">OPTIONS</a> <a id="290" class="Pragma">--cubical-compatible</a> <a id="311" class="Pragma">--exact-split</a> <a id="325" class="Pragma">--safe</a> <a id="332" class="Symbol">#-}</a>
+This is a barrel module for the closure toolkit: the operations under which the
+class of representable lattices is closed, formalized at Layer D (decidable
+representability).  [FLRP.Closure.Basic][] is the umbrella over the two proved
+theorems, [FLRP.Closure.Product][] for finite direct products and
+[FLRP.Closure.OrdinalSum][] for glued ordinal sums, and derives its corollaries
+from them: `adjoinBottom-Representableᵈ`, `adjoinTop-Representableᵈ`, and
+`dual-Representableᵈ`, the last conditional on a Kurzweil–Netter duality
+hypothesis.  The unglued ordinal sum appears there as a recipe (glue `chain₂`
+between the summands), not as an exported theorem.
 
-<a id="337" class="Keyword">module</a> <a id="344" href="FLRP.Closure.html" class="Module">FLRP.Closure</a> <a id="357" class="Keyword">where</a>
+</a><a id="972" class="Markup">```agda
+</a><a id="980" class="Symbol">{-#</a> <a id="984" class="Keyword">OPTIONS</a> <a id="992" class="Pragma">--cubical-compatible</a> <a id="1013" class="Pragma">--exact-split</a> <a id="1027" class="Pragma">--safe</a> <a id="1034" class="Symbol">#-}</a>
 
-<a id="364" class="Keyword">open</a> <a id="369" class="Keyword">import</a> <a id="376" href="FLRP.Closure.Basic.html" class="Module">FLRP.Closure.Basic</a> <a id="395" class="Keyword">public</a>
-<a id="402" class="Keyword">open</a> <a id="407" class="Keyword">import</a> <a id="414" href="FLRP.Closure.Product.html" class="Module">FLRP.Closure.Product</a> <a id="435" class="Keyword">public</a>
-<a id="442" class="Keyword">open</a> <a id="447" class="Keyword">import</a> <a id="454" href="FLRP.Closure.OrdinalSum.html" class="Module">FLRP.Closure.OrdinalSum</a> <a id="478" class="Keyword">public</a>
-<a id="485" class="Markup">```
+<a id="1039" class="Keyword">module</a> <a id="1046" href="FLRP.Closure.html" class="Module">FLRP.Closure</a> <a id="1059" class="Keyword">where</a>
+
+<a id="1066" class="Keyword">open</a> <a id="1071" class="Keyword">import</a> <a id="1078" href="FLRP.Closure.Basic.html" class="Module">FLRP.Closure.Basic</a> <a id="1097" class="Keyword">public</a>
+<a id="1104" class="Keyword">open</a> <a id="1109" class="Keyword">import</a> <a id="1116" href="FLRP.Closure.Product.html" class="Module">FLRP.Closure.Product</a> <a id="1137" class="Keyword">public</a>
+<a id="1144" class="Keyword">open</a> <a id="1149" class="Keyword">import</a> <a id="1156" href="FLRP.Closure.OrdinalSum.html" class="Module">FLRP.Closure.OrdinalSum</a> <a id="1180" class="Keyword">public</a>
+<a id="1187" class="Markup">```
 </a></pre></body></html>

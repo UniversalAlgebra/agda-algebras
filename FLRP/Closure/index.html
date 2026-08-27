@@ -15167,6 +15167,25 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#closure-properties-of-representability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Closure properties of representability
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -15199,14 +15218,24 @@
 
 
 <h1 id="flrpclosure">FLRP.Closure<a class="headerlink" href="#flrpclosure" title="Anchor link to this section">&para;</a></h1>
+<h3 id="closure-properties-of-representability">Closure properties of representability<a class="headerlink" href="#closure-properties-of-representability" title="Anchor link to this section">&para;</a></h3>
 <p>This is the <a href="/FLRP/Closure/">FLRP.Closure</a> module of the <a href="/">Agda Universal Algebra Library</a>.</p>
-<pre class="Agda"><a id="278" class="Symbol">{-#</a> <a id="282" class="Keyword">OPTIONS</a> <a id="290" class="Pragma">--cubical-compatible</a> <a id="311" class="Pragma">--exact-split</a> <a id="325" class="Pragma">--safe</a> <a id="332" class="Symbol">#-}</a>
+<p>This is a barrel module for the closure toolkit: the operations under which the
+class of representable lattices is closed, formalized at Layer D (decidable
+representability).  <a href="/FLRP/Closure/Basic/">FLRP.Closure.Basic</a> is the umbrella over the two proved
+theorems, <a href="/FLRP/Closure/Product/">FLRP.Closure.Product</a> for finite direct products and
+<a href="/FLRP/Closure/OrdinalSum/">FLRP.Closure.OrdinalSum</a> for glued ordinal sums, and derives its corollaries
+from them: <code>adjoinBottom-Representableᵈ</code>, <code>adjoinTop-Representableᵈ</code>, and
+<code>dual-Representableᵈ</code>, the last conditional on a Kurzweil–Netter duality
+hypothesis.  The unglued ordinal sum appears there as a recipe (glue <code>chain₂</code>
+between the summands), not as an exported theorem.</p>
+<pre class="Agda"><a id="980" class="Symbol">{-#</a> <a id="984" class="Keyword">OPTIONS</a> <a id="992" class="Pragma">--cubical-compatible</a> <a id="1013" class="Pragma">--exact-split</a> <a id="1027" class="Pragma">--safe</a> <a id="1034" class="Symbol">#-}</a>
 
-<a id="337" class="Keyword">module</a> <a id="344" href="/FLRP/Closure/" class="Module">FLRP.Closure</a> <a id="357" class="Keyword">where</a>
+<a id="1039" class="Keyword">module</a> <a id="1046" href="/FLRP/Closure/" class="Module">FLRP.Closure</a> <a id="1059" class="Keyword">where</a>
 
-<a id="364" class="Keyword">open</a> <a id="369" class="Keyword">import</a> <a id="376" href="/FLRP/Closure/Basic/" class="Module">FLRP.Closure.Basic</a> <a id="395" class="Keyword">public</a>
-<a id="402" class="Keyword">open</a> <a id="407" class="Keyword">import</a> <a id="414" href="/FLRP/Closure/Product/" class="Module">FLRP.Closure.Product</a> <a id="435" class="Keyword">public</a>
-<a id="442" class="Keyword">open</a> <a id="447" class="Keyword">import</a> <a id="454" href="/FLRP/Closure/OrdinalSum/" class="Module">FLRP.Closure.OrdinalSum</a> <a id="478" class="Keyword">public</a>
+<a id="1066" class="Keyword">open</a> <a id="1071" class="Keyword">import</a> <a id="1078" href="/FLRP/Closure/Basic/" class="Module">FLRP.Closure.Basic</a> <a id="1097" class="Keyword">public</a>
+<a id="1104" class="Keyword">open</a> <a id="1109" class="Keyword">import</a> <a id="1116" href="/FLRP/Closure/Product/" class="Module">FLRP.Closure.Product</a> <a id="1137" class="Keyword">public</a>
+<a id="1144" class="Keyword">open</a> <a id="1149" class="Keyword">import</a> <a id="1156" href="/FLRP/Closure/OrdinalSum/" class="Module">FLRP.Closure.OrdinalSum</a> <a id="1180" class="Keyword">public</a>
 </pre>
 
 <!-- File: docs/_links.md -->

@@ -9,14 +9,22 @@ author: &quot;the agda-algebras development team&quot;
 
 ## Terms
 
-</a><a id="158" class="Markup">```agda
-</a><a id="166" class="Symbol">{-#</a> <a id="170" class="Keyword">OPTIONS</a> <a id="178" class="Pragma">--cubical-compatible</a> <a id="199" class="Pragma">--exact-split</a> <a id="213" class="Pragma">--safe</a> <a id="220" class="Symbol">#-}</a>
+This is the [Overture.Terms][] module of the [Agda Universal Algebra Library][].
 
-<a id="225" class="Keyword">open</a> <a id="230" class="Keyword">import</a> <a id="237" href="Overture.Signatures.html" class="Module">Overture.Signatures</a> <a id="257" class="Keyword">using</a> <a id="263" class="Symbol">(</a> <a id="265" href="Overture.Signatures.html#683" class="Generalizable">𝓞</a> <a id="267" class="Symbol">;</a> <a id="269" href="Overture.Signatures.html#685" class="Generalizable">𝓥</a> <a id="271" class="Symbol">;</a> <a id="273" href="Overture.Signatures.html#3218" class="Function">Signature</a> <a id="283" class="Symbol">)</a>
-<a id="285" class="Keyword">module</a> <a id="292" href="Overture.Terms.html" class="Module">Overture.Terms</a> <a id="307" class="Symbol">{</a><a id="308" href="Overture.Terms.html#308" class="Bound">𝑆</a> <a id="310" class="Symbol">:</a> <a id="312" href="Overture.Signatures.html#3218" class="Function">Signature</a> <a id="322" href="Overture.Signatures.html#683" class="Generalizable">𝓞</a> <a id="324" href="Overture.Signatures.html#685" class="Generalizable">𝓥</a><a id="325" class="Symbol">}</a> <a id="327" class="Keyword">where</a>
+A barrel over the term machinery, parameterized by a signature `𝑆` that it passes
+to [Overture.Terms.Basic][] for the `Term` type and its level shorthand `ov`.
+[Overture.Terms.Interpretation][] gives theory interpretations, sending operation
+symbols to derived terms, and [Overture.Terms.Translation][] translates terms
+along a signature morphism.
 
-<a id="334" class="Keyword">open</a> <a id="339" class="Keyword">import</a> <a id="346" href="Overture.Terms.Basic.html" class="Module">Overture.Terms.Basic</a>  <a id="368" class="Symbol">{</a><a id="369" class="Argument">𝑆</a> <a id="371" class="Symbol">=</a> <a id="373" href="Overture.Terms.html#308" class="Bound">𝑆</a><a id="374" class="Symbol">}</a>  <a id="377" class="Keyword">public</a>
-<a id="384" class="Keyword">open</a> <a id="389" class="Keyword">import</a> <a id="396" href="Overture.Terms.Interpretation.html" class="Module">Overture.Terms.Interpretation</a>  <a id="427" class="Keyword">public</a>
-<a id="434" class="Keyword">open</a> <a id="439" class="Keyword">import</a> <a id="446" href="Overture.Terms.Translation.html" class="Module">Overture.Terms.Translation</a>     <a id="477" class="Keyword">public</a>
-<a id="484" class="Markup">```
+</a><a id="589" class="Markup">```agda
+</a><a id="597" class="Symbol">{-#</a> <a id="601" class="Keyword">OPTIONS</a> <a id="609" class="Pragma">--cubical-compatible</a> <a id="630" class="Pragma">--exact-split</a> <a id="644" class="Pragma">--safe</a> <a id="651" class="Symbol">#-}</a>
+
+<a id="656" class="Keyword">open</a> <a id="661" class="Keyword">import</a> <a id="668" href="Overture.Signatures.html" class="Module">Overture.Signatures</a> <a id="688" class="Keyword">using</a> <a id="694" class="Symbol">(</a> <a id="696" href="Overture.Signatures.html#935" class="Generalizable">𝓞</a> <a id="698" class="Symbol">;</a> <a id="700" href="Overture.Signatures.html#937" class="Generalizable">𝓥</a> <a id="702" class="Symbol">;</a> <a id="704" href="Overture.Signatures.html#3470" class="Function">Signature</a> <a id="714" class="Symbol">)</a>
+<a id="716" class="Keyword">module</a> <a id="723" href="Overture.Terms.html" class="Module">Overture.Terms</a> <a id="738" class="Symbol">{</a><a id="739" href="Overture.Terms.html#739" class="Bound">𝑆</a> <a id="741" class="Symbol">:</a> <a id="743" href="Overture.Signatures.html#3470" class="Function">Signature</a> <a id="753" href="Overture.Signatures.html#935" class="Generalizable">𝓞</a> <a id="755" href="Overture.Signatures.html#937" class="Generalizable">𝓥</a><a id="756" class="Symbol">}</a> <a id="758" class="Keyword">where</a>
+
+<a id="765" class="Keyword">open</a> <a id="770" class="Keyword">import</a> <a id="777" href="Overture.Terms.Basic.html" class="Module">Overture.Terms.Basic</a>  <a id="799" class="Symbol">{</a><a id="800" class="Argument">𝑆</a> <a id="802" class="Symbol">=</a> <a id="804" href="Overture.Terms.html#739" class="Bound">𝑆</a><a id="805" class="Symbol">}</a>  <a id="808" class="Keyword">public</a>
+<a id="815" class="Keyword">open</a> <a id="820" class="Keyword">import</a> <a id="827" href="Overture.Terms.Interpretation.html" class="Module">Overture.Terms.Interpretation</a>  <a id="858" class="Keyword">public</a>
+<a id="865" class="Keyword">open</a> <a id="870" class="Keyword">import</a> <a id="877" href="Overture.Terms.Translation.html" class="Module">Overture.Terms.Translation</a>     <a id="908" class="Keyword">public</a>
+<a id="915" class="Markup">```
 </a></pre></body></html>

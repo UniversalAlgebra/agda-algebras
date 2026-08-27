@@ -15218,19 +15218,40 @@
 <h1 id="overture">Overture<a class="headerlink" href="#overture" title="Anchor link to this section">&para;</a></h1>
 <h2 id="overture_1">Overture<a class="headerlink" href="#overture_1" title="Anchor link to this section">&para;</a></h2>
 <p>This is the <a href="/Overture/">Overture</a> module of the <a href="/">Agda Universal Algebra Library</a>.</p>
-<pre class="Agda"><a id="215" class="Symbol">{-#</a> <a id="219" class="Keyword">OPTIONS</a> <a id="227" class="Pragma">--cubical-compatible</a> <a id="248" class="Pragma">--exact-split</a> <a id="262" class="Pragma">--safe</a> <a id="269" class="Symbol">#-}</a>
+<p>The Overture is the foundation layer: the vocabulary every later tree (<code>Setoid/</code>,
+<code>Classical/</code>, <code>FLRP/</code>) imports.  In re-export order:</p>
+<ul>
+<li><a href="/Overture/Preface/">Overture.Preface</a> is the front door: why the library exists, why Agda, and
+   how to read what follows.</li>
+<li><a href="/Overture/Basic/">Overture.Basic</a> sets the logical foundations and shared preliminaries.</li>
+<li><a href="/Overture/Signatures/">Overture.Signatures</a> defines the <code>Signature</code> type: operation symbols paired
+   with an arity function.</li>
+<li><a href="/Overture/Operations/">Overture.Operations</a> represents an operation of arity <code>I</code> as a function
+   from tuples <code>I → A</code> to <code>A</code>.</li>
+<li><a href="/Overture/Relations/">Overture.Relations</a> supplies the relation vocabulary, including the
+   <code>Equivalence</code> bundle over a fixed carrier.</li>
+<li><a href="/Overture/Functions/">Overture.Functions</a> collects the raw-function infrastructure (images,
+   computed inverses, surjectivity) that the <code>Setoid/</code> tree builds on.</li>
+<li><a href="/Overture/Terms/">Overture.Terms</a> gives terms over a signature, their interpretation, and
+   translation along signature morphisms.</li>
+<li><a href="/Overture/Adjunction/">Overture.Adjunction</a> is the order-theoretic adjunction toolkit: closure,
+   Galois connections, residuation.</li>
+<li><a href="/Overture/Cayley/">Overture.Cayley</a> represents finite binary operations by Cayley tables, with
+   decision procedures that discharge their laws.</li>
+</ul>
+<pre class="Agda"><a id="1390" class="Symbol">{-#</a> <a id="1394" class="Keyword">OPTIONS</a> <a id="1402" class="Pragma">--cubical-compatible</a> <a id="1423" class="Pragma">--exact-split</a> <a id="1437" class="Pragma">--safe</a> <a id="1444" class="Symbol">#-}</a>
 
-<a id="274" class="Keyword">module</a> <a id="281" href="/Overture/" class="Module">Overture</a> <a id="290" class="Keyword">where</a>
+<a id="1449" class="Keyword">module</a> <a id="1456" href="/Overture/" class="Module">Overture</a> <a id="1465" class="Keyword">where</a>
 
-<a id="297" class="Keyword">open</a> <a id="302" class="Keyword">import</a> <a id="309" href="/Overture/Preface/" class="Module">Overture.Preface</a>     <a id="330" class="Keyword">public</a>
-<a id="337" class="Keyword">open</a> <a id="342" class="Keyword">import</a> <a id="349" href="/Overture/Basic/" class="Module">Overture.Basic</a>       <a id="370" class="Keyword">public</a>
-<a id="377" class="Keyword">open</a> <a id="382" class="Keyword">import</a> <a id="389" href="/Overture/Signatures/" class="Module">Overture.Signatures</a>  <a id="410" class="Keyword">public</a>
-<a id="417" class="Keyword">open</a> <a id="422" class="Keyword">import</a> <a id="429" href="/Overture/Operations/" class="Module">Overture.Operations</a>  <a id="450" class="Keyword">public</a>
-<a id="457" class="Keyword">open</a> <a id="462" class="Keyword">import</a> <a id="469" href="/Overture/Relations/" class="Module">Overture.Relations</a>   <a id="490" class="Keyword">public</a>
-<a id="497" class="Keyword">open</a> <a id="502" class="Keyword">import</a> <a id="509" href="/Overture/Functions/" class="Module">Overture.Functions</a>   <a id="530" class="Keyword">public</a>
-<a id="537" class="Keyword">open</a> <a id="542" class="Keyword">import</a> <a id="549" href="/Overture/Terms/" class="Module">Overture.Terms</a>       <a id="570" class="Keyword">public</a>
-<a id="577" class="Keyword">open</a> <a id="582" class="Keyword">import</a> <a id="589" href="/Overture/Adjunction/" class="Module">Overture.Adjunction</a>  <a id="610" class="Keyword">public</a>
-<a id="617" class="Keyword">open</a> <a id="622" class="Keyword">import</a> <a id="629" href="/Overture/Cayley/" class="Module">Overture.Cayley</a>      <a id="650" class="Keyword">public</a>
+<a id="1472" class="Keyword">open</a> <a id="1477" class="Keyword">import</a> <a id="1484" href="/Overture/Preface/" class="Module">Overture.Preface</a>     <a id="1505" class="Keyword">public</a>
+<a id="1512" class="Keyword">open</a> <a id="1517" class="Keyword">import</a> <a id="1524" href="/Overture/Basic/" class="Module">Overture.Basic</a>       <a id="1545" class="Keyword">public</a>
+<a id="1552" class="Keyword">open</a> <a id="1557" class="Keyword">import</a> <a id="1564" href="/Overture/Signatures/" class="Module">Overture.Signatures</a>  <a id="1585" class="Keyword">public</a>
+<a id="1592" class="Keyword">open</a> <a id="1597" class="Keyword">import</a> <a id="1604" href="/Overture/Operations/" class="Module">Overture.Operations</a>  <a id="1625" class="Keyword">public</a>
+<a id="1632" class="Keyword">open</a> <a id="1637" class="Keyword">import</a> <a id="1644" href="/Overture/Relations/" class="Module">Overture.Relations</a>   <a id="1665" class="Keyword">public</a>
+<a id="1672" class="Keyword">open</a> <a id="1677" class="Keyword">import</a> <a id="1684" href="/Overture/Functions/" class="Module">Overture.Functions</a>   <a id="1705" class="Keyword">public</a>
+<a id="1712" class="Keyword">open</a> <a id="1717" class="Keyword">import</a> <a id="1724" href="/Overture/Terms/" class="Module">Overture.Terms</a>       <a id="1745" class="Keyword">public</a>
+<a id="1752" class="Keyword">open</a> <a id="1757" class="Keyword">import</a> <a id="1764" href="/Overture/Adjunction/" class="Module">Overture.Adjunction</a>  <a id="1785" class="Keyword">public</a>
+<a id="1792" class="Keyword">open</a> <a id="1797" class="Keyword">import</a> <a id="1804" href="/Overture/Cayley/" class="Module">Overture.Cayley</a>      <a id="1825" class="Keyword">public</a>
 </pre>
 
 <!-- File: docs/_links.md -->
