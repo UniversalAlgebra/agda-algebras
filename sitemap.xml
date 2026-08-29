@@ -649,6 +649,10 @@
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
+         <loc>https://agda-algebras.universalalgebra.org/FLRP/KurzweilNetter/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
          <loc>https://agda-algebras.universalalgebra.org/FLRP/L7EqSix/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
@@ -802,6 +806,26 @@
     </url>
     <url>
          <loc>https://agda-algebras.universalalgebra.org/FLRP/Closure/Product/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/FLRP/KurzweilNetter/Blocks/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/FLRP/KurzweilNetter/Duality/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/FLRP/KurzweilNetter/Expansion/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/FLRP/KurzweilNetter/Invariance/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/FLRP/KurzweilNetter/Translations/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
@@ -1226,6 +1250,14 @@
     </url>
     <url>
          <loc>https://agda-algebras.universalalgebra.org/Setoid/Algebras/Reduct/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Setoid/Algebras/Finite/Irredundant/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Setoid/Algebras/Products/Finite/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>

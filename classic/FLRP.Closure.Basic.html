@@ -11,110 +11,127 @@ author: &quot;the agda-algebras development team&quot;
 
 This is the [FLRP.Closure.Basic][] module of the [Agda Universal Algebra Library][].
 
-The class of representable lattices is closed under a catalogue of operations
-(the roadmap&#39;s § 3; `docs/papers/fin-lat-rep/SmallLatticeReps.tex`, § Closure
-properties).  This module is work package WP-5&#39;s umbrella over that catalogue at
-Layer D, re-exporting the two proved closure theorems and deriving the rest:
+The class of representable lattices is closed under a catalogue of operations.[^1]
+This module is work package WP-5&#39;s umbrella over that catalogue at Layer D,
+re-exporting the two proved closure theorems and deriving the rest:
 
-+  **finite direct products**. `product-Representableᵈ`{.AgdaFunction}
++  **finite direct products**: `product-Representableᵈ`{.AgdaFunction}
    ([FLRP.Closure.Product][], after Tůma);
-+  **ordinal sums**. `ordinalSum-Representableᵈ`{.AgdaFunction}
++  **ordinal sums**: `ordinalSum-Representableᵈ`{.AgdaFunction}
    ([FLRP.Closure.OrdinalSum][], after McKenzie and Snow); the *unglued* sum is
    the derived composite with `chain₂` glued in the middle;
-+  **adjoining a new bottom or top**. `adjoinBottom-Representableᵈ`{.AgdaFunction}
-   / `adjoinTop-Representableᵈ`{.AgdaFunction} below: *corollaries* of
-   ordinal-sum closure, not fresh results, obtained by instantiating one summand
-   at the two-element chain (whose Layer-D representation
-   `chain₂-Representableᵈ`{.AgdaFunction} is the constructive centerpiece of
-   [FLRP.Representable][]);
-+  **lattice duals**. `dual-Representableᵈ`{.AgdaFunction} below, *conditional*
-   on the Kurzweil–Netter entry of the assumptions registry
-   ([FLRP.Assumptions][], Entry 2): the theorem is classically proved but not yet
-   formalized, so it is threaded as an explicit hypothesis, keeping `--safe`
-   honest.  Once the planned formal reproof lands, the hypothesis discharges and
-   the corollary becomes a theorem.
++  **adjoining a new bottom or top**: `adjoinBottom-Representableᵈ`{.AgdaFunction}
+   / `adjoinTop-Representableᵈ`{.AgdaFunction}, *corollaries* of ordinal-sum
+   closure, obtained by instantiating one summand at the two-element chain (whose
+   Layer-D representation `chain₂-Representableᵈ`{.AgdaFunction} is the
+   constructive centerpiece of [FLRP.Representable][]);
++  **lattice duals**: `dual-Representableᵈ`{.AgdaFunction}, the Kurzweil–Netter
+   duality theorem, proved in [FLRP.KurzweilNetter.Duality][] and consumed here
+   through the simple-group package that parameterizes the proof with a finite
+   nontrivial group together with the Kurzweil-surjectivity family, Entry 4 of
+   [FLRP.Assumptions][]; Entry 2 of the registry (the duality theorem as an
+   *imported* hypothesis) is retired; what remains classical is exactly Entry 4
+   and the choice of a concrete nonabelian simple instantiation.
 
-The payoff downstream: with Entry 2 in place, the two dual entries of the
-small-lattice census (`L18` and `L22`, duals of the certified `SLR19` and
-`SLR23`) become assumption-conditional corollaries; materializing those
-conditional certificates is issue #485&#39;s concern, not this module&#39;s.
+The payoff downstream: the two dual entries of the small-lattice census
+(`L18` and `L22`, duals of the certified `SLR19` and `SLR23`) now rest on Entry 4
+and an instantiation rather than on the full duality theorem; materializing those
+conditional certificates remains computationally out of reach, since the
+construction represents an `n`-element algebra&#39;s dual on `|S|ⁿ⁻¹ ≥ 60ⁿ⁻¹` elements.
 
 &lt;!--
-</a><a id="2087" class="Markup">```agda
-</a><a id="2095" class="Symbol">{-#</a> <a id="2099" class="Keyword">OPTIONS</a> <a id="2107" class="Pragma">--cubical-compatible</a> <a id="2128" class="Pragma">--exact-split</a> <a id="2142" class="Pragma">--safe</a> <a id="2149" class="Symbol">#-}</a>
+</a><a id="2199" class="Markup">```agda
+</a><a id="2207" class="Symbol">{-#</a> <a id="2211" class="Keyword">OPTIONS</a> <a id="2219" class="Pragma">--cubical-compatible</a> <a id="2240" class="Pragma">--exact-split</a> <a id="2254" class="Pragma">--safe</a> <a id="2261" class="Symbol">#-}</a>
 
-<a id="2154" class="Keyword">module</a> <a id="2161" href="FLRP.Closure.Basic.html" class="Module">FLRP.Closure.Basic</a> <a id="2180" class="Keyword">where</a>
+<a id="2266" class="Keyword">module</a> <a id="2273" href="FLRP.Closure.Basic.html" class="Module">FLRP.Closure.Basic</a> <a id="2292" class="Keyword">where</a>
 
-<a id="2187" class="Comment">-- Imports from the Agda Standard Library -----------------------------------</a>
-<a id="2265" class="Keyword">open</a> <a id="2270" class="Keyword">import</a> <a id="2277" href="Data.Fin.Patterns.html" class="Module">Data.Fin.Patterns</a>                      <a id="2316" class="Keyword">using</a>  <a id="2323" class="Symbol">(</a> <a id="2325" href="Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="2328" class="Symbol">;</a> <a id="2330" href="Data.Fin.Patterns.html#440" class="InductiveConstructor">1F</a> <a id="2333" class="Symbol">)</a>
-<a id="2335" class="Keyword">open</a> <a id="2340" class="Keyword">import</a> <a id="2347" href="Data.Product.html" class="Module">Data.Product</a>                           <a id="2386" class="Keyword">using</a>  <a id="2393" class="Symbol">(</a> <a id="2395" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">_,_</a> <a id="2399" class="Symbol">)</a>
-<a id="2401" class="Keyword">open</a> <a id="2406" class="Keyword">import</a> <a id="2413" href="Relation.Binary.PropositionalEquality.html" class="Module">Relation.Binary.PropositionalEquality</a>  <a id="2452" class="Keyword">using</a>  <a id="2459" class="Symbol">(</a> <a id="2461" href="Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="2466" class="Symbol">)</a>
+<a id="2299" class="Comment">-- Imports from the Agda Standard Library -----------------------------------</a>
+<a id="2377" class="Keyword">open</a> <a id="2382" class="Keyword">import</a> <a id="2389" href="Data.Fin.Patterns.html" class="Module">Data.Fin.Patterns</a>                      <a id="2428" class="Keyword">using</a>  <a id="2435" class="Symbol">(</a> <a id="2437" href="Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="2440" class="Symbol">;</a> <a id="2442" href="Data.Fin.Patterns.html#440" class="InductiveConstructor">1F</a> <a id="2445" class="Symbol">)</a>
+<a id="2447" class="Keyword">open</a> <a id="2452" class="Keyword">import</a> <a id="2459" href="Data.Product.html" class="Module">Data.Product</a>                           <a id="2498" class="Keyword">using</a>  <a id="2505" class="Symbol">(</a> <a id="2507" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">_,_</a> <a id="2511" class="Symbol">)</a>
+<a id="2513" class="Keyword">open</a> <a id="2518" class="Keyword">import</a> <a id="2525" href="Level.html" class="Module">Level</a>                                  <a id="2564" class="Keyword">using</a>  <a id="2571" class="Symbol">(</a> <a id="2573" href="Level.html#521" class="Function">0ℓ</a> <a id="2576" class="Symbol">)</a>
+<a id="2578" class="Keyword">open</a> <a id="2583" class="Keyword">import</a> <a id="2590" href="Relation.Binary.html" class="Module">Relation.Binary</a>                        <a id="2629" class="Keyword">using</a>  <a id="2636" class="Symbol">(</a> <a id="2638" href="Relation.Binary.Bundles.html#1235" class="Record">Setoid</a> <a id="2645" class="Symbol">)</a>
+<a id="2647" class="Keyword">open</a> <a id="2652" class="Keyword">import</a> <a id="2659" href="Relation.Binary.PropositionalEquality.html" class="Module">Relation.Binary.PropositionalEquality</a>  <a id="2698" class="Keyword">using</a>  <a id="2705" class="Symbol">(</a> <a id="2707" href="Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="2712" class="Symbol">)</a>
+<a id="2714" class="Keyword">open</a> <a id="2719" class="Keyword">import</a> <a id="2726" href="Relation.Nullary.html" class="Module">Relation.Nullary</a>                       <a id="2765" class="Keyword">using</a>  <a id="2772" class="Symbol">(</a> <a id="2774" href="Relation.Nullary.Negation.Core.html#677" class="Function Operator">¬_</a> <a id="2777" class="Symbol">)</a>
 
-<a id="2469" class="Comment">-- Imports from the Agda Universal Algebra Library ------------------------------</a>
-<a id="2551" class="Keyword">open</a> <a id="2556" class="Keyword">import</a> <a id="2563" href="Classical.Properties.Lattice.html" class="Module">Classical.Properties.Lattice</a>              <a id="2605" class="Keyword">using</a>  <a id="2612" class="Symbol">(</a> <a id="2614" href="Classical.Properties.Lattice.html#7818" class="Function">TopOf</a> <a id="2620" class="Symbol">;</a> <a id="2622" href="Classical.Properties.Lattice.html#7910" class="Function">BottomOf</a> <a id="2631" class="Symbol">)</a>
-<a id="2633" class="Keyword">open</a> <a id="2638" class="Keyword">import</a> <a id="2645" href="Classical.Small.Structures.Lattice.html" class="Module">Classical.Small.Structures.Lattice</a>        <a id="2687" class="Keyword">using</a>  <a id="2694" class="Symbol">(</a> <a id="2696" href="Classical.Small.Structures.Lattice.html#1038" class="Function">Lattice</a> <a id="2704" class="Symbol">)</a>
-<a id="2706" class="Keyword">open</a> <a id="2711" class="Keyword">import</a> <a id="2718" href="Classical.Structures.Lattice.Dual.html" class="Module">Classical.Structures.Lattice.Dual</a>         <a id="2760" class="Keyword">using</a>  <a id="2767" class="Symbol">(</a> <a id="2769" href="Classical.Structures.Lattice.Dual.html#5532" class="Function">dualLattice</a> <a id="2781" class="Symbol">)</a>
-<a id="2783" class="Keyword">open</a> <a id="2788" class="Keyword">import</a> <a id="2795" href="Classical.Structures.Lattice.OrdinalSum.html" class="Module">Classical.Structures.Lattice.OrdinalSum</a>   <a id="2837" class="Keyword">using</a>  <a id="2844" class="Symbol">(</a> <a id="2846" href="Classical.Structures.Lattice.OrdinalSum.html#21780" class="Function">ordinalSum</a> <a id="2857" class="Symbol">)</a>
-<a id="2859" class="Keyword">open</a> <a id="2864" class="Keyword">import</a> <a id="2871" href="FLRP.Assumptions.html" class="Module">FLRP.Assumptions</a>                          <a id="2913" class="Keyword">using</a>  <a id="2920" class="Symbol">(</a> <a id="2922" href="FLRP.Assumptions.html#13417" class="Function">KurzweilNetterDuality</a> <a id="2944" class="Symbol">)</a>
-<a id="2946" class="Keyword">open</a> <a id="2951" class="Keyword">import</a> <a id="2958" href="FLRP.Problem.html" class="Module">FLRP.Problem</a>                              <a id="3000" class="Keyword">using</a>  <a id="3007" class="Symbol">(</a> <a id="3009" href="FLRP.Problem.html#15530" class="Function">chain₂-lattice</a> <a id="3024" class="Symbol">)</a>
-<a id="3026" class="Keyword">open</a> <a id="3031" class="Keyword">import</a> <a id="3038" href="FLRP.Representable.html" class="Module">FLRP.Representable</a>                        <a id="3080" class="Keyword">using</a>  <a id="3087" class="Symbol">(</a> <a id="3089" href="FLRP.Representable.html#8979" class="Record">Representableᵈ</a>
-                                                             <a id="3165" class="Symbol">;</a> <a id="3167" href="FLRP.Representable.html#19801" class="Function">chain₂-Representableᵈ</a> <a id="3189" class="Symbol">)</a>
+<a id="2780" class="Comment">-- Imports from the Agda Universal Algebra Library ------------------------------</a>
+<a id="2862" class="Keyword">open</a> <a id="2867" class="Keyword">import</a> <a id="2874" href="Classical.Properties.Lattice.html" class="Module">Classical.Properties.Lattice</a>              <a id="2916" class="Keyword">using</a>  <a id="2923" class="Symbol">(</a> <a id="2925" href="Classical.Properties.Lattice.html#7818" class="Function">TopOf</a> <a id="2931" class="Symbol">;</a> <a id="2933" href="Classical.Properties.Lattice.html#7910" class="Function">BottomOf</a> <a id="2942" class="Symbol">)</a>
+<a id="2944" class="Keyword">open</a> <a id="2949" class="Keyword">import</a> <a id="2956" href="Classical.Small.Structures.Lattice.html" class="Module">Classical.Small.Structures.Lattice</a>        <a id="2998" class="Keyword">using</a>  <a id="3005" class="Symbol">(</a> <a id="3007" href="Classical.Small.Structures.Lattice.html#1038" class="Function">Lattice</a> <a id="3015" class="Symbol">)</a>
+<a id="3017" class="Keyword">open</a> <a id="3022" class="Keyword">import</a> <a id="3029" href="Classical.Structures.Group.Basic.html" class="Module">Classical.Structures.Group.Basic</a>          <a id="3071" class="Keyword">using</a>  <a id="3078" class="Symbol">(</a> <a id="3080" href="Classical.Structures.Group.Basic.html#5165" class="Function">Group</a> <a id="3086" class="Symbol">;</a> <a id="3088" class="Keyword">module</a> <a id="3095" href="Classical.Structures.Group.Basic.html#8641" class="Module">Group-Op</a> <a id="3104" class="Symbol">)</a>
+<a id="3106" class="Keyword">open</a> <a id="3111" class="Keyword">import</a> <a id="3118" href="Classical.Structures.Lattice.Dual.html" class="Module">Classical.Structures.Lattice.Dual</a>         <a id="3160" class="Keyword">using</a>  <a id="3167" class="Symbol">(</a> <a id="3169" href="Classical.Structures.Lattice.Dual.html#5532" class="Function">dualLattice</a> <a id="3181" class="Symbol">)</a>
+<a id="3183" class="Keyword">open</a> <a id="3188" class="Keyword">import</a> <a id="3195" href="Classical.Structures.Lattice.OrdinalSum.html" class="Module">Classical.Structures.Lattice.OrdinalSum</a>   <a id="3237" class="Keyword">using</a>  <a id="3244" class="Symbol">(</a> <a id="3246" href="Classical.Structures.Lattice.OrdinalSum.html#21780" class="Function">ordinalSum</a> <a id="3257" class="Symbol">)</a>
+<a id="3259" class="Keyword">open</a> <a id="3264" class="Keyword">import</a> <a id="3271" href="FLRP.Assumptions.html" class="Module">FLRP.Assumptions</a>                          <a id="3313" class="Keyword">using</a>  <a id="3320" class="Symbol">(</a> <a id="3322" href="FLRP.Assumptions.html#19554" class="Function">KurzweilSurjectivityAt</a> <a id="3345" class="Symbol">)</a>
+<a id="3347" class="Keyword">open</a> <a id="3352" class="Keyword">import</a> <a id="3359" href="FLRP.KurzweilNetter.Duality.html" class="Module">FLRP.KurzweilNetter.Duality</a>               <a id="3401" class="Keyword">using</a>  <a id="3408" class="Symbol">(</a> <a id="3410" class="Keyword">module</a> <a id="3417" href="FLRP.KurzweilNetter.Duality.html#13689" class="Module">KurzweilNetterProof</a> <a id="3437" class="Symbol">)</a>
+<a id="3439" class="Keyword">open</a> <a id="3444" class="Keyword">import</a> <a id="3451" href="FLRP.Problem.html" class="Module">FLRP.Problem</a>                              <a id="3493" class="Keyword">using</a>  <a id="3500" class="Symbol">(</a> <a id="3502" href="FLRP.Problem.html#15530" class="Function">chain₂-lattice</a> <a id="3517" class="Symbol">)</a>
+<a id="3519" class="Keyword">open</a> <a id="3524" class="Keyword">import</a> <a id="3531" href="FLRP.Representable.html" class="Module">FLRP.Representable</a>                        <a id="3573" class="Keyword">using</a>  <a id="3580" class="Symbol">(</a> <a id="3582" href="FLRP.Representable.html#8979" class="Record">Representableᵈ</a>
+                                                             <a id="3658" class="Symbol">;</a> <a id="3660" href="FLRP.Representable.html#19801" class="Function">chain₂-Representableᵈ</a> <a id="3682" class="Symbol">)</a>
+<a id="3684" class="Keyword">open</a> <a id="3689" class="Keyword">import</a> <a id="3696" href="Setoid.Algebras.Basic.html" class="Module">Setoid.Algebras.Basic</a>                     <a id="3738" class="Keyword">using</a>  <a id="3745" class="Symbol">(</a> <a id="3747" href="Setoid.Algebras.Basic.html#5875" class="Function Operator">𝕌[_]</a> <a id="3752" class="Symbol">;</a> <a id="3754" href="Setoid.Algebras.Basic.html#5431" class="Function Operator">𝔻[_]</a> <a id="3759" class="Symbol">)</a>
+<a id="3761" class="Keyword">open</a> <a id="3766" class="Keyword">import</a> <a id="3773" href="Setoid.Algebras.Finite.html" class="Module">Setoid.Algebras.Finite</a>                    <a id="3815" class="Keyword">using</a>  <a id="3822" class="Symbol">(</a> <a id="3824" href="Setoid.Algebras.Finite.html#3202" class="Record">FiniteAlgebra</a> <a id="3838" class="Symbol">)</a>
 
-<a id="3192" class="Keyword">open</a> <a id="3197" class="Keyword">import</a> <a id="3204" href="FLRP.Closure.Product.html" class="Module">FLRP.Closure.Product</a>     <a id="3229" class="Keyword">public</a>
-<a id="3236" class="Keyword">open</a> <a id="3241" class="Keyword">import</a> <a id="3248" href="FLRP.Closure.OrdinalSum.html" class="Module">FLRP.Closure.OrdinalSum</a>  <a id="3273" class="Keyword">public</a>
-<a id="3280" class="Markup">```
-</a><a id="3284" class="Background">--&gt;
+<a id="3841" class="Keyword">open</a> <a id="3846" class="Keyword">import</a> <a id="3853" href="FLRP.Closure.Product.html" class="Module">FLRP.Closure.Product</a>     <a id="3878" class="Keyword">public</a>
+<a id="3885" class="Keyword">open</a> <a id="3890" class="Keyword">import</a> <a id="3897" href="FLRP.Closure.OrdinalSum.html" class="Module">FLRP.Closure.OrdinalSum</a>  <a id="3922" class="Keyword">public</a>
+<a id="3929" class="Markup">```
+</a><a id="3933" class="Background">--&gt;
 
 #### Adjoining a new bottom or top
 
 The two-element chain carries concrete extremum data: its top is `1` and its
 bottom is `0`, each universal property decided by the four table entries.
 
-</a><a id="3477" class="Markup">```agda
-</a><a id="chain₂-top"></a><a id="3485" href="FLRP.Closure.Basic.html#3485" class="Function">chain₂-top</a> <a id="3496" class="Symbol">:</a> <a id="3498" href="Classical.Properties.Lattice.html#7818" class="Function">TopOf</a> <a id="3504" href="FLRP.Problem.html#15530" class="Function">chain₂-lattice</a>
-<a id="3519" href="FLRP.Closure.Basic.html#3485" class="Function">chain₂-top</a> <a id="3530" class="Symbol">=</a> <a id="3532" href="Data.Fin.Patterns.html#440" class="InductiveConstructor">1F</a> <a id="3535" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="3537" class="Symbol">λ</a> <a id="3539" class="Symbol">{</a> <a id="3541" href="Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="3544" class="Symbol">→</a> <a id="3546" href="Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="3551" class="Symbol">;</a> <a id="3553" href="Data.Fin.Patterns.html#440" class="InductiveConstructor">1F</a> <a id="3556" class="Symbol">→</a> <a id="3558" href="Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="3563" class="Symbol">}</a>
+</a><a id="4126" class="Markup">```agda
+</a><a id="chain₂-top"></a><a id="4134" href="FLRP.Closure.Basic.html#4134" class="Function">chain₂-top</a> <a id="4145" class="Symbol">:</a> <a id="4147" href="Classical.Properties.Lattice.html#7818" class="Function">TopOf</a> <a id="4153" href="FLRP.Problem.html#15530" class="Function">chain₂-lattice</a>
+<a id="4168" href="FLRP.Closure.Basic.html#4134" class="Function">chain₂-top</a> <a id="4179" class="Symbol">=</a> <a id="4181" href="Data.Fin.Patterns.html#440" class="InductiveConstructor">1F</a> <a id="4184" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="4186" class="Symbol">λ</a> <a id="4188" class="Symbol">{</a> <a id="4190" href="Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="4193" class="Symbol">→</a> <a id="4195" href="Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="4200" class="Symbol">;</a> <a id="4202" href="Data.Fin.Patterns.html#440" class="InductiveConstructor">1F</a> <a id="4205" class="Symbol">→</a> <a id="4207" href="Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="4212" class="Symbol">}</a>
 
-<a id="chain₂-bot"></a><a id="3566" href="FLRP.Closure.Basic.html#3566" class="Function">chain₂-bot</a> <a id="3577" class="Symbol">:</a> <a id="3579" href="Classical.Properties.Lattice.html#7910" class="Function">BottomOf</a> <a id="3588" href="FLRP.Problem.html#15530" class="Function">chain₂-lattice</a>
-<a id="3603" href="FLRP.Closure.Basic.html#3566" class="Function">chain₂-bot</a> <a id="3614" class="Symbol">=</a> <a id="3616" href="Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="3619" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="3621" class="Symbol">λ</a> <a id="3623" class="Symbol">{</a> <a id="3625" href="Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="3628" class="Symbol">→</a> <a id="3630" href="Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="3635" class="Symbol">;</a> <a id="3637" href="Data.Fin.Patterns.html#440" class="InductiveConstructor">1F</a> <a id="3640" class="Symbol">→</a> <a id="3642" href="Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="3647" class="Symbol">}</a>
-<a id="3649" class="Markup">```
-</a><a id="3653" class="Background">
-Adjoining a fresh extremum to a lattice is the special case of the glued
-ordinal sum in which one summand is the two-element chain: gluing `chain₂`&#39;s
-top onto `𝑳`&#39;s bottom leaves exactly one new element below everything
-(`adjoinBottom`), and mirrored for `adjoinTop`.  These are the roadmap § 3
-catalogue&#39;s &quot;adjoining a new top or bottom&quot;, each a one-application corollary
-of `ordinalSum-Representableᵈ`{.AgdaFunction} at
-`chain₂-Representableᵈ`{.AgdaFunction} — a deliberate design check that the
-ordinal-sum statement carries no hidden nontriviality assumptions on its
-summands.
+<a id="chain₂-bot"></a><a id="4215" href="FLRP.Closure.Basic.html#4215" class="Function">chain₂-bot</a> <a id="4226" class="Symbol">:</a> <a id="4228" href="Classical.Properties.Lattice.html#7910" class="Function">BottomOf</a> <a id="4237" href="FLRP.Problem.html#15530" class="Function">chain₂-lattice</a>
+<a id="4252" href="FLRP.Closure.Basic.html#4215" class="Function">chain₂-bot</a> <a id="4263" class="Symbol">=</a> <a id="4265" href="Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="4268" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="4270" class="Symbol">λ</a> <a id="4272" class="Symbol">{</a> <a id="4274" href="Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="4277" class="Symbol">→</a> <a id="4279" href="Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="4284" class="Symbol">;</a> <a id="4286" href="Data.Fin.Patterns.html#440" class="InductiveConstructor">1F</a> <a id="4289" class="Symbol">→</a> <a id="4291" href="Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="4296" class="Symbol">}</a>
+<a id="4298" class="Markup">```
+</a><a id="4302" class="Background">
+Adjoining a fresh extremum to a lattice is the special case of the glued ordinal
+sum in which one summand is the two-element chain: gluing `chain₂`&#39;s top onto
+`𝑳`&#39;s bottom leaves exactly one new element below everything (`adjoinBottom`), and
+mirrored for `adjoinTop`.  Each is a one-application corollary of
+`ordinalSum-Representableᵈ`{.AgdaFunction} at `chain₂-Representableᵈ`{.AgdaFunction},
+confirming that the ordinal-sum statement carries no hidden nontriviality
+assumptions on its summands.
 
-</a><a id="4236" class="Markup">```agda
-</a><a id="4244" class="Comment">-- Adjoin a new bottom: chain₂ glued below 𝑳, at 𝑳&#39;s chosen bottom.</a>
-<a id="adjoinBottom-Representableᵈ"></a><a id="4312" href="FLRP.Closure.Basic.html#4312" class="Function">adjoinBottom-Representableᵈ</a> <a id="4340" class="Symbol">:</a> <a id="4342" class="Symbol">{</a><a id="4343" href="FLRP.Closure.Basic.html#4343" class="Bound">𝑳</a> <a id="4345" class="Symbol">:</a> <a id="4347" href="Classical.Small.Structures.Lattice.html#1038" class="Function">Lattice</a><a id="4354" class="Symbol">}</a> <a id="4356" class="Symbol">(</a><a id="4357" href="FLRP.Closure.Basic.html#4357" class="Bound">b</a> <a id="4359" class="Symbol">:</a> <a id="4361" href="Classical.Properties.Lattice.html#7910" class="Function">BottomOf</a> <a id="4370" href="FLRP.Closure.Basic.html#4343" class="Bound">𝑳</a><a id="4371" class="Symbol">)</a>
-  <a id="4375" class="Symbol">→</a> <a id="4377" href="FLRP.Representable.html#8979" class="Record">Representableᵈ</a> <a id="4392" href="FLRP.Closure.Basic.html#4343" class="Bound">𝑳</a> <a id="4394" class="Symbol">→</a> <a id="4396" href="FLRP.Representable.html#8979" class="Record">Representableᵈ</a> <a id="4411" class="Symbol">(</a><a id="4412" href="Classical.Structures.Lattice.OrdinalSum.html#21780" class="Function">ordinalSum</a> <a id="4423" href="FLRP.Problem.html#15530" class="Function">chain₂-lattice</a> <a id="4438" href="FLRP.Closure.Basic.html#3485" class="Function">chain₂-top</a> <a id="4449" href="FLRP.Closure.Basic.html#4343" class="Bound">𝑳</a> <a id="4451" href="FLRP.Closure.Basic.html#4357" class="Bound">b</a><a id="4452" class="Symbol">)</a>
-<a id="4454" href="FLRP.Closure.Basic.html#4312" class="Function">adjoinBottom-Representableᵈ</a> <a id="4482" href="FLRP.Closure.Basic.html#4482" class="Bound">b</a> <a id="4484" href="FLRP.Closure.Basic.html#4484" class="Bound">r</a> <a id="4486" class="Symbol">=</a>
-  <a id="4490" href="FLRP.Closure.OrdinalSum.html#40016" class="Function">ordinalSum-Representableᵈ</a> <a id="4516" href="FLRP.Closure.Basic.html#3485" class="Function">chain₂-top</a> <a id="4527" href="FLRP.Closure.Basic.html#4482" class="Bound">b</a> <a id="4529" href="FLRP.Representable.html#19801" class="Function">chain₂-Representableᵈ</a> <a id="4551" href="FLRP.Closure.Basic.html#4484" class="Bound">r</a>
+</a><a id="4801" class="Markup">```agda
+</a><a id="4809" class="Comment">-- Adjoin a new bottom: chain₂ glued below 𝑳, at 𝑳&#39;s chosen bottom.</a>
+<a id="adjoinBottom-Representableᵈ"></a><a id="4877" href="FLRP.Closure.Basic.html#4877" class="Function">adjoinBottom-Representableᵈ</a> <a id="4905" class="Symbol">:</a> <a id="4907" class="Symbol">{</a><a id="4908" href="FLRP.Closure.Basic.html#4908" class="Bound">𝑳</a> <a id="4910" class="Symbol">:</a> <a id="4912" href="Classical.Small.Structures.Lattice.html#1038" class="Function">Lattice</a><a id="4919" class="Symbol">}</a> <a id="4921" class="Symbol">(</a><a id="4922" href="FLRP.Closure.Basic.html#4922" class="Bound">b</a> <a id="4924" class="Symbol">:</a> <a id="4926" href="Classical.Properties.Lattice.html#7910" class="Function">BottomOf</a> <a id="4935" href="FLRP.Closure.Basic.html#4908" class="Bound">𝑳</a><a id="4936" class="Symbol">)</a>
+  <a id="4940" class="Symbol">→</a> <a id="4942" href="FLRP.Representable.html#8979" class="Record">Representableᵈ</a> <a id="4957" href="FLRP.Closure.Basic.html#4908" class="Bound">𝑳</a> <a id="4959" class="Symbol">→</a> <a id="4961" href="FLRP.Representable.html#8979" class="Record">Representableᵈ</a> <a id="4976" class="Symbol">(</a><a id="4977" href="Classical.Structures.Lattice.OrdinalSum.html#21780" class="Function">ordinalSum</a> <a id="4988" href="FLRP.Problem.html#15530" class="Function">chain₂-lattice</a> <a id="5003" href="FLRP.Closure.Basic.html#4134" class="Function">chain₂-top</a> <a id="5014" href="FLRP.Closure.Basic.html#4908" class="Bound">𝑳</a> <a id="5016" href="FLRP.Closure.Basic.html#4922" class="Bound">b</a><a id="5017" class="Symbol">)</a>
+<a id="5019" href="FLRP.Closure.Basic.html#4877" class="Function">adjoinBottom-Representableᵈ</a> <a id="5047" href="FLRP.Closure.Basic.html#5047" class="Bound">b</a> <a id="5049" href="FLRP.Closure.Basic.html#5049" class="Bound">r</a> <a id="5051" class="Symbol">=</a>
+  <a id="5055" href="FLRP.Closure.OrdinalSum.html#40016" class="Function">ordinalSum-Representableᵈ</a> <a id="5081" href="FLRP.Closure.Basic.html#4134" class="Function">chain₂-top</a> <a id="5092" href="FLRP.Closure.Basic.html#5047" class="Bound">b</a> <a id="5094" href="FLRP.Representable.html#19801" class="Function">chain₂-Representableᵈ</a> <a id="5116" href="FLRP.Closure.Basic.html#5049" class="Bound">r</a>
 
-<a id="4554" class="Comment">-- Adjoin a new top: chain₂ glued above 𝑳, at 𝑳&#39;s chosen top.</a>
-<a id="adjoinTop-Representableᵈ"></a><a id="4616" href="FLRP.Closure.Basic.html#4616" class="Function">adjoinTop-Representableᵈ</a> <a id="4641" class="Symbol">:</a> <a id="4643" class="Symbol">{</a><a id="4644" href="FLRP.Closure.Basic.html#4644" class="Bound">𝑳</a> <a id="4646" class="Symbol">:</a> <a id="4648" href="Classical.Small.Structures.Lattice.html#1038" class="Function">Lattice</a><a id="4655" class="Symbol">}</a> <a id="4657" class="Symbol">(</a><a id="4658" href="FLRP.Closure.Basic.html#4658" class="Bound">t</a> <a id="4660" class="Symbol">:</a> <a id="4662" href="Classical.Properties.Lattice.html#7818" class="Function">TopOf</a> <a id="4668" href="FLRP.Closure.Basic.html#4644" class="Bound">𝑳</a><a id="4669" class="Symbol">)</a>
-  <a id="4673" class="Symbol">→</a> <a id="4675" href="FLRP.Representable.html#8979" class="Record">Representableᵈ</a> <a id="4690" href="FLRP.Closure.Basic.html#4644" class="Bound">𝑳</a> <a id="4692" class="Symbol">→</a> <a id="4694" href="FLRP.Representable.html#8979" class="Record">Representableᵈ</a> <a id="4709" class="Symbol">(</a><a id="4710" href="Classical.Structures.Lattice.OrdinalSum.html#21780" class="Function">ordinalSum</a> <a id="4721" href="FLRP.Closure.Basic.html#4644" class="Bound">𝑳</a> <a id="4723" href="FLRP.Closure.Basic.html#4658" class="Bound">t</a> <a id="4725" href="FLRP.Problem.html#15530" class="Function">chain₂-lattice</a> <a id="4740" href="FLRP.Closure.Basic.html#3566" class="Function">chain₂-bot</a><a id="4750" class="Symbol">)</a>
-<a id="4752" href="FLRP.Closure.Basic.html#4616" class="Function">adjoinTop-Representableᵈ</a> <a id="4777" href="FLRP.Closure.Basic.html#4777" class="Bound">t</a> <a id="4779" href="FLRP.Closure.Basic.html#4779" class="Bound">r</a> <a id="4781" class="Symbol">=</a>
-  <a id="4785" href="FLRP.Closure.OrdinalSum.html#40016" class="Function">ordinalSum-Representableᵈ</a> <a id="4811" href="FLRP.Closure.Basic.html#4777" class="Bound">t</a> <a id="4813" href="FLRP.Closure.Basic.html#3566" class="Function">chain₂-bot</a> <a id="4824" href="FLRP.Closure.Basic.html#4779" class="Bound">r</a> <a id="4826" href="FLRP.Representable.html#19801" class="Function">chain₂-Representableᵈ</a>
-<a id="4848" class="Markup">```
-</a><a id="4852" class="Background">
-#### Duality, conditionally
+<a id="5119" class="Comment">-- Adjoin a new top: chain₂ glued above 𝑳, at 𝑳&#39;s chosen top.</a>
+<a id="adjoinTop-Representableᵈ"></a><a id="5181" href="FLRP.Closure.Basic.html#5181" class="Function">adjoinTop-Representableᵈ</a> <a id="5206" class="Symbol">:</a> <a id="5208" class="Symbol">{</a><a id="5209" href="FLRP.Closure.Basic.html#5209" class="Bound">𝑳</a> <a id="5211" class="Symbol">:</a> <a id="5213" href="Classical.Small.Structures.Lattice.html#1038" class="Function">Lattice</a><a id="5220" class="Symbol">}</a> <a id="5222" class="Symbol">(</a><a id="5223" href="FLRP.Closure.Basic.html#5223" class="Bound">t</a> <a id="5225" class="Symbol">:</a> <a id="5227" href="Classical.Properties.Lattice.html#7818" class="Function">TopOf</a> <a id="5233" href="FLRP.Closure.Basic.html#5209" class="Bound">𝑳</a><a id="5234" class="Symbol">)</a>
+  <a id="5238" class="Symbol">→</a> <a id="5240" href="FLRP.Representable.html#8979" class="Record">Representableᵈ</a> <a id="5255" href="FLRP.Closure.Basic.html#5209" class="Bound">𝑳</a> <a id="5257" class="Symbol">→</a> <a id="5259" href="FLRP.Representable.html#8979" class="Record">Representableᵈ</a> <a id="5274" class="Symbol">(</a><a id="5275" href="Classical.Structures.Lattice.OrdinalSum.html#21780" class="Function">ordinalSum</a> <a id="5286" href="FLRP.Closure.Basic.html#5209" class="Bound">𝑳</a> <a id="5288" href="FLRP.Closure.Basic.html#5223" class="Bound">t</a> <a id="5290" href="FLRP.Problem.html#15530" class="Function">chain₂-lattice</a> <a id="5305" href="FLRP.Closure.Basic.html#4215" class="Function">chain₂-bot</a><a id="5315" class="Symbol">)</a>
+<a id="5317" href="FLRP.Closure.Basic.html#5181" class="Function">adjoinTop-Representableᵈ</a> <a id="5342" href="FLRP.Closure.Basic.html#5342" class="Bound">t</a> <a id="5344" href="FLRP.Closure.Basic.html#5344" class="Bound">r</a> <a id="5346" class="Symbol">=</a>
+  <a id="5350" href="FLRP.Closure.OrdinalSum.html#40016" class="Function">ordinalSum-Representableᵈ</a> <a id="5376" href="FLRP.Closure.Basic.html#5342" class="Bound">t</a> <a id="5378" href="FLRP.Closure.Basic.html#4215" class="Function">chain₂-bot</a> <a id="5389" href="FLRP.Closure.Basic.html#5344" class="Bound">r</a> <a id="5391" href="FLRP.Representable.html#19801" class="Function">chain₂-Representableᵈ</a>
+<a id="5413" class="Markup">```
+</a><a id="5417" class="Background">
+#### Duality
 
-Closure under dualization, threaded through the registry&#39;s Entry 2.  The body
-is instantiation — deliberately so: the mathematical content lives in the
-*named, cited* hypothesis, and every consumer of this corollary displays its
-classical debt in its own type.
+Here we prove closure under dualization (the Kurzweil–Netter theorem) using
+[FLRP.KurzweilNetter.Duality][].  The parameters are the simple-group package of
+the proof module: a finite group with a nontriviality witness and the
+Kurzweil-surjectivity family (Entry 4 of [FLRP.Assumptions][], classically true
+for `𝒮` finite nonabelian simple).
 
-</a><a id="5144" class="Markup">```agda
-</a><a id="5152" class="Comment">-- The Kurzweil–Netter closure, conditional on the registered assumption.</a>
-<a id="dual-Representableᵈ"></a><a id="5226" href="FLRP.Closure.Basic.html#5226" class="Function">dual-Representableᵈ</a> <a id="5246" class="Symbol">:</a> <a id="5248" href="FLRP.Assumptions.html#13417" class="Function">KurzweilNetterDuality</a>
-  <a id="5272" class="Symbol">→</a> <a id="5274" class="Symbol">(</a><a id="5275" href="FLRP.Closure.Basic.html#5275" class="Bound">𝑳</a> <a id="5277" class="Symbol">:</a> <a id="5279" href="Classical.Small.Structures.Lattice.html#1038" class="Function">Lattice</a><a id="5286" class="Symbol">)</a> <a id="5288" class="Symbol">→</a> <a id="5290" href="FLRP.Representable.html#8979" class="Record">Representableᵈ</a> <a id="5305" href="FLRP.Closure.Basic.html#5275" class="Bound">𝑳</a> <a id="5307" class="Symbol">→</a> <a id="5309" href="FLRP.Representable.html#8979" class="Record">Representableᵈ</a> <a id="5324" class="Symbol">(</a><a id="5325" href="Classical.Structures.Lattice.Dual.html#5532" class="Function">dualLattice</a> <a id="5337" href="FLRP.Closure.Basic.html#5275" class="Bound">𝑳</a><a id="5338" class="Symbol">)</a>
-<a id="5340" href="FLRP.Closure.Basic.html#5226" class="Function">dual-Representableᵈ</a> <a id="5360" href="FLRP.Closure.Basic.html#5360" class="Bound">knd</a> <a id="5364" href="FLRP.Closure.Basic.html#5364" class="Bound">𝑳</a> <a id="5366" class="Symbol">=</a> <a id="5368" href="FLRP.Closure.Basic.html#5360" class="Bound">knd</a> <a id="5372" href="FLRP.Closure.Basic.html#5364" class="Bound">𝑳</a>
-<a id="5374" class="Markup">```
-</a><a id="5378" class="Background">
+Every consumer displays its remaining classical debt (Entry 4 at the chosen group)
+in its own type, exactly as the registry discipline demands.
+
+</a><a id="5920" class="Markup">```agda
+</a><a id="5928" class="Keyword">module</a> <a id="5935" href="FLRP.Closure.Basic.html#5935" class="Module">_</a> <a id="5937" class="Symbol">(</a><a id="5938" href="FLRP.Closure.Basic.html#5938" class="Bound">(</a><a id="5939" href="FLRP.Closure.Basic.html#5939" class="Bound">𝑺</a> <a id="5941" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="5943" href="FLRP.Closure.Basic.html#5943" class="Bound">eqns</a><a id="5947" href="FLRP.Closure.Basic.html#5938" class="Bound">)</a> <a id="5949" class="Symbol">:</a> <a id="5951" href="Classical.Structures.Group.Basic.html#5165" class="Function">Group</a> <a id="5957" href="Level.html#521" class="Function">0ℓ</a> <a id="5960" href="Level.html#521" class="Function">0ℓ</a><a id="5962" class="Symbol">)</a> <a id="5964" class="Keyword">where</a>
+  <a id="5972" class="Keyword">open</a> <a id="5977" href="Relation.Binary.Bundles.html#1235" class="Module">Setoid</a> <a id="5984" href="Setoid.Algebras.Basic.html#5431" class="Function Operator">𝔻[</a> <a id="5987" href="FLRP.Closure.Basic.html#5939" class="Bound">𝑺</a> <a id="5989" href="Setoid.Algebras.Basic.html#5431" class="Function Operator">]</a> <a id="5991" class="Keyword">using</a> <a id="5997" class="Symbol">(</a><a id="5998" href="Relation.Binary.Bundles.html#1324" class="Field Operator">_≈_</a><a id="6001" class="Symbol">)</a>
+  <a id="6005" class="Keyword">open</a> <a id="6010" href="Classical.Structures.Group.Basic.html#8641" class="Module">Group-Op</a> <a id="6019" class="Symbol">(</a><a id="6020" href="FLRP.Closure.Basic.html#5939" class="Bound">𝑺</a> <a id="6022" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="6024" href="FLRP.Closure.Basic.html#5943" class="Bound">eqns</a><a id="6028" class="Symbol">)</a> <a id="6030" class="Keyword">using</a> <a id="6036" class="Symbol">(</a><a id="6037" href="Classical.Structures.Group.Basic.html#8931" class="Function">ε</a><a id="6038" class="Symbol">)</a>
+  <a id="6042" class="Comment">-- The Kurzweil–Netter closure, from the simple-group package of the proof.</a>
+  <a id="6120" href="FLRP.Closure.Basic.html#6120" class="Function">dual-Representableᵈ</a> <a id="6140" class="Symbol">:</a> <a id="6142" class="Symbol">(</a><a id="6143" href="FLRP.Closure.Basic.html#6143" class="Bound">𝑭ₛ</a> <a id="6146" class="Symbol">:</a> <a id="6148" href="Setoid.Algebras.Finite.html#3202" class="Record">FiniteAlgebra</a> <a id="6162" href="FLRP.Closure.Basic.html#5939" class="Bound">𝑺</a><a id="6163" class="Symbol">)</a> <a id="6165" class="Symbol">(</a><a id="6166" href="FLRP.Closure.Basic.html#6166" class="Bound">s₀</a> <a id="6169" class="Symbol">:</a> <a id="6171" href="Setoid.Algebras.Basic.html#5875" class="Function Operator">𝕌[</a> <a id="6174" href="FLRP.Closure.Basic.html#5939" class="Bound">𝑺</a> <a id="6176" href="Setoid.Algebras.Basic.html#5875" class="Function Operator">]</a><a id="6177" class="Symbol">)</a>
+    <a id="6183" class="Symbol">→</a> <a id="6185" href="Relation.Nullary.Negation.Core.html#677" class="Function Operator">¬</a> <a id="6187" href="FLRP.Closure.Basic.html#6166" class="Bound">s₀</a> <a id="6190" href="Relation.Binary.Bundles.html#1324" class="Function Operator">≈</a> <a id="6192" href="Classical.Structures.Group.Basic.html#8931" class="Function">ε</a> <a id="6194" class="Symbol">→</a> <a id="6196" class="Symbol">(∀</a> <a id="6199" href="FLRP.Closure.Basic.html#6199" class="Bound">n</a> <a id="6201" class="Symbol">→</a> <a id="6203" href="FLRP.Assumptions.html#19554" class="Function">KurzweilSurjectivityAt</a> <a id="6226" class="Symbol">(</a><a id="6227" href="FLRP.Closure.Basic.html#5939" class="Bound">𝑺</a> <a id="6229" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="6231" href="FLRP.Closure.Basic.html#5943" class="Bound">eqns</a><a id="6235" class="Symbol">)</a> <a id="6237" href="FLRP.Closure.Basic.html#6199" class="Bound">n</a><a id="6238" class="Symbol">)</a>
+    <a id="6244" class="Symbol">→</a> <a id="6246" class="Symbol">(</a><a id="6247" href="FLRP.Closure.Basic.html#6247" class="Bound">𝑳</a> <a id="6249" class="Symbol">:</a> <a id="6251" href="Classical.Small.Structures.Lattice.html#1038" class="Function">Lattice</a><a id="6258" class="Symbol">)</a> <a id="6260" class="Symbol">→</a> <a id="6262" href="FLRP.Representable.html#8979" class="Record">Representableᵈ</a> <a id="6277" href="FLRP.Closure.Basic.html#6247" class="Bound">𝑳</a> <a id="6279" class="Symbol">→</a> <a id="6281" href="FLRP.Representable.html#8979" class="Record">Representableᵈ</a> <a id="6296" class="Symbol">(</a><a id="6297" href="Classical.Structures.Lattice.Dual.html#5532" class="Function">dualLattice</a> <a id="6309" href="FLRP.Closure.Basic.html#6247" class="Bound">𝑳</a><a id="6310" class="Symbol">)</a>
+  <a id="6314" href="FLRP.Closure.Basic.html#6120" class="Function">dual-Representableᵈ</a> <a id="6334" href="FLRP.Closure.Basic.html#6334" class="Bound">𝑭ₛ</a> <a id="6337" href="FLRP.Closure.Basic.html#6337" class="Bound">s₀</a> <a id="6340" href="FLRP.Closure.Basic.html#6340" class="Bound">s₀≉ε</a> <a id="6345" href="FLRP.Closure.Basic.html#6345" class="Bound">surj</a> <a id="6350" class="Symbol">=</a>
+    <a id="6356" href="FLRP.KurzweilNetter.Duality.html#14434" class="Function">KurzweilNetterProof.kurzweilNetterDuality</a> <a id="6398" class="Symbol">(</a><a id="6399" href="FLRP.Closure.Basic.html#5939" class="Bound">𝑺</a> <a id="6401" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="6403" href="FLRP.Closure.Basic.html#5943" class="Bound">eqns</a><a id="6407" class="Symbol">)</a> <a id="6409" href="FLRP.Closure.Basic.html#6334" class="Bound">𝑭ₛ</a> <a id="6412" href="FLRP.Closure.Basic.html#6337" class="Bound">s₀</a> <a id="6415" href="FLRP.Closure.Basic.html#6340" class="Bound">s₀≉ε</a> <a id="6420" href="FLRP.Closure.Basic.html#6345" class="Bound">surj</a>
+<a id="6425" class="Markup">```
+</a><a id="6429" class="Background">
 --------------------------------------
+
+
+[^1]: See the roadmap&#39;s § 3; `docs/papers/fin-lat-rep/SmallLatticeReps.tex`, § Closure properties.
 </a></pre></body></html>

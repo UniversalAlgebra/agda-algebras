@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>FLRP.KurzweilNetter.Invariance</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">---
+layout: default
+file: &quot;src/FLRP/KurzweilNetter/Invariance.lagda.md&quot;
+title: &quot;FLRP.KurzweilNetter.Invariance module (The Agda Universal Algebra Library)&quot;
+date: &quot;2026-07-28&quot;
+author: &quot;the agda-algebras development team&quot;
+---
+
+### Invariant partitions
+
+This is the [FLRP.KurzweilNetter.Invariance][] module of the [Agda Universal Algebra Library][].
+
+A partition `π` of `Fin n` is **invariant** under a map `t : Fin n → Fin n` when
+`t` carries blocks into blocks: indices in one block of `π` have their `t`-images
+in one block of `π`.  This is the pivotal notion of the Kurzweil–Netter expansion
+step: on the algebra side, the congruences of a finite algebra `𝑨` indexed by
+`Fin n` correspond exactly to the partitions invariant under `𝑨`&#39;s basic
+translations ([FLRP.KurzweilNetter.Translations][]); on the group side, the
+congruences of the expanded coset algebra on `Sⁿ/D` correspond exactly to the
+partition subgroups `K_π` with `π` invariant under the lifted maps
+([FLRP.KurzweilNetter.Expansion][]).  The two sides meet in this definition, which
+is why it lives in its own small module, free of both the algebra and the group.
+
+&lt;!--
+</a><a id="1137" class="Markup">```agda
+</a><a id="1145" class="Symbol">{-#</a> <a id="1149" class="Keyword">OPTIONS</a> <a id="1157" class="Pragma">--cubical-compatible</a> <a id="1178" class="Pragma">--exact-split</a> <a id="1192" class="Pragma">--safe</a> <a id="1199" class="Symbol">#-}</a>
+
+<a id="1204" class="Keyword">module</a> <a id="1211" href="FLRP.KurzweilNetter.Invariance.html" class="Module">FLRP.KurzweilNetter.Invariance</a> <a id="1242" class="Keyword">where</a>
+
+<a id="1249" class="Keyword">open</a> <a id="1254" class="Keyword">import</a> <a id="1261" href="Agda.Primitive.html" class="Module">Agda.Primitive</a> <a id="1276" class="Keyword">using</a> <a id="1282" class="Symbol">()</a> <a id="1285" class="Keyword">renaming</a> <a id="1294" class="Symbol">(</a> <a id="1296" href="Agda.Primitive.html#388" class="Primitive">Set</a> <a id="1300" class="Symbol">to</a> <a id="1303" class="Primitive">Type</a> <a id="1308" class="Symbol">)</a>
+
+<a id="1311" class="Comment">-- Imports from the Agda Standard Library ---------------------------------------</a>
+<a id="1393" class="Keyword">open</a> <a id="1398" class="Keyword">import</a> <a id="1405" href="Data.Fin.Base.html" class="Module">Data.Fin.Base</a>   <a id="1421" class="Keyword">using</a> <a id="1427" class="Symbol">(</a> <a id="1429" href="Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="1433" class="Symbol">)</a>
+<a id="1435" class="Keyword">open</a> <a id="1440" class="Keyword">import</a> <a id="1447" href="Data.Nat.Base.html" class="Module">Data.Nat.Base</a>   <a id="1463" class="Keyword">using</a> <a id="1469" class="Symbol">(</a> <a id="1471" href="Agda.Builtin.Nat.html#203" class="Datatype">ℕ</a> <a id="1473" class="Symbol">)</a>
+<a id="1475" class="Keyword">open</a> <a id="1480" class="Keyword">import</a> <a id="1487" href="Data.Product.html" class="Module">Data.Product</a>    <a id="1503" class="Keyword">using</a> <a id="1509" class="Symbol">(</a> <a id="1511" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">_,_</a> <a id="1515" class="Symbol">)</a>
+
+<a id="1518" class="Comment">-- Imports from the Agda Universal Algebra Library ------------------------------</a>
+<a id="1600" class="Keyword">open</a> <a id="1605" class="Keyword">import</a> <a id="1612" href="Classical.Structures.Lattice.Partitions.html" class="Module">Classical.Structures.Lattice.Partitions</a>  <a id="1653" class="Keyword">using</a> <a id="1659" class="Symbol">(</a> <a id="1661" href="Classical.Structures.Lattice.Partitions.html#6160" class="Function">SameBlock</a> <a id="1671" class="Symbol">;</a> <a id="1673" href="Classical.Structures.Lattice.Partitions.html#6494" class="Function Operator">_≈ᵖ_</a> <a id="1678" class="Symbol">)</a>
+<a id="1680" class="Keyword">open</a> <a id="1685" class="Keyword">import</a> <a id="1692" href="Setoid.Congruences.Certificates.Schema.html" class="Module">Setoid.Congruences.Certificates.Schema</a>   <a id="1733" class="Keyword">using</a> <a id="1739" class="Symbol">(</a> <a id="1741" href="Setoid.Congruences.Certificates.Schema.html#4023" class="Function">ParentVec</a> <a id="1751" class="Symbol">)</a>
+
+<a id="1754" class="Keyword">private</a> <a id="1762" class="Keyword">variable</a> <a id="1771" href="FLRP.KurzweilNetter.Invariance.html#1771" class="Generalizable">n</a> <a id="1773" class="Symbol">:</a> <a id="1775" href="Agda.Builtin.Nat.html#203" class="Datatype">ℕ</a>
+<a id="1777" class="Markup">```
+</a><a id="1781" class="Background">--&gt;
+
+#### The invariance predicate
+
+`Inv t pv` says the kernel of `pv` is preserved by `t`: a block relation of the
+partition is carried to a block relation.
+
+</a><a id="1940" class="Markup">```agda
+</a><a id="1948" class="Comment">-- The partition pv is invariant under the index map t.</a>
+<a id="Inv"></a><a id="2004" href="FLRP.KurzweilNetter.Invariance.html#2004" class="Function">Inv</a> <a id="2008" class="Symbol">:</a> <a id="2010" class="Symbol">(</a><a id="2011" href="Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="2015" href="FLRP.KurzweilNetter.Invariance.html#1771" class="Generalizable">n</a> <a id="2017" class="Symbol">→</a> <a id="2019" href="Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="2023" href="FLRP.KurzweilNetter.Invariance.html#1771" class="Generalizable">n</a><a id="2024" class="Symbol">)</a> <a id="2026" class="Symbol">→</a> <a id="2028" href="Setoid.Congruences.Certificates.Schema.html#4023" class="Function">ParentVec</a> <a id="2038" href="FLRP.KurzweilNetter.Invariance.html#1771" class="Generalizable">n</a> <a id="2040" class="Symbol">→</a> <a id="2042" href="FLRP.KurzweilNetter.Invariance.html#1303" class="Primitive">Type</a>
+<a id="2047" href="FLRP.KurzweilNetter.Invariance.html#2004" class="Function">Inv</a> <a id="2051" href="FLRP.KurzweilNetter.Invariance.html#2051" class="Bound">t</a> <a id="2053" href="FLRP.KurzweilNetter.Invariance.html#2053" class="Bound">pv</a> <a id="2056" class="Symbol">=</a> <a id="2058" class="Symbol">∀</a> <a id="2060" class="Symbol">{</a><a id="2061" href="FLRP.KurzweilNetter.Invariance.html#2061" class="Bound">i</a> <a id="2063" href="FLRP.KurzweilNetter.Invariance.html#2063" class="Bound">j</a><a id="2064" class="Symbol">}</a> <a id="2066" class="Symbol">→</a> <a id="2068" href="Classical.Structures.Lattice.Partitions.html#6160" class="Function">SameBlock</a> <a id="2078" href="FLRP.KurzweilNetter.Invariance.html#2053" class="Bound">pv</a> <a id="2081" href="FLRP.KurzweilNetter.Invariance.html#2061" class="Bound">i</a> <a id="2083" href="FLRP.KurzweilNetter.Invariance.html#2063" class="Bound">j</a> <a id="2085" class="Symbol">→</a> <a id="2087" href="Classical.Structures.Lattice.Partitions.html#6160" class="Function">SameBlock</a> <a id="2097" href="FLRP.KurzweilNetter.Invariance.html#2053" class="Bound">pv</a> <a id="2100" class="Symbol">(</a><a id="2101" href="FLRP.KurzweilNetter.Invariance.html#2051" class="Bound">t</a> <a id="2103" href="FLRP.KurzweilNetter.Invariance.html#2061" class="Bound">i</a><a id="2104" class="Symbol">)</a> <a id="2106" class="Symbol">(</a><a id="2107" href="FLRP.KurzweilNetter.Invariance.html#2051" class="Bound">t</a> <a id="2109" href="FLRP.KurzweilNetter.Invariance.html#2063" class="Bound">j</a><a id="2110" class="Symbol">)</a>
+<a id="2112" class="Markup">```
+</a><a id="2116" class="Background">
+Invariance is a property of the *kernel*, so it transports along partition
+equality (mutual refinement), the lemma every round trip below needs when a
+construction returns a merely `≈ᵖ`-equal presentation of a partition.
+
+</a><a id="2339" class="Markup">```agda
+</a><a id="2347" class="Comment">-- Invariance respects kernel equality of the partitions.</a>
+<a id="Inv-resp-≈ᵖ"></a><a id="2405" href="FLRP.KurzweilNetter.Invariance.html#2405" class="Function">Inv-resp-≈ᵖ</a> <a id="2417" class="Symbol">:</a> <a id="2419" class="Symbol">(</a><a id="2420" href="FLRP.KurzweilNetter.Invariance.html#2420" class="Bound">t</a> <a id="2422" class="Symbol">:</a> <a id="2424" href="Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="2428" href="FLRP.KurzweilNetter.Invariance.html#1771" class="Generalizable">n</a> <a id="2430" class="Symbol">→</a> <a id="2432" href="Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="2436" href="FLRP.KurzweilNetter.Invariance.html#1771" class="Generalizable">n</a><a id="2437" class="Symbol">)</a> <a id="2439" class="Symbol">{</a><a id="2440" href="FLRP.KurzweilNetter.Invariance.html#2440" class="Bound">pu</a> <a id="2443" href="FLRP.KurzweilNetter.Invariance.html#2443" class="Bound">pw</a> <a id="2446" class="Symbol">:</a> <a id="2448" href="Setoid.Congruences.Certificates.Schema.html#4023" class="Function">ParentVec</a> <a id="2458" href="FLRP.KurzweilNetter.Invariance.html#1771" class="Generalizable">n</a><a id="2459" class="Symbol">}</a>
+  <a id="2463" class="Symbol">→</a> <a id="2465" href="FLRP.KurzweilNetter.Invariance.html#2440" class="Bound">pu</a> <a id="2468" href="Classical.Structures.Lattice.Partitions.html#6494" class="Function Operator">≈ᵖ</a> <a id="2471" href="FLRP.KurzweilNetter.Invariance.html#2443" class="Bound">pw</a> <a id="2474" class="Symbol">→</a> <a id="2476" href="FLRP.KurzweilNetter.Invariance.html#2004" class="Function">Inv</a> <a id="2480" href="FLRP.KurzweilNetter.Invariance.html#2420" class="Bound">t</a> <a id="2482" href="FLRP.KurzweilNetter.Invariance.html#2440" class="Bound">pu</a> <a id="2485" class="Symbol">→</a> <a id="2487" href="FLRP.KurzweilNetter.Invariance.html#2004" class="Function">Inv</a> <a id="2491" href="FLRP.KurzweilNetter.Invariance.html#2420" class="Bound">t</a> <a id="2493" href="FLRP.KurzweilNetter.Invariance.html#2443" class="Bound">pw</a>
+<a id="2496" href="FLRP.KurzweilNetter.Invariance.html#2405" class="Function">Inv-resp-≈ᵖ</a> <a id="2508" href="FLRP.KurzweilNetter.Invariance.html#2508" class="Bound">t</a> <a id="2510" class="Symbol">(</a><a id="2511" href="FLRP.KurzweilNetter.Invariance.html#2511" class="Bound">u⊑w</a> <a id="2515" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="2517" href="FLRP.KurzweilNetter.Invariance.html#2517" class="Bound">w⊑u</a><a id="2520" class="Symbol">)</a> <a id="2522" href="FLRP.KurzweilNetter.Invariance.html#2522" class="Bound">invᵤ</a> <a id="2527" href="FLRP.KurzweilNetter.Invariance.html#2527" class="Bound">sb</a> <a id="2530" class="Symbol">=</a> <a id="2532" href="FLRP.KurzweilNetter.Invariance.html#2511" class="Bound">u⊑w</a> <a id="2536" class="Symbol">(</a><a id="2537" href="FLRP.KurzweilNetter.Invariance.html#2522" class="Bound">invᵤ</a> <a id="2542" class="Symbol">(</a><a id="2543" href="FLRP.KurzweilNetter.Invariance.html#2517" class="Bound">w⊑u</a> <a id="2547" href="FLRP.KurzweilNetter.Invariance.html#2527" class="Bound">sb</a><a id="2549" class="Symbol">))</a>
+<a id="2552" class="Markup">```
+</a><a id="2556" class="Background">
+--------------------------------------
+</a></pre></body></html>

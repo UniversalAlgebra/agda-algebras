@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>FLRP.KurzweilNetter</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">---
+layout: default
+file: &quot;src/FLRP/KurzweilNetter.lagda.md&quot;
+title: &quot;FLRP.KurzweilNetter module (The Agda Universal Algebra Library)&quot;
+date: &quot;2026-07-28&quot;
+author: &quot;the agda-algebras development team&quot;
+---
+
+### Kurzweil–Netter duality
+
+This is the [FLRP.KurzweilNetter][] module of the [Agda Universal Algebra Library][].
+
+This module develops the formal proof of the **Kurzweil–Netter duality theorem**,
+which asserts that the class of decidably representable lattices is closed under
+the taking of lattice duals.  It is assembled from the following submodules:
+
++  [FLRP.KurzweilNetter.Invariance][]: partitions invariant under an index map,
+   the notion where the algebra side and the group side of the construction meet;
++  [FLRP.KurzweilNetter.Blocks][]: decidable congruences of a finite carrier as
+   partitions of its (irredundantly enumerated) index set, at the relation level;
++  [FLRP.KurzweilNetter.Translations][]: the basic translations of a finite
+   finitary algebra, and the Mal&#39;cev-style translation criterion identifying the
+   congruences with the invariant partitions;
++  [FLRP.KurzweilNetter.Expansion][]: the expansion step showing the coset algebra
+   on `Sᵐ/D`, expanded by a family of lifted index maps, has decidable congruence
+   lattice that is dually isomorphic to the family-invariant partitions;
++  [FLRP.KurzweilNetter.Duality][]: the composite theorem
+   `kurzweilNetterDuality`{.AgdaFunction}, retiring Entry 2 of
+   [FLRP.Assumptions][] to a proof from Entry 4 and the properties of a finite
+   nontrivial group.
+
+</a><a id="1548" class="Markup">```agda
+</a><a id="1556" class="Symbol">{-#</a> <a id="1560" class="Keyword">OPTIONS</a> <a id="1568" class="Pragma">--cubical-compatible</a> <a id="1589" class="Pragma">--exact-split</a> <a id="1603" class="Pragma">--safe</a> <a id="1610" class="Symbol">#-}</a>
+
+<a id="1615" class="Keyword">module</a> <a id="1622" href="FLRP.KurzweilNetter.html" class="Module">FLRP.KurzweilNetter</a> <a id="1642" class="Keyword">where</a>
+
+<a id="1649" class="Keyword">open</a> <a id="1654" class="Keyword">import</a> <a id="1661" href="FLRP.KurzweilNetter.Invariance.html" class="Module">FLRP.KurzweilNetter.Invariance</a>    <a id="1695" class="Keyword">public</a>
+<a id="1702" class="Keyword">open</a> <a id="1707" class="Keyword">import</a> <a id="1714" href="FLRP.KurzweilNetter.Blocks.html" class="Module">FLRP.KurzweilNetter.Blocks</a>        <a id="1748" class="Keyword">public</a>
+<a id="1755" class="Keyword">open</a> <a id="1760" class="Keyword">import</a> <a id="1767" href="FLRP.KurzweilNetter.Translations.html" class="Module">FLRP.KurzweilNetter.Translations</a>  <a id="1801" class="Keyword">public</a>
+<a id="1808" class="Keyword">open</a> <a id="1813" class="Keyword">import</a> <a id="1820" href="FLRP.KurzweilNetter.Expansion.html" class="Module">FLRP.KurzweilNetter.Expansion</a>     <a id="1854" class="Keyword">public</a>
+<a id="1861" class="Keyword">open</a> <a id="1866" class="Keyword">import</a> <a id="1873" href="FLRP.KurzweilNetter.Duality.html" class="Module">FLRP.KurzweilNetter.Duality</a>       <a id="1907" class="Keyword">public</a>
+<a id="1914" class="Markup">```
+</a><a id="1918" class="Background">
+--------------------------------------
+</a></pre></body></html>
