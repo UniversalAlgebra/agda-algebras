@@ -6674,6 +6674,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -7039,6 +7043,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../Classical/Structures/Group/IndexAction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IndexAction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../Classical/Structures/Group/MinimalNormal/" class="md-nav__link">
         
   
@@ -7243,6 +7275,34 @@
     
   
     Subgroups
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Classical/Structures/Group/Wreath/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wreath
   
 
     
@@ -12782,6 +12842,8 @@
       
         
       
+        
+      
     
     
     
@@ -14491,6 +14553,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../FLRP/WreathNoGo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WreathNoGo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -15354,7 +15444,7 @@ worked example <code>ℤ-commutativeRing</code> type-checks, and the bridge to s
 <a id="1516" class="Keyword">open</a> <a id="1521" class="Keyword">import</a> <a id="1528" href="/classic/Relation.Binary.PropositionalEquality.html" class="Module">Relation.Binary.PropositionalEquality</a> <a id="1566" class="Keyword">using</a> <a id="1572" class="Symbol">(</a> <a id="1574" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">_≡_</a> <a id="1578" class="Symbol">;</a> <a id="1580" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="1585" class="Symbol">)</a>
 
 <a id="1588" class="Comment">-- Imports from the Agda Universal Algebra Library ----------------------------</a>
-<a id="1668" class="Keyword">open</a> <a id="1673" class="Keyword">import</a> <a id="1680" href="/Classical/Bundles/CommutativeRing/" class="Module">Classical.Bundles.CommutativeRing</a> <a id="1714" class="Keyword">using</a> <a id="1720" class="Symbol">(</a> <a id="1722" href="/Classical/Bundles/CommutativeRing/#1908" class="Function Operator">⟨_⟩ᶜʳᵍ</a> <a id="1729" class="Symbol">;</a> <a id="1731" href="/Classical/Bundles/CommutativeRing/#3429" class="Function Operator">⟪_⟫ᶜʳᵍ</a> <a id="1738" class="Symbol">)</a>
+<a id="1668" class="Keyword">open</a> <a id="1673" class="Keyword">import</a> <a id="1680" href="/Classical/Bundles/CommutativeRing/" class="Module">Classical.Bundles.CommutativeRing</a> <a id="1714" class="Keyword">using</a> <a id="1720" class="Symbol">(</a> <a id="1722" href="/Classical/Bundles/CommutativeRing/#1915" class="Function Operator">⟨_⟩ᶜʳᵍ</a> <a id="1729" class="Symbol">;</a> <a id="1731" href="/Classical/Bundles/CommutativeRing/#3436" class="Function Operator">⟪_⟫ᶜʳᵍ</a> <a id="1738" class="Symbol">)</a>
 <a id="1740" class="Keyword">open</a> <a id="1745" class="Keyword">import</a> <a id="1752" href="/Classical/Small/Structures/CommutativeRing/" class="Module">Classical.Small.Structures.CommutativeRing</a>
   <a id="1797" class="Keyword">using</a> <a id="1803" class="Symbol">(</a> <a id="1805" href="/Classical/Small/Structures/CommutativeRing/#976" class="Function">CommutativeRing</a> <a id="1821" class="Symbol">;</a> <a id="1823" href="/Classical/Small/Structures/CommutativeRing/#1061" class="Function">eqsToCommutativeRing</a> <a id="1844" class="Symbol">)</a>
 
@@ -15390,7 +15480,7 @@ worked example <code>ℤ-commutativeRing</code> type-checks, and the bridge to s
 <a id="2720" href="/Examples/Classical/CommutativeRing/#2684" class="Function">⊝-is-neg-cr</a> <a id="2732" href="/Examples/Classical/CommutativeRing/#2732" class="Bound">a</a> <a id="2734" class="Symbol">=</a> <a id="2736" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a>
 </pre>
 <p>The bridge to stdlib's <code>CommutativeRing</code> round-trips pointwise on every operation.</p>
-<pre class="Agda"><a id="2838" class="Keyword">open</a> <a id="2843" href="/Classical/Structures/CommutativeRing/#6193" class="Module">Polymorphic.CommutativeRing-Op</a> <a id="2874" href="/Classical/Bundles/CommutativeRing/#3429" class="Function Operator">⟪</a> <a id="2876" href="/Classical/Bundles/CommutativeRing/#1908" class="Function Operator">⟨</a> <a id="2878" href="/Examples/Classical/CommutativeRing/#1998" class="Function">ℤ-commutativeRing</a> <a id="2896" href="/Classical/Bundles/CommutativeRing/#1908" class="Function Operator">⟩ᶜʳᵍ</a> <a id="2901" href="/Classical/Bundles/CommutativeRing/#3429" class="Function Operator">⟫ᶜʳᵍ</a> <a id="2906" class="Keyword">using</a> <a id="2912" class="Symbol">()</a>
+<pre class="Agda"><a id="2838" class="Keyword">open</a> <a id="2843" href="/Classical/Structures/CommutativeRing/#6193" class="Module">Polymorphic.CommutativeRing-Op</a> <a id="2874" href="/Classical/Bundles/CommutativeRing/#3436" class="Function Operator">⟪</a> <a id="2876" href="/Classical/Bundles/CommutativeRing/#1915" class="Function Operator">⟨</a> <a id="2878" href="/Examples/Classical/CommutativeRing/#1998" class="Function">ℤ-commutativeRing</a> <a id="2896" href="/Classical/Bundles/CommutativeRing/#1915" class="Function Operator">⟩ᶜʳᵍ</a> <a id="2901" href="/Classical/Bundles/CommutativeRing/#3436" class="Function Operator">⟫ᶜʳᵍ</a> <a id="2906" class="Keyword">using</a> <a id="2912" class="Symbol">()</a>
   <a id="2917" class="Keyword">renaming</a> <a id="2926" class="Symbol">(</a> <a id="2928" href="/Classical/Structures/Ring/#15062" class="Function Operator">_+_</a> <a id="2932" class="Symbol">to</a> <a id="2935" class="Function Operator">_⊕&#39;_</a> <a id="2940" class="Symbol">;</a> <a id="2942" href="/Classical/Structures/Ring/#15066" class="Function Operator">_·_</a> <a id="2946" class="Symbol">to</a> <a id="2949" class="Function Operator">_⊗&#39;_</a> <a id="2954" class="Symbol">;</a> <a id="2956" href="/Classical/Structures/Ring/#14915" class="Function">0R</a> <a id="2959" class="Symbol">to</a> <a id="2962" class="Function">e₀&#39;</a> <a id="2966" class="Symbol">;</a> <a id="2968" href="/Classical/Structures/Ring/#14918" class="Function">1R</a> <a id="2971" class="Symbol">to</a> <a id="2974" class="Function">e₁&#39;</a> <a id="2978" class="Symbol">;</a> <a id="2980" href="/Classical/Structures/Ring/#14998" class="Function Operator">-_</a> <a id="2983" class="Symbol">to</a> <a id="2986" class="Function Operator">⊝&#39;_</a> <a id="2990" class="Symbol">)</a>
 
 <a id="roundtrip-⊕-cr"></a><a id="2993" href="/Examples/Classical/CommutativeRing/#2993" class="Function">roundtrip-⊕-cr</a> <a id="3008" class="Symbol">:</a> <a id="3010" class="Symbol">∀</a> <a id="3012" class="Symbol">(</a><a id="3013" href="/Examples/Classical/CommutativeRing/#3013" class="Bound">a</a> <a id="3015" href="/Examples/Classical/CommutativeRing/#3015" class="Bound">b</a> <a id="3017" class="Symbol">:</a> <a id="3019" href="/classic/Agda.Builtin.Int.html#245" class="Datatype">ℤ</a><a id="3020" class="Symbol">)</a> <a id="3022" class="Symbol">→</a> <a id="3024" href="/Examples/Classical/CommutativeRing/#3013" class="Bound">a</a> <a id="3026" href="/Examples/Classical/CommutativeRing/#2935" class="Function Operator">⊕&#39;</a> <a id="3029" href="/Examples/Classical/CommutativeRing/#3015" class="Bound">b</a> <a id="3031" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="3033" href="/Examples/Classical/CommutativeRing/#3013" class="Bound">a</a> <a id="3035" href="/classic/Data.Integer.Base.html#5064" class="Function Operator">+</a> <a id="3037" href="/Examples/Classical/CommutativeRing/#3015" class="Bound">b</a>

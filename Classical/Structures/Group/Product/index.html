@@ -6680,6 +6680,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -7025,6 +7029,34 @@
     
   
     GSet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IndexAction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IndexAction
   
 
     
@@ -7401,6 +7433,34 @@
     
   
     Subgroups
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Wreath/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wreath
   
 
     
@@ -12850,6 +12910,8 @@
       
         
       
+        
+      
     
     
     
@@ -14559,6 +14621,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../FLRP/WreathNoGo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WreathNoGo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -15521,7 +15611,7 @@ equivalences — so it can be mechanically substituted on the eventual port.</p>
 <a id="3442" class="Comment">-- Imports from the Agda Universal Algebra Library ------------------------------</a>
 <a id="3524" class="Keyword">open</a> <a id="3529" class="Keyword">import</a> <a id="3536" href="/Classical/Bundles/Group/" class="Module">Classical.Bundles.Group</a>               <a id="3574" class="Keyword">using</a>  <a id="3581" class="Symbol">(</a> <a id="3583" href="/Classical/Bundles/Group/#2048" class="Function Operator">⟨_⟩ᵍᵖ</a> <a id="3589" class="Symbol">)</a>
 <a id="3591" class="Keyword">open</a> <a id="3596" class="Keyword">import</a> <a id="3603" href="/Classical/Signatures/Group/" class="Module">Classical.Signatures.Group</a>            <a id="3641" class="Keyword">using</a>  <a id="3648" class="Symbol">(</a> <a id="3650" href="/Classical/Signatures/Group/#1718" class="Function">Sig-Group</a> <a id="3660" class="Symbol">;</a> <a id="3662" href="/Classical/Signatures/Group/#1593" class="InductiveConstructor">∙-Op</a> <a id="3667" class="Symbol">;</a> <a id="3669" href="/Classical/Signatures/Group/#1598" class="InductiveConstructor">ε-Op</a> <a id="3674" class="Symbol">;</a> <a id="3676" href="/Classical/Signatures/Group/#1603" class="InductiveConstructor">⁻¹-Op</a> <a id="3682" class="Symbol">)</a>
-<a id="3684" class="Keyword">open</a> <a id="3689" class="Keyword">import</a> <a id="3696" href="/Classical/Structures/Group/Basic/" class="Module">Classical.Structures.Group.Basic</a>      <a id="3734" class="Keyword">using</a>  <a id="3741" class="Symbol">(</a> <a id="3743" href="/Classical/Structures/Group/Basic/#5158" class="Function">Group</a> <a id="3749" class="Symbol">;</a> <a id="3751" class="Keyword">module</a> <a id="3758" href="/Classical/Structures/Group/Basic/#8660" class="Module">Group-Op</a> <a id="3767" class="Symbol">;</a> <a id="3769" href="/Classical/Structures/Group/Basic/#4499" class="Function Operator">_⊨ᵍᵖ_</a> <a id="3775" class="Symbol">)</a>
+<a id="3684" class="Keyword">open</a> <a id="3689" class="Keyword">import</a> <a id="3696" href="/Classical/Structures/Group/Basic/" class="Module">Classical.Structures.Group.Basic</a>      <a id="3734" class="Keyword">using</a>  <a id="3741" class="Symbol">(</a> <a id="3743" href="/Classical/Structures/Group/Basic/#5165" class="Function">Group</a> <a id="3749" class="Symbol">;</a> <a id="3751" class="Keyword">module</a> <a id="3758" href="/Classical/Structures/Group/Basic/#8641" class="Module">Group-Op</a> <a id="3767" class="Symbol">;</a> <a id="3769" href="/Classical/Structures/Group/Basic/#4576" class="Function Operator">_⊨ᵍᵖ_</a> <a id="3775" class="Symbol">)</a>
 <a id="3777" class="Keyword">open</a> <a id="3782" class="Keyword">import</a> <a id="3789" href="/Classical/Structures/Group/Subgroups/" class="Module">Classical.Structures.Group.Subgroups</a>  <a id="3827" class="Keyword">using</a>  <a id="3834" class="Symbol">(</a> <a id="3836" href="/Classical/Structures/Group/Subgroups/#6460" class="Record">IsSubgroup</a> <a id="3847" class="Symbol">;</a> <a id="3849" href="/Classical/Structures/Group/Subgroups/#7198" class="Function">mkIsSubgroup</a>
                                                          <a id="3919" class="Symbol">;</a> <a id="3921" href="/Classical/Structures/Group/Subgroups/#5512" class="Function">sub-∙-closed</a> <a id="3934" class="Symbol">;</a> <a id="3936" href="/Classical/Structures/Group/Subgroups/#5930" class="Function">sub-⁻¹-closed</a> <a id="3950" class="Symbol">)</a>
 <a id="3952" class="Keyword">open</a> <a id="3957" class="Keyword">import</a> <a id="3964" href="/Classical/Structures/Interpret/" class="Module">Classical.Structures.Interpret</a>        <a id="4002" class="Keyword">using</a>  <a id="4009" class="Symbol">(</a> <a id="4011" href="/Classical/Structures/Interpret/#3434" class="Function">interp-cong</a> <a id="4023" class="Symbol">)</a>
@@ -15549,11 +15639,11 @@ ranges over all of <code>𝒦</code> (the <em>fattened</em>, full factor, marked
 <pre class="Agda"><a id="5247" class="Keyword">infix</a> <a id="5253" class="Number">7</a> <a id="5255" href="/Classical/Structures/Group/Product/#5335" class="Function Operator">_×ᶠ_</a> <a id="5260" href="/Classical/Structures/Group/Product/#5508" class="Function Operator">_ᶠ×_</a>
 
 <a id="5266" class="Comment">-- The subgroup H of the first factor, fattened by the full group 𝒦.</a>
-<a id="_×ᶠ_"></a><a id="5335" href="/Classical/Structures/Group/Product/#5335" class="Function Operator">_×ᶠ_</a> <a id="5340" class="Symbol">:</a> <a id="5342" class="Symbol">{</a><a id="5343" href="/Classical/Structures/Group/Product/#5343" class="Bound">G</a> <a id="5345" class="Symbol">:</a> <a id="5347" href="/Classical/Structures/Group/Product/#2787" class="Primitive">Type</a> <a id="5352" href="/Classical/Structures/Group/Product/#4692" class="Generalizable">α</a><a id="5353" class="Symbol">}</a> <a id="5355" class="Symbol">(</a><a id="5356" href="/Classical/Structures/Group/Product/#5356" class="Bound">H</a> <a id="5358" class="Symbol">:</a> <a id="5360" href="/classic/Relation.Unary.html#1178" class="Function">Pred</a> <a id="5365" href="/Classical/Structures/Group/Product/#5343" class="Bound">G</a> <a id="5367" href="/Classical/Structures/Group/Product/#4700" class="Generalizable">ℓ</a><a id="5368" class="Symbol">)</a> <a id="5370" class="Symbol">(</a><a id="5371" href="/Classical/Structures/Group/Product/#5371" class="Bound">(</a><a id="5372" href="/Classical/Structures/Group/Product/#5372" class="Bound">𝑲</a> <a id="5374" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="5376" href="/Classical/Structures/Group/Product/#5371" class="Bound">_)</a> <a id="5379" class="Symbol">:</a> <a id="5381" href="/Classical/Structures/Group/Basic/#5158" class="Function">Group</a> <a id="5387" href="/Classical/Structures/Group/Product/#4696" class="Generalizable">β</a> <a id="5389" href="/Classical/Structures/Group/Product/#4698" class="Generalizable">σ</a><a id="5390" class="Symbol">)</a> <a id="5392" class="Symbol">→</a> <a id="5394" href="/classic/Relation.Unary.html#1178" class="Function">Pred</a> <a id="5399" class="Symbol">(</a><a id="5400" href="/Classical/Structures/Group/Product/#5343" class="Bound">G</a> <a id="5402" href="/classic/Data.Product.Base.html#1618" class="Function Operator">×</a> <a id="5404" href="/Setoid/Algebras/Basic/#5875" class="Function Operator">𝕌[</a> <a id="5407" href="/Classical/Structures/Group/Product/#5372" class="Bound">𝑲</a> <a id="5409" href="/Setoid/Algebras/Basic/#5875" class="Function Operator">]</a><a id="5410" class="Symbol">)</a> <a id="5412" href="/Classical/Structures/Group/Product/#4700" class="Generalizable">ℓ</a>
+<a id="_×ᶠ_"></a><a id="5335" href="/Classical/Structures/Group/Product/#5335" class="Function Operator">_×ᶠ_</a> <a id="5340" class="Symbol">:</a> <a id="5342" class="Symbol">{</a><a id="5343" href="/Classical/Structures/Group/Product/#5343" class="Bound">G</a> <a id="5345" class="Symbol">:</a> <a id="5347" href="/Classical/Structures/Group/Product/#2787" class="Primitive">Type</a> <a id="5352" href="/Classical/Structures/Group/Product/#4692" class="Generalizable">α</a><a id="5353" class="Symbol">}</a> <a id="5355" class="Symbol">(</a><a id="5356" href="/Classical/Structures/Group/Product/#5356" class="Bound">H</a> <a id="5358" class="Symbol">:</a> <a id="5360" href="/classic/Relation.Unary.html#1178" class="Function">Pred</a> <a id="5365" href="/Classical/Structures/Group/Product/#5343" class="Bound">G</a> <a id="5367" href="/Classical/Structures/Group/Product/#4700" class="Generalizable">ℓ</a><a id="5368" class="Symbol">)</a> <a id="5370" class="Symbol">(</a><a id="5371" href="/Classical/Structures/Group/Product/#5371" class="Bound">(</a><a id="5372" href="/Classical/Structures/Group/Product/#5372" class="Bound">𝑲</a> <a id="5374" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="5376" href="/Classical/Structures/Group/Product/#5371" class="Bound">_)</a> <a id="5379" class="Symbol">:</a> <a id="5381" href="/Classical/Structures/Group/Basic/#5165" class="Function">Group</a> <a id="5387" href="/Classical/Structures/Group/Product/#4696" class="Generalizable">β</a> <a id="5389" href="/Classical/Structures/Group/Product/#4698" class="Generalizable">σ</a><a id="5390" class="Symbol">)</a> <a id="5392" class="Symbol">→</a> <a id="5394" href="/classic/Relation.Unary.html#1178" class="Function">Pred</a> <a id="5399" class="Symbol">(</a><a id="5400" href="/Classical/Structures/Group/Product/#5343" class="Bound">G</a> <a id="5402" href="/classic/Data.Product.Base.html#1618" class="Function Operator">×</a> <a id="5404" href="/Setoid/Algebras/Basic/#5875" class="Function Operator">𝕌[</a> <a id="5407" href="/Classical/Structures/Group/Product/#5372" class="Bound">𝑲</a> <a id="5409" href="/Setoid/Algebras/Basic/#5875" class="Function Operator">]</a><a id="5410" class="Symbol">)</a> <a id="5412" href="/Classical/Structures/Group/Product/#4700" class="Generalizable">ℓ</a>
 <a id="5414" class="Symbol">(</a><a id="5415" href="/Classical/Structures/Group/Product/#5415" class="Bound">H</a> <a id="5417" href="/Classical/Structures/Group/Product/#5335" class="Function Operator">×ᶠ</a> <a id="5420" href="/Classical/Structures/Group/Product/#5420" class="Bound">𝒦</a><a id="5421" class="Symbol">)</a> <a id="5423" class="Symbol">(</a><a id="5424" href="/Classical/Structures/Group/Product/#5424" class="Bound">g</a> <a id="5426" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="5428" class="Symbol">_)</a> <a id="5431" class="Symbol">=</a> <a id="5433" href="/Classical/Structures/Group/Product/#5415" class="Bound">H</a> <a id="5435" href="/Classical/Structures/Group/Product/#5424" class="Bound">g</a>
 
 <a id="5438" class="Comment">-- The subgroup J of the second factor, fattened by the full group 𝒢.</a>
-<a id="_ᶠ×_"></a><a id="5508" href="/Classical/Structures/Group/Product/#5508" class="Function Operator">_ᶠ×_</a> <a id="5513" class="Symbol">:</a> <a id="5515" class="Symbol">(</a><a id="5516" href="/Classical/Structures/Group/Product/#5516" class="Bound">(</a><a id="5517" href="/Classical/Structures/Group/Product/#5517" class="Bound">𝑮</a> <a id="5519" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="5521" href="/Classical/Structures/Group/Product/#5516" class="Bound">_)</a> <a id="5524" class="Symbol">:</a> <a id="5526" href="/Classical/Structures/Group/Basic/#5158" class="Function">Group</a> <a id="5532" href="/Classical/Structures/Group/Product/#4692" class="Generalizable">α</a> <a id="5534" href="/Classical/Structures/Group/Product/#4694" class="Generalizable">ρ</a><a id="5535" class="Symbol">)</a> <a id="5537" class="Symbol">{</a><a id="5538" href="/Classical/Structures/Group/Product/#5538" class="Bound">K</a> <a id="5540" class="Symbol">:</a> <a id="5542" href="/Classical/Structures/Group/Product/#2787" class="Primitive">Type</a> <a id="5547" href="/Classical/Structures/Group/Product/#4696" class="Generalizable">β</a><a id="5548" class="Symbol">}</a> <a id="5550" class="Symbol">(</a><a id="5551" href="/Classical/Structures/Group/Product/#5551" class="Bound">J</a> <a id="5553" class="Symbol">:</a> <a id="5555" href="/classic/Relation.Unary.html#1178" class="Function">Pred</a> <a id="5560" href="/Classical/Structures/Group/Product/#5538" class="Bound">K</a> <a id="5562" href="/Classical/Structures/Group/Product/#4700" class="Generalizable">ℓ</a><a id="5563" class="Symbol">)</a> <a id="5565" class="Symbol">→</a> <a id="5567" href="/classic/Relation.Unary.html#1178" class="Function">Pred</a> <a id="5572" class="Symbol">(</a><a id="5573" href="/Setoid/Algebras/Basic/#5875" class="Function Operator">𝕌[</a> <a id="5576" href="/Classical/Structures/Group/Product/#5517" class="Bound">𝑮</a> <a id="5578" href="/Setoid/Algebras/Basic/#5875" class="Function Operator">]</a> <a id="5580" href="/classic/Data.Product.Base.html#1618" class="Function Operator">×</a> <a id="5582" href="/Classical/Structures/Group/Product/#5538" class="Bound">K</a><a id="5583" class="Symbol">)</a> <a id="5585" href="/Classical/Structures/Group/Product/#4700" class="Generalizable">ℓ</a>
+<a id="_ᶠ×_"></a><a id="5508" href="/Classical/Structures/Group/Product/#5508" class="Function Operator">_ᶠ×_</a> <a id="5513" class="Symbol">:</a> <a id="5515" class="Symbol">(</a><a id="5516" href="/Classical/Structures/Group/Product/#5516" class="Bound">(</a><a id="5517" href="/Classical/Structures/Group/Product/#5517" class="Bound">𝑮</a> <a id="5519" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="5521" href="/Classical/Structures/Group/Product/#5516" class="Bound">_)</a> <a id="5524" class="Symbol">:</a> <a id="5526" href="/Classical/Structures/Group/Basic/#5165" class="Function">Group</a> <a id="5532" href="/Classical/Structures/Group/Product/#4692" class="Generalizable">α</a> <a id="5534" href="/Classical/Structures/Group/Product/#4694" class="Generalizable">ρ</a><a id="5535" class="Symbol">)</a> <a id="5537" class="Symbol">{</a><a id="5538" href="/Classical/Structures/Group/Product/#5538" class="Bound">K</a> <a id="5540" class="Symbol">:</a> <a id="5542" href="/Classical/Structures/Group/Product/#2787" class="Primitive">Type</a> <a id="5547" href="/Classical/Structures/Group/Product/#4696" class="Generalizable">β</a><a id="5548" class="Symbol">}</a> <a id="5550" class="Symbol">(</a><a id="5551" href="/Classical/Structures/Group/Product/#5551" class="Bound">J</a> <a id="5553" class="Symbol">:</a> <a id="5555" href="/classic/Relation.Unary.html#1178" class="Function">Pred</a> <a id="5560" href="/Classical/Structures/Group/Product/#5538" class="Bound">K</a> <a id="5562" href="/Classical/Structures/Group/Product/#4700" class="Generalizable">ℓ</a><a id="5563" class="Symbol">)</a> <a id="5565" class="Symbol">→</a> <a id="5567" href="/classic/Relation.Unary.html#1178" class="Function">Pred</a> <a id="5572" class="Symbol">(</a><a id="5573" href="/Setoid/Algebras/Basic/#5875" class="Function Operator">𝕌[</a> <a id="5576" href="/Classical/Structures/Group/Product/#5517" class="Bound">𝑮</a> <a id="5578" href="/Setoid/Algebras/Basic/#5875" class="Function Operator">]</a> <a id="5580" href="/classic/Data.Product.Base.html#1618" class="Function Operator">×</a> <a id="5582" href="/Classical/Structures/Group/Product/#5538" class="Bound">K</a><a id="5583" class="Symbol">)</a> <a id="5585" href="/Classical/Structures/Group/Product/#4700" class="Generalizable">ℓ</a>
 <a id="5587" class="Symbol">(</a><a id="5588" href="/Classical/Structures/Group/Product/#5588" class="Bound">𝒢</a> <a id="5590" href="/Classical/Structures/Group/Product/#5508" class="Function Operator">ᶠ×</a> <a id="5593" href="/Classical/Structures/Group/Product/#5593" class="Bound">J</a><a id="5594" class="Symbol">)</a> <a id="5596" class="Symbol">(_</a> <a id="5599" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="5601" href="/Classical/Structures/Group/Product/#5601" class="Bound">k</a><a id="5602" class="Symbol">)</a> <a id="5604" class="Symbol">=</a> <a id="5606" href="/Classical/Structures/Group/Product/#5593" class="Bound">J</a> <a id="5608" href="/Classical/Structures/Group/Product/#5601" class="Bound">k</a>
 </pre>
 <h4 id="the-product-construction">The product construction<a class="headerlink" href="#the-product-construction" title="Anchor link to this section">&para;</a></h4>
@@ -15561,7 +15651,7 @@ ranges over all of <code>𝒦</code> (the <em>fattened</em>, full factor, marked
 of groups; opening it provides the product algebra, the product group, the pointwise
 descriptions of its curried operations, the subgroup lemmas for the fattened
 predicates, and the slice toolkit.</p>
-<pre class="Agda"><a id="5936" class="Keyword">module</a> <a id="GroupProduct"></a><a id="5943" href="/Classical/Structures/Group/Product/#5943" class="Module">GroupProduct</a> <a id="5956" class="Symbol">(</a><a id="5957" href="/Classical/Structures/Group/Product/#5957" class="Bound">𝒢</a> <a id="5959" class="Symbol">:</a> <a id="5961" href="/Classical/Structures/Group/Basic/#5158" class="Function">Group</a> <a id="5967" href="/Classical/Structures/Group/Product/#4692" class="Generalizable">α</a> <a id="5969" href="/Classical/Structures/Group/Product/#4694" class="Generalizable">ρ</a><a id="5970" class="Symbol">)</a> <a id="5972" class="Symbol">(</a><a id="5973" href="/Classical/Structures/Group/Product/#5973" class="Bound">𝒦</a> <a id="5975" class="Symbol">:</a> <a id="5977" href="/Classical/Structures/Group/Basic/#5158" class="Function">Group</a> <a id="5983" href="/Classical/Structures/Group/Product/#4696" class="Generalizable">β</a> <a id="5985" href="/Classical/Structures/Group/Product/#4698" class="Generalizable">σ</a><a id="5986" class="Symbol">)</a> <a id="5988" class="Keyword">where</a>
+<pre class="Agda"><a id="5936" class="Keyword">module</a> <a id="GroupProduct"></a><a id="5943" href="/Classical/Structures/Group/Product/#5943" class="Module">GroupProduct</a> <a id="5956" class="Symbol">(</a><a id="5957" href="/Classical/Structures/Group/Product/#5957" class="Bound">𝒢</a> <a id="5959" class="Symbol">:</a> <a id="5961" href="/Classical/Structures/Group/Basic/#5165" class="Function">Group</a> <a id="5967" href="/Classical/Structures/Group/Product/#4692" class="Generalizable">α</a> <a id="5969" href="/Classical/Structures/Group/Product/#4694" class="Generalizable">ρ</a><a id="5970" class="Symbol">)</a> <a id="5972" class="Symbol">(</a><a id="5973" href="/Classical/Structures/Group/Product/#5973" class="Bound">𝒦</a> <a id="5975" class="Symbol">:</a> <a id="5977" href="/Classical/Structures/Group/Basic/#5165" class="Function">Group</a> <a id="5983" href="/Classical/Structures/Group/Product/#4696" class="Generalizable">β</a> <a id="5985" href="/Classical/Structures/Group/Product/#4698" class="Generalizable">σ</a><a id="5986" class="Symbol">)</a> <a id="5988" class="Keyword">where</a>
   <a id="5996" class="Keyword">private</a>
     <a id="GroupProduct.𝑮"></a><a id="6008" href="/Classical/Structures/Group/Product/#6008" class="Function">𝑮</a> <a id="6010" class="Symbol">=</a> <a id="6012" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="6018" href="/Classical/Structures/Group/Product/#5957" class="Bound">𝒢</a>
     <a id="GroupProduct.𝑲"></a><a id="6024" href="/Classical/Structures/Group/Product/#6024" class="Function">𝑲</a> <a id="6026" class="Symbol">=</a> <a id="6028" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="6034" href="/Classical/Structures/Group/Product/#5973" class="Bound">𝒦</a>
@@ -15625,7 +15715,7 @@ congruences applied to the induction hypotheses.</p>
 <p>Every group equation now holds in the product by one uniform argument: factor the
 two sides into components, apply the component groups' satisfaction proofs, and
 refold.  No case analysis on the equation is needed.</p>
-<pre class="Agda">  <a id="GroupProduct.×ᵍ-⊨"></a><a id="8853" href="/Classical/Structures/Group/Product/#8853" class="Function">×ᵍ-⊨</a> <a id="8858" class="Symbol">:</a> <a id="8860" href="/Classical/Structures/Group/Product/#7205" class="Function">𝑮×𝑲</a> <a id="8864" href="/Classical/Structures/Group/Basic/#4499" class="Function Operator">⊨ᵍᵖ</a> <a id="8868" href="/Classical/Theories/Group/#2135" class="Function">Th-Group</a>
+<pre class="Agda">  <a id="GroupProduct.×ᵍ-⊨"></a><a id="8853" href="/Classical/Structures/Group/Product/#8853" class="Function">×ᵍ-⊨</a> <a id="8858" class="Symbol">:</a> <a id="8860" href="/Classical/Structures/Group/Product/#7205" class="Function">𝑮×𝑲</a> <a id="8864" href="/Classical/Structures/Group/Basic/#4576" class="Function Operator">⊨ᵍᵖ</a> <a id="8868" href="/Classical/Theories/Group/#2135" class="Function">Th-Group</a>
   <a id="8879" href="/Classical/Structures/Group/Product/#8853" class="Function">×ᵍ-⊨</a> <a id="8884" href="/Classical/Structures/Group/Product/#8884" class="Bound">i</a> <a id="8886" href="/Classical/Structures/Group/Product/#8886" class="Bound">η</a> <a id="8888" class="Symbol">=</a>
       <a id="8896" href="/Classical/Structures/Group/Product/#6165" class="Function">trans₁</a>  <a id="8904" class="Symbol">(</a><a id="8905" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="8911" class="Symbol">(</a><a id="8912" href="/Classical/Structures/Group/Product/#8289" class="Function">interp-factor</a> <a id="8926" href="/Classical/Structures/Group/Product/#9160" class="Function">lhs</a> <a id="8930" href="/Classical/Structures/Group/Product/#8886" class="Bound">η</a><a id="8931" class="Symbol">))</a>
               <a id="8948" class="Symbol">(</a><a id="8949" href="/Classical/Structures/Group/Product/#6165" class="Function">trans₁</a> <a id="8956" class="Symbol">(</a><a id="8957" href="/classic/Data.Product.Base.html#650" class="Field">proj₂</a> <a id="8963" href="/Classical/Structures/Group/Product/#5957" class="Bound">𝒢</a> <a id="8965" href="/Classical/Structures/Group/Product/#8884" class="Bound">i</a> <a id="8967" class="Symbol">(</a><a id="8968" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="8974" href="/classic/Function.Base.html#1134" class="Function Operator">∘</a> <a id="8976" href="/Classical/Structures/Group/Product/#8886" class="Bound">η</a><a id="8977" class="Symbol">))</a> <a id="8980" class="Symbol">(</a><a id="8981" href="/Classical/Structures/Group/Product/#6149" class="Function">sym₁</a> <a id="8986" class="Symbol">(</a><a id="8987" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="8993" class="Symbol">(</a><a id="8994" href="/Classical/Structures/Group/Product/#8289" class="Function">interp-factor</a> <a id="9008" href="/Classical/Structures/Group/Product/#9164" class="Function">rhs</a> <a id="9012" href="/Classical/Structures/Group/Product/#8886" class="Bound">η</a><a id="9013" class="Symbol">))))</a>
@@ -15637,7 +15727,7 @@ refold.  No case analysis on the equation is needed.</p>
     <a id="9216" href="/Classical/Structures/Group/Product/#9164" class="Function">rhs</a> <a id="9220" class="Symbol">=</a> <a id="9222" href="/classic/Data.Product.Base.html#650" class="Field">proj₂</a> <a id="9228" class="Symbol">(</a><a id="9229" href="/Classical/Theories/Group/#2135" class="Function">Th-Group</a> <a id="9238" href="/Classical/Structures/Group/Product/#8884" class="Bound">i</a><a id="9239" class="Symbol">)</a>
 
   <a id="9244" class="Comment">-- The direct product group.</a>
-  <a id="GroupProduct.×ᵍ-Group"></a><a id="9275" href="/Classical/Structures/Group/Product/#9275" class="Function">×ᵍ-Group</a> <a id="9284" class="Symbol">:</a> <a id="9286" href="/Classical/Structures/Group/Basic/#5158" class="Function">Group</a> <a id="9292" class="Symbol">(</a><a id="9293" href="/Classical/Structures/Group/Product/#5967" class="Bound">α</a> <a id="9295" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="9297" href="/Classical/Structures/Group/Product/#5983" class="Bound">β</a><a id="9298" class="Symbol">)</a> <a id="9300" class="Symbol">(</a><a id="9301" href="/Classical/Structures/Group/Product/#5969" class="Bound">ρ</a> <a id="9303" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="9305" href="/Classical/Structures/Group/Product/#5985" class="Bound">σ</a><a id="9306" class="Symbol">)</a>
+  <a id="GroupProduct.×ᵍ-Group"></a><a id="9275" href="/Classical/Structures/Group/Product/#9275" class="Function">×ᵍ-Group</a> <a id="9284" class="Symbol">:</a> <a id="9286" href="/Classical/Structures/Group/Basic/#5165" class="Function">Group</a> <a id="9292" class="Symbol">(</a><a id="9293" href="/Classical/Structures/Group/Product/#5967" class="Bound">α</a> <a id="9295" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="9297" href="/Classical/Structures/Group/Product/#5983" class="Bound">β</a><a id="9298" class="Symbol">)</a> <a id="9300" class="Symbol">(</a><a id="9301" href="/Classical/Structures/Group/Product/#5969" class="Bound">ρ</a> <a id="9303" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="9305" href="/Classical/Structures/Group/Product/#5985" class="Bound">σ</a><a id="9306" class="Symbol">)</a>
   <a id="9310" href="/Classical/Structures/Group/Product/#9275" class="Function">×ᵍ-Group</a> <a id="9319" class="Symbol">=</a> <a id="9321" href="/Classical/Structures/Group/Product/#7205" class="Function">𝑮×𝑲</a> <a id="9325" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="9327" href="/Classical/Structures/Group/Product/#8853" class="Function">×ᵍ-⊨</a>
 </pre>
 <h4 id="pointwise-descriptions-of-the-curried-operations">Pointwise descriptions of the curried operations<a class="headerlink" href="#pointwise-descriptions-of-the-curried-operations" title="Anchor link to this section">&para;</a></h4>
@@ -15646,14 +15736,14 @@ refold.  No case analysis on the equation is needed.</p>
 the curried form routes the arguments through a canonical <code>pair</code> tuple, and <code>Fin</code>-
 indexed tuples lack η under <code>--cubical-compatible</code>; each bridge is one
 <code class="AgdaFunction">interp-cong</code> per component, the standard resolution.)</p>
-<pre class="Agda">  <a id="9798" class="Keyword">open</a> <a id="9803" href="/Classical/Structures/Group/Basic/#8660" class="Module">Group-Op</a> <a id="9812" href="/Classical/Structures/Group/Product/#5957" class="Bound">𝒢</a> <a id="9814" class="Keyword">using</a> <a id="9820" class="Symbol">()</a>
-    <a id="9827" class="Keyword">renaming</a> <a id="9836" class="Symbol">(</a> <a id="9838" href="/Classical/Structures/Group/Basic/#8890" class="Function Operator">_∙_</a> <a id="9842" class="Symbol">to</a> <a id="9845" class="Function Operator">_∙₁_</a> <a id="9850" class="Symbol">;</a> <a id="9852" href="/Classical/Structures/Group/Basic/#8950" class="Function">ε</a> <a id="9854" class="Symbol">to</a> <a id="9857" class="Function">ε₁</a> <a id="9860" class="Symbol">;</a> <a id="9862" href="/Classical/Structures/Group/Basic/#9002" class="Function Operator">_⁻¹</a> <a id="9866" class="Symbol">to</a> <a id="9869" class="Function Operator">_⁻¹₁</a>
-             <a id="9887" class="Symbol">;</a> <a id="9889" href="/Classical/Structures/Group/Basic/#10303" class="Function">idʳ-law</a> <a id="9897" class="Symbol">to</a> <a id="9900" class="Function">idʳ-law₁</a> <a id="9909" class="Symbol">;</a> <a id="9911" href="/Classical/Structures/Group/Basic/#11327" class="Function">invʳ-law</a> <a id="9920" class="Symbol">to</a> <a id="9923" class="Function">invʳ-law₁</a> <a id="9933" class="Symbol">)</a>
-  <a id="9937" class="Keyword">open</a> <a id="9942" href="/Classical/Structures/Group/Basic/#8660" class="Module">Group-Op</a> <a id="9951" href="/Classical/Structures/Group/Product/#5973" class="Bound">𝒦</a> <a id="9953" class="Keyword">using</a> <a id="9959" class="Symbol">()</a>
-    <a id="9966" class="Keyword">renaming</a> <a id="9975" class="Symbol">(</a> <a id="9977" href="/Classical/Structures/Group/Basic/#8890" class="Function Operator">_∙_</a> <a id="9981" class="Symbol">to</a> <a id="9984" class="Function Operator">_∙₂_</a> <a id="9989" class="Symbol">;</a> <a id="9991" href="/Classical/Structures/Group/Basic/#8950" class="Function">ε</a> <a id="9993" class="Symbol">to</a> <a id="9996" class="Function">ε₂</a> <a id="9999" class="Symbol">;</a> <a id="10001" href="/Classical/Structures/Group/Basic/#9002" class="Function Operator">_⁻¹</a> <a id="10005" class="Symbol">to</a> <a id="10008" class="Function Operator">_⁻¹₂</a>
-             <a id="10026" class="Symbol">;</a> <a id="10028" href="/Classical/Structures/Group/Basic/#9842" class="Function">idˡ-law</a> <a id="10036" class="Symbol">to</a> <a id="10039" class="Function">idˡ-law₂</a> <a id="10048" class="Symbol">;</a> <a id="10050" href="/Classical/Structures/Group/Basic/#10303" class="Function">idʳ-law</a> <a id="10058" class="Symbol">to</a> <a id="10061" class="Function">idʳ-law₂</a> <a id="10070" class="Symbol">;</a> <a id="10072" href="/Classical/Structures/Group/Basic/#11327" class="Function">invʳ-law</a> <a id="10081" class="Symbol">to</a> <a id="10084" class="Function">invʳ-law₂</a> <a id="10094" class="Symbol">)</a>
-  <a id="10098" class="Keyword">open</a> <a id="10103" href="/Classical/Structures/Group/Basic/#8660" class="Module">Group-Op</a> <a id="10112" href="/Classical/Structures/Group/Product/#9275" class="Function">×ᵍ-Group</a> <a id="10121" class="Keyword">using</a> <a id="10127" class="Symbol">()</a>
-    <a id="10134" class="Keyword">renaming</a> <a id="10143" class="Symbol">(</a> <a id="10145" href="/Classical/Structures/Group/Basic/#8890" class="Function Operator">_∙_</a> <a id="10149" class="Symbol">to</a> <a id="10152" class="Function Operator">_∙ₓ_</a> <a id="10157" class="Symbol">;</a> <a id="10159" href="/Classical/Structures/Group/Basic/#8950" class="Function">ε</a> <a id="10161" class="Symbol">to</a> <a id="10164" class="Function">εₓ</a> <a id="10167" class="Symbol">;</a> <a id="10169" href="/Classical/Structures/Group/Basic/#9002" class="Function Operator">_⁻¹</a> <a id="10173" class="Symbol">to</a> <a id="10176" class="Function Operator">_⁻¹ₓ</a> <a id="10181" class="Symbol">)</a>
+<pre class="Agda">  <a id="9798" class="Keyword">open</a> <a id="9803" href="/Classical/Structures/Group/Basic/#8641" class="Module">Group-Op</a> <a id="9812" href="/Classical/Structures/Group/Product/#5957" class="Bound">𝒢</a> <a id="9814" class="Keyword">using</a> <a id="9820" class="Symbol">()</a>
+    <a id="9827" class="Keyword">renaming</a> <a id="9836" class="Symbol">(</a> <a id="9838" href="/Classical/Structures/Group/Basic/#8871" class="Function Operator">_∙_</a> <a id="9842" class="Symbol">to</a> <a id="9845" class="Function Operator">_∙₁_</a> <a id="9850" class="Symbol">;</a> <a id="9852" href="/Classical/Structures/Group/Basic/#8931" class="Function">ε</a> <a id="9854" class="Symbol">to</a> <a id="9857" class="Function">ε₁</a> <a id="9860" class="Symbol">;</a> <a id="9862" href="/Classical/Structures/Group/Basic/#8983" class="Function Operator">_⁻¹</a> <a id="9866" class="Symbol">to</a> <a id="9869" class="Function Operator">_⁻¹₁</a>
+             <a id="9887" class="Symbol">;</a> <a id="9889" href="/Classical/Structures/Group/Basic/#10284" class="Function">idʳ-law</a> <a id="9897" class="Symbol">to</a> <a id="9900" class="Function">idʳ-law₁</a> <a id="9909" class="Symbol">;</a> <a id="9911" href="/Classical/Structures/Group/Basic/#11308" class="Function">invʳ-law</a> <a id="9920" class="Symbol">to</a> <a id="9923" class="Function">invʳ-law₁</a> <a id="9933" class="Symbol">)</a>
+  <a id="9937" class="Keyword">open</a> <a id="9942" href="/Classical/Structures/Group/Basic/#8641" class="Module">Group-Op</a> <a id="9951" href="/Classical/Structures/Group/Product/#5973" class="Bound">𝒦</a> <a id="9953" class="Keyword">using</a> <a id="9959" class="Symbol">()</a>
+    <a id="9966" class="Keyword">renaming</a> <a id="9975" class="Symbol">(</a> <a id="9977" href="/Classical/Structures/Group/Basic/#8871" class="Function Operator">_∙_</a> <a id="9981" class="Symbol">to</a> <a id="9984" class="Function Operator">_∙₂_</a> <a id="9989" class="Symbol">;</a> <a id="9991" href="/Classical/Structures/Group/Basic/#8931" class="Function">ε</a> <a id="9993" class="Symbol">to</a> <a id="9996" class="Function">ε₂</a> <a id="9999" class="Symbol">;</a> <a id="10001" href="/Classical/Structures/Group/Basic/#8983" class="Function Operator">_⁻¹</a> <a id="10005" class="Symbol">to</a> <a id="10008" class="Function Operator">_⁻¹₂</a>
+             <a id="10026" class="Symbol">;</a> <a id="10028" href="/Classical/Structures/Group/Basic/#9823" class="Function">idˡ-law</a> <a id="10036" class="Symbol">to</a> <a id="10039" class="Function">idˡ-law₂</a> <a id="10048" class="Symbol">;</a> <a id="10050" href="/Classical/Structures/Group/Basic/#10284" class="Function">idʳ-law</a> <a id="10058" class="Symbol">to</a> <a id="10061" class="Function">idʳ-law₂</a> <a id="10070" class="Symbol">;</a> <a id="10072" href="/Classical/Structures/Group/Basic/#11308" class="Function">invʳ-law</a> <a id="10081" class="Symbol">to</a> <a id="10084" class="Function">invʳ-law₂</a> <a id="10094" class="Symbol">)</a>
+  <a id="10098" class="Keyword">open</a> <a id="10103" href="/Classical/Structures/Group/Basic/#8641" class="Module">Group-Op</a> <a id="10112" href="/Classical/Structures/Group/Product/#9275" class="Function">×ᵍ-Group</a> <a id="10121" class="Keyword">using</a> <a id="10127" class="Symbol">()</a>
+    <a id="10134" class="Keyword">renaming</a> <a id="10143" class="Symbol">(</a> <a id="10145" href="/Classical/Structures/Group/Basic/#8871" class="Function Operator">_∙_</a> <a id="10149" class="Symbol">to</a> <a id="10152" class="Function Operator">_∙ₓ_</a> <a id="10157" class="Symbol">;</a> <a id="10159" href="/Classical/Structures/Group/Basic/#8931" class="Function">ε</a> <a id="10161" class="Symbol">to</a> <a id="10164" class="Function">εₓ</a> <a id="10167" class="Symbol">;</a> <a id="10169" href="/Classical/Structures/Group/Basic/#8983" class="Function Operator">_⁻¹</a> <a id="10173" class="Symbol">to</a> <a id="10176" class="Function Operator">_⁻¹ₓ</a> <a id="10181" class="Symbol">)</a>
 
   <a id="10186" class="Keyword">open</a> <a id="10191" href="/classic/Algebra.Properties.Group.html" class="Module">GroupProperties</a> <a id="10207" href="/Classical/Bundles/Group/#2048" class="Function Operator">⟨</a> <a id="10209" href="/Classical/Structures/Group/Product/#5957" class="Bound">𝒢</a> <a id="10211" href="/Classical/Bundles/Group/#2048" class="Function Operator">⟩ᵍᵖ</a> <a id="10215" class="Keyword">using</a> <a id="10221" class="Symbol">()</a> <a id="10224" class="Keyword">renaming</a> <a id="10233" class="Symbol">(</a> <a id="10235" href="/classic/Algebra.Properties.Group.html#3147" class="Function">ε⁻¹≈ε</a> <a id="10241" class="Symbol">to</a> <a id="10244" class="Function">ε⁻¹≈ε₁</a> <a id="10251" class="Symbol">)</a>
   <a id="10255" class="Keyword">open</a> <a id="10260" href="/classic/Algebra.Properties.Group.html" class="Module">GroupProperties</a> <a id="10276" href="/Classical/Bundles/Group/#2048" class="Function Operator">⟨</a> <a id="10278" href="/Classical/Structures/Group/Product/#5973" class="Bound">𝒦</a> <a id="10280" href="/Classical/Bundles/Group/#2048" class="Function Operator">⟩ᵍᵖ</a> <a id="10284" class="Keyword">using</a> <a id="10290" class="Symbol">()</a> <a id="10293" class="Keyword">renaming</a> <a id="10302" class="Symbol">(</a> <a id="10304" href="/classic/Algebra.Properties.Group.html#3147" class="Function">ε⁻¹≈ε</a> <a id="10310" class="Symbol">to</a> <a id="10313" class="Function">ε⁻¹≈ε₂</a> <a id="10320" class="Symbol">)</a>
@@ -15851,7 +15941,7 @@ above.</p>
 <p>The infix form, for use at call sites.</p>
 <pre class="Agda"><a id="18503" class="Keyword">infixr</a> <a id="18510" class="Number">7</a> <a id="18512" href="/Classical/Structures/Group/Product/#18518" class="Function Operator">_×ᵍ_</a>
 
-<a id="_×ᵍ_"></a><a id="18518" href="/Classical/Structures/Group/Product/#18518" class="Function Operator">_×ᵍ_</a> <a id="18523" class="Symbol">:</a> <a id="18525" href="/Classical/Structures/Group/Basic/#5158" class="Function">Group</a> <a id="18531" href="/Classical/Structures/Group/Product/#4692" class="Generalizable">α</a> <a id="18533" href="/Classical/Structures/Group/Product/#4694" class="Generalizable">ρ</a> <a id="18535" class="Symbol">→</a> <a id="18537" href="/Classical/Structures/Group/Basic/#5158" class="Function">Group</a> <a id="18543" href="/Classical/Structures/Group/Product/#4696" class="Generalizable">β</a> <a id="18545" href="/Classical/Structures/Group/Product/#4698" class="Generalizable">σ</a> <a id="18547" class="Symbol">→</a> <a id="18549" href="/Classical/Structures/Group/Basic/#5158" class="Function">Group</a> <a id="18555" class="Symbol">(</a><a id="18556" href="/Classical/Structures/Group/Product/#4692" class="Generalizable">α</a> <a id="18558" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="18560" href="/Classical/Structures/Group/Product/#4696" class="Generalizable">β</a><a id="18561" class="Symbol">)</a> <a id="18563" class="Symbol">(</a><a id="18564" href="/Classical/Structures/Group/Product/#4694" class="Generalizable">ρ</a> <a id="18566" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="18568" href="/Classical/Structures/Group/Product/#4698" class="Generalizable">σ</a><a id="18569" class="Symbol">)</a>
+<a id="_×ᵍ_"></a><a id="18518" href="/Classical/Structures/Group/Product/#18518" class="Function Operator">_×ᵍ_</a> <a id="18523" class="Symbol">:</a> <a id="18525" href="/Classical/Structures/Group/Basic/#5165" class="Function">Group</a> <a id="18531" href="/Classical/Structures/Group/Product/#4692" class="Generalizable">α</a> <a id="18533" href="/Classical/Structures/Group/Product/#4694" class="Generalizable">ρ</a> <a id="18535" class="Symbol">→</a> <a id="18537" href="/Classical/Structures/Group/Basic/#5165" class="Function">Group</a> <a id="18543" href="/Classical/Structures/Group/Product/#4696" class="Generalizable">β</a> <a id="18545" href="/Classical/Structures/Group/Product/#4698" class="Generalizable">σ</a> <a id="18547" class="Symbol">→</a> <a id="18549" href="/Classical/Structures/Group/Basic/#5165" class="Function">Group</a> <a id="18555" class="Symbol">(</a><a id="18556" href="/Classical/Structures/Group/Product/#4692" class="Generalizable">α</a> <a id="18558" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="18560" href="/Classical/Structures/Group/Product/#4696" class="Generalizable">β</a><a id="18561" class="Symbol">)</a> <a id="18563" class="Symbol">(</a><a id="18564" href="/Classical/Structures/Group/Product/#4694" class="Generalizable">ρ</a> <a id="18566" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="18568" href="/Classical/Structures/Group/Product/#4698" class="Generalizable">σ</a><a id="18569" class="Symbol">)</a>
 <a id="18571" href="/Classical/Structures/Group/Product/#18571" class="Bound">𝒢</a> <a id="18573" href="/Classical/Structures/Group/Product/#18518" class="Function Operator">×ᵍ</a> <a id="18576" href="/Classical/Structures/Group/Product/#18576" class="Bound">𝒦</a> <a id="18578" class="Symbol">=</a> <a id="18580" href="/Classical/Structures/Group/Product/#9275" class="Function">GroupProduct.×ᵍ-Group</a> <a id="18602" href="/Classical/Structures/Group/Product/#18571" class="Bound">𝒢</a> <a id="18604" href="/Classical/Structures/Group/Product/#18576" class="Bound">𝒦</a>
 </pre>
 

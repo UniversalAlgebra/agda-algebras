@@ -6680,6 +6680,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -7131,6 +7135,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../IndexAction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IndexAction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../MinimalNormal/" class="md-nav__link">
         
   
@@ -7335,6 +7367,34 @@
     
   
     Subgroups
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Wreath/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wreath
   
 
     
@@ -12784,6 +12844,8 @@
       
         
       
+        
+      
     
     
     
@@ -14493,6 +14555,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../FLRP/WreathNoGo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WreathNoGo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -15367,7 +15457,7 @@ the hypothesis coordinatewise, and folds back.<sup id="fnref:1"><a class="footno
 
 <a id="1983" class="Comment">-- Imports from the Agda Universal Algebra Library ------------------------------</a>
 <a id="2065" class="Keyword">open</a> <a id="2070" class="Keyword">import</a> <a id="2077" href="/Classical/Signatures/Group/" class="Module">Classical.Signatures.Group</a>            <a id="2115" class="Keyword">using</a> <a id="2121" class="Symbol">(</a> <a id="2123" href="/Classical/Signatures/Group/#1593" class="InductiveConstructor">∙-Op</a> <a id="2128" class="Symbol">;</a> <a id="2130" href="/Classical/Signatures/Group/#1603" class="InductiveConstructor">⁻¹-Op</a> <a id="2136" class="Symbol">)</a>
-<a id="2138" class="Keyword">open</a> <a id="2143" class="Keyword">import</a> <a id="2150" href="/Classical/Structures/Group/Basic/" class="Module">Classical.Structures.Group.Basic</a>      <a id="2188" class="Keyword">using</a> <a id="2194" class="Symbol">(</a> <a id="2196" href="/Classical/Structures/Group/Basic/#5158" class="Function">Group</a> <a id="2202" class="Symbol">;</a> <a id="2204" class="Keyword">module</a> <a id="2211" href="/Classical/Structures/Group/Basic/#8660" class="Module">Group-Op</a> <a id="2220" class="Symbol">)</a>
+<a id="2138" class="Keyword">open</a> <a id="2143" class="Keyword">import</a> <a id="2150" href="/Classical/Structures/Group/Basic/" class="Module">Classical.Structures.Group.Basic</a>      <a id="2188" class="Keyword">using</a> <a id="2194" class="Symbol">(</a> <a id="2196" href="/Classical/Structures/Group/Basic/#5165" class="Function">Group</a> <a id="2202" class="Symbol">;</a> <a id="2204" class="Keyword">module</a> <a id="2211" href="/Classical/Structures/Group/Basic/#8641" class="Module">Group-Op</a> <a id="2220" class="Symbol">)</a>
 <a id="2222" class="Keyword">open</a> <a id="2227" class="Keyword">import</a> <a id="2234" href="/Classical/Structures/Group/Power/" class="Module">Classical.Structures.Group.Power</a>      <a id="2272" class="Keyword">using</a> <a id="2278" class="Symbol">(</a> <a id="2280" class="Keyword">module</a> <a id="2287" href="/Classical/Structures/Group/Power/#4615" class="Module">GroupPower</a> <a id="2298" class="Symbol">)</a>
 <a id="2300" class="Keyword">open</a> <a id="2305" class="Keyword">import</a> <a id="2312" href="/Classical/Structures/Group/Subgroups/" class="Module">Classical.Structures.Group.Subgroups</a>  <a id="2350" class="Keyword">using</a> <a id="2356" class="Symbol">(</a> <a id="2358" href="/Classical/Structures/Group/Subgroups/#6460" class="Record">IsSubgroup</a> <a id="2369" class="Symbol">;</a> <a id="2371" href="/Classical/Structures/Group/Subgroups/#7198" class="Function">mkIsSubgroup</a> <a id="2384" class="Symbol">)</a>
 <a id="2386" class="Keyword">open</a> <a id="2391" class="Keyword">import</a> <a id="2398" href="/Classical/Structures/Interpret/" class="Module">Classical.Structures.Interpret</a>        <a id="2436" class="Keyword">using</a> <a id="2442" class="Symbol">(</a> <a id="2444" href="/Classical/Structures/Interpret/#3434" class="Function">interp-cong</a> <a id="2456" class="Symbol">)</a>
@@ -15379,7 +15469,7 @@ the hypothesis coordinatewise, and folds back.<sup id="fnref:1"><a class="footno
 <h4 id="the-diagonal-predicate">The diagonal predicate<a class="headerlink" href="#the-diagonal-predicate" title="Anchor link to this section">&para;</a></h4>
 <p><code class="AgdaModule">DiagonalSubgroup</code><code>I 𝒢</code> packages the diagonal of the power <code>𝒢 ^ I</code> for
 a fixed index type and base group.</p>
-<pre class="Agda"><a id="2729" class="Keyword">module</a> <a id="DiagonalSubgroup"></a><a id="2736" href="/Classical/Structures/Group/Diagonal/#2736" class="Module">DiagonalSubgroup</a> <a id="2753" class="Symbol">(</a><a id="2754" href="/Classical/Structures/Group/Diagonal/#2754" class="Bound">I</a> <a id="2756" class="Symbol">:</a> <a id="2758" href="/Classical/Structures/Group/Diagonal/#1514" class="Primitive">Type</a> <a id="2763" href="/Classical/Structures/Group/Diagonal/#2548" class="Generalizable">ι</a><a id="2764" class="Symbol">)</a> <a id="2766" class="Symbol">(</a><a id="2767" href="/Classical/Structures/Group/Diagonal/#2767" class="Bound">𝒢</a> <a id="2769" class="Symbol">:</a> <a id="2771" href="/Classical/Structures/Group/Basic/#5158" class="Function">Group</a> <a id="2777" href="/Classical/Structures/Group/Diagonal/#2550" class="Generalizable">α</a> <a id="2779" href="/Classical/Structures/Group/Diagonal/#2552" class="Generalizable">ρ</a><a id="2780" class="Symbol">)</a> <a id="2782" class="Keyword">where</a>
+<pre class="Agda"><a id="2729" class="Keyword">module</a> <a id="DiagonalSubgroup"></a><a id="2736" href="/Classical/Structures/Group/Diagonal/#2736" class="Module">DiagonalSubgroup</a> <a id="2753" class="Symbol">(</a><a id="2754" href="/Classical/Structures/Group/Diagonal/#2754" class="Bound">I</a> <a id="2756" class="Symbol">:</a> <a id="2758" href="/Classical/Structures/Group/Diagonal/#1514" class="Primitive">Type</a> <a id="2763" href="/Classical/Structures/Group/Diagonal/#2548" class="Generalizable">ι</a><a id="2764" class="Symbol">)</a> <a id="2766" class="Symbol">(</a><a id="2767" href="/Classical/Structures/Group/Diagonal/#2767" class="Bound">𝒢</a> <a id="2769" class="Symbol">:</a> <a id="2771" href="/Classical/Structures/Group/Basic/#5165" class="Function">Group</a> <a id="2777" href="/Classical/Structures/Group/Diagonal/#2550" class="Generalizable">α</a> <a id="2779" href="/Classical/Structures/Group/Diagonal/#2552" class="Generalizable">ρ</a><a id="2780" class="Symbol">)</a> <a id="2782" class="Keyword">where</a>
 
   <a id="2791" class="Keyword">open</a> <a id="2796" href="/Classical/Structures/Group/Power/#4615" class="Module">GroupPower</a> <a id="2807" href="/Classical/Structures/Group/Diagonal/#2754" class="Bound">I</a> <a id="2809" href="/Classical/Structures/Group/Diagonal/#2767" class="Bound">𝒢</a>
 
@@ -15425,7 +15515,7 @@ the pointwise descriptions, and applies the membership hypothesis coordinatewise
   <a id="DiagonalSubgroup.Diag-isSubgroup"></a><a id="4380" href="/Classical/Structures/Group/Diagonal/#4380" class="Function">Diag-isSubgroup</a> <a id="4396" class="Symbol">:</a> <a id="4398" href="/Classical/Structures/Group/Subgroups/#6460" class="Record">IsSubgroup</a> <a id="4409" href="/Classical/Structures/Group/Power/#3964" class="Function">⨅ᵍ-Group</a> <a id="4418" href="/Classical/Structures/Group/Diagonal/#3089" class="Function">Diag</a>
   <a id="4425" href="/Classical/Structures/Group/Diagonal/#4380" class="Function">Diag-isSubgroup</a> <a id="4441" class="Symbol">=</a> <a id="4443" href="/Classical/Structures/Group/Subgroups/#7198" class="Function">mkIsSubgroup</a> <a id="4456" href="/Classical/Structures/Group/Power/#3964" class="Function">⨅ᵍ-Group</a> <a id="4465" href="/Classical/Structures/Group/Diagonal/#4196" class="Function">Diag-respects</a> <a id="4479" href="/Classical/Structures/Group/Diagonal/#4605" class="Function">∙-closed</a> <a id="4488" href="/Classical/Structures/Group/Diagonal/#4862" class="Function">ε-closed</a> <a id="4497" href="/Classical/Structures/Group/Diagonal/#4952" class="Function">⁻¹-closed</a>
     <a id="4511" class="Keyword">where</a>
-    <a id="4521" class="Keyword">open</a> <a id="4526" href="/Classical/Structures/Group/Basic/#8660" class="Module">Group-Op</a> <a id="4535" href="/Classical/Structures/Group/Power/#3964" class="Function">⨅ᵍ-Group</a>  <a id="4545" class="Keyword">using</a> <a id="4551" class="Symbol">()</a> <a id="4554" class="Keyword">renaming</a> <a id="4563" class="Symbol">(</a> <a id="4565" href="/Classical/Structures/Group/Basic/#8890" class="Function Operator">_∙_</a> <a id="4569" class="Symbol">to</a> <a id="4572" class="Function Operator">_⊗_</a> <a id="4576" class="Symbol">;</a> <a id="4578" href="/Classical/Structures/Group/Basic/#8950" class="Function">ε</a> <a id="4580" class="Symbol">to</a> <a id="4583" class="Function">e</a> <a id="4585" class="Symbol">;</a> <a id="4587" href="/Classical/Structures/Group/Basic/#9002" class="Function Operator">_⁻¹</a> <a id="4591" class="Symbol">to</a> <a id="4594" class="Function Operator">inv</a> <a id="4598" class="Symbol">)</a>
+    <a id="4521" class="Keyword">open</a> <a id="4526" href="/Classical/Structures/Group/Basic/#8641" class="Module">Group-Op</a> <a id="4535" href="/Classical/Structures/Group/Power/#3964" class="Function">⨅ᵍ-Group</a>  <a id="4545" class="Keyword">using</a> <a id="4551" class="Symbol">()</a> <a id="4554" class="Keyword">renaming</a> <a id="4563" class="Symbol">(</a> <a id="4565" href="/Classical/Structures/Group/Basic/#8871" class="Function Operator">_∙_</a> <a id="4569" class="Symbol">to</a> <a id="4572" class="Function Operator">_⊗_</a> <a id="4576" class="Symbol">;</a> <a id="4578" href="/Classical/Structures/Group/Basic/#8931" class="Function">ε</a> <a id="4580" class="Symbol">to</a> <a id="4583" class="Function">e</a> <a id="4585" class="Symbol">;</a> <a id="4587" href="/Classical/Structures/Group/Basic/#8983" class="Function Operator">_⁻¹</a> <a id="4591" class="Symbol">to</a> <a id="4594" class="Function Operator">inv</a> <a id="4598" class="Symbol">)</a>
 
     <a id="4605" href="/Classical/Structures/Group/Diagonal/#4605" class="Function">∙-closed</a> <a id="4614" class="Symbol">:</a> <a id="4616" class="Symbol">∀</a> <a id="4618" class="Symbol">{</a><a id="4619" href="/Classical/Structures/Group/Diagonal/#4619" class="Bound">x</a> <a id="4621" href="/Classical/Structures/Group/Diagonal/#4621" class="Bound">y</a><a id="4622" class="Symbol">}</a> <a id="4624" class="Symbol">→</a> <a id="4626" href="/Classical/Structures/Group/Diagonal/#4619" class="Bound">x</a> <a id="4628" href="/classic/Relation.Unary.html#1818" class="Function Operator">∈</a> <a id="4630" href="/Classical/Structures/Group/Diagonal/#3089" class="Function">Diag</a> <a id="4635" class="Symbol">→</a> <a id="4637" href="/Classical/Structures/Group/Diagonal/#4621" class="Bound">y</a> <a id="4639" href="/classic/Relation.Unary.html#1818" class="Function Operator">∈</a> <a id="4641" href="/Classical/Structures/Group/Diagonal/#3089" class="Function">Diag</a> <a id="4646" class="Symbol">→</a> <a id="4648" class="Symbol">(</a><a id="4649" href="/Classical/Structures/Group/Diagonal/#4619" class="Bound">x</a> <a id="4651" href="/Classical/Structures/Group/Diagonal/#4572" class="Function Operator">⊗</a> <a id="4653" href="/Classical/Structures/Group/Diagonal/#4621" class="Bound">y</a><a id="4654" class="Symbol">)</a> <a id="4656" href="/classic/Relation.Unary.html#1818" class="Function Operator">∈</a> <a id="4658" href="/Classical/Structures/Group/Diagonal/#3089" class="Function">Diag</a>
     <a id="4667" href="/Classical/Structures/Group/Diagonal/#4605" class="Function">∙-closed</a> <a id="4676" class="Symbol">{</a><a id="4677" href="/Classical/Structures/Group/Diagonal/#4677" class="Bound">x</a><a id="4678" class="Symbol">}</a> <a id="4680" class="Symbol">{</a><a id="4681" href="/Classical/Structures/Group/Diagonal/#4681" class="Bound">y</a><a id="4682" class="Symbol">}</a> <a id="4684" href="/Classical/Structures/Group/Diagonal/#4684" class="Bound">dx</a> <a id="4687" href="/Classical/Structures/Group/Diagonal/#4687" class="Bound">dy</a> <a id="4690" href="/Classical/Structures/Group/Diagonal/#4690" class="Bound">i</a> <a id="4692" href="/Classical/Structures/Group/Diagonal/#4692" class="Bound">j</a> <a id="4694" class="Symbol">=</a>

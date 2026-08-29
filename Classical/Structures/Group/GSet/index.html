@@ -18,7 +18,7 @@
         <link rel="prev" href="../Diagonal/">
       
       
-        <link rel="next" href="../MinimalNormal/">
+        <link rel="next" href="../IndexAction/">
       
       
         
@@ -6680,6 +6680,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -7153,6 +7157,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../IndexAction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IndexAction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../MinimalNormal/" class="md-nav__link">
         
   
@@ -7357,6 +7389,34 @@
     
   
     Subgroups
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Wreath/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wreath
   
 
     
@@ -12806,6 +12866,8 @@
       
         
       
+        
+      
     
     
     
@@ -14515,6 +14577,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../FLRP/WreathNoGo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WreathNoGo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -15422,7 +15512,7 @@ is transitive: any coset is reached from any other by some group element.</p>
 <a id="2690" class="Comment">-- Imports from the Agda Universal Algebra Library ------------------------------</a>
 <a id="2772" class="Keyword">open</a> <a id="2777" class="Keyword">import</a> <a id="2784" href="/Classical/Bundles/Group/" class="Module">Classical.Bundles.Group</a>               <a id="2822" class="Keyword">using</a> <a id="2828" class="Symbol">(</a> <a id="2830" href="/Classical/Bundles/Group/#2048" class="Function Operator">⟨_⟩ᵍᵖ</a> <a id="2836" class="Symbol">)</a>
 <a id="2838" class="Keyword">open</a> <a id="2843" class="Keyword">import</a> <a id="2850" href="/Classical/Signatures/Unary/" class="Module">Classical.Signatures.Unary</a>            <a id="2888" class="Keyword">using</a> <a id="2894" class="Symbol">(</a> <a id="2896" href="/Classical/Signatures/Unary/#2341" class="Function">Sig-Unary</a> <a id="2906" class="Symbol">)</a>
-<a id="2908" class="Keyword">open</a> <a id="2913" class="Keyword">import</a> <a id="2920" href="/Classical/Structures/Group/Basic/" class="Module">Classical.Structures.Group.Basic</a>      <a id="2958" class="Keyword">using</a> <a id="2964" class="Symbol">(</a> <a id="2966" href="/Classical/Structures/Group/Basic/#5158" class="Function">Group</a> <a id="2972" class="Symbol">;</a> <a id="2974" class="Keyword">module</a> <a id="2981" href="/Classical/Structures/Group/Basic/#8660" class="Module">Group-Op</a> <a id="2990" class="Symbol">)</a>
+<a id="2908" class="Keyword">open</a> <a id="2913" class="Keyword">import</a> <a id="2920" href="/Classical/Structures/Group/Basic/" class="Module">Classical.Structures.Group.Basic</a>      <a id="2958" class="Keyword">using</a> <a id="2964" class="Symbol">(</a> <a id="2966" href="/Classical/Structures/Group/Basic/#5165" class="Function">Group</a> <a id="2972" class="Symbol">;</a> <a id="2974" class="Keyword">module</a> <a id="2981" href="/Classical/Structures/Group/Basic/#8641" class="Module">Group-Op</a> <a id="2990" class="Symbol">)</a>
 <a id="2992" class="Keyword">open</a> <a id="2997" class="Keyword">import</a> <a id="3004" href="/Classical/Structures/Group/Subgroups/" class="Module">Classical.Structures.Group.Subgroups</a>  <a id="3042" class="Keyword">using</a> <a id="3048" class="Symbol">(</a> <a id="3050" href="/Classical/Structures/Group/Subgroups/#6460" class="Record">IsSubgroup</a> <a id="3061" class="Symbol">)</a>
 <a id="3063" class="Keyword">open</a> <a id="3068" class="Keyword">import</a> <a id="3075" href="/Classical/Structures/Group/Cosets/" class="Module">Classical.Structures.Group.Cosets</a>     <a id="3113" class="Keyword">using</a> <a id="3119" class="Symbol">(</a> <a id="3121" class="Keyword">module</a> <a id="3128" href="/Classical/Structures/Group/Cosets/#2436" class="Module">Coset</a> <a id="3134" class="Symbol">)</a>
 <a id="3136" class="Keyword">open</a> <a id="3141" class="Keyword">import</a> <a id="3148" href="/Setoid/Congruences/Basic/" class="Module">Setoid.Congruences.Basic</a>              <a id="3186" class="Keyword">using</a> <a id="3192" class="Symbol">(</a> <a id="3194" href="/Setoid/Congruences/Basic/#3975" class="Function">Con</a> <a id="3198" class="Symbol">)</a>
@@ -15431,7 +15521,7 @@ is transitive: any coset is reached from any other by some group element.</p>
 </pre>
 
 <h4 id="the-coset-algebra">The coset algebra<a class="headerlink" href="#the-coset-algebra" title="Anchor link to this section">&para;</a></h4>
-<pre class="Agda"><a id="3400" class="Keyword">module</a> <a id="CosetAction"></a><a id="3407" href="/Classical/Structures/Group/GSet/#3407" class="Module">CosetAction</a> <a id="3419" class="Symbol">{</a><a id="3420" href="/Classical/Structures/Group/GSet/#3420" class="Bound">α</a> <a id="3422" href="/Classical/Structures/Group/GSet/#3422" class="Bound">ρ</a> <a id="3424" class="Symbol">:</a> <a id="3426" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a><a id="3431" class="Symbol">}</a> <a id="3433" class="Symbol">(</a><a id="3434" href="/Classical/Structures/Group/GSet/#3434" class="Bound">𝒢</a> <a id="3436" class="Symbol">:</a> <a id="3438" href="/Classical/Structures/Group/Basic/#5158" class="Function">Group</a> <a id="3444" href="/Classical/Structures/Group/GSet/#3420" class="Bound">α</a> <a id="3446" href="/Classical/Structures/Group/GSet/#3422" class="Bound">ρ</a><a id="3447" class="Symbol">)</a> <a id="3449" class="Symbol">{</a><a id="3450" href="/Classical/Structures/Group/GSet/#3450" class="Bound">ℓ</a> <a id="3452" class="Symbol">:</a> <a id="3454" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a><a id="3459" class="Symbol">}</a>
+<pre class="Agda"><a id="3400" class="Keyword">module</a> <a id="CosetAction"></a><a id="3407" href="/Classical/Structures/Group/GSet/#3407" class="Module">CosetAction</a> <a id="3419" class="Symbol">{</a><a id="3420" href="/Classical/Structures/Group/GSet/#3420" class="Bound">α</a> <a id="3422" href="/Classical/Structures/Group/GSet/#3422" class="Bound">ρ</a> <a id="3424" class="Symbol">:</a> <a id="3426" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a><a id="3431" class="Symbol">}</a> <a id="3433" class="Symbol">(</a><a id="3434" href="/Classical/Structures/Group/GSet/#3434" class="Bound">𝒢</a> <a id="3436" class="Symbol">:</a> <a id="3438" href="/Classical/Structures/Group/Basic/#5165" class="Function">Group</a> <a id="3444" href="/Classical/Structures/Group/GSet/#3420" class="Bound">α</a> <a id="3446" href="/Classical/Structures/Group/GSet/#3422" class="Bound">ρ</a><a id="3447" class="Symbol">)</a> <a id="3449" class="Symbol">{</a><a id="3450" href="/Classical/Structures/Group/GSet/#3450" class="Bound">ℓ</a> <a id="3452" class="Symbol">:</a> <a id="3454" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a><a id="3459" class="Symbol">}</a>
   <a id="3463" class="Symbol">(</a><a id="3464" href="/Classical/Structures/Group/GSet/#3464" class="Bound">H</a> <a id="3466" class="Symbol">:</a> <a id="3468" href="/classic/Relation.Unary.html#1178" class="Function">Pred</a> <a id="3473" href="/Setoid/Algebras/Basic/#5875" class="Function Operator">𝕌[</a> <a id="3476" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="3482" href="/Classical/Structures/Group/GSet/#3434" class="Bound">𝒢</a> <a id="3484" href="/Setoid/Algebras/Basic/#5875" class="Function Operator">]</a> <a id="3486" href="/Classical/Structures/Group/GSet/#3450" class="Bound">ℓ</a><a id="3487" class="Symbol">)</a> <a id="3489" class="Symbol">(</a><a id="3490" href="/Classical/Structures/Group/GSet/#3490" class="Bound">H-isSubgroup</a> <a id="3503" class="Symbol">:</a> <a id="3505" href="/Classical/Structures/Group/Subgroups/#6460" class="Record">IsSubgroup</a> <a id="3516" href="/Classical/Structures/Group/GSet/#3434" class="Bound">𝒢</a> <a id="3518" href="/Classical/Structures/Group/GSet/#3464" class="Bound">H</a><a id="3519" class="Symbol">)</a>
   <a id="3523" class="Keyword">where</a>
 
@@ -15439,7 +15529,7 @@ is transitive: any coset is reached from any other by some group element.</p>
     <a id="CosetAction.𝑮"></a><a id="3544" href="/Classical/Structures/Group/GSet/#3544" class="Function">𝑮</a> <a id="3546" class="Symbol">=</a> <a id="3548" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="3554" href="/Classical/Structures/Group/GSet/#3434" class="Bound">𝒢</a>
     <a id="CosetAction.G"></a><a id="3560" href="/Classical/Structures/Group/GSet/#3560" class="Function">G</a> <a id="3562" class="Symbol">=</a> <a id="3564" href="/Setoid/Algebras/Basic/#5875" class="Function Operator">𝕌[</a> <a id="3567" href="/Classical/Structures/Group/GSet/#3544" class="Function">𝑮</a> <a id="3569" href="/Setoid/Algebras/Basic/#5875" class="Function Operator">]</a>
 
-  <a id="3574" class="Keyword">open</a> <a id="3579" href="/Classical/Structures/Group/Basic/#8660" class="Module">Group-Op</a> <a id="3588" href="/Classical/Structures/Group/GSet/#3434" class="Bound">𝒢</a>               <a id="3604" class="Keyword">using</a> <a id="3610" class="Symbol">(</a> <a id="3612" href="/Classical/Structures/Group/Basic/#8890" class="Function Operator">_∙_</a> <a id="3616" class="Symbol">;</a> <a id="3618" href="/Classical/Structures/Group/Basic/#8950" class="Function">ε</a> <a id="3620" class="Symbol">;</a> <a id="3622" href="/Classical/Structures/Group/Basic/#9002" class="Function Operator">_⁻¹</a> <a id="3626" class="Symbol">;</a> <a id="3628" href="/Classical/Structures/Group/Basic/#9754" class="Function">assoc-law</a> <a id="3638" class="Symbol">;</a> <a id="3640" href="/Classical/Structures/Group/Basic/#9842" class="Function">idˡ-law</a> <a id="3648" class="Symbol">)</a>
+  <a id="3574" class="Keyword">open</a> <a id="3579" href="/Classical/Structures/Group/Basic/#8641" class="Module">Group-Op</a> <a id="3588" href="/Classical/Structures/Group/GSet/#3434" class="Bound">𝒢</a>               <a id="3604" class="Keyword">using</a> <a id="3610" class="Symbol">(</a> <a id="3612" href="/Classical/Structures/Group/Basic/#8871" class="Function Operator">_∙_</a> <a id="3616" class="Symbol">;</a> <a id="3618" href="/Classical/Structures/Group/Basic/#8931" class="Function">ε</a> <a id="3620" class="Symbol">;</a> <a id="3622" href="/Classical/Structures/Group/Basic/#8983" class="Function Operator">_⁻¹</a> <a id="3626" class="Symbol">;</a> <a id="3628" href="/Classical/Structures/Group/Basic/#9735" class="Function">assoc-law</a> <a id="3638" class="Symbol">;</a> <a id="3640" href="/Classical/Structures/Group/Basic/#9823" class="Function">idˡ-law</a> <a id="3648" class="Symbol">)</a>
   <a id="3652" class="Keyword">open</a> <a id="3657" href="/Classical/Structures/Group/Cosets/#2436" class="Module">Coset</a> <a id="3663" href="/Classical/Structures/Group/GSet/#3434" class="Bound">𝒢</a> <a id="3665" href="/Classical/Structures/Group/GSet/#3464" class="Bound">H</a> <a id="3667" href="/Classical/Structures/Group/GSet/#3490" class="Bound">H-isSubgroup</a>   <a id="3682" class="Keyword">using</a> <a id="3688" class="Symbol">(</a> <a id="3690" href="/Classical/Structures/Group/Cosets/#3217" class="Function Operator">_∼_</a> <a id="3694" class="Symbol">;</a> <a id="3696" href="/Classical/Structures/Group/Cosets/#5704" class="Function">∼-congˡ</a> <a id="3704" class="Symbol">;</a> <a id="3706" href="/Classical/Structures/Group/Cosets/#5445" class="Function">≈⇒∼</a> <a id="3710" class="Symbol">;</a> <a id="3712" href="/Classical/Structures/Group/Cosets/#6690" class="Function">cosetSetoid</a> <a id="3724" class="Symbol">)</a>
   <a id="3728" class="Keyword">open</a> <a id="3733" href="/classic/Algebra.Properties.Group.html" class="Module">GroupProperties</a> <a id="3749" href="/Classical/Bundles/Group/#2048" class="Function Operator">⟨</a> <a id="3751" href="/Classical/Structures/Group/GSet/#3434" class="Bound">𝒢</a> <a id="3753" href="/Classical/Bundles/Group/#2048" class="Function Operator">⟩ᵍᵖ</a>  <a id="3758" class="Keyword">using</a> <a id="3764" class="Symbol">(</a> <a id="3766" href="/classic/Algebra.Properties.Group.html#1547" class="Function">//-rightDividesˡ</a> <a id="3783" class="Symbol">)</a>
 
@@ -15447,7 +15537,7 @@ is transitive: any coset is reached from any other by some group element.</p>
   <a id="3861" class="Comment">-- the symbol g acts on the coset of x by left translation, g ∙ x.</a>
 
   <a id="CosetAction.cosetAlgebra"></a><a id="3931" href="/Classical/Structures/Group/GSet/#3931" class="Function">cosetAlgebra</a> <a id="3944" class="Symbol">:</a> <a id="3946" href="/Setoid/Algebras/Basic/#4342" class="Record">Algebra</a> <a id="3954" class="Symbol">{</a><a id="3955" class="Argument">𝑆</a> <a id="3957" class="Symbol">=</a> <a id="3959" href="/Classical/Signatures/Unary/#2341" class="Function">Sig-Unary</a> <a id="3969" href="/Classical/Structures/Group/GSet/#3560" class="Function">G</a><a id="3970" class="Symbol">}</a> <a id="3972" href="/Classical/Structures/Group/GSet/#3420" class="Bound">α</a> <a id="3974" href="/Classical/Structures/Group/GSet/#3450" class="Bound">ℓ</a>
-  <a id="3978" href="/Classical/Structures/Group/GSet/#3931" class="Function">cosetAlgebra</a> <a id="3991" class="Symbol">=</a> <a id="3993" href="/Setoid/Algebras/Basic/#8243" class="Function">mkAlgebra</a> <a id="4003" href="/Classical/Structures/Group/Cosets/#6690" class="Function">cosetSetoid</a> <a id="4015" class="Symbol">(λ</a> <a id="4018" href="/Classical/Structures/Group/GSet/#4018" class="Bound">g</a> <a id="4020" href="/Classical/Structures/Group/GSet/#4020" class="Bound">a</a> <a id="4022" class="Symbol">→</a> <a id="4024" href="/Classical/Structures/Group/GSet/#4018" class="Bound">g</a> <a id="4026" href="/Classical/Structures/Group/Basic/#8890" class="Function Operator">∙</a> <a id="4028" href="/Classical/Structures/Group/GSet/#4020" class="Bound">a</a> <a id="4030" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a><a id="4032" class="Symbol">)</a> <a id="4034" class="Symbol">(λ</a> <a id="4037" href="/Classical/Structures/Group/GSet/#4037" class="Bound">g</a> <a id="4039" href="/Classical/Structures/Group/GSet/#4039" class="Bound">u∼v</a> <a id="4043" class="Symbol">→</a> <a id="4045" href="/Classical/Structures/Group/Cosets/#5704" class="Function">∼-congˡ</a> <a id="4053" href="/Classical/Structures/Group/GSet/#4037" class="Bound">g</a> <a id="4055" class="Symbol">(</a><a id="4056" href="/Classical/Structures/Group/GSet/#4039" class="Bound">u∼v</a> <a id="4060" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a><a id="4062" class="Symbol">))</a>
+  <a id="3978" href="/Classical/Structures/Group/GSet/#3931" class="Function">cosetAlgebra</a> <a id="3991" class="Symbol">=</a> <a id="3993" href="/Setoid/Algebras/Basic/#8243" class="Function">mkAlgebra</a> <a id="4003" href="/Classical/Structures/Group/Cosets/#6690" class="Function">cosetSetoid</a> <a id="4015" class="Symbol">(λ</a> <a id="4018" href="/Classical/Structures/Group/GSet/#4018" class="Bound">g</a> <a id="4020" href="/Classical/Structures/Group/GSet/#4020" class="Bound">a</a> <a id="4022" class="Symbol">→</a> <a id="4024" href="/Classical/Structures/Group/GSet/#4018" class="Bound">g</a> <a id="4026" href="/Classical/Structures/Group/Basic/#8871" class="Function Operator">∙</a> <a id="4028" href="/Classical/Structures/Group/GSet/#4020" class="Bound">a</a> <a id="4030" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a><a id="4032" class="Symbol">)</a> <a id="4034" class="Symbol">(λ</a> <a id="4037" href="/Classical/Structures/Group/GSet/#4037" class="Bound">g</a> <a id="4039" href="/Classical/Structures/Group/GSet/#4039" class="Bound">u∼v</a> <a id="4043" class="Symbol">→</a> <a id="4045" href="/Classical/Structures/Group/Cosets/#5704" class="Function">∼-congˡ</a> <a id="4053" href="/Classical/Structures/Group/GSet/#4037" class="Bound">g</a> <a id="4055" class="Symbol">(</a><a id="4056" href="/Classical/Structures/Group/GSet/#4039" class="Bound">u∼v</a> <a id="4060" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a><a id="4062" class="Symbol">))</a>
 </pre>
 <h4 id="action-laws-and-transitivity">Action laws and transitivity<a class="headerlink" href="#action-laws-and-transitivity" title="Anchor link to this section">&para;</a></h4>
 <p>As explained above, the coset space is a <code>G</code>-set: <code>G</code> acts on <code>G / H</code> by left
@@ -15469,16 +15559,16 @@ why a coset space is the model case of a transitive action.  Since it is proved 
 exhibiting a witness, the group element, rather than by an existence argument, the
 result it usable computationally.</p>
 <pre class="Agda">  <a id="5190" class="Comment">-- The identity element acts as the identity on cosets.</a>
-  <a id="CosetAction.act-identity"></a><a id="5248" href="/Classical/Structures/Group/GSet/#5248" class="Function">act-identity</a> <a id="5261" class="Symbol">:</a> <a id="5263" class="Symbol">(</a><a id="5264" href="/Classical/Structures/Group/GSet/#5264" class="Bound">x</a> <a id="5266" class="Symbol">:</a> <a id="5268" href="/Classical/Structures/Group/GSet/#3560" class="Function">G</a><a id="5269" class="Symbol">)</a> <a id="5271" class="Symbol">→</a> <a id="5273" class="Symbol">(</a><a id="5274" href="/Classical/Structures/Group/Basic/#8950" class="Function">ε</a> <a id="5276" href="/Classical/Structures/Group/Basic/#8890" class="Function Operator">∙</a> <a id="5278" href="/Classical/Structures/Group/GSet/#5264" class="Bound">x</a><a id="5279" class="Symbol">)</a> <a id="5281" href="/Classical/Structures/Group/Cosets/#3217" class="Function Operator">∼</a> <a id="5283" href="/Classical/Structures/Group/GSet/#5264" class="Bound">x</a>
-  <a id="5287" href="/Classical/Structures/Group/GSet/#5248" class="Function">act-identity</a> <a id="5300" href="/Classical/Structures/Group/GSet/#5300" class="Bound">x</a> <a id="5302" class="Symbol">=</a> <a id="5304" href="/Classical/Structures/Group/Cosets/#5445" class="Function">≈⇒∼</a> <a id="5308" class="Symbol">(</a><a id="5309" href="/Classical/Structures/Group/Basic/#9842" class="Function">idˡ-law</a> <a id="5317" href="/Classical/Structures/Group/GSet/#5300" class="Bound">x</a><a id="5318" class="Symbol">)</a>
+  <a id="CosetAction.act-identity"></a><a id="5248" href="/Classical/Structures/Group/GSet/#5248" class="Function">act-identity</a> <a id="5261" class="Symbol">:</a> <a id="5263" class="Symbol">(</a><a id="5264" href="/Classical/Structures/Group/GSet/#5264" class="Bound">x</a> <a id="5266" class="Symbol">:</a> <a id="5268" href="/Classical/Structures/Group/GSet/#3560" class="Function">G</a><a id="5269" class="Symbol">)</a> <a id="5271" class="Symbol">→</a> <a id="5273" class="Symbol">(</a><a id="5274" href="/Classical/Structures/Group/Basic/#8931" class="Function">ε</a> <a id="5276" href="/Classical/Structures/Group/Basic/#8871" class="Function Operator">∙</a> <a id="5278" href="/Classical/Structures/Group/GSet/#5264" class="Bound">x</a><a id="5279" class="Symbol">)</a> <a id="5281" href="/Classical/Structures/Group/Cosets/#3217" class="Function Operator">∼</a> <a id="5283" href="/Classical/Structures/Group/GSet/#5264" class="Bound">x</a>
+  <a id="5287" href="/Classical/Structures/Group/GSet/#5248" class="Function">act-identity</a> <a id="5300" href="/Classical/Structures/Group/GSet/#5300" class="Bound">x</a> <a id="5302" class="Symbol">=</a> <a id="5304" href="/Classical/Structures/Group/Cosets/#5445" class="Function">≈⇒∼</a> <a id="5308" class="Symbol">(</a><a id="5309" href="/Classical/Structures/Group/Basic/#9823" class="Function">idˡ-law</a> <a id="5317" href="/Classical/Structures/Group/GSet/#5300" class="Bound">x</a><a id="5318" class="Symbol">)</a>
 
   <a id="5323" class="Comment">-- Acting by g ∙ h is acting by h, then by g.</a>
-  <a id="CosetAction.act-compatible"></a><a id="5371" href="/Classical/Structures/Group/GSet/#5371" class="Function">act-compatible</a> <a id="5386" class="Symbol">:</a> <a id="5388" class="Symbol">(</a><a id="5389" href="/Classical/Structures/Group/GSet/#5389" class="Bound">g</a> <a id="5391" href="/Classical/Structures/Group/GSet/#5391" class="Bound">h</a> <a id="5393" href="/Classical/Structures/Group/GSet/#5393" class="Bound">x</a> <a id="5395" class="Symbol">:</a> <a id="5397" href="/Classical/Structures/Group/GSet/#3560" class="Function">G</a><a id="5398" class="Symbol">)</a> <a id="5400" class="Symbol">→</a> <a id="5402" class="Symbol">(</a><a id="5403" href="/Classical/Structures/Group/GSet/#5389" class="Bound">g</a> <a id="5405" href="/Classical/Structures/Group/Basic/#8890" class="Function Operator">∙</a> <a id="5407" href="/Classical/Structures/Group/GSet/#5391" class="Bound">h</a><a id="5408" class="Symbol">)</a> <a id="5410" href="/Classical/Structures/Group/Basic/#8890" class="Function Operator">∙</a> <a id="5412" href="/Classical/Structures/Group/GSet/#5393" class="Bound">x</a> <a id="5414" href="/Classical/Structures/Group/Cosets/#3217" class="Function Operator">∼</a> <a id="5416" href="/Classical/Structures/Group/GSet/#5389" class="Bound">g</a> <a id="5418" href="/Classical/Structures/Group/Basic/#8890" class="Function Operator">∙</a> <a id="5420" class="Symbol">(</a><a id="5421" href="/Classical/Structures/Group/GSet/#5391" class="Bound">h</a> <a id="5423" href="/Classical/Structures/Group/Basic/#8890" class="Function Operator">∙</a> <a id="5425" href="/Classical/Structures/Group/GSet/#5393" class="Bound">x</a><a id="5426" class="Symbol">)</a>
-  <a id="5430" href="/Classical/Structures/Group/GSet/#5371" class="Function">act-compatible</a> <a id="5445" href="/Classical/Structures/Group/GSet/#5445" class="Bound">g</a> <a id="5447" href="/Classical/Structures/Group/GSet/#5447" class="Bound">h</a> <a id="5449" href="/Classical/Structures/Group/GSet/#5449" class="Bound">x</a> <a id="5451" class="Symbol">=</a> <a id="5453" href="/Classical/Structures/Group/Cosets/#5445" class="Function">≈⇒∼</a> <a id="5457" class="Symbol">(</a><a id="5458" href="/Classical/Structures/Group/Basic/#9754" class="Function">assoc-law</a> <a id="5468" href="/Classical/Structures/Group/GSet/#5445" class="Bound">g</a> <a id="5470" href="/Classical/Structures/Group/GSet/#5447" class="Bound">h</a> <a id="5472" href="/Classical/Structures/Group/GSet/#5449" class="Bound">x</a><a id="5473" class="Symbol">)</a>
+  <a id="CosetAction.act-compatible"></a><a id="5371" href="/Classical/Structures/Group/GSet/#5371" class="Function">act-compatible</a> <a id="5386" class="Symbol">:</a> <a id="5388" class="Symbol">(</a><a id="5389" href="/Classical/Structures/Group/GSet/#5389" class="Bound">g</a> <a id="5391" href="/Classical/Structures/Group/GSet/#5391" class="Bound">h</a> <a id="5393" href="/Classical/Structures/Group/GSet/#5393" class="Bound">x</a> <a id="5395" class="Symbol">:</a> <a id="5397" href="/Classical/Structures/Group/GSet/#3560" class="Function">G</a><a id="5398" class="Symbol">)</a> <a id="5400" class="Symbol">→</a> <a id="5402" class="Symbol">(</a><a id="5403" href="/Classical/Structures/Group/GSet/#5389" class="Bound">g</a> <a id="5405" href="/Classical/Structures/Group/Basic/#8871" class="Function Operator">∙</a> <a id="5407" href="/Classical/Structures/Group/GSet/#5391" class="Bound">h</a><a id="5408" class="Symbol">)</a> <a id="5410" href="/Classical/Structures/Group/Basic/#8871" class="Function Operator">∙</a> <a id="5412" href="/Classical/Structures/Group/GSet/#5393" class="Bound">x</a> <a id="5414" href="/Classical/Structures/Group/Cosets/#3217" class="Function Operator">∼</a> <a id="5416" href="/Classical/Structures/Group/GSet/#5389" class="Bound">g</a> <a id="5418" href="/Classical/Structures/Group/Basic/#8871" class="Function Operator">∙</a> <a id="5420" class="Symbol">(</a><a id="5421" href="/Classical/Structures/Group/GSet/#5391" class="Bound">h</a> <a id="5423" href="/Classical/Structures/Group/Basic/#8871" class="Function Operator">∙</a> <a id="5425" href="/Classical/Structures/Group/GSet/#5393" class="Bound">x</a><a id="5426" class="Symbol">)</a>
+  <a id="5430" href="/Classical/Structures/Group/GSet/#5371" class="Function">act-compatible</a> <a id="5445" href="/Classical/Structures/Group/GSet/#5445" class="Bound">g</a> <a id="5447" href="/Classical/Structures/Group/GSet/#5447" class="Bound">h</a> <a id="5449" href="/Classical/Structures/Group/GSet/#5449" class="Bound">x</a> <a id="5451" class="Symbol">=</a> <a id="5453" href="/Classical/Structures/Group/Cosets/#5445" class="Function">≈⇒∼</a> <a id="5457" class="Symbol">(</a><a id="5458" href="/Classical/Structures/Group/Basic/#9735" class="Function">assoc-law</a> <a id="5468" href="/Classical/Structures/Group/GSet/#5445" class="Bound">g</a> <a id="5470" href="/Classical/Structures/Group/GSet/#5447" class="Bound">h</a> <a id="5472" href="/Classical/Structures/Group/GSet/#5449" class="Bound">x</a><a id="5473" class="Symbol">)</a>
 
   <a id="5478" class="Comment">-- The action is transitive: y ∙ x ⁻¹ carries the coset of x to the coset of y.</a>
-  <a id="CosetAction.act-transitive"></a><a id="5560" href="/Classical/Structures/Group/GSet/#5560" class="Function">act-transitive</a> <a id="5575" class="Symbol">:</a> <a id="5577" class="Symbol">(</a><a id="5578" href="/Classical/Structures/Group/GSet/#5578" class="Bound">x</a> <a id="5580" href="/Classical/Structures/Group/GSet/#5580" class="Bound">y</a> <a id="5582" class="Symbol">:</a> <a id="5584" href="/Classical/Structures/Group/GSet/#3560" class="Function">G</a><a id="5585" class="Symbol">)</a> <a id="5587" class="Symbol">→</a> <a id="5589" href="/classic/Data.Product.Base.html#1244" class="Function">Σ[</a> <a id="5592" href="/Classical/Structures/Group/GSet/#5592" class="Bound">g</a> <a id="5594" href="/classic/Data.Product.Base.html#1244" class="Function">∈</a> <a id="5596" href="/Classical/Structures/Group/GSet/#3560" class="Function">G</a> <a id="5598" href="/classic/Data.Product.Base.html#1244" class="Function">]</a> <a id="5600" class="Symbol">(</a><a id="5601" href="/Classical/Structures/Group/GSet/#5592" class="Bound">g</a> <a id="5603" href="/Classical/Structures/Group/Basic/#8890" class="Function Operator">∙</a> <a id="5605" href="/Classical/Structures/Group/GSet/#5578" class="Bound">x</a><a id="5606" class="Symbol">)</a> <a id="5608" href="/Classical/Structures/Group/Cosets/#3217" class="Function Operator">∼</a> <a id="5610" href="/Classical/Structures/Group/GSet/#5580" class="Bound">y</a>
-  <a id="5614" href="/Classical/Structures/Group/GSet/#5560" class="Function">act-transitive</a> <a id="5629" href="/Classical/Structures/Group/GSet/#5629" class="Bound">x</a> <a id="5631" href="/Classical/Structures/Group/GSet/#5631" class="Bound">y</a> <a id="5633" class="Symbol">=</a> <a id="5635" href="/Classical/Structures/Group/GSet/#5631" class="Bound">y</a> <a id="5637" href="/Classical/Structures/Group/Basic/#8890" class="Function Operator">∙</a> <a id="5639" href="/Classical/Structures/Group/GSet/#5629" class="Bound">x</a> <a id="5641" href="/Classical/Structures/Group/Basic/#9002" class="Function Operator">⁻¹</a> <a id="5644" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="5646" href="/Classical/Structures/Group/Cosets/#5445" class="Function">≈⇒∼</a> <a id="5650" class="Symbol">(</a><a id="5651" href="/classic/Algebra.Properties.Group.html#1547" class="Function">//-rightDividesˡ</a> <a id="5668" href="/Classical/Structures/Group/GSet/#5629" class="Bound">x</a> <a id="5670" href="/Classical/Structures/Group/GSet/#5631" class="Bound">y</a><a id="5671" class="Symbol">)</a>
+  <a id="CosetAction.act-transitive"></a><a id="5560" href="/Classical/Structures/Group/GSet/#5560" class="Function">act-transitive</a> <a id="5575" class="Symbol">:</a> <a id="5577" class="Symbol">(</a><a id="5578" href="/Classical/Structures/Group/GSet/#5578" class="Bound">x</a> <a id="5580" href="/Classical/Structures/Group/GSet/#5580" class="Bound">y</a> <a id="5582" class="Symbol">:</a> <a id="5584" href="/Classical/Structures/Group/GSet/#3560" class="Function">G</a><a id="5585" class="Symbol">)</a> <a id="5587" class="Symbol">→</a> <a id="5589" href="/classic/Data.Product.Base.html#1244" class="Function">Σ[</a> <a id="5592" href="/Classical/Structures/Group/GSet/#5592" class="Bound">g</a> <a id="5594" href="/classic/Data.Product.Base.html#1244" class="Function">∈</a> <a id="5596" href="/Classical/Structures/Group/GSet/#3560" class="Function">G</a> <a id="5598" href="/classic/Data.Product.Base.html#1244" class="Function">]</a> <a id="5600" class="Symbol">(</a><a id="5601" href="/Classical/Structures/Group/GSet/#5592" class="Bound">g</a> <a id="5603" href="/Classical/Structures/Group/Basic/#8871" class="Function Operator">∙</a> <a id="5605" href="/Classical/Structures/Group/GSet/#5578" class="Bound">x</a><a id="5606" class="Symbol">)</a> <a id="5608" href="/Classical/Structures/Group/Cosets/#3217" class="Function Operator">∼</a> <a id="5610" href="/Classical/Structures/Group/GSet/#5580" class="Bound">y</a>
+  <a id="5614" href="/Classical/Structures/Group/GSet/#5560" class="Function">act-transitive</a> <a id="5629" href="/Classical/Structures/Group/GSet/#5629" class="Bound">x</a> <a id="5631" href="/Classical/Structures/Group/GSet/#5631" class="Bound">y</a> <a id="5633" class="Symbol">=</a> <a id="5635" href="/Classical/Structures/Group/GSet/#5631" class="Bound">y</a> <a id="5637" href="/Classical/Structures/Group/Basic/#8871" class="Function Operator">∙</a> <a id="5639" href="/Classical/Structures/Group/GSet/#5629" class="Bound">x</a> <a id="5641" href="/Classical/Structures/Group/Basic/#8983" class="Function Operator">⁻¹</a> <a id="5644" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="5646" href="/Classical/Structures/Group/Cosets/#5445" class="Function">≈⇒∼</a> <a id="5650" class="Symbol">(</a><a id="5651" href="/classic/Algebra.Properties.Group.html#1547" class="Function">//-rightDividesˡ</a> <a id="5668" href="/Classical/Structures/Group/GSet/#5629" class="Bound">x</a> <a id="5670" href="/Classical/Structures/Group/GSet/#5631" class="Bound">y</a><a id="5671" class="Symbol">)</a>
 </pre>
 <p>Note that <code>_∙_</code> has higher precedence than <code>_∼_</code>, so we could have written
 (ε ∙ x) ∼ x as <code>ε ∙ x ∼ x</code> without ambiguity.  Also, since <code>_∙_</code> is
@@ -15596,13 +15686,13 @@ that this type is isomorphic (as a lattice) to the interval <code>[H, G]</code> 
         
         
           
-          <a href="../MinimalNormal/" class="md-footer__link md-footer__link--next" aria-label="Next: MinimalNormal">
+          <a href="../IndexAction/" class="md-footer__link md-footer__link--next" aria-label="Next: IndexAction">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                MinimalNormal
+                IndexAction
               </div>
             </div>
             <div class="md-footer__button md-icon">

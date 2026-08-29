@@ -6674,6 +6674,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -7039,6 +7043,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../Classical/Structures/Group/IndexAction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IndexAction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../Classical/Structures/Group/MinimalNormal/" class="md-nav__link">
         
   
@@ -7243,6 +7275,34 @@
     
   
     Subgroups
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Classical/Structures/Group/Wreath/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wreath
   
 
     
@@ -12694,6 +12754,8 @@
       
         
       
+        
+      
     
     
     
@@ -14491,6 +14553,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WreathNoGo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WreathNoGo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -15375,7 +15465,7 @@ conditional certificates is issue #485's concern, not this module's.</p>
 <a id="2633" class="Keyword">open</a> <a id="2638" class="Keyword">import</a> <a id="2645" href="/Classical/Small/Structures/Lattice/" class="Module">Classical.Small.Structures.Lattice</a>        <a id="2687" class="Keyword">using</a>  <a id="2694" class="Symbol">(</a> <a id="2696" href="/Classical/Small/Structures/Lattice/#1038" class="Function">Lattice</a> <a id="2704" class="Symbol">)</a>
 <a id="2706" class="Keyword">open</a> <a id="2711" class="Keyword">import</a> <a id="2718" href="/Classical/Structures/Lattice/Dual/" class="Module">Classical.Structures.Lattice.Dual</a>         <a id="2760" class="Keyword">using</a>  <a id="2767" class="Symbol">(</a> <a id="2769" href="/Classical/Structures/Lattice/Dual/#5532" class="Function">dualLattice</a> <a id="2781" class="Symbol">)</a>
 <a id="2783" class="Keyword">open</a> <a id="2788" class="Keyword">import</a> <a id="2795" href="/Classical/Structures/Lattice/OrdinalSum/" class="Module">Classical.Structures.Lattice.OrdinalSum</a>   <a id="2837" class="Keyword">using</a>  <a id="2844" class="Symbol">(</a> <a id="2846" href="/Classical/Structures/Lattice/OrdinalSum/#21780" class="Function">ordinalSum</a> <a id="2857" class="Symbol">)</a>
-<a id="2859" class="Keyword">open</a> <a id="2864" class="Keyword">import</a> <a id="2871" href="/FLRP/Assumptions/" class="Module">FLRP.Assumptions</a>                          <a id="2913" class="Keyword">using</a>  <a id="2920" class="Symbol">(</a> <a id="2922" href="/FLRP/Assumptions/#13170" class="Function">KurzweilNetterDuality</a> <a id="2944" class="Symbol">)</a>
+<a id="2859" class="Keyword">open</a> <a id="2864" class="Keyword">import</a> <a id="2871" href="/FLRP/Assumptions/" class="Module">FLRP.Assumptions</a>                          <a id="2913" class="Keyword">using</a>  <a id="2920" class="Symbol">(</a> <a id="2922" href="/FLRP/Assumptions/#13417" class="Function">KurzweilNetterDuality</a> <a id="2944" class="Symbol">)</a>
 <a id="2946" class="Keyword">open</a> <a id="2951" class="Keyword">import</a> <a id="2958" href="/FLRP/Problem/" class="Module">FLRP.Problem</a>                              <a id="3000" class="Keyword">using</a>  <a id="3007" class="Symbol">(</a> <a id="3009" href="/FLRP/Problem/#15530" class="Function">chain₂-lattice</a> <a id="3024" class="Symbol">)</a>
 <a id="3026" class="Keyword">open</a> <a id="3031" class="Keyword">import</a> <a id="3038" href="/FLRP/Representable/" class="Module">FLRP.Representable</a>                        <a id="3080" class="Keyword">using</a>  <a id="3087" class="Symbol">(</a> <a id="3089" href="/FLRP/Representable/#8979" class="Record">Representableᵈ</a>
                                                              <a id="3165" class="Symbol">;</a> <a id="3167" href="/FLRP/Representable/#19801" class="Function">chain₂-Representableᵈ</a> <a id="3189" class="Symbol">)</a>
@@ -15420,7 +15510,7 @@ is instantiation — deliberately so: the mathematical content lives in the
 <em>named, cited</em> hypothesis, and every consumer of this corollary displays its
 classical debt in its own type.</p>
 <pre class="Agda"><a id="5152" class="Comment">-- The Kurzweil–Netter closure, conditional on the registered assumption.</a>
-<a id="dual-Representableᵈ"></a><a id="5226" href="/FLRP/Closure/Basic/#5226" class="Function">dual-Representableᵈ</a> <a id="5246" class="Symbol">:</a> <a id="5248" href="/FLRP/Assumptions/#13170" class="Function">KurzweilNetterDuality</a>
+<a id="dual-Representableᵈ"></a><a id="5226" href="/FLRP/Closure/Basic/#5226" class="Function">dual-Representableᵈ</a> <a id="5246" class="Symbol">:</a> <a id="5248" href="/FLRP/Assumptions/#13417" class="Function">KurzweilNetterDuality</a>
   <a id="5272" class="Symbol">→</a> <a id="5274" class="Symbol">(</a><a id="5275" href="/FLRP/Closure/Basic/#5275" class="Bound">𝑳</a> <a id="5277" class="Symbol">:</a> <a id="5279" href="/Classical/Small/Structures/Lattice/#1038" class="Function">Lattice</a><a id="5286" class="Symbol">)</a> <a id="5288" class="Symbol">→</a> <a id="5290" href="/FLRP/Representable/#8979" class="Record">Representableᵈ</a> <a id="5305" href="/FLRP/Closure/Basic/#5275" class="Bound">𝑳</a> <a id="5307" class="Symbol">→</a> <a id="5309" href="/FLRP/Representable/#8979" class="Record">Representableᵈ</a> <a id="5324" class="Symbol">(</a><a id="5325" href="/Classical/Structures/Lattice/Dual/#5532" class="Function">dualLattice</a> <a id="5337" href="/FLRP/Closure/Basic/#5275" class="Bound">𝑳</a><a id="5338" class="Symbol">)</a>
 <a id="5340" href="/FLRP/Closure/Basic/#5226" class="Function">dual-Representableᵈ</a> <a id="5360" href="/FLRP/Closure/Basic/#5360" class="Bound">knd</a> <a id="5364" href="/FLRP/Closure/Basic/#5364" class="Bound">𝑳</a> <a id="5366" class="Symbol">=</a> <a id="5368" href="/FLRP/Closure/Basic/#5360" class="Bound">knd</a> <a id="5372" href="/FLRP/Closure/Basic/#5364" class="Bound">𝑳</a>
 </pre>

@@ -6674,6 +6674,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -7039,6 +7043,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../Classical/Structures/Group/IndexAction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IndexAction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../Classical/Structures/Group/MinimalNormal/" class="md-nav__link">
         
   
@@ -7243,6 +7275,34 @@
     
   
     Subgroups
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Classical/Structures/Group/Wreath/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wreath
   
 
     
@@ -12806,6 +12866,8 @@
       
         
       
+        
+      
     
     
     
@@ -14515,6 +14577,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../FLRP/WreathNoGo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WreathNoGo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -15479,7 +15569,7 @@ type-check.</p>
   <a id="3295" class="Symbol">(</a><a id="3296" href="/classic/Relation.Nullary.Decidable.Core.html#5912" class="Function">from-yes</a> <a id="3305" class="Symbol">(</a><a id="3306" href="/Overture/Operations/Properties/#2901" class="Function">RightIdentity?</a> <a id="3321" href="/Examples/Classical/Groups/KleinFourGroup/#2652" class="Function Operator">_·_</a> <a id="3325" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a><a id="3327" class="Symbol">))</a> <a id="3330" class="Symbol">(</a><a id="3331" href="/classic/Relation.Nullary.Decidable.Core.html#5912" class="Function">from-yes</a> <a id="3340" class="Symbol">(</a><a id="3341" href="/Overture/Operations/Properties/#3069" class="Function">LeftInverse?</a>   <a id="3356" href="/Examples/Classical/Groups/KleinFourGroup/#2652" class="Function Operator">_·_</a> <a id="3360" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="3363" href="/Examples/Classical/Groups/KleinFourGroup/#2773" class="Function">v4-inv</a><a id="3369" class="Symbol">))</a>
   <a id="3374" class="Symbol">(</a><a id="3375" href="/classic/Relation.Nullary.Decidable.Core.html#5912" class="Function">from-yes</a> <a id="3384" class="Symbol">(</a><a id="3385" href="/Overture/Operations/Properties/#3203" class="Function">RightInverse?</a>  <a id="3400" href="/Examples/Classical/Groups/KleinFourGroup/#2652" class="Function Operator">_·_</a> <a id="3404" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="3407" href="/Examples/Classical/Groups/KleinFourGroup/#2773" class="Function">v4-inv</a><a id="3413" class="Symbol">))</a>
 
-<a id="3417" class="Keyword">open</a> <a id="3422" href="/Classical/Structures/Group/Basic/#8660" class="Module">Polymorphic.Group-Op</a> <a id="3443" href="/Examples/Classical/Groups/KleinFourGroup/#3163" class="Function">v4-group</a> <a id="3452" class="Keyword">using</a> <a id="3458" class="Symbol">(</a> <a id="3460" href="/Classical/Structures/Group/Basic/#8890" class="Function Operator">_∙_</a> <a id="3464" class="Symbol">;</a> <a id="3466" href="/Classical/Structures/Group/Basic/#8950" class="Function">ε</a> <a id="3468" class="Symbol">;</a> <a id="3470" href="/Classical/Structures/Group/Basic/#9002" class="Function Operator">_⁻¹</a> <a id="3474" class="Symbol">)</a>
+<a id="3417" class="Keyword">open</a> <a id="3422" href="/Classical/Structures/Group/Basic/#8641" class="Module">Polymorphic.Group-Op</a> <a id="3443" href="/Examples/Classical/Groups/KleinFourGroup/#3163" class="Function">v4-group</a> <a id="3452" class="Keyword">using</a> <a id="3458" class="Symbol">(</a> <a id="3460" href="/Classical/Structures/Group/Basic/#8871" class="Function Operator">_∙_</a> <a id="3464" class="Symbol">;</a> <a id="3466" href="/Classical/Structures/Group/Basic/#8931" class="Function">ε</a> <a id="3468" class="Symbol">;</a> <a id="3470" href="/Classical/Structures/Group/Basic/#8983" class="Function Operator">_⁻¹</a> <a id="3474" class="Symbol">)</a>
 </pre>
 <h4 id="v4-is-abelian-and-has-exponent-2"><code>V₄</code> is abelian and has exponent 2<a class="headerlink" href="#v4-is-abelian-and-has-exponent-2" title="Anchor link to this section">&para;</a></h4>
 <p><code>·-comm</code> is decided like the axioms.  Exponent 2 needs no separate lemma: the
@@ -15492,19 +15582,19 @@ identity map on the nose.</p>
 <p>The <code class="AgdaModule">Group-Op</code> accessors interpret to the tabulated operation, to
 <code class="AgdaInductiveConstructor">0F</code>, and to the identity inverse map on the nose; discharged
 by <code class="AgdaInductiveConstructor">refl</code>.  In particular every element is its own inverse.</p>
-<pre class="Agda"><a id="∙-is-·"></a><a id="4073" href="/Examples/Classical/Groups/KleinFourGroup/#4073" class="Function">∙-is-·</a> <a id="4080" class="Symbol">:</a> <a id="4082" class="Symbol">∀</a> <a id="4084" class="Symbol">(</a><a id="4085" href="/Examples/Classical/Groups/KleinFourGroup/#4085" class="Bound">a</a> <a id="4087" href="/Examples/Classical/Groups/KleinFourGroup/#4087" class="Bound">b</a> <a id="4089" class="Symbol">:</a> <a id="4091" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="4095" class="Number">4</a><a id="4096" class="Symbol">)</a> <a id="4098" class="Symbol">→</a> <a id="4100" href="/Examples/Classical/Groups/KleinFourGroup/#4085" class="Bound">a</a> <a id="4102" href="/Classical/Structures/Group/Basic/#8890" class="Function Operator">∙</a> <a id="4104" href="/Examples/Classical/Groups/KleinFourGroup/#4087" class="Bound">b</a> <a id="4106" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="4108" href="/Examples/Classical/Groups/KleinFourGroup/#4085" class="Bound">a</a> <a id="4110" href="/Examples/Classical/Groups/KleinFourGroup/#2652" class="Function Operator">·</a> <a id="4112" href="/Examples/Classical/Groups/KleinFourGroup/#4087" class="Bound">b</a>
+<pre class="Agda"><a id="∙-is-·"></a><a id="4073" href="/Examples/Classical/Groups/KleinFourGroup/#4073" class="Function">∙-is-·</a> <a id="4080" class="Symbol">:</a> <a id="4082" class="Symbol">∀</a> <a id="4084" class="Symbol">(</a><a id="4085" href="/Examples/Classical/Groups/KleinFourGroup/#4085" class="Bound">a</a> <a id="4087" href="/Examples/Classical/Groups/KleinFourGroup/#4087" class="Bound">b</a> <a id="4089" class="Symbol">:</a> <a id="4091" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="4095" class="Number">4</a><a id="4096" class="Symbol">)</a> <a id="4098" class="Symbol">→</a> <a id="4100" href="/Examples/Classical/Groups/KleinFourGroup/#4085" class="Bound">a</a> <a id="4102" href="/Classical/Structures/Group/Basic/#8871" class="Function Operator">∙</a> <a id="4104" href="/Examples/Classical/Groups/KleinFourGroup/#4087" class="Bound">b</a> <a id="4106" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="4108" href="/Examples/Classical/Groups/KleinFourGroup/#4085" class="Bound">a</a> <a id="4110" href="/Examples/Classical/Groups/KleinFourGroup/#2652" class="Function Operator">·</a> <a id="4112" href="/Examples/Classical/Groups/KleinFourGroup/#4087" class="Bound">b</a>
 <a id="4114" href="/Examples/Classical/Groups/KleinFourGroup/#4073" class="Function">∙-is-·</a> <a id="4121" href="/Examples/Classical/Groups/KleinFourGroup/#4121" class="Bound">a</a> <a id="4123" href="/Examples/Classical/Groups/KleinFourGroup/#4123" class="Bound">b</a> <a id="4125" class="Symbol">=</a> <a id="4127" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a>
 
-<a id="ε-is-0"></a><a id="4133" href="/Examples/Classical/Groups/KleinFourGroup/#4133" class="Function">ε-is-0</a> <a id="4140" class="Symbol">:</a> <a id="4142" href="/Classical/Structures/Group/Basic/#8950" class="Function">ε</a> <a id="4144" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="4146" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a>
+<a id="ε-is-0"></a><a id="4133" href="/Examples/Classical/Groups/KleinFourGroup/#4133" class="Function">ε-is-0</a> <a id="4140" class="Symbol">:</a> <a id="4142" href="/Classical/Structures/Group/Basic/#8931" class="Function">ε</a> <a id="4144" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="4146" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a>
 <a id="4149" href="/Examples/Classical/Groups/KleinFourGroup/#4133" class="Function">ε-is-0</a> <a id="4156" class="Symbol">=</a> <a id="4158" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a>
 
-<a id="⁻¹-is-self"></a><a id="4164" href="/Examples/Classical/Groups/KleinFourGroup/#4164" class="Function">⁻¹-is-self</a> <a id="4175" class="Symbol">:</a> <a id="4177" class="Symbol">∀</a> <a id="4179" class="Symbol">(</a><a id="4180" href="/Examples/Classical/Groups/KleinFourGroup/#4180" class="Bound">a</a> <a id="4182" class="Symbol">:</a> <a id="4184" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="4188" class="Number">4</a><a id="4189" class="Symbol">)</a> <a id="4191" class="Symbol">→</a> <a id="4193" href="/Examples/Classical/Groups/KleinFourGroup/#4180" class="Bound">a</a> <a id="4195" href="/Classical/Structures/Group/Basic/#9002" class="Function Operator">⁻¹</a> <a id="4198" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="4200" href="/Examples/Classical/Groups/KleinFourGroup/#4180" class="Bound">a</a>
+<a id="⁻¹-is-self"></a><a id="4164" href="/Examples/Classical/Groups/KleinFourGroup/#4164" class="Function">⁻¹-is-self</a> <a id="4175" class="Symbol">:</a> <a id="4177" class="Symbol">∀</a> <a id="4179" class="Symbol">(</a><a id="4180" href="/Examples/Classical/Groups/KleinFourGroup/#4180" class="Bound">a</a> <a id="4182" class="Symbol">:</a> <a id="4184" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="4188" class="Number">4</a><a id="4189" class="Symbol">)</a> <a id="4191" class="Symbol">→</a> <a id="4193" href="/Examples/Classical/Groups/KleinFourGroup/#4180" class="Bound">a</a> <a id="4195" href="/Classical/Structures/Group/Basic/#8983" class="Function Operator">⁻¹</a> <a id="4198" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="4200" href="/Examples/Classical/Groups/KleinFourGroup/#4180" class="Bound">a</a>
 <a id="4202" href="/Examples/Classical/Groups/KleinFourGroup/#4164" class="Function">⁻¹-is-self</a> <a id="4213" href="/Examples/Classical/Groups/KleinFourGroup/#4213" class="Bound">a</a> <a id="4215" class="Symbol">=</a> <a id="4217" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a>
 </pre>
 <p>The bundle bridge round-trips on <code class="AgdaFunction">v4-group</code> pointwise on the operation,
 the identity, and the inverse.</p>
-<pre class="Agda"><a id="4354" class="Keyword">open</a> <a id="4359" href="/Classical/Structures/Group/Basic/#8660" class="Module">Polymorphic.Group-Op</a> <a id="4380" href="/Classical/Bundles/Group/#3103" class="Function Operator">⟪</a> <a id="4382" href="/Classical/Bundles/Group/#2048" class="Function Operator">⟨</a> <a id="4384" href="/Examples/Classical/Groups/KleinFourGroup/#3163" class="Function">v4-group</a> <a id="4393" href="/Classical/Bundles/Group/#2048" class="Function Operator">⟩ᵍᵖ</a> <a id="4397" href="/Classical/Bundles/Group/#3103" class="Function Operator">⟫ᵍᵖ</a> <a id="4401" class="Keyword">using</a> <a id="4407" class="Symbol">()</a>
-  <a id="4412" class="Keyword">renaming</a> <a id="4421" class="Symbol">(</a> <a id="4423" href="/Classical/Structures/Group/Basic/#8890" class="Function Operator">_∙_</a> <a id="4427" class="Symbol">to</a> <a id="4430" class="Function Operator">_·′_</a> <a id="4435" class="Symbol">;</a> <a id="4437" href="/Classical/Structures/Group/Basic/#8950" class="Function">ε</a> <a id="4439" class="Symbol">to</a> <a id="4442" class="Function">ε′</a> <a id="4445" class="Symbol">;</a> <a id="4447" href="/Classical/Structures/Group/Basic/#9002" class="Function Operator">_⁻¹</a> <a id="4451" class="Symbol">to</a> <a id="4454" class="Function Operator">_⁻¹′</a> <a id="4459" class="Symbol">)</a>
+<pre class="Agda"><a id="4354" class="Keyword">open</a> <a id="4359" href="/Classical/Structures/Group/Basic/#8641" class="Module">Polymorphic.Group-Op</a> <a id="4380" href="/Classical/Bundles/Group/#3103" class="Function Operator">⟪</a> <a id="4382" href="/Classical/Bundles/Group/#2048" class="Function Operator">⟨</a> <a id="4384" href="/Examples/Classical/Groups/KleinFourGroup/#3163" class="Function">v4-group</a> <a id="4393" href="/Classical/Bundles/Group/#2048" class="Function Operator">⟩ᵍᵖ</a> <a id="4397" href="/Classical/Bundles/Group/#3103" class="Function Operator">⟫ᵍᵖ</a> <a id="4401" class="Keyword">using</a> <a id="4407" class="Symbol">()</a>
+  <a id="4412" class="Keyword">renaming</a> <a id="4421" class="Symbol">(</a> <a id="4423" href="/Classical/Structures/Group/Basic/#8871" class="Function Operator">_∙_</a> <a id="4427" class="Symbol">to</a> <a id="4430" class="Function Operator">_·′_</a> <a id="4435" class="Symbol">;</a> <a id="4437" href="/Classical/Structures/Group/Basic/#8931" class="Function">ε</a> <a id="4439" class="Symbol">to</a> <a id="4442" class="Function">ε′</a> <a id="4445" class="Symbol">;</a> <a id="4447" href="/Classical/Structures/Group/Basic/#8983" class="Function Operator">_⁻¹</a> <a id="4451" class="Symbol">to</a> <a id="4454" class="Function Operator">_⁻¹′</a> <a id="4459" class="Symbol">)</a>
 
 <a id="roundtrip-∙"></a><a id="4462" href="/Examples/Classical/Groups/KleinFourGroup/#4462" class="Function">roundtrip-∙</a> <a id="4474" class="Symbol">:</a> <a id="4476" class="Symbol">∀</a> <a id="4478" class="Symbol">(</a><a id="4479" href="/Examples/Classical/Groups/KleinFourGroup/#4479" class="Bound">a</a> <a id="4481" href="/Examples/Classical/Groups/KleinFourGroup/#4481" class="Bound">b</a> <a id="4483" class="Symbol">:</a> <a id="4485" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="4489" class="Number">4</a><a id="4490" class="Symbol">)</a> <a id="4492" class="Symbol">→</a> <a id="4494" href="/Examples/Classical/Groups/KleinFourGroup/#4479" class="Bound">a</a> <a id="4496" href="/Examples/Classical/Groups/KleinFourGroup/#4430" class="Function Operator">·′</a> <a id="4499" href="/Examples/Classical/Groups/KleinFourGroup/#4481" class="Bound">b</a> <a id="4501" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="4503" href="/Examples/Classical/Groups/KleinFourGroup/#4479" class="Bound">a</a> <a id="4505" href="/Examples/Classical/Groups/KleinFourGroup/#2652" class="Function Operator">·</a> <a id="4507" href="/Examples/Classical/Groups/KleinFourGroup/#4481" class="Bound">b</a>
 <a id="4509" href="/Examples/Classical/Groups/KleinFourGroup/#4462" class="Function">roundtrip-∙</a> <a id="4521" href="/Examples/Classical/Groups/KleinFourGroup/#4521" class="Bound">a</a> <a id="4523" href="/Examples/Classical/Groups/KleinFourGroup/#4523" class="Bound">b</a> <a id="4525" class="Symbol">=</a> <a id="4527" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a>

@@ -33,15 +33,15 @@ Two standing warnings apply to everything under this namespace.
 
 **Current submodules**.
 
-+  [FLRP.Problem][] — the representability predicate `Representable`, the
++  [FLRP.Problem][]: the representability predicate `Representable`, the
    formal statement of the problem, the first worked instance (the one-element
    chain), and the constructive no-go theorem for the two-element chain.
-+  [FLRP.Enforceable][] — group representability of a lattice, the
++  [FLRP.Enforceable][]: group representability of a lattice, the
    interval-enforceability classification (IE, cf-IE, min-IE), the fattening
    isomorphism `[H × K, G × K] ≅ [H, G]`, the no-contradictory-IE theorem
    (the research note&#39;s Lemma 3.2), and hypothesis-parameterized statements of
    Lemma 3.1 and the parachute meta-theorem.
-+  [FLRP.Bridge][] — the easy (constructive) direction of the Pálfy–Pudlák
++  [FLRP.Bridge][]: the easy (constructive) direction of the Pálfy–Pudlák
    correspondence, at both layers: the Layer-S order isomorphism
    `Con (𝒢 ↷ 𝒢/H) ≅ [H, 𝒢]` between the semantic congruence lattice of the
    transitive G-set of cosets and the respecting upper interval in the subgroup
@@ -50,38 +50,48 @@ Two standing warnings apply to everything under this namespace.
    assumption, together with the representability corollaries — in particular
    `GroupRepresentable→Representableᵈ`: every group-representable lattice is
    decidably representable (issue #454).
-+  [FLRP.Representable][] — the Layer-D reformulation of the problem:
++  [FLRP.Representable][]: the Layer-D reformulation of the problem:
    decidable representability `Representableᵈ`, the statement
    `FLRP-Statementᵈ`, and the constructive two-element-chain representation
    `chain₂-Representableᵈ` (the object the no-go theorem forbids at Layer S,
    attained here with no postulate).
-+  [FLRP.Assumptions][] — the registry of classical theorems imported as
++  [FLRP.Assumptions][]: the registry of classical theorems imported as
    explicit hypotheses (never postulates), keeping the tree honest under
    `--safe`; Entry 1 is the congruence-completeness bridge
    `CongruenceCompleteness`, the single Layer-S→Layer-D assumption of ADR-008,
    and Entry 2 is Kurzweil–Netter duality, consumed by the WP-5 closure
    toolkit.
-+  [FLRP.Closure][] — the WP-5 closure toolkit: product and ordinal-sum
++  [FLRP.Closure][]: the WP-5 closure toolkit: product and ordinal-sum
    closure of `Representableᵈ` (issue #456), the adjoin-a-new-extremum
    corollaries at `chain₂`, and the duality corollary `dual-Representableᵈ`
    conditional on the registry&#39;s Entry 2.
-+  [FLRP.LayerBridge][] — the cross-layer bridge: under the congruence-completeness
++  [FLRP.LayerBridge][]: the cross-layer bridge: under the congruence-completeness
    assumption, the semantic and decidable congruence posets are order-isomorphic
    (`conDecIso`), whence `Representable 𝑳 ↔ Representableᵈ 𝑳`.
-+  [FLRP.Certificates][] — machine-checked representation certificates: the
++  [FLRP.Certificates][]: machine-checked representation certificates: the
    assembly turning a checked whole-lattice certificate (Freese traces and
    pointer tables, verified search-free by the
    `Setoid.Congruences.Certificates` checkers) into a `Representableᵈ` witness
    for the target lattice, so external searches (GAP, UACalc, SAT) enter the
    corpus only through the checker.
-+  [FLRP.L7EqSix][] — the explicit Pudlák–Tůma witness for the distinguished
++  [FLRP.L7EqSix][]: the explicit Pudlák–Tůma witness for the distinguished
    open instance: seven partitions of a six-element set (the minimum possible)
    forming a sublattice of `Eq(6)` isomorphic to `L7`, with meets, join upper
    bounds, injectivity, and normal forms decided over the finite carrier and
    join least-ness proved against arbitrary equivalence relations via bounded
    alternating chains (issue #484; session note `docs/notes/flrp-l7-eq6.md`).
 
-+  [FLRP.Reductions][] — the RP-2 **enforcement catalog**: the literature&#39;s
++  [FLRP.WreathNoGo][]: the RP-4 **wreath no-go**: the note&#39;s Lemma 3.3 by
+   the double Kurzweil construction (a property cf-IE by a group-representable
+   lattice has wreath products `S ≀ Ū` over every admissible base), with the
+   core-freeness preservation proved in [Classical.Structures.Group.Wreath][]
+   and the coset action&#39;s faithfulness derived from core-freeness; the
+   omission corollary for wreath-omitting classes; the joint-wreath-richness
+   constraint on a contradictory pair; and the statement of RP-4&#39;s dead-end
+   question, reduced formally to statement (C).  Consumes Entry 5 of the
+   assumptions registry; design note `docs/notes/flrp-rp4-wreath.md`.
+
++  [FLRP.Reductions][]: the RP-2 **enforcement catalog**: the literature&#39;s
    &quot;an interval of this shape forces a group of this kind&quot; theorems, each recast
    as a precise (cf-/min-)IE statement, with the vacuity discipline tracked
    entry by entry.  Entries 1–3 (the note&#39;s classes `𝒢₂`, `𝒢₃`, `𝒢₄`) are
@@ -96,24 +106,25 @@ Two standing warnings apply to everything under this namespace.
 
 +  `FLRP.Intervals` (intervals in subgroup lattices and core-free normalization).
 
-</a><a id="5503" class="Markup">```agda
-</a><a id="5511" class="Symbol">{-#</a> <a id="5515" class="Keyword">OPTIONS</a> <a id="5523" class="Pragma">--cubical-compatible</a> <a id="5544" class="Pragma">--exact-split</a> <a id="5558" class="Pragma">--safe</a> <a id="5565" class="Symbol">#-}</a>
+</a><a id="6170" class="Markup">```agda
+</a><a id="6178" class="Symbol">{-#</a> <a id="6182" class="Keyword">OPTIONS</a> <a id="6190" class="Pragma">--cubical-compatible</a> <a id="6211" class="Pragma">--exact-split</a> <a id="6225" class="Pragma">--safe</a> <a id="6232" class="Symbol">#-}</a>
 
-<a id="5570" class="Keyword">module</a> <a id="5577" href="FLRP.html" class="Module">FLRP</a> <a id="5582" class="Keyword">where</a>
+<a id="6237" class="Keyword">module</a> <a id="6244" href="FLRP.html" class="Module">FLRP</a> <a id="6249" class="Keyword">where</a>
 
-<a id="5589" class="Keyword">open</a> <a id="5594" class="Keyword">import</a> <a id="5601" href="FLRP.Problem.html" class="Module">FLRP.Problem</a>        <a id="5621" class="Keyword">public</a>
-<a id="5628" class="Keyword">open</a> <a id="5633" class="Keyword">import</a> <a id="5640" href="FLRP.Enforceable.html" class="Module">FLRP.Enforceable</a>    <a id="5660" class="Keyword">public</a>
-<a id="5667" class="Keyword">open</a> <a id="5672" class="Keyword">import</a> <a id="5679" href="FLRP.Parachute.html" class="Module">FLRP.Parachute</a>      <a id="5699" class="Keyword">public</a>
-<a id="5706" class="Keyword">open</a> <a id="5711" class="Keyword">import</a> <a id="5718" href="FLRP.Parachute.Representation.html" class="Module">FLRP.Parachute.Representation</a> <a id="5748" class="Keyword">public</a>
-<a id="5755" class="Keyword">open</a> <a id="5760" class="Keyword">import</a> <a id="5767" href="FLRP.Parachute.Theorems.html" class="Module">FLRP.Parachute.Theorems</a>       <a id="5797" class="Keyword">public</a>
-<a id="5804" class="Keyword">open</a> <a id="5809" class="Keyword">import</a> <a id="5816" href="FLRP.Reductions.html" class="Module">FLRP.Reductions</a>     <a id="5836" class="Keyword">public</a>
-<a id="5843" class="Keyword">open</a> <a id="5848" class="Keyword">import</a> <a id="5855" href="FLRP.Bridge.html" class="Module">FLRP.Bridge</a>         <a id="5875" class="Keyword">public</a>
-<a id="5882" class="Keyword">open</a> <a id="5887" class="Keyword">import</a> <a id="5894" href="FLRP.Representable.html" class="Module">FLRP.Representable</a>  <a id="5914" class="Keyword">public</a>
-<a id="5921" class="Keyword">open</a> <a id="5926" class="Keyword">import</a> <a id="5933" href="FLRP.Assumptions.html" class="Module">FLRP.Assumptions</a>    <a id="5953" class="Keyword">public</a>
-<a id="5960" class="Keyword">open</a> <a id="5965" class="Keyword">import</a> <a id="5972" href="FLRP.Closure.html" class="Module">FLRP.Closure</a>        <a id="5992" class="Keyword">public</a>
-<a id="5999" class="Keyword">open</a> <a id="6004" class="Keyword">import</a> <a id="6011" href="FLRP.KurzweilInterval.html" class="Module">FLRP.KurzweilInterval</a> <a id="6033" class="Keyword">public</a>
-<a id="6040" class="Keyword">open</a> <a id="6045" class="Keyword">import</a> <a id="6052" href="FLRP.LayerBridge.html" class="Module">FLRP.LayerBridge</a>    <a id="6072" class="Keyword">public</a>
-<a id="6079" class="Keyword">open</a> <a id="6084" class="Keyword">import</a> <a id="6091" href="FLRP.Certificates.html" class="Module">FLRP.Certificates</a>   <a id="6111" class="Keyword">public</a>
-<a id="6118" class="Keyword">open</a> <a id="6123" class="Keyword">import</a> <a id="6130" href="FLRP.L7EqSix.html" class="Module">FLRP.L7EqSix</a>        <a id="6150" class="Keyword">public</a>
-<a id="6157" class="Markup">```
+<a id="6256" class="Keyword">open</a> <a id="6261" class="Keyword">import</a> <a id="6268" href="FLRP.Problem.html" class="Module">FLRP.Problem</a>        <a id="6288" class="Keyword">public</a>
+<a id="6295" class="Keyword">open</a> <a id="6300" class="Keyword">import</a> <a id="6307" href="FLRP.Enforceable.html" class="Module">FLRP.Enforceable</a>    <a id="6327" class="Keyword">public</a>
+<a id="6334" class="Keyword">open</a> <a id="6339" class="Keyword">import</a> <a id="6346" href="FLRP.Parachute.html" class="Module">FLRP.Parachute</a>      <a id="6366" class="Keyword">public</a>
+<a id="6373" class="Keyword">open</a> <a id="6378" class="Keyword">import</a> <a id="6385" href="FLRP.Parachute.Representation.html" class="Module">FLRP.Parachute.Representation</a> <a id="6415" class="Keyword">public</a>
+<a id="6422" class="Keyword">open</a> <a id="6427" class="Keyword">import</a> <a id="6434" href="FLRP.Parachute.Theorems.html" class="Module">FLRP.Parachute.Theorems</a>       <a id="6464" class="Keyword">public</a>
+<a id="6471" class="Keyword">open</a> <a id="6476" class="Keyword">import</a> <a id="6483" href="FLRP.Reductions.html" class="Module">FLRP.Reductions</a>     <a id="6503" class="Keyword">public</a>
+<a id="6510" class="Keyword">open</a> <a id="6515" class="Keyword">import</a> <a id="6522" href="FLRP.Bridge.html" class="Module">FLRP.Bridge</a>         <a id="6542" class="Keyword">public</a>
+<a id="6549" class="Keyword">open</a> <a id="6554" class="Keyword">import</a> <a id="6561" href="FLRP.Representable.html" class="Module">FLRP.Representable</a>  <a id="6581" class="Keyword">public</a>
+<a id="6588" class="Keyword">open</a> <a id="6593" class="Keyword">import</a> <a id="6600" href="FLRP.Assumptions.html" class="Module">FLRP.Assumptions</a>    <a id="6620" class="Keyword">public</a>
+<a id="6627" class="Keyword">open</a> <a id="6632" class="Keyword">import</a> <a id="6639" href="FLRP.Closure.html" class="Module">FLRP.Closure</a>        <a id="6659" class="Keyword">public</a>
+<a id="6666" class="Keyword">open</a> <a id="6671" class="Keyword">import</a> <a id="6678" href="FLRP.KurzweilInterval.html" class="Module">FLRP.KurzweilInterval</a> <a id="6700" class="Keyword">public</a>
+<a id="6707" class="Keyword">open</a> <a id="6712" class="Keyword">import</a> <a id="6719" href="FLRP.LayerBridge.html" class="Module">FLRP.LayerBridge</a>    <a id="6739" class="Keyword">public</a>
+<a id="6746" class="Keyword">open</a> <a id="6751" class="Keyword">import</a> <a id="6758" href="FLRP.WreathNoGo.html" class="Module">FLRP.WreathNoGo</a>     <a id="6778" class="Keyword">public</a>
+<a id="6785" class="Keyword">open</a> <a id="6790" class="Keyword">import</a> <a id="6797" href="FLRP.Certificates.html" class="Module">FLRP.Certificates</a>   <a id="6817" class="Keyword">public</a>
+<a id="6824" class="Keyword">open</a> <a id="6829" class="Keyword">import</a> <a id="6836" href="FLRP.L7EqSix.html" class="Module">FLRP.L7EqSix</a>        <a id="6856" class="Keyword">public</a>
+<a id="6863" class="Markup">```
 </a></pre></body></html>

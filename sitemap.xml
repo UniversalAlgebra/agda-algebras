@@ -345,6 +345,10 @@
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/IndexAction/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
          <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/MinimalNormal/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
@@ -374,6 +378,10 @@
     </url>
     <url>
          <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/Subgroups/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/Wreath/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
@@ -662,6 +670,10 @@
     </url>
     <url>
          <loc>https://agda-algebras.universalalgebra.org/FLRP/Representable/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/FLRP/WreathNoGo/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>

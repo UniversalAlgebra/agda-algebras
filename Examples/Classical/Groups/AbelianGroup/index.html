@@ -6674,6 +6674,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -7039,6 +7043,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../Classical/Structures/Group/IndexAction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IndexAction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../Classical/Structures/Group/MinimalNormal/" class="md-nav__link">
         
   
@@ -7243,6 +7275,34 @@
     
   
     Subgroups
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Classical/Structures/Group/Wreath/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wreath
   
 
     
@@ -12784,6 +12844,8 @@
       
         
       
+        
+      
     
     
     
@@ -14493,6 +14555,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../FLRP/WreathNoGo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WreathNoGo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -15361,23 +15451,23 @@ witnessing commutativity via stdlib's <code>+-comm</code>.</p>
 <a id="1569" href="/Examples/Classical/Groups/AbelianGroup/#1539" class="Function">ℤ-abelianGroup</a> <a id="1584" class="Symbol">=</a>
   <a id="1588" href="/Classical/Small/Structures/AbelianGroup/#1041" class="Function">eqsToAbelianGroup</a> <a id="1606" href="/classic/Agda.Builtin.Int.html#245" class="Datatype">ℤ</a> <a id="1608" href="/classic/Data.Integer.Base.html#5064" class="Function Operator">_+_</a> <a id="1612" href="/classic/Data.Integer.Base.html#1545" class="Function">0ℤ</a> <a id="1615" href="/classic/Data.Integer.Base.html#4719" class="Function Operator">-_</a> <a id="1618" href="/classic/Data.Integer.Properties.html#28816" class="Function">+-assoc</a> <a id="1626" href="/classic/Data.Integer.Properties.html#27061" class="Function">+-identityˡ</a> <a id="1638" href="/classic/Data.Integer.Properties.html#27152" class="Function">+-identityʳ</a> <a id="1650" href="/classic/Data.Integer.Properties.html#30829" class="Function">+-inverseˡ</a> <a id="1661" href="/classic/Data.Integer.Properties.html#30964" class="Function">+-inverseʳ</a> <a id="1672" href="/classic/Data.Integer.Properties.html#26859" class="Function">+-comm</a>
 
-<a id="1680" class="Keyword">open</a> <a id="1685" href="/Classical/Structures/Group/AbelianGroup/#4181" class="Module">Polymorphic.AbelianGroup-Op</a> <a id="1713" href="/Examples/Classical/Groups/AbelianGroup/#1539" class="Function">ℤ-abelianGroup</a> <a id="1728" class="Keyword">using</a> <a id="1734" class="Symbol">(</a> <a id="1736" href="/Classical/Structures/Group/Basic/#8890" class="Function Operator">_∙_</a> <a id="1740" class="Symbol">;</a> <a id="1742" href="/Classical/Structures/Group/Basic/#8950" class="Function">ε</a> <a id="1744" class="Symbol">;</a> <a id="1746" href="/Classical/Structures/Group/Basic/#9002" class="Function Operator">_⁻¹</a> <a id="1750" class="Symbol">)</a>
+<a id="1680" class="Keyword">open</a> <a id="1685" href="/Classical/Structures/Group/AbelianGroup/#4181" class="Module">Polymorphic.AbelianGroup-Op</a> <a id="1713" href="/Examples/Classical/Groups/AbelianGroup/#1539" class="Function">ℤ-abelianGroup</a> <a id="1728" class="Keyword">using</a> <a id="1734" class="Symbol">(</a> <a id="1736" href="/Classical/Structures/Group/Basic/#8871" class="Function Operator">_∙_</a> <a id="1740" class="Symbol">;</a> <a id="1742" href="/Classical/Structures/Group/Basic/#8931" class="Function">ε</a> <a id="1744" class="Symbol">;</a> <a id="1746" href="/Classical/Structures/Group/Basic/#8983" class="Function Operator">_⁻¹</a> <a id="1750" class="Symbol">)</a>
 </pre>
 <h4 id="acceptance-checks">Acceptance checks<a class="headerlink" href="#acceptance-checks" title="Anchor link to this section">&para;</a></h4>
 <p><code>∙-is-+-ag</code>, <code>ε-is-0-ag</code>, and <code>⁻¹-is-neg-ag</code> record that the accessors interpret to
 <code>_+_</code>, <code>0ℤ</code>, and negation on the nose, each discharged by <code>refl</code>.</p>
-<pre class="Agda"><a id="∙-is-+-ag"></a><a id="1940" href="/Examples/Classical/Groups/AbelianGroup/#1940" class="Function">∙-is-+-ag</a> <a id="1950" class="Symbol">:</a> <a id="1952" class="Symbol">∀</a> <a id="1954" class="Symbol">(</a><a id="1955" href="/Examples/Classical/Groups/AbelianGroup/#1955" class="Bound">a</a> <a id="1957" href="/Examples/Classical/Groups/AbelianGroup/#1957" class="Bound">b</a> <a id="1959" class="Symbol">:</a> <a id="1961" href="/classic/Agda.Builtin.Int.html#245" class="Datatype">ℤ</a><a id="1962" class="Symbol">)</a> <a id="1964" class="Symbol">→</a> <a id="1966" href="/Examples/Classical/Groups/AbelianGroup/#1955" class="Bound">a</a> <a id="1968" href="/Classical/Structures/Group/Basic/#8890" class="Function Operator">∙</a> <a id="1970" href="/Examples/Classical/Groups/AbelianGroup/#1957" class="Bound">b</a> <a id="1972" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="1974" href="/Examples/Classical/Groups/AbelianGroup/#1955" class="Bound">a</a> <a id="1976" href="/classic/Data.Integer.Base.html#5064" class="Function Operator">+</a> <a id="1978" href="/Examples/Classical/Groups/AbelianGroup/#1957" class="Bound">b</a>
+<pre class="Agda"><a id="∙-is-+-ag"></a><a id="1940" href="/Examples/Classical/Groups/AbelianGroup/#1940" class="Function">∙-is-+-ag</a> <a id="1950" class="Symbol">:</a> <a id="1952" class="Symbol">∀</a> <a id="1954" class="Symbol">(</a><a id="1955" href="/Examples/Classical/Groups/AbelianGroup/#1955" class="Bound">a</a> <a id="1957" href="/Examples/Classical/Groups/AbelianGroup/#1957" class="Bound">b</a> <a id="1959" class="Symbol">:</a> <a id="1961" href="/classic/Agda.Builtin.Int.html#245" class="Datatype">ℤ</a><a id="1962" class="Symbol">)</a> <a id="1964" class="Symbol">→</a> <a id="1966" href="/Examples/Classical/Groups/AbelianGroup/#1955" class="Bound">a</a> <a id="1968" href="/Classical/Structures/Group/Basic/#8871" class="Function Operator">∙</a> <a id="1970" href="/Examples/Classical/Groups/AbelianGroup/#1957" class="Bound">b</a> <a id="1972" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="1974" href="/Examples/Classical/Groups/AbelianGroup/#1955" class="Bound">a</a> <a id="1976" href="/classic/Data.Integer.Base.html#5064" class="Function Operator">+</a> <a id="1978" href="/Examples/Classical/Groups/AbelianGroup/#1957" class="Bound">b</a>
 <a id="1980" href="/Examples/Classical/Groups/AbelianGroup/#1940" class="Function">∙-is-+-ag</a> <a id="1990" href="/Examples/Classical/Groups/AbelianGroup/#1990" class="Bound">a</a> <a id="1992" href="/Examples/Classical/Groups/AbelianGroup/#1992" class="Bound">b</a> <a id="1994" class="Symbol">=</a> <a id="1996" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a>
 
-<a id="ε-is-0-ag"></a><a id="2002" href="/Examples/Classical/Groups/AbelianGroup/#2002" class="Function">ε-is-0-ag</a> <a id="2012" class="Symbol">:</a> <a id="2014" href="/Classical/Structures/Group/Basic/#8950" class="Function">ε</a> <a id="2016" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="2018" href="/classic/Data.Integer.Base.html#1545" class="Function">0ℤ</a>
+<a id="ε-is-0-ag"></a><a id="2002" href="/Examples/Classical/Groups/AbelianGroup/#2002" class="Function">ε-is-0-ag</a> <a id="2012" class="Symbol">:</a> <a id="2014" href="/Classical/Structures/Group/Basic/#8931" class="Function">ε</a> <a id="2016" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="2018" href="/classic/Data.Integer.Base.html#1545" class="Function">0ℤ</a>
 <a id="2021" href="/Examples/Classical/Groups/AbelianGroup/#2002" class="Function">ε-is-0-ag</a> <a id="2031" class="Symbol">=</a> <a id="2033" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a>
 
-<a id="⁻¹-is-neg-ag"></a><a id="2039" href="/Examples/Classical/Groups/AbelianGroup/#2039" class="Function">⁻¹-is-neg-ag</a> <a id="2052" class="Symbol">:</a> <a id="2054" class="Symbol">∀</a> <a id="2056" class="Symbol">(</a><a id="2057" href="/Examples/Classical/Groups/AbelianGroup/#2057" class="Bound">a</a> <a id="2059" class="Symbol">:</a> <a id="2061" href="/classic/Agda.Builtin.Int.html#245" class="Datatype">ℤ</a><a id="2062" class="Symbol">)</a> <a id="2064" class="Symbol">→</a> <a id="2066" href="/Examples/Classical/Groups/AbelianGroup/#2057" class="Bound">a</a> <a id="2068" href="/Classical/Structures/Group/Basic/#9002" class="Function Operator">⁻¹</a> <a id="2071" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="2073" href="/classic/Data.Integer.Base.html#4719" class="Function Operator">-</a> <a id="2075" href="/Examples/Classical/Groups/AbelianGroup/#2057" class="Bound">a</a>
+<a id="⁻¹-is-neg-ag"></a><a id="2039" href="/Examples/Classical/Groups/AbelianGroup/#2039" class="Function">⁻¹-is-neg-ag</a> <a id="2052" class="Symbol">:</a> <a id="2054" class="Symbol">∀</a> <a id="2056" class="Symbol">(</a><a id="2057" href="/Examples/Classical/Groups/AbelianGroup/#2057" class="Bound">a</a> <a id="2059" class="Symbol">:</a> <a id="2061" href="/classic/Agda.Builtin.Int.html#245" class="Datatype">ℤ</a><a id="2062" class="Symbol">)</a> <a id="2064" class="Symbol">→</a> <a id="2066" href="/Examples/Classical/Groups/AbelianGroup/#2057" class="Bound">a</a> <a id="2068" href="/Classical/Structures/Group/Basic/#8983" class="Function Operator">⁻¹</a> <a id="2071" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="2073" href="/classic/Data.Integer.Base.html#4719" class="Function Operator">-</a> <a id="2075" href="/Examples/Classical/Groups/AbelianGroup/#2057" class="Bound">a</a>
 <a id="2077" href="/Examples/Classical/Groups/AbelianGroup/#2039" class="Function">⁻¹-is-neg-ag</a> <a id="2090" href="/Examples/Classical/Groups/AbelianGroup/#2090" class="Bound">a</a> <a id="2092" class="Symbol">=</a> <a id="2094" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a>
 </pre>
 <p>The bundle round-trips pointwise on the operation, the identity, and the inverse.</p>
 <pre class="Agda"><a id="2195" class="Keyword">open</a> <a id="2200" href="/Classical/Structures/Group/AbelianGroup/#4181" class="Module">Polymorphic.AbelianGroup-Op</a> <a id="2228" href="/Classical/Bundles/AbelianGroup/#2643" class="Function Operator">⟪</a> <a id="2230" href="/Classical/Bundles/AbelianGroup/#1963" class="Function Operator">⟨</a> <a id="2232" href="/Examples/Classical/Groups/AbelianGroup/#1539" class="Function">ℤ-abelianGroup</a> <a id="2247" href="/Classical/Bundles/AbelianGroup/#1963" class="Function Operator">⟩ᵃᵍ</a> <a id="2251" href="/Classical/Bundles/AbelianGroup/#2643" class="Function Operator">⟫ᵃᵍ</a> <a id="2255" class="Keyword">using</a> <a id="2261" class="Symbol">()</a>
-  <a id="2266" class="Keyword">renaming</a> <a id="2275" class="Symbol">(</a> <a id="2277" href="/Classical/Structures/Group/Basic/#8890" class="Function Operator">_∙_</a> <a id="2281" class="Symbol">to</a> <a id="2284" class="Function Operator">_·_</a> <a id="2288" class="Symbol">;</a> <a id="2290" href="/Classical/Structures/Group/Basic/#8950" class="Function">ε</a> <a id="2292" class="Symbol">to</a> <a id="2295" class="Function">ε·</a> <a id="2298" class="Symbol">;</a> <a id="2300" href="/Classical/Structures/Group/Basic/#9002" class="Function Operator">_⁻¹</a> <a id="2304" class="Symbol">to</a> <a id="2307" class="Function Operator">_⁻¹·</a> <a id="2312" class="Symbol">)</a>
+  <a id="2266" class="Keyword">renaming</a> <a id="2275" class="Symbol">(</a> <a id="2277" href="/Classical/Structures/Group/Basic/#8871" class="Function Operator">_∙_</a> <a id="2281" class="Symbol">to</a> <a id="2284" class="Function Operator">_·_</a> <a id="2288" class="Symbol">;</a> <a id="2290" href="/Classical/Structures/Group/Basic/#8931" class="Function">ε</a> <a id="2292" class="Symbol">to</a> <a id="2295" class="Function">ε·</a> <a id="2298" class="Symbol">;</a> <a id="2300" href="/Classical/Structures/Group/Basic/#8983" class="Function Operator">_⁻¹</a> <a id="2304" class="Symbol">to</a> <a id="2307" class="Function Operator">_⁻¹·</a> <a id="2312" class="Symbol">)</a>
 
 <a id="roundtrip-∙-ag"></a><a id="2315" href="/Examples/Classical/Groups/AbelianGroup/#2315" class="Function">roundtrip-∙-ag</a> <a id="2330" class="Symbol">:</a> <a id="2332" class="Symbol">∀</a> <a id="2334" class="Symbol">(</a><a id="2335" href="/Examples/Classical/Groups/AbelianGroup/#2335" class="Bound">a</a> <a id="2337" href="/Examples/Classical/Groups/AbelianGroup/#2337" class="Bound">b</a> <a id="2339" class="Symbol">:</a> <a id="2341" href="/classic/Agda.Builtin.Int.html#245" class="Datatype">ℤ</a><a id="2342" class="Symbol">)</a> <a id="2344" class="Symbol">→</a> <a id="2346" href="/Examples/Classical/Groups/AbelianGroup/#2335" class="Bound">a</a> <a id="2348" href="/Examples/Classical/Groups/AbelianGroup/#2284" class="Function Operator">·</a> <a id="2350" href="/Examples/Classical/Groups/AbelianGroup/#2337" class="Bound">b</a> <a id="2352" href="/classic/Agda.Builtin.Equality.html#150" class="Datatype Operator">≡</a> <a id="2354" href="/Examples/Classical/Groups/AbelianGroup/#2335" class="Bound">a</a> <a id="2356" href="/classic/Data.Integer.Base.html#5064" class="Function Operator">+</a> <a id="2358" href="/Examples/Classical/Groups/AbelianGroup/#2337" class="Bound">b</a>
 <a id="2360" href="/Examples/Classical/Groups/AbelianGroup/#2315" class="Function">roundtrip-∙-ag</a> <a id="2375" href="/Examples/Classical/Groups/AbelianGroup/#2375" class="Bound">a</a> <a id="2377" href="/Examples/Classical/Groups/AbelianGroup/#2377" class="Bound">b</a> <a id="2379" class="Symbol">=</a> <a id="2381" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a>
