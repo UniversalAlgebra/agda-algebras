@@ -349,6 +349,10 @@
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/MaximalSubgroup/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
          <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/MinimalNormal/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
@@ -642,6 +646,10 @@
     </url>
     <url>
          <loc>https://agda-algebras.universalalgebra.org/FLRP/Enforceable/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/FLRP/Hunt/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>

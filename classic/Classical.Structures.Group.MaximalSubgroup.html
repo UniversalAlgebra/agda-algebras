@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>Classical.Structures.Group.MaximalSubgroup</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">---
+layout: default
+file: &quot;src/Classical/Structures/Group/MaximalSubgroup.lagda.md&quot;
+title: &quot;Classical.Structures.Group.MaximalSubgroup module&quot;
+date: &quot;2026-08-29&quot;
+author: &quot;the agda-algebras development team&quot;
+---
+
+### Maximal subgroups
+
+This is the [Classical.Structures.Group.MaximalSubgroup][] module of the [Agda Universal Algebra Library][].
+
+A **maximal subgroup** of `G` is a proper subgroup `H` such that no subgroup lies
+strictly between `H` and `G`; equivalently, the interval `[H , G]` in the subgroup
+lattice is the two-element chain.  Groups with a *core-free* maximal subgroup are
+classically exactly the groups with a faithful primitive permutation action, which
+is why the notion matters to the enforcement catalog of [FLRP.Reductions][]:
+core-free interval enforceability via a two-element chain constrains precisely this
+class of groups.
+
+The definition is stated in the form the proofs consume, and that form deserves a
+constructive health warning.  The field `classify`{.AgdaField} places every
+intermediate subgroup at `H` or at `G` as a *disjunction*, and producing that
+disjunction for an arbitrary equality-respecting predicate is oracle-strength data:
+a subgroup can encode an arbitrary proposition in its membership predicate (for any
+proposition `P`, the predicate `λ x → x ∈ H ⊎ P` respects equality and is closed
+under the group operations), so `classify`{.AgdaField} applied to such a predicate
+decides the proposition up to double negation.  Consequently no concrete group can
+inhabit `IsMaximalSubgroup`{.AgdaRecord} in safe Agda; the record is a *named
+classical hypothesis* in the sense of the FLRP assumption discipline, inhabited by
+classical mathematics (where it is ordinary maximality) and consumed by theorems
+that are honest about assuming it.  A decidable-membership sibling in the Layer-D
+style of ADR-008, quantifying only over subgroups packaged with decision
+procedures, would be constructible for concrete finite groups; it is deliberately
+not defined here because no present consumer needs it.
+
+&lt;!--
+</a><a id="2046" class="Markup">```agda
+</a><a id="2054" class="Symbol">{-#</a> <a id="2058" class="Keyword">OPTIONS</a> <a id="2066" class="Pragma">--cubical-compatible</a> <a id="2087" class="Pragma">--exact-split</a> <a id="2101" class="Pragma">--safe</a> <a id="2108" class="Symbol">#-}</a>
+
+<a id="2113" class="Keyword">module</a> <a id="2120" href="Classical.Structures.Group.MaximalSubgroup.html" class="Module">Classical.Structures.Group.MaximalSubgroup</a> <a id="2163" class="Keyword">where</a>
+
+<a id="2170" class="Keyword">open</a> <a id="2175" class="Keyword">import</a> <a id="2182" href="Agda.Primitive.html" class="Module">Agda.Primitive</a> <a id="2197" class="Keyword">using</a> <a id="2203" class="Symbol">()</a> <a id="2206" class="Keyword">renaming</a> <a id="2215" class="Symbol">(</a> <a id="2217" href="Agda.Primitive.html#388" class="Primitive">Set</a> <a id="2221" class="Symbol">to</a> <a id="2224" class="Primitive">Type</a> <a id="2229" class="Symbol">)</a>
+
+<a id="2232" class="Comment">-- Imports from the Agda Standard Library ---------------------------------------</a>
+<a id="2314" class="Keyword">open</a> <a id="2319" class="Keyword">import</a> <a id="2326" href="Data.Product.html" class="Module">Data.Product</a>     <a id="2343" class="Keyword">using</a>  <a id="2350" class="Symbol">(</a> <a id="2352" href="Data.Product.Base.html#636" class="Field">proj₁</a> <a id="2358" class="Symbol">)</a>
+<a id="2360" class="Keyword">open</a> <a id="2365" class="Keyword">import</a> <a id="2372" href="Data.Sum.Base.html" class="Module">Data.Sum.Base</a>    <a id="2389" class="Keyword">using</a>  <a id="2396" class="Symbol">(</a> <a id="2398" href="Data.Sum.Base.html#625" class="Datatype Operator">_⊎_</a> <a id="2402" class="Symbol">)</a>
+<a id="2404" class="Keyword">open</a> <a id="2409" class="Keyword">import</a> <a id="2416" href="Level.html" class="Module">Level</a>            <a id="2433" class="Keyword">using</a>  <a id="2440" class="Symbol">(</a> <a id="2442" href="Agda.Primitive.html#742" class="Postulate">Level</a> <a id="2448" class="Symbol">;</a> <a id="2450" href="Agda.Primitive.html#961" class="Primitive Operator">_⊔_</a> <a id="2454" class="Symbol">)</a> <a id="2456" class="Keyword">renaming</a> <a id="2465" class="Symbol">(</a> <a id="2467" href="Agda.Primitive.html#931" class="Primitive">suc</a> <a id="2471" class="Symbol">to</a> <a id="2474" class="Primitive">lsuc</a> <a id="2479" class="Symbol">)</a>
+<a id="2481" class="Keyword">open</a> <a id="2486" class="Keyword">import</a> <a id="2493" href="Relation.Nullary.html" class="Module">Relation.Nullary</a> <a id="2510" class="Keyword">using</a>  <a id="2517" class="Symbol">(</a> <a id="2519" href="Relation.Nullary.Negation.Core.html#677" class="Function Operator">¬_</a> <a id="2522" class="Symbol">)</a>
+<a id="2524" class="Keyword">open</a> <a id="2529" class="Keyword">import</a> <a id="2536" href="Relation.Unary.html" class="Module">Relation.Unary</a>   <a id="2553" class="Keyword">using</a>  <a id="2560" class="Symbol">(</a> <a id="2562" href="Relation.Unary.html#1178" class="Function">Pred</a> <a id="2567" class="Symbol">;</a> <a id="2569" href="Relation.Unary.html#1818" class="Function Operator">_∈_</a> <a id="2573" class="Symbol">;</a> <a id="2575" href="Relation.Unary.html#2046" class="Function Operator">_⊆_</a> <a id="2579" class="Symbol">)</a>
+
+<a id="2582" class="Comment">-- Imports from the Agda Universal Algebra Library ------------------------------</a>
+<a id="2664" class="Keyword">open</a> <a id="2669" class="Keyword">import</a> <a id="2676" href="Classical.Structures.Group.Basic.html" class="Module">Classical.Structures.Group.Basic</a>            <a id="2720" class="Keyword">using</a>  <a id="2727" class="Symbol">(</a> <a id="2729" href="Classical.Structures.Group.Basic.html#5165" class="Function">Group</a> <a id="2735" class="Symbol">)</a>
+<a id="2737" class="Keyword">open</a> <a id="2742" class="Keyword">import</a> <a id="2749" href="Classical.Structures.Group.Subgroups.html" class="Module">Classical.Structures.Group.Subgroups</a>        <a id="2793" class="Keyword">using</a>  <a id="2800" class="Symbol">(</a> <a id="2802" href="Classical.Structures.Group.Subgroups.html#6460" class="Record">IsSubgroup</a> <a id="2813" class="Symbol">)</a>
+<a id="2815" class="Keyword">open</a> <a id="2820" class="Keyword">import</a> <a id="2827" href="Classical.Structures.Group.SubgroupLattice.html" class="Module">Classical.Structures.Group.SubgroupLattice</a>  <a id="2871" class="Keyword">using</a>  <a id="2878" class="Symbol">(</a> <a id="2880" class="Keyword">module</a> <a id="2887" href="Classical.Structures.Group.SubgroupLattice.html#3471" class="Module">GroupSublattice</a> <a id="2903" class="Symbol">)</a>
+<a id="2905" class="Keyword">open</a> <a id="2910" class="Keyword">import</a> <a id="2917" href="Setoid.Algebras.Basic.html" class="Module">Setoid.Algebras.Basic</a>                       <a id="2961" class="Keyword">using</a>  <a id="2968" class="Symbol">(</a> <a id="2970" href="Setoid.Algebras.Basic.html#5875" class="Function Operator">𝕌[_]</a> <a id="2975" class="Symbol">)</a>
+<a id="2977" class="Markup">```
+</a><a id="2981" class="Background">--&gt;
+
+#### The maximality record
+
+Throughout, `𝒢`{.AgdaBound} is a group and `ℓ₀`{.AgdaBound} the base level of its
+subgroup lattice; subgroup predicates live at the resulting level `L`, exactly as
+in [Classical.Structures.Group.MinimalNormal][].
+
+`IsMaximalSubgroup`{.AgdaRecord} `H` bundles the three conditions: `H` is a
+subgroup, it is proper (not every element lies in it, stated negatively because no
+argument below needs a witness), and every subgroup between `H` and the whole group
+is one of the two endpoints.  Given `H ⊆ K`, the first disjunct `K ⊆ H` says the
+two predicates have the same extent, and the second says `K` is everything.
+
+</a><a id="3629" class="Markup">```agda
+</a><a id="3637" class="Keyword">module</a> <a id="MaximalSubgroup"></a><a id="3644" href="Classical.Structures.Group.MaximalSubgroup.html#3644" class="Module">MaximalSubgroup</a> <a id="3660" class="Symbol">{</a><a id="3661" href="Classical.Structures.Group.MaximalSubgroup.html#3661" class="Bound">α</a> <a id="3663" href="Classical.Structures.Group.MaximalSubgroup.html#3663" class="Bound">ρ</a> <a id="3665" class="Symbol">:</a> <a id="3667" href="Agda.Primitive.html#742" class="Postulate">Level</a><a id="3672" class="Symbol">}</a> <a id="3674" class="Symbol">(</a><a id="3675" href="Classical.Structures.Group.MaximalSubgroup.html#3675" class="Bound">𝒢</a> <a id="3677" class="Symbol">:</a> <a id="3679" href="Classical.Structures.Group.Basic.html#5165" class="Function">Group</a> <a id="3685" href="Classical.Structures.Group.MaximalSubgroup.html#3661" class="Bound">α</a> <a id="3687" href="Classical.Structures.Group.MaximalSubgroup.html#3663" class="Bound">ρ</a><a id="3688" class="Symbol">)</a> <a id="3690" class="Symbol">(</a><a id="3691" href="Classical.Structures.Group.MaximalSubgroup.html#3691" class="Bound">ℓ₀</a> <a id="3694" class="Symbol">:</a> <a id="3696" href="Agda.Primitive.html#742" class="Postulate">Level</a><a id="3701" class="Symbol">)</a> <a id="3703" class="Keyword">where</a>
+  <a id="3711" class="Keyword">private</a>
+    <a id="MaximalSubgroup.G"></a><a id="3723" href="Classical.Structures.Group.MaximalSubgroup.html#3723" class="Function">G</a> <a id="3725" class="Symbol">=</a> <a id="3727" href="Setoid.Algebras.Basic.html#5875" class="Function Operator">𝕌[</a> <a id="3730" href="Data.Product.Base.html#636" class="Field">proj₁</a> <a id="3736" href="Classical.Structures.Group.MaximalSubgroup.html#3675" class="Bound">𝒢</a> <a id="3738" href="Setoid.Algebras.Basic.html#5875" class="Function Operator">]</a>
+
+  <a id="3743" class="Keyword">open</a> <a id="3748" href="Classical.Structures.Group.SubgroupLattice.html#3471" class="Module">GroupSublattice</a> <a id="3764" href="Classical.Structures.Group.MaximalSubgroup.html#3675" class="Bound">𝒢</a> <a id="3766" href="Classical.Structures.Group.MaximalSubgroup.html#3691" class="Bound">ℓ₀</a>  <a id="3770" class="Keyword">using</a>  <a id="3777" class="Symbol">(</a> <a id="3779" href="Setoid.Subalgebras.CompleteLattice.html#3642" class="Function">L</a> <a id="3781" class="Symbol">)</a>
+
+  <a id="3786" class="Keyword">record</a> <a id="MaximalSubgroup.IsMaximalSubgroup"></a><a id="3793" href="Classical.Structures.Group.MaximalSubgroup.html#3793" class="Record">IsMaximalSubgroup</a> <a id="3811" class="Symbol">(</a><a id="3812" href="Classical.Structures.Group.MaximalSubgroup.html#3812" class="Bound">H</a> <a id="3814" class="Symbol">:</a> <a id="3816" href="Relation.Unary.html#1178" class="Function">Pred</a> <a id="3821" href="Classical.Structures.Group.MaximalSubgroup.html#3723" class="Function">G</a> <a id="3823" href="Setoid.Subalgebras.CompleteLattice.html#3642" class="Function">L</a><a id="3824" class="Symbol">)</a> <a id="3826" class="Symbol">:</a> <a id="3828" href="Classical.Structures.Group.MaximalSubgroup.html#2224" class="Primitive">Type</a> <a id="3833" class="Symbol">(</a><a id="3834" href="Classical.Structures.Group.MaximalSubgroup.html#3661" class="Bound">α</a> <a id="3836" href="Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="3838" href="Classical.Structures.Group.MaximalSubgroup.html#3663" class="Bound">ρ</a> <a id="3840" href="Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="3842" href="Classical.Structures.Group.MaximalSubgroup.html#2474" class="Primitive">lsuc</a> <a id="3847" href="Setoid.Subalgebras.CompleteLattice.html#3642" class="Function">L</a><a id="3848" class="Symbol">)</a> <a id="3850" class="Keyword">where</a>
+    <a id="3860" class="Keyword">field</a>
+      <a id="MaximalSubgroup.IsMaximalSubgroup.isSubgroup"></a><a id="3872" href="Classical.Structures.Group.MaximalSubgroup.html#3872" class="Field">isSubgroup</a>  <a id="3884" class="Symbol">:</a> <a id="3886" href="Classical.Structures.Group.Subgroups.html#6460" class="Record">IsSubgroup</a> <a id="3897" href="Classical.Structures.Group.MaximalSubgroup.html#3675" class="Bound">𝒢</a> <a id="3899" href="Classical.Structures.Group.MaximalSubgroup.html#3812" class="Bound">H</a>
+      <a id="MaximalSubgroup.IsMaximalSubgroup.proper"></a><a id="3907" href="Classical.Structures.Group.MaximalSubgroup.html#3907" class="Field">proper</a>      <a id="3919" class="Symbol">:</a> <a id="3921" href="Relation.Nullary.Negation.Core.html#677" class="Function Operator">¬</a> <a id="3923" class="Symbol">(∀</a> <a id="3926" href="Classical.Structures.Group.MaximalSubgroup.html#3926" class="Bound">x</a> <a id="3928" class="Symbol">→</a> <a id="3930" href="Classical.Structures.Group.MaximalSubgroup.html#3926" class="Bound">x</a> <a id="3932" href="Relation.Unary.html#1818" class="Function Operator">∈</a> <a id="3934" href="Classical.Structures.Group.MaximalSubgroup.html#3812" class="Bound">H</a><a id="3935" class="Symbol">)</a>
+      <a id="MaximalSubgroup.IsMaximalSubgroup.classify"></a><a id="3943" href="Classical.Structures.Group.MaximalSubgroup.html#3943" class="Field">classify</a>    <a id="3955" class="Symbol">:</a> <a id="3957" class="Symbol">(</a><a id="3958" href="Classical.Structures.Group.MaximalSubgroup.html#3958" class="Bound">K</a> <a id="3960" class="Symbol">:</a> <a id="3962" href="Relation.Unary.html#1178" class="Function">Pred</a> <a id="3967" href="Classical.Structures.Group.MaximalSubgroup.html#3723" class="Function">G</a> <a id="3969" href="Setoid.Subalgebras.CompleteLattice.html#3642" class="Function">L</a><a id="3970" class="Symbol">)</a> <a id="3972" class="Symbol">→</a> <a id="3974" href="Classical.Structures.Group.Subgroups.html#6460" class="Record">IsSubgroup</a> <a id="3985" href="Classical.Structures.Group.MaximalSubgroup.html#3675" class="Bound">𝒢</a> <a id="3987" href="Classical.Structures.Group.MaximalSubgroup.html#3958" class="Bound">K</a> <a id="3989" class="Symbol">→</a> <a id="3991" href="Classical.Structures.Group.MaximalSubgroup.html#3812" class="Bound">H</a> <a id="3993" href="Relation.Unary.html#2046" class="Function Operator">⊆</a> <a id="3995" href="Classical.Structures.Group.MaximalSubgroup.html#3958" class="Bound">K</a>
+                  <a id="4015" class="Symbol">→</a> <a id="4017" class="Symbol">(</a><a id="4018" href="Classical.Structures.Group.MaximalSubgroup.html#3958" class="Bound">K</a> <a id="4020" href="Relation.Unary.html#2046" class="Function Operator">⊆</a> <a id="4022" href="Classical.Structures.Group.MaximalSubgroup.html#3812" class="Bound">H</a><a id="4023" class="Symbol">)</a> <a id="4025" href="Data.Sum.Base.html#625" class="Datatype Operator">⊎</a> <a id="4027" class="Symbol">(∀</a> <a id="4030" href="Classical.Structures.Group.MaximalSubgroup.html#4030" class="Bound">x</a> <a id="4032" class="Symbol">→</a> <a id="4034" href="Classical.Structures.Group.MaximalSubgroup.html#4030" class="Bound">x</a> <a id="4036" href="Relation.Unary.html#1818" class="Function Operator">∈</a> <a id="4038" href="Classical.Structures.Group.MaximalSubgroup.html#3958" class="Bound">K</a><a id="4039" class="Symbol">)</a>
+
+  <a id="4044" class="Keyword">open</a> <a id="4049" href="Classical.Structures.Group.MaximalSubgroup.html#3793" class="Module">IsMaximalSubgroup</a> <a id="4067" class="Keyword">public</a>
+<a id="4074" class="Markup">```
+</a></pre></body></html>

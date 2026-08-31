@@ -6816,6 +6816,8 @@
       
         
       
+        
+      
     
     
     
@@ -7189,6 +7191,34 @@
     
   
     IndexAction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Classical/Structures/Group/MaximalSubgroup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MaximalSubgroup
   
 
     
@@ -12896,6 +12926,8 @@
       
         
       
+        
+      
     
     
     
@@ -14317,6 +14349,34 @@
   
   
     <li class="md-nav__item">
+      <a href="Hunt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hunt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="KurzweilInterval/" class="md-nav__link">
         
   
@@ -14368,7 +14428,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8_8" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -14390,14 +14450,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2_8_7" id="__nav_2_8_7_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2_8_8" id="__nav_2_8_8_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_8_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_8_7">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_8_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8_8">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -14635,7 +14695,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8_11" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -14657,14 +14717,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2_8_10" id="__nav_2_8_10_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2_8_11" id="__nav_2_8_11_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_8_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_8_10">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_8_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8_11">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -15763,31 +15823,46 @@ combinatorics) lives in the <code>Setoid/</code>, <code>Classical/</code>, and <
    <code>not-representable→IE</code>, and repairs <code>minIE</code> as <code>MinimallyIE</code>; the survey note
    is <code>docs/notes/flrp-rp2-catalog.md</code>.</p>
 </li>
+<li>
+<p><a href="/FLRP/Hunt/">FLRP.Hunt</a>: the RP-3 <strong>constraint dossier</strong> for the hunt for an
+   empty-intersection family: the degenerate enforcements of the one- and
+   two-element chains (triviality and nontriviality), a concrete core-free
+   representation of the one-element chain, the machine-checked refutation of
+   statement (C) as the note prints it (<code>unguarded-statement-C-refuted</code>, the
+   erratum-grade finding behind the per-canopy guard of the repaired
+   <code>Statement-C</code>), the refutation of the unrestricted pair statement and its
+   repaired form <code>PairQuestion</code>, the closure of the two-element corner of the
+   RP-4 reduction (outright on chains, by padding under statement (C)
+   otherwise), the theorem that families of two-element chains have inhabited
+   intersection, and the wreath-richness of two-element-chain classes; the
+   survey note is <code>docs/notes/flrp-rp3-hunt.md</code>.</p>
+</li>
 </ul>
 <p><strong>Planned submodules</strong> (per § 6 of the roadmap).</p>
 <ul>
 <li><code>FLRP.Intervals</code> (intervals in subgroup lattices and core-free normalization).</li>
 </ul>
-<pre class="Agda"><a id="6687" class="Symbol">{-#</a> <a id="6691" class="Keyword">OPTIONS</a> <a id="6699" class="Pragma">--cubical-compatible</a> <a id="6720" class="Pragma">--exact-split</a> <a id="6734" class="Pragma">--safe</a> <a id="6741" class="Symbol">#-}</a>
+<pre class="Agda"><a id="7558" class="Symbol">{-#</a> <a id="7562" class="Keyword">OPTIONS</a> <a id="7570" class="Pragma">--cubical-compatible</a> <a id="7591" class="Pragma">--exact-split</a> <a id="7605" class="Pragma">--safe</a> <a id="7612" class="Symbol">#-}</a>
 
-<a id="6746" class="Keyword">module</a> <a id="6753" href="/FLRP/" class="Module">FLRP</a> <a id="6758" class="Keyword">where</a>
+<a id="7617" class="Keyword">module</a> <a id="7624" href="/FLRP/" class="Module">FLRP</a> <a id="7629" class="Keyword">where</a>
 
-<a id="6765" class="Keyword">open</a> <a id="6770" class="Keyword">import</a> <a id="6777" href="/FLRP/Problem/" class="Module">FLRP.Problem</a>        <a id="6797" class="Keyword">public</a>
-<a id="6804" class="Keyword">open</a> <a id="6809" class="Keyword">import</a> <a id="6816" href="/FLRP/Enforceable/" class="Module">FLRP.Enforceable</a>    <a id="6836" class="Keyword">public</a>
-<a id="6843" class="Keyword">open</a> <a id="6848" class="Keyword">import</a> <a id="6855" href="/FLRP/Parachute/" class="Module">FLRP.Parachute</a>      <a id="6875" class="Keyword">public</a>
-<a id="6882" class="Keyword">open</a> <a id="6887" class="Keyword">import</a> <a id="6894" href="/FLRP/Parachute/Representation/" class="Module">FLRP.Parachute.Representation</a> <a id="6924" class="Keyword">public</a>
-<a id="6931" class="Keyword">open</a> <a id="6936" class="Keyword">import</a> <a id="6943" href="/FLRP/Parachute/Theorems/" class="Module">FLRP.Parachute.Theorems</a>       <a id="6973" class="Keyword">public</a>
-<a id="6980" class="Keyword">open</a> <a id="6985" class="Keyword">import</a> <a id="6992" href="/FLRP/Reductions/" class="Module">FLRP.Reductions</a>     <a id="7012" class="Keyword">public</a>
-<a id="7019" class="Keyword">open</a> <a id="7024" class="Keyword">import</a> <a id="7031" href="/FLRP/Bridge/" class="Module">FLRP.Bridge</a>         <a id="7051" class="Keyword">public</a>
-<a id="7058" class="Keyword">open</a> <a id="7063" class="Keyword">import</a> <a id="7070" href="/FLRP/Representable/" class="Module">FLRP.Representable</a>  <a id="7090" class="Keyword">public</a>
-<a id="7097" class="Keyword">open</a> <a id="7102" class="Keyword">import</a> <a id="7109" href="/FLRP/Assumptions/" class="Module">FLRP.Assumptions</a>    <a id="7129" class="Keyword">public</a>
-<a id="7136" class="Keyword">open</a> <a id="7141" class="Keyword">import</a> <a id="7148" href="/FLRP/Closure/" class="Module">FLRP.Closure</a>        <a id="7168" class="Keyword">public</a>
-<a id="7175" class="Keyword">open</a> <a id="7180" class="Keyword">import</a> <a id="7187" href="/FLRP/KurzweilInterval/" class="Module">FLRP.KurzweilInterval</a> <a id="7209" class="Keyword">public</a>
-<a id="7216" class="Keyword">open</a> <a id="7221" class="Keyword">import</a> <a id="7228" href="/FLRP/KurzweilNetter/" class="Module">FLRP.KurzweilNetter</a> <a id="7248" class="Keyword">public</a>
-<a id="7255" class="Keyword">open</a> <a id="7260" class="Keyword">import</a> <a id="7267" href="/FLRP/LayerBridge/" class="Module">FLRP.LayerBridge</a>    <a id="7287" class="Keyword">public</a>
-<a id="7294" class="Keyword">open</a> <a id="7299" class="Keyword">import</a> <a id="7306" href="/FLRP/WreathNoGo/" class="Module">FLRP.WreathNoGo</a>     <a id="7326" class="Keyword">public</a>
-<a id="7333" class="Keyword">open</a> <a id="7338" class="Keyword">import</a> <a id="7345" href="/FLRP/Certificates/" class="Module">FLRP.Certificates</a>   <a id="7365" class="Keyword">public</a>
-<a id="7372" class="Keyword">open</a> <a id="7377" class="Keyword">import</a> <a id="7384" href="/FLRP/L7EqSix/" class="Module">FLRP.L7EqSix</a>        <a id="7404" class="Keyword">public</a>
+<a id="7636" class="Keyword">open</a> <a id="7641" class="Keyword">import</a> <a id="7648" href="/FLRP/Problem/" class="Module">FLRP.Problem</a>        <a id="7668" class="Keyword">public</a>
+<a id="7675" class="Keyword">open</a> <a id="7680" class="Keyword">import</a> <a id="7687" href="/FLRP/Enforceable/" class="Module">FLRP.Enforceable</a>    <a id="7707" class="Keyword">public</a>
+<a id="7714" class="Keyword">open</a> <a id="7719" class="Keyword">import</a> <a id="7726" href="/FLRP/Parachute/" class="Module">FLRP.Parachute</a>      <a id="7746" class="Keyword">public</a>
+<a id="7753" class="Keyword">open</a> <a id="7758" class="Keyword">import</a> <a id="7765" href="/FLRP/Parachute/Representation/" class="Module">FLRP.Parachute.Representation</a> <a id="7795" class="Keyword">public</a>
+<a id="7802" class="Keyword">open</a> <a id="7807" class="Keyword">import</a> <a id="7814" href="/FLRP/Parachute/Theorems/" class="Module">FLRP.Parachute.Theorems</a>       <a id="7844" class="Keyword">public</a>
+<a id="7851" class="Keyword">open</a> <a id="7856" class="Keyword">import</a> <a id="7863" href="/FLRP/Reductions/" class="Module">FLRP.Reductions</a>     <a id="7883" class="Keyword">public</a>
+<a id="7890" class="Keyword">open</a> <a id="7895" class="Keyword">import</a> <a id="7902" href="/FLRP/Bridge/" class="Module">FLRP.Bridge</a>         <a id="7922" class="Keyword">public</a>
+<a id="7929" class="Keyword">open</a> <a id="7934" class="Keyword">import</a> <a id="7941" href="/FLRP/Representable/" class="Module">FLRP.Representable</a>  <a id="7961" class="Keyword">public</a>
+<a id="7968" class="Keyword">open</a> <a id="7973" class="Keyword">import</a> <a id="7980" href="/FLRP/Assumptions/" class="Module">FLRP.Assumptions</a>    <a id="8000" class="Keyword">public</a>
+<a id="8007" class="Keyword">open</a> <a id="8012" class="Keyword">import</a> <a id="8019" href="/FLRP/Closure/" class="Module">FLRP.Closure</a>        <a id="8039" class="Keyword">public</a>
+<a id="8046" class="Keyword">open</a> <a id="8051" class="Keyword">import</a> <a id="8058" href="/FLRP/KurzweilInterval/" class="Module">FLRP.KurzweilInterval</a> <a id="8080" class="Keyword">public</a>
+<a id="8087" class="Keyword">open</a> <a id="8092" class="Keyword">import</a> <a id="8099" href="/FLRP/KurzweilNetter/" class="Module">FLRP.KurzweilNetter</a> <a id="8119" class="Keyword">public</a>
+<a id="8126" class="Keyword">open</a> <a id="8131" class="Keyword">import</a> <a id="8138" href="/FLRP/LayerBridge/" class="Module">FLRP.LayerBridge</a>    <a id="8158" class="Keyword">public</a>
+<a id="8165" class="Keyword">open</a> <a id="8170" class="Keyword">import</a> <a id="8177" href="/FLRP/WreathNoGo/" class="Module">FLRP.WreathNoGo</a>     <a id="8197" class="Keyword">public</a>
+<a id="8204" class="Keyword">open</a> <a id="8209" class="Keyword">import</a> <a id="8216" href="/FLRP/Hunt/" class="Module">FLRP.Hunt</a>           <a id="8236" class="Keyword">public</a>
+<a id="8243" class="Keyword">open</a> <a id="8248" class="Keyword">import</a> <a id="8255" href="/FLRP/Certificates/" class="Module">FLRP.Certificates</a>   <a id="8275" class="Keyword">public</a>
+<a id="8282" class="Keyword">open</a> <a id="8287" class="Keyword">import</a> <a id="8294" href="/FLRP/L7EqSix/" class="Module">FLRP.L7EqSix</a>        <a id="8314" class="Keyword">public</a>
 </pre>
 
 <!-- File: docs/_links.md -->
