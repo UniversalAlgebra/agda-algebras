@@ -6824,6 +6824,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -7273,6 +7277,34 @@
   
   
     <li class="md-nav__item">
+      <a href="NormalClosure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NormalClosure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="NormalCore/" class="md-nav__link">
         
   
@@ -7393,6 +7425,34 @@
     
   
     Product
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Simple/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Simple
   
 
     
@@ -8822,6 +8882,8 @@
       
         
       
+        
+      
     
     
     
@@ -8895,6 +8957,103 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_1_5_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Examples/Classical/Groups/AlternatingGroup5/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AlternatingGroup5
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5_1_5_2" id="__nav_2_5_1_5_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_5_1_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_1_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AlternatingGroup5
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Examples/Classical/Groups/AlternatingGroup5/Tables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -15792,6 +15951,9 @@ list.</p>
 </li>
 <li><a href="/Classical/Structures/Group/NormalSubgroupLattice/">Classical.Structures.Group.NormalSubgroupLattice</a>:
       congruence lattices of groups;</li>
+<li><a href="/Classical/Structures/Group/NormalClosure/">Classical.Structures.Group.NormalClosure</a>:
+      witness terms for normal-closure membership, the replay language of
+      simplicity certificates;</li>
 <li><a href="/Classical/Structures/Group/NormalCore/">Classical.Structures.Group.NormalCore</a>:
       maximal normal subgroups;</li>
 <li><a href="/Classical/Structures/Group/MinimalNormal/">Classical.Structures.Group.MinimalNormal</a>:
@@ -15799,6 +15961,8 @@ list.</p>
 <li><a href="/Classical/Structures/Group/MaximalSubgroup/">Classical.Structures.Group.MaximalSubgroup</a>:
       maximal subgroups, as the classification data the two-element-chain
       catalog entry consumes;</li>
+<li><a href="/Classical/Structures/Group/Simple/">Classical.Structures.Group.Simple</a>:
+      simple groups, in implication form, and the nonabelian-simple interface;</li>
 <li>
 <p><a href="/Classical/Structures/Group/Centralizer/">Classical.Structures.Group.Centralizer</a>: centralizers.</p>
 </li>
@@ -15830,33 +15994,35 @@ list.</p>
       complex products.</p>
 </li>
 </ul>
-<pre class="Agda"><a id="2793" class="Symbol">{-#</a> <a id="2797" class="Keyword">OPTIONS</a> <a id="2805" class="Pragma">--cubical-compatible</a> <a id="2826" class="Pragma">--exact-split</a> <a id="2840" class="Pragma">--safe</a> <a id="2847" class="Symbol">#-}</a>
+<pre class="Agda"><a id="3074" class="Symbol">{-#</a> <a id="3078" class="Keyword">OPTIONS</a> <a id="3086" class="Pragma">--cubical-compatible</a> <a id="3107" class="Pragma">--exact-split</a> <a id="3121" class="Pragma">--safe</a> <a id="3128" class="Symbol">#-}</a>
 
-<a id="2852" class="Keyword">module</a> <a id="2859" href="/Classical/Structures/Group/" class="Module">Classical.Structures.Group</a> <a id="2886" class="Keyword">where</a>
+<a id="3133" class="Keyword">module</a> <a id="3140" href="/Classical/Structures/Group/" class="Module">Classical.Structures.Group</a> <a id="3167" class="Keyword">where</a>
 
-<a id="2893" class="Keyword">open</a> <a id="2898" class="Keyword">import</a> <a id="2905" href="/Classical/Structures/Group/Basic/" class="Module">Classical.Structures.Group.Basic</a>                  <a id="2955" class="Keyword">public</a>
+<a id="3174" class="Keyword">open</a> <a id="3179" class="Keyword">import</a> <a id="3186" href="/Classical/Structures/Group/Basic/" class="Module">Classical.Structures.Group.Basic</a>                  <a id="3236" class="Keyword">public</a>
 
-<a id="2963" class="Keyword">open</a> <a id="2968" class="Keyword">import</a> <a id="2975" href="/Classical/Structures/Group/AbelianGroup/" class="Module">Classical.Structures.Group.AbelianGroup</a>           <a id="3025" class="Keyword">public</a>
-<a id="3032" class="Keyword">open</a> <a id="3037" class="Keyword">import</a> <a id="3044" href="/Classical/Structures/Group/Centralizer/" class="Module">Classical.Structures.Group.Centralizer</a>            <a id="3094" class="Keyword">public</a>
-<a id="3101" class="Keyword">open</a> <a id="3106" class="Keyword">import</a> <a id="3113" href="/Classical/Structures/Group/Complements/" class="Module">Classical.Structures.Group.Complements</a>            <a id="3163" class="Keyword">public</a>
-<a id="3170" class="Keyword">open</a> <a id="3175" class="Keyword">import</a> <a id="3182" href="/Classical/Structures/Group/Complexes/" class="Module">Classical.Structures.Group.Complexes</a>              <a id="3232" class="Keyword">public</a>
-<a id="3239" class="Keyword">open</a> <a id="3244" class="Keyword">import</a> <a id="3251" href="/Classical/Structures/Group/Congruences/" class="Module">Classical.Structures.Group.Congruences</a>            <a id="3301" class="Keyword">public</a>
-<a id="3308" class="Keyword">open</a> <a id="3313" class="Keyword">import</a> <a id="3320" href="/Classical/Structures/Group/Conjugation/" class="Module">Classical.Structures.Group.Conjugation</a>            <a id="3370" class="Keyword">public</a>
-<a id="3377" class="Keyword">open</a> <a id="3382" class="Keyword">import</a> <a id="3389" href="/Classical/Structures/Group/Cosets/" class="Module">Classical.Structures.Group.Cosets</a>                 <a id="3439" class="Keyword">public</a>
-<a id="3446" class="Keyword">open</a> <a id="3451" class="Keyword">import</a> <a id="3458" href="/Classical/Structures/Group/Dedekind/" class="Module">Classical.Structures.Group.Dedekind</a>               <a id="3508" class="Keyword">public</a>
-<a id="3515" class="Keyword">open</a> <a id="3520" class="Keyword">import</a> <a id="3527" href="/Classical/Structures/Group/Diagonal/" class="Module">Classical.Structures.Group.Diagonal</a>               <a id="3577" class="Keyword">public</a>
-<a id="3584" class="Keyword">open</a> <a id="3589" class="Keyword">import</a> <a id="3596" href="/Classical/Structures/Group/GSet/" class="Module">Classical.Structures.Group.GSet</a>                   <a id="3646" class="Keyword">public</a>
-<a id="3653" class="Keyword">open</a> <a id="3658" class="Keyword">import</a> <a id="3665" href="/Classical/Structures/Group/IndexAction/" class="Module">Classical.Structures.Group.IndexAction</a>            <a id="3715" class="Keyword">public</a>
-<a id="3722" class="Keyword">open</a> <a id="3727" class="Keyword">import</a> <a id="3734" href="/Classical/Structures/Group/MaximalSubgroup/" class="Module">Classical.Structures.Group.MaximalSubgroup</a>        <a id="3784" class="Keyword">public</a>
-<a id="3791" class="Keyword">open</a> <a id="3796" class="Keyword">import</a> <a id="3803" href="/Classical/Structures/Group/MinimalNormal/" class="Module">Classical.Structures.Group.MinimalNormal</a>          <a id="3853" class="Keyword">public</a>
-<a id="3860" class="Keyword">open</a> <a id="3865" class="Keyword">import</a> <a id="3872" href="/Classical/Structures/Group/NormalCore/" class="Module">Classical.Structures.Group.NormalCore</a>             <a id="3922" class="Keyword">public</a>
-<a id="3929" class="Keyword">open</a> <a id="3934" class="Keyword">import</a> <a id="3941" href="/Classical/Structures/Group/NormalSubgroupLattice/" class="Module">Classical.Structures.Group.NormalSubgroupLattice</a>  <a id="3991" class="Keyword">public</a>
-<a id="3998" class="Keyword">open</a> <a id="4003" class="Keyword">import</a> <a id="4010" href="/Classical/Structures/Group/PartitionSubgroup/" class="Module">Classical.Structures.Group.PartitionSubgroup</a>      <a id="4060" class="Keyword">public</a>
-<a id="4067" class="Keyword">open</a> <a id="4072" class="Keyword">import</a> <a id="4079" href="/Classical/Structures/Group/Power/" class="Module">Classical.Structures.Group.Power</a>                  <a id="4129" class="Keyword">public</a>
-<a id="4136" class="Keyword">open</a> <a id="4141" class="Keyword">import</a> <a id="4148" href="/Classical/Structures/Group/Product/" class="Module">Classical.Structures.Group.Product</a>                <a id="4198" class="Keyword">public</a>
-<a id="4205" class="Keyword">open</a> <a id="4210" class="Keyword">import</a> <a id="4217" href="/Classical/Structures/Group/SubgroupLattice/" class="Module">Classical.Structures.Group.SubgroupLattice</a>        <a id="4267" class="Keyword">public</a>
-<a id="4274" class="Keyword">open</a> <a id="4279" class="Keyword">import</a> <a id="4286" href="/Classical/Structures/Group/Subgroups/" class="Module">Classical.Structures.Group.Subgroups</a>              <a id="4336" class="Keyword">public</a>
-<a id="4343" class="Keyword">open</a> <a id="4348" class="Keyword">import</a> <a id="4355" href="/Classical/Structures/Group/Wreath/" class="Module">Classical.Structures.Group.Wreath</a>                 <a id="4405" class="Keyword">public</a>
+<a id="3244" class="Keyword">open</a> <a id="3249" class="Keyword">import</a> <a id="3256" href="/Classical/Structures/Group/AbelianGroup/" class="Module">Classical.Structures.Group.AbelianGroup</a>           <a id="3306" class="Keyword">public</a>
+<a id="3313" class="Keyword">open</a> <a id="3318" class="Keyword">import</a> <a id="3325" href="/Classical/Structures/Group/Centralizer/" class="Module">Classical.Structures.Group.Centralizer</a>            <a id="3375" class="Keyword">public</a>
+<a id="3382" class="Keyword">open</a> <a id="3387" class="Keyword">import</a> <a id="3394" href="/Classical/Structures/Group/Complements/" class="Module">Classical.Structures.Group.Complements</a>            <a id="3444" class="Keyword">public</a>
+<a id="3451" class="Keyword">open</a> <a id="3456" class="Keyword">import</a> <a id="3463" href="/Classical/Structures/Group/Complexes/" class="Module">Classical.Structures.Group.Complexes</a>              <a id="3513" class="Keyword">public</a>
+<a id="3520" class="Keyword">open</a> <a id="3525" class="Keyword">import</a> <a id="3532" href="/Classical/Structures/Group/Congruences/" class="Module">Classical.Structures.Group.Congruences</a>            <a id="3582" class="Keyword">public</a>
+<a id="3589" class="Keyword">open</a> <a id="3594" class="Keyword">import</a> <a id="3601" href="/Classical/Structures/Group/Conjugation/" class="Module">Classical.Structures.Group.Conjugation</a>            <a id="3651" class="Keyword">public</a>
+<a id="3658" class="Keyword">open</a> <a id="3663" class="Keyword">import</a> <a id="3670" href="/Classical/Structures/Group/Cosets/" class="Module">Classical.Structures.Group.Cosets</a>                 <a id="3720" class="Keyword">public</a>
+<a id="3727" class="Keyword">open</a> <a id="3732" class="Keyword">import</a> <a id="3739" href="/Classical/Structures/Group/Dedekind/" class="Module">Classical.Structures.Group.Dedekind</a>               <a id="3789" class="Keyword">public</a>
+<a id="3796" class="Keyword">open</a> <a id="3801" class="Keyword">import</a> <a id="3808" href="/Classical/Structures/Group/Diagonal/" class="Module">Classical.Structures.Group.Diagonal</a>               <a id="3858" class="Keyword">public</a>
+<a id="3865" class="Keyword">open</a> <a id="3870" class="Keyword">import</a> <a id="3877" href="/Classical/Structures/Group/GSet/" class="Module">Classical.Structures.Group.GSet</a>                   <a id="3927" class="Keyword">public</a>
+<a id="3934" class="Keyword">open</a> <a id="3939" class="Keyword">import</a> <a id="3946" href="/Classical/Structures/Group/IndexAction/" class="Module">Classical.Structures.Group.IndexAction</a>            <a id="3996" class="Keyword">public</a>
+<a id="4003" class="Keyword">open</a> <a id="4008" class="Keyword">import</a> <a id="4015" href="/Classical/Structures/Group/MaximalSubgroup/" class="Module">Classical.Structures.Group.MaximalSubgroup</a>        <a id="4065" class="Keyword">public</a>
+<a id="4072" class="Keyword">open</a> <a id="4077" class="Keyword">import</a> <a id="4084" href="/Classical/Structures/Group/MinimalNormal/" class="Module">Classical.Structures.Group.MinimalNormal</a>          <a id="4134" class="Keyword">public</a>
+<a id="4141" class="Keyword">open</a> <a id="4146" class="Keyword">import</a> <a id="4153" href="/Classical/Structures/Group/NormalClosure/" class="Module">Classical.Structures.Group.NormalClosure</a>          <a id="4203" class="Keyword">public</a>
+<a id="4210" class="Keyword">open</a> <a id="4215" class="Keyword">import</a> <a id="4222" href="/Classical/Structures/Group/NormalCore/" class="Module">Classical.Structures.Group.NormalCore</a>             <a id="4272" class="Keyword">public</a>
+<a id="4279" class="Keyword">open</a> <a id="4284" class="Keyword">import</a> <a id="4291" href="/Classical/Structures/Group/NormalSubgroupLattice/" class="Module">Classical.Structures.Group.NormalSubgroupLattice</a>  <a id="4341" class="Keyword">public</a>
+<a id="4348" class="Keyword">open</a> <a id="4353" class="Keyword">import</a> <a id="4360" href="/Classical/Structures/Group/PartitionSubgroup/" class="Module">Classical.Structures.Group.PartitionSubgroup</a>      <a id="4410" class="Keyword">public</a>
+<a id="4417" class="Keyword">open</a> <a id="4422" class="Keyword">import</a> <a id="4429" href="/Classical/Structures/Group/Power/" class="Module">Classical.Structures.Group.Power</a>                  <a id="4479" class="Keyword">public</a>
+<a id="4486" class="Keyword">open</a> <a id="4491" class="Keyword">import</a> <a id="4498" href="/Classical/Structures/Group/Product/" class="Module">Classical.Structures.Group.Product</a>                <a id="4548" class="Keyword">public</a>
+<a id="4555" class="Keyword">open</a> <a id="4560" class="Keyword">import</a> <a id="4567" href="/Classical/Structures/Group/Simple/" class="Module">Classical.Structures.Group.Simple</a>                 <a id="4617" class="Keyword">public</a>
+<a id="4624" class="Keyword">open</a> <a id="4629" class="Keyword">import</a> <a id="4636" href="/Classical/Structures/Group/SubgroupLattice/" class="Module">Classical.Structures.Group.SubgroupLattice</a>        <a id="4686" class="Keyword">public</a>
+<a id="4693" class="Keyword">open</a> <a id="4698" class="Keyword">import</a> <a id="4705" href="/Classical/Structures/Group/Subgroups/" class="Module">Classical.Structures.Group.Subgroups</a>              <a id="4755" class="Keyword">public</a>
+<a id="4762" class="Keyword">open</a> <a id="4767" class="Keyword">import</a> <a id="4774" href="/Classical/Structures/Group/Wreath/" class="Module">Classical.Structures.Group.Wreath</a>                 <a id="4824" class="Keyword">public</a>
 </pre>
 
 <!-- File: docs/_links.md -->

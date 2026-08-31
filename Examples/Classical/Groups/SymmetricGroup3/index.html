@@ -6818,6 +6818,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -7267,6 +7271,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../Classical/Structures/Group/NormalClosure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NormalClosure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../Classical/Structures/Group/NormalCore/" class="md-nav__link">
         
   
@@ -7387,6 +7419,34 @@
     
   
     Product
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Classical/Structures/Group/Simple/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Simple
   
 
     
@@ -8822,6 +8882,8 @@
       
         
       
+        
+      
     
     
     
@@ -8895,6 +8957,103 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_1_5_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../AlternatingGroup5/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AlternatingGroup5
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5_1_5_2" id="__nav_2_5_1_5_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_5_1_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_1_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AlternatingGroup5
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AlternatingGroup5/Tables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -16008,9 +16167,9 @@ triples — exactly the case where a hand-written proof would be unreasonable an
 
 <a id="2441" class="Comment">-- Imports from the Agda Universal Algebra Library ----------------------------</a>
 <a id="2521" class="Keyword">open</a> <a id="2526" class="Keyword">import</a> <a id="2533" href="/Overture/Basic/" class="Module">Overture.Basic</a>                    <a id="2567" class="Keyword">using</a>  <a id="2574" class="Symbol">(</a> <a id="2576" href="/Overture/Basic/#7068" class="Function">∃-syntax</a> <a id="2585" class="Symbol">)</a>
-<a id="2587" class="Keyword">open</a> <a id="2592" class="Keyword">import</a> <a id="2599" href="/Overture/Cayley/" class="Module">Overture.Cayley</a>                   <a id="2633" class="Keyword">using</a>  <a id="2640" class="Symbol">(</a> <a id="2642" href="/Overture/Cayley/#3151" class="Function">Table</a> <a id="2648" class="Symbol">;</a> <a id="2650" href="/Overture/Cayley/#3285" class="Function Operator">⟦_⟧</a> <a id="2654" class="Symbol">;</a> <a id="2656" href="/classic/Relation.Nullary.Decidable.Core.html#5912" class="Function">from-yes</a> <a id="2665" class="Symbol">)</a>
-<a id="2667" class="Keyword">open</a> <a id="2672" class="Keyword">import</a> <a id="2679" href="/Overture/Operations/Properties/" class="Module">Overture.Operations.Properties</a>    <a id="2713" class="Keyword">using</a>  <a id="2720" class="Symbol">(</a> <a id="2722" href="/Overture/Operations/Properties/#2575" class="Function">Associative?</a> <a id="2735" class="Symbol">;</a> <a id="2737" href="/Overture/Operations/Properties/#2783" class="Function">LeftIdentity?</a> <a id="2751" class="Symbol">;</a> <a id="2753" href="/Overture/Operations/Properties/#2901" class="Function">RightIdentity?</a>
-                                                     <a id="2821" class="Symbol">;</a> <a id="2823" href="/Overture/Operations/Properties/#3069" class="Function">LeftInverse?</a> <a id="2836" class="Symbol">;</a> <a id="2838" href="/Overture/Operations/Properties/#3203" class="Function">RightInverse?</a> <a id="2852" class="Symbol">)</a>
+<a id="2587" class="Keyword">open</a> <a id="2592" class="Keyword">import</a> <a id="2599" href="/Overture/Cayley/" class="Module">Overture.Cayley</a>                   <a id="2633" class="Keyword">using</a>  <a id="2640" class="Symbol">(</a> <a id="2642" href="/Overture/Cayley/#3342" class="Function">Table</a> <a id="2648" class="Symbol">;</a> <a id="2650" href="/Overture/Cayley/#3476" class="Function Operator">⟦_⟧</a> <a id="2654" class="Symbol">;</a> <a id="2656" href="/classic/Relation.Nullary.Decidable.Core.html#5912" class="Function">from-yes</a> <a id="2665" class="Symbol">)</a>
+<a id="2667" class="Keyword">open</a> <a id="2672" class="Keyword">import</a> <a id="2679" href="/Overture/Operations/Properties/" class="Module">Overture.Operations.Properties</a>    <a id="2713" class="Keyword">using</a>  <a id="2720" class="Symbol">(</a> <a id="2722" href="/Overture/Operations/Properties/#2585" class="Function">Associative?</a> <a id="2735" class="Symbol">;</a> <a id="2737" href="/Overture/Operations/Properties/#2793" class="Function">LeftIdentity?</a> <a id="2751" class="Symbol">;</a> <a id="2753" href="/Overture/Operations/Properties/#2911" class="Function">RightIdentity?</a>
+                                                     <a id="2821" class="Symbol">;</a> <a id="2823" href="/Overture/Operations/Properties/#3079" class="Function">LeftInverse?</a> <a id="2836" class="Symbol">;</a> <a id="2838" href="/Overture/Operations/Properties/#3213" class="Function">RightInverse?</a> <a id="2852" class="Symbol">)</a>
 <a id="2854" class="Keyword">open</a> <a id="2859" class="Keyword">import</a> <a id="2866" href="/Classical/Bundles/Group/" class="Module">Classical.Bundles.Group</a>           <a id="2900" class="Keyword">using</a> <a id="2906" class="Symbol">(</a> <a id="2908" href="/Classical/Bundles/Group/#2048" class="Function Operator">⟨_⟩ᵍᵖ</a> <a id="2914" class="Symbol">;</a> <a id="2916" href="/Classical/Bundles/Group/#3103" class="Function Operator">⟪_⟫ᵍᵖ</a> <a id="2922" class="Symbol">)</a>
 <a id="2924" class="Keyword">open</a> <a id="2929" class="Keyword">import</a> <a id="2936" href="/Classical/Small/Structures/Group/" class="Module">Classical.Small.Structures.Group</a>  <a id="2970" class="Keyword">using</a> <a id="2976" class="Symbol">(</a> <a id="2978" href="/Classical/Small/Structures/Group/#1039" class="Function">Group</a> <a id="2984" class="Symbol">;</a> <a id="2986" href="/Classical/Small/Structures/Group/#1094" class="Function">eqsToGroup</a> <a id="2997" class="Symbol">)</a>
 <a id="2999" class="Keyword">import</a> <a id="3006" href="/Classical/Structures/Group/" class="Module">Classical.Structures.Group</a> <a id="3033" class="Symbol">as</a> <a id="3036" class="Module">Polymorphic</a>
@@ -16018,7 +16177,7 @@ triples — exactly the case where a hand-written proof would be unreasonable an
 
 <h4 id="the-cayley-table-the-operation-and-the-inverse-map">The Cayley table, the operation, and the inverse map<a class="headerlink" href="#the-cayley-table-the-operation-and-the-inverse-map" title="Anchor link to this section">&para;</a></h4>
 <pre class="Agda"><a id="3124" class="Comment">-- The S₃ ≅ D₃ multiplication table on the encoding e,r,r²,s,rs,r²s = 0..5.</a>
-<a id="s3-table"></a><a id="3200" href="/Examples/Classical/Groups/SymmetricGroup3/#3200" class="Function">s3-table</a> <a id="3209" class="Symbol">:</a> <a id="3211" href="/Overture/Cayley/#3151" class="Function">Table</a> <a id="3217" class="Number">6</a>
+<a id="s3-table"></a><a id="3200" href="/Examples/Classical/Groups/SymmetricGroup3/#3200" class="Function">s3-table</a> <a id="3209" class="Symbol">:</a> <a id="3211" href="/Overture/Cayley/#3342" class="Function">Table</a> <a id="3217" class="Number">6</a>
 <a id="3219" href="/Examples/Classical/Groups/SymmetricGroup3/#3200" class="Function">s3-table</a> <a id="3228" class="Symbol">=</a> <a id="3230" class="Symbol">(</a><a id="3231" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="3234" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="3236" href="/classic/Data.Fin.Patterns.html#440" class="InductiveConstructor">1F</a> <a id="3239" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="3241" href="/classic/Data.Fin.Patterns.html#460" class="InductiveConstructor">2F</a> <a id="3244" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="3246" href="/classic/Data.Fin.Patterns.html#480" class="InductiveConstructor">3F</a> <a id="3249" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="3251" href="/classic/Data.Fin.Patterns.html#500" class="InductiveConstructor">4F</a> <a id="3254" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="3256" href="/classic/Data.Fin.Patterns.html#520" class="InductiveConstructor">5F</a> <a id="3259" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="3261" href="/classic/Data.Vec.Base.html#1155" class="InductiveConstructor">[]</a><a id="3263" class="Symbol">)</a>
          <a id="3274" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="3276" class="Symbol">(</a><a id="3277" href="/classic/Data.Fin.Patterns.html#440" class="InductiveConstructor">1F</a> <a id="3280" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="3282" href="/classic/Data.Fin.Patterns.html#460" class="InductiveConstructor">2F</a> <a id="3285" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="3287" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="3290" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="3292" href="/classic/Data.Fin.Patterns.html#500" class="InductiveConstructor">4F</a> <a id="3295" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="3297" href="/classic/Data.Fin.Patterns.html#520" class="InductiveConstructor">5F</a> <a id="3300" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="3302" href="/classic/Data.Fin.Patterns.html#480" class="InductiveConstructor">3F</a> <a id="3305" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="3307" href="/classic/Data.Vec.Base.html#1155" class="InductiveConstructor">[]</a><a id="3309" class="Symbol">)</a>
          <a id="3320" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="3322" class="Symbol">(</a><a id="3323" href="/classic/Data.Fin.Patterns.html#460" class="InductiveConstructor">2F</a> <a id="3326" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="3328" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="3331" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="3333" href="/classic/Data.Fin.Patterns.html#440" class="InductiveConstructor">1F</a> <a id="3336" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="3338" href="/classic/Data.Fin.Patterns.html#520" class="InductiveConstructor">5F</a> <a id="3341" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="3343" href="/classic/Data.Fin.Patterns.html#480" class="InductiveConstructor">3F</a> <a id="3346" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="3348" href="/classic/Data.Fin.Patterns.html#500" class="InductiveConstructor">4F</a> <a id="3351" href="/classic/Data.Vec.Base.html#1174" class="InductiveConstructor Operator">∷</a> <a id="3353" href="/classic/Data.Vec.Base.html#1155" class="InductiveConstructor">[]</a><a id="3355" class="Symbol">)</a>
@@ -16029,7 +16188,7 @@ triples — exactly the case where a hand-written proof would be unreasonable an
 
 <a id="3510" class="Comment">-- The operation it denotes.</a>
 <a id="_·_"></a><a id="3539" href="/Examples/Classical/Groups/SymmetricGroup3/#3539" class="Function Operator">_·_</a> <a id="3543" class="Symbol">:</a> <a id="3545" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="3549" class="Number">6</a> <a id="3551" class="Symbol">→</a> <a id="3553" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="3557" class="Number">6</a> <a id="3559" class="Symbol">→</a> <a id="3561" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="3565" class="Number">6</a>
-<a id="3567" href="/Examples/Classical/Groups/SymmetricGroup3/#3539" class="Function Operator">_·_</a> <a id="3571" class="Symbol">=</a> <a id="3573" href="/Overture/Cayley/#3285" class="Function Operator">⟦</a> <a id="3575" href="/Examples/Classical/Groups/SymmetricGroup3/#3200" class="Function">s3-table</a> <a id="3584" href="/Overture/Cayley/#3285" class="Function Operator">⟧</a>
+<a id="3567" href="/Examples/Classical/Groups/SymmetricGroup3/#3539" class="Function Operator">_·_</a> <a id="3571" class="Symbol">=</a> <a id="3573" href="/Overture/Cayley/#3476" class="Function Operator">⟦</a> <a id="3575" href="/Examples/Classical/Groups/SymmetricGroup3/#3200" class="Function">s3-table</a> <a id="3584" href="/Overture/Cayley/#3476" class="Function Operator">⟧</a>
 
 <a id="3587" class="Comment">-- The inverse map.  The rotations r, r² invert each other; e and the three</a>
 <a id="3663" class="Comment">-- reflections s, rs, r²s are each their own inverse.</a>
@@ -16048,9 +16207,9 @@ triples — exactly the case where a hand-written proof would be unreasonable an
 alone ranges over 216 triples.</p>
 <pre class="Agda"><a id="s3-group"></a><a id="4130" href="/Examples/Classical/Groups/SymmetricGroup3/#4130" class="Function">s3-group</a> <a id="4139" class="Symbol">:</a> <a id="4141" href="/Classical/Small/Structures/Group/#1039" class="Function">Group</a>
 <a id="4147" href="/Examples/Classical/Groups/SymmetricGroup3/#4130" class="Function">s3-group</a> <a id="4156" class="Symbol">=</a> <a id="4158" href="/Classical/Small/Structures/Group/#1094" class="Function">eqsToGroup</a> <a id="4169" class="Symbol">(</a><a id="4170" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="4174" class="Number">6</a><a id="4175" class="Symbol">)</a> <a id="4177" href="/Examples/Classical/Groups/SymmetricGroup3/#3539" class="Function Operator">_·_</a> <a id="4181" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="4184" href="/Examples/Classical/Groups/SymmetricGroup3/#3717" class="Function">s3-inv</a>
-  <a id="4193" class="Symbol">(</a><a id="4194" href="/classic/Relation.Nullary.Decidable.Core.html#5912" class="Function">from-yes</a> <a id="4203" class="Symbol">(</a><a id="4204" href="/Overture/Operations/Properties/#2575" class="Function">Associative?</a>   <a id="4219" href="/Examples/Classical/Groups/SymmetricGroup3/#3539" class="Function Operator">_·_</a><a id="4222" class="Symbol">))</a> <a id="4225" class="Symbol">(</a><a id="4226" href="/classic/Relation.Nullary.Decidable.Core.html#5912" class="Function">from-yes</a> <a id="4235" class="Symbol">(</a><a id="4236" href="/Overture/Operations/Properties/#2783" class="Function">LeftIdentity?</a>  <a id="4251" href="/Examples/Classical/Groups/SymmetricGroup3/#3539" class="Function Operator">_·_</a> <a id="4255" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a><a id="4257" class="Symbol">))</a>
-  <a id="4262" class="Symbol">(</a><a id="4263" href="/classic/Relation.Nullary.Decidable.Core.html#5912" class="Function">from-yes</a> <a id="4272" class="Symbol">(</a><a id="4273" href="/Overture/Operations/Properties/#2901" class="Function">RightIdentity?</a> <a id="4288" href="/Examples/Classical/Groups/SymmetricGroup3/#3539" class="Function Operator">_·_</a> <a id="4292" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a><a id="4294" class="Symbol">))</a> <a id="4297" class="Symbol">(</a><a id="4298" href="/classic/Relation.Nullary.Decidable.Core.html#5912" class="Function">from-yes</a> <a id="4307" class="Symbol">(</a><a id="4308" href="/Overture/Operations/Properties/#3069" class="Function">LeftInverse?</a>   <a id="4323" href="/Examples/Classical/Groups/SymmetricGroup3/#3539" class="Function Operator">_·_</a> <a id="4327" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="4330" href="/Examples/Classical/Groups/SymmetricGroup3/#3717" class="Function">s3-inv</a><a id="4336" class="Symbol">))</a>
-  <a id="4341" class="Symbol">(</a><a id="4342" href="/classic/Relation.Nullary.Decidable.Core.html#5912" class="Function">from-yes</a> <a id="4351" class="Symbol">(</a><a id="4352" href="/Overture/Operations/Properties/#3203" class="Function">RightInverse?</a>  <a id="4367" href="/Examples/Classical/Groups/SymmetricGroup3/#3539" class="Function Operator">_·_</a> <a id="4371" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="4374" href="/Examples/Classical/Groups/SymmetricGroup3/#3717" class="Function">s3-inv</a><a id="4380" class="Symbol">))</a>
+  <a id="4193" class="Symbol">(</a><a id="4194" href="/classic/Relation.Nullary.Decidable.Core.html#5912" class="Function">from-yes</a> <a id="4203" class="Symbol">(</a><a id="4204" href="/Overture/Operations/Properties/#2585" class="Function">Associative?</a>   <a id="4219" href="/Examples/Classical/Groups/SymmetricGroup3/#3539" class="Function Operator">_·_</a><a id="4222" class="Symbol">))</a> <a id="4225" class="Symbol">(</a><a id="4226" href="/classic/Relation.Nullary.Decidable.Core.html#5912" class="Function">from-yes</a> <a id="4235" class="Symbol">(</a><a id="4236" href="/Overture/Operations/Properties/#2793" class="Function">LeftIdentity?</a>  <a id="4251" href="/Examples/Classical/Groups/SymmetricGroup3/#3539" class="Function Operator">_·_</a> <a id="4255" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a><a id="4257" class="Symbol">))</a>
+  <a id="4262" class="Symbol">(</a><a id="4263" href="/classic/Relation.Nullary.Decidable.Core.html#5912" class="Function">from-yes</a> <a id="4272" class="Symbol">(</a><a id="4273" href="/Overture/Operations/Properties/#2911" class="Function">RightIdentity?</a> <a id="4288" href="/Examples/Classical/Groups/SymmetricGroup3/#3539" class="Function Operator">_·_</a> <a id="4292" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a><a id="4294" class="Symbol">))</a> <a id="4297" class="Symbol">(</a><a id="4298" href="/classic/Relation.Nullary.Decidable.Core.html#5912" class="Function">from-yes</a> <a id="4307" class="Symbol">(</a><a id="4308" href="/Overture/Operations/Properties/#3079" class="Function">LeftInverse?</a>   <a id="4323" href="/Examples/Classical/Groups/SymmetricGroup3/#3539" class="Function Operator">_·_</a> <a id="4327" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="4330" href="/Examples/Classical/Groups/SymmetricGroup3/#3717" class="Function">s3-inv</a><a id="4336" class="Symbol">))</a>
+  <a id="4341" class="Symbol">(</a><a id="4342" href="/classic/Relation.Nullary.Decidable.Core.html#5912" class="Function">from-yes</a> <a id="4351" class="Symbol">(</a><a id="4352" href="/Overture/Operations/Properties/#3213" class="Function">RightInverse?</a>  <a id="4367" href="/Examples/Classical/Groups/SymmetricGroup3/#3539" class="Function Operator">_·_</a> <a id="4371" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="4374" href="/Examples/Classical/Groups/SymmetricGroup3/#3717" class="Function">s3-inv</a><a id="4380" class="Symbol">))</a>
 
 <a id="4384" class="Keyword">open</a> <a id="4389" href="/Classical/Structures/Group/Basic/#8641" class="Module">Polymorphic.Group-Op</a> <a id="4410" href="/Examples/Classical/Groups/SymmetricGroup3/#4130" class="Function">s3-group</a> <a id="4419" class="Keyword">using</a> <a id="4425" class="Symbol">(</a> <a id="4427" href="/Classical/Structures/Group/Basic/#8871" class="Function Operator">_∙_</a> <a id="4431" class="Symbol">;</a> <a id="4433" href="/Classical/Structures/Group/Basic/#8931" class="Function">ε</a> <a id="4435" class="Symbol">;</a> <a id="4437" href="/Classical/Structures/Group/Basic/#8983" class="Function Operator">_⁻¹</a> <a id="4441" class="Symbol">)</a>
 </pre>
