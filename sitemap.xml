@@ -381,7 +381,15 @@
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/RegularAction/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
          <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/Simple/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/SubgroupClassification/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
@@ -390,6 +398,10 @@
     </url>
     <url>
          <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/Subgroups/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/TableGroup/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
@@ -406,6 +418,10 @@
     </url>
     <url>
          <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Lattice/Dual/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Lattice/FilterIdeal/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
@@ -705,6 +721,14 @@
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
+         <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/FilterIdeal/A5Data/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/FilterIdeal/L16SubA5/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
          <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/Group/TG9x4TwoByTwo/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
@@ -822,6 +846,10 @@
     </url>
     <url>
          <loc>https://agda-algebras.universalalgebra.org/FLRP/Closure/Basic/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/FLRP/Closure/FilterIdeal/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
