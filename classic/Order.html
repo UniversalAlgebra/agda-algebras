@@ -10,22 +10,23 @@ author: &quot;agda-algebras development team&quot;
 
 This is the [Order][] module of the [Agda Universal Algebra Library][].
 
-This top-level `Order/` tree collects the *order-theoretic* structures used across the
-universal-algebra development — currently the complete lattice (`Order.CompleteLattice`),
-which the standard library lacks, and intervals in lattices (`Order.Interval`).  It is deliberately separate from `Classical/`: here a
-lattice is an *ordered* structure (a poset with meets and joins), whereas the
-`Classical.*.Lattice` modules formalize lattices *as equational algebras* over
-`Sig-Lattice`.  The congruence lattice ([Setoid.Congruences.CompleteLattice][]) and the
-subalgebra lattice ([Setoid.Subalgebras.CompleteLattice][]) are the motivating
-instances.
+This top-level `Order/` tree collects the *order-theoretic* structures used across
+the universal-algebra development.  Currently this includes a complete lattice module
+(`Order.CompleteLattice`{.AgdaModule}, which the standard library lacks), and
+a module codifying intervals in lattices (`Order.Interval`).  It is deliberately
+separate from `Classical/`: here a lattice is an *ordered* structure (a poset with
+meets and joins), whereas the `Classical.*.Lattice` modules formalize lattices *as
+equational algebras* over `Sig-Lattice`.  The congruence lattice
+([Setoid.Congruences.CompleteLattice][]) and the subalgebra lattice
+([Setoid.Subalgebras.CompleteLattice][]) are the motivating instances.
 
-</a><a id="896" class="Markup">```agda
-</a><a id="904" class="Symbol">{-#</a> <a id="908" class="Keyword">OPTIONS</a> <a id="916" class="Pragma">--cubical-compatible</a> <a id="937" class="Pragma">--exact-split</a> <a id="951" class="Pragma">--safe</a> <a id="958" class="Symbol">#-}</a>
+</a><a id="947" class="Markup">```agda
+</a><a id="955" class="Symbol">{-#</a> <a id="959" class="Keyword">OPTIONS</a> <a id="967" class="Pragma">--cubical-compatible</a> <a id="988" class="Pragma">--exact-split</a> <a id="1002" class="Pragma">--safe</a> <a id="1009" class="Symbol">#-}</a>
 
-<a id="963" class="Keyword">module</a> <a id="970" href="Order.html" class="Module">Order</a> <a id="976" class="Keyword">where</a>
+<a id="1014" class="Keyword">module</a> <a id="1021" href="Order.html" class="Module">Order</a> <a id="1027" class="Keyword">where</a>
 
-<a id="983" class="Keyword">open</a> <a id="988" class="Keyword">import</a> <a id="995" href="Order.CompleteLattice.html" class="Module">Order.CompleteLattice</a> <a id="1017" class="Keyword">public</a>
-<a id="1024" class="Keyword">open</a> <a id="1029" class="Keyword">import</a> <a id="1036" href="Order.Interval.html" class="Module">Order.Interval</a> <a id="1051" class="Keyword">public</a>
-<a id="1058" class="Keyword">open</a> <a id="1063" class="Keyword">import</a> <a id="1070" href="Order.Iso.html" class="Module">Order.Iso</a> <a id="1080" class="Keyword">public</a>
-<a id="1087" class="Markup">```
+<a id="1034" class="Keyword">open</a> <a id="1039" class="Keyword">import</a> <a id="1046" href="Order.CompleteLattice.html" class="Module">Order.CompleteLattice</a>  <a id="1069" class="Keyword">public</a>
+<a id="1076" class="Keyword">open</a> <a id="1081" class="Keyword">import</a> <a id="1088" href="Order.Interval.html" class="Module">Order.Interval</a>         <a id="1111" class="Keyword">public</a>
+<a id="1118" class="Keyword">open</a> <a id="1123" class="Keyword">import</a> <a id="1130" href="Order.Iso.html" class="Module">Order.Iso</a>              <a id="1153" class="Keyword">public</a>
+<a id="1160" class="Markup">```
 </a></pre></body></html>

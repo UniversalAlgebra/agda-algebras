@@ -15499,6 +15499,8 @@
       
         
       
+        
+      
     
     
     
@@ -15548,6 +15550,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Parachute/Basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -16736,7 +16766,7 @@ Problem negatively.</p>
 <a id="5417" class="Keyword">open</a> <a id="5422" class="Keyword">import</a> <a id="5429" href="/Setoid/Algebras/" class="Module">Setoid.Algebras</a>               <a id="5459" class="Keyword">using</a>  <a id="5466" class="Symbol">(</a> <a id="5468" href="/Setoid/Algebras/Basic/#5431" class="Function Operator">𝔻[_]</a> <a id="5473" class="Symbol">;</a> <a id="5475" href="/Setoid/Algebras/Basic/#5875" class="Function Operator">𝕌[_]</a> <a id="5480" class="Symbol">;</a> <a id="5482" href="/Setoid/Algebras/Finite/#3202" class="Record">FiniteAlgebra</a> <a id="5496" class="Symbol">)</a>
 <a id="5498" class="Keyword">open</a> <a id="5503" class="Keyword">import</a> <a id="5510" href="/Setoid/Homomorphisms/" class="Module">Setoid.Homomorphisms</a>          <a id="5540" class="Keyword">using</a>  <a id="5547" class="Symbol">(</a> <a id="5549" href="/Setoid/Homomorphisms/HomomorphicImages/#2335" class="Function Operator">_IsHomImageOf_</a> <a id="5564" class="Symbol">)</a>
 <a id="5566" class="Keyword">open</a> <a id="5571" class="Keyword">import</a> <a id="5578" href="/Setoid/Subalgebras/" class="Module">Setoid.Subalgebras</a>            <a id="5608" class="Keyword">using</a>  <a id="5615" class="Symbol">(</a> <a id="5617" href="/Setoid/Subalgebras/Subuniverses/#4336" class="Function">Subuniverses</a> <a id="5630" class="Symbol">)</a>
-<a id="5632" class="Keyword">open</a> <a id="5637" class="Keyword">import</a> <a id="5644" href="/Order/Interval/" class="Module">Order.Interval</a>                <a id="5674" class="Keyword">using</a>  <a id="5681" class="Symbol">(</a> <a id="5683" class="Keyword">module</a> <a id="5690" href="/Order/Interval/#2304" class="Module">IntervalLattice</a> <a id="5706" class="Symbol">)</a>
+<a id="5632" class="Keyword">open</a> <a id="5637" class="Keyword">import</a> <a id="5644" href="/Order/Interval/" class="Module">Order.Interval</a>                <a id="5674" class="Keyword">using</a>  <a id="5681" class="Symbol">(</a> <a id="5683" class="Keyword">module</a> <a id="5690" href="/Order/Interval/#2310" class="Module">IntervalLattice</a> <a id="5706" class="Symbol">)</a>
 <a id="5708" class="Comment">-- open import Setoid.Subalgebras.CompleteLattice using</a>
 </pre>
 
@@ -16781,12 +16811,12 @@ accessors, and the smart constructor <code class="AgdaFunction">mk</code>.</p>
   <a id="7976" href="/FLRP/Enforceable/#7964" class="Function">H↑</a> <a id="7979" class="Symbol">=</a> <a id="7981" href="/Classical/Structures/Group/SubgroupLattice/#4306" class="Function">subgroup→Subᴸ</a> <a id="7995" href="/FLRP/Enforceable/#7648" class="Bound">H</a> <a id="7997" href="/FLRP/Enforceable/#7681" class="Bound">H-sg</a>
 
   <a id="8005" class="Comment">-- The bare interval [H , G], by the generic construction.</a>
-  <a id="8066" class="Keyword">open</a> <a id="8071" href="/Order/Interval/#2304" class="Module">IntervalLattice</a> <a id="8087" href="/Setoid/Subalgebras/CompleteLattice/#6747" class="Function">Sub-Lattice</a> <a id="8099" href="/FLRP/Enforceable/#7964" class="Function">H↑</a> <a id="8102" href="/Setoid/Subalgebras/CompleteLattice/#7548" class="Function">1ˢ</a> <a id="8105" class="Symbol">(</a><a id="8106" href="/Setoid/Subalgebras/CompleteLattice/#7692" class="Function">1ˢ-maximum</a> <a id="8117" href="/FLRP/Enforceable/#7964" class="Function">H↑</a><a id="8119" class="Symbol">)</a>
-    <a id="8125" class="Keyword">renaming</a> <a id="8134" class="Symbol">(</a><a id="8135" href="/Order/Interval/#2975" class="Function Operator">_≈_</a> <a id="8139" class="Symbol">to</a> <a id="8142" class="Function Operator">_≈↑_</a> <a id="8147" class="Symbol">;</a> <a id="8149" href="/Order/Interval/#3043" class="Function Operator">_≤_</a> <a id="8153" class="Symbol">to</a> <a id="8156" class="Function Operator">_≤↑_</a><a id="8160" class="Symbol">)</a>
+  <a id="8066" class="Keyword">open</a> <a id="8071" href="/Order/Interval/#2310" class="Module">IntervalLattice</a> <a id="8087" href="/Setoid/Subalgebras/CompleteLattice/#6747" class="Function">Sub-Lattice</a> <a id="8099" href="/FLRP/Enforceable/#7964" class="Function">H↑</a> <a id="8102" href="/Setoid/Subalgebras/CompleteLattice/#7548" class="Function">1ˢ</a> <a id="8105" class="Symbol">(</a><a id="8106" href="/Setoid/Subalgebras/CompleteLattice/#7692" class="Function">1ˢ-maximum</a> <a id="8117" href="/FLRP/Enforceable/#7964" class="Function">H↑</a><a id="8119" class="Symbol">)</a>
+    <a id="8125" class="Keyword">renaming</a> <a id="8134" class="Symbol">(</a><a id="8135" href="/Order/Interval/#2981" class="Function Operator">_≈_</a> <a id="8139" class="Symbol">to</a> <a id="8142" class="Function Operator">_≈↑_</a> <a id="8147" class="Symbol">;</a> <a id="8149" href="/Order/Interval/#3049" class="Function Operator">_≤_</a> <a id="8153" class="Symbol">to</a> <a id="8156" class="Function Operator">_≤↑_</a><a id="8160" class="Symbol">)</a>
 
   <a id="8165" class="Comment">-- An interval element: a bare element whose predicate respects ≈.</a>
   <a id="UpperInterval.Interval≈"></a><a id="8234" href="/FLRP/Enforceable/#8234" class="Function">Interval≈</a> <a id="8244" class="Symbol">:</a> <a id="8246" href="/FLRP/Enforceable/#3634" class="Primitive">Type</a> <a id="8251" class="Symbol">(</a><a id="8252" href="/FLRP/Enforceable/#4263" class="Primitive">lsuc</a> <a id="8257" href="/classic/Level.html#521" class="Function">0ℓ</a><a id="8259" class="Symbol">)</a>
-  <a id="8263" href="/FLRP/Enforceable/#8234" class="Function">Interval≈</a> <a id="8273" class="Symbol">=</a> <a id="8275" href="/classic/Data.Product.Base.html#1244" class="Function">Σ[</a> <a id="8278" href="/FLRP/Enforceable/#8278" class="Bound">((</a><a id="8280" href="/FLRP/Enforceable/#8280" class="Bound">M</a> <a id="8282" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="8284" href="/FLRP/Enforceable/#8284" class="Bound">M∈Subs</a><a id="8290" href="/FLRP/Enforceable/#8278" class="Bound">)</a> <a id="8292" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="8294" href="/FLRP/Enforceable/#8294" class="Bound">H≤M</a> <a id="8298" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="8300" href="/FLRP/Enforceable/#8300" class="Bound">M≤G</a><a id="8303" href="/FLRP/Enforceable/#8278" class="Bound">)</a> <a id="8305" href="/classic/Data.Product.Base.html#1244" class="Function">∈</a> <a id="8307" href="/Order/Interval/#2801" class="Function">Interval</a> <a id="8316" href="/classic/Data.Product.Base.html#1244" class="Function">]</a> <a id="8318" class="Symbol">(</a><a id="8319" href="/FLRP/Enforceable/#8280" class="Bound">M</a> <a id="8321" href="/classic/Relation.Binary.Definitions.html#5277" class="Function Operator">Respects</a> <a id="8330" href="/classic/Relation.Binary.Bundles.html#1324" class="Function Operator">_≈_</a><a id="8333" class="Symbol">)</a>
+  <a id="8263" href="/FLRP/Enforceable/#8234" class="Function">Interval≈</a> <a id="8273" class="Symbol">=</a> <a id="8275" href="/classic/Data.Product.Base.html#1244" class="Function">Σ[</a> <a id="8278" href="/FLRP/Enforceable/#8278" class="Bound">((</a><a id="8280" href="/FLRP/Enforceable/#8280" class="Bound">M</a> <a id="8282" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="8284" href="/FLRP/Enforceable/#8284" class="Bound">M∈Subs</a><a id="8290" href="/FLRP/Enforceable/#8278" class="Bound">)</a> <a id="8292" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="8294" href="/FLRP/Enforceable/#8294" class="Bound">H≤M</a> <a id="8298" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="8300" href="/FLRP/Enforceable/#8300" class="Bound">M≤G</a><a id="8303" href="/FLRP/Enforceable/#8278" class="Bound">)</a> <a id="8305" href="/classic/Data.Product.Base.html#1244" class="Function">∈</a> <a id="8307" href="/Order/Interval/#2807" class="Function">Interval</a> <a id="8316" href="/classic/Data.Product.Base.html#1244" class="Function">]</a> <a id="8318" class="Symbol">(</a><a id="8319" href="/FLRP/Enforceable/#8280" class="Bound">M</a> <a id="8321" href="/classic/Relation.Binary.Definitions.html#5277" class="Function Operator">Respects</a> <a id="8330" href="/classic/Relation.Binary.Bundles.html#1324" class="Function Operator">_≈_</a><a id="8333" class="Symbol">)</a>
 
   <a id="8338" class="Comment">-- Accessors: the underlying predicate and its four certificates.</a>
   <a id="UpperInterval.sublat"></a><a id="8406" href="/FLRP/Enforceable/#8406" class="Function">sublat</a> <a id="8413" class="Symbol">:</a> <a id="8415" href="/FLRP/Enforceable/#8234" class="Function">Interval≈</a> <a id="8425" class="Symbol">→</a> <a id="8427" href="/Setoid/Subalgebras/CompleteLattice/#3758" class="Function">Subᴸ</a>

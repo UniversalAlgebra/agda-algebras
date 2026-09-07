@@ -15426,6 +15426,8 @@
       
         
       
+        
+      
     
     
     
@@ -15475,6 +15477,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../FLRP/Parachute/Basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -16544,7 +16574,7 @@ exact elements rather than ≈-classes; a respecting join would take the ≈-sat
 <a id="2660" class="Comment">-- Imports from the Agda Universal Algebra Library ------------------------------</a>
 <a id="2742" class="Keyword">open</a> <a id="2747" class="Keyword">import</a> <a id="2754" href="/Classical/Structures/Group/Basic/" class="Module">Classical.Structures.Group.Basic</a>      <a id="2792" class="Keyword">using</a> <a id="2798" class="Symbol">(</a> <a id="2800" href="/Classical/Structures/Group/Basic/#5165" class="Function">Group</a> <a id="2806" class="Symbol">;</a> <a id="2808" class="Keyword">module</a> <a id="2815" href="/Classical/Structures/Group/Basic/#8641" class="Module">Group-Op</a> <a id="2824" class="Symbol">)</a>
 <a id="2826" class="Keyword">open</a> <a id="2831" class="Keyword">import</a> <a id="2838" href="/Classical/Structures/Group/Subgroups/" class="Module">Classical.Structures.Group.Subgroups</a>  <a id="2876" class="Keyword">using</a> <a id="2882" class="Symbol">(</a> <a id="2884" href="/Classical/Structures/Group/Subgroups/#6500" class="Record">IsSubgroup</a> <a id="2895" class="Symbol">;</a> <a id="2897" href="/Classical/Structures/Group/Subgroups/#5842" class="Function">sub-ε-closed</a> <a id="2910" class="Symbol">)</a>
-<a id="2912" class="Keyword">open</a> <a id="2917" class="Keyword">import</a> <a id="2924" href="/Order/Interval/" class="Module">Order.Interval</a>                        <a id="2962" class="Keyword">using</a> <a id="2968" class="Symbol">(</a> <a id="2970" class="Keyword">module</a> <a id="2977" href="/Order/Interval/#2304" class="Module">IntervalLattice</a> <a id="2993" class="Symbol">)</a>
+<a id="2912" class="Keyword">open</a> <a id="2917" class="Keyword">import</a> <a id="2924" href="/Order/Interval/" class="Module">Order.Interval</a>                        <a id="2962" class="Keyword">using</a> <a id="2968" class="Symbol">(</a> <a id="2970" class="Keyword">module</a> <a id="2977" href="/Order/Interval/#2310" class="Module">IntervalLattice</a> <a id="2993" class="Symbol">)</a>
 <a id="2995" class="Keyword">open</a> <a id="3000" class="Keyword">import</a> <a id="3007" href="/Setoid/Algebras/Basic/" class="Module">Setoid.Algebras.Basic</a>                 <a id="3045" class="Keyword">using</a> <a id="3051" class="Symbol">(</a> <a id="3053" href="/Setoid/Algebras/Basic/#5875" class="Function Operator">𝕌[_]</a> <a id="3058" class="Symbol">)</a>
 <a id="3060" class="Keyword">open</a> <a id="3065" class="Keyword">import</a> <a id="3072" href="/Setoid/Subalgebras/CompleteLattice/" class="Module">Setoid.Subalgebras.CompleteLattice</a>    <a id="3110" class="Keyword">using</a> <a id="3116" class="Symbol">(</a> <a id="3118" class="Keyword">module</a> <a id="3125" href="/Setoid/Subalgebras/CompleteLattice/#3529" class="Module">Sublattice</a> <a id="3136" class="Symbol">)</a>
 </pre>
@@ -16605,7 +16635,7 @@ between <code>B</code> and <code>C</code> — is a bounded lattice, by the gener
 Opening <code>SubInterval B C B≤C</code> provides the interval carrier, its order, and the
 <code>Lattice</code>/<code>BoundedLattice</code> bundles; the FLRP-side intervals <code>[H, G]</code> of the
 Pálfy–Pudlák correspondence are the instances with <code>C</code> the full subgroup.</p>
-<pre class="Agda">  <a id="5882" class="Keyword">module</a> <a id="GroupSublattice.SubInterval"></a><a id="5889" href="/Classical/Structures/Group/SubgroupLattice/#5889" class="Module">SubInterval</a> <a id="5901" class="Symbol">(</a><a id="5902" href="/Classical/Structures/Group/SubgroupLattice/#5902" class="Bound">B</a> <a id="5904" href="/Classical/Structures/Group/SubgroupLattice/#5904" class="Bound">C</a> <a id="5906" class="Symbol">:</a> <a id="5908" href="/Setoid/Subalgebras/CompleteLattice/#3758" class="Function">Subᴸ</a><a id="5912" class="Symbol">)</a> <a id="5914" class="Symbol">(</a><a id="5915" href="/Classical/Structures/Group/SubgroupLattice/#5915" class="Bound">B≤C</a> <a id="5919" class="Symbol">:</a> <a id="5921" href="/Classical/Structures/Group/SubgroupLattice/#5902" class="Bound">B</a> <a id="5923" href="/Setoid/Subalgebras/CompleteLattice/#3972" class="Function Operator">≤</a> <a id="5925" href="/Classical/Structures/Group/SubgroupLattice/#5904" class="Bound">C</a><a id="5926" class="Symbol">)</a> <a id="5928" class="Symbol">=</a> <a id="5930" href="/Order/Interval/#2304" class="Module">IntervalLattice</a> <a id="5946" href="/Setoid/Subalgebras/CompleteLattice/#6747" class="Function">Sub-Lattice</a> <a id="5958" href="/Classical/Structures/Group/SubgroupLattice/#5902" class="Bound">B</a> <a id="5960" href="/Classical/Structures/Group/SubgroupLattice/#5904" class="Bound">C</a> <a id="5962" href="/Classical/Structures/Group/SubgroupLattice/#5915" class="Bound">B≤C</a>
+<pre class="Agda">  <a id="5882" class="Keyword">module</a> <a id="GroupSublattice.SubInterval"></a><a id="5889" href="/Classical/Structures/Group/SubgroupLattice/#5889" class="Module">SubInterval</a> <a id="5901" class="Symbol">(</a><a id="5902" href="/Classical/Structures/Group/SubgroupLattice/#5902" class="Bound">B</a> <a id="5904" href="/Classical/Structures/Group/SubgroupLattice/#5904" class="Bound">C</a> <a id="5906" class="Symbol">:</a> <a id="5908" href="/Setoid/Subalgebras/CompleteLattice/#3758" class="Function">Subᴸ</a><a id="5912" class="Symbol">)</a> <a id="5914" class="Symbol">(</a><a id="5915" href="/Classical/Structures/Group/SubgroupLattice/#5915" class="Bound">B≤C</a> <a id="5919" class="Symbol">:</a> <a id="5921" href="/Classical/Structures/Group/SubgroupLattice/#5902" class="Bound">B</a> <a id="5923" href="/Setoid/Subalgebras/CompleteLattice/#3972" class="Function Operator">≤</a> <a id="5925" href="/Classical/Structures/Group/SubgroupLattice/#5904" class="Bound">C</a><a id="5926" class="Symbol">)</a> <a id="5928" class="Symbol">=</a> <a id="5930" href="/Order/Interval/#2310" class="Module">IntervalLattice</a> <a id="5946" href="/Setoid/Subalgebras/CompleteLattice/#6747" class="Function">Sub-Lattice</a> <a id="5958" href="/Classical/Structures/Group/SubgroupLattice/#5902" class="Bound">B</a> <a id="5960" href="/Classical/Structures/Group/SubgroupLattice/#5904" class="Bound">C</a> <a id="5962" href="/Classical/Structures/Group/SubgroupLattice/#5915" class="Bound">B≤C</a>
 </pre>
 
 <!-- File: docs/_links.md -->
