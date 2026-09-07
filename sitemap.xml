@@ -313,6 +313,10 @@
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/Commutator/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
          <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/Complements/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
@@ -378,6 +382,10 @@
     </url>
     <url>
          <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/Power/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Group/PowerCollapse/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
@@ -689,10 +697,6 @@
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/KurzweilInterval/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
          <loc>https://agda-algebras.universalalgebra.org/FLRP/KurzweilNetter/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
@@ -865,6 +869,10 @@
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
+         <loc>https://agda-algebras.universalalgebra.org/FLRP/KurzweilNetter/A5/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
          <loc>https://agda-algebras.universalalgebra.org/FLRP/KurzweilNetter/Blocks/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
@@ -877,7 +885,15 @@
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
+         <loc>https://agda-algebras.universalalgebra.org/FLRP/KurzweilNetter/Interval/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
          <loc>https://agda-algebras.universalalgebra.org/FLRP/KurzweilNetter/Invariance/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/FLRP/KurzweilNetter/Surjectivity/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>

@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>FLRP.KurzweilNetter.A5</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">---
+layout: default
+file: &quot;src/FLRP/KurzweilNetter/A5.lagda.md&quot;
+title: &quot;FLRP.KurzweilNetter.A5 module (The Agda Universal Algebra Library)&quot;
+date: &quot;2026-09-02&quot;
+author: &quot;the agda-algebras development team&quot;
+---
+
+### The Kurzweil–Netter theorem, closed at A₅
+
+This is the [FLRP.KurzweilNetter.A5][] module of the [Agda Universal Algebra Library][].
+
+**Theorem**.  If a finite lattice is decidably representable, then so is its dual.
+
+This module instantiates the base-group package of
+[FLRP.KurzweilNetter.Duality][]&#39;s closed form at the certified alternating group
+`A₅` of [Examples.Classical.Groups.AlternatingGroup5][], producing a *closed*
+inhabitant of `KurzweilNetterDuality`{.AgdaFunction}: no hypothesis remains.
+
+The ingredients are as follows:
+
++  the group table and its laws by finite computation;
++  nonabelian simplicity by the certified `IsNonabelianSimple`{.AgdaRecord} bundle;
++  the carrier finiteness by the `FiniteAlgebra`{.AgdaRecord} witness;
++  Kurzweil surjectivity by the blockwise collapse.
+
+Each is machine-checked upstream, so the duality theorem of Kurzweil and Netter is
+now fully proved in the agda-algebras library, with `A₅` as the canonical witness
+that the parameterized proof&#39;s package is inhabitable.
+
+The per-exponent surjectivity family is exported alongside, in the form the census
+consumers and any future instantiation-free arguments quote.
+
+&lt;!--
+</a><a id="1386" class="Markup">```agda
+</a><a id="1394" class="Symbol">{-#</a> <a id="1398" class="Keyword">OPTIONS</a> <a id="1406" class="Pragma">--cubical-compatible</a> <a id="1427" class="Pragma">--exact-split</a> <a id="1441" class="Pragma">--safe</a> <a id="1448" class="Symbol">#-}</a>
+
+<a id="1453" class="Keyword">module</a> <a id="1460" href="FLRP.KurzweilNetter.A5.html" class="Module">FLRP.KurzweilNetter.A5</a> <a id="1483" class="Keyword">where</a>
+
+<a id="1490" class="Keyword">open</a> <a id="1495" class="Keyword">import</a> <a id="1502" href="Data.Nat.Base.html" class="Module">Data.Nat.Base</a> <a id="1516" class="Keyword">using</a> <a id="1522" class="Symbol">(</a> <a id="1524" href="Agda.Builtin.Nat.html#203" class="Datatype">ℕ</a> <a id="1526" class="Symbol">)</a>
+
+<a id="1529" class="Comment">-- Imports from the Agda Universal Algebra Library ------------------------------</a>
+<a id="1611" class="Keyword">open</a> <a id="1616" class="Keyword">import</a> <a id="1623" href="Examples.Classical.Groups.AlternatingGroup5.html" class="Module">Examples.Classical.Groups.AlternatingGroup5</a>  <a id="1668" class="Keyword">using</a>  <a id="1675" class="Symbol">(</a> <a id="1677" href="Examples.Classical.Groups.AlternatingGroup5.html#5787" class="Function">a5-group</a> <a id="1686" class="Symbol">;</a> <a id="1688" href="Examples.Classical.Groups.AlternatingGroup5.html#11393" class="Function">a5-finite</a>
+                                                                <a id="1762" class="Symbol">;</a> <a id="1764" href="Examples.Classical.Groups.AlternatingGroup5.html#9291" class="Function">a5-isNonabelianSimple</a> <a id="1786" class="Symbol">)</a>
+<a id="1788" class="Keyword">open</a> <a id="1793" class="Keyword">import</a> <a id="1800" href="FLRP.Assumptions.html" class="Module">FLRP.Assumptions</a>                             <a id="1845" class="Keyword">using</a>  <a id="1852" class="Symbol">(</a> <a id="1854" href="FLRP.Assumptions.html#22371" class="Function">KurzweilSurjectivityᵈAt</a>
+                                                                <a id="1942" class="Symbol">;</a> <a id="1944" href="FLRP.Assumptions.html#14803" class="Function">KurzweilNetterDuality</a> <a id="1966" class="Symbol">)</a>
+<a id="1968" class="Keyword">open</a> <a id="1973" class="Keyword">import</a> <a id="1980" href="FLRP.KurzweilNetter.Surjectivity.html" class="Module">FLRP.KurzweilNetter.Surjectivity</a>             <a id="2025" class="Keyword">using</a>  <a id="2032" class="Symbol">(</a> <a id="2034" href="FLRP.KurzweilNetter.Surjectivity.html#4219" class="Function">kurzweilSurjectivityᵈ</a> <a id="2056" class="Symbol">)</a>
+<a id="2058" class="Keyword">open</a> <a id="2063" class="Keyword">import</a> <a id="2070" href="FLRP.KurzweilNetter.Duality.html" class="Module">FLRP.KurzweilNetter.Duality</a>        <a id="2105" class="Keyword">using</a>  <a id="2112" class="Symbol">(</a> <a id="2114" href="FLRP.KurzweilNetter.Duality.html#15964" class="Function">kurzweilNetterDuality-ofSimple</a> <a id="2145" class="Symbol">)</a>
+<a id="2147" class="Markup">```
+</a><a id="2151" class="Background">--&gt;
+
+#### The instantiation
+
+Kurzweil surjectivity holds at `A₅` at every exponent; this is the family the
+Kurzweil–Netter route consumes, now closed.
+
+</a><a id="2303" class="Markup">```agda
+</a><a id="2311" class="Comment">-- Entry 4&#39;s working form, closed at A₅.</a>
+<a id="a5-kurzweilSurjectivityᵈ"></a><a id="2352" href="FLRP.KurzweilNetter.A5.html#2352" class="Function">a5-kurzweilSurjectivityᵈ</a> <a id="2377" class="Symbol">:</a> <a id="2379" class="Symbol">(</a><a id="2380" href="FLRP.KurzweilNetter.A5.html#2380" class="Bound">n</a> <a id="2382" class="Symbol">:</a> <a id="2384" href="Agda.Builtin.Nat.html#203" class="Datatype">ℕ</a><a id="2385" class="Symbol">)</a> <a id="2387" class="Symbol">→</a> <a id="2389" href="FLRP.Assumptions.html#22371" class="Function">KurzweilSurjectivityᵈAt</a> <a id="2413" href="Examples.Classical.Groups.AlternatingGroup5.html#5787" class="Function">a5-group</a> <a id="2422" href="FLRP.KurzweilNetter.A5.html#2380" class="Bound">n</a>
+<a id="2424" href="FLRP.KurzweilNetter.A5.html#2352" class="Function">a5-kurzweilSurjectivityᵈ</a> <a id="2449" class="Symbol">=</a>
+  <a id="2453" href="FLRP.KurzweilNetter.Surjectivity.html#4219" class="Function">kurzweilSurjectivityᵈ</a> <a id="2475" href="Examples.Classical.Groups.AlternatingGroup5.html#5787" class="Function">a5-group</a> <a id="2484" href="Examples.Classical.Groups.AlternatingGroup5.html#11393" class="Function">a5-finite</a> <a id="2494" href="Examples.Classical.Groups.AlternatingGroup5.html#9291" class="Function">a5-isNonabelianSimple</a>
+<a id="2516" class="Markup">```
+</a><a id="2520" class="Background">
+The theorem itself, with no remaining hypothesis.
+
+</a><a id="2572" class="Markup">```agda
+</a><a id="2580" class="Comment">-- The Kurzweil–Netter duality theorem: representable lattices are closed</a>
+<a id="2654" class="Comment">-- under dualization, unconditionally.</a>
+<a id="kurzweilNetterDuality-A₅"></a><a id="2693" href="FLRP.KurzweilNetter.A5.html#2693" class="Function">kurzweilNetterDuality-A₅</a> <a id="2718" class="Symbol">:</a> <a id="2720" href="FLRP.Assumptions.html#14803" class="Function">KurzweilNetterDuality</a>
+<a id="2742" href="FLRP.KurzweilNetter.A5.html#2693" class="Function">kurzweilNetterDuality-A₅</a> <a id="2767" class="Symbol">=</a>
+  <a id="2771" href="FLRP.KurzweilNetter.Duality.html#15964" class="Function">kurzweilNetterDuality-ofSimple</a> <a id="2802" href="Examples.Classical.Groups.AlternatingGroup5.html#5787" class="Function">a5-group</a> <a id="2811" href="Examples.Classical.Groups.AlternatingGroup5.html#11393" class="Function">a5-finite</a> <a id="2821" href="Examples.Classical.Groups.AlternatingGroup5.html#9291" class="Function">a5-isNonabelianSimple</a>
+<a id="2843" class="Markup">```
+</a></pre></body></html>
