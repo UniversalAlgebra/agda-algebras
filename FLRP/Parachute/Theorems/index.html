@@ -7845,6 +7845,8 @@
       
         
       
+        
+      
     
     
     
@@ -7910,6 +7912,34 @@
     
   
     Basic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Classical/Structures/Lattice/Disconnected/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disconnected
   
 
     
@@ -16612,8 +16642,8 @@ design note rather than assumed.</p>
 <a id="5135" class="Keyword">open</a> <a id="5140" class="Keyword">import</a> <a id="5147" href="/FLRP/Parachute/Basic/" class="Module">FLRP.Parachute.Basic</a>           <a id="5178" class="Keyword">using</a>  <a id="5185" class="Symbol">(</a> <a id="5187" class="Keyword">module</a> <a id="5194" href="/FLRP/Parachute/Basic/#4987" class="Module">GroupParachute</a> <a id="5209" class="Symbol">)</a>
 <a id="5211" class="Keyword">open</a> <a id="5216" class="Keyword">import</a> <a id="5223" href="/FLRP/Parachute/Representation/" class="Module">FLRP.Parachute.Representation</a>  <a id="5254" class="Keyword">using</a>  <a id="5261" class="Symbol">(</a> <a id="5263" class="Keyword">module</a> <a id="5270" href="/FLRP/Parachute/Representation/#8444" class="Module">ParachuteRep</a> <a id="5283" class="Symbol">;</a> <a id="5285" href="/FLRP/Parachute/Representation/#6543" class="Function">LatticeIso</a>
                                                   <a id="5346" class="Symbol">;</a> <a id="5348" href="/FLRP/Parachute/Representation/#6755" class="Function">compose-IntervalIsoʳ</a> <a id="5369" class="Symbol">)</a>
-<a id="5371" class="Keyword">open</a> <a id="5376" class="Keyword">import</a> <a id="5383" href="/FLRP/Problem/" class="Module">FLRP.Problem</a>                   <a id="5414" class="Keyword">using</a>  <a id="5421" class="Symbol">(</a> <a id="5423" href="/FLRP/Problem/#7254" class="Record">FiniteLattice</a> <a id="5437" class="Symbol">;</a> <a id="5439" href="/FLRP/Problem/#8033" class="Function">toLattice</a>
-                                                  <a id="5499" class="Symbol">;</a> <a id="5501" href="/FLRP/Problem/#10055" class="Function">FLRP-Statement</a> <a id="5516" class="Symbol">)</a>
+<a id="5371" class="Keyword">open</a> <a id="5376" class="Keyword">import</a> <a id="5383" href="/FLRP/Problem/" class="Module">FLRP.Problem</a>                   <a id="5414" class="Keyword">using</a>  <a id="5421" class="Symbol">(</a> <a id="5423" href="/FLRP/Problem/#7259" class="Record">FiniteLattice</a> <a id="5437" class="Symbol">;</a> <a id="5439" href="/FLRP/Problem/#8038" class="Function">toLattice</a>
+                                                  <a id="5499" class="Symbol">;</a> <a id="5501" href="/FLRP/Problem/#10060" class="Function">FLRP-Statement</a> <a id="5516" class="Symbol">)</a>
 <a id="5518" class="Keyword">open</a> <a id="5523" class="Keyword">import</a> <a id="5530" href="/Overture/" class="Module">Overture</a>                       <a id="5561" class="Keyword">using</a>  <a id="5568" class="Symbol">(</a> <a id="5570" href="/Overture/Basic/#7068" class="Function">∃-syntax</a> <a id="5579" class="Symbol">)</a>
 <a id="5581" class="Keyword">open</a> <a id="5586" class="Keyword">import</a> <a id="5593" href="/Setoid/Algebras/" class="Module">Setoid.Algebras</a>                <a id="5624" class="Keyword">using</a>  <a id="5631" class="Symbol">(</a> <a id="5633" href="/Setoid/Algebras/Basic/#5875" class="Function Operator">𝕌[_]</a> <a id="5638" class="Symbol">;</a> <a id="5640" href="/Setoid/Algebras/Basic/#5431" class="Function Operator">𝔻[_]</a> <a id="5645" class="Symbol">)</a>
 </pre>
@@ -16739,7 +16769,7 @@ Theorem 3.6, and the whole point of the RP-3 hunt.</p>
 it.  Statement (B) is quantified over such presentations, so this is what lets the
 previous theorem refute it.</p>
 <pre class="Agda">    <a id="ParachuteTheorems.Enforced.FinitePresentation"></a><a id="11028" href="/FLRP/Parachute/Theorems/#11028" class="Function">FinitePresentation</a> <a id="11047" class="Symbol">:</a> <a id="11049" href="/Classical/Small/Structures/Lattice/#1038" class="Function">Lattice</a> <a id="11057" class="Symbol">→</a> <a id="11059" href="/FLRP/Parachute/Theorems/#3579" class="Primitive">Type</a> <a id="11064" href="/classic/Level.html#521" class="Function">0ℓ</a>
-    <a id="11071" href="/FLRP/Parachute/Theorems/#11028" class="Function">FinitePresentation</a> <a id="11090" href="/FLRP/Parachute/Theorems/#11090" class="Bound">𝑳</a> <a id="11092" class="Symbol">=</a> <a id="11094" href="/classic/Data.Product.Base.html#1244" class="Function">Σ[</a> <a id="11097" href="/FLRP/Parachute/Theorems/#11097" class="Bound">𝑭</a> <a id="11099" href="/classic/Data.Product.Base.html#1244" class="Function">∈</a> <a id="11101" href="/FLRP/Problem/#7254" class="Record">FiniteLattice</a> <a id="11115" href="/classic/Data.Product.Base.html#1244" class="Function">]</a> <a id="11117" href="/FLRP/Parachute/Representation/#6543" class="Function">LatticeIso</a> <a id="11128" class="Symbol">(</a><a id="11129" href="/FLRP/Problem/#8033" class="Function">toLattice</a> <a id="11139" href="/FLRP/Parachute/Theorems/#11097" class="Bound">𝑭</a><a id="11140" class="Symbol">)</a> <a id="11142" href="/FLRP/Parachute/Theorems/#11090" class="Bound">𝑳</a>
+    <a id="11071" href="/FLRP/Parachute/Theorems/#11028" class="Function">FinitePresentation</a> <a id="11090" href="/FLRP/Parachute/Theorems/#11090" class="Bound">𝑳</a> <a id="11092" class="Symbol">=</a> <a id="11094" href="/classic/Data.Product.Base.html#1244" class="Function">Σ[</a> <a id="11097" href="/FLRP/Parachute/Theorems/#11097" class="Bound">𝑭</a> <a id="11099" href="/classic/Data.Product.Base.html#1244" class="Function">∈</a> <a id="11101" href="/FLRP/Problem/#7259" class="Record">FiniteLattice</a> <a id="11115" href="/classic/Data.Product.Base.html#1244" class="Function">]</a> <a id="11117" href="/FLRP/Parachute/Representation/#6543" class="Function">LatticeIso</a> <a id="11128" class="Symbol">(</a><a id="11129" href="/FLRP/Problem/#8038" class="Function">toLattice</a> <a id="11139" href="/FLRP/Parachute/Theorems/#11097" class="Bound">𝑭</a><a id="11140" class="Symbol">)</a> <a id="11142" href="/FLRP/Parachute/Theorems/#11090" class="Bound">𝑳</a>
 </pre>
 <p>The meta-theorem that caps the phase: <strong>finitely many cf-IE classes with empty
 intersection give the FLRP a negative answer</strong>.  Every step is now machine-checked
@@ -16749,7 +16779,7 @@ except the three explicit hypotheses.</p>
       <a id="11473" class="Symbol">→</a>  <a id="11476" href="/FLRP/Enforceable/#27784" class="Record">CoreFreeReduction</a>                        <a id="11517" class="Comment">-- core-free normalization</a>
       <a id="11550" class="Symbol">→</a>  <a id="11553" href="/FLRP/Parachute/Theorems/#11028" class="Function">FinitePresentation</a> <a id="11572" href="/Classical/Structures/Lattice/Parachute/#22861" class="Function">⊕ᵖ-Lattice</a>            <a id="11594" class="Comment">-- the parachute is a finite lattice</a>
       <a id="11637" class="Symbol">→</a>  <a id="11640" href="/FLRP/Assumptions/#17020" class="Function">PalfyPudlak</a>                              <a id="11681" class="Comment">-- Assumptions, Entry 3</a>
-      <a id="11711" class="Symbol">→</a>  <a id="11714" href="/classic/Relation.Nullary.Negation.Core.html#677" class="Function Operator">¬</a> <a id="11716" href="/FLRP/Problem/#10055" class="Function">FLRP-Statement</a>
+      <a id="11711" class="Symbol">→</a>  <a id="11714" href="/classic/Relation.Nullary.Negation.Core.html#677" class="Function Operator">¬</a> <a id="11716" href="/FLRP/Problem/#10060" class="Function">FLRP-Statement</a>
     <a id="11735" href="/FLRP/Parachute/Theorems/#11362" class="Function">strategy-meta-theorem</a> <a id="11757" href="/FLRP/Parachute/Theorems/#11757" class="Bound">empty</a> <a id="11763" href="/FLRP/Parachute/Theorems/#11763" class="Bound">cfr</a> <a id="11767" class="Symbol">(</a><a id="11768" href="/FLRP/Parachute/Theorems/#11768" class="Bound">𝑭</a> <a id="11770" href="/classic/Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="11772" href="/FLRP/Parachute/Theorems/#11772" class="Bound">liso</a><a id="11776" class="Symbol">)</a> <a id="11778" href="/FLRP/Parachute/Theorems/#11778" class="Bound">pp</a> <a id="11781" href="/FLRP/Parachute/Theorems/#11781" class="Bound">flrp</a> <a id="11786" class="Symbol">=</a>
       <a id="11794" href="/FLRP/Parachute/Theorems/#10496" class="Function">empty-intersection→not-representable</a> <a id="11831" href="/FLRP/Parachute/Theorems/#11757" class="Bound">empty</a> <a id="11837" href="/FLRP/Parachute/Theorems/#11763" class="Bound">cfr</a> <a id="11841" href="/FLRP/Parachute/Theorems/#11987" class="Function">represented</a>
       <a id="11859" class="Keyword">where</a>
@@ -16761,7 +16791,7 @@ except the three explicit hypotheses.</p>
         <a id="12096" class="Symbol">;</a> <a id="12098" href="/FLRP/Enforceable/#14460" class="Field">sub</a>           <a id="12112" class="Symbol">=</a> <a id="12114" href="/FLRP/Enforceable/#14460" class="Function">sub</a>
         <a id="12126" class="Symbol">;</a> <a id="12128" href="/FLRP/Enforceable/#14503" class="Field">isSubgroup</a>    <a id="12142" class="Symbol">=</a> <a id="12144" href="/FLRP/Enforceable/#14503" class="Function">isSubgroup</a>
         <a id="12163" class="Symbol">;</a> <a id="12165" href="/FLRP/Enforceable/#14542" class="Field">interval-iso</a>  <a id="12179" class="Symbol">=</a> <a id="12181" href="/FLRP/Parachute/Representation/#6755" class="Function">compose-IntervalIsoʳ</a> <a id="12202" href="/FLRP/Enforceable/#14428" class="Function">grp</a> <a id="12206" href="/FLRP/Enforceable/#14460" class="Function">sub</a> <a id="12210" href="/FLRP/Enforceable/#14503" class="Function">isSubgroup</a>
-                            <a id="12249" class="Symbol">(</a><a id="12250" href="/FLRP/Problem/#8033" class="Function">toLattice</a> <a id="12260" href="/FLRP/Parachute/Theorems/#11768" class="Bound">𝑭</a><a id="12261" class="Symbol">)</a> <a id="12263" href="/Classical/Structures/Lattice/Parachute/#22861" class="Function">⊕ᵖ-Lattice</a> <a id="12274" href="/FLRP/Enforceable/#14542" class="Function">interval-iso</a> <a id="12287" href="/FLRP/Parachute/Theorems/#11772" class="Bound">liso</a>
+                            <a id="12249" class="Symbol">(</a><a id="12250" href="/FLRP/Problem/#8038" class="Function">toLattice</a> <a id="12260" href="/FLRP/Parachute/Theorems/#11768" class="Bound">𝑭</a><a id="12261" class="Symbol">)</a> <a id="12263" href="/Classical/Structures/Lattice/Parachute/#22861" class="Function">⊕ᵖ-Lattice</a> <a id="12274" href="/FLRP/Enforceable/#14542" class="Function">interval-iso</a> <a id="12287" href="/FLRP/Parachute/Theorems/#11772" class="Bound">liso</a>
         <a id="12300" class="Symbol">}</a>
         <a id="12310" class="Keyword">where</a> <a id="12316" class="Keyword">open</a> <a id="12321" href="/FLRP/Enforceable/#14360" class="Module">GroupRepresentable</a> <a id="12340" class="Symbol">(</a><a id="12341" href="/FLRP/Parachute/Theorems/#11778" class="Bound">pp</a> <a id="12344" href="/FLRP/Parachute/Theorems/#11781" class="Bound">flrp</a> <a id="12349" href="/FLRP/Parachute/Theorems/#11768" class="Bound">𝑭</a><a id="12350" class="Symbol">)</a>
 </pre>
