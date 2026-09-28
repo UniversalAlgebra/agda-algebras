@@ -15987,6 +15987,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#corpus-stats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Corpus stats
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -16710,6 +16721,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#corpus-stats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Corpus stats
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -16979,7 +17001,8 @@ section) are defined in <code>scripts/python/mkdocs_gen_library.py</code> in the
 <code>custom.css</code> (<code>§8</code>–<code>§11</code>):</p>
 <ul>
 <li>the <strong>hero</strong> (<code>.ualib-hero</code>) — title, tagline, the formula, the buttons;</li>
-<li>the <strong>stat strip</strong> (<code>.ualib-stats</code>) — edit the four numbers inline;</li>
+<li>the <strong>stat strip</strong> (<code>.ualib-stats</code>), whose four figures are counted from the
+   tree and must never be edited by hand (see <a href="#corpus-stats">Corpus stats</a>);</li>
 <li>the <strong>Featured results gallery</strong> (<code>.ualib-figures</code>) — each card is one
    <code>&lt;a class="ualib-figure"&gt;</code>; swap a monogram for a photo by replacing the
    <code>&lt;span class="ualib-portrait"&gt;GB&lt;/span&gt;</code> with
@@ -17011,6 +17034,39 @@ does not error, it renders as literal text and sails past <code>mkdocs build
 </ul>
 <p>Run <code>make check-links</code> before pushing docs changes; <code>make check-links-test</code>
 exercises the scanner's own unit tests.</p>
+<h3 id="corpus-stats">Corpus stats<a class="headerlink" href="#corpus-stats" title="Anchor link to this section">&para;</a></h3>
+<p>The landing page's four figures are facts about this repository, so none of them
+is typed by hand.  <code>scripts/python/corpus_stats.py</code> counts them and writes them
+into the <code>&lt;!-- ualib:stat:NAME --&gt;…&lt;!-- /ualib:stat:NAME --&gt;</code> marker pairs in
+<code>docs/index.md</code>:</p>
+<ul>
+<li><code>modules</code> and <code>loc</code>, the literate modules under <code>src/</code> outside the frozen
+   <code>Legacy/</code> tree and the lines of Agda inside their code fences;</li>
+<li><code>checked</code>, the share of those modules whose <code>OPTIONS</code> pragma carries
+   <code>--safe</code>, which is what "100% machine-checked" asserts;</li>
+<li><code>agda</code> and <code>stdlib</code>, read from <code>mkdocs.yml</code>'s <code>extra:</code> site variables and
+   reconciled against the two pins that bind them: the <code>depend:</code> line of
+   <code>agda-algebras.agda-lib</code>, whose stdlib version Agda enforces exactly, and the
+   version-floor guards in <code>flake.nix</code>.  The stdlib half is therefore exact; the
+   Agda half is by <em>series</em>, because <code>flake.nix</code> deliberately guards <code>2.8.*</code> and
+   nothing in the repository states a patch level.  A move from Agda 2.8.0 to
+   2.8.1 is thus visible in the dev shell's banner on entry, but no check in this
+   repository fails on it.</li>
+</ul>
+<p>Three commands, one gate:</p>
+<ul>
+<li><code>make corpus-stats</code> rewrites the figures in <code>docs/index.md</code>;</li>
+<li><code>make corpus-stats-check</code> fails, with a diff, when a committed figure has
+   drifted from the tree.  CI runs it as the <em>Landing-page stats</em> job, so the
+   pull request that moves a number is the one that refreshes the page;</li>
+<li><code>make corpus-stats-test</code> exercises the tool's own unit tests.</li>
+</ul>
+<p>The MkDocs hook substitutes the same values into the rendered page at build
+time, but that is a convenience, not the mechanism: it rewrites only the built
+HTML, so before the gate existed the committed values, which are the ones GitHub
+renders, sat six weeks behind the tree and were quoted elsewhere as current.
+<code>corpus_stats.py --json</code> prints the figures as one record for anything outside
+this repository that wants to cite them.</p>
 <h2 id="where-things-live">Where things live<a class="headerlink" href="#where-things-live" title="Anchor link to this section">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>mkdocs.yml                              site config (theme, plugins, nav behaviour)
 docs/
@@ -17025,6 +17081,7 @@ scripts/python/
   mkdocs_hooks.py                       link rewriting + per-page build log
   gen_links.py                          regenerates the module + ADR sections of _links.md
   check_links.py                        fails CI on any undefined reference-style link
+  corpus_stats.py                       counts the landing page&#39;s figures; refreshes and gates them
 .github/workflows/docs.yml              build (make site-full) + deploy to gh-pages
 </code></pre></div>
 <!-- File: docs/_links.md -->

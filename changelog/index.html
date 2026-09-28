@@ -16746,7 +16746,25 @@
 <li><strong><code>src/X/Y/Z.agda</code> skeleton companions</strong> (127 files) that were mechanically derived from the LaTeX-literate sources by <code>admin/illiterator/</code>.  The illiterator program itself is slated for deletion in the rendering-pipeline-modernization follow-up.</li>
 </ul>
 <h3 id="fixed">Fixed<a class="headerlink" href="#fixed" title="Anchor link to this section">&para;</a></h3>
-<p>Nothing to report.  3.0 is a forward-looking reconstruction rather than a bug-fix release.</p>
+<ul>
+<li><strong>The landing page's corpus stats no longer rot</strong> (#575).  <code>docs/index.md</code>
+   advertises how many literate modules the library holds and how many lines of
+   Agda they contain.  Those two figures were recomputed by the MkDocs hook on
+   every build, but the hook rewrote only the <em>rendered</em> page and never wrote
+   back, so the values committed in the source, which are the ones GitHub
+   renders, stayed at their 2026-07-28 reading (302 modules, 60k lines) while
+   the library grew to 339 modules and 67k lines.  The stale pair was quoted
+   outside this repository as current.  <a href="https://github.com/ualib/agda-algebras/blob/master/scripts/python/corpus_stats.py"><code>scripts/python/corpus_stats.py</code></a>
+   now counts the figures and writes them into the page (<code>make corpus-stats</code>),
+   and CI fails when a committed value has drifted (<code>make corpus-stats-check</code>,
+   the <em>Landing-page stats</em> job), so the pull request that moves a number is the
+   one that refreshes the page.  The two hand-written literals beside them are
+   counted as well: the machine-checked share is the proportion of canonical
+   modules whose <code>OPTIONS</code> pragma carries <code>--safe</code>, and the Agda and
+   standard-library versions are read from <code>mkdocs.yml</code>'s site variables and
+   reconciled against <code>agda-algebras.agda-lib</code>'s <code>depend:</code> line and the
+   version-floor guards in <code>flake.nix</code>.</li>
+</ul>
 <hr />
 <h2 id="201-2021-12-07">[2.0.1] — 2021-12-07<a class="headerlink" href="#201-2021-12-07" title="Anchor link to this section">&para;</a></h2>
 <p>Archival release coinciding with the TYPES 2021 submission.  This version was the first to use the Setoid-based formulation, reconstructed from the earlier UALib project.  Archived on Zenodo: <a href="https://doi.org/10.5281/zenodo.5765793">DOI 10.5281/zenodo.5765793</a>.</p>
