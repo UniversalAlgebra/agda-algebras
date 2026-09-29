@@ -110,7 +110,12 @@ Two standing warnings apply to everything under this namespace.
    `L7` analysis, Lucchini–Moscatiello–Palcoux–Spiga).  The module also proves
    the note&#39;s Lemma 3.1, exposes the vacuity theorem `not-representable→IE`, and
    repairs `minIE` as `MinimallyIE`; the survey note is
-   `docs/notes/flrp-rp2-catalog.md`.
+   `docs/notes/flrp-rp2-catalog.md`.  Two entries live in submodules of
+   their own and are re-exported here: [FLRP.Reductions.Coatomistic][]
+   (Entry 13, the parachute analog of Aschbacher&#39;s Theorem 3 for coatomistic
+   parachutes with two big canopies, with its minimality corollaries derived)
+   and [FLRP.Reductions.Lucchini][] (Entry 14, Lucchini&#39;s dichotomy for
+   minimal representations of `Mₙ`, composed with Köhler&#39;s Entry 6).
 
 +  [FLRP.Hunt][]: the RP-3 **constraint dossier** for the hunt for an
    empty-intersection family: the degenerate enforcements of the one- and
@@ -129,24 +134,26 @@ Two standing warnings apply to everything under this namespace.
 
 +  `FLRP.Intervals` (intervals in subgroup lattices and core-free normalization).
 
-</a><a id="7853" class="Markup">```agda
-</a><a id="7861" class="Symbol">{-#</a> <a id="7865" class="Keyword">OPTIONS</a> <a id="7873" class="Pragma">--cubical-compatible</a> <a id="7894" class="Pragma">--exact-split</a> <a id="7908" class="Pragma">--safe</a> <a id="7915" class="Symbol">#-}</a>
+</a><a id="8255" class="Markup">```agda
+</a><a id="8263" class="Symbol">{-#</a> <a id="8267" class="Keyword">OPTIONS</a> <a id="8275" class="Pragma">--cubical-compatible</a> <a id="8296" class="Pragma">--exact-split</a> <a id="8310" class="Pragma">--safe</a> <a id="8317" class="Symbol">#-}</a>
 
-<a id="7920" class="Keyword">module</a> <a id="7927" href="FLRP.html" class="Module">FLRP</a> <a id="7932" class="Keyword">where</a>
+<a id="8322" class="Keyword">module</a> <a id="8329" href="FLRP.html" class="Module">FLRP</a> <a id="8334" class="Keyword">where</a>
 
-<a id="7939" class="Keyword">open</a> <a id="7944" class="Keyword">import</a> <a id="7951" href="FLRP.Problem.html" class="Module">FLRP.Problem</a>         <a id="7972" class="Keyword">public</a>
-<a id="7979" class="Keyword">open</a> <a id="7984" class="Keyword">import</a> <a id="7991" href="FLRP.Enforceable.html" class="Module">FLRP.Enforceable</a>     <a id="8012" class="Keyword">public</a>
-<a id="8019" class="Keyword">open</a> <a id="8024" class="Keyword">import</a> <a id="8031" href="FLRP.Parachute.html" class="Module">FLRP.Parachute</a>       <a id="8052" class="Keyword">public</a>
-<a id="8059" class="Keyword">open</a> <a id="8064" class="Keyword">import</a> <a id="8071" href="FLRP.Reductions.html" class="Module">FLRP.Reductions</a>      <a id="8092" class="Keyword">public</a>
-<a id="8099" class="Keyword">open</a> <a id="8104" class="Keyword">import</a> <a id="8111" href="FLRP.Bridge.html" class="Module">FLRP.Bridge</a>          <a id="8132" class="Keyword">public</a>
-<a id="8139" class="Keyword">open</a> <a id="8144" class="Keyword">import</a> <a id="8151" href="FLRP.Representable.html" class="Module">FLRP.Representable</a>   <a id="8172" class="Keyword">public</a>
-<a id="8179" class="Keyword">open</a> <a id="8184" class="Keyword">import</a> <a id="8191" href="FLRP.Assumptions.html" class="Module">FLRP.Assumptions</a>     <a id="8212" class="Keyword">public</a>
-<a id="8219" class="Keyword">open</a> <a id="8224" class="Keyword">import</a> <a id="8231" href="FLRP.Closure.html" class="Module">FLRP.Closure</a>         <a id="8252" class="Keyword">public</a>
-<a id="8259" class="Keyword">open</a> <a id="8264" class="Keyword">import</a> <a id="8271" href="FLRP.KurzweilNetter.html" class="Module">FLRP.KurzweilNetter</a>  <a id="8292" class="Keyword">public</a>
-<a id="8299" class="Keyword">open</a> <a id="8304" class="Keyword">import</a> <a id="8311" href="FLRP.LayerBridge.html" class="Module">FLRP.LayerBridge</a>     <a id="8332" class="Keyword">public</a>
-<a id="8339" class="Keyword">open</a> <a id="8344" class="Keyword">import</a> <a id="8351" href="FLRP.WreathNoGo.html" class="Module">FLRP.WreathNoGo</a>      <a id="8372" class="Keyword">public</a>
-<a id="8379" class="Keyword">open</a> <a id="8384" class="Keyword">import</a> <a id="8391" href="FLRP.Hunt.html" class="Module">FLRP.Hunt</a>            <a id="8412" class="Keyword">public</a>
-<a id="8419" class="Keyword">open</a> <a id="8424" class="Keyword">import</a> <a id="8431" href="FLRP.Certificates.html" class="Module">FLRP.Certificates</a>    <a id="8452" class="Keyword">public</a>
-<a id="8459" class="Keyword">open</a> <a id="8464" class="Keyword">import</a> <a id="8471" href="FLRP.L7EqSix.html" class="Module">FLRP.L7EqSix</a>         <a id="8492" class="Keyword">public</a>
-<a id="8499" class="Markup">```
+<a id="8341" class="Keyword">open</a> <a id="8346" class="Keyword">import</a> <a id="8353" href="FLRP.Problem.html" class="Module">FLRP.Problem</a>         <a id="8374" class="Keyword">public</a>
+<a id="8381" class="Keyword">open</a> <a id="8386" class="Keyword">import</a> <a id="8393" href="FLRP.Enforceable.html" class="Module">FLRP.Enforceable</a>     <a id="8414" class="Keyword">public</a>
+<a id="8421" class="Keyword">open</a> <a id="8426" class="Keyword">import</a> <a id="8433" href="FLRP.Parachute.html" class="Module">FLRP.Parachute</a>       <a id="8454" class="Keyword">public</a>
+<a id="8461" class="Keyword">open</a> <a id="8466" class="Keyword">import</a> <a id="8473" href="FLRP.Reductions.html" class="Module">FLRP.Reductions</a>      <a id="8494" class="Keyword">public</a>
+<a id="8501" class="Keyword">open</a> <a id="8506" class="Keyword">import</a> <a id="8513" href="FLRP.Reductions.Coatomistic.html" class="Module">FLRP.Reductions.Coatomistic</a>  <a id="8542" class="Keyword">public</a>
+<a id="8549" class="Keyword">open</a> <a id="8554" class="Keyword">import</a> <a id="8561" href="FLRP.Reductions.Lucchini.html" class="Module">FLRP.Reductions.Lucchini</a>     <a id="8590" class="Keyword">public</a>
+<a id="8597" class="Keyword">open</a> <a id="8602" class="Keyword">import</a> <a id="8609" href="FLRP.Bridge.html" class="Module">FLRP.Bridge</a>          <a id="8630" class="Keyword">public</a>
+<a id="8637" class="Keyword">open</a> <a id="8642" class="Keyword">import</a> <a id="8649" href="FLRP.Representable.html" class="Module">FLRP.Representable</a>   <a id="8670" class="Keyword">public</a>
+<a id="8677" class="Keyword">open</a> <a id="8682" class="Keyword">import</a> <a id="8689" href="FLRP.Assumptions.html" class="Module">FLRP.Assumptions</a>     <a id="8710" class="Keyword">public</a>
+<a id="8717" class="Keyword">open</a> <a id="8722" class="Keyword">import</a> <a id="8729" href="FLRP.Closure.html" class="Module">FLRP.Closure</a>         <a id="8750" class="Keyword">public</a>
+<a id="8757" class="Keyword">open</a> <a id="8762" class="Keyword">import</a> <a id="8769" href="FLRP.KurzweilNetter.html" class="Module">FLRP.KurzweilNetter</a>  <a id="8790" class="Keyword">public</a>
+<a id="8797" class="Keyword">open</a> <a id="8802" class="Keyword">import</a> <a id="8809" href="FLRP.LayerBridge.html" class="Module">FLRP.LayerBridge</a>     <a id="8830" class="Keyword">public</a>
+<a id="8837" class="Keyword">open</a> <a id="8842" class="Keyword">import</a> <a id="8849" href="FLRP.WreathNoGo.html" class="Module">FLRP.WreathNoGo</a>      <a id="8870" class="Keyword">public</a>
+<a id="8877" class="Keyword">open</a> <a id="8882" class="Keyword">import</a> <a id="8889" href="FLRP.Hunt.html" class="Module">FLRP.Hunt</a>            <a id="8910" class="Keyword">public</a>
+<a id="8917" class="Keyword">open</a> <a id="8922" class="Keyword">import</a> <a id="8929" href="FLRP.Certificates.html" class="Module">FLRP.Certificates</a>    <a id="8950" class="Keyword">public</a>
+<a id="8957" class="Keyword">open</a> <a id="8962" class="Keyword">import</a> <a id="8969" href="FLRP.L7EqSix.html" class="Module">FLRP.L7EqSix</a>         <a id="8990" class="Keyword">public</a>
+<a id="8997" class="Markup">```
 </a></pre></body></html>

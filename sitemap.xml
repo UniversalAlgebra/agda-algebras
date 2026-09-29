@@ -745,6 +745,10 @@
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
+         <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/Parachute/HexagonEq6/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
          <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/Pilot/V4RegularM3/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
@@ -914,6 +918,14 @@
     </url>
     <url>
          <loc>https://agda-algebras.universalalgebra.org/FLRP/Parachute/Theorems/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/FLRP/Reductions/Coatomistic/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/FLRP/Reductions/Lucchini/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
