@@ -37,8 +37,8 @@ Each concrete structure `X` ships as a quintuple of files, organized into five p
    bidirectional conversion to and from the Σ-typed core.
 
 +  [`Classical/Small`][Classical.Small]: a level-fixed veneer specialized to the
-   `ℓ₀`–`ℓ₀` case, for downstream consumers (finite-template CSP, FLRP intuition,
-   tutorial contexts) that do not need polymorphism.
+   `ℓ₀`–`ℓ₀` case, for downstream consumers (finite-template CSP, small finite
+   lattices and groups, tutorial contexts) that do not need polymorphism.
 
 The five subtrees above are the *constituent* files of each structure.  A sixth
 parallel subtree, [`Classical/Properties`][Classical.Properties], collects
@@ -69,23 +69,23 @@ and the `Properties` aggregator was added in M3-7 for per-structure
 derived-results modules.
 
 
-</a><a id="3087" class="Markup">```agda
-</a><a id="3095" class="Symbol">{-#</a> <a id="3099" class="Keyword">OPTIONS</a> <a id="3107" class="Pragma">--cubical-compatible</a> <a id="3128" class="Pragma">--exact-split</a> <a id="3142" class="Pragma">--safe</a> <a id="3149" class="Symbol">#-}</a>
+</a><a id="3105" class="Markup">```agda
+</a><a id="3113" class="Symbol">{-#</a> <a id="3117" class="Keyword">OPTIONS</a> <a id="3125" class="Pragma">--cubical-compatible</a> <a id="3146" class="Pragma">--exact-split</a> <a id="3160" class="Pragma">--safe</a> <a id="3167" class="Symbol">#-}</a>
 
-<a id="3154" class="Keyword">module</a> <a id="3161" href="Classical.html" class="Module">Classical</a> <a id="3171" class="Keyword">where</a>
+<a id="3172" class="Keyword">module</a> <a id="3179" href="Classical.html" class="Module">Classical</a> <a id="3189" class="Keyword">where</a>
 
-<a id="3178" class="Keyword">open</a> <a id="3183" class="Keyword">import</a> <a id="3190" href="Classical.Bundles.html" class="Module">Classical.Bundles</a>          <a id="3217" class="Keyword">public</a>
-<a id="3224" class="Keyword">open</a> <a id="3229" class="Keyword">import</a> <a id="3236" href="Classical.Categories.html" class="Module">Classical.Categories</a>       <a id="3263" class="Keyword">public</a>
-<a id="3270" class="Keyword">open</a> <a id="3275" class="Keyword">import</a> <a id="3282" href="Classical.Equations.html" class="Module">Classical.Equations</a>        <a id="3309" class="Keyword">public</a>
-<a id="3316" class="Keyword">open</a> <a id="3321" class="Keyword">import</a> <a id="3328" href="Classical.Interpretations.html" class="Module">Classical.Interpretations</a>  <a id="3355" class="Keyword">public</a>
-<a id="3362" class="Keyword">open</a> <a id="3367" class="Keyword">import</a> <a id="3374" href="Classical.Operations.html" class="Module">Classical.Operations</a>       <a id="3401" class="Keyword">public</a>
-<a id="3408" class="Keyword">open</a> <a id="3413" class="Keyword">import</a> <a id="3420" href="Classical.Properties.html" class="Module">Classical.Properties</a>       <a id="3447" class="Keyword">public</a>
-<a id="3454" class="Keyword">open</a> <a id="3459" class="Keyword">import</a> <a id="3466" href="Classical.Signatures.html" class="Module">Classical.Signatures</a>       <a id="3493" class="Keyword">public</a>
-<a id="3500" class="Keyword">open</a> <a id="3505" class="Keyword">import</a> <a id="3512" href="Classical.Small.html" class="Module">Classical.Small</a>
-<a id="3528" class="Keyword">open</a> <a id="3533" class="Keyword">import</a> <a id="3540" href="Classical.Structures.html" class="Module">Classical.Structures</a>       <a id="3567" class="Keyword">public</a>
-<a id="3574" class="Keyword">open</a> <a id="3579" class="Keyword">import</a> <a id="3586" href="Classical.Theories.html" class="Module">Classical.Theories</a>         <a id="3613" class="Keyword">public</a>
-<a id="3620" class="Markup">```
-</a><a id="3624" class="Background">
+<a id="3196" class="Keyword">open</a> <a id="3201" class="Keyword">import</a> <a id="3208" href="Classical.Bundles.html" class="Module">Classical.Bundles</a>          <a id="3235" class="Keyword">public</a>
+<a id="3242" class="Keyword">open</a> <a id="3247" class="Keyword">import</a> <a id="3254" href="Classical.Categories.html" class="Module">Classical.Categories</a>       <a id="3281" class="Keyword">public</a>
+<a id="3288" class="Keyword">open</a> <a id="3293" class="Keyword">import</a> <a id="3300" href="Classical.Equations.html" class="Module">Classical.Equations</a>        <a id="3327" class="Keyword">public</a>
+<a id="3334" class="Keyword">open</a> <a id="3339" class="Keyword">import</a> <a id="3346" href="Classical.Interpretations.html" class="Module">Classical.Interpretations</a>  <a id="3373" class="Keyword">public</a>
+<a id="3380" class="Keyword">open</a> <a id="3385" class="Keyword">import</a> <a id="3392" href="Classical.Operations.html" class="Module">Classical.Operations</a>       <a id="3419" class="Keyword">public</a>
+<a id="3426" class="Keyword">open</a> <a id="3431" class="Keyword">import</a> <a id="3438" href="Classical.Properties.html" class="Module">Classical.Properties</a>       <a id="3465" class="Keyword">public</a>
+<a id="3472" class="Keyword">open</a> <a id="3477" class="Keyword">import</a> <a id="3484" href="Classical.Signatures.html" class="Module">Classical.Signatures</a>       <a id="3511" class="Keyword">public</a>
+<a id="3518" class="Keyword">open</a> <a id="3523" class="Keyword">import</a> <a id="3530" href="Classical.Small.html" class="Module">Classical.Small</a>
+<a id="3546" class="Keyword">open</a> <a id="3551" class="Keyword">import</a> <a id="3558" href="Classical.Structures.html" class="Module">Classical.Structures</a>       <a id="3585" class="Keyword">public</a>
+<a id="3592" class="Keyword">open</a> <a id="3597" class="Keyword">import</a> <a id="3604" href="Classical.Theories.html" class="Module">Classical.Theories</a>         <a id="3631" class="Keyword">public</a>
+<a id="3638" class="Markup">```
+</a><a id="3642" class="Background">
 ---
 
 [^1]: See [ADR-001][ADR-001].

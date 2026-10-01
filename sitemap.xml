@@ -17,10 +17,6 @@
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
          <loc>https://agda-algebras.universalalgebra.org/GITHUB_PROJECT/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
@@ -425,10 +421,6 @@
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
-         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Lattice/Disconnected/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
          <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Lattice/DistributiveLattice/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
@@ -442,10 +434,6 @@
     </url>
     <url>
          <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Lattice/OrdinalSum/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Lattice/Parachute/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
@@ -605,10 +593,6 @@
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
-         <loc>https://agda-algebras.universalalgebra.org/Examples/Classical/Lattices/L7/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
          <loc>https://agda-algebras.universalalgebra.org/Examples/Demos/ContraX/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
@@ -674,258 +658,6 @@
     </url>
     <url>
          <loc>https://agda-algebras.universalalgebra.org/Exercises/Complexity/FiniteCSP/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Assumptions/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Bridge/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Closure/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Enforceable/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Hunt/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/KurzweilNetter/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/L7EqSix/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/LayerBridge/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Parachute/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Problem/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Reductions/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Representable/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/WreathNoGo/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/FilterIdeal/A5Data/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/FilterIdeal/L16SubA5/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/Group/TG9x4TwoByTwo/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/Parachute/HexagonEq6/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/Pilot/V4RegularM3/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/SmallLatticeReps/SLR01/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/SmallLatticeReps/SLR02/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/SmallLatticeReps/SLR03/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/SmallLatticeReps/SLR04/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/SmallLatticeReps/SLR05/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/SmallLatticeReps/SLR06/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/SmallLatticeReps/SLR07/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/SmallLatticeReps/SLR08/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/SmallLatticeReps/SLR09/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/SmallLatticeReps/SLR12/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/SmallLatticeReps/SLR13/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/SmallLatticeReps/SLR15/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/SmallLatticeReps/SLR17/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/SmallLatticeReps/SLR19/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/SmallLatticeReps/SLR21/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/SmallLatticeReps/SLR23/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/SmallLatticeReps/SLR24/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/SmallLatticeReps/SLR25/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/SmallLatticeReps/SLR26/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/SmallLatticeReps/SLR27/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/SmallLatticeReps/SLR29/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/SmallLatticeReps/SLR30/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/SmallLatticeReps/SLR31/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/SmallLatticeReps/SLR32/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/SmallLatticeReps/SLR33/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/SmallLatticeReps/SLR34/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Certificates/SmallLatticeReps/SLR35/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Closure/Basic/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Closure/FilterIdeal/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Closure/OrdinalSum/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Closure/Product/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/KurzweilNetter/A5/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/KurzweilNetter/Blocks/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/KurzweilNetter/Duality/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/KurzweilNetter/Expansion/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/KurzweilNetter/Interval/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/KurzweilNetter/Invariance/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/KurzweilNetter/Surjectivity/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/KurzweilNetter/Translations/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Parachute/Basic/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Parachute/Representation/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Parachute/Theorems/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Reductions/Coatomistic/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/FLRP/Reductions/Lucchini/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>

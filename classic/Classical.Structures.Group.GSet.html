@@ -159,23 +159,22 @@ in `H`{.AgdaBound} is decidable.[^2]
 
 `cosetAlgebra` is an ordinary algebra, so its congruence lattice needs no new
 definitions.  The demonstration below type-checks against the stock
-`Con`{.AgdaFunction} of [Setoid.Congruences.Basic][].  We will eventually show
-that this type is isomorphic (as a lattice) to the interval `[H, G]` in
-`Sub(G)`.[^1]
+`Con`{.AgdaFunction} of [Setoid.Congruences.Basic][].  Classically, this type is
+isomorphic (as a lattice) to the interval `[H, G]` in `Sub(G)`.[^1]
 
-</a><a id="7485" class="Markup">```agda
-</a>  <a id="7495" class="Keyword">private</a>
-    <a id="7507" href="Classical.Structures.Group.GSet.html#7507" class="Function">_</a> <a id="7509" class="Symbol">:</a> <a id="7511" href="Classical.Structures.Group.GSet.html#2281" class="Primitive">Type</a> <a id="7516" class="Symbol">(</a><a id="7517" href="Classical.Structures.Group.GSet.html#3420" class="Bound">α</a> <a id="7519" href="Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="7521" href="Agda.Primitive.html#931" class="Primitive">suc</a> <a id="7525" href="Classical.Structures.Group.GSet.html#3450" class="Bound">ℓ</a><a id="7526" class="Symbol">)</a>
-    <a id="7532" class="Symbol">_</a> <a id="7534" class="Symbol">=</a> <a id="7536" href="Setoid.Congruences.Basic.html#3975" class="Function">Con</a> <a id="7540" href="Classical.Structures.Group.GSet.html#3931" class="Function">cosetAlgebra</a> <a id="7553" href="Classical.Structures.Group.GSet.html#3450" class="Bound">ℓ</a>
-<a id="7555" class="Markup">```
-</a><a id="7559" class="Background">
+</a><a id="7469" class="Markup">```agda
+</a>  <a id="7479" class="Keyword">private</a>
+    <a id="7491" href="Classical.Structures.Group.GSet.html#7491" class="Function">_</a> <a id="7493" class="Symbol">:</a> <a id="7495" href="Classical.Structures.Group.GSet.html#2281" class="Primitive">Type</a> <a id="7500" class="Symbol">(</a><a id="7501" href="Classical.Structures.Group.GSet.html#3420" class="Bound">α</a> <a id="7503" href="Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="7505" href="Agda.Primitive.html#931" class="Primitive">suc</a> <a id="7509" href="Classical.Structures.Group.GSet.html#3450" class="Bound">ℓ</a><a id="7510" class="Symbol">)</a>
+    <a id="7516" class="Symbol">_</a> <a id="7518" class="Symbol">=</a> <a id="7520" href="Setoid.Congruences.Basic.html#3975" class="Function">Con</a> <a id="7524" href="Classical.Structures.Group.GSet.html#3931" class="Function">cosetAlgebra</a> <a id="7537" href="Classical.Structures.Group.GSet.html#3450" class="Bound">ℓ</a>
+<a id="7539" class="Markup">```
+</a><a id="7543" class="Background">
 ---
 
-[^1]:  The `cosetAlgebra` algebra is the object of work package WP-3 of the FLRP
-       program in which we prove `Con (G ↷ G / H) ≅ [H, G]`.
-       (See `docs/notes/flrp-research-roadmap.md` § 7.)
+[^1]:  The isomorphism `Con (G ↷ G / H) ≅ [H, G]` is classical; it underlies the
+       theorem of Pálfy and Pudlák (Algebra Universalis 11, 1980) relating
+       congruence lattices of finite algebras to intervals in subgroup lattices of
+       finite groups.
 
-[^2]:  This discharges, constructively, the finiteness hypothesis of the
-       Pálfy–Pudlák corollaries of [FLRP.Bridge][].  (Audit A2 of
-       `docs/notes/flrp-wp7-audits.md` sketches precisely this argument.)
+[^2]:  This discharges, constructively, the finiteness hypothesis that
+       applications of the Pálfy–Pudlák theorem place on the coset algebra.
 </a></pre></body></html>

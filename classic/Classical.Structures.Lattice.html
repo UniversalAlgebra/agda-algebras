@@ -30,30 +30,29 @@ build instead.
    Dualizing twice recovers each operation *pointwise*, but the involution is not
    formalized there, because stating it as an equality of `Lattice`{.AgdaFunction}
    values would need function extensionality and no consumer has required it;
++  [Classical.Structures.Lattice.FilterIdeal][]: principal filters and principal
+   ideals, and the fact that the union of a principal filter and a principal ideal
+   is again a sublattice universe;
 +  [Classical.Structures.Lattice.Product][]: the direct product of two lattices,
    coordinatewise;
 +  [Classical.Structures.Lattice.OrdinalSum][]: one lattice stacked on another with
-   the top of the lower glued to the bottom of the upper, written `L ⊕ₐ M` in the
-   small-lattice-representations manuscript;
-+  [Classical.Structures.Lattice.Parachute][]: a fresh bottom element beneath `n`
-   side-by-side canopies, the construction the FLRP work is built on;
+   the top of the lower glued to the bottom of the upper, written `L ⊕ₐ M`;
 +  [Classical.Structures.Lattice.Partitions][]: the partition lattice
    `Eq(n)`{.AgdaFunction}, the equivalence relations on an `n`-element set ordered
    by refinement.
 
-</a><a id="2220" class="Markup">```agda
-</a><a id="2228" class="Symbol">{-#</a> <a id="2232" class="Keyword">OPTIONS</a> <a id="2240" class="Pragma">--cubical-compatible</a> <a id="2261" class="Pragma">--exact-split</a> <a id="2275" class="Pragma">--safe</a> <a id="2282" class="Symbol">#-}</a>
+</a><a id="2216" class="Markup">```agda
+</a><a id="2224" class="Symbol">{-#</a> <a id="2228" class="Keyword">OPTIONS</a> <a id="2236" class="Pragma">--cubical-compatible</a> <a id="2257" class="Pragma">--exact-split</a> <a id="2271" class="Pragma">--safe</a> <a id="2278" class="Symbol">#-}</a>
 
-<a id="2287" class="Keyword">module</a> <a id="2294" href="Classical.Structures.Lattice.html" class="Module">Classical.Structures.Lattice</a> <a id="2323" class="Keyword">where</a>
+<a id="2283" class="Keyword">module</a> <a id="2290" href="Classical.Structures.Lattice.html" class="Module">Classical.Structures.Lattice</a> <a id="2319" class="Keyword">where</a>
 
-<a id="2330" class="Keyword">open</a> <a id="2335" class="Keyword">import</a> <a id="2342" href="Classical.Structures.Lattice.Basic.html" class="Module">Classical.Structures.Lattice.Basic</a>                <a id="2392" class="Keyword">public</a>
-<a id="2399" class="Keyword">open</a> <a id="2404" class="Keyword">import</a> <a id="2411" href="Classical.Structures.Lattice.DistributiveLattice.html" class="Module">Classical.Structures.Lattice.DistributiveLattice</a>  <a id="2461" class="Keyword">public</a>
-<a id="2468" class="Keyword">open</a> <a id="2473" class="Keyword">import</a> <a id="2480" href="Classical.Structures.Lattice.Dual.html" class="Module">Classical.Structures.Lattice.Dual</a>                 <a id="2530" class="Keyword">public</a>
-<a id="2537" class="Keyword">open</a> <a id="2542" class="Keyword">import</a> <a id="2549" href="Classical.Structures.Lattice.FilterIdeal.html" class="Module">Classical.Structures.Lattice.FilterIdeal</a>          <a id="2599" class="Keyword">public</a>
-<a id="2606" class="Keyword">open</a> <a id="2611" class="Keyword">import</a> <a id="2618" href="Classical.Structures.Lattice.OrdinalSum.html" class="Module">Classical.Structures.Lattice.OrdinalSum</a>           <a id="2668" class="Keyword">public</a>
-<a id="2675" class="Keyword">open</a> <a id="2680" class="Keyword">import</a> <a id="2687" href="Classical.Structures.Lattice.Parachute.html" class="Module">Classical.Structures.Lattice.Parachute</a>            <a id="2737" class="Keyword">public</a>
-<a id="2744" class="Keyword">open</a> <a id="2749" class="Keyword">import</a> <a id="2756" href="Classical.Structures.Lattice.Partitions.html" class="Module">Classical.Structures.Lattice.Partitions</a>           <a id="2806" class="Keyword">public</a>
-<a id="2813" class="Keyword">open</a> <a id="2818" class="Keyword">import</a> <a id="2825" href="Classical.Structures.Lattice.Product.html" class="Module">Classical.Structures.Lattice.Product</a>              <a id="2875" class="Keyword">public</a>
+<a id="2326" class="Keyword">open</a> <a id="2331" class="Keyword">import</a> <a id="2338" href="Classical.Structures.Lattice.Basic.html" class="Module">Classical.Structures.Lattice.Basic</a>                <a id="2388" class="Keyword">public</a>
+<a id="2395" class="Keyword">open</a> <a id="2400" class="Keyword">import</a> <a id="2407" href="Classical.Structures.Lattice.DistributiveLattice.html" class="Module">Classical.Structures.Lattice.DistributiveLattice</a>  <a id="2457" class="Keyword">public</a>
+<a id="2464" class="Keyword">open</a> <a id="2469" class="Keyword">import</a> <a id="2476" href="Classical.Structures.Lattice.Dual.html" class="Module">Classical.Structures.Lattice.Dual</a>                 <a id="2526" class="Keyword">public</a>
+<a id="2533" class="Keyword">open</a> <a id="2538" class="Keyword">import</a> <a id="2545" href="Classical.Structures.Lattice.FilterIdeal.html" class="Module">Classical.Structures.Lattice.FilterIdeal</a>          <a id="2595" class="Keyword">public</a>
+<a id="2602" class="Keyword">open</a> <a id="2607" class="Keyword">import</a> <a id="2614" href="Classical.Structures.Lattice.OrdinalSum.html" class="Module">Classical.Structures.Lattice.OrdinalSum</a>           <a id="2664" class="Keyword">public</a>
+<a id="2671" class="Keyword">open</a> <a id="2676" class="Keyword">import</a> <a id="2683" href="Classical.Structures.Lattice.Partitions.html" class="Module">Classical.Structures.Lattice.Partitions</a>           <a id="2733" class="Keyword">public</a>
+<a id="2740" class="Keyword">open</a> <a id="2745" class="Keyword">import</a> <a id="2752" href="Classical.Structures.Lattice.Product.html" class="Module">Classical.Structures.Lattice.Product</a>              <a id="2802" class="Keyword">public</a>
 
-<a id="2883" class="Markup">```
+<a id="2810" class="Markup">```
 </a></pre></body></html>
