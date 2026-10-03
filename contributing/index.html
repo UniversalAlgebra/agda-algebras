@@ -14036,6 +14036,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#emacs-with-several-checkouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Emacs with several checkouts
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -14300,6 +14311,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#emacs-with-several-checkouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Emacs with several checkouts
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -14505,7 +14527,81 @@ make<span class="w"> </span>check<span class="w">        </span><span class="c1"
 </code></pre></div>
 <p>This pins Agda 2.8.0 and standard-library 2.3 automatically via the repository's flake.  See <a href="/install/"><code>INSTALL.md</code></a> for a walkthrough and non-Nix alternatives.</p>
 <h3 id="editor">Editor<a class="headerlink" href="#editor" title="Anchor link to this section">&para;</a></h3>
-<p>We recommend Emacs with <code>agda-mode</code> or VSCode with the <code>banacorn.agda-mode</code> extension.  Launch your editor from inside <code>nix develop</code> so the pinned Agda is on <code>PATH</code>.</p>
+<p>We recommend Emacs with <code>agda-mode</code> or VSCode with the <code>banacorn.agda-mode</code> extension.  Launch your editor from inside <code>nix develop</code> so the pinned Agda is on <code>PATH</code>; if you keep several checkouts, read the next section.</p>
+<h3 id="emacs-with-several-checkouts">Emacs with several checkouts<a class="headerlink" href="#emacs-with-several-checkouts" title="Anchor link to this section">&para;</a></h3>
+<p><code>nix develop</code> writes, at the root of the checkout it is entered in, the
+library registry <code>.agda/libraries</code> and a self-contained wrapper
+<code>.agda/bin/agda</code> that runs the pinned Agda with that registry.  agda-mode runs
+one Agda process for all buffers, and reads <code>agda2-program-name</code> and
+<code>agda2-program-args</code> only when it starts that process, so the process checks
+every file against the checkout it was started for.  A file from another
+worktree then fails with <code>ModuleDefinedInOtherFile</code>, because the registry
+finds the file's module in the first checkout, and a file of another Agda
+project fails too.</p>
+<p>The following, added to your Emacs configuration (<code>~/.config/doom/config.el</code>
+under Doom Emacs, your <code>init.el</code> otherwise), runs each checkout's own wrapper,
+and restarts Agda when <code>C-c C-l</code> comes from a different checkout from the one
+the running process was started for.  Emacs need not be started inside
+<code>nix develop</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">;; Agda per checkout.  One Agda process serves every buffer, and agda-mode</span>
+<span class="c1">;; reads `agda2-program-name&#39; and `agda2-program-args&#39; only when it starts</span>
+<span class="c1">;; that process, so the process keeps the library registry of the checkout it</span>
+<span class="c1">;; was started for.  This runs the wrapper .agda/bin/agda that the checkout&#39;s</span>
+<span class="c1">;; dev shell wrote, which names that checkout&#39;s registry, and restarts the</span>
+<span class="c1">;; process when C-c C-l comes from a different checkout.  Files outside such a</span>
+<span class="c1">;; checkout keep `agda2-program-name&#39; as configured.  agda-mode starts Agda</span>
+<span class="c1">;; from the mode&#39;s body, before any hook or directory-local variable applies,</span>
+<span class="c1">;; so the settings are bound around `agda2-restart&#39; itself.</span>
+<span class="p">(</span><span class="k">defvar</span><span class="w"> </span><span class="nv">my/agda-process-root</span><span class="w"> </span><span class="no">nil</span>
+<span class="w">  </span><span class="s">&quot;The checkout the running Agda process was started for, or nil.&quot;</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nb">defun</span><span class="w"> </span><span class="nv">my/agda-checkout</span><span class="w"> </span><span class="p">(</span><span class="nv">file</span><span class="p">)</span>
+<span class="w">  </span><span class="s">&quot;The list (ROOT PROGRAM ARGS AGDA-DIR) for FILE&#39;s checkout, or nil.&quot;</span>
+<span class="w">  </span><span class="p">(</span><span class="nv">when-let*</span><span class="w"> </span><span class="p">((</span><span class="nv">root</span><span class="w"> </span><span class="p">(</span><span class="nv">locate-dominating-file</span><span class="w"> </span><span class="nv">file</span><span class="w"> </span><span class="s">&quot;.agda/bin/agda&quot;</span><span class="p">)))</span>
+<span class="w">    </span><span class="p">(</span><span class="nf">list</span><span class="w"> </span><span class="nv">root</span><span class="w"> </span><span class="p">(</span><span class="nf">expand-file-name</span><span class="w"> </span><span class="s">&quot;.agda/bin/agda&quot;</span><span class="w"> </span><span class="nv">root</span><span class="p">)</span><span class="w"> </span><span class="no">nil</span>
+<span class="w">          </span><span class="p">(</span><span class="nf">expand-file-name</span><span class="w"> </span><span class="s">&quot;.agda&quot;</span><span class="w"> </span><span class="nv">root</span><span class="p">))))</span>
+
+<span class="p">(</span><span class="nb">defun</span><span class="w"> </span><span class="nv">my/agda-restart</span><span class="w"> </span><span class="p">(</span><span class="nv">restart</span><span class="w"> </span><span class="kp">&amp;rest</span><span class="w"> </span><span class="nv">args</span><span class="p">)</span>
+<span class="w">  </span><span class="s">&quot;Around </span><span class="ss">`agda2-restart&#39;</span><span class="s">: start the Agda of the current buffer&#39;s checkout.&quot;</span>
+<span class="w">  </span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nv">checkout</span><span class="w"> </span><span class="p">(</span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="nf">buffer-file-name</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nv">my/agda-checkout</span><span class="w"> </span><span class="p">(</span><span class="nf">buffer-file-name</span><span class="p">)))))</span>
+<span class="w">    </span><span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">my/agda-process-root</span><span class="w"> </span><span class="p">(</span><span class="nf">car</span><span class="w"> </span><span class="nv">checkout</span><span class="p">))</span>
+<span class="w">    </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nf">null</span><span class="w"> </span><span class="nv">checkout</span><span class="p">)</span>
+<span class="w">        </span><span class="p">(</span><span class="nf">apply</span><span class="w"> </span><span class="nv">restart</span><span class="w"> </span><span class="nv">args</span><span class="p">)</span>
+<span class="w">      </span><span class="p">(</span><span class="nb">pcase-let</span><span class="w"> </span><span class="p">((</span><span class="o">`</span><span class="p">(</span><span class="o">,</span><span class="nv">_root</span><span class="w"> </span><span class="o">,</span><span class="nv">program</span><span class="w"> </span><span class="o">,</span><span class="nv">program-args</span><span class="w"> </span><span class="o">,</span><span class="nv">agda-dir</span><span class="p">)</span><span class="w"> </span><span class="nv">checkout</span><span class="p">))</span>
+<span class="w">        </span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nv">agda2-program-name</span><span class="w"> </span><span class="nv">program</span><span class="p">)</span>
+<span class="w">              </span><span class="p">(</span><span class="nv">agda2-program-args</span><span class="w"> </span><span class="nv">program-args</span><span class="p">)</span>
+<span class="w">              </span><span class="p">(</span><span class="nv">process-environment</span><span class="w"> </span><span class="p">(</span><span class="nf">cons</span><span class="w"> </span><span class="p">(</span><span class="nf">concat</span><span class="w"> </span><span class="s">&quot;AGDA_DIR=&quot;</span><span class="w"> </span><span class="nv">agda-dir</span><span class="p">)</span>
+<span class="w">                                         </span><span class="nv">process-environment</span><span class="p">)))</span>
+<span class="w">          </span><span class="p">(</span><span class="nf">apply</span><span class="w"> </span><span class="nv">restart</span><span class="w"> </span><span class="nv">args</span><span class="p">))))))</span>
+
+<span class="p">(</span><span class="nb">defun</span><span class="w"> </span><span class="nv">my/agda-load</span><span class="w"> </span><span class="p">(</span><span class="nf">load</span><span class="w"> </span><span class="kp">&amp;rest</span><span class="w"> </span><span class="nv">args</span><span class="p">)</span>
+<span class="w">  </span><span class="s">&quot;Around </span><span class="ss">`agda2-load&#39;</span><span class="s">: restart Agda first if the buffer is in another checkout.&quot;</span>
+<span class="w">  </span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nv">root</span><span class="w"> </span><span class="p">(</span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="nf">buffer-file-name</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nf">car</span><span class="w"> </span><span class="p">(</span><span class="nv">my/agda-checkout</span><span class="w"> </span><span class="p">(</span><span class="nf">buffer-file-name</span><span class="p">))))))</span>
+<span class="w">    </span><span class="p">(</span><span class="nb">unless</span><span class="w"> </span><span class="p">(</span><span class="nf">equal</span><span class="w"> </span><span class="nv">root</span><span class="w"> </span><span class="nv">my/agda-process-root</span><span class="p">)</span>
+<span class="w">      </span><span class="p">(</span><span class="nv">agda2-restart</span><span class="p">))</span>
+<span class="w">    </span><span class="p">(</span><span class="nf">apply</span><span class="w"> </span><span class="nf">load</span><span class="w"> </span><span class="nv">args</span><span class="p">)))</span>
+
+<span class="p">(</span><span class="nb">with-eval-after-load</span><span class="w"> </span><span class="ss">&#39;agda2-mode</span>
+<span class="w">  </span><span class="p">(</span><span class="nv">advice-add</span><span class="w"> </span><span class="ss">&#39;agda2-restart</span><span class="w"> </span><span class="nb">:around</span><span class="w"> </span><span class="nf">#&#39;</span><span class="nv">my/agda-restart</span><span class="p">)</span>
+<span class="w">  </span><span class="p">(</span><span class="nv">advice-add</span><span class="w"> </span><span class="ss">&#39;agda2-load</span><span class="w"> </span><span class="nb">:around</span><span class="w"> </span><span class="nf">#&#39;</span><span class="nv">my/agda-load</span><span class="p">))</span>
+</code></pre></div>
+<p>A few facts complete the setup, as follows:</p>
+<ul>
+<li>Enter <code>nix develop</code> once in each new worktree, and again when its
+   <code>flake.lock</code> moves, to write the wrapper.</li>
+<li>The wrapper calls an Agda in the Nix store by its path.  If garbage
+   collection removes that Agda, agda-mode reports its version as "unknown";
+   entering <code>nix develop</code> there again restores it.</li>
+<li>agda-mode refuses an Agda whose version differs from its own
+   (<code>agda2-version</code>), so use agda-mode 2.8.0, the version this repository
+   pins; inside <code>nix develop</code>, <code>agda-mode locate</code> prints the path of its
+   <code>agda2.el</code>.</li>
+<li>The same snippet with one more clause, for checkouts of
+   <a href="https://github.com/formalverification/agda-native-air">agda-native-air</a>,
+   is in that repository's
+   <a href="https://github.com/formalverification/agda-native-air/blob/main/CONTRIBUTING.md#editing-agda-in-emacs"><code>CONTRIBUTING.md</code></a>;
+   use that version if you work in both.</li>
+</ul>
 <hr />
 <h2 id="contribution-workflow">Contribution workflow<a class="headerlink" href="#contribution-workflow" title="Anchor link to this section">&para;</a></h2>
 <p>Standard <a href="https://gist.github.com/Chaser324/ce0505fbed06b947d962">fork-and-pull-request</a> workflow.</p>

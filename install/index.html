@@ -14318,6 +14318,10 @@ make<span class="w"> </span>clean<span class="w">   </span><span class="c1"># re
 <h3 id="editor-integration-under-nix">Editor integration under Nix<a class="headerlink" href="#editor-integration-under-nix" title="Anchor link to this section">&para;</a></h3>
 <p><code>agda-mode</code> is available inside the Nix shell. The simplest pattern is to launch your editor from within <code>nix develop</code>. If you use Emacs, <code>M-x load-library RET agda2-mode RET</code> will pick up the wrapped Agda. If you use VSCode with the <code>banacorn.agda-mode</code> extension, the extension's "Agda Path" setting can be pointed at the <code>agda</code> inside the Nix shell (use <code>which agda</code> to find the absolute path).</p>
 <p>Contributors who prefer a persistent editor configuration across shells may find <a href="https://github.com/nix-community/nix-direnv"><code>nix-direnv</code></a> useful for auto-entering the shell when they <code>cd</code> into the repo.</p>
+<p>An Emacs launched from one checkout's shell checks every file against that
+checkout, so several checkouts (worktrees, or another Agda project beside this
+one) need one more step: see
+<a href="/contributing/#emacs-with-several-checkouts">Emacs with several checkouts</a>.</p>
 <hr />
 <h2 id="option-2-agdas-official-python-installer">Option 2: Agda's official Python installer<a class="headerlink" href="#option-2-agdas-official-python-installer" title="Anchor link to this section">&para;</a></h2>
 <p>As of 2.8.0, Agda is a self-contained single binary distributed via the Python Package Index. This is the simplest non-Nix path:</p>
