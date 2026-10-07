@@ -11,7 +11,7 @@ author: &quot;the agda-algebras development team&quot;
 
 This is the [Classical.Structures.Lattice][] module of the [Agda Universal Algebra Library][].
 
-This is a barrel module: it declares nothing of its own and re-exports the seven
+This is a barrel module: it declares nothing of its own and re-exports the eight
 modules that develop lattices in the `Classical/` tree.  A lattice here is an
 algebra over `Sig-Lattice`{.AgdaFunction} satisfying `Th-Lattice`{.AgdaFunction},
 that is, the *equational* presentation; the order-theoretic presentation, in which
@@ -30,6 +30,10 @@ build instead.
    Dualizing twice recovers each operation *pointwise*, but the involution is not
    formalized there, because stating it as an equality of `Lattice`{.AgdaFunction}
    values would need function extensionality and no consumer has required it;
++  [Classical.Structures.Lattice.Free][]: the free lattice `FL(X)`, with
+   Whitman&#39;s decision procedure for its order, its universal property, and the
+   bridge that makes derivable equality under `Th-Lattice`{.AgdaFunction}
+   decidable;
 +  [Classical.Structures.Lattice.FilterIdeal][]: principal filters and principal
    ideals, and the fact that the union of a principal filter and a principal ideal
    is again a sublattice universe;
@@ -41,18 +45,19 @@ build instead.
    `Eq(n)`{.AgdaFunction}, the equivalence relations on an `n`-element set ordered
    by refinement.
 
-</a><a id="2216" class="Markup">```agda
-</a><a id="2224" class="Symbol">{-#</a> <a id="2228" class="Keyword">OPTIONS</a> <a id="2236" class="Pragma">--without-K</a> <a id="2248" class="Pragma">--exact-split</a> <a id="2262" class="Pragma">--safe</a> <a id="2269" class="Symbol">#-}</a>
+</a><a id="2456" class="Markup">```agda
+</a><a id="2464" class="Symbol">{-#</a> <a id="2468" class="Keyword">OPTIONS</a> <a id="2476" class="Pragma">--without-K</a> <a id="2488" class="Pragma">--exact-split</a> <a id="2502" class="Pragma">--safe</a> <a id="2509" class="Symbol">#-}</a>
 
-<a id="2274" class="Keyword">module</a> <a id="2281" href="Classical.Structures.Lattice.html" class="Module">Classical.Structures.Lattice</a> <a id="2310" class="Keyword">where</a>
+<a id="2514" class="Keyword">module</a> <a id="2521" href="Classical.Structures.Lattice.html" class="Module">Classical.Structures.Lattice</a> <a id="2550" class="Keyword">where</a>
 
-<a id="2317" class="Keyword">open</a> <a id="2322" class="Keyword">import</a> <a id="2329" href="Classical.Structures.Lattice.Basic.html" class="Module">Classical.Structures.Lattice.Basic</a>                <a id="2379" class="Keyword">public</a>
-<a id="2386" class="Keyword">open</a> <a id="2391" class="Keyword">import</a> <a id="2398" href="Classical.Structures.Lattice.DistributiveLattice.html" class="Module">Classical.Structures.Lattice.DistributiveLattice</a>  <a id="2448" class="Keyword">public</a>
-<a id="2455" class="Keyword">open</a> <a id="2460" class="Keyword">import</a> <a id="2467" href="Classical.Structures.Lattice.Dual.html" class="Module">Classical.Structures.Lattice.Dual</a>                 <a id="2517" class="Keyword">public</a>
-<a id="2524" class="Keyword">open</a> <a id="2529" class="Keyword">import</a> <a id="2536" href="Classical.Structures.Lattice.FilterIdeal.html" class="Module">Classical.Structures.Lattice.FilterIdeal</a>          <a id="2586" class="Keyword">public</a>
-<a id="2593" class="Keyword">open</a> <a id="2598" class="Keyword">import</a> <a id="2605" href="Classical.Structures.Lattice.OrdinalSum.html" class="Module">Classical.Structures.Lattice.OrdinalSum</a>           <a id="2655" class="Keyword">public</a>
-<a id="2662" class="Keyword">open</a> <a id="2667" class="Keyword">import</a> <a id="2674" href="Classical.Structures.Lattice.Partitions.html" class="Module">Classical.Structures.Lattice.Partitions</a>           <a id="2724" class="Keyword">public</a>
-<a id="2731" class="Keyword">open</a> <a id="2736" class="Keyword">import</a> <a id="2743" href="Classical.Structures.Lattice.Product.html" class="Module">Classical.Structures.Lattice.Product</a>              <a id="2793" class="Keyword">public</a>
+<a id="2557" class="Keyword">open</a> <a id="2562" class="Keyword">import</a> <a id="2569" href="Classical.Structures.Lattice.Basic.html" class="Module">Classical.Structures.Lattice.Basic</a>                <a id="2619" class="Keyword">public</a>
+<a id="2626" class="Keyword">open</a> <a id="2631" class="Keyword">import</a> <a id="2638" href="Classical.Structures.Lattice.DistributiveLattice.html" class="Module">Classical.Structures.Lattice.DistributiveLattice</a>  <a id="2688" class="Keyword">public</a>
+<a id="2695" class="Keyword">open</a> <a id="2700" class="Keyword">import</a> <a id="2707" href="Classical.Structures.Lattice.Dual.html" class="Module">Classical.Structures.Lattice.Dual</a>                 <a id="2757" class="Keyword">public</a>
+<a id="2764" class="Keyword">open</a> <a id="2769" class="Keyword">import</a> <a id="2776" href="Classical.Structures.Lattice.FilterIdeal.html" class="Module">Classical.Structures.Lattice.FilterIdeal</a>          <a id="2826" class="Keyword">public</a>
+<a id="2833" class="Keyword">open</a> <a id="2838" class="Keyword">import</a> <a id="2845" href="Classical.Structures.Lattice.Free.html" class="Module">Classical.Structures.Lattice.Free</a>                 <a id="2895" class="Keyword">public</a>
+<a id="2902" class="Keyword">open</a> <a id="2907" class="Keyword">import</a> <a id="2914" href="Classical.Structures.Lattice.OrdinalSum.html" class="Module">Classical.Structures.Lattice.OrdinalSum</a>           <a id="2964" class="Keyword">public</a>
+<a id="2971" class="Keyword">open</a> <a id="2976" class="Keyword">import</a> <a id="2983" href="Classical.Structures.Lattice.Partitions.html" class="Module">Classical.Structures.Lattice.Partitions</a>           <a id="3033" class="Keyword">public</a>
+<a id="3040" class="Keyword">open</a> <a id="3045" class="Keyword">import</a> <a id="3052" href="Classical.Structures.Lattice.Product.html" class="Module">Classical.Structures.Lattice.Product</a>              <a id="3102" class="Keyword">public</a>
 
-<a id="2801" class="Markup">```
+<a id="3110" class="Markup">```
 </a></pre></body></html>

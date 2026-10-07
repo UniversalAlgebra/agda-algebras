@@ -7834,6 +7834,8 @@
       
         
       
+        
+      
     
     
     
@@ -7991,6 +7993,193 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_9_6_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../Classical/Structures/Lattice/Free/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Free
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3_9_6_5" id="__nav_2_3_9_6_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_3_9_6_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_9_6_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Free
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Classical/Structures/Lattice/Free/Derivability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Derivability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Classical/Structures/Lattice/Free/Term/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Term
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Classical/Structures/Lattice/Free/Universal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Universal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Classical/Structures/Lattice/Free/Whitman/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Whitman
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -9419,6 +9608,8 @@
       
         
       
+        
+      
     
     
     
@@ -9468,6 +9659,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Examples/Classical/Lattices/FreeLattice3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FreeLattice3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -14342,6 +14561,7 @@
 <p>The 3.0 release is a major reconstruction of agda-algebras building on the Setoid-based redevelopment that shipped in v2.0.1 (December 2021).  Work is organized into milestones tracked in <a href="/GITHUB_PROJECT/"><code>docs/GITHUB_PROJECT.md</code></a>.</p>
 <h3 id="added">Added<a class="headerlink" href="#added" title="Anchor link to this section">&para;</a></h3>
 <ul>
+<li><strong>Free lattices and Whitman's solution to the word problem</strong> (M3-10, #589).  Four modules under <a href="src/Classical/Structures/Lattice/Free/"><code>src/Classical/Structures/Lattice/Free/</code></a>, with their barrel <code>Classical.Structures.Lattice.Free</code>, give the library a free lattice it can compute in.  <code>LatTerm X</code> is a dedicated type of lattice terms, translated to and from <code>Term X</code> over <code>Sig-Lattice</code> with round trips up to <code>_≐_</code>.  Whitman's rules are the inductive relation <code>_≤ʷ_</code>, one constructor per rule in the dispatch order, with a <code>Dec</code>-valued decision procedure, reflexivity, and transitivity, all by structural recursion and without a <code>TERMINATING</code> pragma.  <code>FL X</code> is built order first; the rules are proved sound and complete for the order of every lattice (Whitman's theorem; Freese, Ježek, and Nation, <em>Free Lattices</em>, Theorem 1.11), evaluation is the unique homomorphism extending a map of generators, and a bridge to <code>Setoid.Varieties.SoundAndComplete</code> makes derivable equality under <code>Th-Lattice</code>, hence equality in <code>𝔽[ X ]</code>, decidable.  <a href="/Examples/Classical/Lattices/FreeLattice3/"><code>Examples.Classical.Lattices.FreeLattice3</code></a> decides inequalities in <code>FL(3)</code> by evaluation, among them the failure of distributivity and the underivability of the distributive law from the lattice axioms.</li>
 <li><strong>ADR-001 — <code>Setoid/</code> as canonical development tree</strong>.
    <code>docs/adr/001-setoid-as-canonical.md</code> records the architectural decision
    and the alternatives considered.</li>

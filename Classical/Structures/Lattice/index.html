@@ -7847,6 +7847,8 @@
       
         
       
+        
+      
     
     
     
@@ -8004,6 +8006,193 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_9_6_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="Free/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Free
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3_9_6_5" id="__nav_2_3_9_6_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_3_9_6_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_9_6_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Free
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Free/Derivability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Derivability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Free/Term/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Term
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Free/Universal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Universal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Free/Whitman/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Whitman
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -9432,6 +9621,8 @@
       
         
       
+        
+      
     
     
     
@@ -9481,6 +9672,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Examples/Classical/Lattices/FreeLattice3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FreeLattice3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -14108,7 +14327,7 @@
 <h1 id="classicalstructureslattice">Classical.Structures.Lattice<a class="headerlink" href="#classicalstructureslattice" title="Anchor link to this section">&para;</a></h1>
 <h3 id="classical-structures-lattices">Lattices<a class="headerlink" href="#classical-structures-lattices" title="Anchor link to this section">&para;</a></h3>
 <p>This is the <a href="/Classical/Structures/Lattice/">Classical.Structures.Lattice</a> module of the <a href="/">Agda Universal Algebra Library</a>.</p>
-<p>This is a barrel module: it declares nothing of its own and re-exports the seven
+<p>This is a barrel module: it declares nothing of its own and re-exports the eight
 modules that develop lattices in the <code>Classical/</code> tree.  A lattice here is an
 algebra over <code class="AgdaFunction">Sig-Lattice</code> satisfying <code class="AgdaFunction">Th-Lattice</code>,
 that is, the <em>equational</em> presentation; the order-theoretic presentation, in which
@@ -14126,6 +14345,10 @@ build instead.</p>
    Dualizing twice recovers each operation <em>pointwise</em>, but the involution is not
    formalized there, because stating it as an equality of <code class="AgdaFunction">Lattice</code>
    values would need function extensionality and no consumer has required it;</li>
+<li><a href="/Classical/Structures/Lattice/Free/">Classical.Structures.Lattice.Free</a>: the free lattice <code>FL(X)</code>, with
+   Whitman's decision procedure for its order, its universal property, and the
+   bridge that makes derivable equality under <code class="AgdaFunction">Th-Lattice</code>
+   decidable;</li>
 <li><a href="/Classical/Structures/Lattice/FilterIdeal/">Classical.Structures.Lattice.FilterIdeal</a>: principal filters and principal
    ideals, and the fact that the union of a principal filter and a principal ideal
    is again a sublattice universe;</li>
@@ -14137,17 +14360,18 @@ build instead.</p>
    <code class="AgdaFunction">Eq(n)</code>, the equivalence relations on an <code>n</code>-element set ordered
    by refinement.</li>
 </ul>
-<pre class="Agda"><a id="2224" class="Symbol">{-#</a> <a id="2228" class="Keyword">OPTIONS</a> <a id="2236" class="Pragma">--without-K</a> <a id="2248" class="Pragma">--exact-split</a> <a id="2262" class="Pragma">--safe</a> <a id="2269" class="Symbol">#-}</a>
+<pre class="Agda"><a id="2464" class="Symbol">{-#</a> <a id="2468" class="Keyword">OPTIONS</a> <a id="2476" class="Pragma">--without-K</a> <a id="2488" class="Pragma">--exact-split</a> <a id="2502" class="Pragma">--safe</a> <a id="2509" class="Symbol">#-}</a>
 
-<a id="2274" class="Keyword">module</a> <a id="2281" href="/Classical/Structures/Lattice/" class="Module">Classical.Structures.Lattice</a> <a id="2310" class="Keyword">where</a>
+<a id="2514" class="Keyword">module</a> <a id="2521" href="/Classical/Structures/Lattice/" class="Module">Classical.Structures.Lattice</a> <a id="2550" class="Keyword">where</a>
 
-<a id="2317" class="Keyword">open</a> <a id="2322" class="Keyword">import</a> <a id="2329" href="/Classical/Structures/Lattice/Basic/" class="Module">Classical.Structures.Lattice.Basic</a>                <a id="2379" class="Keyword">public</a>
-<a id="2386" class="Keyword">open</a> <a id="2391" class="Keyword">import</a> <a id="2398" href="/Classical/Structures/Lattice/DistributiveLattice/" class="Module">Classical.Structures.Lattice.DistributiveLattice</a>  <a id="2448" class="Keyword">public</a>
-<a id="2455" class="Keyword">open</a> <a id="2460" class="Keyword">import</a> <a id="2467" href="/Classical/Structures/Lattice/Dual/" class="Module">Classical.Structures.Lattice.Dual</a>                 <a id="2517" class="Keyword">public</a>
-<a id="2524" class="Keyword">open</a> <a id="2529" class="Keyword">import</a> <a id="2536" href="/Classical/Structures/Lattice/FilterIdeal/" class="Module">Classical.Structures.Lattice.FilterIdeal</a>          <a id="2586" class="Keyword">public</a>
-<a id="2593" class="Keyword">open</a> <a id="2598" class="Keyword">import</a> <a id="2605" href="/Classical/Structures/Lattice/OrdinalSum/" class="Module">Classical.Structures.Lattice.OrdinalSum</a>           <a id="2655" class="Keyword">public</a>
-<a id="2662" class="Keyword">open</a> <a id="2667" class="Keyword">import</a> <a id="2674" href="/Classical/Structures/Lattice/Partitions/" class="Module">Classical.Structures.Lattice.Partitions</a>           <a id="2724" class="Keyword">public</a>
-<a id="2731" class="Keyword">open</a> <a id="2736" class="Keyword">import</a> <a id="2743" href="/Classical/Structures/Lattice/Product/" class="Module">Classical.Structures.Lattice.Product</a>              <a id="2793" class="Keyword">public</a>
+<a id="2557" class="Keyword">open</a> <a id="2562" class="Keyword">import</a> <a id="2569" href="/Classical/Structures/Lattice/Basic/" class="Module">Classical.Structures.Lattice.Basic</a>                <a id="2619" class="Keyword">public</a>
+<a id="2626" class="Keyword">open</a> <a id="2631" class="Keyword">import</a> <a id="2638" href="/Classical/Structures/Lattice/DistributiveLattice/" class="Module">Classical.Structures.Lattice.DistributiveLattice</a>  <a id="2688" class="Keyword">public</a>
+<a id="2695" class="Keyword">open</a> <a id="2700" class="Keyword">import</a> <a id="2707" href="/Classical/Structures/Lattice/Dual/" class="Module">Classical.Structures.Lattice.Dual</a>                 <a id="2757" class="Keyword">public</a>
+<a id="2764" class="Keyword">open</a> <a id="2769" class="Keyword">import</a> <a id="2776" href="/Classical/Structures/Lattice/FilterIdeal/" class="Module">Classical.Structures.Lattice.FilterIdeal</a>          <a id="2826" class="Keyword">public</a>
+<a id="2833" class="Keyword">open</a> <a id="2838" class="Keyword">import</a> <a id="2845" href="/Classical/Structures/Lattice/Free/" class="Module">Classical.Structures.Lattice.Free</a>                 <a id="2895" class="Keyword">public</a>
+<a id="2902" class="Keyword">open</a> <a id="2907" class="Keyword">import</a> <a id="2914" href="/Classical/Structures/Lattice/OrdinalSum/" class="Module">Classical.Structures.Lattice.OrdinalSum</a>           <a id="2964" class="Keyword">public</a>
+<a id="2971" class="Keyword">open</a> <a id="2976" class="Keyword">import</a> <a id="2983" href="/Classical/Structures/Lattice/Partitions/" class="Module">Classical.Structures.Lattice.Partitions</a>           <a id="3033" class="Keyword">public</a>
+<a id="3040" class="Keyword">open</a> <a id="3045" class="Keyword">import</a> <a id="3052" href="/Classical/Structures/Lattice/Product/" class="Module">Classical.Structures.Lattice.Product</a>              <a id="3102" class="Keyword">public</a>
 
 </pre>
 

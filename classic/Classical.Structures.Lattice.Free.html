@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>Classical.Structures.Lattice.Free</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">---
+layout: default
+file: &quot;src/Classical/Structures/Lattice/Free.lagda.md&quot;
+title: &quot;Classical.Structures.Lattice.Free module&quot;
+date: &quot;2026-10-07&quot;
+author: &quot;the agda-algebras development team&quot;
+---
+
+### Free lattices
+
+This is the [Classical.Structures.Lattice.Free][] module of the [Agda Universal Algebra Library][].
+
+This is a barrel module: it declares nothing of its own and re-exports the modules
+that construct the free lattice `FL(X)` and decide its order by Whitman&#39;s solution
+to the word problem ([Freese, Ježek, and Nation (1995)][], Chapter I).  The
+development is syntactic: `FL(X)` is the set of lattice terms ordered by the
+relation Whitman&#39;s rules define, and the rules are proved sound and complete for
+the order of every lattice, rather than read off a model built by Day&#39;s doubling
+construction as in the book.
+
+### Guide to the submodules of &lt;span class=&quot;AgdaModule&quot;&gt;Classical.Structures.Lattice.Free&lt;/span&gt;
+
++  [Classical.Structures.Lattice.Free.Term][]: the lattice terms
+   `LatTerm X`{.AgdaDatatype}, their rank, their evaluation in any lattice, and
+   the translation to and from the generic `Term X`{.AgdaDatatype} over
+   `Sig-Lattice`{.AgdaFunction};
++  [Classical.Structures.Lattice.Free.Whitman][]: Whitman&#39;s rules as the inductive
+   relation `_≤ʷ_`{.AgdaDatatype}, its decision procedure, reflexivity,
+   transitivity, and formal meet and join as infimum and supremum;
++  [Classical.Structures.Lattice.Free.Universal][]: the free lattice
+   `FL X`{.AgdaFunction}, soundness and completeness of the rules (Whitman&#39;s
+   theorem), and the universal property;
++  [Classical.Structures.Lattice.Free.Derivability][]: the bridge to equational
+   logic, which makes derivable equality under `Th-Lattice`{.AgdaFunction}, and
+   hence equality in the relatively free algebra `𝔽[ X ]`{.AgdaFunction},
+   decidable.
+
+The worked example [Examples.Classical.Lattices.FreeLattice3][] decides a few
+inequalities in `FL(3)` by evaluation.
+
+</a><a id="1950" class="Markup">```agda
+</a><a id="1958" class="Symbol">{-#</a> <a id="1962" class="Keyword">OPTIONS</a> <a id="1970" class="Pragma">--without-K</a> <a id="1982" class="Pragma">--exact-split</a> <a id="1996" class="Pragma">--safe</a> <a id="2003" class="Symbol">#-}</a>
+
+<a id="2008" class="Keyword">module</a> <a id="2015" href="Classical.Structures.Lattice.Free.html" class="Module">Classical.Structures.Lattice.Free</a> <a id="2049" class="Keyword">where</a>
+
+<a id="2056" class="Keyword">open</a> <a id="2061" class="Keyword">import</a> <a id="2068" href="Classical.Structures.Lattice.Free.Derivability.html" class="Module">Classical.Structures.Lattice.Free.Derivability</a>  <a id="2116" class="Keyword">public</a>
+<a id="2123" class="Keyword">open</a> <a id="2128" class="Keyword">import</a> <a id="2135" href="Classical.Structures.Lattice.Free.Term.html" class="Module">Classical.Structures.Lattice.Free.Term</a>          <a id="2183" class="Keyword">public</a>
+<a id="2190" class="Keyword">open</a> <a id="2195" class="Keyword">import</a> <a id="2202" href="Classical.Structures.Lattice.Free.Universal.html" class="Module">Classical.Structures.Lattice.Free.Universal</a>     <a id="2250" class="Keyword">public</a>
+<a id="2257" class="Keyword">open</a> <a id="2262" class="Keyword">import</a> <a id="2269" href="Classical.Structures.Lattice.Free.Whitman.html" class="Module">Classical.Structures.Lattice.Free.Whitman</a>       <a id="2317" class="Keyword">public</a>
+<a id="2324" class="Markup">```
+</a></pre></body></html>

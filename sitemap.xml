@@ -433,6 +433,10 @@
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Lattice/Free/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
          <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Lattice/OrdinalSum/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
@@ -442,6 +446,22 @@
     </url>
     <url>
          <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Lattice/Product/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Lattice/Free/Derivability/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Lattice/Free/Term/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Lattice/Free/Universal/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Lattice/Free/Whitman/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
@@ -578,6 +598,10 @@
     </url>
     <url>
          <loc>https://agda-algebras.universalalgebra.org/Examples/Classical/Groups/AlternatingGroup5/Tables/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/Examples/Classical/Lattices/FreeLattice3/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
