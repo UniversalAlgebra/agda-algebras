@@ -13711,6 +13711,8 @@
       
         
       
+        
+      
     
     
     
@@ -14071,6 +14073,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adr/011-without-k/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-011: --without-K for every module
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -14368,8 +14398,8 @@
 <p>The front door of the library, and the one module whose only code is its own
 declaration: why a mathematician might formalize universal algebra, why in Agda,
 what the 3.0 reconstruction changed, and where to go next.</p>
-<pre class="Agda hidden-source"><a id="530" class="Symbol">{-#</a> <a id="534" class="Keyword">OPTIONS</a> <a id="542" class="Pragma">--cubical-compatible</a> <a id="563" class="Pragma">--exact-split</a> <a id="577" class="Pragma">--safe</a> <a id="584" class="Symbol">#-}</a>
-<a id="588" class="Keyword">module</a> <a id="595" href="/Overture/Preface/" class="Module">Overture.Preface</a> <a id="612" class="Keyword">where</a>
+<pre class="Agda hidden-source"><a id="530" class="Symbol">{-#</a> <a id="534" class="Keyword">OPTIONS</a> <a id="542" class="Pragma">--without-K</a> <a id="554" class="Pragma">--exact-split</a> <a id="568" class="Pragma">--safe</a> <a id="575" class="Symbol">#-}</a>
+<a id="579" class="Keyword">module</a> <a id="586" href="/Overture/Preface/" class="Module">Overture.Preface</a> <a id="603" class="Keyword">where</a>
 </pre>
 
 <p>The <a href="/">Agda Universal Algebra Library</a> (<a href="/agda-algebras/">agda-algebras</a>, for short) is a formalization in <a href="https://wiki.portal.chalmers.se/agda/pmwiki.php">Agda</a> of the foundations of general algebra in the sense of Birkhoff, Grätzer, McKenzie–McNulty–Taylor, and Bergman: sets equipped with arbitrary-arity operations, the homomorphisms between them, the congruences on them, the term algebras they generate, the varieties they fall into, and the equational logic that organizes all of the above.  The library's current centrepiece is a fully constructive, machine-checked proof of Birkhoff's HSP theorem — every variety is an equational class — in a setoid-based reformulation that avoids function extensionality.</p>
@@ -14381,7 +14411,7 @@ what the 3.0 reconstruction changed, and where to go next.</p>
 <p>The proof-assistant landscape of 2026 offers several mature choices — Lean 4, Coq / Rocq, Isabelle — each with excellent universal-algebra formalizations at various stages of development.  The case for Agda here rests on three pillars.</p>
 <p><strong>Proof terms as first-class training and retrieval data</strong>.  Agda's proofs are terms in a pure functional language, constructed by the programmer in direct correspondence with the mathematical content.  Tactic languages, reflection-based automation, and decision procedures have their virtues, but they produce proofs whose surface form is not the proof: a chain of <code>rfl</code>, <code>simp</code>, <code>omega</code>, <code>aesop</code> operates on an internal state that the reader cannot see.  An Agda proof is <em>what it looks like</em>.  This matters for two present-day concerns.  First, for the library as pedagogy: a graduate student reading agda-algebras encounters the mathematics at full resolution, not a sequence of tactic invocations whose outcomes depend on implementation details of a search procedure.  Second, for the library as training corpus: a (theorem, proof) pair extracted from agda-algebras is a pair a language model can directly learn to generate, not a tactic script whose semantics are opaque without running the assistant.  Milestone 8 of the 3.0 roadmap builds explicitly on this property.</p>
 <p><strong>A clear path to cubical type theory</strong>.  Agda has a mature cubical mode with computational univalence and the structure identity principle.  The 3.0 canonical development uses setoids rather than cubical paths, partly because the cubical ecosystem is still stabilizing and partly because setoids are a lingua franca that readers from many traditions can approach without a tutorial.  But the development is written <em>with cubical portability in mind</em>: definitions are stated in terms of the algebra's own equivalence relation (<code>Algebra.Domain</code>) rather than propositional equality, so that when v4.0 swaps setoids for paths the substitution is substantively mechanical.  The appeal for a universal algebraist is direct: in the cubical mode, isomorphism <em>is</em> equality, which is what the informal practice has always pretended.  The structure identity principle turns that pretence into computation.</p>
-<p><strong>A constructive substrate well-matched to universal algebra</strong>.  Universal algebra has historically been set-theoretic, but its core constructions are constructive by nature.  Free algebras are inductive; subalgebra closures are least fixed points of monotone operators, which are computable when the operators are; homomorphic images, quotient algebras, and subdirect products are concretely describable without invoking ambient set-theoretic machinery.  Agda under <code>--safe --cubical-compatible --exact-split</code> is a setting where one cannot cheat without the checker noticing, and where the resulting developments are guaranteed consistent with a constructive universe.  Much of classical universal algebra does not need classical logic; the subset that does — ultrafilter-based compactness arguments, Birkhoff-style completeness relying on Zorn — can be isolated, made explicit, and if need be postulated cleanly at the boundary rather than absorbed invisibly into the ambient logic.</p>
+<p><strong>A constructive substrate well-matched to universal algebra</strong>.  Universal algebra has historically been set-theoretic, but its core constructions are constructive by nature.  Free algebras are inductive; subalgebra closures are least fixed points of monotone operators, which are computable when the operators are; homomorphic images, quotient algebras, and subdirect products are concretely describable without invoking ambient set-theoretic machinery.  Agda under <code>--safe --without-K --exact-split</code> is a setting where one cannot cheat without the checker noticing, and where the resulting developments are guaranteed consistent with a constructive universe.  Much of classical universal algebra does not need classical logic; the subset that does (ultrafilter-based compactness arguments, Birkhoff-style completeness relying on Zorn) can be isolated, made explicit, and if need be postulated cleanly at the boundary rather than absorbed invisibly into the ambient logic.</p>
 <p>These three reasons are not independent: the constructive substrate makes the proof terms meaningful, and the cubical trajectory keeps the constructive substrate future-proof against the eventual migration of foundations to path-based equality.</p>
 <h4 id="the-30-reconstruction">The 3.0 reconstruction<a class="headerlink" href="#the-30-reconstruction" title="Anchor link to this section">&para;</a></h4>
 <p>The first public release, v2.0.1 (<a href="https://doi.org/10.5281/zenodo.5765793">archived on Zenodo</a>, December 2021), accompanied the TYPES 2021 proof of Birkhoff's HSP theorem.  It succeeded narrowly — the proof type-checks, as does everything it depends on — but bequeathed a codebase with two parallel developments (a standard-dependent-types <code>Base/</code> tree and a setoid-based <code>Setoid/</code> tree), uneven naming, a handful of synonyms for each central concept, and a documentation layer split across LaTeX-literate Agda, Markdown, and Jekyll templating in ways no one could reproduce from first principles.</p>

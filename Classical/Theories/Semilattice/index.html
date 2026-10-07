@@ -13591,6 +13591,8 @@
       
         
       
+        
+      
     
     
     
@@ -13951,6 +13953,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../adr/011-without-k/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-011: --without-K for every module
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -14127,28 +14157,28 @@
 commutativity and associativity, over the same <code>Sig-Magma</code> signature (no new symbols).
 <code>Th-Semilattice</code> therefore has three equations, all composed from the generic builders
 of <a href="/Classical/Equations/"><code>Classical.Equations</code></a>.</p>
-<pre class="Agda hidden-source"><a id="652" class="Symbol">{-#</a> <a id="656" class="Keyword">OPTIONS</a> <a id="664" class="Pragma">--cubical-compatible</a> <a id="685" class="Pragma">--exact-split</a> <a id="699" class="Pragma">--safe</a> <a id="706" class="Symbol">#-}</a>
+<pre class="Agda hidden-source"><a id="652" class="Symbol">{-#</a> <a id="656" class="Keyword">OPTIONS</a> <a id="664" class="Pragma">--without-K</a> <a id="676" class="Pragma">--exact-split</a> <a id="690" class="Pragma">--safe</a> <a id="697" class="Symbol">#-}</a>
 
-<a id="711" class="Keyword">module</a> <a id="718" href="/Classical/Theories/Semilattice/" class="Module">Classical.Theories.Semilattice</a> <a id="749" class="Keyword">where</a>
+<a id="702" class="Keyword">module</a> <a id="709" href="/Classical/Theories/Semilattice/" class="Module">Classical.Theories.Semilattice</a> <a id="740" class="Keyword">where</a>
 
-<a id="756" class="Keyword">open</a> <a id="761" class="Keyword">import</a> <a id="768" href="/classic/Agda.Primitive.html" class="Module">Agda.Primitive</a>                         <a id="807" class="Keyword">using</a> <a id="813" class="Symbol">()</a> <a id="816" class="Keyword">renaming</a> <a id="825" class="Symbol">(</a> <a id="827" href="/classic/Agda.Primitive.html#388" class="Primitive">Set</a> <a id="831" class="Symbol">to</a> <a id="834" class="Primitive">Type</a> <a id="839" class="Symbol">)</a>
-<a id="841" class="Keyword">open</a> <a id="846" class="Keyword">import</a> <a id="853" href="/classic/Data.Fin.Base.html" class="Module">Data.Fin.Base</a>                          <a id="892" class="Keyword">using</a> <a id="898" class="Symbol">(</a> <a id="900" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="904" class="Symbol">)</a>
-<a id="906" class="Keyword">open</a> <a id="911" class="Keyword">import</a> <a id="918" href="/classic/Data.Fin.Patterns.html" class="Module">Data.Fin.Patterns</a>                      <a id="957" class="Keyword">using</a> <a id="963" class="Symbol">(</a> <a id="965" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="968" class="Symbol">;</a> <a id="970" href="/classic/Data.Fin.Patterns.html#440" class="InductiveConstructor">1F</a> <a id="973" class="Symbol">;</a> <a id="975" href="/classic/Data.Fin.Patterns.html#460" class="InductiveConstructor">2F</a> <a id="978" class="Symbol">)</a>
-<a id="980" class="Keyword">open</a> <a id="985" class="Keyword">import</a> <a id="992" href="/classic/Data.Product.html" class="Module">Data.Product</a>                           <a id="1031" class="Keyword">using</a> <a id="1037" class="Symbol">(</a> <a id="1039" href="/classic/Data.Product.Base.html#1618" class="Function Operator">_×_</a> <a id="1043" class="Symbol">)</a>
-<a id="1045" class="Keyword">open</a> <a id="1050" class="Keyword">import</a> <a id="1057" href="/classic/Relation.Binary.PropositionalEquality.html" class="Module">Relation.Binary.PropositionalEquality</a>  <a id="1096" class="Keyword">using</a> <a id="1102" class="Symbol">(</a> <a id="1104" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="1109" class="Symbol">)</a>
+<a id="747" class="Keyword">open</a> <a id="752" class="Keyword">import</a> <a id="759" href="/classic/Agda.Primitive.html" class="Module">Agda.Primitive</a>                         <a id="798" class="Keyword">using</a> <a id="804" class="Symbol">()</a> <a id="807" class="Keyword">renaming</a> <a id="816" class="Symbol">(</a> <a id="818" href="/classic/Agda.Primitive.html#388" class="Primitive">Set</a> <a id="822" class="Symbol">to</a> <a id="825" class="Primitive">Type</a> <a id="830" class="Symbol">)</a>
+<a id="832" class="Keyword">open</a> <a id="837" class="Keyword">import</a> <a id="844" href="/classic/Data.Fin.Base.html" class="Module">Data.Fin.Base</a>                          <a id="883" class="Keyword">using</a> <a id="889" class="Symbol">(</a> <a id="891" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="895" class="Symbol">)</a>
+<a id="897" class="Keyword">open</a> <a id="902" class="Keyword">import</a> <a id="909" href="/classic/Data.Fin.Patterns.html" class="Module">Data.Fin.Patterns</a>                      <a id="948" class="Keyword">using</a> <a id="954" class="Symbol">(</a> <a id="956" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="959" class="Symbol">;</a> <a id="961" href="/classic/Data.Fin.Patterns.html#440" class="InductiveConstructor">1F</a> <a id="964" class="Symbol">;</a> <a id="966" href="/classic/Data.Fin.Patterns.html#460" class="InductiveConstructor">2F</a> <a id="969" class="Symbol">)</a>
+<a id="971" class="Keyword">open</a> <a id="976" class="Keyword">import</a> <a id="983" href="/classic/Data.Product.html" class="Module">Data.Product</a>                           <a id="1022" class="Keyword">using</a> <a id="1028" class="Symbol">(</a> <a id="1030" href="/classic/Data.Product.Base.html#1618" class="Function Operator">_×_</a> <a id="1034" class="Symbol">)</a>
+<a id="1036" class="Keyword">open</a> <a id="1041" class="Keyword">import</a> <a id="1048" href="/classic/Relation.Binary.PropositionalEquality.html" class="Module">Relation.Binary.PropositionalEquality</a>  <a id="1087" class="Keyword">using</a> <a id="1093" class="Symbol">(</a> <a id="1095" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="1100" class="Symbol">)</a>
 
-<a id="1112" class="Keyword">open</a> <a id="1117" class="Keyword">import</a> <a id="1124" href="/Classical/Signatures/Magma/" class="Module">Classical.Signatures.Magma</a>             <a id="1163" class="Keyword">using</a> <a id="1169" class="Symbol">(</a> <a id="1171" href="/Classical/Signatures/Magma/#3863" class="Function">Sig-Magma</a> <a id="1181" class="Symbol">;</a> <a id="1183" href="/Classical/Signatures/Magma/#3109" class="InductiveConstructor">∙-Op</a> <a id="1188" class="Symbol">)</a>
-<a id="1190" class="Keyword">open</a> <a id="1195" class="Keyword">import</a> <a id="1202" href="/Classical/Equations/" class="Module">Classical.Equations</a>                    <a id="1241" class="Keyword">using</a> <a id="1247" class="Symbol">(</a> <a id="1249" href="/Classical/Equations/#5677" class="Function">Associative</a> <a id="1261" class="Symbol">;</a> <a id="1263" href="/Classical/Equations/#5920" class="Function">Commutative</a> <a id="1275" class="Symbol">;</a> <a id="1277" href="/Classical/Equations/#6108" class="Function">Idempotent</a> <a id="1288" class="Symbol">)</a>
-<a id="1290" class="Keyword">open</a> <a id="1295" class="Keyword">import</a> <a id="1302" href="/Overture/Terms/" class="Module">Overture.Terms</a> <a id="1317" class="Symbol">{</a><a id="1318" class="Argument">𝑆</a> <a id="1320" class="Symbol">=</a> <a id="1322" href="/Classical/Signatures/Magma/#3863" class="Function">Sig-Magma</a><a id="1331" class="Symbol">}</a>         <a id="1341" class="Keyword">using</a> <a id="1347" class="Symbol">(</a> <a id="1349" href="/Overture/Terms/Basic/#3256" class="Datatype">Term</a> <a id="1354" class="Symbol">)</a>
+<a id="1103" class="Keyword">open</a> <a id="1108" class="Keyword">import</a> <a id="1115" href="/Classical/Signatures/Magma/" class="Module">Classical.Signatures.Magma</a>             <a id="1154" class="Keyword">using</a> <a id="1160" class="Symbol">(</a> <a id="1162" href="/Classical/Signatures/Magma/#3854" class="Function">Sig-Magma</a> <a id="1172" class="Symbol">;</a> <a id="1174" href="/Classical/Signatures/Magma/#3100" class="InductiveConstructor">∙-Op</a> <a id="1179" class="Symbol">)</a>
+<a id="1181" class="Keyword">open</a> <a id="1186" class="Keyword">import</a> <a id="1193" href="/Classical/Equations/" class="Module">Classical.Equations</a>                    <a id="1232" class="Keyword">using</a> <a id="1238" class="Symbol">(</a> <a id="1240" href="/Classical/Equations/#5668" class="Function">Associative</a> <a id="1252" class="Symbol">;</a> <a id="1254" href="/Classical/Equations/#5911" class="Function">Commutative</a> <a id="1266" class="Symbol">;</a> <a id="1268" href="/Classical/Equations/#6099" class="Function">Idempotent</a> <a id="1279" class="Symbol">)</a>
+<a id="1281" class="Keyword">open</a> <a id="1286" class="Keyword">import</a> <a id="1293" href="/Overture/Terms/" class="Module">Overture.Terms</a> <a id="1308" class="Symbol">{</a><a id="1309" class="Argument">𝑆</a> <a id="1311" class="Symbol">=</a> <a id="1313" href="/Classical/Signatures/Magma/#3854" class="Function">Sig-Magma</a><a id="1322" class="Symbol">}</a>         <a id="1332" class="Keyword">using</a> <a id="1338" class="Symbol">(</a> <a id="1340" href="/Overture/Terms/Basic/#3247" class="Datatype">Term</a> <a id="1345" class="Symbol">)</a>
 </pre>
 
-<pre class="Agda"><a id="1373" class="Keyword">data</a> <a id="Eq-Semilattice"></a><a id="1378" href="/Classical/Theories/Semilattice/#1378" class="Datatype">Eq-Semilattice</a> <a id="1393" class="Symbol">:</a> <a id="1395" href="/Classical/Theories/Semilattice/#834" class="Primitive">Type</a> <a id="1400" class="Keyword">where</a>
-  <a id="Eq-Semilattice.assoc"></a><a id="1408" href="/Classical/Theories/Semilattice/#1408" class="InductiveConstructor">assoc</a> <a id="Eq-Semilattice.comm"></a><a id="1414" href="/Classical/Theories/Semilattice/#1414" class="InductiveConstructor">comm</a> <a id="Eq-Semilattice.idem"></a><a id="1419" href="/Classical/Theories/Semilattice/#1419" class="InductiveConstructor">idem</a> <a id="1424" class="Symbol">:</a> <a id="1426" href="/Classical/Theories/Semilattice/#1378" class="Datatype">Eq-Semilattice</a>
+<pre class="Agda"><a id="1364" class="Keyword">data</a> <a id="Eq-Semilattice"></a><a id="1369" href="/Classical/Theories/Semilattice/#1369" class="Datatype">Eq-Semilattice</a> <a id="1384" class="Symbol">:</a> <a id="1386" href="/Classical/Theories/Semilattice/#825" class="Primitive">Type</a> <a id="1391" class="Keyword">where</a>
+  <a id="Eq-Semilattice.assoc"></a><a id="1399" href="/Classical/Theories/Semilattice/#1399" class="InductiveConstructor">assoc</a> <a id="Eq-Semilattice.comm"></a><a id="1405" href="/Classical/Theories/Semilattice/#1405" class="InductiveConstructor">comm</a> <a id="Eq-Semilattice.idem"></a><a id="1410" href="/Classical/Theories/Semilattice/#1410" class="InductiveConstructor">idem</a> <a id="1415" class="Symbol">:</a> <a id="1417" href="/Classical/Theories/Semilattice/#1369" class="Datatype">Eq-Semilattice</a>
 
-<a id="Th-Semilattice"></a><a id="1442" href="/Classical/Theories/Semilattice/#1442" class="Function">Th-Semilattice</a> <a id="1457" class="Symbol">:</a> <a id="1459" href="/Classical/Theories/Semilattice/#1378" class="Datatype">Eq-Semilattice</a> <a id="1474" class="Symbol">→</a> <a id="1476" href="/Overture/Terms/Basic/#3256" class="Datatype">Term</a> <a id="1481" class="Symbol">(</a><a id="1482" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="1486" class="Number">3</a><a id="1487" class="Symbol">)</a> <a id="1489" href="/classic/Data.Product.Base.html#1618" class="Function Operator">×</a> <a id="1491" href="/Overture/Terms/Basic/#3256" class="Datatype">Term</a> <a id="1496" class="Symbol">(</a><a id="1497" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="1501" class="Number">3</a><a id="1502" class="Symbol">)</a>
-<a id="1504" href="/Classical/Theories/Semilattice/#1442" class="Function">Th-Semilattice</a> <a id="1519" href="/Classical/Theories/Semilattice/#1408" class="InductiveConstructor">assoc</a> <a id="1525" class="Symbol">=</a> <a id="1527" href="/Classical/Equations/#5677" class="Function">Associative</a> <a id="1539" href="/Classical/Signatures/Magma/#3109" class="InductiveConstructor">∙-Op</a> <a id="1544" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="1549" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="1552" href="/classic/Data.Fin.Patterns.html#440" class="InductiveConstructor">1F</a> <a id="1555" href="/classic/Data.Fin.Patterns.html#460" class="InductiveConstructor">2F</a>
-<a id="1558" href="/Classical/Theories/Semilattice/#1442" class="Function">Th-Semilattice</a> <a id="1573" href="/Classical/Theories/Semilattice/#1414" class="InductiveConstructor">comm</a>  <a id="1579" class="Symbol">=</a> <a id="1581" href="/Classical/Equations/#5920" class="Function">Commutative</a> <a id="1593" href="/Classical/Signatures/Magma/#3109" class="InductiveConstructor">∙-Op</a> <a id="1598" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="1603" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="1606" href="/classic/Data.Fin.Patterns.html#440" class="InductiveConstructor">1F</a>
-<a id="1609" href="/Classical/Theories/Semilattice/#1442" class="Function">Th-Semilattice</a> <a id="1624" href="/Classical/Theories/Semilattice/#1419" class="InductiveConstructor">idem</a>  <a id="1630" class="Symbol">=</a> <a id="1632" href="/Classical/Equations/#6108" class="Function">Idempotent</a>  <a id="1644" href="/Classical/Signatures/Magma/#3109" class="InductiveConstructor">∙-Op</a> <a id="1649" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="1654" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a>
+<a id="Th-Semilattice"></a><a id="1433" href="/Classical/Theories/Semilattice/#1433" class="Function">Th-Semilattice</a> <a id="1448" class="Symbol">:</a> <a id="1450" href="/Classical/Theories/Semilattice/#1369" class="Datatype">Eq-Semilattice</a> <a id="1465" class="Symbol">→</a> <a id="1467" href="/Overture/Terms/Basic/#3247" class="Datatype">Term</a> <a id="1472" class="Symbol">(</a><a id="1473" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="1477" class="Number">3</a><a id="1478" class="Symbol">)</a> <a id="1480" href="/classic/Data.Product.Base.html#1618" class="Function Operator">×</a> <a id="1482" href="/Overture/Terms/Basic/#3247" class="Datatype">Term</a> <a id="1487" class="Symbol">(</a><a id="1488" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="1492" class="Number">3</a><a id="1493" class="Symbol">)</a>
+<a id="1495" href="/Classical/Theories/Semilattice/#1433" class="Function">Th-Semilattice</a> <a id="1510" href="/Classical/Theories/Semilattice/#1399" class="InductiveConstructor">assoc</a> <a id="1516" class="Symbol">=</a> <a id="1518" href="/Classical/Equations/#5668" class="Function">Associative</a> <a id="1530" href="/Classical/Signatures/Magma/#3100" class="InductiveConstructor">∙-Op</a> <a id="1535" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="1540" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="1543" href="/classic/Data.Fin.Patterns.html#440" class="InductiveConstructor">1F</a> <a id="1546" href="/classic/Data.Fin.Patterns.html#460" class="InductiveConstructor">2F</a>
+<a id="1549" href="/Classical/Theories/Semilattice/#1433" class="Function">Th-Semilattice</a> <a id="1564" href="/Classical/Theories/Semilattice/#1405" class="InductiveConstructor">comm</a>  <a id="1570" class="Symbol">=</a> <a id="1572" href="/Classical/Equations/#5911" class="Function">Commutative</a> <a id="1584" href="/Classical/Signatures/Magma/#3100" class="InductiveConstructor">∙-Op</a> <a id="1589" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="1594" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a> <a id="1597" href="/classic/Data.Fin.Patterns.html#440" class="InductiveConstructor">1F</a>
+<a id="1600" href="/Classical/Theories/Semilattice/#1433" class="Function">Th-Semilattice</a> <a id="1615" href="/Classical/Theories/Semilattice/#1410" class="InductiveConstructor">idem</a>  <a id="1621" class="Symbol">=</a> <a id="1623" href="/Classical/Equations/#6099" class="Function">Idempotent</a>  <a id="1635" href="/Classical/Signatures/Magma/#3100" class="InductiveConstructor">∙-Op</a> <a id="1640" href="/classic/Agda.Builtin.Equality.html#207" class="InductiveConstructor">refl</a> <a id="1645" href="/classic/Data.Fin.Patterns.html#422" class="InductiveConstructor">0F</a>
 </pre>
 
 <!-- File: docs/_links.md -->

@@ -1460,4 +1460,8 @@
          <loc>https://agda-algebras.universalalgebra.org/adr/010-documentation-coverage-policy/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
+    <url>
+         <loc>https://agda-algebras.universalalgebra.org/adr/011-without-k/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
 </urlset>

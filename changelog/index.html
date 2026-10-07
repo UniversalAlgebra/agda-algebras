@@ -13527,6 +13527,8 @@
       
         
       
+        
+      
     
     
     
@@ -13874,6 +13876,34 @@
     
   
     ADR-010: Documentation coverage policy for public definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adr/011-without-k/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-011: --without-K for every module
   
 
     
@@ -14352,6 +14382,9 @@
 </ul>
 <h3 id="changed-breaking">Changed (BREAKING)<a class="headerlink" href="#changed-breaking" title="Anchor link to this section">&para;</a></h3>
 <ul>
+<li>
+<p><strong>Pragma back to <code>--without-K</code></strong> (M1-16, #594).  Every module, <code>Legacy/</code> included, and both generated aggregators are checked under <code>--without-K</code> again, and <code>agda-algebras.agda-lib</code> drops <code>-WnoUnsupportedIndexedMatch</code>, a warning that arises only under <code>--cubical-compatible</code>.  This reverses the pragma entry below (M1-1, #250).  Standard-library 3.0 is <code>--without-K</code>, and a <code>--cubical-compatible</code> module cannot import it (<code>CoInfectiveImport</code>); nothing imports this library from Cubical Agda; and the whole library checks about 11% faster from source, with interfaces about 10% smaller.  Breaking for a consumer checked under <code>--cubical-compatible</code> or <code>--cubical</code>, which can no longer import the library.  No definition, statement or proof changes; the prose that blamed the <code>Fin n</code> η-gap or the absence of function extensionality on the flag now names the real cause.  See <a href="/adr/011-without-k/">ADR-011</a>.</p>
+</li>
 <li>
 <p><strong>Documentation rendering pipeline modernized to MkDocs (Material)</strong> (M10-1, #295).  The Jekyll machinery that produced <a href="https://ualib.org">ualib.org</a> is replaced by a <a href="https://www.mkdocs.org/">MkDocs</a> + <a href="https://squidfunk.github.io/mkdocs-material/">Material</a> site built from the <code>.lagda.md</code> sources.  Code blocks get full <code>agda --html</code> token highlighting with per-token hyperlinks to definitions; inline prose terms are highlighted from their kramdown attribute spans (<code>`Algebra`{.AgdaRecord}</code>) via <code>attr_list</code> + <a href="https://github.com/ualib/agda-algebras/blob/master/docs/stylesheets/custom.css"><code>docs/stylesheets/custom.css</code></a>.  See <a href="/adr/007-mkdocs-rendering-pipeline/">ADR-007</a> for the full rationale (architecture, domain, plugin set, URL scheme).  Highlights:</p>
 </li>

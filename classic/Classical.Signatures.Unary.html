@@ -37,29 +37,29 @@ definitionally to a concrete `Fin`, so finiteness witnesses need no case split
 
 &lt;!--
 </a><a id="1738" class="Markup">```agda
-</a><a id="1746" class="Symbol">{-#</a> <a id="1750" class="Keyword">OPTIONS</a> <a id="1758" class="Pragma">--cubical-compatible</a> <a id="1779" class="Pragma">--exact-split</a> <a id="1793" class="Pragma">--safe</a> <a id="1800" class="Symbol">#-}</a>
+</a><a id="1746" class="Symbol">{-#</a> <a id="1750" class="Keyword">OPTIONS</a> <a id="1758" class="Pragma">--without-K</a> <a id="1770" class="Pragma">--exact-split</a> <a id="1784" class="Pragma">--safe</a> <a id="1791" class="Symbol">#-}</a>
 
-<a id="1805" class="Keyword">module</a> <a id="1812" href="Classical.Signatures.Unary.html" class="Module">Classical.Signatures.Unary</a> <a id="1839" class="Keyword">where</a>
+<a id="1796" class="Keyword">module</a> <a id="1803" href="Classical.Signatures.Unary.html" class="Module">Classical.Signatures.Unary</a> <a id="1830" class="Keyword">where</a>
 
-<a id="1846" class="Comment">-- Imports from Agda and the Agda Standard Library ----------------------------</a>
-<a id="1926" class="Keyword">open</a> <a id="1931" class="Keyword">import</a> <a id="1938" href="Agda.Primitive.html" class="Module">Agda.Primitive</a> <a id="1953" class="Keyword">using</a> <a id="1959" class="Symbol">()</a> <a id="1962" class="Keyword">renaming</a> <a id="1971" class="Symbol">(</a> <a id="1973" href="Agda.Primitive.html#388" class="Primitive">Set</a> <a id="1977" class="Symbol">to</a> <a id="1980" class="Primitive">Type</a> <a id="1985" class="Symbol">)</a>
-<a id="1987" class="Keyword">open</a> <a id="1992" class="Keyword">import</a> <a id="1999" href="Data.Fin.Base.html" class="Module">Data.Fin.Base</a>  <a id="2014" class="Keyword">using</a> <a id="2020" class="Symbol">(</a> <a id="2022" href="Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="2026" class="Symbol">)</a>
-<a id="2028" class="Keyword">open</a> <a id="2033" class="Keyword">import</a> <a id="2040" href="Data.Product.html" class="Module">Data.Product</a>   <a id="2055" class="Keyword">using</a> <a id="2061" class="Symbol">(</a> <a id="2063" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">_,_</a> <a id="2067" class="Symbol">)</a>
-<a id="2069" class="Keyword">open</a> <a id="2074" class="Keyword">import</a> <a id="2081" href="Level.html" class="Module">Level</a>          <a id="2096" class="Keyword">using</a> <a id="2102" class="Symbol">(</a> <a id="2104" href="Agda.Primitive.html#742" class="Postulate">Level</a> <a id="2110" class="Symbol">;</a> <a id="2112" href="Level.html#521" class="Function">0ℓ</a> <a id="2115" class="Symbol">)</a>
+<a id="1837" class="Comment">-- Imports from Agda and the Agda Standard Library ----------------------------</a>
+<a id="1917" class="Keyword">open</a> <a id="1922" class="Keyword">import</a> <a id="1929" href="Agda.Primitive.html" class="Module">Agda.Primitive</a> <a id="1944" class="Keyword">using</a> <a id="1950" class="Symbol">()</a> <a id="1953" class="Keyword">renaming</a> <a id="1962" class="Symbol">(</a> <a id="1964" href="Agda.Primitive.html#388" class="Primitive">Set</a> <a id="1968" class="Symbol">to</a> <a id="1971" class="Primitive">Type</a> <a id="1976" class="Symbol">)</a>
+<a id="1978" class="Keyword">open</a> <a id="1983" class="Keyword">import</a> <a id="1990" href="Data.Fin.Base.html" class="Module">Data.Fin.Base</a>  <a id="2005" class="Keyword">using</a> <a id="2011" class="Symbol">(</a> <a id="2013" href="Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="2017" class="Symbol">)</a>
+<a id="2019" class="Keyword">open</a> <a id="2024" class="Keyword">import</a> <a id="2031" href="Data.Product.html" class="Module">Data.Product</a>   <a id="2046" class="Keyword">using</a> <a id="2052" class="Symbol">(</a> <a id="2054" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">_,_</a> <a id="2058" class="Symbol">)</a>
+<a id="2060" class="Keyword">open</a> <a id="2065" class="Keyword">import</a> <a id="2072" href="Level.html" class="Module">Level</a>          <a id="2087" class="Keyword">using</a> <a id="2093" class="Symbol">(</a> <a id="2095" href="Agda.Primitive.html#742" class="Postulate">Level</a> <a id="2101" class="Symbol">;</a> <a id="2103" href="Level.html#521" class="Function">0ℓ</a> <a id="2106" class="Symbol">)</a>
 
-<a id="2118" class="Comment">-- Imports from the Agda Universal Algebra Library ----------------------------</a>
-<a id="2198" class="Keyword">open</a> <a id="2203" class="Keyword">import</a> <a id="2210" href="Overture.Signatures.html" class="Module">Overture.Signatures</a> <a id="2230" class="Keyword">using</a> <a id="2236" class="Symbol">(</a> <a id="2238" href="Overture.Signatures.html#3470" class="Function">Signature</a> <a id="2248" class="Symbol">)</a>
-<a id="2250" class="Markup">```
-</a><a id="2254" class="Background">--&gt;
+<a id="2109" class="Comment">-- Imports from the Agda Universal Algebra Library ----------------------------</a>
+<a id="2189" class="Keyword">open</a> <a id="2194" class="Keyword">import</a> <a id="2201" href="Overture.Signatures.html" class="Module">Overture.Signatures</a> <a id="2221" class="Keyword">using</a> <a id="2227" class="Symbol">(</a> <a id="2229" href="Overture.Signatures.html#3461" class="Function">Signature</a> <a id="2239" class="Symbol">)</a>
+<a id="2241" class="Markup">```
+</a><a id="2245" class="Background">--&gt;
 
 #### The signature value
 
 One unary operation symbol per element of `A`.
 
-</a><a id="2333" class="Markup">```agda
-</a><a id="Sig-Unary"></a><a id="2341" href="Classical.Signatures.Unary.html#2341" class="Function">Sig-Unary</a> <a id="2351" class="Symbol">:</a> <a id="2353" class="Symbol">{</a><a id="2354" href="Classical.Signatures.Unary.html#2354" class="Bound">ℓ</a> <a id="2356" class="Symbol">:</a> <a id="2358" href="Agda.Primitive.html#742" class="Postulate">Level</a><a id="2363" class="Symbol">}</a> <a id="2365" class="Symbol">→</a> <a id="2367" href="Classical.Signatures.Unary.html#1980" class="Primitive">Type</a> <a id="2372" href="Classical.Signatures.Unary.html#2354" class="Bound">ℓ</a> <a id="2374" class="Symbol">→</a> <a id="2376" href="Overture.Signatures.html#3470" class="Function">Signature</a> <a id="2386" href="Classical.Signatures.Unary.html#2354" class="Bound">ℓ</a> <a id="2388" href="Level.html#521" class="Function">0ℓ</a>
-<a id="2391" href="Classical.Signatures.Unary.html#2341" class="Function">Sig-Unary</a> <a id="2401" href="Classical.Signatures.Unary.html#2401" class="Bound">A</a> <a id="2403" class="Symbol">=</a> <a id="2405" href="Classical.Signatures.Unary.html#2401" class="Bound">A</a> <a id="2407" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="2409" class="Symbol">λ</a> <a id="2411" href="Classical.Signatures.Unary.html#2411" class="Bound">_</a> <a id="2413" class="Symbol">→</a> <a id="2415" href="Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="2419" class="Number">1</a>
-<a id="2421" class="Markup">```
-</a><a id="2425" class="Background">
+</a><a id="2324" class="Markup">```agda
+</a><a id="Sig-Unary"></a><a id="2332" href="Classical.Signatures.Unary.html#2332" class="Function">Sig-Unary</a> <a id="2342" class="Symbol">:</a> <a id="2344" class="Symbol">{</a><a id="2345" href="Classical.Signatures.Unary.html#2345" class="Bound">ℓ</a> <a id="2347" class="Symbol">:</a> <a id="2349" href="Agda.Primitive.html#742" class="Postulate">Level</a><a id="2354" class="Symbol">}</a> <a id="2356" class="Symbol">→</a> <a id="2358" href="Classical.Signatures.Unary.html#1971" class="Primitive">Type</a> <a id="2363" href="Classical.Signatures.Unary.html#2345" class="Bound">ℓ</a> <a id="2365" class="Symbol">→</a> <a id="2367" href="Overture.Signatures.html#3461" class="Function">Signature</a> <a id="2377" href="Classical.Signatures.Unary.html#2345" class="Bound">ℓ</a> <a id="2379" href="Level.html#521" class="Function">0ℓ</a>
+<a id="2382" href="Classical.Signatures.Unary.html#2332" class="Function">Sig-Unary</a> <a id="2392" href="Classical.Signatures.Unary.html#2392" class="Bound">A</a> <a id="2394" class="Symbol">=</a> <a id="2396" href="Classical.Signatures.Unary.html#2392" class="Bound">A</a> <a id="2398" href="Agda.Builtin.Sigma.html#235" class="InductiveConstructor Operator">,</a> <a id="2400" class="Symbol">λ</a> <a id="2402" href="Classical.Signatures.Unary.html#2402" class="Bound">_</a> <a id="2404" class="Symbol">→</a> <a id="2406" href="Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="2410" class="Number">1</a>
+<a id="2412" class="Markup">```
+</a><a id="2416" class="Background">
 --------------------------------------
 </a></pre></body></html>

@@ -13593,6 +13593,8 @@
       
         
       
+        
+      
     
     
     
@@ -13953,6 +13955,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../adr/011-without-k/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-011: --without-K for every module
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -14128,27 +14158,27 @@
 <p><strong>Deprecation notice (v3.0, #311)</strong>.  This module has been ported to <a href="/Setoid/Varieties/Invariants/">Setoid.Varieties.Invariants</a>.  The content here is retained for one minor-version cycle so v2.x consumers can migrate; it is scheduled for removal in v3.1.  Please update your imports to <code>open import Setoid.Varieties.Invariants {𝑆}</code>.</p>
 </blockquote>
 <p>These are properties that are preserved under isomorphism.</p>
-<pre class="Agda"><a id="583" class="Symbol">{-#</a> <a id="587" class="Keyword">OPTIONS</a> <a id="595" class="Pragma">--cubical-compatible</a> <a id="616" class="Pragma">--exact-split</a> <a id="630" class="Pragma">--safe</a> <a id="637" class="Symbol">#-}</a>
+<pre class="Agda"><a id="583" class="Symbol">{-#</a> <a id="587" class="Keyword">OPTIONS</a> <a id="595" class="Pragma">--without-K</a> <a id="607" class="Pragma">--exact-split</a> <a id="621" class="Pragma">--safe</a> <a id="628" class="Symbol">#-}</a>
 
-<a id="642" class="Keyword">open</a> <a id="647" class="Keyword">import</a> <a id="654" href="/Overture/" class="Module">Overture</a> <a id="663" class="Keyword">using</a> <a id="669" class="Symbol">(</a> <a id="671" href="/Overture/Signatures/#935" class="Generalizable">𝓞</a> <a id="673" class="Symbol">;</a> <a id="675" href="/Overture/Signatures/#937" class="Generalizable">𝓥</a> <a id="677" class="Symbol">;</a> <a id="679" href="/Overture/Signatures/#3470" class="Function">Signature</a> <a id="689" class="Symbol">)</a>
+<a id="633" class="Keyword">open</a> <a id="638" class="Keyword">import</a> <a id="645" href="/Overture/" class="Module">Overture</a> <a id="654" class="Keyword">using</a> <a id="660" class="Symbol">(</a> <a id="662" href="/Overture/Signatures/#926" class="Generalizable">𝓞</a> <a id="664" class="Symbol">;</a> <a id="666" href="/Overture/Signatures/#928" class="Generalizable">𝓥</a> <a id="668" class="Symbol">;</a> <a id="670" href="/Overture/Signatures/#3461" class="Function">Signature</a> <a id="680" class="Symbol">)</a>
 
-<a id="692" class="Keyword">module</a> <a id="699" href="/Legacy/Base/Varieties/Invariants/" class="Module">Legacy.Base.Varieties.Invariants</a> <a id="732" class="Symbol">(</a><a id="733" href="/Legacy/Base/Varieties/Invariants/#733" class="Bound">𝑆</a> <a id="735" class="Symbol">:</a> <a id="737" href="/Overture/Signatures/#3470" class="Function">Signature</a> <a id="747" href="/Overture/Signatures/#935" class="Generalizable">𝓞</a> <a id="749" href="/Overture/Signatures/#937" class="Generalizable">𝓥</a><a id="750" class="Symbol">)</a> <a id="752" class="Keyword">where</a>
+<a id="683" class="Keyword">module</a> <a id="690" href="/Legacy/Base/Varieties/Invariants/" class="Module">Legacy.Base.Varieties.Invariants</a> <a id="723" class="Symbol">(</a><a id="724" href="/Legacy/Base/Varieties/Invariants/#724" class="Bound">𝑆</a> <a id="726" class="Symbol">:</a> <a id="728" href="/Overture/Signatures/#3461" class="Function">Signature</a> <a id="738" href="/Overture/Signatures/#926" class="Generalizable">𝓞</a> <a id="740" href="/Overture/Signatures/#928" class="Generalizable">𝓥</a><a id="741" class="Symbol">)</a> <a id="743" class="Keyword">where</a>
 
-<a id="759" class="Comment">-- Imports from Agda and the Agda Standard Library ---------------------</a>
-<a id="832" class="Keyword">open</a> <a id="837" class="Keyword">import</a> <a id="844" href="/classic/Agda.Primitive.html" class="Module">Agda.Primitive</a>  <a id="860" class="Keyword">using</a> <a id="866" class="Symbol">()</a> <a id="869" class="Keyword">renaming</a> <a id="878" class="Symbol">(</a> <a id="880" href="/classic/Agda.Primitive.html#388" class="Primitive">Set</a> <a id="884" class="Symbol">to</a> <a id="887" class="Primitive">Type</a> <a id="892" class="Symbol">)</a>
-<a id="894" class="Keyword">open</a> <a id="899" class="Keyword">import</a> <a id="906" href="/classic/Level.html" class="Module">Level</a>           <a id="922" class="Keyword">using</a> <a id="928" class="Symbol">(</a> <a id="930" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a> <a id="936" class="Symbol">)</a>
-<a id="938" class="Keyword">open</a> <a id="943" class="Keyword">import</a> <a id="950" href="/classic/Relation.Unary.html" class="Module">Relation.Unary</a>  <a id="966" class="Keyword">using</a> <a id="972" class="Symbol">(</a> <a id="974" href="/classic/Relation.Unary.html#1178" class="Function">Pred</a> <a id="979" class="Symbol">)</a>
+<a id="750" class="Comment">-- Imports from Agda and the Agda Standard Library ---------------------</a>
+<a id="823" class="Keyword">open</a> <a id="828" class="Keyword">import</a> <a id="835" href="/classic/Agda.Primitive.html" class="Module">Agda.Primitive</a>  <a id="851" class="Keyword">using</a> <a id="857" class="Symbol">()</a> <a id="860" class="Keyword">renaming</a> <a id="869" class="Symbol">(</a> <a id="871" href="/classic/Agda.Primitive.html#388" class="Primitive">Set</a> <a id="875" class="Symbol">to</a> <a id="878" class="Primitive">Type</a> <a id="883" class="Symbol">)</a>
+<a id="885" class="Keyword">open</a> <a id="890" class="Keyword">import</a> <a id="897" href="/classic/Level.html" class="Module">Level</a>           <a id="913" class="Keyword">using</a> <a id="919" class="Symbol">(</a> <a id="921" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a> <a id="927" class="Symbol">)</a>
+<a id="929" class="Keyword">open</a> <a id="934" class="Keyword">import</a> <a id="941" href="/classic/Relation.Unary.html" class="Module">Relation.Unary</a>  <a id="957" class="Keyword">using</a> <a id="963" class="Symbol">(</a> <a id="965" href="/classic/Relation.Unary.html#1178" class="Function">Pred</a> <a id="970" class="Symbol">)</a>
 
-<a id="982" class="Comment">-- Imports from the Agda Universal Algebra Library -------------------------------------------</a>
-<a id="1077" class="Keyword">open</a> <a id="1082" class="Keyword">import</a> <a id="1089" href="/Legacy/Base/Homomorphisms/" class="Module">Legacy.Base.Homomorphisms</a>   <a id="1117" class="Symbol">{</a><a id="1118" class="Argument">𝑆</a> <a id="1120" class="Symbol">=</a> <a id="1122" href="/Legacy/Base/Varieties/Invariants/#733" class="Bound">𝑆</a><a id="1123" class="Symbol">}</a> <a id="1125" class="Keyword">using</a> <a id="1131" class="Symbol">(</a> <a id="1133" href="/Legacy/Base/Homomorphisms/Isomorphisms/#2063" class="Record Operator">_≅_</a> <a id="1137" class="Symbol">)</a>
-<a id="1139" class="Keyword">open</a> <a id="1144" class="Keyword">import</a> <a id="1151" href="/Legacy/Base/Algebras/Basic/" class="Module">Legacy.Base.Algebras.Basic</a>  <a id="1179" class="Symbol">{</a><a id="1180" class="Argument">𝑆</a> <a id="1182" class="Symbol">=</a> <a id="1184" href="/Legacy/Base/Varieties/Invariants/#733" class="Bound">𝑆</a><a id="1185" class="Symbol">}</a> <a id="1187" class="Keyword">using</a> <a id="1193" class="Symbol">(</a> <a id="1195" href="/Legacy/Base/Algebras/Basic/#2784" class="Function">Algebra</a> <a id="1203" class="Symbol">)</a>
+<a id="973" class="Comment">-- Imports from the Agda Universal Algebra Library -------------------------------------------</a>
+<a id="1068" class="Keyword">open</a> <a id="1073" class="Keyword">import</a> <a id="1080" href="/Legacy/Base/Homomorphisms/" class="Module">Legacy.Base.Homomorphisms</a>   <a id="1108" class="Symbol">{</a><a id="1109" class="Argument">𝑆</a> <a id="1111" class="Symbol">=</a> <a id="1113" href="/Legacy/Base/Varieties/Invariants/#724" class="Bound">𝑆</a><a id="1114" class="Symbol">}</a> <a id="1116" class="Keyword">using</a> <a id="1122" class="Symbol">(</a> <a id="1124" href="/Legacy/Base/Homomorphisms/Isomorphisms/#2054" class="Record Operator">_≅_</a> <a id="1128" class="Symbol">)</a>
+<a id="1130" class="Keyword">open</a> <a id="1135" class="Keyword">import</a> <a id="1142" href="/Legacy/Base/Algebras/Basic/" class="Module">Legacy.Base.Algebras.Basic</a>  <a id="1170" class="Symbol">{</a><a id="1171" class="Argument">𝑆</a> <a id="1173" class="Symbol">=</a> <a id="1175" href="/Legacy/Base/Varieties/Invariants/#724" class="Bound">𝑆</a><a id="1176" class="Symbol">}</a> <a id="1178" class="Keyword">using</a> <a id="1184" class="Symbol">(</a> <a id="1186" href="/Legacy/Base/Algebras/Basic/#2775" class="Function">Algebra</a> <a id="1194" class="Symbol">)</a>
 
-<a id="1206" class="Keyword">private</a> <a id="1214" class="Keyword">variable</a> <a id="1223" href="/Legacy/Base/Varieties/Invariants/#1223" class="Generalizable">α</a> <a id="1225" href="/Legacy/Base/Varieties/Invariants/#1225" class="Generalizable">ℓ</a> <a id="1227" class="Symbol">:</a> <a id="1229" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a>
+<a id="1197" class="Keyword">private</a> <a id="1205" class="Keyword">variable</a> <a id="1214" href="/Legacy/Base/Varieties/Invariants/#1214" class="Generalizable">α</a> <a id="1216" href="/Legacy/Base/Varieties/Invariants/#1216" class="Generalizable">ℓ</a> <a id="1218" class="Symbol">:</a> <a id="1220" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a>
 
-<a id="AlgebraicInvariant"></a><a id="1236" href="/Legacy/Base/Varieties/Invariants/#1236" class="Function">AlgebraicInvariant</a> <a id="1255" class="Symbol">:</a> <a id="1257" href="/classic/Relation.Unary.html#1178" class="Function">Pred</a> <a id="1262" class="Symbol">(</a><a id="1263" href="/Legacy/Base/Algebras/Basic/#2784" class="Function">Algebra</a> <a id="1271" href="/Legacy/Base/Varieties/Invariants/#1223" class="Generalizable">α</a><a id="1272" class="Symbol">)</a> <a id="1274" href="/Legacy/Base/Varieties/Invariants/#1225" class="Generalizable">ℓ</a> <a id="1276" class="Symbol">→</a> <a id="1278" href="/Legacy/Base/Varieties/Invariants/#887" class="Primitive">Type</a> <a id="1283" class="Symbol">_</a>
-<a id="1285" href="/Legacy/Base/Varieties/Invariants/#1236" class="Function">AlgebraicInvariant</a> <a id="1304" href="/Legacy/Base/Varieties/Invariants/#1304" class="Bound">P</a> <a id="1306" class="Symbol">=</a> <a id="1308" class="Symbol">∀</a> <a id="1310" href="/Legacy/Base/Varieties/Invariants/#1310" class="Bound">𝑨</a> <a id="1312" href="/Legacy/Base/Varieties/Invariants/#1312" class="Bound">𝑩</a> <a id="1314" class="Symbol">→</a> <a id="1316" href="/Legacy/Base/Varieties/Invariants/#1304" class="Bound">P</a> <a id="1318" href="/Legacy/Base/Varieties/Invariants/#1310" class="Bound">𝑨</a> <a id="1320" class="Symbol">→</a> <a id="1322" href="/Legacy/Base/Varieties/Invariants/#1310" class="Bound">𝑨</a> <a id="1324" href="/Legacy/Base/Homomorphisms/Isomorphisms/#2063" class="Record Operator">≅</a> <a id="1326" href="/Legacy/Base/Varieties/Invariants/#1312" class="Bound">𝑩</a> <a id="1328" class="Symbol">→</a> <a id="1330" href="/Legacy/Base/Varieties/Invariants/#1304" class="Bound">P</a> <a id="1332" href="/Legacy/Base/Varieties/Invariants/#1312" class="Bound">𝑩</a>
+<a id="AlgebraicInvariant"></a><a id="1227" href="/Legacy/Base/Varieties/Invariants/#1227" class="Function">AlgebraicInvariant</a> <a id="1246" class="Symbol">:</a> <a id="1248" href="/classic/Relation.Unary.html#1178" class="Function">Pred</a> <a id="1253" class="Symbol">(</a><a id="1254" href="/Legacy/Base/Algebras/Basic/#2775" class="Function">Algebra</a> <a id="1262" href="/Legacy/Base/Varieties/Invariants/#1214" class="Generalizable">α</a><a id="1263" class="Symbol">)</a> <a id="1265" href="/Legacy/Base/Varieties/Invariants/#1216" class="Generalizable">ℓ</a> <a id="1267" class="Symbol">→</a> <a id="1269" href="/Legacy/Base/Varieties/Invariants/#878" class="Primitive">Type</a> <a id="1274" class="Symbol">_</a>
+<a id="1276" href="/Legacy/Base/Varieties/Invariants/#1227" class="Function">AlgebraicInvariant</a> <a id="1295" href="/Legacy/Base/Varieties/Invariants/#1295" class="Bound">P</a> <a id="1297" class="Symbol">=</a> <a id="1299" class="Symbol">∀</a> <a id="1301" href="/Legacy/Base/Varieties/Invariants/#1301" class="Bound">𝑨</a> <a id="1303" href="/Legacy/Base/Varieties/Invariants/#1303" class="Bound">𝑩</a> <a id="1305" class="Symbol">→</a> <a id="1307" href="/Legacy/Base/Varieties/Invariants/#1295" class="Bound">P</a> <a id="1309" href="/Legacy/Base/Varieties/Invariants/#1301" class="Bound">𝑨</a> <a id="1311" class="Symbol">→</a> <a id="1313" href="/Legacy/Base/Varieties/Invariants/#1301" class="Bound">𝑨</a> <a id="1315" href="/Legacy/Base/Homomorphisms/Isomorphisms/#2054" class="Record Operator">≅</a> <a id="1317" href="/Legacy/Base/Varieties/Invariants/#1303" class="Bound">𝑩</a> <a id="1319" class="Symbol">→</a> <a id="1321" href="/Legacy/Base/Varieties/Invariants/#1295" class="Bound">P</a> <a id="1323" href="/Legacy/Base/Varieties/Invariants/#1303" class="Bound">𝑩</a>
 
-<a id="1335" class="Symbol">{-#</a> <a id="1339" class="Keyword">WARNING_ON_USAGE</a> <a id="1356" class="Pragma">AlgebraicInvariant</a> <a id="1375" class="String">&quot;Use Setoid.Varieties.Invariants.AlgebraicInvariant instead. Deprecated under #311; removal planned one minor cycle later.&quot;</a> <a id="1499" class="Symbol">#-}</a>
+<a id="1326" class="Symbol">{-#</a> <a id="1330" class="Keyword">WARNING_ON_USAGE</a> <a id="1347" class="Pragma">AlgebraicInvariant</a> <a id="1366" class="String">&quot;Use Setoid.Varieties.Invariants.AlgebraicInvariant instead. Deprecated under #311; removal planned one minor cycle later.&quot;</a> <a id="1490" class="Symbol">#-}</a>
 </pre>
 
 <!-- File: docs/_links.md -->

@@ -13535,6 +13535,8 @@
       
         
       
+        
+      
     
     
     
@@ -13895,6 +13897,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../adr/011-without-k/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-011: --without-K for every module
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -14071,22 +14101,22 @@
 <a href="/Classical/Small/"><code>Classical.Small</code></a> subtree.  It re-exports each per-structure level-fixed
 veneer in <code>Classical/Small/Structures/X.lagda.md</code> as those land under milestone
 M3.  See <a href="/adr/002-classical-layer-design/">ADR-002</a> for the design rationale.</p>
-<pre class="Agda"><a id="639" class="Symbol">{-#</a> <a id="643" class="Keyword">OPTIONS</a> <a id="651" class="Pragma">--cubical-compatible</a> <a id="672" class="Pragma">--exact-split</a> <a id="686" class="Pragma">--safe</a> <a id="693" class="Symbol">#-}</a>
+<pre class="Agda"><a id="639" class="Symbol">{-#</a> <a id="643" class="Keyword">OPTIONS</a> <a id="651" class="Pragma">--without-K</a> <a id="663" class="Pragma">--exact-split</a> <a id="677" class="Pragma">--safe</a> <a id="684" class="Symbol">#-}</a>
 
-<a id="698" class="Keyword">module</a> <a id="705" href="/Classical/Small/Structures/" class="Module">Classical.Small.Structures</a> <a id="732" class="Keyword">where</a>
+<a id="689" class="Keyword">module</a> <a id="696" href="/Classical/Small/Structures/" class="Module">Classical.Small.Structures</a> <a id="723" class="Keyword">where</a>
 
-<a id="739" class="Keyword">open</a> <a id="744" class="Keyword">import</a> <a id="751" href="/Classical/Small/Structures/AbelianGroup/" class="Module">Classical.Small.Structures.AbelianGroup</a> <a id="791" class="Keyword">public</a>
-<a id="798" class="Keyword">open</a> <a id="803" class="Keyword">import</a> <a id="810" href="/Classical/Small/Structures/CommutativeMonoid/" class="Module">Classical.Small.Structures.CommutativeMonoid</a> <a id="855" class="Keyword">public</a>
-<a id="862" class="Keyword">open</a> <a id="867" class="Keyword">import</a> <a id="874" href="/Classical/Small/Structures/CommutativeRing/" class="Module">Classical.Small.Structures.CommutativeRing</a> <a id="917" class="Keyword">public</a>
-<a id="924" class="Keyword">open</a> <a id="929" class="Keyword">import</a> <a id="936" href="/Classical/Small/Structures/CommutativeSemigroup/" class="Module">Classical.Small.Structures.CommutativeSemigroup</a> <a id="984" class="Keyword">public</a>
-<a id="991" class="Keyword">open</a> <a id="996" class="Keyword">import</a> <a id="1003" href="/Classical/Small/Structures/DistributiveLattice/" class="Module">Classical.Small.Structures.DistributiveLattice</a> <a id="1050" class="Keyword">public</a>
-<a id="1057" class="Keyword">open</a> <a id="1062" class="Keyword">import</a> <a id="1069" href="/Classical/Small/Structures/Group/" class="Module">Classical.Small.Structures.Group</a> <a id="1102" class="Keyword">public</a>
-<a id="1109" class="Keyword">open</a> <a id="1114" class="Keyword">import</a> <a id="1121" href="/Classical/Small/Structures/Lattice/" class="Module">Classical.Small.Structures.Lattice</a> <a id="1156" class="Keyword">public</a>
-<a id="1163" class="Keyword">open</a> <a id="1168" class="Keyword">import</a> <a id="1175" href="/Classical/Small/Structures/Magma/" class="Module">Classical.Small.Structures.Magma</a> <a id="1208" class="Keyword">public</a>
-<a id="1215" class="Keyword">open</a> <a id="1220" class="Keyword">import</a> <a id="1227" href="/Classical/Small/Structures/Monoid/" class="Module">Classical.Small.Structures.Monoid</a> <a id="1261" class="Keyword">public</a>
-<a id="1268" class="Keyword">open</a> <a id="1273" class="Keyword">import</a> <a id="1280" href="/Classical/Small/Structures/Ring/" class="Module">Classical.Small.Structures.Ring</a> <a id="1312" class="Keyword">public</a>
-<a id="1319" class="Keyword">open</a> <a id="1324" class="Keyword">import</a> <a id="1331" href="/Classical/Small/Structures/Semigroup/" class="Module">Classical.Small.Structures.Semigroup</a> <a id="1368" class="Keyword">public</a>
-<a id="1375" class="Keyword">open</a> <a id="1380" class="Keyword">import</a> <a id="1387" href="/Classical/Small/Structures/Semilattice/" class="Module">Classical.Small.Structures.Semilattice</a> <a id="1426" class="Keyword">public</a>
+<a id="730" class="Keyword">open</a> <a id="735" class="Keyword">import</a> <a id="742" href="/Classical/Small/Structures/AbelianGroup/" class="Module">Classical.Small.Structures.AbelianGroup</a> <a id="782" class="Keyword">public</a>
+<a id="789" class="Keyword">open</a> <a id="794" class="Keyword">import</a> <a id="801" href="/Classical/Small/Structures/CommutativeMonoid/" class="Module">Classical.Small.Structures.CommutativeMonoid</a> <a id="846" class="Keyword">public</a>
+<a id="853" class="Keyword">open</a> <a id="858" class="Keyword">import</a> <a id="865" href="/Classical/Small/Structures/CommutativeRing/" class="Module">Classical.Small.Structures.CommutativeRing</a> <a id="908" class="Keyword">public</a>
+<a id="915" class="Keyword">open</a> <a id="920" class="Keyword">import</a> <a id="927" href="/Classical/Small/Structures/CommutativeSemigroup/" class="Module">Classical.Small.Structures.CommutativeSemigroup</a> <a id="975" class="Keyword">public</a>
+<a id="982" class="Keyword">open</a> <a id="987" class="Keyword">import</a> <a id="994" href="/Classical/Small/Structures/DistributiveLattice/" class="Module">Classical.Small.Structures.DistributiveLattice</a> <a id="1041" class="Keyword">public</a>
+<a id="1048" class="Keyword">open</a> <a id="1053" class="Keyword">import</a> <a id="1060" href="/Classical/Small/Structures/Group/" class="Module">Classical.Small.Structures.Group</a> <a id="1093" class="Keyword">public</a>
+<a id="1100" class="Keyword">open</a> <a id="1105" class="Keyword">import</a> <a id="1112" href="/Classical/Small/Structures/Lattice/" class="Module">Classical.Small.Structures.Lattice</a> <a id="1147" class="Keyword">public</a>
+<a id="1154" class="Keyword">open</a> <a id="1159" class="Keyword">import</a> <a id="1166" href="/Classical/Small/Structures/Magma/" class="Module">Classical.Small.Structures.Magma</a> <a id="1199" class="Keyword">public</a>
+<a id="1206" class="Keyword">open</a> <a id="1211" class="Keyword">import</a> <a id="1218" href="/Classical/Small/Structures/Monoid/" class="Module">Classical.Small.Structures.Monoid</a> <a id="1252" class="Keyword">public</a>
+<a id="1259" class="Keyword">open</a> <a id="1264" class="Keyword">import</a> <a id="1271" href="/Classical/Small/Structures/Ring/" class="Module">Classical.Small.Structures.Ring</a> <a id="1303" class="Keyword">public</a>
+<a id="1310" class="Keyword">open</a> <a id="1315" class="Keyword">import</a> <a id="1322" href="/Classical/Small/Structures/Semigroup/" class="Module">Classical.Small.Structures.Semigroup</a> <a id="1359" class="Keyword">public</a>
+<a id="1366" class="Keyword">open</a> <a id="1371" class="Keyword">import</a> <a id="1378" href="/Classical/Small/Structures/Semilattice/" class="Module">Classical.Small.Structures.Semilattice</a> <a id="1417" class="Keyword">public</a>
 </pre>
 
 <!-- File: docs/_links.md -->

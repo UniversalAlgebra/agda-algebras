@@ -13533,6 +13533,8 @@
       
         
       
+        
+      
     
     
     
@@ -13893,6 +13895,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adr/011-without-k/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-011: --without-K for every module
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -14073,17 +14103,17 @@ signature <code>𝑆ₓ : Signature 𝓞 𝓥</code> whose sort <code>Op</code> 
 rationale — Σ-typed cores over signature-equation pairs, with record-typed bundle
 views for stdlib interop — is recorded in <a href="/adr/002-classical-layer-design/">ADR-002</a>.</p>
 <p>This file is the umbrella for the subtree.</p>
-<pre class="Agda"><a id="875" class="Symbol">{-#</a> <a id="879" class="Keyword">OPTIONS</a> <a id="887" class="Pragma">--cubical-compatible</a> <a id="908" class="Pragma">--exact-split</a> <a id="922" class="Pragma">--safe</a> <a id="929" class="Symbol">#-}</a>
+<pre class="Agda"><a id="875" class="Symbol">{-#</a> <a id="879" class="Keyword">OPTIONS</a> <a id="887" class="Pragma">--without-K</a> <a id="899" class="Pragma">--exact-split</a> <a id="913" class="Pragma">--safe</a> <a id="920" class="Symbol">#-}</a>
 
-<a id="934" class="Keyword">module</a> <a id="941" href="/Classical/Signatures/" class="Module">Classical.Signatures</a> <a id="962" class="Keyword">where</a>
+<a id="925" class="Keyword">module</a> <a id="932" href="/Classical/Signatures/" class="Module">Classical.Signatures</a> <a id="953" class="Keyword">where</a>
 
-<a id="969" class="Keyword">open</a> <a id="974" class="Keyword">import</a> <a id="981" href="/Classical/Signatures/Finite/" class="Module">Classical.Signatures.Finite</a> <a id="1009" class="Keyword">public</a>
-<a id="1016" class="Keyword">open</a> <a id="1021" class="Keyword">import</a> <a id="1028" href="/Classical/Signatures/Group/" class="Module">Classical.Signatures.Group</a> <a id="1055" class="Keyword">public</a>
-<a id="1062" class="Keyword">open</a> <a id="1067" class="Keyword">import</a> <a id="1074" href="/Classical/Signatures/Lattice/" class="Module">Classical.Signatures.Lattice</a> <a id="1103" class="Keyword">public</a>
-<a id="1110" class="Keyword">open</a> <a id="1115" class="Keyword">import</a> <a id="1122" href="/Classical/Signatures/Magma/" class="Module">Classical.Signatures.Magma</a> <a id="1149" class="Keyword">public</a>
-<a id="1156" class="Keyword">open</a> <a id="1161" class="Keyword">import</a> <a id="1168" href="/Classical/Signatures/Monoid/" class="Module">Classical.Signatures.Monoid</a> <a id="1196" class="Keyword">public</a>
-<a id="1203" class="Keyword">open</a> <a id="1208" class="Keyword">import</a> <a id="1215" href="/Classical/Signatures/Ring/" class="Module">Classical.Signatures.Ring</a> <a id="1241" class="Keyword">public</a>
-<a id="1248" class="Keyword">open</a> <a id="1253" class="Keyword">import</a> <a id="1260" href="/Classical/Signatures/Unary/" class="Module">Classical.Signatures.Unary</a> <a id="1287" class="Keyword">public</a>
+<a id="960" class="Keyword">open</a> <a id="965" class="Keyword">import</a> <a id="972" href="/Classical/Signatures/Finite/" class="Module">Classical.Signatures.Finite</a> <a id="1000" class="Keyword">public</a>
+<a id="1007" class="Keyword">open</a> <a id="1012" class="Keyword">import</a> <a id="1019" href="/Classical/Signatures/Group/" class="Module">Classical.Signatures.Group</a> <a id="1046" class="Keyword">public</a>
+<a id="1053" class="Keyword">open</a> <a id="1058" class="Keyword">import</a> <a id="1065" href="/Classical/Signatures/Lattice/" class="Module">Classical.Signatures.Lattice</a> <a id="1094" class="Keyword">public</a>
+<a id="1101" class="Keyword">open</a> <a id="1106" class="Keyword">import</a> <a id="1113" href="/Classical/Signatures/Magma/" class="Module">Classical.Signatures.Magma</a> <a id="1140" class="Keyword">public</a>
+<a id="1147" class="Keyword">open</a> <a id="1152" class="Keyword">import</a> <a id="1159" href="/Classical/Signatures/Monoid/" class="Module">Classical.Signatures.Monoid</a> <a id="1187" class="Keyword">public</a>
+<a id="1194" class="Keyword">open</a> <a id="1199" class="Keyword">import</a> <a id="1206" href="/Classical/Signatures/Ring/" class="Module">Classical.Signatures.Ring</a> <a id="1232" class="Keyword">public</a>
+<a id="1239" class="Keyword">open</a> <a id="1244" class="Keyword">import</a> <a id="1251" href="/Classical/Signatures/Unary/" class="Module">Classical.Signatures.Unary</a> <a id="1278" class="Keyword">public</a>
 </pre>
 
 <!-- File: docs/_links.md -->

@@ -13533,6 +13533,8 @@
       
         
       
+        
+      
     
     
     
@@ -13893,6 +13895,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adr/011-without-k/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-011: --without-K for every module
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -14108,17 +14138,17 @@
 operation-symbol types) and <code>𝓥</code> (for arity types), the theoretical background,
 and the <code>Signature</code> type itself, a type of operation symbols paired with its
 arity function.</p>
-<pre class="Agda hidden-source"><a id="526" class="Symbol">{-#</a> <a id="530" class="Keyword">OPTIONS</a> <a id="538" class="Pragma">--cubical-compatible</a> <a id="559" class="Pragma">--exact-split</a> <a id="573" class="Pragma">--safe</a> <a id="580" class="Symbol">#-}</a>
+<pre class="Agda hidden-source"><a id="526" class="Symbol">{-#</a> <a id="530" class="Keyword">OPTIONS</a> <a id="538" class="Pragma">--without-K</a> <a id="550" class="Pragma">--exact-split</a> <a id="564" class="Pragma">--safe</a> <a id="571" class="Symbol">#-}</a>
 
-<a id="585" class="Keyword">module</a> <a id="592" href="/Overture/Signatures/" class="Module">Overture.Signatures</a> <a id="612" class="Keyword">where</a>
+<a id="576" class="Keyword">module</a> <a id="583" href="/Overture/Signatures/" class="Module">Overture.Signatures</a> <a id="603" class="Keyword">where</a>
 
-<a id="619" class="Comment">-- Imports from the Agda (Builtin) and the Agda Standard Library -----------------------</a>
-<a id="708" class="Keyword">open</a> <a id="713" class="Keyword">import</a> <a id="720" href="/classic/Agda.Primitive.html" class="Module">Agda.Primitive</a>  <a id="736" class="Keyword">using</a> <a id="742" class="Symbol">()</a> <a id="745" class="Keyword">renaming</a> <a id="754" class="Symbol">(</a> <a id="756" href="/classic/Agda.Primitive.html#388" class="Primitive">Set</a> <a id="760" class="Symbol">to</a>  <a id="764" class="Primitive">Type</a> <a id="769" class="Symbol">)</a>
-<a id="771" class="Keyword">open</a> <a id="776" class="Keyword">import</a> <a id="783" href="/classic/Data.Product.html" class="Module">Data.Product</a>    <a id="799" class="Keyword">using</a> <a id="805" class="Symbol">(</a> <a id="807" href="/classic/Data.Product.Base.html#1244" class="Function">Σ-syntax</a> <a id="816" class="Symbol">;</a> <a id="818" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="824" class="Symbol">;</a> <a id="826" href="/classic/Data.Product.Base.html#650" class="Field">proj₂</a> <a id="832" class="Symbol">)</a>
-<a id="834" class="Keyword">open</a> <a id="839" class="Keyword">import</a> <a id="846" href="/classic/Level.html" class="Module">Level</a>           <a id="862" class="Keyword">using</a> <a id="868" class="Symbol">(</a> <a id="870" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a> <a id="876" class="Symbol">;</a> <a id="878" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">_⊔_</a> <a id="882" class="Symbol">)</a> <a id="884" class="Keyword">renaming</a> <a id="893" class="Symbol">(</a> <a id="895" href="/classic/Agda.Primitive.html#931" class="Primitive">suc</a> <a id="899" class="Symbol">to</a> <a id="902" class="Primitive">lsuc</a> <a id="907" class="Symbol">)</a>
+<a id="610" class="Comment">-- Imports from the Agda (Builtin) and the Agda Standard Library -----------------------</a>
+<a id="699" class="Keyword">open</a> <a id="704" class="Keyword">import</a> <a id="711" href="/classic/Agda.Primitive.html" class="Module">Agda.Primitive</a>  <a id="727" class="Keyword">using</a> <a id="733" class="Symbol">()</a> <a id="736" class="Keyword">renaming</a> <a id="745" class="Symbol">(</a> <a id="747" href="/classic/Agda.Primitive.html#388" class="Primitive">Set</a> <a id="751" class="Symbol">to</a>  <a id="755" class="Primitive">Type</a> <a id="760" class="Symbol">)</a>
+<a id="762" class="Keyword">open</a> <a id="767" class="Keyword">import</a> <a id="774" href="/classic/Data.Product.html" class="Module">Data.Product</a>    <a id="790" class="Keyword">using</a> <a id="796" class="Symbol">(</a> <a id="798" href="/classic/Data.Product.Base.html#1244" class="Function">Σ-syntax</a> <a id="807" class="Symbol">;</a> <a id="809" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="815" class="Symbol">;</a> <a id="817" href="/classic/Data.Product.Base.html#650" class="Field">proj₂</a> <a id="823" class="Symbol">)</a>
+<a id="825" class="Keyword">open</a> <a id="830" class="Keyword">import</a> <a id="837" href="/classic/Level.html" class="Module">Level</a>           <a id="853" class="Keyword">using</a> <a id="859" class="Symbol">(</a> <a id="861" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a> <a id="867" class="Symbol">;</a> <a id="869" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">_⊔_</a> <a id="873" class="Symbol">)</a> <a id="875" class="Keyword">renaming</a> <a id="884" class="Symbol">(</a> <a id="886" href="/classic/Agda.Primitive.html#931" class="Primitive">suc</a> <a id="890" class="Symbol">to</a> <a id="893" class="Primitive">lsuc</a> <a id="898" class="Symbol">)</a>
 </pre>
 
-<pre class="Agda"><a id="926" class="Keyword">variable</a> <a id="935" href="/Overture/Signatures/#935" class="Generalizable">𝓞</a> <a id="937" href="/Overture/Signatures/#937" class="Generalizable">𝓥</a> <a id="939" class="Symbol">:</a> <a id="941" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a>
+<pre class="Agda"><a id="917" class="Keyword">variable</a> <a id="926" href="/Overture/Signatures/#926" class="Generalizable">𝓞</a> <a id="928" href="/Overture/Signatures/#928" class="Generalizable">𝓥</a> <a id="930" class="Symbol">:</a> <a id="932" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a>
 </pre>
 <p>The variables <code>𝓞</code> and <code>𝓥</code> are not private since, throughout the <a href="/agda-algebras/">agda-algebras</a> library,
 <code>𝓞</code> denotes the universe level of <em>operation symbol</em> types, while <code>𝓥</code> denotes the universe
@@ -14159,8 +14189,8 @@ functions from <code>{0, 1, …, ρ𝑓 - 1}</code> to <code>A</code>, we identi
 <h4 id="the-signature-type">The signature type<a class="headerlink" href="#the-signature-type" title="Anchor link to this section">&para;</a></h4>
 <p>In the <a href="/agda-algebras/">agda-algebras</a> library we represent the <em>signature</em> of an algebraic
 structure using the following type.</p>
-<pre class="Agda"><a id="Signature"></a><a id="3470" href="/Overture/Signatures/#3470" class="Function">Signature</a> <a id="3480" class="Symbol">:</a> <a id="3482" class="Symbol">(</a><a id="3483" href="/Overture/Signatures/#3483" class="Bound">𝓞</a> <a id="3485" href="/Overture/Signatures/#3485" class="Bound">𝓥</a> <a id="3487" class="Symbol">:</a> <a id="3489" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a><a id="3494" class="Symbol">)</a> <a id="3496" class="Symbol">→</a> <a id="3498" href="/Overture/Signatures/#764" class="Primitive">Type</a> <a id="3503" class="Symbol">(</a><a id="3504" href="/Overture/Signatures/#902" class="Primitive">lsuc</a> <a id="3509" class="Symbol">(</a><a id="3510" href="/Overture/Signatures/#3483" class="Bound">𝓞</a> <a id="3512" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="3514" href="/Overture/Signatures/#3485" class="Bound">𝓥</a><a id="3515" class="Symbol">))</a>
-<a id="3518" href="/Overture/Signatures/#3470" class="Function">Signature</a> <a id="3528" href="/Overture/Signatures/#3528" class="Bound">𝓞</a> <a id="3530" href="/Overture/Signatures/#3530" class="Bound">𝓥</a> <a id="3532" class="Symbol">=</a> <a id="3534" href="/classic/Data.Product.Base.html#1244" class="Function">Σ[</a> <a id="3537" href="/Overture/Signatures/#3537" class="Bound">F</a> <a id="3539" href="/classic/Data.Product.Base.html#1244" class="Function">∈</a> <a id="3541" href="/Overture/Signatures/#764" class="Primitive">Type</a> <a id="3546" href="/Overture/Signatures/#3528" class="Bound">𝓞</a> <a id="3548" href="/classic/Data.Product.Base.html#1244" class="Function">]</a> <a id="3550" class="Symbol">(</a><a id="3551" href="/Overture/Signatures/#3537" class="Bound">F</a> <a id="3553" class="Symbol">→</a> <a id="3555" href="/Overture/Signatures/#764" class="Primitive">Type</a> <a id="3560" href="/Overture/Signatures/#3530" class="Bound">𝓥</a><a id="3561" class="Symbol">)</a>
+<pre class="Agda"><a id="Signature"></a><a id="3461" href="/Overture/Signatures/#3461" class="Function">Signature</a> <a id="3471" class="Symbol">:</a> <a id="3473" class="Symbol">(</a><a id="3474" href="/Overture/Signatures/#3474" class="Bound">𝓞</a> <a id="3476" href="/Overture/Signatures/#3476" class="Bound">𝓥</a> <a id="3478" class="Symbol">:</a> <a id="3480" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a><a id="3485" class="Symbol">)</a> <a id="3487" class="Symbol">→</a> <a id="3489" href="/Overture/Signatures/#755" class="Primitive">Type</a> <a id="3494" class="Symbol">(</a><a id="3495" href="/Overture/Signatures/#893" class="Primitive">lsuc</a> <a id="3500" class="Symbol">(</a><a id="3501" href="/Overture/Signatures/#3474" class="Bound">𝓞</a> <a id="3503" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="3505" href="/Overture/Signatures/#3476" class="Bound">𝓥</a><a id="3506" class="Symbol">))</a>
+<a id="3509" href="/Overture/Signatures/#3461" class="Function">Signature</a> <a id="3519" href="/Overture/Signatures/#3519" class="Bound">𝓞</a> <a id="3521" href="/Overture/Signatures/#3521" class="Bound">𝓥</a> <a id="3523" class="Symbol">=</a> <a id="3525" href="/classic/Data.Product.Base.html#1244" class="Function">Σ[</a> <a id="3528" href="/Overture/Signatures/#3528" class="Bound">F</a> <a id="3530" href="/classic/Data.Product.Base.html#1244" class="Function">∈</a> <a id="3532" href="/Overture/Signatures/#755" class="Primitive">Type</a> <a id="3537" href="/Overture/Signatures/#3519" class="Bound">𝓞</a> <a id="3539" href="/classic/Data.Product.Base.html#1244" class="Function">]</a> <a id="3541" class="Symbol">(</a><a id="3542" href="/Overture/Signatures/#3528" class="Bound">F</a> <a id="3544" class="Symbol">→</a> <a id="3546" href="/Overture/Signatures/#755" class="Primitive">Type</a> <a id="3551" href="/Overture/Signatures/#3521" class="Bound">𝓥</a><a id="3552" class="Symbol">)</a>
 </pre>
 <p>Like <code>𝓞</code> and <code>𝓥</code>, the signature itself is a <em>public</em> generalized variable: a generic
 definition of the <code>Setoid/</code> core ranges over an arbitrary signature <code>𝑆</code>, which is almost
@@ -14170,11 +14200,11 @@ on, lets every downstream module bring it into scope by name
 (<code>open import Overture using ( 𝓞 ; 𝓥 ; Signature ; 𝑆 )</code>) instead of re-declaring it, and
 lets the generic core generalize over <code>𝑆</code> rather than fixing it as a module parameter.
 See <a href="/adr/009-signature-genericity-generalized-variables/">ADR-009</a> for the rationale and the core/<code>Classical/</code> split.</p>
-<pre class="Agda"><a id="4233" class="Keyword">variable</a> <a id="4242" href="/Overture/Signatures/#4242" class="Generalizable">𝑆</a> <a id="4244" class="Symbol">:</a> <a id="4246" href="/Overture/Signatures/#3470" class="Function">Signature</a> <a id="4256" href="/Overture/Signatures/#935" class="Generalizable">𝓞</a> <a id="4258" href="/Overture/Signatures/#937" class="Generalizable">𝓥</a>
+<pre class="Agda"><a id="4224" class="Keyword">variable</a> <a id="4233" href="/Overture/Signatures/#4233" class="Generalizable">𝑆</a> <a id="4235" class="Symbol">:</a> <a id="4237" href="/Overture/Signatures/#3461" class="Function">Signature</a> <a id="4247" href="/Overture/Signatures/#926" class="Generalizable">𝓞</a> <a id="4249" href="/Overture/Signatures/#928" class="Generalizable">𝓥</a>
 </pre>
 <p>Occasionally it is useful to obtain the universe level of a given signature.</p>
-<pre class="Agda"><a id="Level-of-Signature"></a><a id="4351" href="/Overture/Signatures/#4351" class="Function">Level-of-Signature</a> <a id="4370" class="Symbol">:</a> <a id="4372" class="Symbol">{</a><a id="4373" href="/Overture/Signatures/#4373" class="Bound">𝓞</a> <a id="4375" href="/Overture/Signatures/#4375" class="Bound">𝓥</a> <a id="4377" class="Symbol">:</a> <a id="4379" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a><a id="4384" class="Symbol">}</a> <a id="4386" class="Symbol">→</a> <a id="4388" href="/Overture/Signatures/#3470" class="Function">Signature</a> <a id="4398" href="/Overture/Signatures/#4373" class="Bound">𝓞</a> <a id="4400" href="/Overture/Signatures/#4375" class="Bound">𝓥</a> <a id="4402" class="Symbol">→</a> <a id="4404" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a>
-<a id="4410" href="/Overture/Signatures/#4351" class="Function">Level-of-Signature</a> <a id="4429" class="Symbol">{</a><a id="4430" href="/Overture/Signatures/#4430" class="Bound">𝓞</a><a id="4431" class="Symbol">}{</a><a id="4433" href="/Overture/Signatures/#4433" class="Bound">𝓥</a><a id="4434" class="Symbol">}</a> <a id="4436" class="Symbol">_</a> <a id="4438" class="Symbol">=</a> <a id="4440" href="/Overture/Signatures/#902" class="Primitive">lsuc</a> <a id="4445" class="Symbol">(</a><a id="4446" href="/Overture/Signatures/#4430" class="Bound">𝓞</a> <a id="4448" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="4450" href="/Overture/Signatures/#4433" class="Bound">𝓥</a><a id="4451" class="Symbol">)</a>
+<pre class="Agda"><a id="Level-of-Signature"></a><a id="4342" href="/Overture/Signatures/#4342" class="Function">Level-of-Signature</a> <a id="4361" class="Symbol">:</a> <a id="4363" class="Symbol">{</a><a id="4364" href="/Overture/Signatures/#4364" class="Bound">𝓞</a> <a id="4366" href="/Overture/Signatures/#4366" class="Bound">𝓥</a> <a id="4368" class="Symbol">:</a> <a id="4370" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a><a id="4375" class="Symbol">}</a> <a id="4377" class="Symbol">→</a> <a id="4379" href="/Overture/Signatures/#3461" class="Function">Signature</a> <a id="4389" href="/Overture/Signatures/#4364" class="Bound">𝓞</a> <a id="4391" href="/Overture/Signatures/#4366" class="Bound">𝓥</a> <a id="4393" class="Symbol">→</a> <a id="4395" href="/classic/Agda.Primitive.html#742" class="Postulate">Level</a>
+<a id="4401" href="/Overture/Signatures/#4342" class="Function">Level-of-Signature</a> <a id="4420" class="Symbol">{</a><a id="4421" href="/Overture/Signatures/#4421" class="Bound">𝓞</a><a id="4422" class="Symbol">}{</a><a id="4424" href="/Overture/Signatures/#4424" class="Bound">𝓥</a><a id="4425" class="Symbol">}</a> <a id="4427" class="Symbol">_</a> <a id="4429" class="Symbol">=</a> <a id="4431" href="/Overture/Signatures/#893" class="Primitive">lsuc</a> <a id="4436" class="Symbol">(</a><a id="4437" href="/Overture/Signatures/#4421" class="Bound">𝓞</a> <a id="4439" href="/classic/Agda.Primitive.html#961" class="Primitive Operator">⊔</a> <a id="4441" href="/Overture/Signatures/#4424" class="Bound">𝓥</a><a id="4442" class="Symbol">)</a>
 </pre>
 <p>A signature is a Σ-type, so its two components are recovered by the standard
 projections <code>proj₁</code> and <code>proj₂</code> (from <code>Data.Product</code>, re-exported by
@@ -14191,11 +14221,11 @@ is the arity of <code>𝑓</code>.</p>
 long-form aliases are definitionally identical to the projections and are the
 canonical way to name a signature's components throughout the library.  See
 <a href="/adr/002-classical-layer-design/">ADR-002</a> §1 for the rationale and the per-tree policy.</p>
-<pre class="Agda"><a id="OperationSymbolsOf"></a><a id="5213" href="/Overture/Signatures/#5213" class="Function">OperationSymbolsOf</a> <a id="5232" class="Symbol">:</a> <a id="5234" href="/Overture/Signatures/#3470" class="Function">Signature</a> <a id="5244" href="/Overture/Signatures/#935" class="Generalizable">𝓞</a> <a id="5246" href="/Overture/Signatures/#937" class="Generalizable">𝓥</a> <a id="5248" class="Symbol">→</a> <a id="5250" href="/Overture/Signatures/#764" class="Primitive">Type</a> <a id="5255" href="/Overture/Signatures/#935" class="Generalizable">𝓞</a>
-<a id="5257" href="/Overture/Signatures/#5213" class="Function">OperationSymbolsOf</a> <a id="5276" href="/Overture/Signatures/#5276" class="Bound">𝑆</a> <a id="5278" class="Symbol">=</a> <a id="5280" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="5286" href="/Overture/Signatures/#5276" class="Bound">𝑆</a>
+<pre class="Agda"><a id="OperationSymbolsOf"></a><a id="5204" href="/Overture/Signatures/#5204" class="Function">OperationSymbolsOf</a> <a id="5223" class="Symbol">:</a> <a id="5225" href="/Overture/Signatures/#3461" class="Function">Signature</a> <a id="5235" href="/Overture/Signatures/#926" class="Generalizable">𝓞</a> <a id="5237" href="/Overture/Signatures/#928" class="Generalizable">𝓥</a> <a id="5239" class="Symbol">→</a> <a id="5241" href="/Overture/Signatures/#755" class="Primitive">Type</a> <a id="5246" href="/Overture/Signatures/#926" class="Generalizable">𝓞</a>
+<a id="5248" href="/Overture/Signatures/#5204" class="Function">OperationSymbolsOf</a> <a id="5267" href="/Overture/Signatures/#5267" class="Bound">𝑆</a> <a id="5269" class="Symbol">=</a> <a id="5271" href="/classic/Data.Product.Base.html#636" class="Field">proj₁</a> <a id="5277" href="/Overture/Signatures/#5267" class="Bound">𝑆</a>
 
-<a id="ArityOf"></a><a id="5289" href="/Overture/Signatures/#5289" class="Function">ArityOf</a> <a id="5297" class="Symbol">:</a> <a id="5299" class="Symbol">(</a><a id="5300" href="/Overture/Signatures/#5300" class="Bound">𝑆</a> <a id="5302" class="Symbol">:</a> <a id="5304" href="/Overture/Signatures/#3470" class="Function">Signature</a> <a id="5314" href="/Overture/Signatures/#935" class="Generalizable">𝓞</a> <a id="5316" href="/Overture/Signatures/#937" class="Generalizable">𝓥</a><a id="5317" class="Symbol">)</a> <a id="5319" class="Symbol">→</a> <a id="5321" href="/Overture/Signatures/#5213" class="Function">OperationSymbolsOf</a> <a id="5340" href="/Overture/Signatures/#5300" class="Bound">𝑆</a> <a id="5342" class="Symbol">→</a> <a id="5344" href="/Overture/Signatures/#764" class="Primitive">Type</a> <a id="5349" href="/Overture/Signatures/#937" class="Generalizable">𝓥</a>
-<a id="5351" href="/Overture/Signatures/#5289" class="Function">ArityOf</a> <a id="5359" href="/Overture/Signatures/#5359" class="Bound">𝑆</a> <a id="5361" href="/Overture/Signatures/#5361" class="Bound">f</a> <a id="5363" class="Symbol">=</a> <a id="5365" href="/classic/Data.Product.Base.html#650" class="Field">proj₂</a> <a id="5371" href="/Overture/Signatures/#5359" class="Bound">𝑆</a> <a id="5373" href="/Overture/Signatures/#5361" class="Bound">f</a>
+<a id="ArityOf"></a><a id="5280" href="/Overture/Signatures/#5280" class="Function">ArityOf</a> <a id="5288" class="Symbol">:</a> <a id="5290" class="Symbol">(</a><a id="5291" href="/Overture/Signatures/#5291" class="Bound">𝑆</a> <a id="5293" class="Symbol">:</a> <a id="5295" href="/Overture/Signatures/#3461" class="Function">Signature</a> <a id="5305" href="/Overture/Signatures/#926" class="Generalizable">𝓞</a> <a id="5307" href="/Overture/Signatures/#928" class="Generalizable">𝓥</a><a id="5308" class="Symbol">)</a> <a id="5310" class="Symbol">→</a> <a id="5312" href="/Overture/Signatures/#5204" class="Function">OperationSymbolsOf</a> <a id="5331" href="/Overture/Signatures/#5291" class="Bound">𝑆</a> <a id="5333" class="Symbol">→</a> <a id="5335" href="/Overture/Signatures/#755" class="Primitive">Type</a> <a id="5340" href="/Overture/Signatures/#928" class="Generalizable">𝓥</a>
+<a id="5342" href="/Overture/Signatures/#5280" class="Function">ArityOf</a> <a id="5350" href="/Overture/Signatures/#5350" class="Bound">𝑆</a> <a id="5352" href="/Overture/Signatures/#5352" class="Bound">f</a> <a id="5354" class="Symbol">=</a> <a id="5356" href="/classic/Data.Product.Base.html#650" class="Field">proj₂</a> <a id="5362" href="/Overture/Signatures/#5350" class="Bound">𝑆</a> <a id="5364" href="/Overture/Signatures/#5352" class="Bound">f</a>
 </pre>
 <p>The bracket projections <code>∣_∣</code> / <code>∥_∥</code> are deprecated as of v3.0 (they carry a
 <code>WARNING_ON_USAGE</code> in <a href="/Overture/Basic/">Overture.Basic</a>); new code uses <code>OperationSymbolsOf</code> /

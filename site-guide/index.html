@@ -13753,6 +13753,8 @@
       
         
       
+        
+      
     
     
     
@@ -14100,6 +14102,34 @@
     
   
     ADR-010: Documentation coverage policy for public definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adr/011-without-k/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-011: --without-K for every module
   
 
     
@@ -14485,7 +14515,7 @@ separate copy of the documentation.  The decision record is
 <p>Every module's leading scaffolding block — the <code>OPTIONS</code> pragma, the <code>module … where</code> header, the imports, and the <code>private variable</code> declarations — is wrapped in an HTML comment in the <code>.lagda.md</code> source:</p>
 <div class="highlight"><pre><span></span><code>&lt;!--
 <span class="sb">```agda</span>
-<span class="cm">{-# OPTIONS --cubical-compatible --exact-split --safe #-}</span>
+<span class="cm">{-# OPTIONS --without-K --exact-split --safe #-}</span>
 
 <span class="kr">module</span><span class="w"> </span><span class="n">Setoid.Homomorphisms.Noether</span><span class="w"> </span><span class="kr">where</span>
 

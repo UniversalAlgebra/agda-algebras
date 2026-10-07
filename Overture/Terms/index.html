@@ -13533,6 +13533,8 @@
       
         
       
+        
+      
     
     
     
@@ -13893,6 +13895,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adr/011-without-k/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-011: --without-K for every module
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -14070,14 +14100,14 @@ to <a href="/Overture/Terms/Basic/">Overture.Terms.Basic</a> for the <code>Term<
 <a href="/Overture/Terms/Interpretation/">Overture.Terms.Interpretation</a> gives theory interpretations, sending operation
 symbols to derived terms, and <a href="/Overture/Terms/Translation/">Overture.Terms.Translation</a> translates terms
 along a signature morphism.</p>
-<pre class="Agda"><a id="597" class="Symbol">{-#</a> <a id="601" class="Keyword">OPTIONS</a> <a id="609" class="Pragma">--cubical-compatible</a> <a id="630" class="Pragma">--exact-split</a> <a id="644" class="Pragma">--safe</a> <a id="651" class="Symbol">#-}</a>
+<pre class="Agda"><a id="597" class="Symbol">{-#</a> <a id="601" class="Keyword">OPTIONS</a> <a id="609" class="Pragma">--without-K</a> <a id="621" class="Pragma">--exact-split</a> <a id="635" class="Pragma">--safe</a> <a id="642" class="Symbol">#-}</a>
 
-<a id="656" class="Keyword">open</a> <a id="661" class="Keyword">import</a> <a id="668" href="/Overture/Signatures/" class="Module">Overture.Signatures</a> <a id="688" class="Keyword">using</a> <a id="694" class="Symbol">(</a> <a id="696" href="/Overture/Signatures/#935" class="Generalizable">𝓞</a> <a id="698" class="Symbol">;</a> <a id="700" href="/Overture/Signatures/#937" class="Generalizable">𝓥</a> <a id="702" class="Symbol">;</a> <a id="704" href="/Overture/Signatures/#3470" class="Function">Signature</a> <a id="714" class="Symbol">)</a>
-<a id="716" class="Keyword">module</a> <a id="723" href="/Overture/Terms/" class="Module">Overture.Terms</a> <a id="738" class="Symbol">{</a><a id="739" href="/Overture/Terms/#739" class="Bound">𝑆</a> <a id="741" class="Symbol">:</a> <a id="743" href="/Overture/Signatures/#3470" class="Function">Signature</a> <a id="753" href="/Overture/Signatures/#935" class="Generalizable">𝓞</a> <a id="755" href="/Overture/Signatures/#937" class="Generalizable">𝓥</a><a id="756" class="Symbol">}</a> <a id="758" class="Keyword">where</a>
+<a id="647" class="Keyword">open</a> <a id="652" class="Keyword">import</a> <a id="659" href="/Overture/Signatures/" class="Module">Overture.Signatures</a> <a id="679" class="Keyword">using</a> <a id="685" class="Symbol">(</a> <a id="687" href="/Overture/Signatures/#926" class="Generalizable">𝓞</a> <a id="689" class="Symbol">;</a> <a id="691" href="/Overture/Signatures/#928" class="Generalizable">𝓥</a> <a id="693" class="Symbol">;</a> <a id="695" href="/Overture/Signatures/#3461" class="Function">Signature</a> <a id="705" class="Symbol">)</a>
+<a id="707" class="Keyword">module</a> <a id="714" href="/Overture/Terms/" class="Module">Overture.Terms</a> <a id="729" class="Symbol">{</a><a id="730" href="/Overture/Terms/#730" class="Bound">𝑆</a> <a id="732" class="Symbol">:</a> <a id="734" href="/Overture/Signatures/#3461" class="Function">Signature</a> <a id="744" href="/Overture/Signatures/#926" class="Generalizable">𝓞</a> <a id="746" href="/Overture/Signatures/#928" class="Generalizable">𝓥</a><a id="747" class="Symbol">}</a> <a id="749" class="Keyword">where</a>
 
-<a id="765" class="Keyword">open</a> <a id="770" class="Keyword">import</a> <a id="777" href="/Overture/Terms/Basic/" class="Module">Overture.Terms.Basic</a>  <a id="799" class="Symbol">{</a><a id="800" class="Argument">𝑆</a> <a id="802" class="Symbol">=</a> <a id="804" href="/Overture/Terms/#739" class="Bound">𝑆</a><a id="805" class="Symbol">}</a>  <a id="808" class="Keyword">public</a>
-<a id="815" class="Keyword">open</a> <a id="820" class="Keyword">import</a> <a id="827" href="/Overture/Terms/Interpretation/" class="Module">Overture.Terms.Interpretation</a>  <a id="858" class="Keyword">public</a>
-<a id="865" class="Keyword">open</a> <a id="870" class="Keyword">import</a> <a id="877" href="/Overture/Terms/Translation/" class="Module">Overture.Terms.Translation</a>     <a id="908" class="Keyword">public</a>
+<a id="756" class="Keyword">open</a> <a id="761" class="Keyword">import</a> <a id="768" href="/Overture/Terms/Basic/" class="Module">Overture.Terms.Basic</a>  <a id="790" class="Symbol">{</a><a id="791" class="Argument">𝑆</a> <a id="793" class="Symbol">=</a> <a id="795" href="/Overture/Terms/#730" class="Bound">𝑆</a><a id="796" class="Symbol">}</a>  <a id="799" class="Keyword">public</a>
+<a id="806" class="Keyword">open</a> <a id="811" class="Keyword">import</a> <a id="818" href="/Overture/Terms/Interpretation/" class="Module">Overture.Terms.Interpretation</a>  <a id="849" class="Keyword">public</a>
+<a id="856" class="Keyword">open</a> <a id="861" class="Keyword">import</a> <a id="868" href="/Overture/Terms/Translation/" class="Module">Overture.Terms.Translation</a>     <a id="899" class="Keyword">public</a>
 </pre>
 
 <!-- File: docs/_links.md -->

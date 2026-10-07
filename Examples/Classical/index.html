@@ -13533,6 +13533,8 @@
       
         
       
+        
+      
     
     
     
@@ -13893,6 +13895,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adr/011-without-k/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-011: --without-K for every module
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -14073,20 +14103,20 @@ small cases, examples of failure modes (e.g., a magma that is not a semigroup,
 a semigroup that is not a monoid).  The pattern of pairing one canonical first
 example with each structure issue is established in M3-3 (<a href="/Examples/Classical/Magma/"><code>Examples.Classical.Magma</code></a>)
 and continues issue-by-issue under milestone M3.</p>
-<pre class="Agda"><a id="923" class="Symbol">{-#</a> <a id="927" class="Keyword">OPTIONS</a> <a id="935" class="Pragma">--cubical-compatible</a> <a id="956" class="Pragma">--exact-split</a> <a id="970" class="Pragma">--safe</a> <a id="977" class="Symbol">#-}</a>
+<pre class="Agda"><a id="923" class="Symbol">{-#</a> <a id="927" class="Keyword">OPTIONS</a> <a id="935" class="Pragma">--without-K</a> <a id="947" class="Pragma">--exact-split</a> <a id="961" class="Pragma">--safe</a> <a id="968" class="Symbol">#-}</a>
 
-<a id="982" class="Keyword">module</a> <a id="989" href="/Examples/Classical/" class="Module">Examples.Classical</a> <a id="1008" class="Keyword">where</a>
+<a id="973" class="Keyword">module</a> <a id="980" href="/Examples/Classical/" class="Module">Examples.Classical</a> <a id="999" class="Keyword">where</a>
 
-<a id="1015" class="Keyword">open</a> <a id="1020" class="Keyword">import</a> <a id="1027" href="/Examples/Classical/CommutativeIdempotentMagma/" class="Module">Examples.Classical.CommutativeIdempotentMagma</a> <a id="1073" class="Keyword">public</a>
-<a id="1080" class="Keyword">open</a> <a id="1085" class="Keyword">import</a> <a id="1092" href="/Examples/Classical/CommutativeMonoid/" class="Module">Examples.Classical.CommutativeMonoid</a> <a id="1129" class="Keyword">public</a>
-<a id="1136" class="Keyword">open</a> <a id="1141" class="Keyword">import</a> <a id="1148" href="/Examples/Classical/CommutativeRing/" class="Module">Examples.Classical.CommutativeRing</a> <a id="1183" class="Keyword">public</a>
-<a id="1190" class="Keyword">open</a> <a id="1195" class="Keyword">import</a> <a id="1202" href="/Examples/Classical/CommutativeSemigroup/" class="Module">Examples.Classical.CommutativeSemigroup</a> <a id="1242" class="Keyword">public</a>
-<a id="1249" class="Keyword">open</a> <a id="1254" class="Keyword">import</a> <a id="1261" href="/Examples/Classical/Groups/" class="Module">Examples.Classical.Groups</a> <a id="1287" class="Keyword">public</a>
-<a id="1294" class="Keyword">open</a> <a id="1299" class="Keyword">import</a> <a id="1306" href="/Examples/Classical/Lattices/" class="Module">Examples.Classical.Lattices</a> <a id="1334" class="Keyword">public</a>
-<a id="1341" class="Keyword">open</a> <a id="1346" class="Keyword">import</a> <a id="1353" href="/Examples/Classical/Magma/" class="Module">Examples.Classical.Magma</a> <a id="1378" class="Keyword">public</a>
-<a id="1385" class="Keyword">open</a> <a id="1390" class="Keyword">import</a> <a id="1397" href="/Examples/Classical/Monoid/" class="Module">Examples.Classical.Monoid</a> <a id="1423" class="Keyword">public</a>
-<a id="1430" class="Keyword">open</a> <a id="1435" class="Keyword">import</a> <a id="1442" href="/Examples/Classical/Semigroup/" class="Module">Examples.Classical.Semigroup</a> <a id="1471" class="Keyword">public</a>
-<a id="1478" class="Keyword">open</a> <a id="1483" class="Keyword">import</a> <a id="1490" href="/Examples/Classical/Semilattice/" class="Module">Examples.Classical.Semilattice</a> <a id="1521" class="Keyword">public</a>
+<a id="1006" class="Keyword">open</a> <a id="1011" class="Keyword">import</a> <a id="1018" href="/Examples/Classical/CommutativeIdempotentMagma/" class="Module">Examples.Classical.CommutativeIdempotentMagma</a> <a id="1064" class="Keyword">public</a>
+<a id="1071" class="Keyword">open</a> <a id="1076" class="Keyword">import</a> <a id="1083" href="/Examples/Classical/CommutativeMonoid/" class="Module">Examples.Classical.CommutativeMonoid</a> <a id="1120" class="Keyword">public</a>
+<a id="1127" class="Keyword">open</a> <a id="1132" class="Keyword">import</a> <a id="1139" href="/Examples/Classical/CommutativeRing/" class="Module">Examples.Classical.CommutativeRing</a> <a id="1174" class="Keyword">public</a>
+<a id="1181" class="Keyword">open</a> <a id="1186" class="Keyword">import</a> <a id="1193" href="/Examples/Classical/CommutativeSemigroup/" class="Module">Examples.Classical.CommutativeSemigroup</a> <a id="1233" class="Keyword">public</a>
+<a id="1240" class="Keyword">open</a> <a id="1245" class="Keyword">import</a> <a id="1252" href="/Examples/Classical/Groups/" class="Module">Examples.Classical.Groups</a> <a id="1278" class="Keyword">public</a>
+<a id="1285" class="Keyword">open</a> <a id="1290" class="Keyword">import</a> <a id="1297" href="/Examples/Classical/Lattices/" class="Module">Examples.Classical.Lattices</a> <a id="1325" class="Keyword">public</a>
+<a id="1332" class="Keyword">open</a> <a id="1337" class="Keyword">import</a> <a id="1344" href="/Examples/Classical/Magma/" class="Module">Examples.Classical.Magma</a> <a id="1369" class="Keyword">public</a>
+<a id="1376" class="Keyword">open</a> <a id="1381" class="Keyword">import</a> <a id="1388" href="/Examples/Classical/Monoid/" class="Module">Examples.Classical.Monoid</a> <a id="1414" class="Keyword">public</a>
+<a id="1421" class="Keyword">open</a> <a id="1426" class="Keyword">import</a> <a id="1433" href="/Examples/Classical/Semigroup/" class="Module">Examples.Classical.Semigroup</a> <a id="1462" class="Keyword">public</a>
+<a id="1469" class="Keyword">open</a> <a id="1474" class="Keyword">import</a> <a id="1481" href="/Examples/Classical/Semilattice/" class="Module">Examples.Classical.Semilattice</a> <a id="1512" class="Keyword">public</a>
 </pre>
 
 <!-- File: docs/_links.md -->

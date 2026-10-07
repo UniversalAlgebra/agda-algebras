@@ -13531,6 +13531,8 @@
       
         
       
+        
+      
     
     
     
@@ -14015,6 +14017,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../011-without-k/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-011: --without-K for every module
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -14252,7 +14282,8 @@
 
 <h1 id="adr-003-cubical-agda-as-the-canonical-long-term-target">ADR-003: Cubical Agda as the canonical long-term target<a class="headerlink" href="#adr-003-cubical-agda-as-the-canonical-long-term-target" title="Anchor link to this section">&para;</a></h1>
 <h2 id="status">Status<a class="headerlink" href="#status" title="Anchor link to this section">&para;</a></h2>
-<p>Accepted — 2026-04-24.  Implementation deferred to 4.0.</p>
+<p>Accepted — 2026-04-24.  Implementation deferred to 4.0.
+Qualified by <a href="../011-without-k/">ADR-011</a> (2026-10-06): the library is checked under <code>--without-K</code>, so a <code>--cubical</code> tree derives its modules from this one and cannot import them.</p>
 <h2 id="context">Context<a class="headerlink" href="#context" title="Anchor link to this section">&para;</a></h2>
 <p>The setoid-based formulation adopted in ADR-001 buys the library full constructivity at a well-understood cost: every definition carries an equivalence relation, every homomorphism proves respect for that equivalence, and the library must maintain a small discipline of never reaching for propositional equality where the setoid equivalence is the right tool.  A universal algebraist working at the whiteboard would never write any of this explicitly; the setoid machinery is type-theoretic plumbing that exists because Martin–Löf type theory, as traditionally formulated, does not provide a native account of equality that respects quotients and equivalences.</p>
 <p>Cubical type theory (as implemented in <code>--cubical</code> mode of Agda and in the <code>cubical</code> and <code>1Lab</code> libraries) provides exactly that native account.  Equality is the path type; the structure identity principle (SIP) makes isomorphic structures propositionally equal; quotients are first-class.  For a universal-algebra development, the consequence is that the setoid-specific machinery that currently mediates between "equal" and "equivalent" would disappear, and proofs would read the way mathematicians write them: equations transport along isomorphisms by substitution, without the intervening apparatus.</p>

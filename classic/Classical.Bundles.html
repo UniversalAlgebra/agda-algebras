@@ -31,21 +31,21 @@ names carry a per-structure suffix (`-ma`, `-sg`, `-mn`, `-gr`, …), precisely 
 umbrellas can `public`-export every structure&#39;s witnesses without collision.
 
 </a><a id="1558" class="Markup">```agda
-</a><a id="1566" class="Symbol">{-#</a> <a id="1570" class="Keyword">OPTIONS</a> <a id="1578" class="Pragma">--cubical-compatible</a> <a id="1599" class="Pragma">--exact-split</a> <a id="1613" class="Pragma">--safe</a> <a id="1620" class="Symbol">#-}</a>
+</a><a id="1566" class="Symbol">{-#</a> <a id="1570" class="Keyword">OPTIONS</a> <a id="1578" class="Pragma">--without-K</a> <a id="1590" class="Pragma">--exact-split</a> <a id="1604" class="Pragma">--safe</a> <a id="1611" class="Symbol">#-}</a>
 
-<a id="1625" class="Keyword">module</a> <a id="1632" href="Classical.Bundles.html" class="Module">Classical.Bundles</a> <a id="1650" class="Keyword">where</a>
+<a id="1616" class="Keyword">module</a> <a id="1623" href="Classical.Bundles.html" class="Module">Classical.Bundles</a> <a id="1641" class="Keyword">where</a>
 
-<a id="1657" class="Keyword">open</a> <a id="1662" class="Keyword">import</a> <a id="1669" href="Classical.Bundles.AbelianGroup.html" class="Module">Classical.Bundles.AbelianGroup</a> <a id="1700" class="Keyword">public</a>
-<a id="1707" class="Keyword">open</a> <a id="1712" class="Keyword">import</a> <a id="1719" href="Classical.Bundles.CommutativeMonoid.html" class="Module">Classical.Bundles.CommutativeMonoid</a> <a id="1755" class="Keyword">public</a>
-<a id="1762" class="Keyword">open</a> <a id="1767" class="Keyword">import</a> <a id="1774" href="Classical.Bundles.CommutativeRing.html" class="Module">Classical.Bundles.CommutativeRing</a> <a id="1808" class="Keyword">public</a>
-<a id="1815" class="Keyword">open</a> <a id="1820" class="Keyword">import</a> <a id="1827" href="Classical.Bundles.CommutativeSemigroup.html" class="Module">Classical.Bundles.CommutativeSemigroup</a> <a id="1866" class="Keyword">public</a>
-<a id="1873" class="Keyword">open</a> <a id="1878" class="Keyword">import</a> <a id="1885" href="Classical.Bundles.DistributiveLattice.html" class="Module">Classical.Bundles.DistributiveLattice</a> <a id="1923" class="Keyword">public</a>
-<a id="1930" class="Keyword">open</a> <a id="1935" class="Keyword">import</a> <a id="1942" href="Classical.Bundles.Group.html" class="Module">Classical.Bundles.Group</a> <a id="1966" class="Keyword">public</a>
-<a id="1973" class="Keyword">open</a> <a id="1978" class="Keyword">import</a> <a id="1985" href="Classical.Bundles.Lattice.html" class="Module">Classical.Bundles.Lattice</a> <a id="2011" class="Keyword">public</a>
-<a id="2018" class="Keyword">open</a> <a id="2023" class="Keyword">import</a> <a id="2030" href="Classical.Bundles.Magma.html" class="Module">Classical.Bundles.Magma</a> <a id="2054" class="Keyword">public</a>
-<a id="2061" class="Keyword">open</a> <a id="2066" class="Keyword">import</a> <a id="2073" href="Classical.Bundles.Monoid.html" class="Module">Classical.Bundles.Monoid</a> <a id="2098" class="Keyword">public</a>
-<a id="2105" class="Keyword">open</a> <a id="2110" class="Keyword">import</a> <a id="2117" href="Classical.Bundles.Ring.html" class="Module">Classical.Bundles.Ring</a> <a id="2140" class="Keyword">public</a>
-<a id="2147" class="Keyword">open</a> <a id="2152" class="Keyword">import</a> <a id="2159" href="Classical.Bundles.Semigroup.html" class="Module">Classical.Bundles.Semigroup</a> <a id="2187" class="Keyword">public</a>
-<a id="2194" class="Keyword">open</a> <a id="2199" class="Keyword">import</a> <a id="2206" href="Classical.Bundles.Semilattice.html" class="Module">Classical.Bundles.Semilattice</a> <a id="2236" class="Keyword">public</a>
-<a id="2243" class="Markup">```
+<a id="1648" class="Keyword">open</a> <a id="1653" class="Keyword">import</a> <a id="1660" href="Classical.Bundles.AbelianGroup.html" class="Module">Classical.Bundles.AbelianGroup</a> <a id="1691" class="Keyword">public</a>
+<a id="1698" class="Keyword">open</a> <a id="1703" class="Keyword">import</a> <a id="1710" href="Classical.Bundles.CommutativeMonoid.html" class="Module">Classical.Bundles.CommutativeMonoid</a> <a id="1746" class="Keyword">public</a>
+<a id="1753" class="Keyword">open</a> <a id="1758" class="Keyword">import</a> <a id="1765" href="Classical.Bundles.CommutativeRing.html" class="Module">Classical.Bundles.CommutativeRing</a> <a id="1799" class="Keyword">public</a>
+<a id="1806" class="Keyword">open</a> <a id="1811" class="Keyword">import</a> <a id="1818" href="Classical.Bundles.CommutativeSemigroup.html" class="Module">Classical.Bundles.CommutativeSemigroup</a> <a id="1857" class="Keyword">public</a>
+<a id="1864" class="Keyword">open</a> <a id="1869" class="Keyword">import</a> <a id="1876" href="Classical.Bundles.DistributiveLattice.html" class="Module">Classical.Bundles.DistributiveLattice</a> <a id="1914" class="Keyword">public</a>
+<a id="1921" class="Keyword">open</a> <a id="1926" class="Keyword">import</a> <a id="1933" href="Classical.Bundles.Group.html" class="Module">Classical.Bundles.Group</a> <a id="1957" class="Keyword">public</a>
+<a id="1964" class="Keyword">open</a> <a id="1969" class="Keyword">import</a> <a id="1976" href="Classical.Bundles.Lattice.html" class="Module">Classical.Bundles.Lattice</a> <a id="2002" class="Keyword">public</a>
+<a id="2009" class="Keyword">open</a> <a id="2014" class="Keyword">import</a> <a id="2021" href="Classical.Bundles.Magma.html" class="Module">Classical.Bundles.Magma</a> <a id="2045" class="Keyword">public</a>
+<a id="2052" class="Keyword">open</a> <a id="2057" class="Keyword">import</a> <a id="2064" href="Classical.Bundles.Monoid.html" class="Module">Classical.Bundles.Monoid</a> <a id="2089" class="Keyword">public</a>
+<a id="2096" class="Keyword">open</a> <a id="2101" class="Keyword">import</a> <a id="2108" href="Classical.Bundles.Ring.html" class="Module">Classical.Bundles.Ring</a> <a id="2131" class="Keyword">public</a>
+<a id="2138" class="Keyword">open</a> <a id="2143" class="Keyword">import</a> <a id="2150" href="Classical.Bundles.Semigroup.html" class="Module">Classical.Bundles.Semigroup</a> <a id="2178" class="Keyword">public</a>
+<a id="2185" class="Keyword">open</a> <a id="2190" class="Keyword">import</a> <a id="2197" href="Classical.Bundles.Semilattice.html" class="Module">Classical.Bundles.Semilattice</a> <a id="2227" class="Keyword">public</a>
+<a id="2234" class="Markup">```
 </a></pre></body></html>

@@ -13609,6 +13609,8 @@
       
         
       
+        
+      
     
     
     
@@ -13969,6 +13971,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adr/011-without-k/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-011: --without-K for every module
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -14220,34 +14250,34 @@ top-level aggregator below imports each layer in turn.</p>
    lives in <a href="/Setoid/Varieties/HSP/"><code>Setoid.Varieties.HSP</code></a>, factored across the
    broader <code>Setoid.Varieties.*</code> development.</li>
 </ul>
-<pre class="Agda hidden-source"><a id="3953" class="Symbol">{-#</a> <a id="3957" class="Keyword">OPTIONS</a> <a id="3965" class="Pragma">--cubical-compatible</a> <a id="3986" class="Pragma">--exact-split</a> <a id="4000" class="Pragma">--safe</a> <a id="4007" class="Symbol">#-}</a>
+<pre class="Agda hidden-source"><a id="3953" class="Symbol">{-#</a> <a id="3957" class="Keyword">OPTIONS</a> <a id="3965" class="Pragma">--without-K</a> <a id="3977" class="Pragma">--exact-split</a> <a id="3991" class="Pragma">--safe</a> <a id="3998" class="Symbol">#-}</a>
 </pre>
 
-<pre class="Agda"><a id="4028" class="Keyword">module</a> <a id="4035" href="agda-algebras.html" class="Module">agda-algebras</a> <a id="4049" class="Keyword">where</a>
+<pre class="Agda"><a id="4019" class="Keyword">module</a> <a id="4026" href="agda-algebras.html" class="Module">agda-algebras</a> <a id="4040" class="Keyword">where</a>
 
-<a id="4056" class="Comment">-- Shared foundations used across Setoid/, Classical/, and (eventually) Cubical/.</a>
-<a id="4138" class="Keyword">open</a> <a id="4143" class="Keyword">import</a> <a id="4150" href="/Overture/" class="Module">Overture</a>
+<a id="4047" class="Comment">-- Shared foundations used across Setoid/, Classical/, and (eventually) Cubical/.</a>
+<a id="4129" class="Keyword">open</a> <a id="4134" class="Keyword">import</a> <a id="4141" href="/Overture/" class="Module">Overture</a>
 
-<a id="4160" class="Comment">-- Setoid/ is the canonical 3.0 development tree.  All new universal-algebra</a>
-<a id="4237" class="Comment">-- content lands here.  See docs/adr/001-setoid-as-canonical.md for rationale.</a>
-<a id="4316" class="Keyword">open</a> <a id="4321" class="Keyword">import</a> <a id="4328" href="/Setoid/" class="Module">Setoid</a>
+<a id="4151" class="Comment">-- Setoid/ is the canonical 3.0 development tree.  All new universal-algebra</a>
+<a id="4228" class="Comment">-- content lands here.  See docs/adr/001-setoid-as-canonical.md for rationale.</a>
+<a id="4307" class="Keyword">open</a> <a id="4312" class="Keyword">import</a> <a id="4319" href="/Setoid/" class="Module">Setoid</a>
 
-<a id="4336" class="Comment">-- Classical/ formalizes specific algebraic theories (semigroups, monoids,</a>
-<a id="4411" class="Comment">-- groups, lattices, rings, ...) over the Setoid/ foundation.  Σ-typed cores</a>
-<a id="4488" class="Comment">-- with parallel record-typed bundle views for stdlib interop.</a>
-<a id="4551" class="Comment">-- See docs/adr/002-classical-layer-design.md for rationale.</a>
-<a id="4612" class="Keyword">open</a> <a id="4617" class="Keyword">import</a> <a id="4624" href="/Classical/" class="Module">Classical</a>
+<a id="4327" class="Comment">-- Classical/ formalizes specific algebraic theories (semigroups, monoids,</a>
+<a id="4402" class="Comment">-- groups, lattices, rings, ...) over the Setoid/ foundation.  Σ-typed cores</a>
+<a id="4479" class="Comment">-- with parallel record-typed bundle views for stdlib interop.</a>
+<a id="4542" class="Comment">-- See docs/adr/002-classical-layer-design.md for rationale.</a>
+<a id="4603" class="Keyword">open</a> <a id="4608" class="Keyword">import</a> <a id="4615" href="/Classical/" class="Module">Classical</a>
 
-<a id="4635" class="Comment">-- Legacy.Base is the frozen pre-3.0 development.  It is retained both for</a>
-<a id="4710" class="Comment">-- v2.x downstream-user continuity and because some modules have no Setoid/</a>
-<a id="4786" class="Comment">-- analog yet (tracked per-orphan in src/Legacy/Base/DEPRECATED.md).</a>
-<a id="4855" class="Comment">-- New work does not land in Legacy.Base.</a>
-<a id="4897" class="Keyword">open</a> <a id="4902" class="Keyword">import</a> <a id="4909" href="/Legacy/Base/" class="Module">Legacy.Base</a>
+<a id="4626" class="Comment">-- Legacy.Base is the frozen pre-3.0 development.  It is retained both for</a>
+<a id="4701" class="Comment">-- v2.x downstream-user continuity and because some modules have no Setoid/</a>
+<a id="4777" class="Comment">-- analog yet (tracked per-orphan in src/Legacy/Base/DEPRECATED.md).</a>
+<a id="4846" class="Comment">-- New work does not land in Legacy.Base.</a>
+<a id="4888" class="Keyword">open</a> <a id="4893" class="Keyword">import</a> <a id="4900" href="/Legacy/Base/" class="Module">Legacy.Base</a>
 
-<a id="4922" class="Comment">-- Worked examples built against the canonical tree.  Includes the</a>
-<a id="4989" class="Comment">-- Examples.Demos subtree of self-contained pedagogical presentations of</a>
-<a id="5062" class="Comment">-- marquee results (Examples.Demos.HSP, the single-file Birkhoff rendition).</a>
-<a id="5139" class="Keyword">open</a> <a id="5144" class="Keyword">import</a> <a id="5151" href="/Examples/" class="Module">Examples</a>
+<a id="4913" class="Comment">-- Worked examples built against the canonical tree.  Includes the</a>
+<a id="4980" class="Comment">-- Examples.Demos subtree of self-contained pedagogical presentations of</a>
+<a id="5053" class="Comment">-- marquee results (Examples.Demos.HSP, the single-file Birkhoff rendition).</a>
+<a id="5130" class="Keyword">open</a> <a id="5135" class="Keyword">import</a> <a id="5142" href="/Examples/" class="Module">Examples</a>
 </pre>
 <hr />
 <h2 id="birkhoffs-hsp-theorem">Birkhoff's HSP theorem<a class="headerlink" href="#birkhoffs-hsp-theorem" title="Anchor link to this section">&para;</a></h2>

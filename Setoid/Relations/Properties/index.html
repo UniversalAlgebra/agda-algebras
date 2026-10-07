@@ -13591,6 +13591,8 @@
       
         
       
+        
+      
     
     
     
@@ -13951,6 +13953,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../adr/011-without-k/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-011: --without-K for every module
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -14130,16 +14160,16 @@
 <li>The legacy module defined its properties for <code>Pred (A × A) ℓ</code> (a predicate on the product type); this module uses the stdlib <code>Rel A ℓ</code> (the curried form).  The two are interconvertible via <code>Data.Product.curry</code> / <code>Data.Product.uncurry</code>; the curried form is preferred because the rest of the canonical tree already uses it.</li>
 <li>The legacy module bundled its own <code>curry</code> / <code>uncurry</code> definitions; stdlib's <code>Data.Product.curry</code> / <code>Data.Product.uncurry</code> cover the same ground and are not re-exported here.  Consumers who need the bridge should import from <code>Data.Product</code> directly.</li>
 </ul>
-<pre class="Agda"><a id="1959" class="Symbol">{-#</a> <a id="1963" class="Keyword">OPTIONS</a> <a id="1971" class="Pragma">--cubical-compatible</a> <a id="1992" class="Pragma">--exact-split</a> <a id="2006" class="Pragma">--safe</a> <a id="2013" class="Symbol">#-}</a>
+<pre class="Agda"><a id="1959" class="Symbol">{-#</a> <a id="1963" class="Keyword">OPTIONS</a> <a id="1971" class="Pragma">--without-K</a> <a id="1983" class="Pragma">--exact-split</a> <a id="1997" class="Pragma">--safe</a> <a id="2004" class="Symbol">#-}</a>
 
-<a id="2018" class="Keyword">module</a> <a id="2025" href="/Setoid/Relations/Properties/" class="Module">Setoid.Relations.Properties</a> <a id="2053" class="Keyword">where</a>
+<a id="2009" class="Keyword">module</a> <a id="2016" href="/Setoid/Relations/Properties/" class="Module">Setoid.Relations.Properties</a> <a id="2044" class="Keyword">where</a>
 
-<a id="2060" class="Keyword">open</a> <a id="2065" class="Keyword">import</a> <a id="2072" href="/classic/Relation.Binary.Definitions.html" class="Module">Relation.Binary.Definitions</a> <a id="2100" class="Keyword">public</a>
-  <a id="2109" class="Keyword">using</a>  <a id="2116" class="Symbol">(</a> <a id="2118" href="/classic/Relation.Binary.Definitions.html#1355" class="Function">Reflexive</a>    <a id="2131" class="Symbol">;</a> <a id="2133" href="/classic/Relation.Binary.Definitions.html#1440" class="Function">Sym</a>         <a id="2145" class="Symbol">;</a> <a id="2147" href="/classic/Relation.Binary.Definitions.html#1514" class="Function">Symmetric</a>
-         <a id="2166" class="Symbol">;</a> <a id="2168" href="/classic/Relation.Binary.Definitions.html#1601" class="Function">Trans</a>        <a id="2181" class="Symbol">;</a> <a id="2183" href="/classic/Relation.Binary.Definitions.html#1902" class="Function">TransFlip</a>   <a id="2195" class="Symbol">;</a> <a id="2197" href="/classic/Relation.Binary.Definitions.html#2030" class="Function">Transitive</a>
-         <a id="2217" class="Symbol">;</a> <a id="2219" href="/classic/Relation.Binary.Definitions.html#2124" class="Function">Antisym</a>      <a id="2232" class="Symbol">;</a> <a id="2234" href="/classic/Relation.Binary.Definitions.html#2246" class="Function">Antisymmetric</a>
-         <a id="2257" class="Symbol">;</a> <a id="2259" href="/classic/Relation.Binary.Definitions.html#2405" class="Function">Irreflexive</a>  <a id="2272" class="Symbol">;</a> <a id="2274" href="/classic/Relation.Binary.Definitions.html#2517" class="Function">Asymmetric</a>
-         <a id="2294" class="Symbol">;</a> <a id="2296" href="/classic/Relation.Binary.Definitions.html#2746" class="Function">Connex</a>       <a id="2309" class="Symbol">;</a> <a id="2311" href="/classic/Relation.Binary.Definitions.html#2837" class="Function">Total</a> <a id="2317" class="Symbol">)</a>
+<a id="2051" class="Keyword">open</a> <a id="2056" class="Keyword">import</a> <a id="2063" href="/classic/Relation.Binary.Definitions.html" class="Module">Relation.Binary.Definitions</a> <a id="2091" class="Keyword">public</a>
+  <a id="2100" class="Keyword">using</a>  <a id="2107" class="Symbol">(</a> <a id="2109" href="/classic/Relation.Binary.Definitions.html#1355" class="Function">Reflexive</a>    <a id="2122" class="Symbol">;</a> <a id="2124" href="/classic/Relation.Binary.Definitions.html#1440" class="Function">Sym</a>         <a id="2136" class="Symbol">;</a> <a id="2138" href="/classic/Relation.Binary.Definitions.html#1514" class="Function">Symmetric</a>
+         <a id="2157" class="Symbol">;</a> <a id="2159" href="/classic/Relation.Binary.Definitions.html#1601" class="Function">Trans</a>        <a id="2172" class="Symbol">;</a> <a id="2174" href="/classic/Relation.Binary.Definitions.html#1902" class="Function">TransFlip</a>   <a id="2186" class="Symbol">;</a> <a id="2188" href="/classic/Relation.Binary.Definitions.html#2030" class="Function">Transitive</a>
+         <a id="2208" class="Symbol">;</a> <a id="2210" href="/classic/Relation.Binary.Definitions.html#2124" class="Function">Antisym</a>      <a id="2223" class="Symbol">;</a> <a id="2225" href="/classic/Relation.Binary.Definitions.html#2246" class="Function">Antisymmetric</a>
+         <a id="2248" class="Symbol">;</a> <a id="2250" href="/classic/Relation.Binary.Definitions.html#2405" class="Function">Irreflexive</a>  <a id="2263" class="Symbol">;</a> <a id="2265" href="/classic/Relation.Binary.Definitions.html#2517" class="Function">Asymmetric</a>
+         <a id="2285" class="Symbol">;</a> <a id="2287" href="/classic/Relation.Binary.Definitions.html#2746" class="Function">Connex</a>       <a id="2300" class="Symbol">;</a> <a id="2302" href="/classic/Relation.Binary.Definitions.html#2837" class="Function">Total</a> <a id="2308" class="Symbol">)</a>
 </pre>
 
 <!-- File: docs/_links.md -->

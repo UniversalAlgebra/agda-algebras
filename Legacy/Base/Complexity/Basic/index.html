@@ -13610,6 +13610,8 @@
       
         
       
+        
+      
     
     
     
@@ -13970,6 +13972,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../adr/011-without-k/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-011: --without-K for every module
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -14161,9 +14191,9 @@
 <blockquote>
 <p><strong>Deprecated</strong>.  Canonical home is now <a href="/Setoid/Complexity/Basic/"><code>Setoid.Complexity.Basic</code></a>, ported under #307 (M2-7c).  This module has no Agda exports of its own, so no <code>WARNING_ON_USAGE</code> pragmas are attached; the deprecation lives at the documentation level.  See <a href="https://github.com/ualib/agda-algebras/blob/master/src/Legacy/Base/DEPRECATED.md"><code>src/Legacy/Base/DEPRECATED.md</code></a> for migration guidance.  Removal is planned for v3.1.</p>
 </blockquote>
-<pre class="Agda"><a id="612" class="Symbol">{-#</a> <a id="616" class="Keyword">OPTIONS</a> <a id="624" class="Pragma">--cubical-compatible</a> <a id="645" class="Pragma">--exact-split</a> <a id="659" class="Pragma">--safe</a> <a id="666" class="Symbol">#-}</a>
+<pre class="Agda"><a id="612" class="Symbol">{-#</a> <a id="616" class="Keyword">OPTIONS</a> <a id="624" class="Pragma">--without-K</a> <a id="636" class="Pragma">--exact-split</a> <a id="650" class="Pragma">--safe</a> <a id="657" class="Symbol">#-}</a>
 
-<a id="671" class="Keyword">module</a> <a id="678" href="/Legacy/Base/Complexity/Basic/" class="Module">Legacy.Base.Complexity.Basic</a> <a id="707" class="Keyword">where</a>
+<a id="662" class="Keyword">module</a> <a id="669" href="/Legacy/Base/Complexity/Basic/" class="Module">Legacy.Base.Complexity.Basic</a> <a id="698" class="Keyword">where</a>
 </pre>
 <h4 id="words"><a id="words">Words</a><a class="headerlink" href="#words" title="Anchor link to this section">&para;</a></h4>
 <p>Let 𝑇ₙ be a totally ordered set of size 𝑛.  Let 𝐴 be a set (the alphabet).

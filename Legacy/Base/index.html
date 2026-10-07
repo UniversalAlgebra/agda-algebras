@@ -13533,6 +13533,8 @@
       
         
       
+        
+      
     
     
     
@@ -13893,6 +13895,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adr/011-without-k/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-011: --without-K for every module
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -14068,22 +14098,22 @@
 <p>(We have also started developing in parallel the <code>cubical-agda-algebras</code> library, based on Cubical Agda.)</p>
 <pre class="Agda">
 
-<a id="531" class="Symbol">{-#</a> <a id="535" class="Keyword">OPTIONS</a> <a id="543" class="Pragma">--cubical-compatible</a> <a id="564" class="Pragma">--exact-split</a> <a id="578" class="Pragma">--safe</a> <a id="585" class="Symbol">#-}</a>
+<a id="531" class="Symbol">{-#</a> <a id="535" class="Keyword">OPTIONS</a> <a id="543" class="Pragma">--without-K</a> <a id="555" class="Pragma">--exact-split</a> <a id="569" class="Pragma">--safe</a> <a id="576" class="Symbol">#-}</a>
 
-<a id="590" class="Keyword">module</a> <a id="597" href="/Legacy/Base/" class="Module">Legacy.Base</a> <a id="609" class="Keyword">where</a>
+<a id="581" class="Keyword">module</a> <a id="588" href="/Legacy/Base/" class="Module">Legacy.Base</a> <a id="600" class="Keyword">where</a>
 
-<a id="616" class="Keyword">open</a> <a id="621" class="Keyword">import</a> <a id="628" href="/Legacy/Base/Relations/" class="Module">Legacy.Base.Relations</a>
-<a id="650" class="Keyword">open</a> <a id="655" class="Keyword">import</a> <a id="662" href="/Legacy/Base/Functions/" class="Module">Legacy.Base.Functions</a>
-<a id="684" class="Keyword">open</a> <a id="689" class="Keyword">import</a> <a id="696" href="/Legacy/Base/Equality/" class="Module">Legacy.Base.Equality</a>
-<a id="717" class="Keyword">open</a> <a id="722" class="Keyword">import</a> <a id="729" href="/Legacy/Base/Adjunction/" class="Module">Legacy.Base.Adjunction</a>
-<a id="752" class="Keyword">open</a> <a id="757" class="Keyword">import</a> <a id="764" href="/Legacy/Base/Algebras/" class="Module">Legacy.Base.Algebras</a>
-<a id="785" class="Keyword">open</a> <a id="790" class="Keyword">import</a> <a id="797" href="/Legacy/Base/Homomorphisms/" class="Module">Legacy.Base.Homomorphisms</a>
-<a id="823" class="Keyword">open</a> <a id="828" class="Keyword">import</a> <a id="835" href="/Legacy/Base/Terms/" class="Module">Legacy.Base.Terms</a>
-<a id="853" class="Keyword">open</a> <a id="858" class="Keyword">import</a> <a id="865" href="/Legacy/Base/Subalgebras/" class="Module">Legacy.Base.Subalgebras</a>
-<a id="889" class="Keyword">open</a> <a id="894" class="Keyword">import</a> <a id="901" href="/Legacy/Base/Varieties/" class="Module">Legacy.Base.Varieties</a>
-<a id="923" class="Keyword">open</a> <a id="928" class="Keyword">import</a> <a id="935" href="/Legacy/Base/Structures/" class="Module">Legacy.Base.Structures</a>
-<a id="958" class="Keyword">open</a> <a id="963" class="Keyword">import</a> <a id="970" href="/Legacy/Base/Categories/" class="Module">Legacy.Base.Categories</a>
-<a id="993" class="Keyword">open</a> <a id="998" class="Keyword">import</a> <a id="1005" href="/Legacy/Base/Complexity/" class="Module">Legacy.Base.Complexity</a>
+<a id="607" class="Keyword">open</a> <a id="612" class="Keyword">import</a> <a id="619" href="/Legacy/Base/Relations/" class="Module">Legacy.Base.Relations</a>
+<a id="641" class="Keyword">open</a> <a id="646" class="Keyword">import</a> <a id="653" href="/Legacy/Base/Functions/" class="Module">Legacy.Base.Functions</a>
+<a id="675" class="Keyword">open</a> <a id="680" class="Keyword">import</a> <a id="687" href="/Legacy/Base/Equality/" class="Module">Legacy.Base.Equality</a>
+<a id="708" class="Keyword">open</a> <a id="713" class="Keyword">import</a> <a id="720" href="/Legacy/Base/Adjunction/" class="Module">Legacy.Base.Adjunction</a>
+<a id="743" class="Keyword">open</a> <a id="748" class="Keyword">import</a> <a id="755" href="/Legacy/Base/Algebras/" class="Module">Legacy.Base.Algebras</a>
+<a id="776" class="Keyword">open</a> <a id="781" class="Keyword">import</a> <a id="788" href="/Legacy/Base/Homomorphisms/" class="Module">Legacy.Base.Homomorphisms</a>
+<a id="814" class="Keyword">open</a> <a id="819" class="Keyword">import</a> <a id="826" href="/Legacy/Base/Terms/" class="Module">Legacy.Base.Terms</a>
+<a id="844" class="Keyword">open</a> <a id="849" class="Keyword">import</a> <a id="856" href="/Legacy/Base/Subalgebras/" class="Module">Legacy.Base.Subalgebras</a>
+<a id="880" class="Keyword">open</a> <a id="885" class="Keyword">import</a> <a id="892" href="/Legacy/Base/Varieties/" class="Module">Legacy.Base.Varieties</a>
+<a id="914" class="Keyword">open</a> <a id="919" class="Keyword">import</a> <a id="926" href="/Legacy/Base/Structures/" class="Module">Legacy.Base.Structures</a>
+<a id="949" class="Keyword">open</a> <a id="954" class="Keyword">import</a> <a id="961" href="/Legacy/Base/Categories/" class="Module">Legacy.Base.Categories</a>
+<a id="984" class="Keyword">open</a> <a id="989" class="Keyword">import</a> <a id="996" href="/Legacy/Base/Complexity/" class="Module">Legacy.Base.Complexity</a>
 </pre>
 
 <!-- File: docs/_links.md -->

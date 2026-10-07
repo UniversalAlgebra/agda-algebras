@@ -13533,6 +13533,8 @@
       
         
       
+        
+      
     
     
     
@@ -13893,6 +13895,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adr/011-without-k/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-011: --without-K for every module
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -14098,16 +14128,16 @@ representation.</p>
 <li><a href="/Setoid/Algebras/Finite/">Setoid.Algebras.Finite</a>: the <code class="AgdaRecord">FiniteAlgebra</code> interface;</li>
 <li><a href="/Setoid/Algebras/Reduct/">Setoid.Algebras.Reduct</a>: reducts along a signature morphism, and their functoriality.</li>
 </ul>
-<pre class="Agda"><a id="1279" class="Symbol">{-#</a> <a id="1283" class="Keyword">OPTIONS</a> <a id="1291" class="Pragma">--cubical-compatible</a> <a id="1312" class="Pragma">--exact-split</a> <a id="1326" class="Pragma">--safe</a> <a id="1333" class="Symbol">#-}</a>
+<pre class="Agda"><a id="1279" class="Symbol">{-#</a> <a id="1283" class="Keyword">OPTIONS</a> <a id="1291" class="Pragma">--without-K</a> <a id="1303" class="Pragma">--exact-split</a> <a id="1317" class="Pragma">--safe</a> <a id="1324" class="Symbol">#-}</a>
 
-<a id="1338" class="Keyword">module</a> <a id="1345" href="/Setoid/Algebras/" class="Module">Setoid.Algebras</a> <a id="1361" class="Keyword">where</a>
+<a id="1329" class="Keyword">module</a> <a id="1336" href="/Setoid/Algebras/" class="Module">Setoid.Algebras</a> <a id="1352" class="Keyword">where</a>
 
-<a id="1368" class="Keyword">open</a> <a id="1373" class="Keyword">import</a> <a id="1380" href="/Setoid/Algebras/Basic/" class="Module">Setoid.Algebras.Basic</a>                <a id="1417" class="Keyword">public</a>
-<a id="1424" class="Keyword">open</a> <a id="1429" class="Keyword">import</a> <a id="1436" href="/Setoid/Algebras/Finite/" class="Module">Setoid.Algebras.Finite</a>               <a id="1473" class="Keyword">public</a>
-<a id="1480" class="Keyword">open</a> <a id="1485" class="Keyword">import</a> <a id="1492" href="/Setoid/Algebras/Finite/Irredundant/" class="Module">Setoid.Algebras.Finite.Irredundant</a>   <a id="1529" class="Keyword">public</a>
-<a id="1536" class="Keyword">open</a> <a id="1541" class="Keyword">import</a> <a id="1548" href="/Setoid/Algebras/Products/" class="Module">Setoid.Algebras.Products</a>             <a id="1585" class="Keyword">public</a>
-<a id="1592" class="Keyword">open</a> <a id="1597" class="Keyword">import</a> <a id="1604" href="/Setoid/Algebras/Products/Finite/" class="Module">Setoid.Algebras.Products.Finite</a>      <a id="1641" class="Keyword">public</a>
-<a id="1648" class="Keyword">open</a> <a id="1653" class="Keyword">import</a> <a id="1660" href="/Setoid/Algebras/Reduct/" class="Module">Setoid.Algebras.Reduct</a>               <a id="1697" class="Keyword">public</a>
+<a id="1359" class="Keyword">open</a> <a id="1364" class="Keyword">import</a> <a id="1371" href="/Setoid/Algebras/Basic/" class="Module">Setoid.Algebras.Basic</a>                <a id="1408" class="Keyword">public</a>
+<a id="1415" class="Keyword">open</a> <a id="1420" class="Keyword">import</a> <a id="1427" href="/Setoid/Algebras/Finite/" class="Module">Setoid.Algebras.Finite</a>               <a id="1464" class="Keyword">public</a>
+<a id="1471" class="Keyword">open</a> <a id="1476" class="Keyword">import</a> <a id="1483" href="/Setoid/Algebras/Finite/Irredundant/" class="Module">Setoid.Algebras.Finite.Irredundant</a>   <a id="1520" class="Keyword">public</a>
+<a id="1527" class="Keyword">open</a> <a id="1532" class="Keyword">import</a> <a id="1539" href="/Setoid/Algebras/Products/" class="Module">Setoid.Algebras.Products</a>             <a id="1576" class="Keyword">public</a>
+<a id="1583" class="Keyword">open</a> <a id="1588" class="Keyword">import</a> <a id="1595" href="/Setoid/Algebras/Products/Finite/" class="Module">Setoid.Algebras.Products.Finite</a>      <a id="1632" class="Keyword">public</a>
+<a id="1639" class="Keyword">open</a> <a id="1644" class="Keyword">import</a> <a id="1651" href="/Setoid/Algebras/Reduct/" class="Module">Setoid.Algebras.Reduct</a>               <a id="1688" class="Keyword">public</a>
 </pre>
 
 <!-- File: docs/_links.md -->

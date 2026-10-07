@@ -13535,6 +13535,8 @@
       
         
       
+        
+      
     
     
     
@@ -13895,6 +13897,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../adr/011-without-k/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-011: --without-K for every module
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -14070,12 +14100,12 @@
 <blockquote>
 <p><strong>Deprecated</strong>.  Canonical home is now <a href="/Setoid/Complexity/"><code>Setoid.Complexity</code></a>, ported under #307 (M2-7c).  The legacy modules in this subtree remain in <code>Legacy.Base.Complexity.*</code> for one minor cycle to support downstream migration; they will be removed in v3.1.  See <a href="https://github.com/ualib/agda-algebras/blob/master/src/Legacy/Base/DEPRECATED.md"><code>src/Legacy/Base/DEPRECATED.md</code></a> for the migration guidance.</p>
 </blockquote>
-<pre class="Agda"><a id="698" class="Symbol">{-#</a> <a id="702" class="Keyword">OPTIONS</a> <a id="710" class="Pragma">--cubical-compatible</a> <a id="731" class="Pragma">--exact-split</a> <a id="745" class="Pragma">--safe</a> <a id="752" class="Symbol">#-}</a>
+<pre class="Agda"><a id="698" class="Symbol">{-#</a> <a id="702" class="Keyword">OPTIONS</a> <a id="710" class="Pragma">--without-K</a> <a id="722" class="Pragma">--exact-split</a> <a id="736" class="Pragma">--safe</a> <a id="743" class="Symbol">#-}</a>
 
-<a id="757" class="Keyword">module</a> <a id="764" href="/Legacy/Base/Complexity/" class="Module">Legacy.Base.Complexity</a> <a id="787" class="Keyword">where</a>
+<a id="748" class="Keyword">module</a> <a id="755" href="/Legacy/Base/Complexity/" class="Module">Legacy.Base.Complexity</a> <a id="778" class="Keyword">where</a>
 
-<a id="794" class="Keyword">open</a> <a id="799" class="Keyword">import</a> <a id="806" href="/Legacy/Base/Complexity/Basic/" class="Module">Legacy.Base.Complexity.Basic</a>  <a id="836" class="Keyword">public</a>
-<a id="843" class="Keyword">open</a> <a id="848" class="Keyword">import</a> <a id="855" href="/Legacy/Base/Complexity/CSP/" class="Module">Legacy.Base.Complexity.CSP</a>    <a id="885" class="Keyword">public</a>
+<a id="785" class="Keyword">open</a> <a id="790" class="Keyword">import</a> <a id="797" href="/Legacy/Base/Complexity/Basic/" class="Module">Legacy.Base.Complexity.Basic</a>  <a id="827" class="Keyword">public</a>
+<a id="834" class="Keyword">open</a> <a id="839" class="Keyword">import</a> <a id="846" href="/Legacy/Base/Complexity/CSP/" class="Module">Legacy.Base.Complexity.CSP</a>    <a id="876" class="Keyword">public</a>
 </pre>
 
 <!-- File: docs/_links.md -->

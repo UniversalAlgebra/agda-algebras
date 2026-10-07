@@ -13533,6 +13533,8 @@
       
         
       
+        
+      
     
     
     
@@ -13893,6 +13895,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adr/011-without-k/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-011: --without-K for every module
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -14091,23 +14121,23 @@ following:</p>
 <li><a href="/Setoid/Varieties/Invariants/">Setoid.Varieties.Invariants</a>, <a href="/Setoid/Varieties/Properties/">Setoid.Varieties.Properties</a> and
    <a href="/Setoid/Varieties/Reducts/">Setoid.Varieties.Reducts</a>: the remaining supporting results.</li>
 </ul>
-<pre class="Agda"><a id="1826" class="Symbol">{-#</a> <a id="1830" class="Keyword">OPTIONS</a> <a id="1838" class="Pragma">--cubical-compatible</a> <a id="1859" class="Pragma">--exact-split</a> <a id="1873" class="Pragma">--safe</a> <a id="1880" class="Symbol">#-}</a>
+<pre class="Agda"><a id="1826" class="Symbol">{-#</a> <a id="1830" class="Keyword">OPTIONS</a> <a id="1838" class="Pragma">--without-K</a> <a id="1850" class="Pragma">--exact-split</a> <a id="1864" class="Pragma">--safe</a> <a id="1871" class="Symbol">#-}</a>
 
-<a id="1885" class="Keyword">module</a> <a id="1892" href="/Setoid/Varieties/" class="Module">Setoid.Varieties</a> <a id="1909" class="Keyword">where</a>
+<a id="1876" class="Keyword">module</a> <a id="1883" href="/Setoid/Varieties/" class="Module">Setoid.Varieties</a> <a id="1900" class="Keyword">where</a>
 
-<a id="1916" class="Keyword">open</a> <a id="1921" class="Keyword">import</a> <a id="1928" href="/Setoid/Varieties/Closure/" class="Module">Setoid.Varieties.Closure</a>  <a id="1954" class="Keyword">public</a>
-<a id="1961" class="Keyword">open</a> <a id="1966" class="Keyword">import</a> <a id="1973" href="/Setoid/Varieties/EquationalLogic/" class="Module">Setoid.Varieties.EquationalLogic</a>  <a id="2007" class="Keyword">public</a>
-<a id="2014" class="Keyword">open</a> <a id="2019" class="Keyword">import</a> <a id="2026" href="/Setoid/Varieties/FreeAlgebras/" class="Module">Setoid.Varieties.FreeAlgebras</a>  <a id="2057" class="Keyword">public</a>
-<a id="2064" class="Keyword">open</a> <a id="2069" class="Keyword">import</a> <a id="2076" href="/Setoid/Varieties/FreeSubstitution/" class="Module">Setoid.Varieties.FreeSubstitution</a>  <a id="2111" class="Keyword">public</a>
-<a id="2118" class="Keyword">open</a> <a id="2123" class="Keyword">import</a> <a id="2130" href="/Setoid/Varieties/HSP/" class="Module">Setoid.Varieties.HSP</a>  <a id="2152" class="Keyword">public</a>
-<a id="2159" class="Keyword">open</a> <a id="2164" class="Keyword">import</a> <a id="2171" href="/Setoid/Varieties/Interpretation/" class="Module">Setoid.Varieties.Interpretation</a>             <a id="2215" class="Keyword">public</a>
-<a id="2222" class="Keyword">open</a> <a id="2227" class="Keyword">import</a> <a id="2234" href="/Setoid/Varieties/Invariance/" class="Module">Setoid.Varieties.Invariance</a>                 <a id="2278" class="Keyword">public</a>
-<a id="2285" class="Keyword">open</a> <a id="2290" class="Keyword">import</a> <a id="2297" href="/Setoid/Varieties/Invariants/" class="Module">Setoid.Varieties.Invariants</a>  <a id="2326" class="Keyword">public</a>
-<a id="2333" class="Keyword">open</a> <a id="2338" class="Keyword">import</a> <a id="2345" href="/Setoid/Varieties/Maltsev/" class="Module">Setoid.Varieties.Maltsev</a>                    <a id="2389" class="Keyword">public</a>
-<a id="2396" class="Keyword">open</a> <a id="2401" class="Keyword">import</a> <a id="2408" href="/Setoid/Varieties/Preservation/" class="Module">Setoid.Varieties.Preservation</a>  <a id="2439" class="Keyword">public</a>
-<a id="2446" class="Keyword">open</a> <a id="2451" class="Keyword">import</a> <a id="2458" href="/Setoid/Varieties/Properties/" class="Module">Setoid.Varieties.Properties</a>  <a id="2487" class="Keyword">public</a>
-<a id="2494" class="Keyword">open</a> <a id="2499" class="Keyword">import</a> <a id="2506" href="/Setoid/Varieties/Reducts/" class="Module">Setoid.Varieties.Reducts</a>                    <a id="2550" class="Keyword">public</a>
-<a id="2557" class="Keyword">open</a> <a id="2562" class="Keyword">import</a> <a id="2569" href="/Setoid/Varieties/SoundAndComplete/" class="Module">Setoid.Varieties.SoundAndComplete</a>  <a id="2604" class="Keyword">public</a>
+<a id="1907" class="Keyword">open</a> <a id="1912" class="Keyword">import</a> <a id="1919" href="/Setoid/Varieties/Closure/" class="Module">Setoid.Varieties.Closure</a>  <a id="1945" class="Keyword">public</a>
+<a id="1952" class="Keyword">open</a> <a id="1957" class="Keyword">import</a> <a id="1964" href="/Setoid/Varieties/EquationalLogic/" class="Module">Setoid.Varieties.EquationalLogic</a>  <a id="1998" class="Keyword">public</a>
+<a id="2005" class="Keyword">open</a> <a id="2010" class="Keyword">import</a> <a id="2017" href="/Setoid/Varieties/FreeAlgebras/" class="Module">Setoid.Varieties.FreeAlgebras</a>  <a id="2048" class="Keyword">public</a>
+<a id="2055" class="Keyword">open</a> <a id="2060" class="Keyword">import</a> <a id="2067" href="/Setoid/Varieties/FreeSubstitution/" class="Module">Setoid.Varieties.FreeSubstitution</a>  <a id="2102" class="Keyword">public</a>
+<a id="2109" class="Keyword">open</a> <a id="2114" class="Keyword">import</a> <a id="2121" href="/Setoid/Varieties/HSP/" class="Module">Setoid.Varieties.HSP</a>  <a id="2143" class="Keyword">public</a>
+<a id="2150" class="Keyword">open</a> <a id="2155" class="Keyword">import</a> <a id="2162" href="/Setoid/Varieties/Interpretation/" class="Module">Setoid.Varieties.Interpretation</a>             <a id="2206" class="Keyword">public</a>
+<a id="2213" class="Keyword">open</a> <a id="2218" class="Keyword">import</a> <a id="2225" href="/Setoid/Varieties/Invariance/" class="Module">Setoid.Varieties.Invariance</a>                 <a id="2269" class="Keyword">public</a>
+<a id="2276" class="Keyword">open</a> <a id="2281" class="Keyword">import</a> <a id="2288" href="/Setoid/Varieties/Invariants/" class="Module">Setoid.Varieties.Invariants</a>  <a id="2317" class="Keyword">public</a>
+<a id="2324" class="Keyword">open</a> <a id="2329" class="Keyword">import</a> <a id="2336" href="/Setoid/Varieties/Maltsev/" class="Module">Setoid.Varieties.Maltsev</a>                    <a id="2380" class="Keyword">public</a>
+<a id="2387" class="Keyword">open</a> <a id="2392" class="Keyword">import</a> <a id="2399" href="/Setoid/Varieties/Preservation/" class="Module">Setoid.Varieties.Preservation</a>  <a id="2430" class="Keyword">public</a>
+<a id="2437" class="Keyword">open</a> <a id="2442" class="Keyword">import</a> <a id="2449" href="/Setoid/Varieties/Properties/" class="Module">Setoid.Varieties.Properties</a>  <a id="2478" class="Keyword">public</a>
+<a id="2485" class="Keyword">open</a> <a id="2490" class="Keyword">import</a> <a id="2497" href="/Setoid/Varieties/Reducts/" class="Module">Setoid.Varieties.Reducts</a>                    <a id="2541" class="Keyword">public</a>
+<a id="2548" class="Keyword">open</a> <a id="2553" class="Keyword">import</a> <a id="2560" href="/Setoid/Varieties/SoundAndComplete/" class="Module">Setoid.Varieties.SoundAndComplete</a>  <a id="2595" class="Keyword">public</a>
 </pre>
 
 <!-- File: docs/_links.md -->

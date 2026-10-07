@@ -14440,6 +14440,8 @@
       
         
       
+        
+      
     
     
     
@@ -14787,6 +14789,34 @@
     
   
     ADR-010: Documentation coverage policy for public definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adr/011-without-k/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-011: --without-K for every module
   
 
     
@@ -15893,17 +15923,16 @@ date : &quot;2021-09-24&quot;
 <p>The "file" filed is redundant with the file's location on disk, but having it inline makes the file self-identifying when shared as a snippet — and YAML frontmatter is open-by-design, so unknown fields are silently ignored by both pipelines.</p>
 <h3 id="pragma">Pragma<a class="headerlink" href="#pragma" title="Anchor link to this section">&para;</a></h3>
 <p>Every Agda source file begins with the following pragma:</p>
-<div class="highlight"><pre><span></span><code><span class="cm">{-# OPTIONS --cubical-compatible --exact-split --safe #-}</span>
+<div class="highlight"><pre><span></span><code><span class="cm">{-# OPTIONS --without-K --exact-split --safe #-}</span>
 </code></pre></div>
 <p>The flags, in order, mean the following:</p>
 <ul>
-<li><code>--cubical-compatible</code> requires definitions to be compatible with <code>Cubical/</code>'s canonical-target semantics; replaces the historical <code>--without-K</code>.</li>
+<li><code>--without-K</code> disables the reasoning principles incompatible with univalent type theory, most importantly Streicher's axiom K, so nothing in the library depends on uniqueness of identity proofs.  The library used <code>--cubical-compatible</code> for a time and returned to <code>--without-K</code>; <a href="../adr/011-without-k/">ADR-011</a> gives the reasons and what they mean for the Cubical port.</li>
 <li><code>--safe</code> prohibits <code>postulate</code>, <code>primitive</code>, unsafe <code>TERMINATING</code> pragmas, and other escape hatches; the library's theorems rest on a specific foundation; <code>--safe</code> ensures they're not silently dependent on ambient assumptions.</li>
 <li><code>--exact-split</code> requires every clause matches the type of the function being defined, preventing definitional-equality surprises that trip up proof automation and the training-corpus consumers.</li>
 </ul>
-<p><strong>Exceptions</strong>.<br />
-+  <code>src/Legacy/Base/</code>, will retain its historical <code>--without-K</code> pragma; new contributions do not land in <code>Legacy/</code> (see <a href="https://github.com/ualib/agda-algebras/blob/master/docs/GITHUB_PROJECT.md">Milestone 2</a>).
-+  Generated files (<code>src/Everything.agda</code>); the pragma is still required, but the file is written by the Makefile and should not be hand-edited.</p>
+<p>The frozen <code>src/Legacy/Base/</code> tree carries the same pragma as the rest of <code>src/</code>, although new contributions do not land there (see <a href="https://github.com/ualib/agda-algebras/blob/master/docs/GITHUB_PROJECT.md">Milestone 2</a>).  It could not have kept <code>--cubical-compatible</code>: its modules import <code>Setoid/</code> modules, and a <code>--cubical-compatible</code> module cannot import a <code>--without-K</code> one.</p>
+<p><strong>Exception</strong>.  The generated aggregators, <code>src/Everything.agda</code> and <code>src/EverythingLegacy.agda</code>, carry <code>{-# OPTIONS --without-K --safe #-}</code>.  They omit <code>--exact-split</code>, which constrains definitions, and an aggregator holds nothing but imports.  The Makefile writes them; do not edit them by hand.</p>
 <h3 id="module-header">Module header<a class="headerlink" href="#module-header" title="Anchor link to this section">&para;</a></h3>
 <p>Immediately after the pragma (possibly separated by imports required by the module header's own arguments), the module is declared.  The module name must match the filename under the <code>src/</code> include root, with <code>/</code> replaced by <code>.</code>; e.g.,</p>
 <ul>
@@ -15912,7 +15941,7 @@ date : &quot;2021-09-24&quot;
 <li><code>src/Classical/Structures/Semigroup.lagda.md</code> → <code>module Classical.Structures.Semigroup where</code>.</li>
 </ul>
 <p>The generic <code>Setoid/</code> core does <em>not</em> fix the signature as a module parameter.  Instead <code>𝑆</code> is a public generalized <code>variable</code> — declared once in <code>Overture.Signatures</code> and imported by name — so a generic definition ranges over an arbitrary signature by mentioning <code>𝑆</code> in its type and letting Agda generalize it.  A core module header therefore takes no signature parameter:</p>
-<div class="highlight"><pre><span></span><code><span class="cm">{-# OPTIONS --cubical-compatible --exact-split --safe #-}</span>
+<div class="highlight"><pre><span></span><code><span class="cm">{-# OPTIONS --without-K --exact-split --safe #-}</span>
 
 <span class="kr">open</span><span class="w"> </span><span class="kr">import</span><span class="w"> </span><span class="n">Overture</span><span class="w"> </span><span class="kr">using</span><span class="w"> </span><span class="o">(</span><span class="w"> </span>𝓞<span class="w"> </span>;<span class="w"> </span>𝓥<span class="w"> </span>;<span class="w"> </span>Signature<span class="w"> </span>;<span class="w"> </span>𝑆<span class="w"> </span><span class="o">)</span>
 
@@ -15948,7 +15977,7 @@ date : &quot;2021-09-24&quot;
 <p>A module named <code>Congruences</code> is about congruences.  A module named <code>Products</code> is about products.  When a module grows to the point where it spans multiple mathematical concepts, split it along the conceptual line rather than an implementation-convenience line.</p>
 <h3 id="umbrella-modules-re-export">Umbrella modules re-export<a class="headerlink" href="#umbrella-modules-re-export" title="Anchor link to this section">&para;</a></h3>
 <p>A module whose name has no final segment past the conceptual theme (e.g. <code>Base.Homomorphisms</code>, <code>Setoid.Algebras</code>) acts as a barrel of submodules, which it re-exports (using the <code>public</code> keyword); e.g.,</p>
-<div class="highlight"><pre><span></span><code><span class="cm">{-# OPTIONS --cubical-compatible --exact-split --safe #-}</span>
+<div class="highlight"><pre><span></span><code><span class="cm">{-# OPTIONS --without-K --exact-split --safe #-}</span>
 
 <span class="kr">open</span><span class="w"> </span><span class="kr">import</span><span class="w"> </span><span class="n">Overture</span><span class="w"> </span><span class="kr">using</span><span class="w"> </span><span class="o">(</span><span class="w"> </span>𝓞<span class="w"> </span>;<span class="w"> </span>𝓥<span class="w"> </span>;<span class="w"> </span>Signature<span class="w"> </span>;<span class="w"> </span>𝑆<span class="w"> </span><span class="o">)</span>
 
@@ -15978,7 +16007,7 @@ date : &quot;2021-09-24&quot;
 <p>An <code>Algebra</code> over signature <code>𝑆</code> is a setoid (the domain) equipped with an interpretation of each operation symbol in <code>𝑆</code> as a function on the carrier that respects the setoid's equivalence relation.  This module is the canonical entry point for the Setoid tree; see <code>Setoid.Algebras.Products</code> for indexed products, <code>Setoid.Algebras.Congruences</code> for the congruence relations used to build quotients, and <code>Setoid.Homomorphisms.Basic</code> for homomorphisms between algebras.</p>
 </blockquote>
 <p>and only then the opening fence:</p>
-<div class="highlight"><pre><span></span><code><span class="cm">{-# OPTIONS --cubical-compatible --exact-split --safe #-}</span>
+<div class="highlight"><pre><span></span><code><span class="cm">{-# OPTIONS --without-K --exact-split --safe #-}</span>
 
 <span class="kr">open</span><span class="w"> </span><span class="kr">import</span><span class="w"> </span><span class="n">Overture</span><span class="w"> </span><span class="kr">using</span><span class="w"> </span><span class="o">(</span><span class="w"> </span>𝓞<span class="w"> </span>;<span class="w"> </span>𝓥<span class="w"> </span>;<span class="w"> </span>Signature<span class="w"> </span>;<span class="w"> </span>𝑆<span class="w"> </span><span class="o">)</span>
 

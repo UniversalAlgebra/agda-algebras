@@ -20,15 +20,15 @@ Differences from the legacy module:
 +  The legacy module bundled its own `curry` / `uncurry` definitions; stdlib&#39;s `Data.Product.curry` / `Data.Product.uncurry` cover the same ground and are not re-exported here.  Consumers who need the bridge should import from `Data.Product` directly.
 
 </a><a id="1951" class="Markup">```agda
-</a><a id="1959" class="Symbol">{-#</a> <a id="1963" class="Keyword">OPTIONS</a> <a id="1971" class="Pragma">--cubical-compatible</a> <a id="1992" class="Pragma">--exact-split</a> <a id="2006" class="Pragma">--safe</a> <a id="2013" class="Symbol">#-}</a>
+</a><a id="1959" class="Symbol">{-#</a> <a id="1963" class="Keyword">OPTIONS</a> <a id="1971" class="Pragma">--without-K</a> <a id="1983" class="Pragma">--exact-split</a> <a id="1997" class="Pragma">--safe</a> <a id="2004" class="Symbol">#-}</a>
 
-<a id="2018" class="Keyword">module</a> <a id="2025" href="Setoid.Relations.Properties.html" class="Module">Setoid.Relations.Properties</a> <a id="2053" class="Keyword">where</a>
+<a id="2009" class="Keyword">module</a> <a id="2016" href="Setoid.Relations.Properties.html" class="Module">Setoid.Relations.Properties</a> <a id="2044" class="Keyword">where</a>
 
-<a id="2060" class="Keyword">open</a> <a id="2065" class="Keyword">import</a> <a id="2072" href="Relation.Binary.Definitions.html" class="Module">Relation.Binary.Definitions</a> <a id="2100" class="Keyword">public</a>
-  <a id="2109" class="Keyword">using</a>  <a id="2116" class="Symbol">(</a> <a id="2118" href="Relation.Binary.Definitions.html#1355" class="Function">Reflexive</a>    <a id="2131" class="Symbol">;</a> <a id="2133" href="Relation.Binary.Definitions.html#1440" class="Function">Sym</a>         <a id="2145" class="Symbol">;</a> <a id="2147" href="Relation.Binary.Definitions.html#1514" class="Function">Symmetric</a>
-         <a id="2166" class="Symbol">;</a> <a id="2168" href="Relation.Binary.Definitions.html#1601" class="Function">Trans</a>        <a id="2181" class="Symbol">;</a> <a id="2183" href="Relation.Binary.Definitions.html#1902" class="Function">TransFlip</a>   <a id="2195" class="Symbol">;</a> <a id="2197" href="Relation.Binary.Definitions.html#2030" class="Function">Transitive</a>
-         <a id="2217" class="Symbol">;</a> <a id="2219" href="Relation.Binary.Definitions.html#2124" class="Function">Antisym</a>      <a id="2232" class="Symbol">;</a> <a id="2234" href="Relation.Binary.Definitions.html#2246" class="Function">Antisymmetric</a>
-         <a id="2257" class="Symbol">;</a> <a id="2259" href="Relation.Binary.Definitions.html#2405" class="Function">Irreflexive</a>  <a id="2272" class="Symbol">;</a> <a id="2274" href="Relation.Binary.Definitions.html#2517" class="Function">Asymmetric</a>
-         <a id="2294" class="Symbol">;</a> <a id="2296" href="Relation.Binary.Definitions.html#2746" class="Function">Connex</a>       <a id="2309" class="Symbol">;</a> <a id="2311" href="Relation.Binary.Definitions.html#2837" class="Function">Total</a> <a id="2317" class="Symbol">)</a>
-<a id="2319" class="Markup">```
+<a id="2051" class="Keyword">open</a> <a id="2056" class="Keyword">import</a> <a id="2063" href="Relation.Binary.Definitions.html" class="Module">Relation.Binary.Definitions</a> <a id="2091" class="Keyword">public</a>
+  <a id="2100" class="Keyword">using</a>  <a id="2107" class="Symbol">(</a> <a id="2109" href="Relation.Binary.Definitions.html#1355" class="Function">Reflexive</a>    <a id="2122" class="Symbol">;</a> <a id="2124" href="Relation.Binary.Definitions.html#1440" class="Function">Sym</a>         <a id="2136" class="Symbol">;</a> <a id="2138" href="Relation.Binary.Definitions.html#1514" class="Function">Symmetric</a>
+         <a id="2157" class="Symbol">;</a> <a id="2159" href="Relation.Binary.Definitions.html#1601" class="Function">Trans</a>        <a id="2172" class="Symbol">;</a> <a id="2174" href="Relation.Binary.Definitions.html#1902" class="Function">TransFlip</a>   <a id="2186" class="Symbol">;</a> <a id="2188" href="Relation.Binary.Definitions.html#2030" class="Function">Transitive</a>
+         <a id="2208" class="Symbol">;</a> <a id="2210" href="Relation.Binary.Definitions.html#2124" class="Function">Antisym</a>      <a id="2223" class="Symbol">;</a> <a id="2225" href="Relation.Binary.Definitions.html#2246" class="Function">Antisymmetric</a>
+         <a id="2248" class="Symbol">;</a> <a id="2250" href="Relation.Binary.Definitions.html#2405" class="Function">Irreflexive</a>  <a id="2263" class="Symbol">;</a> <a id="2265" href="Relation.Binary.Definitions.html#2517" class="Function">Asymmetric</a>
+         <a id="2285" class="Symbol">;</a> <a id="2287" href="Relation.Binary.Definitions.html#2746" class="Function">Connex</a>       <a id="2300" class="Symbol">;</a> <a id="2302" href="Relation.Binary.Definitions.html#2837" class="Function">Total</a> <a id="2308" class="Symbol">)</a>
+<a id="2310" class="Markup">```
 </a></pre></body></html>

@@ -13535,6 +13535,8 @@
       
         
       
+        
+      
     
     
     
@@ -13895,6 +13897,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../adr/011-without-k/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-011: --without-K for every module
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -14099,14 +14129,14 @@ irreducible algebras.</p>
    <code class="AgdaFunction">finite-Birkhoff</code> feeds it to the choice-free core.  "Finite" has
    to be pinned down with some care, and that module opens by doing so.</li>
 </ul>
-<pre class="Agda"><a id="2489" class="Symbol">{-#</a> <a id="2493" class="Keyword">OPTIONS</a> <a id="2501" class="Pragma">--cubical-compatible</a> <a id="2522" class="Pragma">--exact-split</a> <a id="2536" class="Pragma">--safe</a> <a id="2543" class="Symbol">#-}</a>
+<pre class="Agda"><a id="2489" class="Symbol">{-#</a> <a id="2493" class="Keyword">OPTIONS</a> <a id="2501" class="Pragma">--without-K</a> <a id="2513" class="Pragma">--exact-split</a> <a id="2527" class="Pragma">--safe</a> <a id="2534" class="Symbol">#-}</a>
 
-<a id="2548" class="Keyword">module</a> <a id="2555" href="/Setoid/Subalgebras/Subdirect/" class="Module">Setoid.Subalgebras.Subdirect</a> <a id="2584" class="Keyword">where</a>
+<a id="2539" class="Keyword">module</a> <a id="2546" href="/Setoid/Subalgebras/Subdirect/" class="Module">Setoid.Subalgebras.Subdirect</a> <a id="2575" class="Keyword">where</a>
 
-<a id="2591" class="Keyword">open</a> <a id="2596" class="Keyword">import</a> <a id="2603" href="/Setoid/Subalgebras/Subdirect/Basic/" class="Module">Setoid.Subalgebras.Subdirect.Basic</a> <a id="2638" class="Keyword">public</a>
-<a id="2645" class="Keyword">open</a> <a id="2650" class="Keyword">import</a> <a id="2657" href="/Setoid/Subalgebras/Subdirect/BirkhoffSI/" class="Module">Setoid.Subalgebras.Subdirect.BirkhoffSI</a> <a id="2697" class="Keyword">public</a>
-<a id="2704" class="Keyword">open</a> <a id="2709" class="Keyword">import</a> <a id="2716" href="/Setoid/Subalgebras/Subdirect/Finite/" class="Module">Setoid.Subalgebras.Subdirect.Finite</a> <a id="2752" class="Keyword">public</a>
-<a id="2759" class="Keyword">open</a> <a id="2764" class="Keyword">import</a> <a id="2771" href="/Setoid/Subalgebras/Subdirect/Irreducible/" class="Module">Setoid.Subalgebras.Subdirect.Irreducible</a> <a id="2812" class="Keyword">public</a>
+<a id="2582" class="Keyword">open</a> <a id="2587" class="Keyword">import</a> <a id="2594" href="/Setoid/Subalgebras/Subdirect/Basic/" class="Module">Setoid.Subalgebras.Subdirect.Basic</a> <a id="2629" class="Keyword">public</a>
+<a id="2636" class="Keyword">open</a> <a id="2641" class="Keyword">import</a> <a id="2648" href="/Setoid/Subalgebras/Subdirect/BirkhoffSI/" class="Module">Setoid.Subalgebras.Subdirect.BirkhoffSI</a> <a id="2688" class="Keyword">public</a>
+<a id="2695" class="Keyword">open</a> <a id="2700" class="Keyword">import</a> <a id="2707" href="/Setoid/Subalgebras/Subdirect/Finite/" class="Module">Setoid.Subalgebras.Subdirect.Finite</a> <a id="2743" class="Keyword">public</a>
+<a id="2750" class="Keyword">open</a> <a id="2755" class="Keyword">import</a> <a id="2762" href="/Setoid/Subalgebras/Subdirect/Irreducible/" class="Module">Setoid.Subalgebras.Subdirect.Irreducible</a> <a id="2803" class="Keyword">public</a>
 </pre>
 
 <!-- File: docs/_links.md -->

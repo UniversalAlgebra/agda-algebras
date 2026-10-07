@@ -13529,6 +13529,8 @@
       
         
       
+        
+      
     
     
     
@@ -13876,6 +13878,34 @@
     
   
     ADR-010: Documentation coverage policy for public definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adr/011-without-k/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-011: --without-K for every module
   
 
     
@@ -14622,10 +14652,10 @@ the running process was started for.  Emacs need not be started inside
 <p>This section describes only the most important conventions contributors are expected to follow.  For a more complete style guide, see <a href="/STYLE_GUIDE/"><code>docs/STYLE_GUIDE.md</code></a>.  Please follow the style described in that document; when in doubt, or if something isn't covered in the style guide, ask in the PR.</p>
 <h3 id="file-pragma">File pragma<a class="headerlink" href="#file-pragma" title="Anchor link to this section">&para;</a></h3>
 <p>Every <code>.agda</code> source file begins with:</p>
-<div class="highlight"><pre><span></span><code><span class="cm">{-# OPTIONS --cubical-compatible --exact-split --safe #-}</span>
+<div class="highlight"><pre><span></span><code><span class="cm">{-# OPTIONS --without-K --exact-split --safe #-}</span>
 </code></pre></div>
 <p>plus <code>module X.Y.Z where</code> on the next non-comment line.</p>
-<p>As of the 3.0 reconstruction, all of <code>src/</code> uses <code>--cubical-compatible</code>.  When the 3.0 consolidation freezes pre-reconstruction content as <code>Legacy/Base/</code> (see M2), the frozen tree will retain its historical <code>--without-K</code> pragma for stability, but new contributions will not land there.</p>
+<p>All of <code>src/</code> uses this pragma, the frozen <code>Legacy/Base/</code> tree included, though new contributions do not land there (see M2).  The library used <code>--cubical-compatible</code> for part of the 3.0 development and returned to <code>--without-K</code>; <a href="/adr/011-without-k/">ADR-011</a> records why.</p>
 <h3 id="naming">Naming<a class="headerlink" href="#naming" title="Anchor link to this section">&para;</a></h3>
 <ul>
 <li><strong>Definitions</strong> are named in the <code>lowerCamelCase</code> or <code>hyphen-case</code> style depending on local convention in the surrounding module.</li>

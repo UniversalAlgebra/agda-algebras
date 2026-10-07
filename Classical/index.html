@@ -13531,6 +13531,8 @@
       
         
       
+        
+      
     
     
     
@@ -13891,6 +13893,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adr/011-without-k/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-011: --without-K for every module
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -14155,20 +14185,20 @@ most of the tree.</p>
 aggregators below re-export concrete structures as they land under milestone M3,
 and the <code>Properties</code> aggregator was added in M3-7 for per-structure
 derived-results modules.</p>
-<pre class="Agda"><a id="3113" class="Symbol">{-#</a> <a id="3117" class="Keyword">OPTIONS</a> <a id="3125" class="Pragma">--cubical-compatible</a> <a id="3146" class="Pragma">--exact-split</a> <a id="3160" class="Pragma">--safe</a> <a id="3167" class="Symbol">#-}</a>
+<pre class="Agda"><a id="3113" class="Symbol">{-#</a> <a id="3117" class="Keyword">OPTIONS</a> <a id="3125" class="Pragma">--without-K</a> <a id="3137" class="Pragma">--exact-split</a> <a id="3151" class="Pragma">--safe</a> <a id="3158" class="Symbol">#-}</a>
 
-<a id="3172" class="Keyword">module</a> <a id="3179" href="/Classical/" class="Module">Classical</a> <a id="3189" class="Keyword">where</a>
+<a id="3163" class="Keyword">module</a> <a id="3170" href="/Classical/" class="Module">Classical</a> <a id="3180" class="Keyword">where</a>
 
-<a id="3196" class="Keyword">open</a> <a id="3201" class="Keyword">import</a> <a id="3208" href="/Classical/Bundles/" class="Module">Classical.Bundles</a>          <a id="3235" class="Keyword">public</a>
-<a id="3242" class="Keyword">open</a> <a id="3247" class="Keyword">import</a> <a id="3254" href="/Classical/Categories/" class="Module">Classical.Categories</a>       <a id="3281" class="Keyword">public</a>
-<a id="3288" class="Keyword">open</a> <a id="3293" class="Keyword">import</a> <a id="3300" href="/Classical/Equations/" class="Module">Classical.Equations</a>        <a id="3327" class="Keyword">public</a>
-<a id="3334" class="Keyword">open</a> <a id="3339" class="Keyword">import</a> <a id="3346" href="/Classical/Interpretations/" class="Module">Classical.Interpretations</a>  <a id="3373" class="Keyword">public</a>
-<a id="3380" class="Keyword">open</a> <a id="3385" class="Keyword">import</a> <a id="3392" href="/Classical/Operations/" class="Module">Classical.Operations</a>       <a id="3419" class="Keyword">public</a>
-<a id="3426" class="Keyword">open</a> <a id="3431" class="Keyword">import</a> <a id="3438" href="/Classical/Properties/" class="Module">Classical.Properties</a>       <a id="3465" class="Keyword">public</a>
-<a id="3472" class="Keyword">open</a> <a id="3477" class="Keyword">import</a> <a id="3484" href="/Classical/Signatures/" class="Module">Classical.Signatures</a>       <a id="3511" class="Keyword">public</a>
-<a id="3518" class="Keyword">open</a> <a id="3523" class="Keyword">import</a> <a id="3530" href="/Classical/Small/" class="Module">Classical.Small</a>
-<a id="3546" class="Keyword">open</a> <a id="3551" class="Keyword">import</a> <a id="3558" href="/Classical/Structures/" class="Module">Classical.Structures</a>       <a id="3585" class="Keyword">public</a>
-<a id="3592" class="Keyword">open</a> <a id="3597" class="Keyword">import</a> <a id="3604" href="/Classical/Theories/" class="Module">Classical.Theories</a>         <a id="3631" class="Keyword">public</a>
+<a id="3187" class="Keyword">open</a> <a id="3192" class="Keyword">import</a> <a id="3199" href="/Classical/Bundles/" class="Module">Classical.Bundles</a>          <a id="3226" class="Keyword">public</a>
+<a id="3233" class="Keyword">open</a> <a id="3238" class="Keyword">import</a> <a id="3245" href="/Classical/Categories/" class="Module">Classical.Categories</a>       <a id="3272" class="Keyword">public</a>
+<a id="3279" class="Keyword">open</a> <a id="3284" class="Keyword">import</a> <a id="3291" href="/Classical/Equations/" class="Module">Classical.Equations</a>        <a id="3318" class="Keyword">public</a>
+<a id="3325" class="Keyword">open</a> <a id="3330" class="Keyword">import</a> <a id="3337" href="/Classical/Interpretations/" class="Module">Classical.Interpretations</a>  <a id="3364" class="Keyword">public</a>
+<a id="3371" class="Keyword">open</a> <a id="3376" class="Keyword">import</a> <a id="3383" href="/Classical/Operations/" class="Module">Classical.Operations</a>       <a id="3410" class="Keyword">public</a>
+<a id="3417" class="Keyword">open</a> <a id="3422" class="Keyword">import</a> <a id="3429" href="/Classical/Properties/" class="Module">Classical.Properties</a>       <a id="3456" class="Keyword">public</a>
+<a id="3463" class="Keyword">open</a> <a id="3468" class="Keyword">import</a> <a id="3475" href="/Classical/Signatures/" class="Module">Classical.Signatures</a>       <a id="3502" class="Keyword">public</a>
+<a id="3509" class="Keyword">open</a> <a id="3514" class="Keyword">import</a> <a id="3521" href="/Classical/Small/" class="Module">Classical.Small</a>
+<a id="3537" class="Keyword">open</a> <a id="3542" class="Keyword">import</a> <a id="3549" href="/Classical/Structures/" class="Module">Classical.Structures</a>       <a id="3576" class="Keyword">public</a>
+<a id="3583" class="Keyword">open</a> <a id="3588" class="Keyword">import</a> <a id="3595" href="/Classical/Theories/" class="Module">Classical.Theories</a>         <a id="3622" class="Keyword">public</a>
 </pre>
 <hr />
 <!-- File: docs/_links.md -->
