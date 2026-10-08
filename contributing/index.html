@@ -14774,7 +14774,7 @@
 nix<span class="w"> </span>develop
 make<span class="w"> </span>check<span class="w">        </span><span class="c1"># the library and the frozen Legacy tree</span>
 </code></pre></div>
-<p>This pins Agda 2.8.0 and standard-library 2.3 automatically via the repository's flake.  See <a href="/install/"><code>INSTALL.md</code></a> for a walkthrough and non-Nix alternatives.</p>
+<p>This pins Agda 2.9.0, which is not yet released, and standard-library 2.3 patched for it, via the repository's flake; until both are released, <code>nix develop</code> is the only way to get that toolchain.  See <a href="/install/"><code>INSTALL.md</code></a> for a walkthrough, the binary cache that spares you building Agda, and the paths without Nix, which install the previous toolchain.</p>
 <h3 id="editor">Editor<a class="headerlink" href="#editor" title="Anchor link to this section">&para;</a></h3>
 <p>We recommend Emacs with <code>agda-mode</code> or VSCode with the <code>banacorn.agda-mode</code> extension.  Launch your editor from inside <code>nix develop</code> so the pinned Agda is on <code>PATH</code>; if you keep several checkouts, read the next section.</p>
 <h3 id="emacs-with-several-checkouts">Emacs with several checkouts<a class="headerlink" href="#emacs-with-several-checkouts" title="Anchor link to this section">&para;</a></h3>
@@ -14837,12 +14837,13 @@ the running process was started for.  Emacs need not be started inside
 <p>A few facts complete the setup, as follows:</p>
 <ul>
 <li>Enter <code>nix develop</code> once in each new worktree, and again when its
-   <code>flake.lock</code> moves, to write the wrapper.</li>
+   pins move (<code>flake.lock</code>, or the standard library's in <code>flake.nix</code>), to
+   write the wrapper.</li>
 <li>The wrapper calls an Agda in the Nix store by its path.  If garbage
    collection removes that Agda, agda-mode reports its version as "unknown";
    entering <code>nix develop</code> there again restores it.</li>
 <li>agda-mode refuses an Agda whose version differs from its own
-   (<code>agda2-version</code>), so use agda-mode 2.8.0, the version this repository
+   (<code>agda2-version</code>), so use agda-mode 2.9.0, the version this repository
    pins; inside <code>nix develop</code>, <code>agda-mode locate</code> prints the path of its
    <code>agda2.el</code>.</li>
 <li>The same snippet with one more clause, for checkouts of

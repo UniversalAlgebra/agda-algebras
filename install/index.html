@@ -14224,16 +14224,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#option-1-recommended-nix" class="md-nav__link">
+  <a href="#option-1-required-for-now-nix" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Option 1 (recommended): Nix
+        Option 1 (required for now): Nix
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Option 1 (recommended): Nix">
+    <nav class="md-nav" aria-label="Option 1 (required for now): Nix">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-pins-and-moving-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The pins, and moving them
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#editor-integration-under-nix" class="md-nav__link">
@@ -14416,16 +14427,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#option-1-recommended-nix" class="md-nav__link">
+  <a href="#option-1-required-for-now-nix" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Option 1 (recommended): Nix
+        Option 1 (required for now): Nix
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Option 1 (recommended): Nix">
+    <nav class="md-nav" aria-label="Option 1 (required for now): Nix">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-pins-and-moving-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The pins, and moving them
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#editor-integration-under-nix" class="md-nav__link">
@@ -14532,18 +14554,19 @@
 
 
 <h1 id="installing-agda-algebras">Installing agda-algebras<a class="headerlink" href="#installing-agda-algebras" title="Anchor link to this section">&para;</a></h1>
-<p>This document describes how to set up a development environment for the agda-algebras library. The <strong>recommended</strong> path is Nix, which pins Agda 2.8.0 and standard-library 2.3 automatically. The alternative paths are for contributors who cannot or prefer not to use Nix.</p>
+<p>This document describes how to set up a development environment for the agda-algebras library.  Until Agda 2.9.0 and its standard library are released, the toolchain is available only through <code>nix develop</code>: the flake pins a pre-release Agda and a patched standard library 2.3.  Options 2 to 4 below install the previous toolchain, Agda 2.8.0 and standard-library 2.3, under which the library still checks today; CI no longer tests it.</p>
 <h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Anchor link to this section">&para;</a></h2>
 <ul>
-<li><a href="https://agda.readthedocs.io">Agda</a> 2.8.0 or later (2.8.0 is what we pin)</li>
-<li><a href="https://github.com/agda/agda-stdlib">standard-library</a> 2.3</li>
+<li><a href="https://nixos.org">Nix</a> 2.28 or later, with flakes enabled, until Agda 2.9.0 is released (Option 1)</li>
+<li><a href="https://agda.readthedocs.io">Agda</a> 2.9.0, not yet released: the flake pins agda/agda at commit <a href="https://github.com/agda/agda/commit/da66a8c75f11d10699a6b38b261efdf244b66f2a"><code>da66a8c</code></a>, the <code>nightly</code> of 2026-10-05, and builds it from source</li>
+<li><a href="https://github.com/agda/agda-stdlib">standard-library</a> 2.3 with the five changes it needs under Agda 2.9.0: <a href="https://github.com/formalverification/agda-stdlib">formalverification/agda-stdlib</a>, tag <a href="https://github.com/formalverification/agda-stdlib/releases/tag/v2.3-agda-2.9.0"><code>v2.3-agda-2.9.0</code></a>, whose release notes list them</li>
 <li>GNU Make</li>
 <li>A text editor with Agda support (Emacs with <code>agda-mode</code>, VSCode with <code>banacorn.agda-mode</code>, or equivalent)</li>
 </ul>
-<p>Older versions of Agda or the standard library are not supported on <code>master</code>. If you must work with an older configuration, check out a pre-2.0 tag.</p>
+<p>Agda versions before 2.8.0, and standard libraries before 2.3, are not supported on <code>master</code>.  If you must work with an older configuration, check out a pre-2.0 tag.</p>
 <hr />
-<h2 id="option-1-recommended-nix">Option 1 (recommended): Nix<a class="headerlink" href="#option-1-recommended-nix" title="Anchor link to this section">&para;</a></h2>
-<p>Install Nix from <a href="https://nixos.org/download.html">https://nixos.org/download.html</a>, then enable flakes by adding the following to <code>~/.config/nix/nix.conf</code>:</p>
+<h2 id="option-1-required-for-now-nix">Option 1 (required for now): Nix<a class="headerlink" href="#option-1-required-for-now-nix" title="Anchor link to this section">&para;</a></h2>
+<p>Install Nix 2.28 or later from <a href="https://nixos.org/download.html">https://nixos.org/download.html</a> (<code>nix --version</code> says which you have), then enable flakes by adding the following to <code>~/.config/nix/nix.conf</code>:</p>
 <div class="highlight"><pre><span></span><code>experimental-features = nix-command flakes
 </code></pre></div>
 <p>Clone the repository and enter the development shell:</p>
@@ -14553,10 +14576,14 @@ nix<span class="w"> </span>develop
 </code></pre></div>
 <p>The <code>nix develop</code> command will download and build (on first invocation) the pinned versions of Agda and the standard library, and drop you in a shell where:</p>
 <ul>
-<li><code>agda</code> is on <code>PATH</code> and points to 2.8.0</li>
-<li>standard-library 2.3 is registered via a project-local <code>AGDA_DIR</code> at <code>.agda/</code></li>
+<li><code>agda</code> is on <code>PATH</code> and points to 2.9.0</li>
+<li>the patched standard-library 2.3 is registered via a project-local <code>AGDA_DIR</code> at <code>.agda/</code></li>
 <li>any <code>~/.config/agda/libraries</code> entries on the host are ignored for the duration of the shell</li>
 </ul>
+<p>The first <code>nix develop</code> builds Agda 2.9.0 from source, and checks the standard library with it, unless Nix can fetch them from the formalverification binary cache on <a href="https://www.cachix.org/">Cachix</a>, which this repository's CI uses.  Built here, they took about six and a half minutes on a 20-core workstation, with the build's memory peaking near 8 GiB (2026-10-07); a machine with fewer cores takes longer.  To fetch them instead, run <code>cachix use formalverification</code>, or add the following lines to your Nix configuration (<code>/etc/nix/nix.conf</code>, or <code>~/.config/nix/nix.conf</code> if you are a trusted user):</p>
+<div class="highlight"><pre><span></span><code>extra-substituters = https://formalverification.cachix.org
+extra-trusted-public-keys = formalverification.cachix.org-1:KG/AJuuli2F4/bA56rUYC9V8ZE/Zw6iZjxJEf40cQOo=
+</code></pre></div>
 <p>Inside the shell:</p>
 <div class="highlight"><pre><span></span><code>make<span class="w"> </span>check<span class="w">   </span><span class="c1"># type-check the entire library</span>
 make<span class="w"> </span>site<span class="w">    </span><span class="c1"># build the documentation site to ./site</span>
@@ -14564,6 +14591,14 @@ make<span class="w"> </span>serve<span class="w">   </span><span class="c1"># pr
 make<span class="w"> </span>clean<span class="w">   </span><span class="c1"># remove build artifacts</span>
 </code></pre></div>
 <p>To exit the shell, type <code>exit</code> or Ctrl-D.</p>
+<h3 id="the-pins-and-moving-them">The pins, and moving them<a class="headerlink" href="#the-pins-and-moving-them" title="Anchor link to this section">&para;</a></h3>
+<p><code>flake.lock</code> pins nixpkgs and Agda's own flake, whose URL in <code>flake.nix</code> names a commit of agda/agda, so <code>nix flake update</code> moves nixpkgs but never Agda.  The standard library is pinned in <code>flake.nix</code> by <code>stdlibRev</code> and <code>stdlibHash</code>.  To move it, set <code>stdlibRev</code> to the new commit, put <code>nixpkgs.lib.fakeHash</code> in <code>stdlibHash</code>'s place, run <code>nix build</code>, and copy the hash the error prints after <code>got:</code>; or ask Nix for the hash directly:</p>
+<div class="highlight"><pre><span></span><code>nix<span class="w"> </span>flake<span class="w"> </span>prefetch<span class="w"> </span>--json<span class="w"> </span>github:formalverification/agda-stdlib/&lt;commit&gt;<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span>.hash
+</code></pre></div>
+<p>A <code>hash mismatch in fixed-output derivation</code> error on a pin you did not move means the source is not the one pinned: check the commit before you accept another hash.  Move Agda and the standard library together, since each standard library checks under a narrow range of Agda versions, and once both are released, return to the nixpkgs packages, as the comment at the top of <code>flake.nix</code> says.</p>
+<p>No public cache holds the pinned Agda, which Agda's own flake builds from source, so after moving either pin, push the dev shell's closure to the formalverification cache before CI runs, or CI's type-check job has to build Agda within its 30 minutes.  The push needs the cache's write token (<code>cachix authtoken</code>):</p>
+<div class="highlight"><pre><span></span><code>nix<span class="w"> </span>develop<span class="w"> </span>--profile<span class="w"> </span>/tmp/aa-dev<span class="w"> </span>-c<span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>cachix<span class="w"> </span>push<span class="w"> </span>formalverification<span class="w"> </span>/tmp/aa-dev
+</code></pre></div>
 <h3 id="editor-integration-under-nix">Editor integration under Nix<a class="headerlink" href="#editor-integration-under-nix" title="Anchor link to this section">&para;</a></h3>
 <p><code>agda-mode</code> is available inside the Nix shell. The simplest pattern is to launch your editor from within <code>nix develop</code>. If you use Emacs, <code>M-x load-library RET agda2-mode RET</code> will pick up the wrapped Agda. If you use VSCode with the <code>banacorn.agda-mode</code> extension, the extension's "Agda Path" setting can be pointed at the <code>agda</code> inside the Nix shell (use <code>which agda</code> to find the absolute path).</p>
 <p>Contributors who prefer a persistent editor configuration across shells may find <a href="https://github.com/nix-community/nix-direnv"><code>nix-direnv</code></a> useful for auto-entering the shell when they <code>cd</code> into the repo.</p>
@@ -14572,6 +14607,9 @@ checkout, so several checkouts (worktrees, or another Agda project beside this
 one) need one more step: see
 <a href="/contributing/#emacs-with-several-checkouts">Emacs with several checkouts</a>.</p>
 <hr />
+<blockquote>
+<p><strong>Options 2 to 4 install the previous toolchain</strong>, Agda 2.8.0 and standard-library 2.3, unpatched.  They stay here until Agda 2.9.0 and a standard library for it are released, when they will move to those versions.  The library still checks under 2.8.0 today, but CI tests only the toolchain the flake pins.</p>
+</blockquote>
 <h2 id="option-2-agdas-official-python-installer">Option 2: Agda's official Python installer<a class="headerlink" href="#option-2-agdas-official-python-installer" title="Anchor link to this section">&para;</a></h2>
 <p>As of 2.8.0, Agda is a self-contained single binary distributed via the Python Package Index. This is the simplest non-Nix path:</p>
 <div class="highlight"><pre><span></span><code>pipx<span class="w"> </span>install<span class="w"> </span><span class="nv">agda</span><span class="o">==</span><span class="m">2</span>.8.0
@@ -14603,12 +14641,13 @@ cabal<span class="w"> </span>install<span class="w"> </span>Agda-2.8.0<span clas
 <hr />
 <h2 id="verifying-the-installation">Verifying the installation<a class="headerlink" href="#verifying-the-installation" title="Anchor link to this section">&para;</a></h2>
 <p>From a clone of agda-algebras:</p>
-<div class="highlight"><pre><span></span><code>agda<span class="w"> </span>--version<span class="w">           </span><span class="c1"># should print &quot;Agda version 2.8.0&quot;</span>
+<div class="highlight"><pre><span></span><code>agda<span class="w"> </span>--version<span class="w">           </span><span class="c1"># &quot;Agda version 2.9.0&quot; in nix develop; 2.8.0 after Options 2 to 4</span>
 make<span class="w"> </span>check<span class="w">               </span><span class="c1"># should run to completion without errors</span>
 </code></pre></div>
 <p><code>make check</code> takes a few minutes on a laptop.</p>
 <hr />
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Anchor link to this section">&para;</a></h2>
+<p><strong><code>NAR hash mismatch in input 'github:agda/agda/…'</code></strong>.  Your Nix is probably older than 2.28.  Agda's tree holds six empty directories, the paths of its submodules, and Nix 2.26.3 drops them when it unpacks the tree, so it computes another hash than the one <code>flake.lock</code> records (Nix 2.28.6 and later keep them).  Upgrade Nix to 2.28 or later: for an installation made by the official installer, <code>nix upgrade-nix</code> does it.</p>
 <p><strong>Agda can't find standard-library</strong>.  Inside <code>nix develop</code>, the shell writes a project-local libraries file that should Just Work. Outside the Nix shell, verify that <code>~/.config/agda/libraries</code> references your standard-library 2.3 installation (note that older Agda versions used <code>~/.agda/libraries</code>; 2.8.0 uses <code>~/.config/agda/</code> but falls back to <code>~/.agda/</code> for backward compatibility).</p>
 <p><strong>Build is slow</strong>.  The library is large.  From an empty <code>_build</code> directory, <code>make check</code> checks every module of the library, which takes about a minute and a half on a recent workstation when the standard library's interfaces already exist (the Nix shell provides them prebuilt), and longer when the standard library has to be checked too.  Incremental rebuilds (changing one module) are much faster thanks to Agda's interface-file caching.</p>
 <p>For other issues, please <a href="https://github.com/ualib/agda-algebras/issues">open a GitHub issue</a>.</p>
