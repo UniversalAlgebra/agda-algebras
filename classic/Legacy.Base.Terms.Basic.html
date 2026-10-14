@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>Legacy.Base.Terms.Basic</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">---
+layout: default
+title : &quot;Legacy.Base.Terms.Basic module (The Agda Universal Algebra Library)&quot;
+date : &quot;2021-01-14&quot;
+author: &quot;the agda-algebras development team&quot;
+---
+
+### &lt;a id=&quot;basic-definitions&quot;&gt;Basic Definitions&lt;/a&gt;
+
+This is the [Legacy.Base.Terms.Basic][] module of the [Agda Universal Algebra Library][].
+
+
+</a><a id="314" class="Markup">```agda
+</a>
+
+<a id="324" class="Symbol">{-#</a> <a id="328" class="Keyword">OPTIONS</a> <a id="336" class="Pragma">--without-K</a> <a id="348" class="Pragma">--exact-split</a> <a id="362" class="Pragma">--safe</a> <a id="369" class="Symbol">#-}</a>
+
+<a id="374" class="Keyword">open</a> <a id="379" class="Keyword">import</a> <a id="386" href="Overture.html" class="Module">Overture</a> <a id="395" class="Keyword">using</a> <a id="401" class="Symbol">(</a><a id="402" href="Overture.Signatures.html#3461" class="Function">Signature</a> <a id="412" class="Symbol">;</a> <a id="414" href="Overture.Signatures.html#926" class="Generalizable">𝓞</a> <a id="416" class="Symbol">;</a> <a id="418" href="Overture.Signatures.html#928" class="Generalizable">𝓥</a> <a id="420" class="Symbol">)</a>
+
+<a id="423" class="Keyword">module</a> <a id="430" href="Legacy.Base.Terms.Basic.html" class="Module">Legacy.Base.Terms.Basic</a> <a id="454" class="Symbol">{</a><a id="455" href="Legacy.Base.Terms.Basic.html#455" class="Bound">𝑆</a> <a id="457" class="Symbol">:</a> <a id="459" href="Overture.Signatures.html#3461" class="Function">Signature</a> <a id="469" href="Overture.Signatures.html#926" class="Generalizable">𝓞</a> <a id="471" href="Overture.Signatures.html#928" class="Generalizable">𝓥</a><a id="472" class="Symbol">}</a> <a id="474" class="Keyword">where</a>
+
+<a id="481" class="Comment">-- Imports from Agda and the Agda Standard Library ----------------</a>
+<a id="549" class="Keyword">open</a> <a id="554" class="Keyword">import</a> <a id="561" href="Agda.Primitive.html" class="Module">Agda.Primitive</a>         <a id="584" class="Keyword">using</a> <a id="590" class="Symbol">()</a> <a id="593" class="Keyword">renaming</a> <a id="602" class="Symbol">(</a> <a id="604" href="Agda.Primitive.html#446" class="Primitive">Set</a> <a id="608" class="Symbol">to</a> <a id="611" class="Primitive">Type</a> <a id="616" class="Symbol">)</a>
+<a id="618" class="Keyword">open</a> <a id="623" class="Keyword">import</a> <a id="630" href="Data.Product.html" class="Module">Data.Product</a>           <a id="653" class="Keyword">using</a> <a id="659" class="Symbol">(</a> <a id="661" href="Agda.Builtin.Sigma.html#252" class="InductiveConstructor Operator">_,_</a> <a id="665" class="Symbol">)</a>
+<a id="667" class="Keyword">open</a> <a id="672" class="Keyword">import</a> <a id="679" href="Level.html" class="Module">Level</a>                  <a id="702" class="Keyword">using</a> <a id="708" class="Symbol">(</a> <a id="710" href="Agda.Primitive.html#800" class="Postulate">Level</a> <a id="716" class="Symbol">)</a>
+
+<a id="719" class="Comment">-- Imports from the Agda Universal Algebra Library ----------------</a>
+<a id="787" class="Keyword">open</a> <a id="792" class="Keyword">import</a> <a id="799" href="Overture.html" class="Module">Overture</a>          <a id="817" class="Keyword">using</a> <a id="823" class="Symbol">(</a> <a id="825" href="Overture.Basic.html#4950" class="Function Operator">∣_∣</a> <a id="829" class="Symbol">;</a> <a id="831" href="Overture.Basic.html#4992" class="Function Operator">∥_∥</a> <a id="835" class="Symbol">)</a>
+<a id="837" class="Keyword">open</a> <a id="842" class="Keyword">import</a> <a id="849" href="Legacy.Base.Algebras.html" class="Module">Legacy.Base.Algebras</a> <a id="870" class="Symbol">{</a><a id="871" class="Argument">𝑆</a> <a id="873" class="Symbol">=</a> <a id="875" href="Legacy.Base.Terms.Basic.html#455" class="Bound">𝑆</a><a id="876" class="Symbol">}</a>  <a id="879" class="Keyword">using</a> <a id="885" class="Symbol">(</a> <a id="887" href="Legacy.Base.Algebras.Basic.html#2775" class="Function">Algebra</a> <a id="895" class="Symbol">;</a> <a id="897" href="Legacy.Base.Algebras.Products.html#3093" class="Function">ov</a> <a id="900" class="Symbol">)</a>
+
+<a id="903" class="Keyword">private</a> <a id="911" class="Keyword">variable</a> <a id="920" href="Legacy.Base.Terms.Basic.html#920" class="Generalizable">χ</a> <a id="922" class="Symbol">:</a> <a id="924" href="Agda.Primitive.html#800" class="Postulate">Level</a>
+<a id="930" class="Markup">```
+</a><a id="934" class="Background">
+
+#### &lt;a id=&quot;the-type-of-terms&quot;&gt;The type of terms&lt;/a&gt;
+
+Fix a signature `𝑆` and let `X` denote an arbitrary nonempty collection of variable
+symbols. Assume the symbols in `X` are distinct from the operation symbols of `𝑆`,
+that is `X ∩ ∣ 𝑆 ∣ = ∅`.
+
+By a *word* in the language of `𝑆`, we mean a nonempty, finite sequence of members
+of `X ∪ ∣ 𝑆 ∣`. We denote the concatenation of such sequences by simple juxtaposition.
+
+Let `S₀` denote the set of nullary operation symbols of `𝑆`. We define by induction
+on `n` the sets `𝑇ₙ` of *words* over `X ∪ ∣ 𝑆 ∣` as follows
+(cf. [Bergman (2012)][] Def. 4.19):
+
+`𝑇₀ := X ∪ S₀` and `𝑇ₙ₊₁ := 𝑇ₙ ∪ 𝒯ₙ`
+
+where `𝒯ₙ` is the collection of all `f t` such that `f : ∣ 𝑆 ∣` and `t : ∥ 𝑆 ∥ f → 𝑇ₙ`.
+(Recall, `∥ 𝑆 ∥ f` is the arity of the operation symbol `f`.)
+
+We define the collection of *terms* in the signature `𝑆` over `X` by `Term X := ⋃ₙ 𝑇ₙ`.
+By an 𝑆-*term* we mean a term in the language of `𝑆`.
+
+The definition of `Term X` is recursive, indicating that an inductive type could be used
+to represent the semantic notion of terms in type theory. Indeed, such a representation
+is given by the following inductive type.
+
+
+</a><a id="2088" class="Markup">```agda
+</a>
+
+<a id="2098" class="Keyword">data</a> <a id="Term"></a><a id="2103" href="Legacy.Base.Terms.Basic.html#2103" class="Datatype">Term</a> <a id="2108" class="Symbol">(</a><a id="2109" href="Legacy.Base.Terms.Basic.html#2109" class="Bound">X</a> <a id="2111" class="Symbol">:</a> <a id="2113" href="Legacy.Base.Terms.Basic.html#611" class="Primitive">Type</a> <a id="2118" href="Legacy.Base.Terms.Basic.html#920" class="Generalizable">χ</a> <a id="2120" class="Symbol">)</a> <a id="2122" class="Symbol">:</a> <a id="2124" href="Legacy.Base.Terms.Basic.html#611" class="Primitive">Type</a> <a id="2129" class="Symbol">(</a><a id="2130" href="Legacy.Base.Algebras.Products.html#3093" class="Function">ov</a> <a id="2133" href="Legacy.Base.Terms.Basic.html#2118" class="Bound">χ</a><a id="2134" class="Symbol">)</a>  <a id="2137" class="Keyword">where</a>
+ <a id="Term.ℊ"></a><a id="2144" href="Legacy.Base.Terms.Basic.html#2144" class="InductiveConstructor">ℊ</a> <a id="2146" class="Symbol">:</a> <a id="2148" href="Legacy.Base.Terms.Basic.html#2109" class="Bound">X</a> <a id="2150" class="Symbol">→</a> <a id="2152" href="Legacy.Base.Terms.Basic.html#2103" class="Datatype">Term</a> <a id="2157" href="Legacy.Base.Terms.Basic.html#2109" class="Bound">X</a>    <a id="2162" class="Comment">-- (ℊ for &quot;generator&quot;)</a>
+ <a id="Term.node"></a><a id="2186" href="Legacy.Base.Terms.Basic.html#2186" class="InductiveConstructor">node</a> <a id="2191" class="Symbol">:</a> <a id="2193" class="Symbol">(</a><a id="2194" href="Legacy.Base.Terms.Basic.html#2194" class="Bound">f</a> <a id="2196" class="Symbol">:</a> <a id="2198" href="Overture.Basic.html#4950" class="Function Operator">∣</a> <a id="2200" href="Legacy.Base.Terms.Basic.html#455" class="Bound">𝑆</a> <a id="2202" href="Overture.Basic.html#4950" class="Function Operator">∣</a><a id="2203" class="Symbol">)(</a><a id="2205" href="Legacy.Base.Terms.Basic.html#2205" class="Bound">t</a> <a id="2207" class="Symbol">:</a> <a id="2209" href="Overture.Basic.html#4992" class="Function Operator">∥</a> <a id="2211" href="Legacy.Base.Terms.Basic.html#455" class="Bound">𝑆</a> <a id="2213" href="Overture.Basic.html#4992" class="Function Operator">∥</a> <a id="2215" href="Legacy.Base.Terms.Basic.html#2194" class="Bound">f</a> <a id="2217" class="Symbol">→</a> <a id="2219" href="Legacy.Base.Terms.Basic.html#2103" class="Datatype">Term</a> <a id="2224" href="Legacy.Base.Terms.Basic.html#2109" class="Bound">X</a><a id="2225" class="Symbol">)</a> <a id="2227" class="Symbol">→</a> <a id="2229" href="Legacy.Base.Terms.Basic.html#2103" class="Datatype">Term</a> <a id="2234" href="Legacy.Base.Terms.Basic.html#2109" class="Bound">X</a>
+
+<a id="2237" class="Keyword">open</a> <a id="2242" href="Legacy.Base.Terms.Basic.html#2103" class="Module">Term</a>
+
+<a id="2248" class="Symbol">{-#</a> <a id="2252" class="Keyword">WARNING_ON_USAGE</a> <a id="2269" class="Pragma">Term</a>
+<a id="2274" class="String">&quot;Use Overture.Terms.Term instead.  Legacy.Base.Terms.Term is deprecated and will be removed one minor version after #303 lands.&quot;</a>
+<a id="2403" class="Symbol">#-}</a>
+<a id="2407" class="Symbol">{-#</a> <a id="2411" class="Keyword">WARNING_ON_USAGE</a> <a id="2428" class="Pragma">ℊ</a>
+<a id="2430" class="String">&quot;Use Overture.Terms.ℊ instead.  Legacy.Base.Terms.ℊ is deprecated and will be removed one minor version after #303 lands.&quot;</a>
+<a id="2553" class="Symbol">#-}</a>
+<a id="2557" class="Symbol">{-#</a> <a id="2561" class="Keyword">WARNING_ON_USAGE</a> <a id="2578" class="Pragma">node</a>
+<a id="2583" class="String">&quot;Use Overture.Terms.node instead.  Legacy.Base.Terms.node is deprecated and will be removed one minor version after #303 lands.&quot;</a>
+<a id="2712" class="Symbol">#-}</a>
+<a id="2716" class="Markup">```
+</a><a id="2720" class="Background">
+
+This is a very basic inductive type that represents each term as a tree with an operation symbol at each `node` and a variable symbol at each leaf (`generator`).
+
+**Notation**. As usual, the type `X` represents an arbitrary collection of variable symbols. Recall, `ov χ` is our shorthand notation for the universe level `𝓞 ⊔ 𝓥 ⊔ suc χ`.
+
+
+#### &lt;a id=&quot;the-term-algebra&quot;&gt;The term algebra&lt;/a&gt;
+
+For a given signature `𝑆`, if the type `Term X` is nonempty (equivalently, if `X` or `∣ 𝑆 ∣` is nonempty), then we can define an algebraic structure, denoted by `𝑻 X` and called the *term algebra in the signature* `𝑆` *over* `X`.  Terms are viewed as acting on other terms, so both the domain and basic operations of the algebra are the terms themselves.
+
+
++ For each operation symbol `f : ∣ 𝑆 ∣`, denote by `f ̂ (𝑻 X)` the operation on `Term X` that maps a tuple `t : ∥ 𝑆 ∥ f → ∣ 𝑻 X ∣` to the formal term `f t`.
++ Define `𝑻 X` to be the algebra with universe `∣ 𝑻 X ∣ := Term X` and operations `f ̂ (𝑻 X)`, one for each symbol `f` in `∣ 𝑆 ∣`.
+
+In [Agda][] the term algebra can be defined as simply as one could hope.
+
+
+</a><a id="3834" class="Markup">```agda
+</a>
+
+<a id="𝑻"></a><a id="3844" href="Legacy.Base.Terms.Basic.html#3844" class="Function">𝑻</a> <a id="3846" class="Symbol">:</a> <a id="3848" class="Symbol">(</a><a id="3849" href="Legacy.Base.Terms.Basic.html#3849" class="Bound">X</a> <a id="3851" class="Symbol">:</a> <a id="3853" href="Legacy.Base.Terms.Basic.html#611" class="Primitive">Type</a> <a id="3858" href="Legacy.Base.Terms.Basic.html#920" class="Generalizable">χ</a> <a id="3860" class="Symbol">)</a> <a id="3862" class="Symbol">→</a> <a id="3864" href="Legacy.Base.Algebras.Basic.html#2775" class="Function">Algebra</a> <a id="3872" class="Symbol">(</a><a id="3873" href="Legacy.Base.Algebras.Products.html#3093" class="Function">ov</a> <a id="3876" href="Legacy.Base.Terms.Basic.html#920" class="Generalizable">χ</a><a id="3877" class="Symbol">)</a>
+<a id="3879" href="Legacy.Base.Terms.Basic.html#3844" class="Function">𝑻</a> <a id="3881" href="Legacy.Base.Terms.Basic.html#3881" class="Bound">X</a> <a id="3883" class="Symbol">=</a> <a id="3885" href="Legacy.Base.Terms.Basic.html#2103" class="Datatype">Term</a> <a id="3890" href="Legacy.Base.Terms.Basic.html#3881" class="Bound">X</a> <a id="3892" href="Agda.Builtin.Sigma.html#252" class="InductiveConstructor Operator">,</a> <a id="3894" href="Legacy.Base.Terms.Basic.html#2186" class="InductiveConstructor">node</a>
+<a id="3899" class="Markup">```
+</a></pre></body></html>

@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>Overture</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">---
+layout: default
+title : &quot;Overture module&quot;
+date : &quot;2022-17-06&quot;
+author: &quot;the agda-algebras development team&quot;
+---
+
+## Overture
+
+This is the [Overture][] module of the [Agda Universal Algebra Library][].
+
+The Overture is the foundation layer: the vocabulary every later tree (`Setoid/`,
+`Classical/`) imports.  In re-export order:
+
++  [Overture.Preface][] is the front door: why the library exists, why Agda, and
+   how to read what follows.
++  [Overture.Basic][] sets the logical foundations and shared preliminaries.
+
++  [Overture.Adjunction][] is the order-theoretic adjunction toolkit: closure,
+   Galois connections, residuation.
++  [Overture.Cayley][] represents finite binary operations by Cayley tables, with
+   decision procedures that discharge their laws.
++  [Overture.Counting][] proves the two counting-by-filtering lemmas, monotone and
+   strict, that the library&#39;s well-founded descents on finite structures run on.
++  [Overture.Functions][] collects the raw-function infrastructure (images,
+   computed inverses, surjectivity) that the `Setoid/` tree builds on.
++  [Overture.Operations][] represents an operation of arity `I` as a function
+   from tuples `I → A` to `A`.
++  [Overture.Relations][] supplies the relation vocabulary, including the
+   `Equivalence` bundle over a fixed carrier.
++  [Overture.Signatures][] defines the `Signature` type: operation symbols paired
+   with an arity function.
++  [Overture.Terms][] gives terms over a signature, their interpretation, and
+   translation along signature morphisms.
+
+</a><a id="1538" class="Markup">```agda
+</a><a id="1546" class="Symbol">{-#</a> <a id="1550" class="Keyword">OPTIONS</a> <a id="1558" class="Pragma">--without-K</a> <a id="1570" class="Pragma">--exact-split</a> <a id="1584" class="Pragma">--safe</a> <a id="1591" class="Symbol">#-}</a>
+
+<a id="1596" class="Keyword">module</a> <a id="1603" href="Overture.html" class="Module">Overture</a> <a id="1612" class="Keyword">where</a>
+
+<a id="1619" class="Keyword">open</a> <a id="1624" class="Keyword">import</a> <a id="1631" href="Overture.Preface.html" class="Module">Overture.Preface</a>     <a id="1652" class="Keyword">public</a>
+<a id="1659" class="Keyword">open</a> <a id="1664" class="Keyword">import</a> <a id="1671" href="Overture.Basic.html" class="Module">Overture.Basic</a>       <a id="1692" class="Keyword">public</a>
+
+<a id="1700" class="Keyword">open</a> <a id="1705" class="Keyword">import</a> <a id="1712" href="Overture.Adjunction.html" class="Module">Overture.Adjunction</a>  <a id="1733" class="Keyword">public</a>
+<a id="1740" class="Keyword">open</a> <a id="1745" class="Keyword">import</a> <a id="1752" href="Overture.Cayley.html" class="Module">Overture.Cayley</a>      <a id="1773" class="Keyword">public</a>
+<a id="1780" class="Keyword">open</a> <a id="1785" class="Keyword">import</a> <a id="1792" href="Overture.Counting.html" class="Module">Overture.Counting</a>    <a id="1813" class="Keyword">public</a>
+<a id="1820" class="Keyword">open</a> <a id="1825" class="Keyword">import</a> <a id="1832" href="Overture.Functions.html" class="Module">Overture.Functions</a>   <a id="1853" class="Keyword">public</a>
+<a id="1860" class="Keyword">open</a> <a id="1865" class="Keyword">import</a> <a id="1872" href="Overture.Operations.html" class="Module">Overture.Operations</a>  <a id="1893" class="Keyword">public</a>
+<a id="1900" class="Keyword">open</a> <a id="1905" class="Keyword">import</a> <a id="1912" href="Overture.Relations.html" class="Module">Overture.Relations</a>   <a id="1933" class="Keyword">public</a>
+<a id="1940" class="Keyword">open</a> <a id="1945" class="Keyword">import</a> <a id="1952" href="Overture.Signatures.html" class="Module">Overture.Signatures</a>  <a id="1973" class="Keyword">public</a>
+<a id="1980" class="Keyword">open</a> <a id="1985" class="Keyword">import</a> <a id="1992" href="Overture.Terms.html" class="Module">Overture.Terms</a>       <a id="2013" class="Keyword">public</a>
+<a id="2020" class="Markup">```
+</a></pre></body></html>

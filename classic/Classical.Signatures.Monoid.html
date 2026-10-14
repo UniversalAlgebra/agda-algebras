@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>Classical.Signatures.Monoid</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">---
+layout: default
+file: &quot;src/Classical/Signatures/Monoid.lagda.md&quot;
+title: &quot;Classical.Signatures.Monoid module&quot;
+date: &quot;2026-05-22&quot;
+author: &quot;the agda-algebras development team&quot;
+---
+
+### The signature of monoids
+
+This is the [Classical.Signatures.Monoid][] module of the [Agda Universal Algebra Library][].
+
+A monoid&#39;s signature expands the magma signature by a single *nullary* operation
+symbol `ε-Op` denoting the identity element.  This is the first signature in the
+[`Classical/`][Classical] tree that genuinely grows — `Semigroup` reused
+`Sig-Magma` — so it is the first place the forgetful projection is a reduct rather
+than `proj₁`.  Distinguished elements are nullary operation symbols of the
+signature per [ADR-002 v2 §9](../../docs/adr/002-classical-layer-design.md);
+`ε-Op` has arity `Fin 0`.  The constructor- and arity-naming conventions are those
+established by `Classical.Signatures.Magma`.
+
+&lt;!--
+</a><a id="912" class="Markup">```agda
+</a><a id="920" class="Symbol">{-#</a> <a id="924" class="Keyword">OPTIONS</a> <a id="932" class="Pragma">--without-K</a> <a id="944" class="Pragma">--exact-split</a> <a id="958" class="Pragma">--safe</a> <a id="965" class="Symbol">#-}</a>
+
+<a id="970" class="Keyword">module</a> <a id="977" href="Classical.Signatures.Monoid.html" class="Module">Classical.Signatures.Monoid</a> <a id="1005" class="Keyword">where</a>
+
+<a id="1012" class="Comment">-- Imports from Agda and the Agda Standard Library ----------------------------</a>
+<a id="1092" class="Keyword">open</a> <a id="1097" class="Keyword">import</a> <a id="1104" href="Agda.Primitive.html" class="Module">Agda.Primitive</a> <a id="1119" class="Keyword">using</a> <a id="1125" class="Symbol">()</a> <a id="1128" class="Keyword">renaming</a> <a id="1137" class="Symbol">(</a> <a id="1139" href="Agda.Primitive.html#446" class="Primitive">Set</a> <a id="1143" class="Symbol">to</a> <a id="1146" class="Primitive">Type</a> <a id="1151" class="Symbol">)</a>
+<a id="1153" class="Keyword">open</a> <a id="1158" class="Keyword">import</a> <a id="1165" href="Data.Fin.Base.html" class="Module">Data.Fin.Base</a>  <a id="1180" class="Keyword">using</a> <a id="1186" class="Symbol">(</a> <a id="1188" href="Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="1192" class="Symbol">)</a>
+<a id="1194" class="Keyword">open</a> <a id="1199" class="Keyword">import</a> <a id="1206" href="Data.Product.html" class="Module">Data.Product</a>   <a id="1221" class="Keyword">using</a> <a id="1227" class="Symbol">(</a> <a id="1229" href="Agda.Builtin.Sigma.html#252" class="InductiveConstructor Operator">_,_</a> <a id="1233" class="Symbol">)</a>
+<a id="1235" class="Keyword">open</a> <a id="1240" class="Keyword">import</a> <a id="1247" href="Level.html" class="Module">Level</a>          <a id="1262" class="Keyword">using</a> <a id="1268" class="Symbol">(</a> <a id="1270" href="Level.html#521" class="Function">0ℓ</a> <a id="1273" class="Symbol">)</a>
+
+<a id="1276" class="Comment">-- Imports from the Agda Universal Algebra Library ----------------------------</a>
+<a id="1356" class="Keyword">open</a> <a id="1361" class="Keyword">import</a> <a id="1368" href="Overture.Signatures.html" class="Module">Overture.Signatures</a> <a id="1388" class="Keyword">using</a> <a id="1394" class="Symbol">(</a> <a id="1396" href="Overture.Signatures.html#3461" class="Function">Signature</a> <a id="1406" class="Symbol">)</a>
+<a id="1408" class="Markup">```
+</a><a id="1412" class="Background">--&gt;
+
+</a><a id="1417" class="Markup">```agda
+</a><a id="1425" class="Keyword">data</a> <a id="Op-Monoid"></a><a id="1430" href="Classical.Signatures.Monoid.html#1430" class="Datatype">Op-Monoid</a> <a id="1440" class="Symbol">:</a> <a id="1442" href="Classical.Signatures.Monoid.html#1146" class="Primitive">Type</a> <a id="1447" class="Keyword">where</a>
+  <a id="Op-Monoid.∙-Op"></a><a id="1455" href="Classical.Signatures.Monoid.html#1455" class="InductiveConstructor">∙-Op</a> <a id="Op-Monoid.ε-Op"></a><a id="1460" href="Classical.Signatures.Monoid.html#1460" class="InductiveConstructor">ε-Op</a> <a id="1465" class="Symbol">:</a> <a id="1467" href="Classical.Signatures.Monoid.html#1430" class="Datatype">Op-Monoid</a>
+
+<a id="ar-Monoid"></a><a id="1478" href="Classical.Signatures.Monoid.html#1478" class="Function">ar-Monoid</a> <a id="1488" class="Symbol">:</a> <a id="1490" href="Classical.Signatures.Monoid.html#1430" class="Datatype">Op-Monoid</a> <a id="1500" class="Symbol">→</a> <a id="1502" href="Classical.Signatures.Monoid.html#1146" class="Primitive">Type</a>
+<a id="1507" href="Classical.Signatures.Monoid.html#1478" class="Function">ar-Monoid</a> <a id="1517" href="Classical.Signatures.Monoid.html#1455" class="InductiveConstructor">∙-Op</a> <a id="1522" class="Symbol">=</a> <a id="1524" href="Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="1528" class="Number">2</a>
+<a id="1530" href="Classical.Signatures.Monoid.html#1478" class="Function">ar-Monoid</a> <a id="1540" href="Classical.Signatures.Monoid.html#1460" class="InductiveConstructor">ε-Op</a> <a id="1545" class="Symbol">=</a> <a id="1547" href="Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="1551" class="Number">0</a>
+
+<a id="Sig-Monoid"></a><a id="1554" href="Classical.Signatures.Monoid.html#1554" class="Function">Sig-Monoid</a> <a id="1565" class="Symbol">:</a> <a id="1567" href="Overture.Signatures.html#3461" class="Function">Signature</a> <a id="1577" href="Level.html#521" class="Function">0ℓ</a> <a id="1580" href="Level.html#521" class="Function">0ℓ</a>
+<a id="1583" href="Classical.Signatures.Monoid.html#1554" class="Function">Sig-Monoid</a> <a id="1594" class="Symbol">=</a> <a id="1596" href="Classical.Signatures.Monoid.html#1430" class="Datatype">Op-Monoid</a> <a id="1606" href="Agda.Builtin.Sigma.html#252" class="InductiveConstructor Operator">,</a> <a id="1608" href="Classical.Signatures.Monoid.html#1478" class="Function">ar-Monoid</a>
+<a id="1618" class="Markup">```
+</a></pre></body></html>

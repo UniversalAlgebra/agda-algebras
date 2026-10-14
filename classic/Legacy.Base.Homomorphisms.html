@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>Legacy.Base.Homomorphisms</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">---
+layout: default
+title : &quot;Legacy.Base.Homomorphisms module (The Agda Universal Algebra Library)&quot;
+date : &quot;2021-01-12&quot;
+author: &quot;agda-algebras development team&quot;
+---
+
+## &lt;a id=&quot;homomorphism-types&quot;&gt;Homomorphism Types&lt;/a&gt;
+
+This chapter presents the [Legacy.Base.Homomorphisms][] module of the [Agda Universal Algebra Library][].
+
+
+</a><a id="329" class="Markup">```agda
+</a>
+
+<a id="339" class="Symbol">{-#</a> <a id="343" class="Keyword">OPTIONS</a> <a id="351" class="Pragma">--without-K</a> <a id="363" class="Pragma">--exact-split</a> <a id="377" class="Pragma">--safe</a> <a id="384" class="Symbol">#-}</a>
+
+<a id="389" class="Keyword">open</a> <a id="394" class="Keyword">import</a> <a id="401" href="Overture.html" class="Module">Overture</a> <a id="410" class="Keyword">using</a> <a id="416" class="Symbol">(</a><a id="417" href="Overture.Signatures.html#3461" class="Function">Signature</a> <a id="427" class="Symbol">;</a> <a id="429" href="Overture.Signatures.html#926" class="Generalizable">𝓞</a> <a id="431" class="Symbol">;</a> <a id="433" href="Overture.Signatures.html#928" class="Generalizable">𝓥</a> <a id="435" class="Symbol">)</a>
+
+<a id="438" class="Keyword">module</a> <a id="445" href="Legacy.Base.Homomorphisms.html" class="Module">Legacy.Base.Homomorphisms</a> <a id="471" class="Symbol">{</a><a id="472" href="Legacy.Base.Homomorphisms.html#472" class="Bound">𝑆</a> <a id="474" class="Symbol">:</a> <a id="476" href="Overture.Signatures.html#3461" class="Function">Signature</a> <a id="486" href="Overture.Signatures.html#926" class="Generalizable">𝓞</a> <a id="488" href="Overture.Signatures.html#928" class="Generalizable">𝓥</a><a id="489" class="Symbol">}</a> <a id="491" class="Keyword">where</a>
+
+<a id="498" class="Keyword">open</a> <a id="503" class="Keyword">import</a> <a id="510" href="Legacy.Base.Homomorphisms.Basic.html" class="Module">Legacy.Base.Homomorphisms.Basic</a>              <a id="555" class="Symbol">{</a><a id="556" class="Argument">𝑆</a> <a id="558" class="Symbol">=</a> <a id="560" href="Legacy.Base.Homomorphisms.html#472" class="Bound">𝑆</a><a id="561" class="Symbol">}</a> <a id="563" class="Keyword">public</a>
+<a id="570" class="Keyword">open</a> <a id="575" class="Keyword">import</a> <a id="582" href="Legacy.Base.Homomorphisms.Properties.html" class="Module">Legacy.Base.Homomorphisms.Properties</a>         <a id="627" class="Symbol">{</a><a id="628" class="Argument">𝑆</a> <a id="630" class="Symbol">=</a> <a id="632" href="Legacy.Base.Homomorphisms.html#472" class="Bound">𝑆</a><a id="633" class="Symbol">}</a> <a id="635" class="Keyword">public</a>
+<a id="642" class="Keyword">open</a> <a id="647" class="Keyword">import</a> <a id="654" href="Legacy.Base.Homomorphisms.Kernels.html" class="Module">Legacy.Base.Homomorphisms.Kernels</a>            <a id="699" class="Symbol">{</a><a id="700" class="Argument">𝑆</a> <a id="702" class="Symbol">=</a> <a id="704" href="Legacy.Base.Homomorphisms.html#472" class="Bound">𝑆</a><a id="705" class="Symbol">}</a> <a id="707" class="Keyword">public</a>
+<a id="714" class="Keyword">open</a> <a id="719" class="Keyword">import</a> <a id="726" href="Legacy.Base.Homomorphisms.Products.html" class="Module">Legacy.Base.Homomorphisms.Products</a>           <a id="771" class="Symbol">{</a><a id="772" class="Argument">𝑆</a> <a id="774" class="Symbol">=</a> <a id="776" href="Legacy.Base.Homomorphisms.html#472" class="Bound">𝑆</a><a id="777" class="Symbol">}</a> <a id="779" class="Keyword">public</a>
+<a id="786" class="Keyword">open</a> <a id="791" class="Keyword">import</a> <a id="798" href="Legacy.Base.Homomorphisms.Noether.html" class="Module">Legacy.Base.Homomorphisms.Noether</a>            <a id="843" class="Symbol">{</a><a id="844" class="Argument">𝑆</a> <a id="846" class="Symbol">=</a> <a id="848" href="Legacy.Base.Homomorphisms.html#472" class="Bound">𝑆</a><a id="849" class="Symbol">}</a> <a id="851" class="Keyword">public</a>
+<a id="858" class="Keyword">open</a> <a id="863" class="Keyword">import</a> <a id="870" href="Legacy.Base.Homomorphisms.Factor.html" class="Module">Legacy.Base.Homomorphisms.Factor</a>             <a id="915" class="Symbol">{</a><a id="916" class="Argument">𝑆</a> <a id="918" class="Symbol">=</a> <a id="920" href="Legacy.Base.Homomorphisms.html#472" class="Bound">𝑆</a><a id="921" class="Symbol">}</a> <a id="923" class="Keyword">public</a>
+<a id="930" class="Keyword">open</a> <a id="935" class="Keyword">import</a> <a id="942" href="Legacy.Base.Homomorphisms.Isomorphisms.html" class="Module">Legacy.Base.Homomorphisms.Isomorphisms</a>       <a id="987" class="Symbol">{</a><a id="988" class="Argument">𝑆</a> <a id="990" class="Symbol">=</a> <a id="992" href="Legacy.Base.Homomorphisms.html#472" class="Bound">𝑆</a><a id="993" class="Symbol">}</a> <a id="995" class="Keyword">public</a>
+<a id="1002" class="Keyword">open</a> <a id="1007" class="Keyword">import</a> <a id="1014" href="Legacy.Base.Homomorphisms.HomomorphicImages.html" class="Module">Legacy.Base.Homomorphisms.HomomorphicImages</a>  <a id="1059" class="Symbol">{</a><a id="1060" class="Argument">𝑆</a> <a id="1062" class="Symbol">=</a> <a id="1064" href="Legacy.Base.Homomorphisms.html#472" class="Bound">𝑆</a><a id="1065" class="Symbol">}</a> <a id="1067" class="Keyword">public</a>
+<a id="1074" class="Markup">```
+</a></pre></body></html>

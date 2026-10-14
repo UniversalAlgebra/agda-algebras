@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>Classical.Categories</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">---
+layout: default
+file: &quot;src/Classical/Categories.lagda.md&quot;
+title: &quot;Classical.Categories module&quot;
+date: &quot;2026-06-11&quot;
+author: &quot;the agda-algebras development team&quot;
+---
+
+### Category theory of classical structures
+
+This is the [Classical.Categories][] module of the [Agda Universal Algebra Library][].
+
+This is a barrel module: it declares nothing of its own and re-exports the two
+modules that give the classical structures their categorical face.
+
++  [Classical.Categories.Forgetful][] upgrades a classical forgetful
+   *projection* to a forgetful *functor*, supplying the morphism action through
+   the reduct functor of [Setoid.Categories.Reduct][].  The one instance so far
+   is `monoid→semigroupF`; the module closes by re-deriving that functor&#39;s
+   theory obligation from reduct-invariance of satisfaction, the general lemma
+   of which the bespoke per-structure pivots are instances.
++  [Classical.Categories.AdjoinUnit][] proves the free-expansion adjunction:
+   freely adjoining a unit to a semigroup (the free monoid on a semigroup, with
+   carrier `Maybe 𝕌[ 𝑺 ]`) is left adjoint to the monoid-to-semigroup forgetful, with
+   unit, counit, both naturality squares, the triangle identities, and the
+   explicit universal property.
+
+</a><a id="1243" class="Markup">```agda
+</a><a id="1251" class="Symbol">{-#</a> <a id="1255" class="Keyword">OPTIONS</a> <a id="1263" class="Pragma">--without-K</a> <a id="1275" class="Pragma">--exact-split</a> <a id="1289" class="Pragma">--safe</a> <a id="1296" class="Symbol">#-}</a>
+
+<a id="1301" class="Keyword">module</a> <a id="1308" href="Classical.Categories.html" class="Module">Classical.Categories</a> <a id="1329" class="Keyword">where</a>
+
+<a id="1336" class="Keyword">open</a> <a id="1341" class="Keyword">import</a> <a id="1348" href="Classical.Categories.AdjoinUnit.html" class="Module">Classical.Categories.AdjoinUnit</a> <a id="1380" class="Keyword">public</a>
+<a id="1387" class="Keyword">open</a> <a id="1392" class="Keyword">import</a> <a id="1399" href="Classical.Categories.Forgetful.html" class="Module">Classical.Categories.Forgetful</a> <a id="1430" class="Keyword">public</a>
+<a id="1437" class="Markup">```
+</a></pre></body></html>

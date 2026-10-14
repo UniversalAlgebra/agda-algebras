@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>Setoid.Subalgebras</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">---
+layout: default
+title : &quot;Setoid.Subalgebras module (The Agda Universal Algebra Library)&quot;
+date : &quot;2021-07-26&quot;
+author: &quot;agda-algebras development team&quot;
+---
+
+### Subalgebras over setoids
+
+This is the [Setoid.Subalgebras][] module of the [Agda Universal Algebra Library][].
+
+This is a barrel module: it declares nothing of its own and re-exports the five
+modules that make up the theory of subalgebras over setoids.
+
+In this library, we call an algebra `𝑨` a **subalgebra** of `𝑩`, written `𝑨 ≤ 𝑩`,
+provided `𝑨` can be homomorphically embedded in `𝑩`, that is, when some
+homomorphism from `𝑨` to `𝑩` has an injective underlying map.  This is not the
+standard textbook definition, but is essentially (*algebraically*) equivalent to
+it.
+
+Normally one defines a **subuniverse** to be a subset of the carrier of an algebra
+that is closed under the operations; a subalgebra is then a subuniverse
+together with the operations of the larger algebra restricted to it.
+We *do* define subuniverses in the standard way in the
+[Setoid.Subalgebras.Subuniverses][] module, so the textbook definition of
+subalgebra is available to us.  But the homomorphic embedding interpretation of
+the subalgebra relation turns out to be more convenient for our purposes.
+
+Taking subalgebras is one of the three closure operations whose composite defines
+a variety, and `S`{.AgdaFunction} of [Setoid.Varieties.Closure][] is defined
+directly in terms of the `_≤_`{.AgdaFunction} introduced here.
+
+#### Guide to the submodules of &lt;span class=&quot;AgdaModule&quot;&gt;Setoid.Subalgebras&lt;/span&gt;
+
++  [Setoid.Subalgebras.Basic][]: the relation `_≤_`{.AgdaFunction}, its converse
+   `_≥_`{.AgdaFunction}, the bundled `SubalgebraOf`{.AgdaRecord} and
+   `Subalgebra`{.AgdaFunction} forms, the class-relative `_≤c_`{.AgdaFunction},
+   and `mon→≤`{.AgdaFunction};
++  [Setoid.Subalgebras.Properties][]: that `_≤_`{.AgdaFunction} is a preorder,
+   which is as far as it goes (mutual embeddings do not yield an isomorphism in
+   general, though they do for finite algebras); how `_≤_`{.AgdaFunction}
+   interacts with isomorphism and with universe lifting; and that it is preserved
+   by products;
++  [Setoid.Subalgebras.Subuniverses][]: the subsets of a carrier closed under the
+   operations, the subuniverse they generate, and the induction principle that
+   makes generation usable;
++  [Setoid.Subalgebras.CompleteLattice][]: the subuniverses of a fixed algebra,
+   ordered by inclusion, as a complete lattice;
++  [Setoid.Subalgebras.Subdirect][]: subdirect products, subdirect
+   irreducibility, and Birkhoff&#39;s subdirect representation theorem, which is
+   proved relative to a choice principle in general and unconditionally for
+   finite algebras.
+
+</a><a id="2702" class="Markup">```agda
+</a><a id="2710" class="Symbol">{-#</a> <a id="2714" class="Keyword">OPTIONS</a> <a id="2722" class="Pragma">--without-K</a> <a id="2734" class="Pragma">--exact-split</a> <a id="2748" class="Pragma">--safe</a> <a id="2755" class="Symbol">#-}</a>
+
+<a id="2760" class="Keyword">module</a> <a id="2767" href="Setoid.Subalgebras.html" class="Module">Setoid.Subalgebras</a> <a id="2786" class="Keyword">where</a>
+
+<a id="2793" class="Keyword">open</a> <a id="2798" class="Keyword">import</a> <a id="2805" href="Setoid.Subalgebras.Basic.html" class="Module">Setoid.Subalgebras.Basic</a> <a id="2830" class="Keyword">public</a>
+<a id="2837" class="Keyword">open</a> <a id="2842" class="Keyword">import</a> <a id="2849" href="Setoid.Subalgebras.CompleteLattice.html" class="Module">Setoid.Subalgebras.CompleteLattice</a> <a id="2884" class="Keyword">public</a>
+<a id="2891" class="Keyword">open</a> <a id="2896" class="Keyword">import</a> <a id="2903" href="Setoid.Subalgebras.Properties.html" class="Module">Setoid.Subalgebras.Properties</a> <a id="2933" class="Keyword">public</a>
+<a id="2940" class="Keyword">open</a> <a id="2945" class="Keyword">import</a> <a id="2952" href="Setoid.Subalgebras.Subuniverses.html" class="Module">Setoid.Subalgebras.Subuniverses</a> <a id="2984" class="Keyword">public</a>
+<a id="2991" class="Keyword">open</a> <a id="2996" class="Keyword">import</a> <a id="3003" href="Setoid.Subalgebras.Subdirect.html" class="Module">Setoid.Subalgebras.Subdirect</a> <a id="3032" class="Keyword">public</a>
+<a id="3039" class="Markup">```
+</a></pre></body></html>

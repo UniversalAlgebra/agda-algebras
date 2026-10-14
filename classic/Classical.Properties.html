@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>Classical.Properties</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">---
+layout: default
+file: &quot;src/Classical/Properties.lagda.md&quot;
+title: &quot;Classical.Properties module&quot;
+date: &quot;2026-05-28&quot;
+author: &quot;the agda-algebras development team&quot;
+---
+
+### Derived properties of classical structures
+
+This is the [Classical.Properties][] module of the [Agda Universal Algebra Library][].
+
+The `Classical/Properties/` subtree houses *derived* results about classical
+structures — theorems that are properties of a fixed inhabitant of one of the
+structures defined in [`Classical/Structures/`][Classical.Structures], rather
+than part of the structure&#39;s definition.  Each per-structure file
+`Classical/Properties/X.lagda.md` consumes `X-Op`&#39;s curried accessors and
+proves further facts about a parameterized `(𝑿 : X α ρ)`.
+
+The inaugural inhabitant is `Classical.Properties.Lattice`, which proves the
+order-theoretic view of a lattice.  (The semidistributive laws and Whitman&#39;s
+condition, the conditions that characterize the finite sublattices of free
+lattices, continue in the latticetheory/agda-lattices repository.)  Future
+inhabitants include, for example, uniqueness of inverses in Group and
+`0 · x ≈ 0` in Ring.
+
+This file is the umbrella for the subtree.
+
+</a><a id="1177" class="Markup">```agda
+</a><a id="1185" class="Symbol">{-#</a> <a id="1189" class="Keyword">OPTIONS</a> <a id="1197" class="Pragma">--without-K</a> <a id="1209" class="Pragma">--exact-split</a> <a id="1223" class="Pragma">--safe</a> <a id="1230" class="Symbol">#-}</a>
+
+<a id="1235" class="Keyword">module</a> <a id="1242" href="Classical.Properties.html" class="Module">Classical.Properties</a> <a id="1263" class="Keyword">where</a>
+
+<a id="1270" class="Keyword">open</a> <a id="1275" class="Keyword">import</a> <a id="1282" href="Classical.Properties.Lattice.html" class="Module">Classical.Properties.Lattice</a>  <a id="1312" class="Keyword">public</a>
+<a id="1319" class="Markup">```
+</a></pre></body></html>

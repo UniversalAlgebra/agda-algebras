@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>Setoid.Relations</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">---
+layout: default
+title : &quot;Setoid.Relations module (The Agda Universal Algebra Library)&quot;
+date : &quot;2021-09-17&quot;
+author: &quot;the agda-algebras development team&quot;
+---
+
+## Relations on setoids
+
+This is the [Setoid.Relations][] module of the [Agda Universal Algebra Library][].
+
+This is a barrel module: it declares nothing of its own and re-exports the four
+modules on relations over setoids.  The distinction this tree turns on is between
+a relation on a setoid&#39;s *carrier* and one that respects the setoid&#39;s equality.
+Both are wanted, and neither subsumes the other, so the relation types take bare
+carriers and &quot;respects the equality&quot; is stated separately as needed.  A congruence,
+for instance, is required to contain the setoid equality exactly so that
+quotienting by it is well defined.
+
+### Guide to the submodules of &lt;span class=&quot;AgdaModule&quot;&gt;Setoid.Relations&lt;/span&gt;
+
++  [Setoid.Relations.Discrete][]: binary relations, pointwise equality of setoid
+   functions, image containment, and the kernel of a setoid function;
++  [Setoid.Relations.Quotients][]: equivalence classes, the quotient setoid
+   `_/_`{.AgdaFunction}, and that a kernel is an equivalence relation;
++  [Setoid.Relations.Continuous][]: relations of arbitrary arity, where the arity
+   is an arbitrary type rather than a natural number, so that finite, countable
+   and uncountable arities are handled uniformly;
++  [Setoid.Relations.Properties][]: no results of its own, but a public
+   re-export of the standard library&#39;s `Relation.Binary.Definitions`, so that
+   `Reflexive`{.AgdaFunction}, `Symmetric`{.AgdaFunction},
+   `Transitive`{.AgdaFunction} and their companions are in scope for anything
+   that opens the barrel.
+
+</a><a id="1692" class="Markup">```agda
+</a><a id="1700" class="Symbol">{-#</a> <a id="1704" class="Keyword">OPTIONS</a> <a id="1712" class="Pragma">--without-K</a> <a id="1724" class="Pragma">--exact-split</a> <a id="1738" class="Pragma">--safe</a> <a id="1745" class="Symbol">#-}</a>
+
+<a id="1750" class="Keyword">module</a> <a id="1757" href="Setoid.Relations.html" class="Module">Setoid.Relations</a> <a id="1774" class="Keyword">where</a>
+
+<a id="1781" class="Keyword">open</a> <a id="1786" class="Keyword">import</a> <a id="1793" href="Setoid.Relations.Discrete.html" class="Module">Setoid.Relations.Discrete</a>    <a id="1822" class="Keyword">public</a>
+<a id="1829" class="Keyword">open</a> <a id="1834" class="Keyword">import</a> <a id="1841" href="Setoid.Relations.Quotients.html" class="Module">Setoid.Relations.Quotients</a>   <a id="1870" class="Keyword">public</a>
+<a id="1877" class="Keyword">open</a> <a id="1882" class="Keyword">import</a> <a id="1889" href="Setoid.Relations.Continuous.html" class="Module">Setoid.Relations.Continuous</a>  <a id="1918" class="Keyword">public</a>
+<a id="1925" class="Keyword">open</a> <a id="1930" class="Keyword">import</a> <a id="1937" href="Setoid.Relations.Properties.html" class="Module">Setoid.Relations.Properties</a>  <a id="1966" class="Keyword">public</a>
+<a id="1973" class="Markup">```
+</a></pre></body></html>

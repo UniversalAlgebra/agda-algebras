@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>Classical.Structures.Group.SubgroupLattice</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">---
+layout: default
+file: &quot;src/Classical/Structures/Group/SubgroupLattice.lagda.md&quot;
+title: &quot;Classical.Structures.Group.SubgroupLattice module&quot;
+date: &quot;2026-07-11&quot;
+author: &quot;the agda-algebras development team&quot;
+---
+
+### The subgroup lattice of an arbitrary group
+
+This is the [Classical.Structures.Group.SubgroupLattice][] module of the [Agda Universal Algebra Library][].
+
+For a group `𝑮`{.AgdaFunction} over [`Sig-Group`][Classical.Signatures.Group], the
+subuniverses of the underlying algebra form a complete lattice under inclusion — this
+is exactly the `Sublattice`{.AgdaModule} construction of
+[Setoid.Subalgebras.CompleteLattice][], instantiated at the group algebra.  Because
+`Sig-Group` carries the binary `∙-Op`, the nullary `ε-Op`, and the unary `⁻¹-Op`, a
+subuniverse of the group algebra is precisely a subgroup, so this instance *is* the
+subgroup lattice `Sub(G)`.  This module packages the instantiation once, as the
+parameterized module `GroupSublattice`{.AgdaModule}, generalizing what
+[Examples.Setoid.SubgroupLattice][] does concretely for the Klein four-group.
+
+Opening `GroupSublattice 𝑮 ℓ₀` re-exports the whole `Sublattice`{.AgdaModule} kit
+specialized to the group algebra — the carrier `Subᴸ`{.AgdaFunction}, the inclusion
+order `_≤_`{.AgdaFunction}, binary `_∧_`{.AgdaFunction}/`_∨_`{.AgdaFunction}, bounds
+`0ˢ`{.AgdaFunction}/`1ˢ`{.AgdaFunction}, infinitary `⨅`{.AgdaFunction}/`⨆`{.AgdaFunction},
+and the stdlib lattice bundles — and adds the group-specific facts below.
+
+On the relationship with `IsSubgroup`{.AgdaRecord} of
+[Classical.Structures.Group.Subgroups][]: the lattice elements are *bare*
+subuniverses, which is all the lattice structure needs; equality-respecting subgroups
+embed into the lattice by forgetting `respects`{.AgdaField}
+(`subgroup→Subᴸ`{.AgdaFunction}), and the respecting property is preserved by the meets
+(`∧-isSubgroup`{.AgdaFunction}, `⨅-isSubgroup`{.AgdaFunction}) since these are plain
+intersections.  It is *not* automatically preserved by the joins, because the join is
+the inductively *generated* subuniverse `Sg (B ∪ C)`, whose `app` constructor pins
+exact elements rather than ≈-classes; a respecting join would take the ≈-saturation of
+`Sg`, which we leave for future work.
+
+&lt;!--
+</a><a id="2243" class="Markup">```agda
+</a><a id="2251" class="Symbol">{-#</a> <a id="2255" class="Keyword">OPTIONS</a> <a id="2263" class="Pragma">--without-K</a> <a id="2275" class="Pragma">--exact-split</a> <a id="2289" class="Pragma">--safe</a> <a id="2296" class="Symbol">#-}</a>
+
+<a id="2301" class="Keyword">module</a> <a id="2308" href="Classical.Structures.Group.SubgroupLattice.html" class="Module">Classical.Structures.Group.SubgroupLattice</a> <a id="2351" class="Keyword">where</a>
+
+<a id="2358" class="Keyword">open</a> <a id="2363" class="Keyword">import</a> <a id="2370" href="Agda.Primitive.html" class="Module">Agda.Primitive</a> <a id="2385" class="Keyword">using</a> <a id="2391" class="Symbol">()</a> <a id="2394" class="Keyword">renaming</a> <a id="2403" class="Symbol">(</a> <a id="2405" href="Agda.Primitive.html#446" class="Primitive">Set</a> <a id="2409" class="Symbol">to</a> <a id="2412" class="Primitive">Type</a> <a id="2417" class="Symbol">)</a>
+
+<a id="2420" class="Comment">-- Imports from the Agda Standard Library ---------------------------------------</a>
+<a id="2502" class="Keyword">open</a> <a id="2507" class="Keyword">import</a> <a id="2514" href="Data.Product.html" class="Module">Data.Product</a>    <a id="2530" class="Keyword">using</a> <a id="2536" class="Symbol">(</a> <a id="2538" href="Agda.Builtin.Sigma.html#252" class="InductiveConstructor Operator">_,_</a> <a id="2542" class="Symbol">;</a> <a id="2544" href="Data.Product.Base.html#636" class="Field">proj₁</a> <a id="2550" class="Symbol">;</a> <a id="2552" href="Data.Product.Base.html#650" class="Field">proj₂</a> <a id="2558" class="Symbol">)</a>
+<a id="2560" class="Keyword">open</a> <a id="2565" class="Keyword">import</a> <a id="2572" href="Level.html" class="Module">Level</a>           <a id="2588" class="Keyword">using</a> <a id="2594" class="Symbol">(</a> <a id="2596" href="Agda.Primitive.html#800" class="Postulate">Level</a> <a id="2602" class="Symbol">)</a>
+<a id="2604" class="Keyword">open</a> <a id="2609" class="Keyword">import</a> <a id="2616" href="Relation.Unary.html" class="Module">Relation.Unary</a>  <a id="2632" class="Keyword">using</a> <a id="2638" class="Symbol">(</a> <a id="2640" href="Relation.Unary.html#1178" class="Function">Pred</a> <a id="2645" class="Symbol">;</a> <a id="2647" href="Relation.Unary.html#1818" class="Function Operator">_∈_</a> <a id="2651" class="Symbol">)</a>
+
+<a id="2654" class="Comment">-- Imports from the Agda Universal Algebra Library ------------------------------</a>
+<a id="2736" class="Keyword">open</a> <a id="2741" class="Keyword">import</a> <a id="2748" href="Classical.Structures.Group.Basic.html" class="Module">Classical.Structures.Group.Basic</a>      <a id="2786" class="Keyword">using</a> <a id="2792" class="Symbol">(</a> <a id="2794" href="Classical.Structures.Group.Basic.html#5156" class="Function">Group</a> <a id="2800" class="Symbol">;</a> <a id="2802" class="Keyword">module</a> <a id="2809" href="Classical.Structures.Group.Basic.html#8629" class="Module">Group-Op</a> <a id="2818" class="Symbol">)</a>
+<a id="2820" class="Keyword">open</a> <a id="2825" class="Keyword">import</a> <a id="2832" href="Classical.Structures.Group.Subgroups.html" class="Module">Classical.Structures.Group.Subgroups</a>  <a id="2870" class="Keyword">using</a> <a id="2876" class="Symbol">(</a> <a id="2878" href="Classical.Structures.Group.Subgroups.html#6491" class="Record">IsSubgroup</a> <a id="2889" class="Symbol">;</a> <a id="2891" href="Classical.Structures.Group.Subgroups.html#5833" class="Function">sub-ε-closed</a> <a id="2904" class="Symbol">)</a>
+<a id="2906" class="Keyword">open</a> <a id="2911" class="Keyword">import</a> <a id="2918" href="Order.Interval.html" class="Module">Order.Interval</a>                        <a id="2956" class="Keyword">using</a> <a id="2962" class="Symbol">(</a> <a id="2964" class="Keyword">module</a> <a id="2971" href="Order.Interval.html#2301" class="Module">IntervalLattice</a> <a id="2987" class="Symbol">)</a>
+<a id="2989" class="Keyword">open</a> <a id="2994" class="Keyword">import</a> <a id="3001" href="Setoid.Algebras.Basic.html" class="Module">Setoid.Algebras.Basic</a>                 <a id="3039" class="Keyword">using</a> <a id="3045" class="Symbol">(</a> <a id="3047" href="Setoid.Algebras.Basic.html#5906" class="Function Operator">𝕌[_]</a> <a id="3052" class="Symbol">)</a>
+<a id="3054" class="Keyword">open</a> <a id="3059" class="Keyword">import</a> <a id="3066" href="Setoid.Subalgebras.CompleteLattice.html" class="Module">Setoid.Subalgebras.CompleteLattice</a>    <a id="3104" class="Keyword">using</a> <a id="3110" class="Symbol">(</a> <a id="3112" class="Keyword">module</a> <a id="3119" href="Setoid.Subalgebras.CompleteLattice.html#3520" class="Module">Sublattice</a> <a id="3130" class="Symbol">)</a>
+<a id="3132" class="Markup">```
+</a><a id="3136" class="Background">--&gt;
+
+#### The instantiation
+
+`GroupSublattice 𝑮 ℓ₀` is `Sublattice` applied to the underlying algebra of `𝑮`,
+with the base level `ℓ₀` of the `Sublattice` construction left as a parameter (the
+lattice&#39;s predicates live at the absorbing level `L = α ⊔ ℓ₀`, since the two
+signature levels of `Sig-Group` are zero).
+
+</a><a id="3450" class="Markup">```agda
+</a><a id="3458" class="Keyword">module</a> <a id="GroupSublattice"></a><a id="3465" href="Classical.Structures.Group.SubgroupLattice.html#3465" class="Module">GroupSublattice</a> <a id="3481" class="Symbol">{</a><a id="3482" href="Classical.Structures.Group.SubgroupLattice.html#3482" class="Bound">α</a> <a id="3484" href="Classical.Structures.Group.SubgroupLattice.html#3484" class="Bound">ρ</a> <a id="3486" class="Symbol">:</a> <a id="3488" href="Agda.Primitive.html#800" class="Postulate">Level</a><a id="3493" class="Symbol">}</a> <a id="3495" class="Symbol">(</a><a id="3496" href="Classical.Structures.Group.SubgroupLattice.html#3496" class="Bound">𝒢</a> <a id="3498" class="Symbol">:</a> <a id="3500" href="Classical.Structures.Group.Basic.html#5156" class="Function">Group</a> <a id="3506" href="Classical.Structures.Group.SubgroupLattice.html#3482" class="Bound">α</a> <a id="3508" href="Classical.Structures.Group.SubgroupLattice.html#3484" class="Bound">ρ</a><a id="3509" class="Symbol">)</a> <a id="3511" class="Symbol">(</a><a id="3512" href="Classical.Structures.Group.SubgroupLattice.html#3512" class="Bound">ℓ₀</a> <a id="3515" class="Symbol">:</a> <a id="3517" href="Agda.Primitive.html#800" class="Postulate">Level</a><a id="3522" class="Symbol">)</a> <a id="3524" class="Keyword">where</a>
+  <a id="3532" class="Keyword">private</a>
+    <a id="GroupSublattice.𝑮"></a><a id="3544" href="Classical.Structures.Group.SubgroupLattice.html#3544" class="Function">𝑮</a> <a id="3546" class="Symbol">=</a> <a id="3548" href="Data.Product.Base.html#636" class="Field">proj₁</a> <a id="3554" href="Classical.Structures.Group.SubgroupLattice.html#3496" class="Bound">𝒢</a>
+    <a id="GroupSublattice.G"></a><a id="3560" href="Classical.Structures.Group.SubgroupLattice.html#3560" class="Function">G</a> <a id="3562" class="Symbol">=</a> <a id="3564" href="Setoid.Algebras.Basic.html#5906" class="Function Operator">𝕌[</a> <a id="3567" href="Classical.Structures.Group.SubgroupLattice.html#3544" class="Function">𝑮</a> <a id="3569" href="Setoid.Algebras.Basic.html#5906" class="Function Operator">]</a>
+
+  <a id="3574" class="Keyword">open</a> <a id="3579" href="Classical.Structures.Group.Basic.html#8629" class="Module">Group-Op</a> <a id="3588" href="Classical.Structures.Group.SubgroupLattice.html#3496" class="Bound">𝒢</a> <a id="3590" class="Keyword">using</a> <a id="3596" class="Symbol">(</a> <a id="3598" href="Classical.Structures.Group.Basic.html#8919" class="Function">ε</a> <a id="3600" class="Symbol">)</a>
+
+  <a id="3605" class="Keyword">open</a> <a id="3610" href="Setoid.Subalgebras.CompleteLattice.html#3520" class="Module">Sublattice</a> <a id="3621" href="Classical.Structures.Group.SubgroupLattice.html#3544" class="Function">𝑮</a> <a id="3623" href="Classical.Structures.Group.SubgroupLattice.html#3512" class="Bound">ℓ₀</a> <a id="3626" class="Keyword">public</a>
+<a id="3633" class="Markup">```
+</a><a id="3637" class="Background">
+#### Group-specific facts
+
+Every subuniverse of a group algebra contains the identity element — the nullary
+operation symbol `ε-Op` forces it.  In particular every lattice element is nonempty,
+and the lattice bottom `0ˢ = Sg ∅` is the subuniverse generated by the identity.
+
+</a><a id="3913" class="Markup">```agda
+</a>  <a id="3923" class="Comment">-- Every member of the subgroup lattice contains the identity element.</a>
+  <a id="GroupSublattice.ε-mem"></a><a id="3996" href="Classical.Structures.Group.SubgroupLattice.html#3996" class="Function">ε-mem</a> <a id="4002" class="Symbol">:</a> <a id="4004" class="Symbol">(</a><a id="4005" href="Classical.Structures.Group.SubgroupLattice.html#4005" class="Bound">B</a> <a id="4007" class="Symbol">:</a> <a id="4009" href="Setoid.Subalgebras.CompleteLattice.html#3749" class="Function">Subᴸ</a><a id="4013" class="Symbol">)</a> <a id="4015" class="Symbol">→</a> <a id="4017" href="Classical.Structures.Group.Basic.html#8919" class="Function">ε</a> <a id="4019" href="Relation.Unary.html#1818" class="Function Operator">∈</a> <a id="4021" href="Data.Product.Base.html#636" class="Field">proj₁</a> <a id="4027" href="Classical.Structures.Group.SubgroupLattice.html#4005" class="Bound">B</a>
+  <a id="4031" href="Classical.Structures.Group.SubgroupLattice.html#3996" class="Function">ε-mem</a> <a id="4037" class="Symbol">(</a><a id="4038" href="Classical.Structures.Group.SubgroupLattice.html#4038" class="Bound">B</a> <a id="4040" href="Agda.Builtin.Sigma.html#252" class="InductiveConstructor Operator">,</a> <a id="4042" href="Classical.Structures.Group.SubgroupLattice.html#4042" class="Bound">Bsub</a><a id="4046" class="Symbol">)</a> <a id="4048" class="Symbol">=</a> <a id="4050" href="Classical.Structures.Group.Subgroups.html#5833" class="Function">sub-ε-closed</a> <a id="4063" href="Classical.Structures.Group.SubgroupLattice.html#3496" class="Bound">𝒢</a> <a id="4065" href="Classical.Structures.Group.SubgroupLattice.html#4038" class="Bound">B</a> <a id="4067" href="Classical.Structures.Group.SubgroupLattice.html#4042" class="Bound">Bsub</a>
+<a id="4072" class="Markup">```
+</a><a id="4076" class="Background">
+An equality-respecting subgroup (at the lattice&#39;s predicate level `L`) is an element
+of the lattice, by forgetting the `respects`{.AgdaField} field.
+
+</a><a id="4227" class="Markup">```agda
+</a>  <a id="4237" class="Comment">-- Embed a respecting subgroup into the subuniverse lattice.</a>
+  <a id="GroupSublattice.subgroup→Subᴸ"></a><a id="4300" href="Classical.Structures.Group.SubgroupLattice.html#4300" class="Function">subgroup→Subᴸ</a> <a id="4314" class="Symbol">:</a> <a id="4316" class="Symbol">(</a><a id="4317" href="Classical.Structures.Group.SubgroupLattice.html#4317" class="Bound">B</a> <a id="4319" class="Symbol">:</a> <a id="4321" href="Relation.Unary.html#1178" class="Function">Pred</a> <a id="4326" href="Classical.Structures.Group.SubgroupLattice.html#3560" class="Function">G</a> <a id="4328" href="Setoid.Subalgebras.CompleteLattice.html#3633" class="Function">L</a><a id="4329" class="Symbol">)</a> <a id="4331" class="Symbol">→</a> <a id="4333" href="Classical.Structures.Group.Subgroups.html#6491" class="Record">IsSubgroup</a> <a id="4344" href="Classical.Structures.Group.SubgroupLattice.html#3496" class="Bound">𝒢</a> <a id="4346" href="Classical.Structures.Group.SubgroupLattice.html#4317" class="Bound">B</a> <a id="4348" class="Symbol">→</a> <a id="4350" href="Setoid.Subalgebras.CompleteLattice.html#3749" class="Function">Subᴸ</a>
+  <a id="4357" href="Classical.Structures.Group.SubgroupLattice.html#4300" class="Function">subgroup→Subᴸ</a> <a id="4371" href="Classical.Structures.Group.SubgroupLattice.html#4371" class="Bound">B</a> <a id="4373" href="Classical.Structures.Group.SubgroupLattice.html#4373" class="Bound">B-sg</a> <a id="4378" class="Symbol">=</a> <a id="4380" href="Classical.Structures.Group.SubgroupLattice.html#4371" class="Bound">B</a> <a id="4382" href="Agda.Builtin.Sigma.html#252" class="InductiveConstructor Operator">,</a> <a id="4384" href="Classical.Structures.Group.Subgroups.html#6596" class="Field">IsSubgroup.isSubuniverse</a> <a id="4409" href="Classical.Structures.Group.SubgroupLattice.html#4373" class="Bound">B-sg</a>
+<a id="4414" class="Markup">```
+</a><a id="4418" class="Background">
+The meet operations preserve the respecting property, because binary meet and
+infinitary meet are the (pointwise) intersections of the underlying predicates.
+
+</a><a id="4578" class="Markup">```agda
+</a>  <a id="4588" class="Comment">-- The binary meet of two respecting subgroups is a respecting subgroup.</a>
+  <a id="GroupSublattice.∧-isSubgroup"></a><a id="4663" href="Classical.Structures.Group.SubgroupLattice.html#4663" class="Function">∧-isSubgroup</a> <a id="4676" class="Symbol">:</a> <a id="4678" class="Symbol">(</a><a id="4679" href="Classical.Structures.Group.SubgroupLattice.html#4679" class="Bound">B</a> <a id="4681" href="Classical.Structures.Group.SubgroupLattice.html#4681" class="Bound">C</a> <a id="4683" class="Symbol">:</a> <a id="4685" href="Setoid.Subalgebras.CompleteLattice.html#3749" class="Function">Subᴸ</a><a id="4689" class="Symbol">)</a>
+    <a id="4695" class="Symbol">→</a>  <a id="4698" href="Classical.Structures.Group.Subgroups.html#6491" class="Record">IsSubgroup</a> <a id="4709" href="Classical.Structures.Group.SubgroupLattice.html#3496" class="Bound">𝒢</a> <a id="4711" class="Symbol">(</a><a id="4712" href="Data.Product.Base.html#636" class="Field">proj₁</a> <a id="4718" href="Classical.Structures.Group.SubgroupLattice.html#4679" class="Bound">B</a><a id="4719" class="Symbol">)</a> <a id="4721" class="Symbol">→</a> <a id="4723" href="Classical.Structures.Group.Subgroups.html#6491" class="Record">IsSubgroup</a> <a id="4734" href="Classical.Structures.Group.SubgroupLattice.html#3496" class="Bound">𝒢</a> <a id="4736" class="Symbol">(</a><a id="4737" href="Data.Product.Base.html#636" class="Field">proj₁</a> <a id="4743" href="Classical.Structures.Group.SubgroupLattice.html#4681" class="Bound">C</a><a id="4744" class="Symbol">)</a>
+    <a id="4750" class="Symbol">→</a>  <a id="4753" href="Classical.Structures.Group.Subgroups.html#6491" class="Record">IsSubgroup</a> <a id="4764" href="Classical.Structures.Group.SubgroupLattice.html#3496" class="Bound">𝒢</a> <a id="4766" class="Symbol">(</a><a id="4767" href="Data.Product.Base.html#636" class="Field">proj₁</a> <a id="4773" class="Symbol">(</a><a id="4774" href="Classical.Structures.Group.SubgroupLattice.html#4679" class="Bound">B</a> <a id="4776" href="Setoid.Subalgebras.CompleteLattice.html#4972" class="Function Operator">∧</a> <a id="4778" href="Classical.Structures.Group.SubgroupLattice.html#4681" class="Bound">C</a><a id="4779" class="Symbol">))</a>
+  <a id="4784" href="Classical.Structures.Group.SubgroupLattice.html#4663" class="Function">∧-isSubgroup</a> <a id="4797" href="Classical.Structures.Group.SubgroupLattice.html#4797" class="Bound">B</a> <a id="4799" href="Classical.Structures.Group.SubgroupLattice.html#4799" class="Bound">C</a> <a id="4801" href="Classical.Structures.Group.SubgroupLattice.html#4801" class="Bound">B-sg</a> <a id="4806" href="Classical.Structures.Group.SubgroupLattice.html#4806" class="Bound">C-sg</a> <a id="4811" class="Symbol">=</a> <a id="4813" class="Keyword">record</a>
+    <a id="4824" class="Symbol">{</a> <a id="4826" href="Classical.Structures.Group.Subgroups.html#6558" class="Field">respects</a>       <a id="4841" class="Symbol">=</a> <a id="4843" class="Symbol">λ</a> <a id="4845" href="Classical.Structures.Group.SubgroupLattice.html#4845" class="Bound">x≈y</a> <a id="4849" href="Classical.Structures.Group.SubgroupLattice.html#4849" class="Bound">x∈</a> <a id="4852" class="Symbol">→</a>  <a id="4855" href="Classical.Structures.Group.Subgroups.html#6558" class="Field">IsSubgroup.respects</a> <a id="4875" href="Classical.Structures.Group.SubgroupLattice.html#4801" class="Bound">B-sg</a> <a id="4880" href="Classical.Structures.Group.SubgroupLattice.html#4845" class="Bound">x≈y</a> <a id="4884" class="Symbol">(</a><a id="4885" href="Data.Product.Base.html#636" class="Field">proj₁</a> <a id="4891" href="Classical.Structures.Group.SubgroupLattice.html#4849" class="Bound">x∈</a><a id="4893" class="Symbol">)</a>
+                                <a id="4927" href="Agda.Builtin.Sigma.html#252" class="InductiveConstructor Operator">,</a>  <a id="4930" href="Classical.Structures.Group.Subgroups.html#6558" class="Field">IsSubgroup.respects</a> <a id="4950" href="Classical.Structures.Group.SubgroupLattice.html#4806" class="Bound">C-sg</a> <a id="4955" href="Classical.Structures.Group.SubgroupLattice.html#4845" class="Bound">x≈y</a> <a id="4959" class="Symbol">(</a><a id="4960" href="Data.Product.Base.html#650" class="Field">proj₂</a> <a id="4966" href="Classical.Structures.Group.SubgroupLattice.html#4849" class="Bound">x∈</a><a id="4968" class="Symbol">)</a>
+    <a id="4974" class="Symbol">;</a> <a id="4976" href="Classical.Structures.Group.Subgroups.html#6596" class="Field">isSubuniverse</a>  <a id="4991" class="Symbol">=</a> <a id="4993" href="Data.Product.Base.html#650" class="Field">proj₂</a> <a id="4999" class="Symbol">(</a><a id="5000" href="Classical.Structures.Group.SubgroupLattice.html#4797" class="Bound">B</a> <a id="5002" href="Setoid.Subalgebras.CompleteLattice.html#4972" class="Function Operator">∧</a> <a id="5004" href="Classical.Structures.Group.SubgroupLattice.html#4799" class="Bound">C</a><a id="5005" class="Symbol">)</a>
+    <a id="5011" class="Symbol">}</a>
+
+  <a id="5016" class="Comment">-- The infinitary meet of a family of respecting subgroups is a respecting subgroup.</a>
+  <a id="GroupSublattice.⨅-isSubgroup"></a><a id="5103" href="Classical.Structures.Group.SubgroupLattice.html#5103" class="Function">⨅-isSubgroup</a> <a id="5116" class="Symbol">:</a> <a id="5118" class="Symbol">{</a><a id="5119" href="Classical.Structures.Group.SubgroupLattice.html#5119" class="Bound">I</a> <a id="5121" class="Symbol">:</a> <a id="5123" href="Classical.Structures.Group.SubgroupLattice.html#2412" class="Primitive">Type</a> <a id="5128" href="Classical.Structures.Group.SubgroupLattice.html#3512" class="Bound">ℓ₀</a><a id="5130" class="Symbol">}</a> <a id="5132" class="Symbol">(</a><a id="5133" href="Classical.Structures.Group.SubgroupLattice.html#5133" class="Bound">𝒜</a> <a id="5135" class="Symbol">:</a> <a id="5137" href="Classical.Structures.Group.SubgroupLattice.html#5119" class="Bound">I</a> <a id="5139" class="Symbol">→</a> <a id="5141" href="Setoid.Subalgebras.CompleteLattice.html#3749" class="Function">Subᴸ</a><a id="5145" class="Symbol">)</a>
+    <a id="5151" class="Symbol">→</a>  <a id="5154" class="Symbol">(∀</a> <a id="5157" href="Classical.Structures.Group.SubgroupLattice.html#5157" class="Bound">i</a> <a id="5159" class="Symbol">→</a> <a id="5161" href="Classical.Structures.Group.Subgroups.html#6491" class="Record">IsSubgroup</a> <a id="5172" href="Classical.Structures.Group.SubgroupLattice.html#3496" class="Bound">𝒢</a> <a id="5174" class="Symbol">(</a><a id="5175" href="Data.Product.Base.html#636" class="Field">proj₁</a> <a id="5181" class="Symbol">(</a><a id="5182" href="Classical.Structures.Group.SubgroupLattice.html#5133" class="Bound">𝒜</a> <a id="5184" href="Classical.Structures.Group.SubgroupLattice.html#5157" class="Bound">i</a><a id="5185" class="Symbol">)))</a>
+    <a id="5193" class="Symbol">→</a>  <a id="5196" href="Classical.Structures.Group.Subgroups.html#6491" class="Record">IsSubgroup</a> <a id="5207" href="Classical.Structures.Group.SubgroupLattice.html#3496" class="Bound">𝒢</a> <a id="5209" class="Symbol">(</a><a id="5210" href="Data.Product.Base.html#636" class="Field">proj₁</a> <a id="5216" class="Symbol">(</a><a id="5217" href="Setoid.Subalgebras.CompleteLattice.html#8924" class="Function">⨅</a> <a id="5219" href="Classical.Structures.Group.SubgroupLattice.html#5133" class="Bound">𝒜</a><a id="5220" class="Symbol">))</a>
+  <a id="5225" href="Classical.Structures.Group.SubgroupLattice.html#5103" class="Function">⨅-isSubgroup</a> <a id="5238" href="Classical.Structures.Group.SubgroupLattice.html#5238" class="Bound">𝒜</a> <a id="5240" href="Classical.Structures.Group.SubgroupLattice.html#5240" class="Bound">sg</a> <a id="5243" class="Symbol">=</a> <a id="5245" class="Keyword">record</a>
+    <a id="5256" class="Symbol">{</a> <a id="5258" href="Classical.Structures.Group.Subgroups.html#6558" class="Field">respects</a>       <a id="5273" class="Symbol">=</a> <a id="5275" class="Symbol">λ</a> <a id="5277" href="Classical.Structures.Group.SubgroupLattice.html#5277" class="Bound">x≈y</a> <a id="5281" href="Classical.Structures.Group.SubgroupLattice.html#5281" class="Bound">x∈</a> <a id="5284" href="Classical.Structures.Group.SubgroupLattice.html#5284" class="Bound">i</a> <a id="5286" class="Symbol">→</a> <a id="5288" href="Classical.Structures.Group.Subgroups.html#6558" class="Field">IsSubgroup.respects</a> <a id="5308" class="Symbol">(</a><a id="5309" href="Classical.Structures.Group.SubgroupLattice.html#5240" class="Bound">sg</a> <a id="5312" href="Classical.Structures.Group.SubgroupLattice.html#5284" class="Bound">i</a><a id="5313" class="Symbol">)</a> <a id="5315" href="Classical.Structures.Group.SubgroupLattice.html#5277" class="Bound">x≈y</a> <a id="5319" class="Symbol">(</a><a id="5320" href="Classical.Structures.Group.SubgroupLattice.html#5281" class="Bound">x∈</a> <a id="5323" href="Classical.Structures.Group.SubgroupLattice.html#5284" class="Bound">i</a><a id="5324" class="Symbol">)</a>
+    <a id="5330" class="Symbol">;</a> <a id="5332" href="Classical.Structures.Group.Subgroups.html#6596" class="Field">isSubuniverse</a>  <a id="5347" class="Symbol">=</a> <a id="5349" href="Data.Product.Base.html#650" class="Field">proj₂</a> <a id="5355" class="Symbol">(</a><a id="5356" href="Setoid.Subalgebras.CompleteLattice.html#8924" class="Function">⨅</a> <a id="5358" href="Classical.Structures.Group.SubgroupLattice.html#5238" class="Bound">𝒜</a><a id="5359" class="Symbol">)</a>
+    <a id="5365" class="Symbol">}</a>
+<a id="5367" class="Markup">```
+</a><a id="5371" class="Background">
+#### Upper intervals
+
+An upper interval `[B, C]` in the subgroup lattice — the subgroups sandwiched
+between `B` and `C` — is a bounded lattice, by the generic interval construction of
+[Order.Interval][] applied to the lattice bundle `Sub-Lattice`{.AgdaFunction}.
+Opening `SubInterval B C B≤C` provides the interval carrier, its order, and the
+`Lattice`/`BoundedLattice` bundles; the intervals `[H, G]` of the Pálfy–Pudlák
+correspondence are the instances with `C` the full subgroup.
+
+</a><a id="5856" class="Markup">```agda
+</a>  <a id="5866" class="Keyword">module</a> <a id="GroupSublattice.SubInterval"></a><a id="5873" href="Classical.Structures.Group.SubgroupLattice.html#5873" class="Module">SubInterval</a> <a id="5885" class="Symbol">(</a><a id="5886" href="Classical.Structures.Group.SubgroupLattice.html#5886" class="Bound">B</a> <a id="5888" href="Classical.Structures.Group.SubgroupLattice.html#5888" class="Bound">C</a> <a id="5890" class="Symbol">:</a> <a id="5892" href="Setoid.Subalgebras.CompleteLattice.html#3749" class="Function">Subᴸ</a><a id="5896" class="Symbol">)</a> <a id="5898" class="Symbol">(</a><a id="5899" href="Classical.Structures.Group.SubgroupLattice.html#5899" class="Bound">B≤C</a> <a id="5903" class="Symbol">:</a> <a id="5905" href="Classical.Structures.Group.SubgroupLattice.html#5886" class="Bound">B</a> <a id="5907" href="Setoid.Subalgebras.CompleteLattice.html#3963" class="Function Operator">≤</a> <a id="5909" href="Classical.Structures.Group.SubgroupLattice.html#5888" class="Bound">C</a><a id="5910" class="Symbol">)</a> <a id="5912" class="Symbol">=</a> <a id="5914" href="Order.Interval.html#2301" class="Module">IntervalLattice</a> <a id="5930" href="Setoid.Subalgebras.CompleteLattice.html#6738" class="Function">Sub-Lattice</a> <a id="5942" href="Classical.Structures.Group.SubgroupLattice.html#5886" class="Bound">B</a> <a id="5944" href="Classical.Structures.Group.SubgroupLattice.html#5888" class="Bound">C</a> <a id="5946" href="Classical.Structures.Group.SubgroupLattice.html#5899" class="Bound">B≤C</a>
+<a id="5950" class="Markup">```
+</a></pre></body></html>

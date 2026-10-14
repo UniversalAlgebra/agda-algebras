@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>Setoid.Varieties.Invariance</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">---
+layout: default
+file: &quot;src/Setoid/Varieties/Invariance.lagda.md&quot;
+title: &quot;Setoid.Varieties.Invariance module&quot;
+date: &quot;2026-06-12&quot;
+author: &quot;the agda-algebras development team&quot;
+---
+
+### Reduct-invariance of satisfaction
+
+This is the [Setoid.Varieties.Invariance][] module of the [Agda Universal Algebra Library][].
+
+This module proves the *reduct-invariance of satisfaction*, which is the primary
+pay-off of expressing the reduct as a functor.
+
+For a signature morphism `φ : 𝑆₁ → 𝑆₂`, an `𝑆₂`-algebra `𝑨`, and
+`𝑆₁`-terms `s , t`, we have
+
+    reduct φ 𝑨 ⊧ s ≈ t   if and only if   𝑨 ⊧ φ ✶ s ≈ φ ✶ t.
+
+In words: to check an equation against the *poorer* view of `𝑨` (the reduct, which
+sees only the `𝑆₁`-operations) is the same as checking the *translated* equation
+against `𝑨` itself.
+
+Model theorists know this as (the equational case of) the **satisfaction condition**
+of institutions,[^1] and universal algebraists use it tacitly every time we say
+&quot;a monoid satisfies the semigroup laws.&quot;
+
+##### Why this is naturality of the fold
+
+Nothing about the theorem is specific to satisfaction; the satisfaction statement is
+the shadow of one commuting triangle of interpretation maps.  Fix an environment
+`η : X → 𝕌[ 𝑨 ]` (note `𝑨` and `reduct φ 𝑨` have the *same* carrier, so one
+environment serves both, and `φ ✶_` fixes variables, so no translation of `η` is
+needed).
+
+Evaluation of `𝑆₁`-terms in the reduct, and of `𝑆₂`-terms in `𝑨`, fit around the term
+translation.
+
+```text
+                  φ ✶_
+        Term₁ X ────────→ Term₂ X
+
+             ╲             │  ⟦_⟧ in 𝑨
+    ⟦_⟧ in     ╲           │  (the 𝑆₂-fold)
+    reduct φ 𝑨   ╲         │
+                   ╲       |
+                    ╲      |
+                     ╲     |
+                      ↘    ↓
+
+                      𝕌[ 𝑨 ]
+```
+
+`reduct-interp` below proves this triangle commutes, by structural induction on the
+term.  Both routes are *folds* — unique homomorphic extensions out of term algebras
+— and the triangle is precisely the naturality of the fold with respect to the
+natural transformation `⟦ φ ⟧ : ⟨ 𝑆₁ ⟩ ⟹ ⟨ 𝑆₂ ⟩` induced by `φ` (M4-5b,
+[Setoid.Signatures.Functor][]): unwinding the `node` case of the proof, the
+inductive step is exactly &quot;precompose with `⟦ φ ⟧`&#39;s component, then interpret&quot; —
+which is the defining clause of [`reduct`][Setoid.Algebras.Reduct].  Once the
+triangle commutes, both invariance directions are two-line equational
+rearrangements: an equation `⟦s⟧ ≈ ⟦t⟧` holds on one side of the triangle iff it
+holds on the other.
+
+The companion naturality in the *algebra* argument — fix the signature, vary the
+algebra along a homomorphism — is `free-lift-natural` / `comm-hom-term`
+([Setoid.Terms.Properties][], [Setoid.Terms.Operations][]).  The two naturalities
+together say the interpretation pairing `(𝑨 , t) ↦ ⟦ t ⟧ᴬ` is functorial in both
+coordinates, which is the full content of &quot;`⟦_⟧` is the unique fold.&quot;
+
+##### What this absorbs, and the M3-5 measurement
+
+M3-6 discharged theory obligations for reduct-derived forgetfuls by hand: the
+`Th-Semigroup` obligation inside `monoid→semigroup`
+([Classical.Structures.Monoid][]) pivots through curried associativity using
+per-signature `interp-node` bridges, each paying the `Fin n` η-gap (ADR-002 §1, the
+M3-5 finding) once.  `⊧-reduct` replaces that pattern: the general lemma is proved
+*once*, by structural induction over abstract positions, and — this is the
+measurement the issue asks to record — **the M3-5 binary-node-bridge obstruction
+does not appear at the functorial level**.  No clause here matches `refl` against a
+neutral `ArityOf 𝑆 f ≡ Fin 2`, no `interp-node` family is needed, and no `Fin`
+η-bridge is paid: the induction never compares a concrete `Fin`-pattern lambda
+against an abstract tuple.  What residue remains is per-*theory*, not per-signature:
+a concrete theory written with `pair`-style `Fin`-lambdas must be aligned with its
+translation up to the term equality `_≐_` (a finite, mechanical pattern-match; see
+the demonstration in [Classical.Categories.Forgetful][]) — and that alignment is
+`≐`-provable where a propositional `≡` would be funext-blocked.  Conclusion: the
+obstruction dissolves functorially; only its benign, provable shadow survives, in
+the concrete theories themselves.
+
+This module lives in `Setoid.Varieties`: reduct-invariance of satisfaction is general
+universal algebra, and its object map [`reduct`][Setoid.Algebras.Reduct] is itself a
+`Setoid/` construction (both relocated from `Classical/` by
+[ADR-006](../../docs/adr/006-signature-morphism-category.md), M4-16).  It opens the
+two-signature `Setoid/Varieties/` area that M4-5g (reduct classes of varieties) extends.
+
+&lt;!--
+</a><a id="4675" class="Markup">```agda
+</a><a id="4683" class="Symbol">{-#</a> <a id="4687" class="Keyword">OPTIONS</a> <a id="4695" class="Pragma">--without-K</a> <a id="4707" class="Pragma">--exact-split</a> <a id="4721" class="Pragma">--safe</a> <a id="4728" class="Symbol">#-}</a>
+
+<a id="4733" class="Keyword">module</a> <a id="4740" href="Setoid.Varieties.Invariance.html" class="Module">Setoid.Varieties.Invariance</a> <a id="4768" class="Keyword">where</a>
+
+<a id="4775" class="Comment">-- Imports from Agda and the Agda Standard Library ----------------------------</a>
+<a id="4855" class="Keyword">open</a> <a id="4860" class="Keyword">import</a> <a id="4867" href="Agda.Primitive.html" class="Module">Agda.Primitive</a>                 <a id="4898" class="Keyword">using</a> <a id="4904" class="Symbol">()</a> <a id="4907" class="Keyword">renaming</a> <a id="4916" class="Symbol">(</a> <a id="4918" href="Agda.Primitive.html#446" class="Primitive">Set</a> <a id="4922" class="Symbol">to</a> <a id="4925" class="Primitive">Type</a> <a id="4930" class="Symbol">)</a>
+<a id="4932" class="Keyword">open</a> <a id="4937" class="Keyword">import</a> <a id="4944" href="Data.Product.html" class="Module">Data.Product</a>                   <a id="4975" class="Keyword">using</a> <a id="4981" class="Symbol">(</a> <a id="4983" href="Agda.Builtin.Sigma.html#252" class="InductiveConstructor Operator">_,_</a> <a id="4987" class="Symbol">)</a>
+<a id="4989" class="Keyword">open</a> <a id="4994" class="Keyword">import</a> <a id="5001" href="Function.html" class="Module">Function</a>                       <a id="5032" class="Keyword">using</a> <a id="5038" class="Symbol">(</a> <a id="5040" href="Function.Bundles.html#2041" class="Record">Func</a> <a id="5045" class="Symbol">)</a>
+<a id="5047" class="Keyword">open</a> <a id="5052" class="Keyword">import</a> <a id="5059" href="Level.html" class="Module">Level</a>                          <a id="5090" class="Keyword">using</a> <a id="5096" class="Symbol">(</a> <a id="5098" href="Agda.Primitive.html#800" class="Postulate">Level</a> <a id="5104" class="Symbol">)</a>
+<a id="5106" class="Keyword">open</a> <a id="5111" class="Keyword">import</a> <a id="5118" href="Relation.Binary.html" class="Module">Relation.Binary</a>                <a id="5149" class="Keyword">using</a> <a id="5155" class="Symbol">(</a> <a id="5157" href="Relation.Binary.Bundles.html#1235" class="Record">Setoid</a> <a id="5164" class="Symbol">)</a>
+
+<a id="5167" class="Keyword">open</a> <a id="5172" class="Keyword">import</a> <a id="5179" href="Relation.Binary.PropositionalEquality.html" class="Module">Relation.Binary.PropositionalEquality</a> <a id="5217" class="Keyword">using</a> <a id="5223" class="Symbol">(</a><a id="5224" href="Agda.Builtin.Equality.html#224" class="InductiveConstructor">refl</a><a id="5228" class="Symbol">)</a> <a id="5230" class="Comment">-- as ≡</a>
+
+<a id="5239" class="Comment">-- Imports from the Agda Universal Algebra Library ----------------------------</a>
+<a id="5319" class="Keyword">open</a> <a id="5324" class="Keyword">import</a> <a id="5331" href="Overture.Signatures.html" class="Module">Overture.Signatures</a>            <a id="5362" class="Keyword">using</a> <a id="5368" class="Symbol">(</a> <a id="5370" href="Overture.Signatures.html#926" class="Generalizable">𝓞</a> <a id="5372" class="Symbol">;</a> <a id="5374" href="Overture.Signatures.html#928" class="Generalizable">𝓥</a> <a id="5376" class="Symbol">;</a> <a id="5378" href="Overture.Signatures.html#3461" class="Function">Signature</a> <a id="5388" class="Symbol">)</a>
+<a id="5390" class="Keyword">open</a> <a id="5395" class="Keyword">import</a> <a id="5402" href="Overture.Signatures.Morphisms.html" class="Module">Overture.Signatures.Morphisms</a>  <a id="5433" class="Keyword">using</a> <a id="5439" class="Symbol">(</a> <a id="5441" href="Overture.Signatures.Morphisms.html#2827" class="Record">SigMorphism</a> <a id="5453" class="Symbol">;</a> <a id="5455" href="Overture.Signatures.Morphisms.html#3041" class="Field">κ</a> <a id="5457" class="Symbol">)</a>
+<a id="5459" class="Keyword">open</a> <a id="5464" class="Keyword">import</a> <a id="5471" href="Overture.Terms.html" class="Module">Overture.Terms</a>                 <a id="5502" class="Keyword">using</a> <a id="5508" class="Symbol">(</a> <a id="5510" href="Overture.Terms.Basic.html#3247" class="Datatype">Term</a> <a id="5515" class="Symbol">;</a> <a id="5517" href="Overture.Terms.Basic.html#3287" class="InductiveConstructor">ℊ</a> <a id="5519" class="Symbol">;</a> <a id="5521" href="Overture.Terms.Basic.html#3359" class="InductiveConstructor">node</a> <a id="5526" class="Symbol">)</a>
+<a id="5528" class="Keyword">open</a> <a id="5533" class="Keyword">import</a> <a id="5540" href="Overture.Terms.Translation.html" class="Module">Overture.Terms.Translation</a>     <a id="5571" class="Keyword">using</a> <a id="5577" class="Symbol">(</a> <a id="5579" href="Overture.Terms.Translation.html#3975" class="Function Operator">_✶_</a> <a id="5583" class="Symbol">)</a>
+<a id="5585" class="Keyword">open</a> <a id="5590" class="Keyword">import</a> <a id="5597" href="Setoid.Algebras.Basic.html" class="Module">Setoid.Algebras.Basic</a>          <a id="5628" class="Keyword">using</a> <a id="5634" class="Symbol">(</a> <a id="5636" href="Setoid.Algebras.Basic.html#4373" class="Record">Algebra</a> <a id="5644" class="Symbol">;</a> <a id="5646" href="Setoid.Algebras.Basic.html#5462" class="Function Operator">𝔻[_]</a> <a id="5651" class="Symbol">;</a> <a id="5653" href="Setoid.Algebras.Basic.html#5906" class="Function Operator">𝕌[_]</a> <a id="5658" class="Symbol">)</a>
+<a id="5660" class="Keyword">open</a> <a id="5665" class="Keyword">import</a> <a id="5672" href="Setoid.Algebras.Reduct.html" class="Module">Setoid.Algebras.Reduct</a>         <a id="5703" class="Keyword">using</a> <a id="5709" class="Symbol">(</a> <a id="5711" href="Setoid.Algebras.Reduct.html#3847" class="Function">reduct</a> <a id="5718" class="Symbol">)</a>
+
+<a id="5721" class="Keyword">open</a> <a id="5726" class="Keyword">import</a> <a id="5733" href="Setoid.Terms.Basic.html" class="Module">Setoid.Terms.Basic</a>          <a id="5761" class="Keyword">using</a> <a id="5767" class="Symbol">(</a><a id="5768" class="Keyword">module</a> <a id="5775" href="Setoid.Terms.Basic.html#5029" class="Module">Environment</a><a id="5786" class="Symbol">)</a> <a id="5788" class="Comment">--        as TermsBasic</a>
+<a id="5812" class="Keyword">import</a> <a id="5819" href="Setoid.Varieties.EquationalLogic.html" class="Module">Setoid.Varieties.EquationalLogic</a>    <a id="5855" class="Symbol">as</a> <a id="5858" class="Module">EqLogic</a>
+
+<a id="5867" class="Keyword">open</a> <a id="5872" href="Setoid.Algebras.Basic.html#4373" class="Module">Algebra</a> <a id="5880" class="Keyword">using</a> <a id="5886" class="Symbol">(</a> <a id="5888" href="Setoid.Algebras.Basic.html#4477" class="Field">Interp</a> <a id="5895" class="Symbol">)</a>
+<a id="5897" class="Keyword">open</a> <a id="5902" href="Function.Bundles.html#2041" class="Module">Func</a> <a id="5907" class="Keyword">using</a> <a id="5913" class="Symbol">(</a> <a id="5915" href="Function.Bundles.html#2111" class="Field">cong</a> <a id="5920" class="Symbol">)</a> <a id="5922" class="Keyword">renaming</a> <a id="5931" class="Symbol">(</a> <a id="5933" href="Function.Bundles.html#2092" class="Field">to</a> <a id="5936" class="Symbol">to</a> <a id="5939" class="Field Operator">_⟨$⟩_</a> <a id="5945" class="Symbol">)</a>
+
+<a id="5948" class="Keyword">private</a> <a id="5956" class="Keyword">variable</a>
+  <a id="5967" href="Setoid.Varieties.Invariance.html#5967" class="Generalizable">α</a> <a id="5969" href="Setoid.Varieties.Invariance.html#5969" class="Generalizable">ρ</a> <a id="5971" href="Setoid.Varieties.Invariance.html#5971" class="Generalizable">χ</a> <a id="5973" class="Symbol">:</a> <a id="5975" href="Agda.Primitive.html#800" class="Postulate">Level</a>
+  <a id="5983" href="Setoid.Varieties.Invariance.html#5983" class="Generalizable">X</a> <a id="5985" class="Symbol">:</a> <a id="5987" href="Setoid.Varieties.Invariance.html#4925" class="Primitive">Type</a> <a id="5992" href="Setoid.Varieties.Invariance.html#5971" class="Generalizable">χ</a>
+<a id="5994" class="Markup">```
+</a><a id="5998" class="Background">--&gt;
+
+#### Naturality of the fold along a signature morphism
+
+Everything below is parameterized by the morphism `φ` and the `𝑆₂`-algebra `𝑨`.  The
+two `Environment` instances interpret `𝑆₁`-terms in `reduct φ 𝑨` and `𝑆₂`-terms in
+`𝑨`; the two `_⊧_≈_` instances are the corresponding satisfaction relations.
+
+</a><a id="6305" class="Markup">```agda
+</a><a id="6313" class="Keyword">module</a> <a id="6320" href="Setoid.Varieties.Invariance.html#6320" class="Module">_</a> <a id="6322" class="Symbol">{</a><a id="6323" href="Setoid.Varieties.Invariance.html#6323" class="Bound">𝑆₁</a> <a id="6326" href="Setoid.Varieties.Invariance.html#6326" class="Bound">𝑆₂</a> <a id="6329" class="Symbol">:</a> <a id="6331" href="Overture.Signatures.html#3461" class="Function">Signature</a> <a id="6341" href="Overture.Signatures.html#926" class="Generalizable">𝓞</a> <a id="6343" href="Overture.Signatures.html#928" class="Generalizable">𝓥</a><a id="6344" class="Symbol">}</a> <a id="6346" class="Symbol">(</a><a id="6347" href="Setoid.Varieties.Invariance.html#6347" class="Bound">φ</a> <a id="6349" class="Symbol">:</a> <a id="6351" href="Overture.Signatures.Morphisms.html#2827" class="Record">SigMorphism</a> <a id="6363" href="Setoid.Varieties.Invariance.html#6323" class="Bound">𝑆₁</a> <a id="6366" href="Setoid.Varieties.Invariance.html#6326" class="Bound">𝑆₂</a><a id="6368" class="Symbol">)</a> <a id="6370" class="Symbol">(</a><a id="6371" href="Setoid.Varieties.Invariance.html#6371" class="Bound">𝑨</a> <a id="6373" class="Symbol">:</a> <a id="6375" href="Setoid.Algebras.Basic.html#4373" class="Record">Algebra</a> <a id="6383" class="Symbol">{</a><a id="6384" class="Argument">𝑆</a> <a id="6386" class="Symbol">=</a> <a id="6388" href="Setoid.Varieties.Invariance.html#6326" class="Bound">𝑆₂</a><a id="6390" class="Symbol">}</a> <a id="6392" href="Setoid.Varieties.Invariance.html#5967" class="Generalizable">α</a> <a id="6394" href="Setoid.Varieties.Invariance.html#5969" class="Generalizable">ρ</a><a id="6395" class="Symbol">)</a> <a id="6397" class="Keyword">where</a>
+  <a id="6405" class="Keyword">open</a> <a id="6410" href="Setoid.Terms.Basic.html#5029" class="Module">Environment</a> <a id="6422" class="Symbol">{</a><a id="6423" class="Argument">𝑆</a> <a id="6425" class="Symbol">=</a> <a id="6427" href="Setoid.Varieties.Invariance.html#6323" class="Bound">𝑆₁</a><a id="6429" class="Symbol">}</a> <a id="6431" class="Symbol">(</a><a id="6432" href="Setoid.Algebras.Reduct.html#3847" class="Function">reduct</a> <a id="6439" href="Setoid.Varieties.Invariance.html#6347" class="Bound">φ</a> <a id="6441" href="Setoid.Varieties.Invariance.html#6371" class="Bound">𝑨</a><a id="6442" class="Symbol">)</a> <a id="6444" class="Keyword">using</a> <a id="6450" class="Symbol">()</a> <a id="6453" class="Keyword">renaming</a> <a id="6462" class="Symbol">(</a> <a id="6464" href="Setoid.Terms.Basic.html#6113" class="Function Operator">⟦_⟧</a> <a id="6468" class="Symbol">to</a> <a id="6471" class="Function Operator">⟦_⟧₁</a> <a id="6476" class="Symbol">)</a>
+  <a id="6480" class="Keyword">open</a> <a id="6485" href="Setoid.Terms.Basic.html#5029" class="Module">Environment</a> <a id="6497" class="Symbol">{</a><a id="6498" class="Argument">𝑆</a> <a id="6500" class="Symbol">=</a> <a id="6502" href="Setoid.Varieties.Invariance.html#6326" class="Bound">𝑆₂</a><a id="6504" class="Symbol">}</a> <a id="6506" href="Setoid.Varieties.Invariance.html#6371" class="Bound">𝑨</a> <a id="6508" class="Keyword">using</a> <a id="6514" class="Symbol">()</a> <a id="6517" class="Keyword">renaming</a> <a id="6526" class="Symbol">(</a> <a id="6528" href="Setoid.Terms.Basic.html#6113" class="Function Operator">⟦_⟧</a> <a id="6532" class="Symbol">to</a> <a id="6535" class="Function Operator">⟦_⟧₂</a> <a id="6540" class="Symbol">)</a>
+  <a id="6544" class="Keyword">open</a> <a id="6549" href="Relation.Binary.Bundles.html#1235" class="Module">Setoid</a> <a id="6556" href="Setoid.Algebras.Basic.html#5462" class="Function Operator">𝔻[</a> <a id="6559" href="Setoid.Varieties.Invariance.html#6371" class="Bound">𝑨</a> <a id="6561" href="Setoid.Algebras.Basic.html#5462" class="Function Operator">]</a> <a id="6563" class="Keyword">using</a> <a id="6569" class="Symbol">(</a> <a id="6571" href="Relation.Binary.Bundles.html#1324" class="Field Operator">_≈_</a> <a id="6575" class="Symbol">)</a> <a id="6577" class="Keyword">renaming</a> <a id="6586" class="Symbol">(</a><a id="6587" href="Relation.Binary.Structures.html#1641" class="Function">refl</a> <a id="6592" class="Symbol">to</a> <a id="6595" class="Function">≈refl</a><a id="6600" class="Symbol">;</a> <a id="6602" href="Relation.Binary.Structures.html#1245" class="Function">sym</a> <a id="6606" class="Symbol">to</a> <a id="6609" class="Function">≈sym</a> <a id="6614" class="Symbol">;</a> <a id="6616" href="Relation.Binary.Structures.html#1271" class="Function">trans</a> <a id="6622" class="Symbol">to</a> <a id="6625" class="Function">≈trans</a> <a id="6632" class="Symbol">)</a>
+  <a id="6636" class="Keyword">open</a> <a id="6641" href="Setoid.Varieties.EquationalLogic.html" class="Module">EqLogic</a> <a id="6649" class="Keyword">using</a> <a id="6655" class="Symbol">()</a> <a id="6658" class="Keyword">renaming</a> <a id="6667" class="Symbol">(</a> <a id="6669" href="Setoid.Varieties.EquationalLogic.html#2637" class="Function Operator">_⊧_≈_</a> <a id="6675" class="Symbol">to</a> <a id="6678" class="Function Operator">_⊧₁_≈_</a> <a id="6685" class="Symbol">)</a>
+  <a id="6689" class="Keyword">open</a> <a id="6694" href="Setoid.Varieties.EquationalLogic.html" class="Module">EqLogic</a> <a id="6702" class="Keyword">using</a> <a id="6708" class="Symbol">()</a> <a id="6711" class="Keyword">renaming</a> <a id="6720" class="Symbol">(</a> <a id="6722" href="Setoid.Varieties.EquationalLogic.html#2637" class="Function Operator">_⊧_≈_</a> <a id="6728" class="Symbol">to</a> <a id="6731" class="Function Operator">_⊧₂_≈_</a> <a id="6738" class="Symbol">)</a>
+<a id="6740" class="Markup">```
+</a><a id="6744" class="Background">
+The commuting triangle: interpreting an `𝑆₁`-term in the reduct is interpreting its
+translation in `𝑨`, under any environment.  At a leaf both sides look up the
+variable.  At a node, the reduct&#39;s interpretation *is* &quot;apply the interpretation
+in `𝑨` of `ι φ f` to the `κ φ f`-reindexed arguments&quot; — definitionally, by the defining
+clause of `reduct` — and the translation&#39;s `node` clause performs the same
+reindexing syntactically, so the two sides agree position by position, by the
+inductive hypothesis at the reindexed subterms.  Note what does *not* happen: no
+arity is ever compared to a concrete `Fin n`, so the without-K unifier is never
+asked to invert anything.
+
+</a><a id="7416" class="Markup">```agda
+</a>  <a id="7426" href="Setoid.Varieties.Invariance.html#7426" class="Function">reduct-interp</a> <a id="7440" class="Symbol">:</a> <a id="7442" class="Symbol">(</a><a id="7443" href="Setoid.Varieties.Invariance.html#7443" class="Bound">t</a> <a id="7445" class="Symbol">:</a> <a id="7447" href="Overture.Terms.Basic.html#3247" class="Datatype">Term</a> <a id="7452" href="Setoid.Varieties.Invariance.html#5983" class="Generalizable">X</a><a id="7453" class="Symbol">)</a> <a id="7455" class="Symbol">(</a><a id="7456" href="Setoid.Varieties.Invariance.html#7456" class="Bound">η</a> <a id="7458" class="Symbol">:</a> <a id="7460" href="Setoid.Varieties.Invariance.html#5983" class="Generalizable">X</a> <a id="7462" class="Symbol">→</a> <a id="7464" href="Setoid.Algebras.Basic.html#5906" class="Function Operator">𝕌[</a> <a id="7467" href="Setoid.Varieties.Invariance.html#6371" class="Bound">𝑨</a> <a id="7469" href="Setoid.Algebras.Basic.html#5906" class="Function Operator">]</a><a id="7470" class="Symbol">)</a> <a id="7472" class="Symbol">→</a> <a id="7474" href="Setoid.Varieties.Invariance.html#6471" class="Function Operator">⟦</a> <a id="7476" href="Setoid.Varieties.Invariance.html#7443" class="Bound">t</a> <a id="7478" href="Setoid.Varieties.Invariance.html#6471" class="Function Operator">⟧₁</a> <a id="7481" href="Setoid.Varieties.Invariance.html#5939" class="Field Operator">⟨$⟩</a> <a id="7485" href="Setoid.Varieties.Invariance.html#7456" class="Bound">η</a> <a id="7487" href="Relation.Binary.Bundles.html#1324" class="Function Operator">≈</a> <a id="7489" href="Setoid.Varieties.Invariance.html#6535" class="Function Operator">⟦</a> <a id="7491" href="Setoid.Varieties.Invariance.html#6347" class="Bound">φ</a> <a id="7493" href="Overture.Terms.Translation.html#3975" class="Function Operator">✶</a> <a id="7495" href="Setoid.Varieties.Invariance.html#7443" class="Bound">t</a> <a id="7497" href="Setoid.Varieties.Invariance.html#6535" class="Function Operator">⟧₂</a> <a id="7500" href="Setoid.Varieties.Invariance.html#5939" class="Field Operator">⟨$⟩</a> <a id="7504" href="Setoid.Varieties.Invariance.html#7456" class="Bound">η</a>
+  <a id="7508" href="Setoid.Varieties.Invariance.html#7426" class="Function">reduct-interp</a> <a id="7522" class="Symbol">(</a><a id="7523" href="Overture.Terms.Basic.html#3287" class="InductiveConstructor">ℊ</a> <a id="7525" href="Setoid.Varieties.Invariance.html#7525" class="Bound">x</a><a id="7526" class="Symbol">)</a> <a id="7528" href="Setoid.Varieties.Invariance.html#7528" class="Bound">η</a> <a id="7530" class="Symbol">=</a> <a id="7532" href="Setoid.Varieties.Invariance.html#6595" class="Function">≈refl</a>
+  <a id="7540" href="Setoid.Varieties.Invariance.html#7426" class="Function">reduct-interp</a> <a id="7554" class="Symbol">(</a><a id="7555" href="Overture.Terms.Basic.html#3359" class="InductiveConstructor">node</a> <a id="7560" href="Setoid.Varieties.Invariance.html#7560" class="Bound">f</a> <a id="7562" href="Setoid.Varieties.Invariance.html#7562" class="Bound">ts</a><a id="7564" class="Symbol">)</a> <a id="7566" href="Setoid.Varieties.Invariance.html#7566" class="Bound">η</a> <a id="7568" class="Symbol">=</a>
+    <a id="7574" href="Function.Bundles.html#2111" class="Field">cong</a> <a id="7579" class="Symbol">(</a><a id="7580" href="Setoid.Algebras.Basic.html#4477" class="Field">Interp</a> <a id="7587" href="Setoid.Varieties.Invariance.html#6371" class="Bound">𝑨</a><a id="7588" class="Symbol">)</a> <a id="7590" class="Symbol">(</a><a id="7591" href="Agda.Builtin.Equality.html#224" class="InductiveConstructor">refl</a> <a id="7596" href="Agda.Builtin.Sigma.html#252" class="InductiveConstructor Operator">,</a> <a id="7598" class="Symbol">λ</a> <a id="7600" href="Setoid.Varieties.Invariance.html#7600" class="Bound">j</a> <a id="7602" class="Symbol">→</a> <a id="7604" href="Setoid.Varieties.Invariance.html#7426" class="Function">reduct-interp</a> <a id="7618" class="Symbol">(</a><a id="7619" href="Setoid.Varieties.Invariance.html#7562" class="Bound">ts</a> <a id="7622" class="Symbol">(</a><a id="7623" href="Overture.Signatures.Morphisms.html#3041" class="Field">κ</a> <a id="7625" href="Setoid.Varieties.Invariance.html#6347" class="Bound">φ</a> <a id="7627" href="Setoid.Varieties.Invariance.html#7560" class="Bound">f</a> <a id="7629" href="Setoid.Varieties.Invariance.html#7600" class="Bound">j</a><a id="7630" class="Symbol">))</a> <a id="7633" href="Setoid.Varieties.Invariance.html#7566" class="Bound">η</a><a id="7634" class="Symbol">)</a>
+<a id="7636" class="Markup">```
+</a><a id="7640" class="Background">
+#### The satisfaction condition
+
+Satisfaction is the interpretation triangle quantified over environments, so each
+direction of the invariance is a `trans`-sandwich of the triangle around the given
+satisfaction proof.  Recall `𝑨 ⊧ p ≈ q` unfolds to &quot;for every environment `η`,
+`⟦ p ⟧ η ≈ ⟦ q ⟧ η`&quot;; environments transfer across the two sides on the nose
+because the carrier of the reduct *is* the carrier of `𝑨` and translation fixes
+variables.
+
+`⊧-reduct` is the direction that discharges theory obligations of reduct-derived
+forgetful functors (a monoid&#39;s associativity, translated, *is* the semigroup
+associativity its reduct must satisfy); `⊧-expand` is the converse, the direction
+used when transporting equational facts from a reduct up to its expansion.
+
+</a><a id="8403" class="Markup">```agda
+</a>  <a id="8413" href="Setoid.Varieties.Invariance.html#8413" class="Function">⊧-reduct</a> <a id="8422" class="Symbol">:</a> <a id="8424" class="Symbol">{</a><a id="8425" href="Setoid.Varieties.Invariance.html#8425" class="Bound">s</a> <a id="8427" href="Setoid.Varieties.Invariance.html#8427" class="Bound">t</a> <a id="8429" class="Symbol">:</a> <a id="8431" href="Overture.Terms.Basic.html#3247" class="Datatype">Term</a> <a id="8436" href="Setoid.Varieties.Invariance.html#5983" class="Generalizable">X</a><a id="8437" class="Symbol">}</a> <a id="8439" class="Symbol">→</a> <a id="8441" href="Setoid.Varieties.Invariance.html#6371" class="Bound">𝑨</a> <a id="8443" href="Setoid.Varieties.Invariance.html#6731" class="Function Operator">⊧₂</a> <a id="8446" class="Symbol">(</a><a id="8447" href="Setoid.Varieties.Invariance.html#6347" class="Bound">φ</a> <a id="8449" href="Overture.Terms.Translation.html#3975" class="Function Operator">✶</a> <a id="8451" href="Setoid.Varieties.Invariance.html#8425" class="Bound">s</a><a id="8452" class="Symbol">)</a> <a id="8454" href="Setoid.Varieties.Invariance.html#6731" class="Function Operator">≈</a> <a id="8456" class="Symbol">(</a><a id="8457" href="Setoid.Varieties.Invariance.html#6347" class="Bound">φ</a> <a id="8459" href="Overture.Terms.Translation.html#3975" class="Function Operator">✶</a> <a id="8461" href="Setoid.Varieties.Invariance.html#8427" class="Bound">t</a><a id="8462" class="Symbol">)</a> <a id="8464" class="Symbol">→</a> <a id="8466" href="Setoid.Algebras.Reduct.html#3847" class="Function">reduct</a> <a id="8473" href="Setoid.Varieties.Invariance.html#6347" class="Bound">φ</a> <a id="8475" href="Setoid.Varieties.Invariance.html#6371" class="Bound">𝑨</a> <a id="8477" href="Setoid.Varieties.Invariance.html#6678" class="Function Operator">⊧₁</a> <a id="8480" href="Setoid.Varieties.Invariance.html#8425" class="Bound">s</a> <a id="8482" href="Setoid.Varieties.Invariance.html#6678" class="Function Operator">≈</a> <a id="8484" href="Setoid.Varieties.Invariance.html#8427" class="Bound">t</a>
+  <a id="8488" href="Setoid.Varieties.Invariance.html#8413" class="Function">⊧-reduct</a> <a id="8497" class="Symbol">{</a><a id="8498" class="Argument">s</a> <a id="8500" class="Symbol">=</a> <a id="8502" href="Setoid.Varieties.Invariance.html#8502" class="Bound">s</a><a id="8503" class="Symbol">}</a> <a id="8505" class="Symbol">{</a><a id="8506" href="Setoid.Varieties.Invariance.html#8506" class="Bound">t</a><a id="8507" class="Symbol">}</a> <a id="8509" href="Setoid.Varieties.Invariance.html#8509" class="Bound">A⊧</a> <a id="8512" href="Setoid.Varieties.Invariance.html#8512" class="Bound">η</a> <a id="8514" class="Symbol">=</a>
+    <a id="8520" href="Setoid.Varieties.Invariance.html#6625" class="Function">≈trans</a> <a id="8527" class="Symbol">(</a><a id="8528" href="Setoid.Varieties.Invariance.html#7426" class="Function">reduct-interp</a> <a id="8542" href="Setoid.Varieties.Invariance.html#8502" class="Bound">s</a> <a id="8544" href="Setoid.Varieties.Invariance.html#8512" class="Bound">η</a><a id="8545" class="Symbol">)</a> <a id="8547" class="Symbol">(</a><a id="8548" href="Setoid.Varieties.Invariance.html#6625" class="Function">≈trans</a> <a id="8555" class="Symbol">(</a><a id="8556" href="Setoid.Varieties.Invariance.html#8509" class="Bound">A⊧</a> <a id="8559" href="Setoid.Varieties.Invariance.html#8512" class="Bound">η</a><a id="8560" class="Symbol">)</a> <a id="8562" class="Symbol">(</a><a id="8563" href="Setoid.Varieties.Invariance.html#6609" class="Function">≈sym</a> <a id="8568" class="Symbol">(</a><a id="8569" href="Setoid.Varieties.Invariance.html#7426" class="Function">reduct-interp</a> <a id="8583" href="Setoid.Varieties.Invariance.html#8506" class="Bound">t</a> <a id="8585" href="Setoid.Varieties.Invariance.html#8512" class="Bound">η</a><a id="8586" class="Symbol">)))</a>
+
+  <a id="8593" href="Setoid.Varieties.Invariance.html#8593" class="Function">⊧-expand</a> <a id="8602" class="Symbol">:</a> <a id="8604" class="Symbol">{</a><a id="8605" href="Setoid.Varieties.Invariance.html#8605" class="Bound">s</a> <a id="8607" href="Setoid.Varieties.Invariance.html#8607" class="Bound">t</a> <a id="8609" class="Symbol">:</a> <a id="8611" href="Overture.Terms.Basic.html#3247" class="Datatype">Term</a> <a id="8616" href="Setoid.Varieties.Invariance.html#5983" class="Generalizable">X</a><a id="8617" class="Symbol">}</a> <a id="8619" class="Symbol">→</a> <a id="8621" href="Setoid.Algebras.Reduct.html#3847" class="Function">reduct</a> <a id="8628" href="Setoid.Varieties.Invariance.html#6347" class="Bound">φ</a> <a id="8630" href="Setoid.Varieties.Invariance.html#6371" class="Bound">𝑨</a> <a id="8632" href="Setoid.Varieties.Invariance.html#6678" class="Function Operator">⊧₁</a> <a id="8635" href="Setoid.Varieties.Invariance.html#8605" class="Bound">s</a> <a id="8637" href="Setoid.Varieties.Invariance.html#6678" class="Function Operator">≈</a> <a id="8639" href="Setoid.Varieties.Invariance.html#8607" class="Bound">t</a> <a id="8641" class="Symbol">→</a> <a id="8643" href="Setoid.Varieties.Invariance.html#6371" class="Bound">𝑨</a> <a id="8645" href="Setoid.Varieties.Invariance.html#6731" class="Function Operator">⊧₂</a> <a id="8648" href="Setoid.Varieties.Invariance.html#6347" class="Bound">φ</a> <a id="8650" href="Overture.Terms.Translation.html#3975" class="Function Operator">✶</a> <a id="8652" href="Setoid.Varieties.Invariance.html#8605" class="Bound">s</a> <a id="8654" href="Setoid.Varieties.Invariance.html#6731" class="Function Operator">≈</a> <a id="8656" href="Setoid.Varieties.Invariance.html#6347" class="Bound">φ</a> <a id="8658" href="Overture.Terms.Translation.html#3975" class="Function Operator">✶</a> <a id="8660" href="Setoid.Varieties.Invariance.html#8607" class="Bound">t</a>
+  <a id="8664" href="Setoid.Varieties.Invariance.html#8593" class="Function">⊧-expand</a> <a id="8673" class="Symbol">{</a><a id="8674" class="Argument">s</a> <a id="8676" class="Symbol">=</a> <a id="8678" href="Setoid.Varieties.Invariance.html#8678" class="Bound">s</a><a id="8679" class="Symbol">}</a> <a id="8681" class="Symbol">{</a><a id="8682" href="Setoid.Varieties.Invariance.html#8682" class="Bound">t</a><a id="8683" class="Symbol">}</a> <a id="8685" href="Setoid.Varieties.Invariance.html#8685" class="Bound">R⊧</a> <a id="8688" href="Setoid.Varieties.Invariance.html#8688" class="Bound">η</a> <a id="8690" class="Symbol">=</a>
+    <a id="8696" href="Setoid.Varieties.Invariance.html#6625" class="Function">≈trans</a> <a id="8703" class="Symbol">(</a><a id="8704" href="Setoid.Varieties.Invariance.html#6609" class="Function">≈sym</a> <a id="8709" class="Symbol">(</a><a id="8710" href="Setoid.Varieties.Invariance.html#7426" class="Function">reduct-interp</a> <a id="8724" href="Setoid.Varieties.Invariance.html#8678" class="Bound">s</a> <a id="8726" href="Setoid.Varieties.Invariance.html#8688" class="Bound">η</a><a id="8727" class="Symbol">))</a> <a id="8730" class="Symbol">(</a><a id="8731" href="Setoid.Varieties.Invariance.html#6625" class="Function">≈trans</a> <a id="8738" class="Symbol">(</a><a id="8739" href="Setoid.Varieties.Invariance.html#8685" class="Bound">R⊧</a> <a id="8742" href="Setoid.Varieties.Invariance.html#8688" class="Bound">η</a><a id="8743" class="Symbol">)</a> <a id="8745" class="Symbol">(</a><a id="8746" href="Setoid.Varieties.Invariance.html#7426" class="Function">reduct-interp</a> <a id="8760" href="Setoid.Varieties.Invariance.html#8682" class="Bound">t</a> <a id="8762" href="Setoid.Varieties.Invariance.html#8688" class="Bound">η</a><a id="8763" class="Symbol">))</a>
+<a id="8766" class="Markup">```
+</a><a id="8770" class="Background">
+Together the two directions are the biconditional promised at the top.  They are
+deliberately kept as two one-directional lemmas rather than packaged into a single
+`iff` record: every consumer uses exactly one direction, and the unpacked forms
+compose directly with the satisfaction proofs the `Classical` theories carry.
+
+--------------------------------------
+
+[^1]: Goguen and Burstall&#39;s slogan is, &quot;Truth is invariant under change of notation.&quot;
+</a></pre></body></html>

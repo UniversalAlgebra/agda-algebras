@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>Order</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">---
+layout: default
+title : &quot;Order module (Agda Universal Algebra Library)&quot;
+date : &quot;2026-06-02&quot;
+author: &quot;agda-algebras development team&quot;
+---
+
+### Order-theoretic structures
+
+This is the [Order][] module of the [Agda Universal Algebra Library][].
+
+This top-level `Order/` tree collects the *order-theoretic* structures used across
+the universal-algebra development.  Currently this includes a complete lattice module
+(`Order.CompleteLattice`{.AgdaModule}, which the standard library lacks), and
+a module codifying intervals in lattices (`Order.Interval`).  It is deliberately
+separate from `Classical/`: here a lattice is an *ordered* structure (a poset with
+meets and joins), whereas the `Classical.*.Lattice` modules formalize lattices *as
+equational algebras* over `Sig-Lattice`.  The congruence lattice
+([Setoid.Congruences.CompleteLattice][]) and the subalgebra lattice
+([Setoid.Subalgebras.CompleteLattice][]) are the motivating instances.
+
+</a><a id="947" class="Markup">```agda
+</a><a id="955" class="Symbol">{-#</a> <a id="959" class="Keyword">OPTIONS</a> <a id="967" class="Pragma">--without-K</a> <a id="979" class="Pragma">--exact-split</a> <a id="993" class="Pragma">--safe</a> <a id="1000" class="Symbol">#-}</a>
+
+<a id="1005" class="Keyword">module</a> <a id="1012" href="Order.html" class="Module">Order</a> <a id="1018" class="Keyword">where</a>
+
+<a id="1025" class="Keyword">open</a> <a id="1030" class="Keyword">import</a> <a id="1037" href="Order.CompleteLattice.html" class="Module">Order.CompleteLattice</a>  <a id="1060" class="Keyword">public</a>
+<a id="1067" class="Keyword">open</a> <a id="1072" class="Keyword">import</a> <a id="1079" href="Order.Interval.html" class="Module">Order.Interval</a>         <a id="1102" class="Keyword">public</a>
+<a id="1109" class="Keyword">open</a> <a id="1114" class="Keyword">import</a> <a id="1121" href="Order.Iso.html" class="Module">Order.Iso</a>              <a id="1144" class="Keyword">public</a>
+<a id="1151" class="Markup">```
+</a></pre></body></html>

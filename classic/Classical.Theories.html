@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>Classical.Theories</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">---
+layout: default
+file: &quot;src/Classical/Theories.lagda.md&quot;
+title: &quot;Classical.Theories module&quot;
+date: &quot;2026-05-15&quot;
+author: &quot;the agda-algebras development team&quot;
+---
+
+### Equational theories of classical structures
+
+This is the [Classical.Theories][] module of the [Agda Universal Algebra Library][].
+
+The `Classical/Theories/` subtree houses the per-structure equational theories: for
+each concrete structure `X` with signature `𝑆ₓ`, a set `Eₓ` of `𝑆ₓ`-equations that
+picks the `X`-models out of the class of all `𝑆ₓ`-algebras.  Each
+`Classical/Theories/X.lagda.md` module defines `Eₓ` and re-exports it through this
+umbrella.
+
+By convention the equations are stated in terms of the `Algebra.Domain` setoid
+equivalence rather than any setoid-specific feature without a cubical analog, so that
+the eventual port to cubical Agda ([ADR-003][ADR-003]) is mechanical.  The design
+rationale is recorded in [ADR-002][ADR-002].
+
+This file is the barrel module for the subtree; it currently re-exports
+`Classical.Theories.Semigroup`.  Additional concrete theory modules arrive
+under milestone M3, each paired with a corresponding
+`Classical/Signatures/X.lagda.md` and consumed by `Classical/Structures/X.lagda.md`.
+
+</a><a id="1206" class="Markup">```agda
+</a><a id="1214" class="Symbol">{-#</a> <a id="1218" class="Keyword">OPTIONS</a> <a id="1226" class="Pragma">--without-K</a> <a id="1238" class="Pragma">--exact-split</a> <a id="1252" class="Pragma">--safe</a> <a id="1259" class="Symbol">#-}</a>
+
+<a id="1264" class="Keyword">module</a> <a id="1271" href="Classical.Theories.html" class="Module">Classical.Theories</a> <a id="1290" class="Keyword">where</a>
+
+<a id="1297" class="Keyword">open</a> <a id="1302" class="Keyword">import</a> <a id="1309" href="Classical.Theories.CommutativeMonoid.html" class="Module">Classical.Theories.CommutativeMonoid</a> <a id="1346" class="Keyword">public</a>
+<a id="1353" class="Keyword">open</a> <a id="1358" class="Keyword">import</a> <a id="1365" href="Classical.Theories.CommutativeSemigroup.html" class="Module">Classical.Theories.CommutativeSemigroup</a> <a id="1405" class="Keyword">public</a>
+<a id="1412" class="Keyword">open</a> <a id="1417" class="Keyword">import</a> <a id="1424" href="Classical.Theories.AbelianGroup.html" class="Module">Classical.Theories.AbelianGroup</a> <a id="1456" class="Keyword">public</a>
+<a id="1463" class="Keyword">open</a> <a id="1468" class="Keyword">import</a> <a id="1475" href="Classical.Theories.CommutativeRing.html" class="Module">Classical.Theories.CommutativeRing</a> <a id="1510" class="Keyword">public</a>
+<a id="1517" class="Keyword">open</a> <a id="1522" class="Keyword">import</a> <a id="1529" href="Classical.Theories.DistributiveLattice.html" class="Module">Classical.Theories.DistributiveLattice</a> <a id="1568" class="Keyword">public</a>
+<a id="1575" class="Keyword">open</a> <a id="1580" class="Keyword">import</a> <a id="1587" href="Classical.Theories.Group.html" class="Module">Classical.Theories.Group</a> <a id="1612" class="Keyword">public</a>
+<a id="1619" class="Keyword">open</a> <a id="1624" class="Keyword">import</a> <a id="1631" href="Classical.Theories.Lattice.html" class="Module">Classical.Theories.Lattice</a> <a id="1658" class="Keyword">public</a>
+<a id="1665" class="Keyword">open</a> <a id="1670" class="Keyword">import</a> <a id="1677" href="Classical.Theories.Monoid.html" class="Module">Classical.Theories.Monoid</a> <a id="1703" class="Keyword">public</a>
+<a id="1710" class="Keyword">open</a> <a id="1715" class="Keyword">import</a> <a id="1722" href="Classical.Theories.Ring.html" class="Module">Classical.Theories.Ring</a> <a id="1746" class="Keyword">public</a>
+<a id="1753" class="Keyword">open</a> <a id="1758" class="Keyword">import</a> <a id="1765" href="Classical.Theories.Semigroup.html" class="Module">Classical.Theories.Semigroup</a> <a id="1794" class="Keyword">public</a>
+<a id="1801" class="Keyword">open</a> <a id="1806" class="Keyword">import</a> <a id="1813" href="Classical.Theories.Semilattice.html" class="Module">Classical.Theories.Semilattice</a> <a id="1844" class="Keyword">public</a>
+<a id="1851" class="Markup">```
+</a></pre></body></html>

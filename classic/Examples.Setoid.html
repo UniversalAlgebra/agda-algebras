@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>Examples.Setoid</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">---
+layout: default
+file: &quot;src/Examples/Setoid.lagda.md&quot;
+title: &quot;Examples.Setoid module&quot;
+date: &quot;2026-05-31&quot;
+author: &quot;the agda-algebras development team&quot;
+---
+
+### Worked examples over the Setoid universal-algebra layer {#examples-setoid}
+
+This is the [Examples.Setoid][] module of the [Agda Universal Algebra Library][].
+
+Whereas [`Examples/Classical/`][Examples.Classical] pairs one worked instance with each *concrete
+structure* (magma, semigroup, monoid, …), the modules collected here exercise the
+generic [`Setoid/`][Setoid] universal-algebra machinery directly: free algebras over a
+signature, relatively free algebras / presentations, quotients by a congruence, and
+Birkhoff&#39;s HSP theorem specialized to a concrete algebra.  They are the
+cross-structure and &quot;richer&quot; examples requested in
+[issue #266](https://github.com/ualib/agda-algebras/issues/266).
+
+</a><a id="862" class="Markup">```agda
+</a><a id="870" class="Symbol">{-#</a> <a id="874" class="Keyword">OPTIONS</a> <a id="882" class="Pragma">--without-K</a> <a id="894" class="Pragma">--exact-split</a> <a id="908" class="Pragma">--safe</a> <a id="915" class="Symbol">#-}</a>
+
+<a id="920" class="Keyword">module</a> <a id="927" href="Examples.Setoid.html" class="Module">Examples.Setoid</a> <a id="943" class="Keyword">where</a>
+
+<a id="950" class="Comment">-- Each worked example defines its own local syntactic-product helper `_·_`, so they</a>
+<a id="1035" class="Comment">-- must be opened without `public`: re-exporting would fail due to name clash.</a>
+<a id="1114" class="Comment">-- This barrel keeps the five modules in the build and the documentation tree.</a>
+<a id="1193" class="Keyword">open</a> <a id="1198" class="Keyword">import</a> <a id="1205" href="Examples.Setoid.FreeMagma.html" class="Module">Examples.Setoid.FreeMagma</a>
+<a id="1231" class="Keyword">open</a> <a id="1236" class="Keyword">import</a> <a id="1243" href="Examples.Setoid.FreeSemigroup.html" class="Module">Examples.Setoid.FreeSemigroup</a>
+<a id="1273" class="Keyword">open</a> <a id="1278" class="Keyword">import</a> <a id="1285" href="Examples.Setoid.Presentation.html" class="Module">Examples.Setoid.Presentation</a>
+<a id="1314" class="Keyword">open</a> <a id="1319" class="Keyword">import</a> <a id="1326" href="Examples.Setoid.FiniteQuotient.html" class="Module">Examples.Setoid.FiniteQuotient</a>
+<a id="1357" class="Keyword">open</a> <a id="1362" class="Keyword">import</a> <a id="1369" href="Examples.Setoid.HSPCommutativeMonoid.html" class="Module">Examples.Setoid.HSPCommutativeMonoid</a>
+<a id="1406" class="Markup">```
+</a></pre></body></html>

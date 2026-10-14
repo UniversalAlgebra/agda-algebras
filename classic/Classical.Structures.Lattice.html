@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>Classical.Structures.Lattice</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">---
+layout: default
+file: &quot;src/Classical/Structures/Lattice.lagda.md&quot;
+title: &quot;Classical.Structures.Lattice module&quot;
+date: &quot;2026-07-25&quot;
+author: &quot;the agda-algebras development team&quot;
+---
+
+### Lattices {#classical-structures-lattices}
+
+This is the [Classical.Structures.Lattice][] module of the [Agda Universal Algebra Library][].
+
+This is a barrel module: it declares nothing of its own and re-exports the seven
+modules that develop lattices in the `Classical/` tree.  A lattice here is an
+algebra over `Sig-Lattice`{.AgdaFunction} satisfying `Th-Lattice`{.AgdaFunction},
+that is, the *equational* presentation; the order-theoretic presentation, in which
+meet and join are recovered as the infimum and supremum of a partial order, is what
+[Setoid.Subalgebras.CompleteLattice][] and [Setoid.Congruences.CompleteLattice][]
+build instead.
+
+### Guide to the submodules of &lt;span class=&quot;AgdaModule&quot;&gt;Classical.Structures.Lattice&lt;/span&gt;
+
++  [Classical.Structures.Lattice.Basic][]: the type `Lattice`{.AgdaFunction}
+   itself, the two magma reducts, and the named accessors;
++  [Classical.Structures.Lattice.DistributiveLattice][]: the same signature with
+   distributivity added to the theory;
++  [Classical.Structures.Lattice.Dual][]: meet and join exchanged.  Since
+   `Th-Lattice`{.AgdaFunction} is self-dual the construction needs no new equations.
+   Dualizing twice recovers each operation *pointwise*, but the involution is not
+   formalized there, because stating it as an equality of `Lattice`{.AgdaFunction}
+   values would need function extensionality and no consumer has required it;
++  [Classical.Structures.Lattice.FilterIdeal][]: principal filters and principal
+   ideals, and the fact that the union of a principal filter and a principal ideal
+   is again a sublattice universe;
++  [Classical.Structures.Lattice.Product][]: the direct product of two lattices,
+   coordinatewise;
++  [Classical.Structures.Lattice.OrdinalSum][]: one lattice stacked on another with
+   the top of the lower glued to the bottom of the upper, written `L ⊕ₐ M`;
++  [Classical.Structures.Lattice.Partitions][]: the partition lattice
+   `Eq(n)`{.AgdaFunction}, the equivalence relations on an `n`-element set ordered
+   by refinement.
+
+The free lattice `FL(X)`, with Whitman&#39;s solution to its word problem and its
+canonical forms, and the finite lattices built from operation tables, which
+this barrel re-exported until October 2026, continue in the
+latticetheory/agda-lattices repository, which builds on this library.
+
+</a><a id="2501" class="Markup">```agda
+</a><a id="2509" class="Symbol">{-#</a> <a id="2513" class="Keyword">OPTIONS</a> <a id="2521" class="Pragma">--without-K</a> <a id="2533" class="Pragma">--exact-split</a> <a id="2547" class="Pragma">--safe</a> <a id="2554" class="Symbol">#-}</a>
+
+<a id="2559" class="Keyword">module</a> <a id="2566" href="Classical.Structures.Lattice.html" class="Module">Classical.Structures.Lattice</a> <a id="2595" class="Keyword">where</a>
+
+<a id="2602" class="Keyword">open</a> <a id="2607" class="Keyword">import</a> <a id="2614" href="Classical.Structures.Lattice.Basic.html" class="Module">Classical.Structures.Lattice.Basic</a>                <a id="2664" class="Keyword">public</a>
+<a id="2671" class="Keyword">open</a> <a id="2676" class="Keyword">import</a> <a id="2683" href="Classical.Structures.Lattice.DistributiveLattice.html" class="Module">Classical.Structures.Lattice.DistributiveLattice</a>  <a id="2733" class="Keyword">public</a>
+<a id="2740" class="Keyword">open</a> <a id="2745" class="Keyword">import</a> <a id="2752" href="Classical.Structures.Lattice.Dual.html" class="Module">Classical.Structures.Lattice.Dual</a>                 <a id="2802" class="Keyword">public</a>
+<a id="2809" class="Keyword">open</a> <a id="2814" class="Keyword">import</a> <a id="2821" href="Classical.Structures.Lattice.FilterIdeal.html" class="Module">Classical.Structures.Lattice.FilterIdeal</a>          <a id="2871" class="Keyword">public</a>
+<a id="2878" class="Keyword">open</a> <a id="2883" class="Keyword">import</a> <a id="2890" href="Classical.Structures.Lattice.OrdinalSum.html" class="Module">Classical.Structures.Lattice.OrdinalSum</a>           <a id="2940" class="Keyword">public</a>
+<a id="2947" class="Keyword">open</a> <a id="2952" class="Keyword">import</a> <a id="2959" href="Classical.Structures.Lattice.Partitions.html" class="Module">Classical.Structures.Lattice.Partitions</a>           <a id="3009" class="Keyword">public</a>
+<a id="3016" class="Keyword">open</a> <a id="3021" class="Keyword">import</a> <a id="3028" href="Classical.Structures.Lattice.Product.html" class="Module">Classical.Structures.Lattice.Product</a>              <a id="3078" class="Keyword">public</a>
+
+<a id="3086" class="Markup">```
+</a></pre></body></html>

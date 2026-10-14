@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>Overture.Terms.Translation</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">---
+layout: default
+file: &quot;src/Overture/Terms/Translation.lagda.md&quot;
+title: &quot;Overture.Terms.Translation module&quot;
+date: &quot;2026-06-12&quot;
+author: &quot;the agda-algebras development team&quot;
+---
+
+### Translating terms along a signature morphism
+
+This is the [Overture.Terms.Translation][] module of the [Agda Universal Algebra Library][].
+
+A signature morphism `φ : SigMorphism 𝑆₁ 𝑆₂` ([Overture.Signatures.Morphisms][])
+relabels operation symbols (`ι φ`, covariantly) and reindexes argument positions
+(`κ φ`, contravariantly).  This module extends that relabelling from single symbols
+to whole *terms*: the translation `φ ✶ t` rewrites an `𝑆₁`-term `t` into an
+`𝑆₂`-term over the same variables, leaf by leaf and node by node.
+
+The definition is exactly the structural recursion one would guess, and it is worth
+reading the `node` clause slowly because the contravariance of `κ` is where all the
+content lives.  A node `node f ts` of an `𝑆₁`-term carries one subterm `ts i` for
+each position `i : ArityOf 𝑆₁ f`.  Its translation is a node labelled `ι φ f`, which
+must carry one subterm for each position `j : ArityOf 𝑆₂ (ι φ f)` — a position of
+the *target* symbol.  The position map `κ φ f` converts such a `j` back into a
+source position `κ φ f j`, and the translated subterm at `j` is the translation of
+`ts (κ φ f j)`:
+
+```text
+   𝑆₁-term:  node f ts          with subterms    ts i , i : ArityOf 𝑆₁ f
+                  │
+                  │  φ ✶_
+                  ↓
+   𝑆₂-term:  node (ι φ f) ts′   with subterms    ts′ j = φ ✶ ts (κ φ f j) , j : ArityOf 𝑆₂ (ι φ f)
+```
+
+In the typical case of a signature *inclusion* — `ι` injective, each `κ φ f` the
+identity, as in `Sig-Magma ↪ Sig-Monoid` — the translation simply re-reads a magma
+term such as `(x ∙ y) ∙ z` as the same expression in the monoid signature.  That
+&quot;same expression, richer signature&quot; reading is what makes the translation the
+syntactic half of the *reduct*: `reduct φ` moves algebras from `𝑆₂` to `𝑆₁`
+([Setoid.Algebras.Reduct][]), `φ ✶_` moves terms from `𝑆₁` to `𝑆₂`, and the
+two are adjoint in the logical sense that satisfaction is invariant —
+`reduct φ 𝑨 ⊧ s ≈ t` iff `𝑨 ⊧ φ ✶ s ≈ φ ✶ t` ([Setoid.Varieties.Invariance][]).
+In the vocabulary of M4-5b, `φ ✶_` is the unique extension of the natural
+transformation `⟦ φ ⟧ : ⟨ 𝑆₁ ⟩ ⟹ ⟨ 𝑆₂ ⟩` from single applications to free
+`P_{𝑆₁}`-algebras; in monad vocabulary it is a *morphism of term monads*, a fact
+recorded (up to `_≐_`) in [Setoid.Terms.Translation][].
+
+Like `Term` itself, the translation presupposes only the signatures — no setoid, no
+equality on any carrier — so it lives in `Overture/`.  Its laws (functoriality in
+`φ`, congruence, and the substitution square) require the equality-of-terms relation
+`_≐_` and are therefore stated in [Setoid.Terms.Translation][], mirroring the
+`Overture.Terms` / `Setoid.Terms.Basic` split.  M4-5f will generalize precisely this
+definition: a *theory interpretation* sends operation symbols to derived operations
+(terms) rather than to symbols, and its action on terms replaces the `node` clause&#39;s
+relabelling by substitution into the chosen derived term.
+
+&lt;!--
+</a><a id="3119" class="Markup">```agda
+</a><a id="3127" class="Symbol">{-#</a> <a id="3131" class="Keyword">OPTIONS</a> <a id="3139" class="Pragma">--without-K</a> <a id="3151" class="Pragma">--exact-split</a> <a id="3165" class="Pragma">--safe</a> <a id="3172" class="Symbol">#-}</a>
+
+<a id="3177" class="Keyword">module</a> <a id="3184" href="Overture.Terms.Translation.html" class="Module">Overture.Terms.Translation</a> <a id="3211" class="Keyword">where</a>
+
+<a id="3218" class="Keyword">open</a> <a id="3223" class="Keyword">import</a> <a id="3230" href="Agda.Primitive.html" class="Module">Agda.Primitive</a>                 <a id="3261" class="Keyword">using</a> <a id="3267" class="Symbol">()</a> <a id="3270" class="Keyword">renaming</a> <a id="3279" class="Symbol">(</a> <a id="3281" href="Agda.Primitive.html#446" class="Primitive">Set</a> <a id="3285" class="Symbol">to</a> <a id="3288" class="Primitive">Type</a> <a id="3293" class="Symbol">)</a>
+<a id="3295" class="Keyword">open</a> <a id="3300" class="Keyword">import</a> <a id="3307" href="Level.html" class="Module">Level</a>                          <a id="3338" class="Keyword">using</a> <a id="3344" class="Symbol">(</a> <a id="3346" href="Agda.Primitive.html#800" class="Postulate">Level</a> <a id="3352" class="Symbol">)</a>
+<a id="3354" class="Keyword">open</a> <a id="3359" class="Keyword">import</a> <a id="3366" href="Overture.Signatures.html" class="Module">Overture.Signatures</a>            <a id="3397" class="Keyword">using</a> <a id="3403" class="Symbol">(</a> <a id="3405" href="Overture.Signatures.html#926" class="Generalizable">𝓞</a> <a id="3407" class="Symbol">;</a> <a id="3409" href="Overture.Signatures.html#928" class="Generalizable">𝓥</a> <a id="3411" class="Symbol">;</a> <a id="3413" href="Overture.Signatures.html#3461" class="Function">Signature</a> <a id="3423" class="Symbol">)</a>
+<a id="3425" class="Keyword">open</a> <a id="3430" class="Keyword">import</a> <a id="3437" href="Overture.Signatures.Morphisms.html" class="Module">Overture.Signatures.Morphisms</a>  <a id="3468" class="Keyword">using</a> <a id="3474" class="Symbol">(</a> <a id="3476" href="Overture.Signatures.Morphisms.html#2827" class="Record">SigMorphism</a> <a id="3488" class="Symbol">;</a> <a id="3490" href="Overture.Signatures.Morphisms.html#2952" class="Field">ι</a> <a id="3492" class="Symbol">;</a> <a id="3494" href="Overture.Signatures.Morphisms.html#3041" class="Field">κ</a> <a id="3496" class="Symbol">)</a>
+
+<a id="3499" class="Keyword">import</a> <a id="3506" href="Overture.Terms.Basic.html" class="Module">Overture.Terms.Basic</a> <a id="3527" class="Symbol">as</a> <a id="3530" class="Module">Terms</a>
+
+<a id="3537" class="Keyword">private</a> <a id="3545" class="Keyword">variable</a>
+  <a id="3556" href="Overture.Terms.Translation.html#3556" class="Generalizable">χ</a> <a id="3558" class="Symbol">:</a> <a id="3560" href="Agda.Primitive.html#800" class="Postulate">Level</a>
+  <a id="3568" href="Overture.Terms.Translation.html#3568" class="Generalizable">X</a> <a id="3570" class="Symbol">:</a> <a id="3572" href="Overture.Terms.Translation.html#3288" class="Primitive">Type</a> <a id="3577" href="Overture.Terms.Translation.html#3556" class="Generalizable">χ</a>
+<a id="3579" class="Markup">```
+</a><a id="3583" class="Background">--&gt;
+
+#### The translation
+
+The two signatures are instantiated by module application; `Term₁ X` and
+`Term₂ X` are the term types over the same variable type `X`.[^1]
+
+</a><a id="3750" class="Markup">```agda
+</a><a id="3758" class="Keyword">module</a> <a id="3765" href="Overture.Terms.Translation.html#3765" class="Module">_</a> <a id="3767" class="Symbol">{</a><a id="3768" href="Overture.Terms.Translation.html#3768" class="Bound">𝑆₁</a> <a id="3771" href="Overture.Terms.Translation.html#3771" class="Bound">𝑆₂</a> <a id="3774" class="Symbol">:</a> <a id="3776" href="Overture.Signatures.html#3461" class="Function">Signature</a> <a id="3786" href="Overture.Signatures.html#926" class="Generalizable">𝓞</a> <a id="3788" href="Overture.Signatures.html#928" class="Generalizable">𝓥</a><a id="3789" class="Symbol">}</a> <a id="3791" class="Keyword">where</a>
+  <a id="3799" class="Keyword">open</a> <a id="3804" href="Overture.Terms.Basic.html" class="Module">Terms</a> <a id="3810" class="Symbol">{</a><a id="3811" class="Argument">𝑆</a> <a id="3813" class="Symbol">=</a> <a id="3815" href="Overture.Terms.Translation.html#3768" class="Bound">𝑆₁</a><a id="3817" class="Symbol">}</a> <a id="3819" class="Keyword">using</a> <a id="3825" class="Symbol">()</a> <a id="3828" class="Keyword">renaming</a> <a id="3837" class="Symbol">(</a><a id="3838" href="Overture.Terms.Basic.html#3287" class="InductiveConstructor">ℊ</a> <a id="3840" class="Symbol">to</a> <a id="3843" class="InductiveConstructor">ℊ₁</a><a id="3845" class="Symbol">;</a> <a id="3847" href="Overture.Terms.Basic.html#3359" class="InductiveConstructor">node</a> <a id="3852" class="Symbol">to</a> <a id="3855" class="InductiveConstructor">node₁</a><a id="3860" class="Symbol">;</a> <a id="3862" href="Overture.Terms.Basic.html#3247" class="Datatype">Term</a> <a id="3867" class="Symbol">to</a> <a id="3870" class="Datatype">Term₁</a><a id="3875" class="Symbol">)</a>
+  <a id="3879" class="Keyword">open</a> <a id="3884" href="Overture.Terms.Basic.html" class="Module">Terms</a> <a id="3890" class="Symbol">{</a><a id="3891" class="Argument">𝑆</a> <a id="3893" class="Symbol">=</a> <a id="3895" href="Overture.Terms.Translation.html#3771" class="Bound">𝑆₂</a><a id="3897" class="Symbol">}</a> <a id="3899" class="Keyword">using</a> <a id="3905" class="Symbol">()</a> <a id="3908" class="Keyword">renaming</a> <a id="3917" class="Symbol">(</a><a id="3918" href="Overture.Terms.Basic.html#3287" class="InductiveConstructor">ℊ</a> <a id="3920" class="Symbol">to</a> <a id="3923" class="InductiveConstructor">ℊ₂</a><a id="3925" class="Symbol">;</a> <a id="3927" href="Overture.Terms.Basic.html#3359" class="InductiveConstructor">node</a> <a id="3932" class="Symbol">to</a> <a id="3935" class="InductiveConstructor">node₂</a><a id="3940" class="Symbol">;</a> <a id="3942" href="Overture.Terms.Basic.html#3247" class="Datatype">Term</a> <a id="3947" class="Symbol">to</a> <a id="3950" class="Datatype">Term₂</a><a id="3955" class="Symbol">)</a>
+  <a id="3959" class="Keyword">infix</a> <a id="3965" class="Number">15</a> <a id="3968" href="Overture.Terms.Translation.html#3975" class="Function Operator">_✶_</a>
+
+  <a id="3975" href="Overture.Terms.Translation.html#3975" class="Function Operator">_✶_</a> <a id="3979" class="Symbol">:</a> <a id="3981" href="Overture.Signatures.Morphisms.html#2827" class="Record">SigMorphism</a> <a id="3993" href="Overture.Terms.Translation.html#3768" class="Bound">𝑆₁</a> <a id="3996" href="Overture.Terms.Translation.html#3771" class="Bound">𝑆₂</a> <a id="3999" class="Symbol">→</a> <a id="4001" href="Overture.Terms.Translation.html#3870" class="Datatype">Term₁</a> <a id="4007" href="Overture.Terms.Translation.html#3568" class="Generalizable">X</a> <a id="4009" class="Symbol">→</a> <a id="4011" href="Overture.Terms.Translation.html#3950" class="Datatype">Term₂</a> <a id="4017" href="Overture.Terms.Translation.html#3568" class="Generalizable">X</a>
+  <a id="4021" href="Overture.Terms.Translation.html#4021" class="Bound">φ</a> <a id="4023" href="Overture.Terms.Translation.html#3975" class="Function Operator">✶</a> <a id="4025" href="Overture.Terms.Translation.html#3843" class="InductiveConstructor">ℊ₁</a> <a id="4028" href="Overture.Terms.Translation.html#4028" class="Bound">x</a> <a id="4030" class="Symbol">=</a> <a id="4032" href="Overture.Terms.Translation.html#3923" class="InductiveConstructor">ℊ₂</a> <a id="4035" href="Overture.Terms.Translation.html#4028" class="Bound">x</a>
+  <a id="4039" href="Overture.Terms.Translation.html#4039" class="Bound">φ</a> <a id="4041" href="Overture.Terms.Translation.html#3975" class="Function Operator">✶</a> <a id="4043" href="Overture.Terms.Translation.html#3855" class="InductiveConstructor">node₁</a> <a id="4049" href="Overture.Terms.Translation.html#4049" class="Bound">f</a> <a id="4051" href="Overture.Terms.Translation.html#4051" class="Bound">ts</a> <a id="4054" class="Symbol">=</a> <a id="4056" href="Overture.Terms.Translation.html#3935" class="InductiveConstructor">node₂</a> <a id="4062" class="Symbol">(</a><a id="4063" href="Overture.Signatures.Morphisms.html#2952" class="Field">ι</a> <a id="4065" href="Overture.Terms.Translation.html#4039" class="Bound">φ</a> <a id="4067" href="Overture.Terms.Translation.html#4049" class="Bound">f</a><a id="4068" class="Symbol">)</a> <a id="4070" class="Symbol">(λ</a> <a id="4073" href="Overture.Terms.Translation.html#4073" class="Bound">j</a> <a id="4075" class="Symbol">→</a> <a id="4077" href="Overture.Terms.Translation.html#4039" class="Bound">φ</a> <a id="4079" href="Overture.Terms.Translation.html#3975" class="Function Operator">✶</a> <a id="4081" href="Overture.Terms.Translation.html#4051" class="Bound">ts</a> <a id="4084" class="Symbol">(</a><a id="4085" href="Overture.Signatures.Morphisms.html#3041" class="Field">κ</a> <a id="4087" href="Overture.Terms.Translation.html#4039" class="Bound">φ</a> <a id="4089" href="Overture.Terms.Translation.html#4049" class="Bound">f</a> <a id="4091" href="Overture.Terms.Translation.html#4073" class="Bound">j</a><a id="4092" class="Symbol">))</a>
+<a id="4095" class="Markup">```
+</a><a id="4099" class="Background">
+Variables are fixed points of the translation (`φ ✶ ℊ x` is `ℊ x`, definitionally),
+which is what lets environments transfer across it unchanged: interpreting `φ ✶ t`
+needs values for exactly the variables that interpreting `t` needs.  The
+reduct-invariance theorem leans on this directly.
+
+--------------------------------------
+
+[^1]: **Unicode tip**.  Type `\st` and select `✶` to get the star.
+</a></pre></body></html>

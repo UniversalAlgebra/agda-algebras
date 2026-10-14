@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>Setoid.Homomorphisms</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">---
+layout: default
+title : &quot;Setoid.Homomorphisms module (The Agda Universal Algebra Library)&quot;
+date : &quot;2021-09-17&quot;
+author: &quot;agda-algebras development team&quot;
+---
+
+### Types for Homomorphism of Setoid Algebras
+
+This is the [Setoid.Homomorphisms][] module of the [Agda Universal Algebra Library][].
+
+This is a barrel module: it declares nothing of its own and re-exports the eight
+modules that make up the theory of structure-preserving maps between setoid
+algebras.
+
+#### Submodule guide
+
++  [Setoid.Homomorphisms.Basic][]: `hom`{.AgdaFunction}, `mon`{.AgdaFunction},
+   `epi`{.AgdaFunction}, their predicate forms, and the identity homomorphism;
++  [Setoid.Homomorphisms.Properties][]: composition, and the homomorphisms
+   that witness universe lifting;
++  [Setoid.Homomorphisms.Kernels][]: the kernel congruence
+   `kercon`{.AgdaFunction}, the quotient `kerquo`{.AgdaFunction}, and the
+   canonical projection `πepi`{.AgdaFunction};
++  [Setoid.Homomorphisms.Products][]: the homomorphism into a product induced by a
+   family of homomorphisms, and the coordinate projections out of one;
++  [Setoid.Homomorphisms.Noether][]: the first homomorphism theorem;
++  [Setoid.Homomorphisms.Factor][]: `HomFactor`{.AgdaFunction} (a homomorphism
+   factors through any surjective homomorphism whose kernel is contained in its own);
++  [Setoid.Homomorphisms.Isomorphisms][]: `_≅_`{.AgdaRecord} and its interaction
+   with products and with universe lifting;
++  [Setoid.Homomorphisms.HomomorphicImages][]: `_IsHomImageOf_`{.AgdaFunction} and
+   the image algebra of a homomorphism.
+
+</a><a id="1571" class="Markup">```agda
+</a><a id="1579" class="Symbol">{-#</a> <a id="1583" class="Keyword">OPTIONS</a> <a id="1591" class="Pragma">--without-K</a> <a id="1603" class="Pragma">--exact-split</a> <a id="1617" class="Pragma">--safe</a> <a id="1624" class="Symbol">#-}</a>
+
+<a id="1629" class="Keyword">module</a> <a id="1636" href="Setoid.Homomorphisms.html" class="Module">Setoid.Homomorphisms</a> <a id="1657" class="Keyword">where</a>
+
+<a id="1664" class="Keyword">open</a> <a id="1669" class="Keyword">import</a> <a id="1676" href="Setoid.Homomorphisms.Basic.html" class="Module">Setoid.Homomorphisms.Basic</a>              <a id="1716" class="Keyword">public</a>
+<a id="1723" class="Keyword">open</a> <a id="1728" class="Keyword">import</a> <a id="1735" href="Setoid.Homomorphisms.Kernels.html" class="Module">Setoid.Homomorphisms.Kernels</a>            <a id="1775" class="Keyword">public</a>
+<a id="1782" class="Keyword">open</a> <a id="1787" class="Keyword">import</a> <a id="1794" href="Setoid.Homomorphisms.Products.html" class="Module">Setoid.Homomorphisms.Products</a>           <a id="1834" class="Keyword">public</a>
+<a id="1841" class="Keyword">open</a> <a id="1846" class="Keyword">import</a> <a id="1853" href="Setoid.Homomorphisms.Noether.html" class="Module">Setoid.Homomorphisms.Noether</a>            <a id="1893" class="Keyword">public</a>
+<a id="1900" class="Keyword">open</a> <a id="1905" class="Keyword">import</a> <a id="1912" href="Setoid.Homomorphisms.Factor.html" class="Module">Setoid.Homomorphisms.Factor</a>             <a id="1952" class="Keyword">public</a>
+<a id="1959" class="Keyword">open</a> <a id="1964" class="Keyword">import</a> <a id="1971" href="Setoid.Homomorphisms.Isomorphisms.html" class="Module">Setoid.Homomorphisms.Isomorphisms</a>       <a id="2011" class="Keyword">public</a>
+<a id="2018" class="Keyword">open</a> <a id="2023" class="Keyword">import</a> <a id="2030" href="Setoid.Homomorphisms.HomomorphicImages.html" class="Module">Setoid.Homomorphisms.HomomorphicImages</a>  <a id="2070" class="Keyword">public</a>
+<a id="2077" class="Keyword">open</a> <a id="2082" class="Keyword">import</a> <a id="2089" href="Setoid.Homomorphisms.Properties.html" class="Module">Setoid.Homomorphisms.Properties</a>         <a id="2129" class="Keyword">public</a>
+<a id="2136" class="Markup">```
+</a></pre></body></html>

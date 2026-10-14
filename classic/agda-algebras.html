@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>agda-algebras</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">---
+layout: title-page
+file: &quot;src/agda-algebras.lagda.md&quot;
+title: &quot;agda-algebras (The Agda Universal Algebra Library)&quot;
+date: &quot;2026-05-15&quot;
+author: &quot;the agda-algebras development team&quot;
+---
+
+# The Agda Universal Algebra Library
+
+The [Agda Universal Algebra Library][agda-algebras] is a formalization of
+universal algebra in Martin-Löf type theory using the [Agda][] proof
+assistant.  The library defines algebras, homomorphisms, subalgebras,
+congruences, terms, varieties, and the equational logic that underlies them;
+the centrepiece is a fully constructive proof of [Birkhoff&#39;s HSP
+theorem][HSP-wiki], which characterizes equational classes of algebras.  The
+library is being developed simultaneously as a working substrate for research
+in universal algebra and as a high-quality training corpus of Agda proofs for
+machine learning on formal mathematics.
+
+For installation, build, and contribution instructions, see the project
+[`README.md`][README] and [`INSTALL.md`][INSTALL] on GitHub.  For the milestone
+roadmap of the in-progress 3.0 reconstruction, see
+[`docs/GITHUB_PROJECT.md`][ROADMAP]; for the architectural decisions that
+shape it, see [`docs/adr/`][ADR-dir].
+
+**Software repository**.  [github.com/ualib/agda-algebras][agda-algebras]
+
+**Citing**.  See the citation guidance in the project [`README.md`][README].
+
+**Primary contributors**.  [William DeMeo][] and [Jacques Carette][].
+
+----
+
+## Library structure
+
+The 3.0 reconstruction organizes the source tree around a canonical
+foundation — `Setoid/` — with optional layers built on top of it.  The
+top-level aggregator below imports each layer in turn.
+
++  [`Overture/`][Overture] — the small set of definitions shared across
+   `Setoid/`, `Classical/`, and (eventually) `Cubical/`.
++  [`Setoid/`][Setoid] — **the canonical development tree** for 3.0.
+   Algebras carry an explicit equivalence relation (a setoid structure) and
+   their operations and homomorphisms are required to respect that
+   equivalence.  Definitions are phrased in terms of the algebra&#39;s
+   equivalence rather than propositional equality, which makes the eventual
+   port to Cubical Agda largely mechanical.  See [ADR-001][ADR-001] for
+   the rationale.
++  [`Legacy.Base/`][Legacy.Base] — the **frozen pre-3.0** development.  The
+   bare-types development that was the original `Base/` tree, retained for
+   two reasons (see [`DEPRECATED.md`][DEPRECATED]): (i) so v2.x downstream
+   users have a mechanical migration path during the 3.0 transition; and
+   (ii) because some modules — most prominently
+   [`Legacy.Base.Relations.Continuous`][Legacy.Base.Relations.Continuous] and the
+   [`Legacy.Base.Complexity`][Legacy.Base.Complexity] subtree, both central to milestone
+   M9 (algebraic complexity / CSP) — have no `Setoid/` analog yet and are
+   scheduled for migration in later milestones.  New work does not land in
+   `Legacy.Base`.
++  [`Classical/`][Classical] — specific algebraic theories (semigroups,
+   monoids, groups, lattices, rings) built on the universal-algebra
+   foundation.  Σ-typed cores with parallel record-typed bundle views in
+   `Classical/Bundles/` for stdlib interop.  The scaffold landed under
+   M3-1 (#260, #326); concrete structures arrive under M3-2 onward.
+   See [ADR-002][ADR-002] for the design.
++  `Cubical/` *(planned, M5; canonical for 4.0)* — cubical-Agda counterparts
+   of the `Setoid/` and `Classical/` developments, using the structure
+   identity principle in place of setoid equivalence.
++  [`Examples/`][Examples] — worked examples of the library in use.  Its
+   [`Examples/Demos/`][Examples.Demos] subtree holds self-contained
+   pedagogical presentations of marquee results:
+   [`Examples.Demos.HSP`][Examples.Demos.HSP] is a single-file rendition of
+   Birkhoff&#39;s theorem suitable for teaching; the canonical proof of record
+   lives in [`Setoid.Varieties.HSP`][Setoid.Varieties.HSP], factored across the
+   broader `Setoid.Varieties.*` development.
+
+&lt;!--
+</a><a id="3945" class="Markup">```agda
+</a><a id="3953" class="Symbol">{-#</a> <a id="3957" class="Keyword">OPTIONS</a> <a id="3965" class="Pragma">--without-K</a> <a id="3977" class="Pragma">--exact-split</a> <a id="3991" class="Pragma">--safe</a> <a id="3998" class="Symbol">#-}</a>
+<a id="4002" class="Markup">```
+</a><a id="4006" class="Background">--&gt;
+
+</a><a id="4011" class="Markup">```agda
+</a><a id="4019" class="Keyword">module</a> <a id="4026" href="agda-algebras.html" class="Module">agda-algebras</a> <a id="4040" class="Keyword">where</a>
+
+<a id="4047" class="Comment">-- Shared foundations used across Setoid/, Classical/, and (eventually) Cubical/.</a>
+<a id="4129" class="Keyword">open</a> <a id="4134" class="Keyword">import</a> <a id="4141" href="Overture.html" class="Module">Overture</a>
+
+<a id="4151" class="Comment">-- Setoid/ is the canonical 3.0 development tree.  All new universal-algebra</a>
+<a id="4228" class="Comment">-- content lands here.  See docs/adr/001-setoid-as-canonical.md for rationale.</a>
+<a id="4307" class="Keyword">open</a> <a id="4312" class="Keyword">import</a> <a id="4319" href="Setoid.html" class="Module">Setoid</a>
+
+<a id="4327" class="Comment">-- Classical/ formalizes specific algebraic theories (semigroups, monoids,</a>
+<a id="4402" class="Comment">-- groups, lattices, rings, ...) over the Setoid/ foundation.  Σ-typed cores</a>
+<a id="4479" class="Comment">-- with parallel record-typed bundle views for stdlib interop.</a>
+<a id="4542" class="Comment">-- See docs/adr/002-classical-layer-design.md for rationale.</a>
+<a id="4603" class="Keyword">open</a> <a id="4608" class="Keyword">import</a> <a id="4615" href="Classical.html" class="Module">Classical</a>
+
+<a id="4626" class="Comment">-- Legacy.Base is the frozen pre-3.0 development.  It is retained both for</a>
+<a id="4701" class="Comment">-- v2.x downstream-user continuity and because some modules have no Setoid/</a>
+<a id="4777" class="Comment">-- analog yet (tracked per-orphan in src/Legacy/Base/DEPRECATED.md).</a>
+<a id="4846" class="Comment">-- New work does not land in Legacy.Base.</a>
+<a id="4888" class="Keyword">open</a> <a id="4893" class="Keyword">import</a> <a id="4900" href="Legacy.Base.html" class="Module">Legacy.Base</a>
+
+<a id="4913" class="Comment">-- Worked examples built against the canonical tree.  Includes the</a>
+<a id="4980" class="Comment">-- Examples.Demos subtree of self-contained pedagogical presentations of</a>
+<a id="5053" class="Comment">-- marquee results (Examples.Demos.HSP, the single-file Birkhoff rendition).</a>
+<a id="5130" class="Keyword">open</a> <a id="5135" class="Keyword">import</a> <a id="5142" href="Examples.html" class="Module">Examples</a>
+<a id="5151" class="Markup">```
+</a><a id="5155" class="Background">
+----
+
+## Birkhoff&#39;s HSP theorem
+
+The [`Examples.Demos.HSP`][Examples.Demos.HSP] module presents a fairly self-contained formal
+proof of Birkhoff&#39;s theorem in a single Agda module — the version most
+often discussed in the project&#39;s expository writing.  The canonical proof
+of record lives in [`Setoid.Varieties.HSP`][Setoid.Varieties.HSP], factored across the
+broader `Setoid.Varieties.*` development.  The theorem itself asserts that a
+class 𝒦 of algebras of fixed signature is closed under homomorphic images,
+subalgebras, and arbitrary products if and only if it is the class of all
+algebras satisfying some set of identities.
+
+----
+
+## License
+
+agda-algebras is dual-licensed: the source code under `src/` is released
+under the [Apache License 2.0][LICENSE], and the documentation under `docs/`
+(together with the prose embedded in literate Agda files) is released under
+[Creative Commons Attribution 4.0 International][LICENSE-docs].  See the
+project [`README.md`][README] for further detail and citation information.
+
+&lt;!-- Page-local reference definition.  DEPRECATED.md is the frozen-tree
+     inventory under src/Legacy/Base/; it is not a rendered site page, so it is
+     linked to its GitHub source (as the mkdocs hook does for that filename). --&gt;
+[DEPRECATED]: https://github.com/ualib/agda-algebras/blob/master/src/Legacy/Base/DEPRECATED.md
+</a></pre></body></html>

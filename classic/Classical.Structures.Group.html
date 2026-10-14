@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>Classical.Structures.Group</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">---
+layout: default
+file: &quot;src/Classical/Structures/Group.lagda.md&quot;
+title: &quot;Classical.Structures.Group module&quot;
+date: &quot;2026-05-30&quot;
+author: &quot;the agda-algebras development team&quot;
+---
+
+### Groups {#classical-structures-group}
+
+This is the [Classical.Structures.Group][] module of the [Agda Universal Algebra Library][].
+
+This is a barrel module: it declares nothing of its own and re-exports the
+modules that develop group theory in the `Classical/` tree.
+
+A group here is an algebra over `Sig-Group`{.AgdaFunction} satisfying
+`Th-Group`{.AgdaFunction}, so it is a group in the universal-algebraic sense:
+three operations and five equations, with no appeal to the standard library&#39;s
+bundles except through the bridge of [Classical.Bundles.Group][].
+
+#### Guide to the submodules of &lt;span class=&quot;AgdaModule&quot;&gt;Classical.Structures.Group&lt;/span&gt;
+
+This is currently the largest structure tree in `Classical/`, so a thematic map is
+of more use than a list.
+
++  **Structures**.
+
+   +  [Classical.Structures.Group.Basic][]:
+      `Group`{.AgdaFunction} and the named accessors;
+   +  [Classical.Structures.Group.AbelianGroup][]: commutative groups.
+
++  **Subgroups**.
+
+   +  [Classical.Structures.Group.Subgroups][],
+      [Classical.Structures.Group.SubgroupLattice][]:
+      subgroups and their lattice;
+   +  [Classical.Structures.Group.PartitionSubgroup][]:
+      partition subgroups of a finite power;
+   +  [Classical.Structures.Group.PowerCollapse][]:
+      the blockwise collapse: every decidable subgroup between the diagonal
+      and a finite power of a nonabelian simple group is a partition
+      subgroup;
+   +  [Classical.Structures.Group.Complements][]:
+      permuting complements in an interval of a subgroup lattice;
+   +  [Classical.Structures.Group.Dedekind][]: Dedekind&#39;s rule.
+
++  **Normality**.
+
+   +  [Classical.Structures.Group.Conjugation][],
+      [Classical.Structures.Group.Congruences][]:
+      normal subgroups and congruences;
+   +  [Classical.Structures.Group.NormalSubgroupLattice][]:
+      congruence lattices of groups;
+   +  [Classical.Structures.Group.NormalClosure][]:
+      normal closures, twice: witness terms for membership (the replay language
+      of simplicity certificates), and the decidable construction over a finite
+      group;
+   +  [Classical.Structures.Group.NormalCore][]:
+      maximal normal subgroups;
+   +  [Classical.Structures.Group.MinimalNormal][]:
+      minimal normal subgroups and monoliths;
+   +  [Classical.Structures.Group.MinimalNormalDescent][]:
+      every nontrivial normal subgroup of a finite group contains a minimal
+      one, with the classical content isolated in one named principle;
+   +  [Classical.Structures.Group.MaximalSubgroup][]:
+      maximal subgroups, as the classification data the two-element-chain
+      catalog entry consumes;
+   +  [Classical.Structures.Group.Simple][]:
+      simple groups, in implication form, and the nonabelian-simple interface;
+   +  [Classical.Structures.Group.Centralizer][]: centralizers;
+   +  [Classical.Structures.Group.Commutator][]:
+      commutators, their absorption laws, and the equivalence with the
+      commuting relation.
+
++  **Cosets and group actions**.
+
+   +  [Classical.Structures.Group.Cosets][]:
+      `G/H` as a setoid;
+   +  [Classical.Structures.Group.GSet][]:
+      group-action unary algebras.
+
++  **Constructions**.
+
+   +  [Classical.Structures.Group.Product][],
+      [Classical.Structures.Group.Power][]:
+      binary and indexed products;
+
+   +  [Classical.Structures.Group.Diagonal][]:
+      the diagonal subgroup of a power;
+
+   +  [Classical.Structures.Group.Complexes][]:
+      complex products.
+
+</a><a id="3640" class="Markup">```agda
+</a><a id="3648" class="Symbol">{-#</a> <a id="3652" class="Keyword">OPTIONS</a> <a id="3660" class="Pragma">--without-K</a> <a id="3672" class="Pragma">--exact-split</a> <a id="3686" class="Pragma">--safe</a> <a id="3693" class="Symbol">#-}</a>
+
+<a id="3698" class="Keyword">module</a> <a id="3705" href="Classical.Structures.Group.html" class="Module">Classical.Structures.Group</a> <a id="3732" class="Keyword">where</a>
+
+<a id="3739" class="Keyword">open</a> <a id="3744" class="Keyword">import</a> <a id="3751" href="Classical.Structures.Group.Basic.html" class="Module">Classical.Structures.Group.Basic</a>                   <a id="3802" class="Keyword">public</a>
+
+<a id="3810" class="Keyword">open</a> <a id="3815" class="Keyword">import</a> <a id="3822" href="Classical.Structures.Group.AbelianGroup.html" class="Module">Classical.Structures.Group.AbelianGroup</a>            <a id="3873" class="Keyword">public</a>
+<a id="3880" class="Keyword">open</a> <a id="3885" class="Keyword">import</a> <a id="3892" href="Classical.Structures.Group.Centralizer.html" class="Module">Classical.Structures.Group.Centralizer</a>             <a id="3943" class="Keyword">public</a>
+<a id="3950" class="Keyword">open</a> <a id="3955" class="Keyword">import</a> <a id="3962" href="Classical.Structures.Group.Commutator.html" class="Module">Classical.Structures.Group.Commutator</a>              <a id="4013" class="Keyword">public</a>
+<a id="4020" class="Keyword">open</a> <a id="4025" class="Keyword">import</a> <a id="4032" href="Classical.Structures.Group.Complements.html" class="Module">Classical.Structures.Group.Complements</a>             <a id="4083" class="Keyword">public</a>
+<a id="4090" class="Keyword">open</a> <a id="4095" class="Keyword">import</a> <a id="4102" href="Classical.Structures.Group.Complexes.html" class="Module">Classical.Structures.Group.Complexes</a>               <a id="4153" class="Keyword">public</a>
+<a id="4160" class="Keyword">open</a> <a id="4165" class="Keyword">import</a> <a id="4172" href="Classical.Structures.Group.Congruences.html" class="Module">Classical.Structures.Group.Congruences</a>             <a id="4223" class="Keyword">public</a>
+<a id="4230" class="Keyword">open</a> <a id="4235" class="Keyword">import</a> <a id="4242" href="Classical.Structures.Group.Conjugation.html" class="Module">Classical.Structures.Group.Conjugation</a>             <a id="4293" class="Keyword">public</a>
+<a id="4300" class="Keyword">open</a> <a id="4305" class="Keyword">import</a> <a id="4312" href="Classical.Structures.Group.Cosets.html" class="Module">Classical.Structures.Group.Cosets</a>                  <a id="4363" class="Keyword">public</a>
+<a id="4370" class="Keyword">open</a> <a id="4375" class="Keyword">import</a> <a id="4382" href="Classical.Structures.Group.Dedekind.html" class="Module">Classical.Structures.Group.Dedekind</a>                <a id="4433" class="Keyword">public</a>
+<a id="4440" class="Keyword">open</a> <a id="4445" class="Keyword">import</a> <a id="4452" href="Classical.Structures.Group.Diagonal.html" class="Module">Classical.Structures.Group.Diagonal</a>                <a id="4503" class="Keyword">public</a>
+<a id="4510" class="Keyword">open</a> <a id="4515" class="Keyword">import</a> <a id="4522" href="Classical.Structures.Group.GSet.html" class="Module">Classical.Structures.Group.GSet</a>                    <a id="4573" class="Keyword">public</a>
+<a id="4580" class="Keyword">open</a> <a id="4585" class="Keyword">import</a> <a id="4592" href="Classical.Structures.Group.IndexAction.html" class="Module">Classical.Structures.Group.IndexAction</a>             <a id="4643" class="Keyword">public</a>
+<a id="4650" class="Keyword">open</a> <a id="4655" class="Keyword">import</a> <a id="4662" href="Classical.Structures.Group.MaximalSubgroup.html" class="Module">Classical.Structures.Group.MaximalSubgroup</a>         <a id="4713" class="Keyword">public</a>
+<a id="4720" class="Keyword">open</a> <a id="4725" class="Keyword">import</a> <a id="4732" href="Classical.Structures.Group.MinimalNormal.html" class="Module">Classical.Structures.Group.MinimalNormal</a>           <a id="4783" class="Keyword">public</a>
+<a id="4790" class="Keyword">open</a> <a id="4795" class="Keyword">import</a> <a id="4802" href="Classical.Structures.Group.MinimalNormalDescent.html" class="Module">Classical.Structures.Group.MinimalNormalDescent</a>    <a id="4853" class="Keyword">public</a>
+<a id="4860" class="Keyword">open</a> <a id="4865" class="Keyword">import</a> <a id="4872" href="Classical.Structures.Group.NormalClosure.html" class="Module">Classical.Structures.Group.NormalClosure</a>           <a id="4923" class="Keyword">public</a>
+<a id="4930" class="Keyword">open</a> <a id="4935" class="Keyword">import</a> <a id="4942" href="Classical.Structures.Group.NormalCore.html" class="Module">Classical.Structures.Group.NormalCore</a>              <a id="4993" class="Keyword">public</a>
+<a id="5000" class="Keyword">open</a> <a id="5005" class="Keyword">import</a> <a id="5012" href="Classical.Structures.Group.NormalSubgroupLattice.html" class="Module">Classical.Structures.Group.NormalSubgroupLattice</a>   <a id="5063" class="Keyword">public</a>
+<a id="5070" class="Keyword">open</a> <a id="5075" class="Keyword">import</a> <a id="5082" href="Classical.Structures.Group.PartitionSubgroup.html" class="Module">Classical.Structures.Group.PartitionSubgroup</a>       <a id="5133" class="Keyword">public</a>
+<a id="5140" class="Keyword">open</a> <a id="5145" class="Keyword">import</a> <a id="5152" href="Classical.Structures.Group.Power.html" class="Module">Classical.Structures.Group.Power</a>                   <a id="5203" class="Keyword">public</a>
+<a id="5210" class="Keyword">open</a> <a id="5215" class="Keyword">import</a> <a id="5222" href="Classical.Structures.Group.PowerCollapse.html" class="Module">Classical.Structures.Group.PowerCollapse</a>           <a id="5273" class="Keyword">public</a>
+<a id="5280" class="Keyword">open</a> <a id="5285" class="Keyword">import</a> <a id="5292" href="Classical.Structures.Group.Product.html" class="Module">Classical.Structures.Group.Product</a>                 <a id="5343" class="Keyword">public</a>
+<a id="5350" class="Keyword">open</a> <a id="5355" class="Keyword">import</a> <a id="5362" href="Classical.Structures.Group.RegularAction.html" class="Module">Classical.Structures.Group.RegularAction</a>           <a id="5413" class="Keyword">public</a>
+<a id="5420" class="Keyword">open</a> <a id="5425" class="Keyword">import</a> <a id="5432" href="Classical.Structures.Group.Simple.html" class="Module">Classical.Structures.Group.Simple</a>                  <a id="5483" class="Keyword">public</a>
+<a id="5490" class="Keyword">open</a> <a id="5495" class="Keyword">import</a> <a id="5502" href="Classical.Structures.Group.SubgroupClassification.html" class="Module">Classical.Structures.Group.SubgroupClassification</a>  <a id="5553" class="Keyword">public</a>
+<a id="5560" class="Keyword">open</a> <a id="5565" class="Keyword">import</a> <a id="5572" href="Classical.Structures.Group.SubgroupLattice.html" class="Module">Classical.Structures.Group.SubgroupLattice</a>         <a id="5623" class="Keyword">public</a>
+<a id="5630" class="Keyword">open</a> <a id="5635" class="Keyword">import</a> <a id="5642" href="Classical.Structures.Group.Subgroups.html" class="Module">Classical.Structures.Group.Subgroups</a>               <a id="5693" class="Keyword">public</a>
+<a id="5700" class="Keyword">open</a> <a id="5705" class="Keyword">import</a> <a id="5712" href="Classical.Structures.Group.TableGroup.html" class="Module">Classical.Structures.Group.TableGroup</a>              <a id="5763" class="Keyword">public</a>
+<a id="5770" class="Keyword">open</a> <a id="5775" class="Keyword">import</a> <a id="5782" href="Classical.Structures.Group.Wreath.html" class="Module">Classical.Structures.Group.Wreath</a>                  <a id="5833" class="Keyword">public</a>
+<a id="5840" class="Markup">```
+</a></pre></body></html>

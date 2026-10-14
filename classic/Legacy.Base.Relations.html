@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>Legacy.Base.Relations</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">---
+layout: default
+title : &quot;Relations module (The Agda Universal Algebra Library)&quot;
+date : &quot;2021-01-12&quot;
+author: &quot;the agda-algebras development team&quot;
+---
+
+## &lt;a id=&quot;relations&quot;&gt;Relations&lt;/a&gt;
+
+This is the [Legacy.Base.Relations][] module of the [Agda Universal Algebra Library][].
+
+In the [Legacy.Base.Relations.Discrete][] submodule we define types that represent *unary* and *binary relations*.
+
+We refer to these as &quot;discrete relations&quot; to contrast them with the &quot;continuous,&quot; *general* and *dependent relations* that we introduce in [Legacy.Base.Relations.Continuous][].
+
+We call the latter &quot;continuous relations&quot; because they can have arbitrary arity and they can be defined over arbitrary families of types.
+
+Finally, in [Legacy.Base.Relations.Quotients][] we define quotient types.
+
+
+</a><a id="789" class="Markup">```agda
+</a>
+
+<a id="799" class="Symbol">{-#</a> <a id="803" class="Keyword">OPTIONS</a> <a id="811" class="Pragma">--without-K</a> <a id="823" class="Pragma">--exact-split</a> <a id="837" class="Pragma">--safe</a> <a id="844" class="Symbol">#-}</a>
+
+<a id="849" class="Keyword">module</a> <a id="856" href="Legacy.Base.Relations.html" class="Module">Legacy.Base.Relations</a> <a id="878" class="Keyword">where</a>
+
+<a id="885" class="Keyword">open</a> <a id="890" class="Keyword">import</a> <a id="897" href="Legacy.Base.Relations.Discrete.html" class="Module">Legacy.Base.Relations.Discrete</a>    <a id="931" class="Keyword">public</a>
+<a id="938" class="Keyword">open</a> <a id="943" class="Keyword">import</a> <a id="950" href="Legacy.Base.Relations.Continuous.html" class="Module">Legacy.Base.Relations.Continuous</a>  <a id="984" class="Keyword">public</a>
+<a id="991" class="Keyword">open</a> <a id="996" class="Keyword">import</a> <a id="1003" href="Legacy.Base.Relations.Properties.html" class="Module">Legacy.Base.Relations.Properties</a>  <a id="1037" class="Keyword">public</a>
+<a id="1044" class="Keyword">open</a> <a id="1049" class="Keyword">import</a> <a id="1056" href="Legacy.Base.Relations.Quotients.html" class="Module">Legacy.Base.Relations.Quotients</a>   <a id="1090" class="Keyword">public</a>
+<a id="1097" class="Markup">```
+</a></pre></body></html>

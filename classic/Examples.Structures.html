@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>Examples.Structures</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">---
+layout: default
+title : &quot;Examples.Structures module&quot;
+date : &quot;2022-18-06&quot;
+author: &quot;the agda-algebras development team&quot;
+---
+
+### Examples of structures
+
+This is the [Examples.Structures][] module of the [Agda Universal Algebra Library][].
+
+The structure examples exercise the general `structure` type of the frozen
+`Legacy.Base` tree, which packages operation symbols and relation symbols in one
+signature pair.  [Examples.Structures.Signatures][] supplies eight tiny signatures
+named by an arity-counting convention, and [Examples.Structures.Basic][]
+instantiates them with two structures: a three-element meet semilattice and the
+NAE-3-SAT relational structure.  The signatures are also consumed by the
+finite-CSP exercises of [Exercises.Complexity.FiniteCSP][].
+
+</a><a id="769" class="Markup">```agda
+</a><a id="777" class="Symbol">{-#</a> <a id="781" class="Keyword">OPTIONS</a> <a id="789" class="Pragma">--without-K</a> <a id="801" class="Pragma">--exact-split</a> <a id="815" class="Pragma">--safe</a> <a id="822" class="Symbol">#-}</a>
+
+<a id="827" class="Keyword">module</a> <a id="834" href="Examples.Structures.html" class="Module">Examples.Structures</a> <a id="854" class="Keyword">where</a>
+
+<a id="861" class="Keyword">open</a> <a id="866" class="Keyword">import</a> <a id="873" href="Examples.Structures.Signatures.html" class="Module">Examples.Structures.Signatures</a>  <a id="905" class="Keyword">public</a>
+<a id="912" class="Keyword">open</a> <a id="917" class="Keyword">import</a> <a id="924" href="Examples.Structures.Basic.html" class="Module">Examples.Structures.Basic</a>       <a id="956" class="Keyword">public</a>
+<a id="963" class="Markup">```
+</a></pre></body></html>

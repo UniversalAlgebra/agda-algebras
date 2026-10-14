@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>Setoid.Varieties.Invariants</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">---
+layout: default
+title : &quot;Setoid.Varieties.Invariants module (The Agda Universal Algebra Library)&quot;
+date : &quot;2026-05-10&quot;
+author: &quot;agda-algebras development team&quot;
+---
+
+### Algebraic invariants for setoid algebras
+
+This is the [Setoid.Varieties.Invariants][] module of the [Agda Universal Algebra Library][].
+
+A property `P` of (setoid) algebras is called an **algebraic invariant** when it is stable under isomorphism: whenever `𝑨 ≅ 𝑩`, the proposition `P 𝑨` implies `P 𝑩`.  Equivalently, an algebraic invariant is a predicate that factors through the isomorphism-type of `𝑨` — a property of the algebra qua structure, independent of its concrete carrier.  The notion is the foundational guard rail of universal algebra: the structurally meaningful properties of an algebra (satisfying an identity, being subdirectly irreducible, generating a given variety, being free over a set of generators, and so on) are all algebraic invariants, and a property that fails to be invariant is, almost by definition, not a property of the algebra but of one particular presentation of it.
+
+The canonical example available in this library is the modelling relation `𝑨 ⊧ (p ≈̇ q)`.  Its algebraic invariance is the content of [`Setoid.Varieties.Properties.⊧-I-invar`][Setoid.Varieties.Properties], which states precisely that `λ 𝑨 → 𝑨 ⊧ (p ≈̇ q)` satisfies the `AlgebraicInvariant` predicate defined below.  More generally, each closure operator `H`, `S`, `P`, `V` of the variety theory is built from operations that respect `_≅_`, so class membership `_∈ H 𝒦`, `_∈ S 𝒦`, `_∈ P 𝒦`, and `_∈ V 𝒦` is itself an algebraic invariant.
+
+&lt;!--
+</a><a id="1621" class="Markup">```agda
+</a><a id="1629" class="Symbol">{-#</a> <a id="1633" class="Keyword">OPTIONS</a> <a id="1641" class="Pragma">--without-K</a> <a id="1653" class="Pragma">--exact-split</a> <a id="1667" class="Pragma">--safe</a> <a id="1674" class="Symbol">#-}</a>
+
+<a id="1679" class="Keyword">module</a> <a id="1686" href="Setoid.Varieties.Invariants.html" class="Module">Setoid.Varieties.Invariants</a> <a id="1714" class="Keyword">where</a>
+
+<a id="1721" class="Comment">-- Imports from Agda and the Agda Standard Library --------------------------------</a>
+<a id="1805" class="Keyword">open</a> <a id="1810" class="Keyword">import</a> <a id="1817" href="Agda.Primitive.html" class="Module">Agda.Primitive</a>  <a id="1833" class="Keyword">using</a> <a id="1839" class="Symbol">()</a> <a id="1842" class="Keyword">renaming</a> <a id="1851" class="Symbol">(</a> <a id="1853" href="Agda.Primitive.html#446" class="Primitive">Set</a> <a id="1857" class="Symbol">to</a> <a id="1860" class="Primitive">Type</a> <a id="1865" class="Symbol">)</a>
+<a id="1867" class="Keyword">open</a> <a id="1872" class="Keyword">import</a> <a id="1879" href="Level.html" class="Module">Level</a>           <a id="1895" class="Keyword">using</a> <a id="1901" class="Symbol">(</a> <a id="1903" href="Agda.Primitive.html#800" class="Postulate">Level</a> <a id="1909" class="Symbol">)</a>
+<a id="1911" class="Keyword">open</a> <a id="1916" class="Keyword">import</a> <a id="1923" href="Relation.Unary.html" class="Module">Relation.Unary</a>  <a id="1939" class="Keyword">using</a> <a id="1945" class="Symbol">(</a> <a id="1947" href="Relation.Unary.html#1178" class="Function">Pred</a> <a id="1952" class="Symbol">)</a>
+
+<a id="1955" class="Comment">-- Imports from the Agda Universal Algebra Library -------------------------------</a>
+<a id="2038" class="Keyword">open</a> <a id="2043" class="Keyword">import</a> <a id="2050" href="Overture.html" class="Module">Overture</a>              <a id="2072" class="Keyword">using</a> <a id="2078" class="Symbol">(</a> <a id="2080" href="Overture.Signatures.html#4233" class="Generalizable">𝑆</a> <a id="2082" class="Symbol">)</a>
+<a id="2084" class="Keyword">open</a> <a id="2089" class="Keyword">import</a> <a id="2096" href="Setoid.Algebras.html" class="Module">Setoid.Algebras</a>       <a id="2118" class="Keyword">using</a> <a id="2124" class="Symbol">(</a> <a id="2126" href="Setoid.Algebras.Basic.html#4373" class="Record">Algebra</a> <a id="2134" class="Symbol">)</a>
+<a id="2136" class="Keyword">open</a> <a id="2141" class="Keyword">import</a> <a id="2148" href="Setoid.Homomorphisms.html" class="Module">Setoid.Homomorphisms</a>  <a id="2170" class="Keyword">using</a> <a id="2176" class="Symbol">(</a> <a id="2178" href="Setoid.Homomorphisms.Isomorphisms.html#4467" class="Record Operator">_≅_</a> <a id="2182" class="Symbol">)</a>
+
+<a id="2185" class="Keyword">private</a> <a id="2193" class="Keyword">variable</a> <a id="2202" href="Setoid.Varieties.Invariants.html#2202" class="Generalizable">α</a> <a id="2204" href="Setoid.Varieties.Invariants.html#2204" class="Generalizable">ρᵃ</a> <a id="2207" href="Setoid.Varieties.Invariants.html#2207" class="Generalizable">ℓ</a> <a id="2209" class="Symbol">:</a> <a id="2211" href="Agda.Primitive.html#800" class="Postulate">Level</a>
+<a id="2217" class="Markup">```
+</a><a id="2221" class="Background">--&gt;
+
+A predicate `P : Pred (Algebra α ρᵃ) ℓ` is an *algebraic invariant* when, given any two algebras `𝑨` and `𝑩` at the same universe levels and an isomorphism `𝑨 ≅ 𝑩`, the property `P 𝑨` entails `P 𝑩`.  The same-level restriction is forced by Agda&#39;s `Pred` type and matches the legacy `Base.Varieties.Invariants` definition; a level-heterogeneous variant could be obtained by parametrizing over a level-indexed family of predicates, but no current consumer requires it.
+
+</a><a id="2694" class="Markup">```agda
+</a><a id="AlgebraicInvariant"></a><a id="2702" href="Setoid.Varieties.Invariants.html#2702" class="Function">AlgebraicInvariant</a> <a id="2721" class="Symbol">:</a> <a id="2723" href="Relation.Unary.html#1178" class="Function">Pred</a> <a id="2728" class="Symbol">(</a><a id="2729" href="Setoid.Algebras.Basic.html#4373" class="Record">Algebra</a> <a id="2737" class="Symbol">{</a><a id="2738" class="Argument">𝑆</a> <a id="2740" class="Symbol">=</a> <a id="2742" href="Overture.Signatures.html#4233" class="Generalizable">𝑆</a><a id="2743" class="Symbol">}</a> <a id="2745" href="Setoid.Varieties.Invariants.html#2202" class="Generalizable">α</a> <a id="2747" href="Setoid.Varieties.Invariants.html#2204" class="Generalizable">ρᵃ</a><a id="2749" class="Symbol">)</a> <a id="2751" href="Setoid.Varieties.Invariants.html#2207" class="Generalizable">ℓ</a> <a id="2753" class="Symbol">→</a> <a id="2755" href="Setoid.Varieties.Invariants.html#1860" class="Primitive">Type</a> <a id="2760" class="Symbol">_</a>
+<a id="2762" href="Setoid.Varieties.Invariants.html#2702" class="Function">AlgebraicInvariant</a> <a id="2781" href="Setoid.Varieties.Invariants.html#2781" class="Bound">P</a> <a id="2783" class="Symbol">=</a> <a id="2785" class="Symbol">∀</a> <a id="2787" href="Setoid.Varieties.Invariants.html#2787" class="Bound">𝑨</a> <a id="2789" href="Setoid.Varieties.Invariants.html#2789" class="Bound">𝑩</a> <a id="2791" class="Symbol">→</a> <a id="2793" href="Setoid.Varieties.Invariants.html#2781" class="Bound">P</a> <a id="2795" href="Setoid.Varieties.Invariants.html#2787" class="Bound">𝑨</a> <a id="2797" class="Symbol">→</a> <a id="2799" href="Setoid.Varieties.Invariants.html#2787" class="Bound">𝑨</a> <a id="2801" href="Setoid.Homomorphisms.Isomorphisms.html#4467" class="Record Operator">≅</a> <a id="2803" href="Setoid.Varieties.Invariants.html#2789" class="Bound">𝑩</a> <a id="2805" class="Symbol">→</a> <a id="2807" href="Setoid.Varieties.Invariants.html#2781" class="Bound">P</a> <a id="2809" href="Setoid.Varieties.Invariants.html#2789" class="Bound">𝑩</a>
+<a id="2811" class="Markup">```
+</a></pre></body></html>

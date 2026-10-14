@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>Classical.Signatures</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">---
+layout: default
+file: &quot;src/Classical/Signatures.lagda.md&quot;
+title: &quot;Classical.Signatures module&quot;
+date: &quot;2026-05-15&quot;
+author: &quot;the agda-algebras development team&quot;
+---
+
+### Signatures of classical structures
+
+This is the [Classical.Signatures][] module of the [Agda Universal Algebra Library][].
+
+The `Classical/Signatures/` subtree houses the per-structure signature definitions
+for the classical-structures tree.  Each concrete structure `X` carries a fixed
+signature `𝑆ₓ : Signature 𝓞 𝓥` whose sort `Op` enumerates the operation symbols of
+`X` together with their arities, defined in a module
+`Classical/Signatures/X.lagda.md` and re-exported from this umbrella.  The design
+rationale — Σ-typed cores over signature-equation pairs, with record-typed bundle
+views for stdlib interop — is recorded in [ADR-002][ADR-002].
+
+This file is the umbrella for the subtree.
+
+</a><a id="867" class="Markup">```agda
+</a><a id="875" class="Symbol">{-#</a> <a id="879" class="Keyword">OPTIONS</a> <a id="887" class="Pragma">--without-K</a> <a id="899" class="Pragma">--exact-split</a> <a id="913" class="Pragma">--safe</a> <a id="920" class="Symbol">#-}</a>
+
+<a id="925" class="Keyword">module</a> <a id="932" href="Classical.Signatures.html" class="Module">Classical.Signatures</a> <a id="953" class="Keyword">where</a>
+
+<a id="960" class="Keyword">open</a> <a id="965" class="Keyword">import</a> <a id="972" href="Classical.Signatures.Finite.html" class="Module">Classical.Signatures.Finite</a> <a id="1000" class="Keyword">public</a>
+<a id="1007" class="Keyword">open</a> <a id="1012" class="Keyword">import</a> <a id="1019" href="Classical.Signatures.Group.html" class="Module">Classical.Signatures.Group</a> <a id="1046" class="Keyword">public</a>
+<a id="1053" class="Keyword">open</a> <a id="1058" class="Keyword">import</a> <a id="1065" href="Classical.Signatures.Lattice.html" class="Module">Classical.Signatures.Lattice</a> <a id="1094" class="Keyword">public</a>
+<a id="1101" class="Keyword">open</a> <a id="1106" class="Keyword">import</a> <a id="1113" href="Classical.Signatures.Magma.html" class="Module">Classical.Signatures.Magma</a> <a id="1140" class="Keyword">public</a>
+<a id="1147" class="Keyword">open</a> <a id="1152" class="Keyword">import</a> <a id="1159" href="Classical.Signatures.Monoid.html" class="Module">Classical.Signatures.Monoid</a> <a id="1187" class="Keyword">public</a>
+<a id="1194" class="Keyword">open</a> <a id="1199" class="Keyword">import</a> <a id="1206" href="Classical.Signatures.Ring.html" class="Module">Classical.Signatures.Ring</a> <a id="1232" class="Keyword">public</a>
+<a id="1239" class="Keyword">open</a> <a id="1244" class="Keyword">import</a> <a id="1251" href="Classical.Signatures.Unary.html" class="Module">Classical.Signatures.Unary</a> <a id="1278" class="Keyword">public</a>
+<a id="1285" class="Markup">```
+</a></pre></body></html>

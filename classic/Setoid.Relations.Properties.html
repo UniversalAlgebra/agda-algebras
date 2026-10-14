@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>Setoid.Relations.Properties</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">---
+layout: default
+title : &quot;Setoid.Relations.Properties module (The Agda Universal Algebra Library)&quot;
+date : &quot;2026-05-10&quot;
+author: &quot;the agda-algebras development team&quot;
+---
+
+### Properties of binary relations
+
+This is the [Setoid.Relations.Properties][] module of the [Agda Universal Algebra Library][].
+
+The canonical home for elementary properties of binary relations — reflexivity, symmetry, transitivity, antisymmetry, irreflexivity, asymmetry, connex, totality — is `Relation.Binary.Definitions` in the Agda standard library.  Stdlib expresses these properties for `Rel A ℓ = A → A → Type ℓ` (the curried form), and the canonical `Setoid/` tree adopts the same convention: `Setoid.Relations.Discrete` and `Setoid.Relations.Quotients` already import their `Reflexive` / `Transitive` etc. directly from stdlib.
+
+This module exists to give agda-algebras users a stable canonical import path that mirrors `Legacy.Base.Relations.Properties` in the v2.x library and that sits alongside the canonical `Setoid.Relations.{Discrete,Quotients,Continuous}` siblings.  Its content is a thin `public` re-export from stdlib — no new definitions are introduced.  If a genuinely Setoid-flavoured relation property surfaces later (e.g., reflexivity that respects a setoid&#39;s `_≈_`), it can be added here without disrupting the canonical import path.
+
+Differences from the legacy module:
+
++  The legacy module defined its properties for `Pred (A × A) ℓ` (a predicate on the product type); this module uses the stdlib `Rel A ℓ` (the curried form).  The two are interconvertible via `Data.Product.curry` / `Data.Product.uncurry`; the curried form is preferred because the rest of the canonical tree already uses it.
++  The legacy module bundled its own `curry` / `uncurry` definitions; stdlib&#39;s `Data.Product.curry` / `Data.Product.uncurry` cover the same ground and are not re-exported here.  Consumers who need the bridge should import from `Data.Product` directly.
+
+</a><a id="1951" class="Markup">```agda
+</a><a id="1959" class="Symbol">{-#</a> <a id="1963" class="Keyword">OPTIONS</a> <a id="1971" class="Pragma">--without-K</a> <a id="1983" class="Pragma">--exact-split</a> <a id="1997" class="Pragma">--safe</a> <a id="2004" class="Symbol">#-}</a>
+
+<a id="2009" class="Keyword">module</a> <a id="2016" href="Setoid.Relations.Properties.html" class="Module">Setoid.Relations.Properties</a> <a id="2044" class="Keyword">where</a>
+
+<a id="2051" class="Keyword">open</a> <a id="2056" class="Keyword">import</a> <a id="2063" href="Relation.Binary.Definitions.html" class="Module">Relation.Binary.Definitions</a> <a id="2091" class="Keyword">public</a>
+  <a id="2100" class="Keyword">using</a>  <a id="2107" class="Symbol">(</a> <a id="2109" href="Relation.Binary.Definitions.html#1355" class="Function">Reflexive</a>    <a id="2122" class="Symbol">;</a> <a id="2124" href="Relation.Binary.Definitions.html#1440" class="Function">Sym</a>         <a id="2136" class="Symbol">;</a> <a id="2138" href="Relation.Binary.Definitions.html#1514" class="Function">Symmetric</a>
+         <a id="2157" class="Symbol">;</a> <a id="2159" href="Relation.Binary.Definitions.html#1601" class="Function">Trans</a>        <a id="2172" class="Symbol">;</a> <a id="2174" href="Relation.Binary.Definitions.html#1902" class="Function">TransFlip</a>   <a id="2186" class="Symbol">;</a> <a id="2188" href="Relation.Binary.Definitions.html#2030" class="Function">Transitive</a>
+         <a id="2208" class="Symbol">;</a> <a id="2210" href="Relation.Binary.Definitions.html#2124" class="Function">Antisym</a>      <a id="2223" class="Symbol">;</a> <a id="2225" href="Relation.Binary.Definitions.html#2246" class="Function">Antisymmetric</a>
+         <a id="2248" class="Symbol">;</a> <a id="2250" href="Relation.Binary.Definitions.html#2405" class="Function">Irreflexive</a>  <a id="2263" class="Symbol">;</a> <a id="2265" href="Relation.Binary.Definitions.html#2517" class="Function">Asymmetric</a>
+         <a id="2285" class="Symbol">;</a> <a id="2287" href="Relation.Binary.Definitions.html#2746" class="Function">Connex</a>       <a id="2300" class="Symbol">;</a> <a id="2302" href="Relation.Binary.Definitions.html#2837" class="Function">Total</a> <a id="2308" class="Symbol">)</a>
+<a id="2310" class="Markup">```
+</a></pre></body></html>

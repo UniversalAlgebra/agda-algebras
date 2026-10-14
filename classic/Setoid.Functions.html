@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>Setoid.Functions</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">---
+layout: default
+title : &quot;Setoid.Functions module (Agda Universal Algebra Library)&quot;
+date : &quot;2021-09-08&quot;
+author: &quot;the agda-algebras development team&quot;
+---
+
+## Setoid Functions
+
+This is the [Setoid.Functions][] module of the [Agda Universal Algebra Library][].
+
+This is a barrel module: it declares nothing of its own and re-exports the five
+modules that develop functions between setoids.  A setoid function is a map
+bundled with a proof that it respects the two equalities.  That proof is about a
+single map, so it is only half of how the library does without function
+extensionality; the other half is that wherever two functions must be compared,
+an explicitly pointwise relation is used rather than propositional equality of
+functions.  See `function-equality`{.AgdaFunction} of
+[Setoid.Relations.Discrete][] and, for homomorphisms, `_≋_`{.AgdaFunction} of
+[Setoid.Categories.Algebra][].
+
+### Guide to the submodules of &lt;span class=&quot;AgdaModule&quot;&gt;Setoid.Functions&lt;/span&gt;
+
++  [Setoid.Functions.Basic][]: the identity, composition, and universe lifting of
+   a setoid;
++  [Setoid.Functions.Injective][]: `IsInjective`{.AgdaFunction} and its
+   composition law;
++  [Setoid.Functions.Surjective][]: `IsSurjective`{.AgdaFunction}, its
+   composition law `⊙-IsSurjective`{.AgdaFunction}, the right inverse
+   `SurjInv`{.AgdaFunction} of a surjection, and `epic-factor`{.AgdaFunction}.
+   The decidable-index projections `proj`{.AgdaFunction} and
+   `projIsOnto`{.AgdaFunction} that `ProjAlgIsOnto`{.AgdaFunction} of
+   [Setoid.Algebras.Products][] consumes are *not* here; they are bare-types
+   results in [Overture.Functions][];
++  [Setoid.Functions.Inverses][]: images and ranges, `Image_∋_`{.AgdaDatatype}
+   and `IsInRange`{.AgdaFunction};
++  [Setoid.Functions.Bijective][]: `IsBijective`{.AgdaFunction} as
+   injective-and-surjective, with the inverse `BijInv`{.AgdaFunction}.
+
+</a><a id="1882" class="Markup">```agda
+</a><a id="1890" class="Symbol">{-#</a> <a id="1894" class="Keyword">OPTIONS</a> <a id="1902" class="Pragma">--without-K</a> <a id="1914" class="Pragma">--exact-split</a> <a id="1928" class="Pragma">--safe</a> <a id="1935" class="Symbol">#-}</a>
+
+<a id="1940" class="Keyword">module</a> <a id="1947" href="Setoid.Functions.html" class="Module">Setoid.Functions</a> <a id="1964" class="Keyword">where</a>
+
+<a id="1971" class="Keyword">open</a> <a id="1976" class="Keyword">import</a> <a id="1983" href="Setoid.Functions.Basic.html" class="Module">Setoid.Functions.Basic</a>       <a id="2012" class="Keyword">public</a>
+<a id="2019" class="Keyword">open</a> <a id="2024" class="Keyword">import</a> <a id="2031" href="Setoid.Functions.Bijective.html" class="Module">Setoid.Functions.Bijective</a>   <a id="2060" class="Keyword">public</a>
+<a id="2067" class="Keyword">open</a> <a id="2072" class="Keyword">import</a> <a id="2079" href="Setoid.Functions.Injective.html" class="Module">Setoid.Functions.Injective</a>   <a id="2108" class="Keyword">public</a>
+<a id="2115" class="Keyword">open</a> <a id="2120" class="Keyword">import</a> <a id="2127" href="Setoid.Functions.Inverses.html" class="Module">Setoid.Functions.Inverses</a>    <a id="2156" class="Keyword">public</a>
+<a id="2163" class="Keyword">open</a> <a id="2168" class="Keyword">import</a> <a id="2175" href="Setoid.Functions.Surjective.html" class="Module">Setoid.Functions.Surjective</a>  <a id="2204" class="Keyword">public</a>
+<a id="2211" class="Markup">```
+</a></pre></body></html>

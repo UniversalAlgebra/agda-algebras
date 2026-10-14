@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>Classical.Signatures.Magma</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">---
+layout: default
+file: &quot;src/Classical/Signatures/Magma.lagda.md&quot;
+title: &quot;Classical.Signatures.Magma module&quot;
+date: &quot;2026-05-17&quot;
+author: &quot;the agda-algebras development team&quot;
+---
+
+### The signature of magmas
+
+This is the [Classical.Signatures.Magma][] module of the [Agda Universal Algebra Library][].
+
+A *magma* is, traditionally, a carrier equipped with a single binary operation;
+this is the most minimal of the classical algebraic structures, and the right
+starting point for the [`Classical/`][Classical] tree because its equational
+theory is empty.  This module fixes the signature of magmas as a one-symbol
+algebraic signature with that symbol assigned arity `Fin 2`.
+
+Every concrete classical structure `X` is characterized by a pair
+`(Sig-X , Th-X)`, its own signature and its own complete equational theory in that
+signature.[^1]  For Magma the theory is empty; the signature carries the whole
+content.
+
+The conventions for naming established here are *normative* for every subsequent
+structure; each follows the same `Op-X`/`&lt;symbol&gt;-Op`/`ar-X`/`Sig-X` pattern,
+extending or reusing as appropriate.
+
++  **Operation symbols** are introduced via a one-or-more-constructor data type
+   `Op-&lt;Structure&gt;`, with each constructor named `&lt;symbol&gt;-Op` (hyphen-separated,
+   capital `O`).  Reserving the bare symbol (`∙`, `ε`, `⁻¹`, `+`, `0`, `·`, `1`,
+   `∧`, `∨`) for user-facing curried sugar avoids a name clash between the
+   syntactic operation-symbol-of-the-signature and the semantic curried operation
+   on a fixed algebra.
++  **Arity functions** are named `ar-&lt;Structure&gt;` and defined by direct pattern
+   matching on operation-symbol constructors (`ar-Magma ∙-Op = Fin 2`).  Direct
+   pattern matching is required, not optional: the `Classical.Equations` builders
+   demand definitional reduction of `ArityOf 𝑆 f` to a concrete `Fin n` at use
+   sites, which fails for indirect definitions (table lookups, conditionals).
++  **Signature values** are named `Sig-&lt;Structure&gt;` and assembled as a Σ-pair of
+   the operation-symbol type and the arity function.  The hyphenated long form is
+   preferred over subscripted alternatives (`𝑆ₘₐ`, `𝑆_Magma`);[^2] the long form
+   survives grep, copy/paste, and rendering across plain-text channels.
+
+&lt;!--
+</a><a id="2256" class="Markup">```agda
+</a><a id="2264" class="Symbol">{-#</a> <a id="2268" class="Keyword">OPTIONS</a> <a id="2276" class="Pragma">--without-K</a> <a id="2288" class="Pragma">--exact-split</a> <a id="2302" class="Pragma">--safe</a> <a id="2309" class="Symbol">#-}</a>
+
+<a id="2314" class="Keyword">module</a> <a id="2321" href="Classical.Signatures.Magma.html" class="Module">Classical.Signatures.Magma</a> <a id="2348" class="Keyword">where</a>
+
+<a id="2355" class="Comment">-- Imports from Agda and the Agda Standard Library ----------------------------</a>
+<a id="2435" class="Keyword">open</a> <a id="2440" class="Keyword">import</a> <a id="2447" href="Agda.Primitive.html" class="Module">Agda.Primitive</a> <a id="2462" class="Keyword">using</a> <a id="2468" class="Symbol">()</a>                <a id="2486" class="Keyword">renaming</a> <a id="2495" class="Symbol">(</a> <a id="2497" href="Agda.Primitive.html#446" class="Primitive">Set</a> <a id="2501" class="Symbol">to</a> <a id="2504" class="Primitive">Type</a> <a id="2509" class="Symbol">)</a>
+<a id="2511" class="Keyword">open</a> <a id="2516" class="Keyword">import</a> <a id="2523" href="Data.Fin.Base.html" class="Module">Data.Fin.Base</a>  <a id="2538" class="Keyword">using</a> <a id="2544" class="Symbol">(</a> <a id="2546" href="Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="2550" class="Symbol">)</a>
+<a id="2552" class="Keyword">open</a> <a id="2557" class="Keyword">import</a> <a id="2564" href="Data.Product.html" class="Module">Data.Product</a>   <a id="2579" class="Keyword">using</a> <a id="2585" class="Symbol">(</a> <a id="2587" href="Agda.Builtin.Sigma.html#252" class="InductiveConstructor Operator">_,_</a> <a id="2591" class="Symbol">)</a>
+<a id="2593" class="Keyword">open</a> <a id="2598" class="Keyword">import</a> <a id="2605" href="Level.html" class="Module">Level</a>          <a id="2620" class="Keyword">using</a> <a id="2626" class="Symbol">(</a> <a id="2628" href="Level.html#521" class="Function">0ℓ</a> <a id="2631" class="Symbol">)</a>
+
+<a id="2634" class="Comment">-- Imports from the Agda Universal Algebra Library ----------------------------</a>
+<a id="2714" class="Keyword">open</a> <a id="2719" class="Keyword">import</a> <a id="2726" href="Overture.Signatures.html" class="Module">Overture.Signatures</a> <a id="2746" class="Keyword">using</a> <a id="2752" class="Symbol">(</a> <a id="2754" href="Overture.Signatures.html#3461" class="Function">Signature</a> <a id="2764" class="Symbol">)</a>
+<a id="2766" class="Markup">```
+</a><a id="2770" class="Background">--&gt;
+
+#### The operation-symbol type
+
+A magma has a single binary operation symbol.  The constructor is named `∙-Op`
+following the `&lt;symbol&gt;-Op` convention; the bare `∙` is reserved for the curried
+user-facing accessor introduced in [`Classical.Structures.Magma`][Classical.Structures.Magma].
+
+</a><a id="3063" class="Markup">```agda
+</a><a id="3071" class="Keyword">data</a> <a id="Op-Magma"></a><a id="3076" href="Classical.Signatures.Magma.html#3076" class="Datatype">Op-Magma</a> <a id="3085" class="Symbol">:</a> <a id="3087" href="Classical.Signatures.Magma.html#2504" class="Primitive">Type</a> <a id="3092" class="Keyword">where</a>
+  <a id="Op-Magma.∙-Op"></a><a id="3100" href="Classical.Signatures.Magma.html#3100" class="InductiveConstructor">∙-Op</a> <a id="3105" class="Symbol">:</a> <a id="3107" href="Classical.Signatures.Magma.html#3076" class="Datatype">Op-Magma</a>
+<a id="3116" class="Markup">```
+</a><a id="3120" class="Background">
+#### The arity function
+
+`∙-Op` is binary, so its arity is `Fin 2`.  Direct pattern matching on the single
+constructor lets `ArityOf Sig-Magma ∙-Op` reduce definitionally to `Fin 2`; this
+is what makes the arity-conformance evidence `refl` of type
+`ArityOf Sig-Magma ∙-Op ≡ Fin 2` typecheck in `Th-Semigroup` and every subsequent
+theory.
+
+</a><a id="3460" class="Markup">```agda
+</a><a id="ar-Magma"></a><a id="3468" href="Classical.Signatures.Magma.html#3468" class="Function">ar-Magma</a> <a id="3477" class="Symbol">:</a> <a id="3479" href="Classical.Signatures.Magma.html#3076" class="Datatype">Op-Magma</a> <a id="3488" class="Symbol">→</a> <a id="3490" href="Classical.Signatures.Magma.html#2504" class="Primitive">Type</a>
+<a id="3495" href="Classical.Signatures.Magma.html#3468" class="Function">ar-Magma</a> <a id="3504" href="Classical.Signatures.Magma.html#3100" class="InductiveConstructor">∙-Op</a> <a id="3509" class="Symbol">=</a> <a id="3511" href="Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="3515" class="Number">2</a>
+<a id="3517" class="Markup">```
+</a><a id="3521" class="Background">
+#### The signature value
+
+`Sig-Magma` pairs `Op-Magma` with `ar-Magma`, and is the signature every `∙`-based
+structure in the `Classical/` tree builds on: `Semigroup` and its equation-only
+extensions reuse it unchanged, and richer signatures such as `Sig-Monoid` embed it
+by the inclusion that the forgetful functors ride.
+
+</a><a id="3846" class="Markup">```agda
+</a><a id="Sig-Magma"></a><a id="3854" href="Classical.Signatures.Magma.html#3854" class="Function">Sig-Magma</a> <a id="3864" class="Symbol">:</a> <a id="3866" href="Overture.Signatures.html#3461" class="Function">Signature</a> <a id="3876" href="Level.html#521" class="Function">0ℓ</a> <a id="3879" href="Level.html#521" class="Function">0ℓ</a>
+<a id="3882" href="Classical.Signatures.Magma.html#3854" class="Function">Sig-Magma</a> <a id="3892" class="Symbol">=</a> <a id="3894" href="Classical.Signatures.Magma.html#3076" class="Datatype">Op-Magma</a> <a id="3903" href="Agda.Builtin.Sigma.html#252" class="InductiveConstructor Operator">,</a> <a id="3905" href="Classical.Signatures.Magma.html#3468" class="Function">ar-Magma</a>
+<a id="3914" class="Markup">```
+</a><a id="3918" class="Background">
+---
+
+[^1]: per [ADR-002] v2 §5.
+
+[^2]: per [ADR-002] v2 §7.
+</a></pre></body></html>

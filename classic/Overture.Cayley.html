@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>Overture.Cayley</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">---
+layout: default
+title : &quot;Overture.Cayley module (The Agda Universal Algebra Library)&quot;
+date : &quot;2026-05-31&quot;
+author: &quot;the agda-algebras development team&quot;
+---
+
+### Cayley tables for finite operations
+
+This is the [Overture.Cayley][] module of the [Agda Universal Algebra Library][].
+
+A *Cayley table* (or *multiplication table*) specifies a binary operation on a finite
+set by tabulating every product.  This module fixes a small, reusable representation
+for finite operations together with the decision procedures that discharge their
+algebraic laws, and so answers the following practical question:
+
+&gt; How does one represent a binary operation on a finite set by its Cayley table in
+&gt; Agda, and how does one prove the laws of such an operation?
+
+The representation deliberately depends only on the finite-data parts of the standard
+library — `Fin`{.AgdaDatatype}, `Vec`{.AgdaDatatype}, and decidable equality on
+`Fin n` — and does not depend on the standard library&#39;s algebra hierarchy.
+
+A binary operation is just a function `Fin n → Fin n → Fin n`; we do not route it
+through `Algebra.Core.Op₂` or any bundle.  The representation is a square table of
+indices.  The carrier is the canonical `n`-element type `Fin n`, and a Cayley table
+is an `n × n` array of elements of `Fin n`, stored row-major as a
+`Vec`{.AgdaDatatype} of rows:
+
+&gt; `⟦ t ⟧ a b` reads the entry in row `a`, column `b`.  This makes the table itself a
+&gt; first-class, inspectable datum — the literal you write down *is* the Cayley table
+&gt; — while `⟦_⟧`{.AgdaFunction} turns it into the binary operation in
+&gt; `Fin n → Fin n → Fin n` that the `Classical`{.AgdaModule} builders
+&gt; (`opsToMagma`{.AgdaFunction}, `eqsToGroup`{.AgdaFunction}, …) consume.
+
+The pay-off is that an equational law over a finite carrier is a *decidable*
+proposition: `Fin n` has decidable equality, and `Data.Fin.Properties.all?` turns a
+pointwise decision procedure into a decision for a universally quantified statement.
+So each law (associativity, commutativity, idempotence, the identity and inverse
+laws) is discharged by `from-yes`{.AgdaFunction} applied to the corresponding
+decision, with no hand-written case dump.
+
+Equivalently, if the table you wrote down does *not* satisfy a law, the decision
+reduces to `no`{.AgdaInductiveConstructor} and the `from-yes`{.AgdaFunction} term
+fails to type-check; in this way, the operation&#39;s properties can be checked by the
+Agda type checker.
+
+&lt;!--
+</a><a id="2437" class="Markup">```agda
+</a><a id="2445" class="Symbol">{-#</a> <a id="2449" class="Keyword">OPTIONS</a> <a id="2457" class="Pragma">--without-K</a> <a id="2469" class="Pragma">--exact-split</a> <a id="2483" class="Pragma">--safe</a> <a id="2490" class="Symbol">#-}</a>
+
+<a id="2495" class="Keyword">module</a> <a id="2502" href="Overture.Cayley.html" class="Module">Overture.Cayley</a> <a id="2518" class="Keyword">where</a>
+
+<a id="2525" class="Comment">-- Imports from Agda and the Agda Standard Library ----------------------------</a>
+<a id="2605" class="Keyword">open</a> <a id="2610" class="Keyword">import</a> <a id="2617" href="Agda.Primitive.html" class="Module">Agda.Primitive</a>                   <a id="2650" class="Keyword">using</a> <a id="2656" class="Symbol">()</a> <a id="2659" class="Keyword">renaming</a> <a id="2668" class="Symbol">(</a> <a id="2670" href="Agda.Primitive.html#446" class="Primitive">Set</a> <a id="2674" class="Symbol">to</a> <a id="2677" class="Primitive">Type</a> <a id="2682" class="Symbol">)</a>
+<a id="2684" class="Keyword">open</a> <a id="2689" class="Keyword">import</a> <a id="2696" href="Data.Nat.html" class="Module">Data.Nat</a>                         <a id="2729" class="Keyword">using</a> <a id="2735" class="Symbol">(</a> <a id="2737" href="Data.Nat.Base.html#1069" class="Datatype">ℕ</a> <a id="2739" class="Symbol">)</a>
+<a id="2741" class="Keyword">open</a> <a id="2746" class="Keyword">import</a> <a id="2753" href="Data.Fin.html" class="Module">Data.Fin</a>                         <a id="2786" class="Keyword">using</a> <a id="2792" class="Symbol">(</a> <a id="2794" href="Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="2798" class="Symbol">)</a>
+<a id="2800" class="Keyword">open</a> <a id="2805" class="Keyword">import</a> <a id="2812" href="Data.Vec.Base.html" class="Module">Data.Vec.Base</a>                    <a id="2845" class="Keyword">using</a> <a id="2851" class="Symbol">(</a> <a id="2853" href="Data.Vec.Base.html#1119" class="Datatype">Vec</a> <a id="2857" class="Symbol">;</a> <a id="2859" href="Data.Vec.Base.html#1676" class="Function">lookup</a> <a id="2866" class="Symbol">)</a>
+<a id="2868" class="Keyword">open</a> <a id="2873" class="Keyword">import</a> <a id="2880" href="Level.html" class="Module">Level</a>                            <a id="2913" class="Keyword">using</a> <a id="2919" class="Symbol">(</a> <a id="2921" href="Agda.Primitive.html#800" class="Postulate">Level</a> <a id="2927" class="Symbol">)</a>
+<a id="2929" class="Keyword">open</a> <a id="2934" class="Keyword">import</a> <a id="2941" href="Relation.Binary.PropositionalEquality.html" class="Module">Relation.Binary.PropositionalEquality</a>
+                                             <a id="3024" class="Keyword">using</a> <a id="3030" class="Symbol">(</a> <a id="3032" href="Agda.Builtin.Equality.html#167" class="Datatype Operator">_≡_</a> <a id="3036" class="Symbol">;</a> <a id="3038" href="Relation.Binary.PropositionalEquality.Core.html#1481" class="Function">cong</a> <a id="3043" class="Symbol">;</a> <a id="3045" href="Relation.Binary.PropositionalEquality.Core.html#2035" class="Function">sym</a> <a id="3049" class="Symbol">;</a> <a id="3051" href="Relation.Binary.PropositionalEquality.Core.html#2080" class="Function">trans</a> <a id="3057" class="Symbol">)</a>
+
+<a id="3060" class="Comment">-- Re-exported so downstream examples can discharge laws with a single name.</a>
+<a id="3137" class="Keyword">open</a> <a id="3142" class="Keyword">import</a> <a id="3149" href="Relation.Nullary.Decidable.Core.html" class="Module">Relation.Nullary.Decidable.Core</a>  <a id="3182" class="Keyword">using</a> <a id="3188" class="Symbol">(</a> <a id="3190" href="Relation.Nullary.Decidable.Core.html#5912" class="Function">from-yes</a> <a id="3199" class="Symbol">)</a> <a id="3201" class="Keyword">public</a>
+<a id="3208" class="Markup">```
+</a><a id="3212" class="Background">--&gt;
+
+#### The table representation
+
+</a><a id="3248" class="Markup">```agda
+</a><a id="3256" class="Comment">-- An n × n Cayley table over the carrier Fin n, stored as a vector of rows.</a>
+<a id="Table"></a><a id="3333" href="Overture.Cayley.html#3333" class="Function">Table</a> <a id="3339" class="Symbol">:</a> <a id="3341" href="Data.Nat.Base.html#1069" class="Datatype">ℕ</a> <a id="3343" class="Symbol">→</a> <a id="3345" href="Overture.Cayley.html#2677" class="Primitive">Type</a>
+<a id="3350" href="Overture.Cayley.html#3333" class="Function">Table</a> <a id="3356" href="Overture.Cayley.html#3356" class="Bound">n</a> <a id="3358" class="Symbol">=</a> <a id="3360" href="Data.Vec.Base.html#1119" class="Datatype">Vec</a> <a id="3364" class="Symbol">(</a><a id="3365" href="Data.Vec.Base.html#1119" class="Datatype">Vec</a> <a id="3369" class="Symbol">(</a><a id="3370" href="Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="3374" href="Overture.Cayley.html#3356" class="Bound">n</a><a id="3375" class="Symbol">)</a> <a id="3377" href="Overture.Cayley.html#3356" class="Bound">n</a><a id="3378" class="Symbol">)</a> <a id="3380" href="Overture.Cayley.html#3356" class="Bound">n</a>
+
+<a id="3383" class="Comment">-- Interpret a table as a binary operation: ⟦ t ⟧ a b is the row-a, column-b entry.</a>
+<a id="⟦_⟧"></a><a id="3467" href="Overture.Cayley.html#3467" class="Function Operator">⟦_⟧</a> <a id="3471" class="Symbol">:</a> <a id="3473" class="Symbol">∀</a> <a id="3475" class="Symbol">{</a><a id="3476" href="Overture.Cayley.html#3476" class="Bound">n</a><a id="3477" class="Symbol">}</a> <a id="3479" class="Symbol">→</a> <a id="3481" href="Overture.Cayley.html#3333" class="Function">Table</a> <a id="3487" href="Overture.Cayley.html#3476" class="Bound">n</a> <a id="3489" class="Symbol">→</a> <a id="3491" class="Symbol">(</a><a id="3492" href="Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="3496" href="Overture.Cayley.html#3476" class="Bound">n</a> <a id="3498" class="Symbol">→</a> <a id="3500" href="Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="3504" href="Overture.Cayley.html#3476" class="Bound">n</a> <a id="3506" class="Symbol">→</a> <a id="3508" href="Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="3512" href="Overture.Cayley.html#3476" class="Bound">n</a><a id="3513" class="Symbol">)</a>
+<a id="3515" href="Overture.Cayley.html#3467" class="Function Operator">⟦</a> <a id="3517" href="Overture.Cayley.html#3517" class="Bound">t</a> <a id="3519" href="Overture.Cayley.html#3467" class="Function Operator">⟧</a> <a id="3521" href="Overture.Cayley.html#3521" class="Bound">a</a> <a id="3523" href="Overture.Cayley.html#3523" class="Bound">b</a> <a id="3525" class="Symbol">=</a> <a id="3527" href="Data.Vec.Base.html#1676" class="Function">lookup</a> <a id="3534" class="Symbol">(</a><a id="3535" href="Data.Vec.Base.html#1676" class="Function">lookup</a> <a id="3542" href="Overture.Cayley.html#3517" class="Bound">t</a> <a id="3544" href="Overture.Cayley.html#3521" class="Bound">a</a><a id="3545" class="Symbol">)</a> <a id="3547" href="Overture.Cayley.html#3523" class="Bound">b</a>
+<a id="3549" class="Markup">```
+</a><a id="3553" class="Background">
+#### Decidable algebraic laws
+
+The decidable equational-law checkers for finite operations — `Associative?`,
+`Commutative?`, `Idempotent?`, the identity/inverse laws, and the two-operation
+absorption and distributivity laws — live in [`Overture.Operations.Properties`][Overture.Operations.Properties].
+They take an arbitrary finite operation `Fin n → Fin n → Fin n` and do not touch the
+table representation, so they are not specific to Cayley tables; finiteness is simply
+what makes the laws decidable.  Together with the `Table`/`⟦_⟧` machinery here and
+the re-exported `from-yes`{.AgdaFunction}, they let a finite example discharge its
+defining equations without writing a single case by hand.
+
+#### A note on the operation type
+
+This module types a binary operation as a bare `Fin n → Fin n → Fin n` rather than
+the library&#39;s tuple-indexed `Op`{.AgdaFunction}.  There is a single canonical,
+arity-first `Op I A = (I → A) → A` in `Overture.Operations`{.AgdaModule}; although
+that tuple-indexed shape is the right one for the universal-algebra meta-theory, it
+is the wrong shape for a Cayley table.  A table is read in *curried* form (`⟦ t ⟧ a
+b` is the row-`a`, column-`b` entry) and the `Classical`{.AgdaModule} builders
+(`opsToMagma`{.AgdaFunction}, `eqsToGroup`{.AgdaFunction}, …) that consume
+`⟦_⟧`{.AgdaFunction} take their binary operation curried as `Fin n → Fin n → Fin n`.
+Routing `⟦_⟧`{.AgdaFunction} through the tuple-indexed `Op (Fin 2) (Fin n)` would
+only insert `Curry₂`/`Uncurry₂` adapters at every call site and obscure the
+two-dimensional table, so the finite Cayley-table case keeps the plain curried
+function type.  The decidable-law checkers in [`Overture.Operations.Properties`][Overture.Operations.Properties]
+take the same bare `Fin n → Fin n → Fin n`, for the same reason: finiteness is what
+makes the laws decidable, independently of how an operation&#39;s arguments are packaged.
+
+#### Associativity through a faithful action
+
+For a small carrier, `Associative?`{.AgdaFunction} of
+[Overture.Operations.Properties][] decides associativity by enumerating all
+triples, and the count is cubic in the carrier size: at `Fin 6` it is 216
+triples, at `Fin 60` it is 216000.  When the operation is faithfully
+represented by function composition on a set of points (for a permutation
+group presented by a table, its action on the points it permutes),
+associativity follows instead from the associativity of composition, which
+holds definitionally.  Two checks suffice, and each costs `n² · m` point
+comparisons for `n` carrier elements acting on `m` points, so the route wins
+exactly when the point set is small (quadratic in the carrier for fixed `m`;
+for an action on the carrier itself it degenerates to the cubic count): the
+representation sends products to composition
+(`ActionHom?`{.AgdaFunction} of [Overture.Operations.Properties][]), and it is
+faithful, meaning distinct elements act differently
+(`ActionFaithful?`{.AgdaFunction}).
+
+</a><a id="6511" class="Markup">```agda
+</a><a id="6519" class="Keyword">module</a> <a id="6526" href="Overture.Cayley.html#6526" class="Module">_</a> <a id="6528" class="Symbol">{</a><a id="6529" href="Overture.Cayley.html#6529" class="Bound">a</a> <a id="6531" href="Overture.Cayley.html#6531" class="Bound">p</a> <a id="6533" class="Symbol">:</a> <a id="6535" href="Agda.Primitive.html#800" class="Postulate">Level</a><a id="6540" class="Symbol">}</a> <a id="6542" class="Symbol">{</a><a id="6543" href="Overture.Cayley.html#6543" class="Bound">A</a> <a id="6545" class="Symbol">:</a> <a id="6547" href="Overture.Cayley.html#2677" class="Primitive">Type</a> <a id="6552" href="Overture.Cayley.html#6529" class="Bound">a</a><a id="6553" class="Symbol">}</a> <a id="6555" class="Symbol">{</a><a id="6556" href="Overture.Cayley.html#6556" class="Bound">P</a> <a id="6558" class="Symbol">:</a> <a id="6560" href="Overture.Cayley.html#2677" class="Primitive">Type</a> <a id="6565" href="Overture.Cayley.html#6531" class="Bound">p</a><a id="6566" class="Symbol">}</a>
+         <a id="6577" class="Symbol">(</a><a id="6578" href="Overture.Cayley.html#6578" class="Bound Operator">_·_</a> <a id="6582" class="Symbol">:</a> <a id="6584" href="Overture.Cayley.html#6543" class="Bound">A</a> <a id="6586" class="Symbol">→</a> <a id="6588" href="Overture.Cayley.html#6543" class="Bound">A</a> <a id="6590" class="Symbol">→</a> <a id="6592" href="Overture.Cayley.html#6543" class="Bound">A</a><a id="6593" class="Symbol">)</a> <a id="6595" class="Symbol">(</a><a id="6596" href="Overture.Cayley.html#6596" class="Bound">act</a> <a id="6600" class="Symbol">:</a> <a id="6602" href="Overture.Cayley.html#6543" class="Bound">A</a> <a id="6604" class="Symbol">→</a> <a id="6606" href="Overture.Cayley.html#6556" class="Bound">P</a> <a id="6608" class="Symbol">→</a> <a id="6610" href="Overture.Cayley.html#6556" class="Bound">P</a><a id="6611" class="Symbol">)</a> <a id="6613" class="Keyword">where</a>
+
+  <a id="6622" class="Comment">-- Associativity from a faithful action: if act represents the operation by</a>
+  <a id="6700" class="Comment">-- function composition and distinct elements act differently, then the</a>
+  <a id="6774" class="Comment">-- operation is associative.</a>
+  <a id="6805" href="Overture.Cayley.html#6805" class="Function">assoc-from-action</a> <a id="6823" class="Symbol">:</a>
+       <a id="6832" class="Symbol">(∀</a> <a id="6835" href="Overture.Cayley.html#6835" class="Bound">x</a> <a id="6837" href="Overture.Cayley.html#6837" class="Bound">y</a> <a id="6839" href="Overture.Cayley.html#6839" class="Bound">q</a> <a id="6841" class="Symbol">→</a> <a id="6843" href="Overture.Cayley.html#6596" class="Bound">act</a> <a id="6847" class="Symbol">(</a><a id="6848" href="Overture.Cayley.html#6835" class="Bound">x</a> <a id="6850" href="Overture.Cayley.html#6578" class="Bound Operator">·</a> <a id="6852" href="Overture.Cayley.html#6837" class="Bound">y</a><a id="6853" class="Symbol">)</a> <a id="6855" href="Overture.Cayley.html#6839" class="Bound">q</a> <a id="6857" href="Agda.Builtin.Equality.html#167" class="Datatype Operator">≡</a> <a id="6859" href="Overture.Cayley.html#6596" class="Bound">act</a> <a id="6863" href="Overture.Cayley.html#6835" class="Bound">x</a> <a id="6865" class="Symbol">(</a><a id="6866" href="Overture.Cayley.html#6596" class="Bound">act</a> <a id="6870" href="Overture.Cayley.html#6837" class="Bound">y</a> <a id="6872" href="Overture.Cayley.html#6839" class="Bound">q</a><a id="6873" class="Symbol">))</a>
+    <a id="6880" class="Symbol">→</a>  <a id="6883" class="Symbol">(∀</a> <a id="6886" href="Overture.Cayley.html#6886" class="Bound">x</a> <a id="6888" href="Overture.Cayley.html#6888" class="Bound">y</a> <a id="6890" class="Symbol">→</a> <a id="6892" class="Symbol">(∀</a> <a id="6895" href="Overture.Cayley.html#6895" class="Bound">q</a> <a id="6897" class="Symbol">→</a> <a id="6899" href="Overture.Cayley.html#6596" class="Bound">act</a> <a id="6903" href="Overture.Cayley.html#6886" class="Bound">x</a> <a id="6905" href="Overture.Cayley.html#6895" class="Bound">q</a> <a id="6907" href="Agda.Builtin.Equality.html#167" class="Datatype Operator">≡</a> <a id="6909" href="Overture.Cayley.html#6596" class="Bound">act</a> <a id="6913" href="Overture.Cayley.html#6888" class="Bound">y</a> <a id="6915" href="Overture.Cayley.html#6895" class="Bound">q</a><a id="6916" class="Symbol">)</a> <a id="6918" class="Symbol">→</a> <a id="6920" href="Overture.Cayley.html#6886" class="Bound">x</a> <a id="6922" href="Agda.Builtin.Equality.html#167" class="Datatype Operator">≡</a> <a id="6924" href="Overture.Cayley.html#6888" class="Bound">y</a><a id="6925" class="Symbol">)</a>
+    <a id="6931" class="Symbol">→</a>  <a id="6934" class="Symbol">∀</a> <a id="6936" href="Overture.Cayley.html#6936" class="Bound">x</a> <a id="6938" href="Overture.Cayley.html#6938" class="Bound">y</a> <a id="6940" href="Overture.Cayley.html#6940" class="Bound">z</a> <a id="6942" class="Symbol">→</a> <a id="6944" class="Symbol">(</a><a id="6945" href="Overture.Cayley.html#6936" class="Bound">x</a> <a id="6947" href="Overture.Cayley.html#6578" class="Bound Operator">·</a> <a id="6949" href="Overture.Cayley.html#6938" class="Bound">y</a><a id="6950" class="Symbol">)</a> <a id="6952" href="Overture.Cayley.html#6578" class="Bound Operator">·</a> <a id="6954" href="Overture.Cayley.html#6940" class="Bound">z</a> <a id="6956" href="Agda.Builtin.Equality.html#167" class="Datatype Operator">≡</a> <a id="6958" href="Overture.Cayley.html#6936" class="Bound">x</a> <a id="6960" href="Overture.Cayley.html#6578" class="Bound Operator">·</a> <a id="6962" class="Symbol">(</a><a id="6963" href="Overture.Cayley.html#6938" class="Bound">y</a> <a id="6965" href="Overture.Cayley.html#6578" class="Bound Operator">·</a> <a id="6967" href="Overture.Cayley.html#6940" class="Bound">z</a><a id="6968" class="Symbol">)</a>
+  <a id="6972" href="Overture.Cayley.html#6805" class="Function">assoc-from-action</a> <a id="6990" href="Overture.Cayley.html#6990" class="Bound">hom</a> <a id="6994" href="Overture.Cayley.html#6994" class="Bound">faithful</a> <a id="7003" href="Overture.Cayley.html#7003" class="Bound">x</a> <a id="7005" href="Overture.Cayley.html#7005" class="Bound">y</a> <a id="7007" href="Overture.Cayley.html#7007" class="Bound">z</a> <a id="7009" class="Symbol">=</a> <a id="7011" href="Overture.Cayley.html#6994" class="Bound">faithful</a> <a id="7020" class="Symbol">_</a> <a id="7022" class="Symbol">_</a> <a id="7024" class="Symbol">λ</a> <a id="7026" href="Overture.Cayley.html#7026" class="Bound">q</a> <a id="7028" class="Symbol">→</a>
+    <a id="7034" href="Relation.Binary.PropositionalEquality.Core.html#2080" class="Function">trans</a>  <a id="7041" class="Symbol">(</a><a id="7042" href="Relation.Binary.PropositionalEquality.Core.html#2080" class="Function">trans</a> <a id="7048" class="Symbol">(</a><a id="7049" href="Overture.Cayley.html#6990" class="Bound">hom</a> <a id="7053" class="Symbol">(</a><a id="7054" href="Overture.Cayley.html#7003" class="Bound">x</a> <a id="7056" href="Overture.Cayley.html#6578" class="Bound Operator">·</a> <a id="7058" href="Overture.Cayley.html#7005" class="Bound">y</a><a id="7059" class="Symbol">)</a> <a id="7061" href="Overture.Cayley.html#7007" class="Bound">z</a> <a id="7063" href="Overture.Cayley.html#7026" class="Bound">q</a><a id="7064" class="Symbol">)</a> <a id="7066" class="Symbol">(</a><a id="7067" href="Overture.Cayley.html#6990" class="Bound">hom</a> <a id="7071" href="Overture.Cayley.html#7003" class="Bound">x</a> <a id="7073" href="Overture.Cayley.html#7005" class="Bound">y</a> <a id="7075" class="Symbol">(</a><a id="7076" href="Overture.Cayley.html#6596" class="Bound">act</a> <a id="7080" href="Overture.Cayley.html#7007" class="Bound">z</a> <a id="7082" href="Overture.Cayley.html#7026" class="Bound">q</a><a id="7083" class="Symbol">)))</a>
+           <a id="7098" class="Symbol">(</a><a id="7099" href="Relation.Binary.PropositionalEquality.Core.html#2035" class="Function">sym</a> <a id="7103" class="Symbol">(</a><a id="7104" href="Relation.Binary.PropositionalEquality.Core.html#2080" class="Function">trans</a> <a id="7110" class="Symbol">(</a><a id="7111" href="Overture.Cayley.html#6990" class="Bound">hom</a> <a id="7115" href="Overture.Cayley.html#7003" class="Bound">x</a> <a id="7117" class="Symbol">(</a><a id="7118" href="Overture.Cayley.html#7005" class="Bound">y</a> <a id="7120" href="Overture.Cayley.html#6578" class="Bound Operator">·</a> <a id="7122" href="Overture.Cayley.html#7007" class="Bound">z</a><a id="7123" class="Symbol">)</a> <a id="7125" href="Overture.Cayley.html#7026" class="Bound">q</a><a id="7126" class="Symbol">)</a> <a id="7128" class="Symbol">(</a><a id="7129" href="Relation.Binary.PropositionalEquality.Core.html#1481" class="Function">cong</a> <a id="7134" class="Symbol">(</a><a id="7135" href="Overture.Cayley.html#6596" class="Bound">act</a> <a id="7139" href="Overture.Cayley.html#7003" class="Bound">x</a><a id="7140" class="Symbol">)</a> <a id="7142" class="Symbol">(</a><a id="7143" href="Overture.Cayley.html#6990" class="Bound">hom</a> <a id="7147" href="Overture.Cayley.html#7005" class="Bound">y</a> <a id="7149" href="Overture.Cayley.html#7007" class="Bound">z</a> <a id="7151" href="Overture.Cayley.html#7026" class="Bound">q</a><a id="7152" class="Symbol">))))</a>
+<a id="7157" class="Markup">```
+</a></pre></body></html>
