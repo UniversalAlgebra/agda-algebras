@@ -121,10 +121,6 @@
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
-         <loc>https://agda-algebras.universalalgebra.org/Classical/Bundles/DistributiveLattice/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
          <loc>https://agda-algebras.universalalgebra.org/Classical/Bundles/Group/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
@@ -214,10 +210,6 @@
     </url>
     <url>
          <loc>https://agda-algebras.universalalgebra.org/Classical/Small/Structures/CommutativeSemigroup/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/Classical/Small/Structures/DistributiveLattice/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
@@ -421,27 +413,7 @@
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
-         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Lattice/DistributiveLattice/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Lattice/Dual/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Lattice/FilterIdeal/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Lattice/OrdinalSum/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
          <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Lattice/Partitions/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/Classical/Structures/Lattice/Product/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
@@ -458,10 +430,6 @@
     </url>
     <url>
          <loc>https://agda-algebras.universalalgebra.org/Classical/Theories/CommutativeSemigroup/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/Classical/Theories/DistributiveLattice/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
@@ -586,14 +554,6 @@
     </url>
     <url>
          <loc>https://agda-algebras.universalalgebra.org/Examples/Classical/Lattices/L2/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/Examples/Classical/Lattices/L2Distributive/</loc>
-         <lastmod>1980-01-01</lastmod>
-    </url>
-    <url>
-         <loc>https://agda-algebras.universalalgebra.org/Examples/Classical/Lattices/L3Heyting/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
