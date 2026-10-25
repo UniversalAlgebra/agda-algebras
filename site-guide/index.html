@@ -47,15 +47,17 @@
     
     
       
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Inter";--md-code-font:"Roboto Mono"}</style>
-      
     
     
-      <link rel="stylesheet" href="../stylesheets/custom.css?h=b9640cc2">
+      <link rel="stylesheet" href="../assets/fonts/fonts.css?h=f014ea93">
+    
+      <link rel="stylesheet" href="../stylesheets/tokens.css?h=c062133f">
+    
+      <link rel="stylesheet" href="../stylesheets/theme.css?h=a9576cc9">
+    
+      <link rel="stylesheet" href="../stylesheets/agda.css?h=f1766126">
+    
+      <link rel="stylesheet" href="../stylesheets/site.css?h=b32b4e63">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -73,7 +75,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -130,20 +132,20 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
     
       <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
   
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
   
@@ -204,7 +206,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/ualib/agda-algebras" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/ualib/agda-algebras" title="Go to repository" class="md-source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
@@ -344,7 +346,7 @@
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/ualib/agda-algebras" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/ualib/agda-algebras" title="Go to repository" class="md-source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
@@ -392,6 +394,8 @@
   
     
     
+      
+        
       
         
       
@@ -13254,6 +13258,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/ualib/agda-lattices" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    agda-lattices ↗
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -13516,10 +13548,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#colours-and-the-theme" class="md-nav__link">
+  <a href="#the-theme" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Colours and the theme
+        The theme
       
     </span>
   </a>
@@ -13542,6 +13574,17 @@
     <span class="md-ellipsis">
       
         Fonts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-audits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The audits
       
     </span>
   </a>
@@ -14280,10 +14323,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#colours-and-the-theme" class="md-nav__link">
+  <a href="#the-theme" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Colours and the theme
+        The theme
       
     </span>
   </a>
@@ -14306,6 +14349,17 @@
     <span class="md-ellipsis">
       
         Fonts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-audits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The audits
       
     </span>
   </a>
@@ -14453,8 +14507,11 @@ separate copy of the documentation.  The decision record is
    and ADR sections are generated by <code>scripts/python/gen_links.py</code>; re-run that
    (<code>make gen-links</code>) after adding a module or an ADR.  CI runs it with <code>--check</code>
    and rejects any drift, so the file cannot fall behind the tree.</li>
-<li><strong><code>docs/stylesheets/custom.css</code></strong> — all the bespoke styling: the Agda token
-   colours, the modern "Aurora" theme, and the landing-page components.</li>
+<li><strong>The theme</strong> (see <a href="#the-theme">The theme</a> below): <code>docs/stylesheets/tokens.css</code>,
+   <code>theme.css</code> and <code>agda.css</code>, the self-hosted fonts in <code>docs/assets/fonts/</code>,
+   and the templates in <code>overrides/</code>.  <code>docs/stylesheets/site.css</code> holds this
+   site's own components (the landing page, the constellation, the controls on
+   Agda's code, the tooltips).</li>
 <li><strong><code>docs/assets/js/agda-copy.js</code></strong> — adds a copy button to the highlighted
    <code>&lt;pre class="Agda"&gt;</code> blocks (Material's own copy button only covers its
    <code>.highlight</code> blocks, which the <code>agda --html</code> output is not).</li>
@@ -14539,112 +14596,180 @@ preview exactly what gets deployed.</p>
 </li>
 </ul>
 <p>Merging any content change to <code>master</code> also re-pushes <code>gh-pages</code> and re-triggers publication as a side effect.  When checking what is actually live, remember the Pages CDN caches responses for up to ten minutes and your browser caches the HTML and CSS on top of that — hard-refresh, or probe a file headers-only with <code>curl -sI https://agda-algebras.universalalgebra.org/assets/js/agda-copy.js</code>.</p>
-<p>The site's own CSS/JS are <strong>content-hashed</strong> so that a returning visitor never renders fresh HTML against a stale-cached stylesheet or script (the assets carry a multi-hour <code>max-age</code>, far longer than the HTML's ten minutes).  <code>on_config</code> in <a href="https://github.com/ualib/agda-algebras/blob/master/scripts/python/mkdocs_hooks.py"><code>scripts/python/mkdocs_hooks.py</code></a> appends an eight-character hash of each <code>extra_css</code> / <code>extra_javascript</code> file to its URL (<code>custom.css?h=…</code>); a changed asset therefore gets a fresh URL, which the short-lived HTML picks up within minutes (#429).  The copied file keeps its plain name — only the reference carries the query — so the headers-only probe above is unaffected.</p>
+<p>The site's own CSS/JS are <strong>content-hashed</strong> so that a returning visitor never renders fresh HTML against a stale-cached stylesheet or script (the assets carry a multi-hour <code>max-age</code>, far longer than the HTML's ten minutes).  <code>on_config</code> in <a href="https://github.com/ualib/agda-algebras/blob/master/scripts/python/mkdocs_hooks.py"><code>scripts/python/mkdocs_hooks.py</code></a> appends an eight-character hash of each <code>extra_css</code> / <code>extra_javascript</code> file to its URL (<code>site.css?h=…</code>); a changed asset therefore gets a fresh URL, which the short-lived HTML picks up within minutes (#429).  The copied file keeps its plain name (only the reference carries the query), so the headers-only probe above is unaffected.</p>
 <p>Resist the temptation to add a deployment workflow to the <code>gh-pages</code> branch itself: that branch is disposable build output which the publish action overwrites, and keeping such a file alive would require <code>keep_files: true</code>, which never deletes anything and so leaks renamed or removed pages onto the live site forever.</p>
 <h2 id="changing-the-settings">Changing the settings<a class="headerlink" href="#changing-the-settings" title="Anchor link to this section">&para;</a></h2>
-<h3 id="colours-and-the-theme">Colours and the theme<a class="headerlink" href="#colours-and-the-theme" title="Anchor link to this section">&para;</a></h3>
-<p>The active palette is <strong>Aurora</strong> (indigo→violet chrome, orange accent), a set of
-CSS variables in <a href="https://github.com/ualib/agda-algebras/blob/master/stylesheets/custom.css"><code>docs/stylesheets/custom.css</code></a> under
-<code>§6</code>.  Each colour scheme (light <code>default</code>, dark <code>slate</code>) has its own block; the
-<code>--ualib-*</code> aliases below the Material variables drive the bespoke components
-(hero gradient, stat numbers, matrix header, the ✓ marks).  To shift the accent,
-for example, edit:</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span><span class="nt">data-md-color-scheme</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nv">--md-primary-fg-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#4f46e5</span><span class="p">;</span><span class="w"> </span><span class="c">/* header / chrome (indigo-violet)    */</span>
-<span class="w">  </span><span class="nv">--md-accent-fg-color</span><span class="p">:</span><span class="w">  </span><span class="mh">#fb6a00</span><span class="p">;</span><span class="w"> </span><span class="c">/* hover / accent  (vivid orange)     */</span>
-<span class="w">  </span><span class="nv">--md-typeset-a-color</span><span class="p">:</span><span class="w">  </span><span class="mh">#5b54e6</span><span class="p">;</span><span class="w"> </span><span class="c">/* links                              */</span>
-<span class="w">  </span><span class="nv">--ualib-board</span><span class="p">:</span><span class="w">   </span><span class="mh">#201f4d</span><span class="p">;</span><span class="w">       </span><span class="c">/* hero gradient, indigo base         */</span>
-<span class="w">  </span><span class="nv">--ualib-board-2</span><span class="p">:</span><span class="w"> </span><span class="mh">#4a2f86</span><span class="p">;</span><span class="w">       </span><span class="c">/* hero gradient, violet top          */</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>Two alternate palettes ship ready to drop in — replace <strong>both</strong> scheme blocks in
-<code>§6</code> with one of these to retheme the whole site:</p>
+<h3 id="the-theme">The theme<a class="headerlink" href="#the-theme" title="Anchor link to this section">&para;</a></h3>
+<p>The site wears <strong>Constellation</strong>, the design of
+<a href="https://williamdemeo.org">williamdemeo.org</a>, which was derived from this
+site's earlier palette and display face and refined there (#621, ADR-007
+Decision 8).  Its parts are files of their own, so that a sibling site (the
+agda-lattices site) can copy them unchanged and stay one design with this one:</p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>What it holds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>docs/stylesheets/tokens.css</code></td>
+<td>every color, size and space, light and dark</td>
+</tr>
+<tr>
+<td><code>docs/stylesheets/theme.css</code></td>
+<td>Material's variables and chrome, in tokens</td>
+</tr>
+<tr>
+<td><code>docs/stylesheets/agda.css</code></td>
+<td>Agda's token classes, in tokens</td>
+</tr>
+<tr>
+<td><code>docs/assets/fonts/</code></td>
+<td>the faces, their licenses, and <code>fonts.css</code></td>
+</tr>
+<tr>
+<td><code>overrides/404.html</code></td>
+<td>the 404 page, set as an unfilled Agda goal</td>
+</tr>
+<tr>
+<td><code>overrides/partials/source.html</code></td>
+<td>the repository chip, without its api.github.com fetch</td>
+</tr>
+</tbody>
+</table>
+<p><code>docs/stylesheets/site.css</code> is this site's own components, on the same tokens;
+it is the one stylesheet a sibling site writes for itself.  The stylesheets load
+in the order <code>mkdocs.yml</code> lists them: faces, tokens, theme, Agda, site.</p>
+<p>Three rules hold the design together, and each is checked rather than trusted:</p>
 <ul>
-<li><strong>Cobalt</strong> (blue-led, the calmest): light <code>--md-primary-fg-color: #2f37c9</code>,
-   <code>--ualib-board: #1c2348</code> / <code>--ualib-board-2: #2b3470</code>, accent <code>#f97316</code>,
-   links <code>#3055e6</code>; dark navy surfaces <code>#0e1322</code>.</li>
-<li><strong>Ultraviolet</strong> (violet-led, the boldest): light <code>--md-primary-fg-color:
-   #6d28d9</code>, <code>--ualib-board: #241a45</code> / <code>--ualib-board-2: #3a2570</code>, accent
-   <code>#f97316</code>, links <code>#7c3aed</code>; dark purple-black surfaces <code>#120e1f</code>.</li>
+<li><strong>Every color is a token.</strong>  No stylesheet names a raw color except
+   <code>tokens.css</code> (and the constellation's night sky in <code>site.css</code>, which is dark
+   in both schemes by design).  To change a color, change its token.</li>
+<li><strong>Every text color clears WCAG AA in both schemes</strong>, on the surface it sits
+   on: <code>make contrast-audit</code> measures every text element of every built page.
+   <code>tokens.css</code> lists the ratio of each Agda hue on the code-block surface.</li>
+<li><strong>Nothing is fetched from another origin</strong>: <code>make offline-check</code> (in CI)
+   reads every built page and stylesheet, and <code>make offline-audit</code> loads every
+   page in a browser and reads its network log.</li>
 </ul>
+<p>The site is <strong>dark first</strong>: <code>mkdocs.yml</code> lists the <code>slate</code> palette first, with
+no <code>media:</code> key, so a first visit is dark whatever the operating system
+prefers, and the toggle's choice is remembered.</p>
 <h3 id="the-code-block-palette">The code-block palette<a class="headerlink" href="#the-code-block-palette" title="Anchor link to this section">&para;</a></h3>
-<p>The Agda <strong>token</strong> colours (used by both code blocks and inline prose terms) are
-in <code>§2</code> of <code>custom.css</code>, with one block per scheme; the code-block <strong>background</strong>
-is in <code>§4</code>.  These are independent of the chrome palette above, so changing one
-never disturbs the other.</p>
-<ul>
-<li><strong>Light</strong> is the classic-vivid (formal-ledger) palette — it already matches
-   Aurora's blue/purple/orange, so it is usually left alone.</li>
-<li><strong>Dark</strong> is the bespoke <strong>Aurora Deep</strong> palette: a deep-indigo ground with
-   orange keywords (echoing the hero accent) and indigo functions/modules
-   (matching the links), so code reads as part of the theme.</li>
-</ul>
-<p>To swap the dark palette, replace the <code>[data-md-color-scheme="slate"]</code> block in
-<code>§2</code> <strong>and</strong> the slate <code>--md-code-bg-color</code> in <code>§4</code>.  Two cooler alternates are
-ready to paste in (a user-facing in-page palette switcher would be possible but
-is intentionally not built — it competes with the light/dark toggle for little
-gain; a one-block edit here is the supported way to retheme):</p>
-<div class="highlight"><pre><span></span><code><span class="c">/* TOKYO NIGHT — cool navy, violet keywords, cyan types. */</span>
-<span class="o">[</span><span class="nt">data-md-color-scheme</span><span class="o">=</span><span class="s2">&quot;slate&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">--md-code-bg-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#1a1b2e</span><span class="p">;</span><span class="w"> </span><span class="nv">--code-accent</span><span class="p">:</span><span class="w"> </span><span class="mh">#7aa2f7</span><span class="p">;</span>
-<span class="w">  </span><span class="err">.AgdaKeyword,</span><span class="w"> </span><span class="err">pre.Agda</span><span class="w"> </span><span class="err">.Keyword</span><span class="w"> </span><span class="err">{</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#bb9af7</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-<span class="w">  </span><span class="p">.</span><span class="nc">AgdaComment</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">Comment</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#565f89</span><span class="p">;</span><span class="w"> </span><span class="k">font-style</span><span class="p">:</span><span class="w"> </span><span class="kc">italic</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-<span class="w">  </span><span class="p">.</span><span class="nc">AgdaString</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">String</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#9ece6a</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-<span class="w">  </span><span class="p">.</span><span class="nc">AgdaNumber</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">Number</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#ff9e64</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-<span class="w">  </span><span class="p">.</span><span class="nc">AgdaSymbol</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">Symbol</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#89ddff</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-<span class="w">  </span><span class="p">.</span><span class="nc">AgdaArgument</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">Argument</span><span class="o">,</span><span class="w"> </span><span class="p">.</span><span class="nc">AgdaMarkup</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">Markup</span><span class="o">,</span>
-<span class="w">  </span><span class="p">.</span><span class="nc">AgdaBound</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">Bound</span><span class="o">,</span><span class="w"> </span><span class="p">.</span><span class="nc">AgdaGeneralizable</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">Generalizable</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#c0caf5</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-<span class="w">  </span><span class="p">.</span><span class="nc">AgdaPrimitiveType</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">PrimitiveType</span><span class="o">,</span><span class="w"> </span><span class="p">.</span><span class="nc">AgdaPrimitive</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">Primitive</span><span class="o">,</span>
-<span class="w">  </span><span class="p">.</span><span class="nc">AgdaDatatype</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">Datatype</span><span class="o">,</span><span class="w"> </span><span class="p">.</span><span class="nc">AgdaRecord</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">Record</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#2ac3de</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-<span class="w">  </span><span class="p">.</span><span class="nc">AgdaInductiveConstructor</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">InductiveConstructor</span><span class="o">,</span>
-<span class="w">  </span><span class="p">.</span><span class="nc">AgdaCoinductiveConstructor</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">CoinductiveConstructor</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#ff9e64</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-<span class="w">  </span><span class="p">.</span><span class="nc">AgdaField</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">Field</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#73daca</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-<span class="w">  </span><span class="p">.</span><span class="nc">AgdaFunction</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">Function</span><span class="o">,</span><span class="w"> </span><span class="p">.</span><span class="nc">AgdaMacro</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">Macro</span><span class="o">,</span>
-<span class="w">  </span><span class="p">.</span><span class="nc">AgdaPostulate</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">Postulate</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#7aa2f7</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-<span class="w">  </span><span class="p">.</span><span class="nc">AgdaModule</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">Module</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#7dcfff</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-<span class="err">}</span>
-
-<span class="c">/* NORD — desaturated frost; the calmest. */</span>
-<span class="o">[</span><span class="nt">data-md-color-scheme</span><span class="o">=</span><span class="s2">&quot;slate&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">--md-code-bg-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#242a3d</span><span class="p">;</span><span class="w"> </span><span class="nv">--code-accent</span><span class="p">:</span><span class="w"> </span><span class="mh">#88c0d0</span><span class="p">;</span>
-<span class="w">  </span><span class="err">.AgdaKeyword,</span><span class="w"> </span><span class="err">pre.Agda</span><span class="w"> </span><span class="err">.Keyword</span><span class="w"> </span><span class="err">{</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#81a1c1</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-<span class="w">  </span><span class="p">.</span><span class="nc">AgdaComment</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">Comment</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#667089</span><span class="p">;</span><span class="w"> </span><span class="k">font-style</span><span class="p">:</span><span class="w"> </span><span class="kc">italic</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-<span class="w">  </span><span class="p">.</span><span class="nc">AgdaString</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">String</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#a3be8c</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-<span class="w">  </span><span class="p">.</span><span class="nc">AgdaNumber</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">Number</span><span class="o">,</span><span class="w"> </span><span class="p">.</span><span class="nc">AgdaField</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">Field</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#b48ead</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-<span class="w">  </span><span class="p">.</span><span class="nc">AgdaSymbol</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">Symbol</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#9aa6c4</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-<span class="w">  </span><span class="p">.</span><span class="nc">AgdaArgument</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">Argument</span><span class="o">,</span><span class="w"> </span><span class="p">.</span><span class="nc">AgdaMarkup</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">Markup</span><span class="o">,</span>
-<span class="w">  </span><span class="p">.</span><span class="nc">AgdaBound</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">Bound</span><span class="o">,</span><span class="w"> </span><span class="p">.</span><span class="nc">AgdaGeneralizable</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">Generalizable</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#d8dee9</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-<span class="w">  </span><span class="p">.</span><span class="nc">AgdaPrimitiveType</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">PrimitiveType</span><span class="o">,</span><span class="w"> </span><span class="p">.</span><span class="nc">AgdaPrimitive</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">Primitive</span><span class="o">,</span>
-<span class="w">  </span><span class="p">.</span><span class="nc">AgdaDatatype</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">Datatype</span><span class="o">,</span><span class="w"> </span><span class="p">.</span><span class="nc">AgdaRecord</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">Record</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#8fbcbb</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-<span class="w">  </span><span class="p">.</span><span class="nc">AgdaInductiveConstructor</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">InductiveConstructor</span><span class="o">,</span>
-<span class="w">  </span><span class="p">.</span><span class="nc">AgdaCoinductiveConstructor</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">CoinductiveConstructor</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#d08770</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-<span class="w">  </span><span class="p">.</span><span class="nc">AgdaFunction</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">Function</span><span class="o">,</span><span class="w"> </span><span class="p">.</span><span class="nc">AgdaMacro</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">Macro</span><span class="o">,</span>
-<span class="w">  </span><span class="p">.</span><span class="nc">AgdaPostulate</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">Postulate</span><span class="o">,</span><span class="w"> </span><span class="p">.</span><span class="nc">AgdaModule</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">Agda</span><span class="w"> </span><span class="p">.</span><span class="nc">Module</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#88c0d0</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-<span class="err">}</span>
-</code></pre></div>
+<p>Agda's token classes take their colors from six hues in <code>tokens.css</code>
+(<code>--c-blue</code>, <code>--c-green</code>, <code>--c-rose</code>, <code>--c-violet</code>, <code>--c-amber</code>, and the
+accent pair), mapped in <code>agda.css</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Agda class</th>
+<th>Color</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Keyword</code></td>
+<td>the coral, <code>--c-accent-hover</code></td>
+</tr>
+<tr>
+<td><code>Function</code>, <code>Postulate</code>, <code>Macro</code></td>
+<td>the indigo accent, <code>--c-accent</code></td>
+</tr>
+<tr>
+<td><code>Datatype</code>, <code>Record</code>, <code>Primitive</code>, <code>PrimitiveType</code></td>
+<td><code>--c-blue</code></td>
+</tr>
+<tr>
+<td><code>InductiveConstructor</code></td>
+<td><code>--c-green</code></td>
+</tr>
+<tr>
+<td><code>Field</code></td>
+<td><code>--c-rose</code></td>
+</tr>
+<tr>
+<td><code>Module</code></td>
+<td><code>--c-violet</code></td>
+</tr>
+<tr>
+<td><code>Number</code>, <code>String</code>, <code>CoinductiveConstructor</code></td>
+<td><code>--c-amber</code></td>
+</tr>
+<tr>
+<td><code>Comment</code>, <code>Pragma</code></td>
+<td><code>--c-fg-faint</code></td>
+</tr>
+<tr>
+<td><code>Symbol</code></td>
+<td><code>--c-fg-muted</code></td>
+</tr>
+<tr>
+<td><code>Bound</code>, <code>Generalizable</code>, everything else</td>
+<td>the text color</td>
+</tr>
+</tbody>
+</table>
+<p>The same mapping colors the inline names in prose (<code>`Algebra`{.AgdaRecord}</code>),
+the hover tooltips, the 404 page, and the /classic/ pages, whose <code>Agda.css</code> is
+replaced by the light tokens and these rules (<code>mkdocs_gen_library.py</code>).  Each
+class sets a custom property, <code>--agda-ink</code>, which one rule turns into the
+color, so a token keeps its color when it is also a link.  Colors only: code is
+never bold or italic, because only JuliaMono's regular face ships.</p>
 <h3 id="fonts">Fonts<a class="headerlink" href="#fonts" title="Anchor link to this section">&para;</a></h3>
-<p>All three families are <strong>self-hosted</strong> under <code>docs/assets/fonts/</code> (no font CDN),
-declared as <code>@font-face</code> at the top of <code>custom.css</code>:</p>
+<p>Every face is <strong>self-hosted</strong> under <code>docs/assets/fonts/</code>, with
+<code>theme.font: false</code> in <code>mkdocs.yml</code>, which stops Material's Google Fonts link:</p>
 <ul>
-<li><strong>headings</strong> — <strong>Space Grotesk</strong> (a geometric grotesque), via the single
-   <code>--ualib-display</code> variable in <code>:root</code>.  Change every heading, the hero title,
-   the stat numbers, and the matrix header in <strong>one line</strong> by setting
-   <code>--ualib-display</code> to <code>"Geist"</code> or <code>"Sora"</code> (both already self-hosted) — or add
-   a new <code>@font-face</code> and name it there.</li>
-<li><strong>body</strong> — <strong>Inter</strong> (<code>--md-text-font</code>).</li>
-<li><strong>code</strong> — <strong>JuliaMono</strong> (<code>--md-code-font</code>), the one font still CDN-loaded,
-   for its complete mathematical-Unicode coverage.</li>
+<li><strong>text</strong>: <strong>Inter</strong> 400, 600 and 400 italic;</li>
+<li><strong>headings</strong>: <strong>Space Grotesk</strong> 600;</li>
+<li><strong>code</strong>: <strong>JuliaMono</strong>, split three ways by Unicode block (text, symbols,
+   mathematical alphanumerics), so a page pays only for the notation it shows.
+   It is the one common monospace face that carries 𝑨, 𝓤 and 𝒦, and it is also
+   the last face in the text stack, so a symbol in prose renders in it too.</li>
 </ul>
+<p>The files are generated, not hand-placed: <code>make fonts</code> runs
+<code>scripts/python/theme/build_fonts.py</code>, which downloads the sources (pinned by
+SHA-256), subsets them by Unicode block, and writes the WOFF2 files, their OFL
+licenses and <code>fonts.css</code>; <code>make fonts-check</code> reports whether the committed files
+still match.  Subset by block, never by a list of characters: a list from
+<code>agda-input.el</code> misses ℓ, Π and the subscript digits, which Agda's input method
+inherits from Emacs.  <code>make font-audit</code> asks a browser which face drew every
+character on every page, and fails on any system font.  The block lists are
+williamdemeo.org's plus the blocks this site's pages turned out to use (the
+script's comments name each and the page that needed it); a new character
+outside them shows up there first.  Emoji are left to the system's emoji face,
+and one gap is known and allowed: the fullwidth braces (U+FF5B, U+FF5D) of the standard
+library's singleton notation, which no face here carries, on /classic/ and in
+the frozen <code>Legacy/</code> tree (<code>KNOWN_GAPS</code> in <code>scripts/js/audit_fonts.mjs</code>).</p>
+<h3 id="the-audits">The audits<a class="headerlink" href="#the-audits" title="Anchor link to this section">&para;</a></h3>
+<p><code>make design-audit</code> runs the three browser audits over <code>./site</code> as it stands
+(build it with <code>make site-full</code> first).  They need node 22 and a Chromium (set
+<code>CHROME=/path/to/chrome</code> if none is found), so they are local targets: run them
+before a pull request that touches the theme.  <code>AUDIT_PAGES</code> restricts a run to
+pages whose path starts with one of its words:</p>
+<div class="highlight"><pre><span></span><code><span class="go">make contrast-audit AUDIT_PAGES=&quot;index.html Setoid/Algebras constellation&quot;</span>
+</code></pre></div>
 <h3 id="the-logo-and-favicon">The logo and favicon<a class="headerlink" href="#the-logo-and-favicon" title="Anchor link to this section">&para;</a></h3>
 <p>Both point at <code>docs/assets/lambda.png</code> via <code>theme.logo</code> and <code>theme.favicon</code> in
 <code>mkdocs.yml</code>.  Drop a replacement PNG at that path (a transparent background
-looks best on the coloured header).</p>
+reads on the page-colored header in both schemes).</p>
 <h3 id="navigation">Navigation<a class="headerlink" href="#navigation" title="Anchor link to this section">&para;</a></h3>
 <p>The nav is generated, not hand-written.  The library tree comes from the module
 hierarchy automatically.  The fixed top-level entries (Home, the <code>Project</code>
 section) are defined in <code>scripts/python/mkdocs_gen_library.py</code> in the
-<code>SUMMARY.md</code> assembly near the bottom — add or reorder lines there.</p>
+<code>SUMMARY.md</code> assembly near the bottom; add or reorder lines there.  The last
+entry of <em>The Library</em> links the sibling library, agda-lattices, from
+<code>extra.agda_lattices</code> in <code>mkdocs.yml</code>; the footer (<code>copyright</code> in <code>mkdocs.yml</code>)
+and the landing page's card (<code>[agda-lattices]</code> in <code>docs/_links.md</code>) link it
+too, and the three move together.</p>
+<p>The top-level sections are tabs (<code>navigation.tabs</code>), although williamdemeo.org
+has none: the module tree is deep, the tabs keep the sidebar one level
+shallower, and the landing page hides its sidebar, so on a desktop the tabs are
+its only navigation.  Below 1220 px Material folds the tabs into the drawer.</p>
 <h3 id="the-landing-page">The landing page<a class="headerlink" href="#the-landing-page" title="Anchor link to this section">&para;</a></h3>
 <p><code>docs/index.md</code> is plain Markdown plus a few HTML blocks whose styling lives in
-<code>custom.css</code> (<code>§8</code>–<code>§11</code>):</p>
+<code>site.css</code> (section 1):</p>
 <ul>
 <li>the <strong>hero</strong> (<code>.ualib-hero</code>) — title, tagline, the formula, the buttons;</li>
 <li>the <strong>stat strip</strong> (<code>.ualib-stats</code>), whose four figures are counted from the
@@ -14720,7 +14845,13 @@ docs/
   index.md                              the landing page
   site-guide.md                         this page
   _links.md                             shared reference-link library (generated + external)
-  stylesheets/custom.css                all bespoke styling
+  stylesheets/tokens.css                the theme: colors, type, spacing
+  stylesheets/theme.css                 the theme: Material&#39;s variables and chrome
+  stylesheets/agda.css                  the theme: Agda&#39;s token classes
+  stylesheets/site.css                  this site&#39;s own components
+  assets/fonts/                         the self-hosted faces and fonts.css (make fonts)
+overrides/                              the 404 page and the repository chip
+scripts/js/                             the browser audits (make design-audit)
   assets/                               logo, favicon, portraits, vendored JS
   adr/                                  architecture decision records
 scripts/python/
@@ -14729,6 +14860,8 @@ scripts/python/
   gen_links.py                          regenerates the module + ADR sections of _links.md
   check_links.py                        fails CI on any undefined reference-style link
   corpus_stats.py                       counts the landing page&#39;s figures; refreshes and gates them
+  theme/build_fonts.py                  builds the self-hosted fonts (make fonts)
+  theme/check_offline.py                fails CI on any request to another origin
 .github/workflows/docs.yml              build (make site-full) + deploy to gh-pages
 </code></pre></div>
 <!-- File: docs/_links.md -->
@@ -14820,7 +14953,7 @@ scripts/python/
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2018&ndash;2026 the agda-algebras development team. Documentation under CC BY-SA 4.0.
+      Copyright &copy; 2018&ndash;2026 the agda-algebras development team. Documentation under CC BY-SA 4.0. &middot; Sibling library: <a href="https://github.com/ualib/agda-lattices">agda-lattices</a>
     </div>
   
   
@@ -14857,18 +14990,20 @@ scripts/python/
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.indexes", "navigation.tracking", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.action.edit", "content.action.view", "content.tooltips"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.indexes", "navigation.tracking", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.action.edit", "content.action.view", "content.tooltips"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../assets/js/agda-copy.js?h=1e452fb9"></script>
       
-        <script src="../assets/js/agda-toggle.js?h=1bfe91e4"></script>
+        <script src="../assets/js/agda-toggle.js?h=ff5ba100"></script>
       
-        <script src="../assets/js/agda-hover.js?h=e1a7b72f"></script>
+        <script src="../assets/js/agda-hover.js?h=42f49b7f"></script>
       
         <script src="../assets/js/carousel.js?h=3a3ff133"></script>
+      
+        <script src="../assets/js/constellation.js?h=90d3f9b7"></script>
       
     
   </body>
