@@ -57,7 +57,7 @@
     
       <link rel="stylesheet" href="../stylesheets/agda.css?h=f1766126">
     
-      <link rel="stylesheet" href="../stylesheets/site.css?h=b32b4e63">
+      <link rel="stylesheet" href="../stylesheets/site.css?h=f9402a95">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -14516,6 +14516,9 @@ separate copy of the documentation.  The decision record is
    <code>&lt;pre class="Agda"&gt;</code> blocks (Material's own copy button only covers its
    <code>.highlight</code> blocks, which the <code>agda --html</code> output is not).</li>
 <li><strong><code>docs/assets/js/agda-toggle.js</code></strong> — the header's "Show more Agda" control (<a href="https://github.com/ualib/agda-algebras/issues/431">#431</a>).  Module sources wrap their leading OPTIONS/module/import scaffolding in <code>&lt;!-- … --&gt;</code> comments; <code>mkdocs_gen_library.py</code> re-surfaces those blocks tagged <code>hidden-source</code>, and this control shows or re-hides them all at once, with the choice persisted in <code>localStorage</code> like the palette toggle.</li>
+<li><strong><code>docs/assets/js/stats-count.js</code></strong>: the landing page's figures count up
+   from zero the first time the stat strip scrolls into view (see
+   <a href="#corpus-stats">Corpus stats</a>).</li>
 </ul>
 <h3 id="hiding-a-modules-import-scaffolding">Hiding a module's import scaffolding<a class="headerlink" href="#hiding-a-modules-import-scaffolding" title="Anchor link to this section">&para;</a></h3>
 <p>Every module's leading scaffolding block — the <code>OPTIONS</code> pragma, the <code>module … where</code> header, the imports, and the <code>private variable</code> declarations — is wrapped in an HTML comment in the <code>.lagda.md</code> source:</p>
@@ -14836,8 +14839,16 @@ into the <code>&lt;!-- ualib:stat:NAME --&gt;…&lt;!-- /ualib:stat:NAME --&gt;<
 <p>The MkDocs hook substitutes the same values into the rendered page at build
 time, but that is a convenience, not the mechanism: it rewrites only the built
 HTML, so before the gate existed the committed values, which are the ones GitHub
-renders, sat six weeks behind the tree and were quoted elsewhere as current.
-<code>corpus_stats.py --json</code> prints the figures as one record for anything outside
+renders, sat six weeks behind the tree and were quoted elsewhere as current.</p>
+<p>On the page, <code>docs/assets/js/stats-count.js</code> counts each numeric figure up
+from zero, eased over 0.9 s, the first time the strip scrolls into view, and
+lands on the value the page already holds; the toolchain's version is not a
+quantity and stays still.  The script only ever animates toward the counted
+value, so with JavaScript off, under reduced motion, or in a browser with no
+<code>IntersectionObserver</code>, the page shows the figures unchanged.  It subscribes
+to Material's <code>document$</code>, so it runs again after an instant navigation back
+to the landing page.</p>
+<p><code>corpus_stats.py --json</code> prints the figures as one record for anything outside
 this repository that wants to cite them.</p>
 <h2 id="where-things-live">Where things live<a class="headerlink" href="#where-things-live" title="Anchor link to this section">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>mkdocs.yml                              site config (theme, plugins, nav behaviour)
@@ -15002,6 +15013,8 @@ scripts/python/
         <script src="../assets/js/agda-hover.js?h=42f49b7f"></script>
       
         <script src="../assets/js/carousel.js?h=3a3ff133"></script>
+      
+        <script src="../assets/js/stats-count.js?h=96bbe502"></script>
       
         <script src="../assets/js/constellation.js?h=90d3f9b7"></script>
       
