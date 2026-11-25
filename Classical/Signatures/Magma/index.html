@@ -14369,7 +14369,7 @@ extending or reusing as appropriate.</p>
 
 <a id="2355" class="Comment">-- Imports from Agda and the Agda Standard Library ----------------------------</a>
 <a id="2435" class="Keyword">open</a> <a id="2440" class="Keyword">import</a> <a id="2447" href="/classic/Agda.Primitive.html" class="Module">Agda.Primitive</a> <a id="2462" class="Keyword">using</a> <a id="2468" class="Symbol">()</a>                <a id="2486" class="Keyword">renaming</a> <a id="2495" class="Symbol">(</a> <a id="2497" href="/classic/Agda.Primitive.html#446" class="Primitive">Set</a> <a id="2501" class="Symbol">to</a> <a id="2504" class="Primitive">Type</a> <a id="2509" class="Symbol">)</a>
-<a id="2511" class="Keyword">open</a> <a id="2516" class="Keyword">import</a> <a id="2523" href="/classic/Data.Fin.Base.html" class="Module">Data.Fin.Base</a>  <a id="2538" class="Keyword">using</a> <a id="2544" class="Symbol">(</a> <a id="2546" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="2550" class="Symbol">)</a>
+<a id="2511" class="Keyword">open</a> <a id="2516" class="Keyword">import</a> <a id="2523" href="/classic/Data.Fin.Base.html" class="Module">Data.Fin.Base</a>  <a id="2538" class="Keyword">using</a> <a id="2544" class="Symbol">(</a> <a id="2546" href="/classic/Data.Fin.Base.html#1127" class="Datatype">Fin</a> <a id="2550" class="Symbol">)</a>
 <a id="2552" class="Keyword">open</a> <a id="2557" class="Keyword">import</a> <a id="2564" href="/classic/Data.Product.html" class="Module">Data.Product</a>   <a id="2579" class="Keyword">using</a> <a id="2585" class="Symbol">(</a> <a id="2587" href="/classic/Agda.Builtin.Sigma.html#252" class="InductiveConstructor Operator">_,_</a> <a id="2591" class="Symbol">)</a>
 <a id="2593" class="Keyword">open</a> <a id="2598" class="Keyword">import</a> <a id="2605" href="/classic/Level.html" class="Module">Level</a>          <a id="2620" class="Keyword">using</a> <a id="2626" class="Symbol">(</a> <a id="2628" href="/classic/Level.html#521" class="Function">0ℓ</a> <a id="2631" class="Symbol">)</a>
 
@@ -14391,7 +14391,7 @@ is what makes the arity-conformance evidence <code>refl</code> of type
 <code>ArityOf Sig-Magma ∙-Op ≡ Fin 2</code> typecheck in <code>Th-Semigroup</code> and every subsequent
 theory.</p>
 <pre class="Agda"><a id="ar-Magma"></a><a id="3468" href="/Classical/Signatures/Magma/#3468" class="Function">ar-Magma</a> <a id="3477" class="Symbol">:</a> <a id="3479" href="/Classical/Signatures/Magma/#3076" class="Datatype">Op-Magma</a> <a id="3488" class="Symbol">→</a> <a id="3490" href="/Classical/Signatures/Magma/#2504" class="Primitive">Type</a>
-<a id="3495" href="/Classical/Signatures/Magma/#3468" class="Function">ar-Magma</a> <a id="3504" href="/Classical/Signatures/Magma/#3100" class="InductiveConstructor">∙-Op</a> <a id="3509" class="Symbol">=</a> <a id="3511" href="/classic/Data.Fin.Base.html#1132" class="Datatype">Fin</a> <a id="3515" class="Number">2</a>
+<a id="3495" href="/Classical/Signatures/Magma/#3468" class="Function">ar-Magma</a> <a id="3504" href="/Classical/Signatures/Magma/#3100" class="InductiveConstructor">∙-Op</a> <a id="3509" class="Symbol">=</a> <a id="3511" href="/classic/Data.Fin.Base.html#1127" class="Datatype">Fin</a> <a id="3515" class="Number">2</a>
 </pre>
 <h4 id="the-signature-value">The signature value<a class="headerlink" href="#the-signature-value" title="Anchor link to this section">&para;</a></h4>
 <p><code>Sig-Magma</code> pairs <code>Op-Magma</code> with <code>ar-Magma</code>, and is the signature every <code>∙</code>-based
